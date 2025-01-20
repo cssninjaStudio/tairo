@@ -218,9 +218,9 @@ const results = [
               >
                 <span>69 results</span>
               </BaseHeading>
-              <BaseButtonAction muted>
+              <BaseButton muted>
                 Clear
-              </BaseButtonAction>
+              </BaseButton>
             </div>
             <!-- Best options -->
             <div class="grid gap-6 sm:grid-cols-3">

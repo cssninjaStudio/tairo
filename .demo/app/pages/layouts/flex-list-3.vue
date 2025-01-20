@@ -201,9 +201,9 @@ function difficultyLabel(itemDifficulty: number) {
                   </div>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButtonAction color="muted">
+                  <BaseButton color="muted">
                     <span>View</span>
-                  </BaseButtonAction>
+                  </BaseButton>
                 </DemoFlexTableCell>
               </template>
             </DemoFlexTableRow>

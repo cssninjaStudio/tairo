@@ -370,9 +370,9 @@ const total = computed(() => {
                     </div>
 
                     <div>
-                      <BaseButtonAction rounded="lg">
+                      <BaseButton rounded="lg">
                         <span>Order</span>
-                      </BaseButtonAction>
+                      </BaseButton>
                     </div>
                   </div>
                 </BaseCard>

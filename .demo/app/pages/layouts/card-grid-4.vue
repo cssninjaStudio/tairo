@@ -151,10 +151,10 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                       </p>
                     </div>
                     <div class="ms-auto">
-                      <BaseButtonAction to="#" rounded="sm">
+                      <BaseButton to="#" rounded="sm">
                         <Icon name="lucide:edit-3" />
                         <span>Edit</span>
-                      </BaseButtonAction>
+                      </BaseButton>
                     </div>
                   </div>
                 </div>

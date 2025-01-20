@@ -648,20 +648,20 @@ const selectedEventFeatures = computed({
               </option>
             </BaseSelect>
             <BaseButtonGroup>
-              <BaseButtonAction
+              <BaseButton
                 rounded="lg"
                 :color="settings.hourHeight === 480 ? 'muted' : 'default'"
                 @click="() => updateHeight(480)"
               >
                 <Icon name="carbon:maximize" />
-              </BaseButtonAction>
-              <BaseButtonAction
+              </BaseButton>
+              <BaseButton
                 rounded="lg"
                 :color="settings.hourHeight === 160 ? 'muted' : 'default'"
                 @click="() => updateHeight()"
               >
                 <Icon name="carbon:minimize" />
-              </BaseButtonAction>
+              </BaseButton>
             </BaseButtonGroup>
           </div>
 

@@ -301,48 +301,48 @@ const budget = ref('< 5K')
             name="budget"
             value="< 5K"
           >
-            <BaseButtonAction
+            <BaseButton
               rounded="lg"
               class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>&lt; 5K</span>
-            </BaseButtonAction>
+            </BaseButton>
           </BaseRadioHeadless>
           <BaseRadioHeadless
             v-model="budget"
             name="budget"
             value="< 30K"
           >
-            <BaseButtonAction
+            <BaseButton
               rounded="lg"
               class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>&lt; 30K</span>
-            </BaseButtonAction>
+            </BaseButton>
           </BaseRadioHeadless>
           <BaseRadioHeadless
             v-model="budget"
             name="budget"
             value="< 100K"
           >
-            <BaseButtonAction
+            <BaseButton
               rounded="lg"
               class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>&lt; 100K</span>
-            </BaseButtonAction>
+            </BaseButton>
           </BaseRadioHeadless>
           <BaseRadioHeadless
             v-model="budget"
             name="budget"
             value="100K+"
           >
-            <BaseButtonAction
+            <BaseButton
               rounded="lg"
               class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>100K+</span>
-            </BaseButtonAction>
+            </BaseButton>
           </BaseRadioHeadless>
         </div>
       </BaseCard>

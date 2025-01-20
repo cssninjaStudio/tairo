@@ -306,10 +306,10 @@ const onSubmit = handleSubmit(
       <div
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
-        <BaseButtonAction @click.prevent="$router.back()">
+        <BaseButton @click.prevent="$router.back()">
           <Icon name="lucide:arrow-left" class="size-3" />
           <span>Cancel</span>
-        </BaseButtonAction>
+        </BaseButton>
       </div>
     </div>
     <BaseCard>

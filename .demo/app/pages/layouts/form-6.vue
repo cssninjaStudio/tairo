@@ -264,14 +264,14 @@ const colorCode = ref('color_code_1')
           </BaseText>
         </div>
         <div class="ms-auto flex items-center gap-2">
-          <BaseButtonAction @click.prevent="$router.back()">
+          <BaseButton @click.prevent="$router.back()">
             <Icon name="lucide:arrow-left" class="size-3" />
             <span>Cancel</span>
-          </BaseButtonAction>
-          <BaseButtonAction type="submit" color="primary">
+          </BaseButton>
+          <BaseButton type="submit" color="primary">
             <Icon name="lucide:check" class="size-3" />
             <span>Save</span>
-          </BaseButtonAction>
+          </BaseButton>
         </div>
       </div>
       <div class="px-10 py-5">
@@ -470,10 +470,10 @@ const colorCode = ref('color_code_1')
             </BaseText>
           </div>
           <div>
-            <BaseButtonAction>
+            <BaseButton>
               <Icon name="lucide:plus" class="size-3" />
               <span>Add people</span>
-            </BaseButtonAction>
+            </BaseButton>
           </div>
         </div>
         <div class="mt-10 grid grid-cols-12 gap-4">

@@ -174,9 +174,9 @@ function statusColor(itemStatus: string) {
                   />
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButtonAction color="muted">
+                  <BaseButton color="muted">
                     <span>View</span>
-                  </BaseButtonAction>
+                  </BaseButton>
                 </DemoFlexTableCell>
               </template>
             </DemoFlexTableRow>

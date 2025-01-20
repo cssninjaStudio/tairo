@@ -31,10 +31,10 @@
       <Icon name="ph:crown-duotone" class="size-5 text-yellow-500" />
     </BaseButton>
 
-    <BaseButtonAction size="icon-md" rounded="lg" data-nui-tooltip="Here we go!">
+    <BaseButton rounded="lg" data-nui-tooltip="Here we go!">
       <Icon name="ph:bell-ringing-duotone" class="text-primary-500 -ms-1 size-4" />
 
       <span class="py-2">Subscribe</span>
-    </BaseButtonAction>
+    </BaseButton>
   </div>
 </template>

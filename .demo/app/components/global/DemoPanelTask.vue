@@ -330,9 +330,9 @@ const commentArea = ref('')
                   </BaseHeading>
                 </div>
                 <div class="flex items-center gap-2">
-                  <BaseButtonAction color="primary" @click="emits('message', { from: 'maya', comment: toValue(commentArea) })">
+                  <BaseButton color="primary" @click="emits('message', { from: 'maya', comment: toValue(commentArea) })">
                     Publish
-                  </BaseButtonAction>
+                  </BaseButton>
                 </div>
               </template>
             </BaseTextarea>

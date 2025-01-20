@@ -153,27 +153,27 @@ const items = [
               </BaseHeading>
             </div>
             <div class="flex gap-2 sm:justify-end">
-              <BaseButtonAction
+              <BaseButton
                 rounded="lg"
                 :color="activeSetting === 'all' ? 'primary' : 'default'"
                 @click="activeSetting = 'all'"
               >
                 All
-              </BaseButtonAction>
-              <BaseButtonAction
+              </BaseButton>
+              <BaseButton
                 rounded="lg"
                 :color="activeSetting === 'candidates' ? 'primary' : 'default'"
                 @click="activeSetting = 'candidates'"
               >
                 Candidates
-              </BaseButtonAction>
-              <BaseButtonAction
+              </BaseButton>
+              <BaseButton
                 rounded="lg"
                 :color="activeSetting === 'companies' ? 'primary' : 'default'"
                 @click="activeSetting = 'companies'"
               >
                 Companies
-              </BaseButtonAction>
+              </BaseButton>
             </div>
           </div>
           <!-- Details -->

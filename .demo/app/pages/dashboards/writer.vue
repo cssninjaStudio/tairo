@@ -196,20 +196,20 @@ const activePosts = ref('recent')
               <span>New articles</span>
             </BaseHeading>
             <div class="flex scale-90 gap-2 sm:justify-end">
-              <BaseButtonAction
+              <BaseButton
                 small
                 :color="activePosts === 'recent' ? 'primary' : 'default'"
                 @click="activePosts = 'recent'"
               >
                 Recent
-              </BaseButtonAction>
-              <BaseButtonAction
+              </BaseButton>
+              <BaseButton
                 small
                 :color="activePosts === 'popular' ? 'primary' : 'default'"
                 @click="activePosts = 'popular'"
               >
                 Popular
-              </BaseButtonAction>
+              </BaseButton>
             </div>
           </div>
           <!-- Posts -->

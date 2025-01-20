@@ -12,33 +12,33 @@ const progress = ref(25)
     />
 
     <div class="flex justify-between gap-2">
-      <BaseButtonAction
+      <BaseButton
         :class="progress === 25 && 'border-primary-500! text-primary-500!'"
         @click="progress = 25"
       >
         25%
-      </BaseButtonAction>
+      </BaseButton>
 
-      <BaseButtonAction
+      <BaseButton
         :class="progress === 50 && 'border-primary-500! text-primary-500!'"
         @click="progress = 50"
       >
         50%
-      </BaseButtonAction>
+      </BaseButton>
 
-      <BaseButtonAction
+      <BaseButton
         :class="progress === 75 && 'border-primary-500! text-primary-500!'"
         @click="progress = 75"
       >
         75%
-      </BaseButtonAction>
+      </BaseButton>
 
-      <BaseButtonAction
+      <BaseButton
         :class="progress === 100 && 'border-primary-500! text-primary-500!'"
         @click="progress = 100"
       >
         100%
-      </BaseButtonAction>
+      </BaseButton>
     </div>
   </div>
 </template>

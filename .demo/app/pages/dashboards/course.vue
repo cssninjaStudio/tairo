@@ -237,9 +237,9 @@ const students = [
               size="sm"
             />
             <div>
-              <BaseButtonAction>
+              <BaseButton>
                 <span>Discussion</span>
-              </BaseButtonAction>
+              </BaseButton>
             </div>
           </div>
           <div class="mb-8">
@@ -424,7 +424,7 @@ const students = [
                 </span>
               </DemoFlexTableCell>
               <DemoFlexTableCell label="action" hide-label>
-                <BaseButtonAction>Chat</BaseButtonAction>
+                <BaseButton>Chat</BaseButton>
               </DemoFlexTableCell>
             </template>
           </DemoFlexTableRow>

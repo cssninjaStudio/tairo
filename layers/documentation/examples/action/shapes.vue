@@ -1,23 +1,23 @@
 <template>
   <div class="flex flex-wrap items-end gap-2">
-    <BaseButtonAction rounded="none">
+    <BaseButton rounded="none">
       Action
-    </BaseButtonAction>
+    </BaseButton>
 
-    <BaseButtonAction rounded="sm">
+    <BaseButton rounded="sm">
       Action
-    </BaseButtonAction>
+    </BaseButton>
 
-    <BaseButtonAction rounded="md">
+    <BaseButton rounded="md">
       Action
-    </BaseButtonAction>
+    </BaseButton>
 
-    <BaseButtonAction rounded="lg">
+    <BaseButton rounded="lg">
       Action
-    </BaseButtonAction>
+    </BaseButton>
 
-    <BaseButtonAction rounded="full">
+    <BaseButton rounded="full">
       Action
-    </BaseButtonAction>
+    </BaseButton>
   </div>
 </template>

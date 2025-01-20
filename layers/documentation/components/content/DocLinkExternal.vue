@@ -18,7 +18,7 @@ const props = withDefaults(
 <template>
   <div class="flex items-center gap-4">
     <div>
-      <BaseButtonAction
+      <BaseButton
         rounded="full"
         :to="props.to"
         target="_blank"
@@ -27,7 +27,7 @@ const props = withDefaults(
       >
         <Icon :name="props.icon" class="size-3" />
         <span>{{ props.label }}</span>
-      </BaseButtonAction>
+      </BaseButton>
     </div>
     <div class="hidden sm:block">
       <BaseText size="xs" class="text-muted-400">

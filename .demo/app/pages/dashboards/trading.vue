@@ -214,36 +214,36 @@ function useStockPrice() {
         </BaseHeading>
       </div>
       <div class="flex gap-2 sm:justify-end">
-        <BaseButtonAction
+        <BaseButton
           :color="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
         >
           Hour
-        </BaseButtonAction>
-        <BaseButtonAction
+        </BaseButton>
+        <BaseButton
           :color="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
         >
           Day
-        </BaseButtonAction>
-        <BaseButtonAction
+        </BaseButton>
+        <BaseButton
           :color="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
         >
           Week
-        </BaseButtonAction>
-        <BaseButtonAction
+        </BaseButton>
+        <BaseButton
           :color="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
         >
           Month
-        </BaseButtonAction>
-        <BaseButtonAction
+        </BaseButton>
+        <BaseButton
           :color="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
         >
           Year
-        </BaseButtonAction>
+        </BaseButton>
       </div>
     </div>
     <!-- Grid -->

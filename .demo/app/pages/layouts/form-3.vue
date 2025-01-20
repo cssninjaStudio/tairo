@@ -47,10 +47,10 @@ const termsApproval = ref(false)
             </BaseText>
           </div>
           <div class="ms-auto">
-            <BaseButtonAction @click.prevent="$router.back()">
+            <BaseButton @click.prevent="$router.back()">
               <Icon name="lucide:arrow-left" class="size-3" />
               <span>Cancel</span>
-            </BaseButtonAction>
+            </BaseButton>
           </div>
         </div>
         <div>

@@ -206,9 +206,9 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   </p>
                 </div>
                 <div class="sm:ms-6">
-                  <BaseButtonAction class="w-full sm:w-auto">
+                  <BaseButton class="w-full sm:w-auto">
                     View
-                  </BaseButtonAction>
+                  </BaseButton>
                 </div>
               </div>
             </BaseCard>

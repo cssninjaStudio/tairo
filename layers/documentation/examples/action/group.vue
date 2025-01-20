@@ -1,22 +1,22 @@
 <template>
   <BaseButtonGroup>
-    <BaseButtonAction rounded="md">
+    <BaseButton rounded="md">
       View
-    </BaseButtonAction>
+    </BaseButton>
 
-    <BaseButtonAction rounded="md">
+    <BaseButton rounded="md">
       <Icon name="ph:pen" class="size-4" />
-    </BaseButtonAction>
+    </BaseButton>
 
-    <BaseButtonAction muted rounded="md">
+    <BaseButton muted rounded="md">
       Muted
-    </BaseButtonAction>
+    </BaseButton>
 
     <BaseDropdown label="plus">
       <template #button>
-        <BaseButtonAction rounded="none">
+        <BaseButton rounded="none">
           plus
-        </BaseButtonAction>
+        </BaseButton>
       </template>
 
       <BaseDropdownItem> Edit </BaseDropdownItem>
@@ -24,12 +24,12 @@
       <BaseDropdownItem> Cancel </BaseDropdownItem>
     </BaseDropdown>
 
-    <BaseButtonAction disabled rounded="md">
+    <BaseButton disabled rounded="md">
       Disabled
-    </BaseButtonAction>
+    </BaseButton>
 
-    <BaseButtonAction rounded="md">
+    <BaseButton rounded="md">
       Share
-    </BaseButtonAction>
+    </BaseButton>
   </BaseButtonGroup>
 </template>
