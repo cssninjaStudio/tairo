@@ -980,7 +980,7 @@ const selectedEventFeatures = computed({
                     </BaseParagraph>
                     <NuxtLink
                       href="#"
-                      class="text-primary-500 nui-focus dark:text-sunny pointer-events-auto mx-auto mt-2 flex items-center justify-center gap-1 font-sans text-xs underline-offset-4 hover:underline"
+                      class="text-primary-500 focus-visible:nui-focus dark:text-sunny pointer-events-auto mx-auto mt-2 flex items-center justify-center gap-1 font-sans text-xs underline-offset-4 hover:underline"
                     >
                       <Icon name="lucide:plus" class="size-3" />
                       <span>New event</span>

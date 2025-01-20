@@ -123,6 +123,6 @@ html.dark .shiki span {
 
 .markdown :deep(.shiki) {
   direction: ltr;
-  /* @todo nui-focus not found   @apply nui-focus; */
+  /* @todo focus-visible:nui-focus not found   @apply focus-visible:nui-focus; */
 }
 </style>

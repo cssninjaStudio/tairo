@@ -90,7 +90,7 @@ const daySpentProgress = computed(() => {
           <div class="pt-2">
             <button
               type="button"
-              class="nui-focus mb-3 flex w-full items-center"
+              class="focus-visible:nui-focus mb-3 flex w-full items-center"
               @click="detailsExpanded = !detailsExpanded"
             >
               <span
@@ -358,7 +358,7 @@ const daySpentProgress = computed(() => {
 
                   <NuxtLink
                     to="#"
-                    class="text-muted-600 nui-focus dark:text-muted-300 font-sans text-sm font-medium underline-offset-4 hover:underline"
+                    class="text-muted-600 focus-visible:nui-focus dark:text-muted-300 font-sans text-sm font-medium underline-offset-4 hover:underline"
                     data-nui-tooltip="View Account"
                   >
                     Checking {{ card.account }}

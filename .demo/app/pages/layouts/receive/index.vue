@@ -56,7 +56,7 @@ onBeforeMount(checkPreviousSteps)
           v-focus="request.method === null || request.method === 'bank_transfer'"
           value="bank_transfer"
           name="payment_method"
-          class="nui-focus !appearance-none rounded-lg !opacity-100"
+          class="focus-visible:nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -97,7 +97,7 @@ onBeforeMount(checkPreviousSteps)
           v-focus="request.method === 'payment_link'"
           value="payment_link"
           name="payment_method"
-          class="nui-focus !appearance-none rounded-lg !opacity-100"
+          class="focus-visible:nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -138,7 +138,7 @@ onBeforeMount(checkPreviousSteps)
           v-focus="request.method === 'wire'"
           value="wire"
           name="payment_method"
-          class="nui-focus !appearance-none rounded-lg !opacity-100"
+          class="focus-visible:nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"

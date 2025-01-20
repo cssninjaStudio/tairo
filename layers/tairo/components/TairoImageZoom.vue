@@ -176,7 +176,7 @@ onBeforeUnmount(() => {
       role="button"
       class="block cursor-zoom-in"
       tabindex="0"
-      :class="[isZoomed ? 'outline-none' : 'nui-focus']"
+      :class="[isZoomed ? 'outline-none' : 'focus-visible:nui-focus']"
       @click="() => handleClick()"
       @keydown.enter="() => handleClick()"
     >
@@ -227,14 +227,14 @@ onBeforeUnmount(() => {
         >
           <FocusTrap class="flex size-full items-center justify-center">
             <img
-              class="nui-focus block max-h-full max-w-full object-contain dark:hidden"
+              class="focus-visible:nui-focus block max-h-full max-w-full object-contain dark:hidden"
               :src="props.zoomSrc || props.src"
               v-bind="$attrs"
               tabindex="0"
             >
 
             <img
-              class="nui-focus hidden max-h-full max-w-full object-contain dark:block"
+              class="focus-visible:nui-focus hidden max-h-full max-w-full object-contain dark:block"
               :src="props.zoomSrcDark || props.srcDark || props.zoomSrc || props.src"
               v-bind="$attrs"
               tabindex="0"

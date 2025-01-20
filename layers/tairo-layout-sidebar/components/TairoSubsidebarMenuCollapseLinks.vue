@@ -65,7 +65,7 @@ function onLinkClick() {
     <a
       ref="buttonRef"
       href="#"
-      class="nui-focus relative top-0.5 flex items-center"
+      class="focus-visible:nui-focus relative top-0.5 flex items-center"
       @click.stop.prevent="onDropClick"
     >
       <span
@@ -106,7 +106,7 @@ function onLinkClick() {
             :class="{
               'text-primary-500': isChildActive(link),
             }"
-            class="nui-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center ps-3 transition-colors duration-300"
+            class="focus-visible:nui-focus text-muted-400 hover:text-primary-500 focus:text-primary-500 flex w-full items-center ps-3 transition-colors duration-300"
             @click.passive="onLinkClick"
           >
             <Icon :name="link.icon" class="me-2 size-5" />

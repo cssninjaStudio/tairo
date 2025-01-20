@@ -496,7 +496,7 @@ function focusField(n: any) {
                   type="text"
                   :name="`pin${i}`"
                   maxlength="1"
-                  class="dark:bg-muted-800 unselectable nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
+                  class="dark:bg-muted-800 unselectable focus-visible:nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
                   :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
                   placeholder="0"
                   :disabled="input.length < i - 1 || validatePin"

@@ -20,7 +20,7 @@ const activeTab = ref('tab-1')
         </h2>
         <button
           type="button"
-          class="text-muted-400 nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
+          class="text-muted-400 focus-visible:nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
           @click="close"
         >
           <Icon name="feather:chevron-right" class="size-6" />
@@ -34,7 +34,7 @@ const activeTab = ref('tab-1')
         >
           <button
             type="button"
-            class="nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
+            class="focus-visible:nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
             :class="activeTab === 'tab-1' ? 'text-white' : 'text-muted-400'"
             @click="activeTab = 'tab-1'"
           >
@@ -42,7 +42,7 @@ const activeTab = ref('tab-1')
           </button>
           <button
             type="button"
-            class="nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
+            class="focus-visible:nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
             :class="activeTab === 'tab-2' ? 'text-white' : 'text-muted-400'"
             @click="activeTab = 'tab-2'"
           >
@@ -50,7 +50,7 @@ const activeTab = ref('tab-1')
           </button>
           <button
             type="button"
-            class="nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
+            class="focus-visible:nui-focus relative z-20 flex h-full flex-1 items-center justify-center"
             :class="activeTab === 'tab-3' ? 'text-white' : 'text-muted-400'"
             @click="activeTab = 'tab-3'"
           >
@@ -98,7 +98,7 @@ const activeTab = ref('tab-1')
               </div>
               <NuxtLink
                 to="#"
-                class="border-muted-200 nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
+                class="border-muted-200 focus-visible:nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
               >
                 <Icon name="feather:arrow-right" class="size-4" />
               </NuxtLink>
@@ -128,7 +128,7 @@ const activeTab = ref('tab-1')
               </div>
               <NuxtLink
                 to="#"
-                class="border-muted-200 nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
+                class="border-muted-200 focus-visible:nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
               >
                 <Icon name="feather:arrow-right" class="size-4" />
               </NuxtLink>
@@ -158,7 +158,7 @@ const activeTab = ref('tab-1')
               </div>
               <NuxtLink
                 to="#"
-                class="border-muted-200 nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
+                class="border-muted-200 focus-visible:nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
               >
                 <Icon name="feather:arrow-right" class="size-4" />
               </NuxtLink>
@@ -188,7 +188,7 @@ const activeTab = ref('tab-1')
               </div>
               <NuxtLink
                 to="#"
-                class="border-muted-200 nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
+                class="border-muted-200 focus-visible:nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
               >
                 <Icon name="feather:arrow-right" class="size-4" />
               </NuxtLink>
@@ -223,7 +223,7 @@ const activeTab = ref('tab-1')
                 </div>
                 <NuxtLink
                   to="#"
-                  class="border-muted-200 nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
+                  class="border-muted-200 focus-visible:nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
                 >
                   <Icon name="feather:arrow-right" class="size-4" />
                 </NuxtLink>
@@ -303,7 +303,7 @@ const activeTab = ref('tab-1')
                 </div>
                 <NuxtLink
                   to="#"
-                  class="border-muted-200 nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
+                  class="border-muted-200 focus-visible:nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
                 >
                   <Icon name="feather:arrow-right" class="size-4" />
                 </NuxtLink>
@@ -365,7 +365,7 @@ const activeTab = ref('tab-1')
                 </div>
                 <NuxtLink
                   to="#"
-                  class="border-muted-200 nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
+                  class="border-muted-200 focus-visible:nui-focus text-muted-400 hover:border-primary-500 hover:text-primary-500 dark:border-muted-500 dark:hover:border-primary-500 ms-auto flex size-9 items-center justify-center rounded-full border transition-colors duration-300"
                 >
                   <Icon name="feather:arrow-right" class="size-4" />
                 </NuxtLink>

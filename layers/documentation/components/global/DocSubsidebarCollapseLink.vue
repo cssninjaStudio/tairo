@@ -33,7 +33,7 @@ function onDropClick() {
     <button
       ref="buttonRef"
       type="button"
-      class="nui-focus group mb-1 mt-8 flex min-h-6 w-full items-center justify-between focus-within:outline-0 focus-visible:outline-1"
+      class="focus-visible:nui-focus group mb-1 mt-8 flex min-h-6 w-full items-center justify-between focus-within:outline-0 focus-visible:outline-1"
       @click.stop.prevent="onDropClick"
     >
       <span
@@ -74,7 +74,7 @@ function onDropClick() {
             :to="child._path"
             :class="[route.path === child._path && 'text-primary-500']"
             exact-active-class="text-primary-500"
-            class="nui-focus text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 group flex w-full flex-row items-center transition-colors duration-300 focus-within:outline-0 focus-visible:outline-1"
+            class="focus-visible:nui-focus text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 group flex w-full flex-row items-center transition-colors duration-300 focus-within:outline-0 focus-visible:outline-1"
             @click.passive="onLinkClick"
           >
             <span class="font-sans text-[0.8rem]">{{ child?.title }}</span>
@@ -101,7 +101,7 @@ function onDropClick() {
                 :to="nested._path"
                 :class="[route.path === nested._path && 'text-primary-500']"
                 exact-active-class="text-primary-500"
-                class="nui-focus text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 group flex w-full flex-row items-center transition-colors duration-300 focus-within:outline-0 focus-visible:outline-1"
+                class="focus-visible:nui-focus text-muted-400 hover:text-primary-500 focus-visible:text-primary-500 group flex w-full flex-row items-center transition-colors duration-300 focus-within:outline-0 focus-visible:outline-1"
                 @click.passive="onLinkClick"
               >
                 <span class="font-sans text-[0.85rem]">{{

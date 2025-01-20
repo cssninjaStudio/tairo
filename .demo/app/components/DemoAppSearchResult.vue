@@ -22,7 +22,7 @@ const markedSubtitle = useNinjaMark(
 
 <template>
   <NuxtLink
-    class="nui-focus hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:focus:bg-muted-900 group flex items-center rounded p-3"
+    class="focus-visible:nui-focus hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:focus:bg-muted-900 group flex items-center rounded p-3"
     :to="props.to"
   >
     <div class="flex grow flex-col">

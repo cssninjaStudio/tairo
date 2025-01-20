@@ -165,7 +165,7 @@ const results = [
                       <div class="relative grow">
                         <div class="relative">
                           <input
-                            class="text-muted-100 placeholder:text-muted-100/30 nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
+                            class="text-muted-100 placeholder:text-muted-100/30 focus-visible:nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
                             placeholder="Start date"
                             :value="inputValue.start"
                             v-on="inputEvents.start"
@@ -180,7 +180,7 @@ const results = [
                       <div class="relative grow">
                         <div class="relative">
                           <input
-                            class="text-muted-100 placeholder:text-muted-100/30 nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
+                            class="text-muted-100 placeholder:text-muted-100/30 focus-visible:nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
                             placeholder="End date"
                             :value="inputValue.end"
                             v-on="inputEvents.end"

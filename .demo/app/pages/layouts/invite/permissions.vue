@@ -56,7 +56,7 @@ onBeforeMount(checkPreviousSteps)
           v-focus="request.role === null || request.role === 'admin'"
           value="admin"
           name="role_permissions"
-          class="nui-focus !appearance-none rounded-lg !opacity-100"
+          class="focus-visible:nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -93,7 +93,7 @@ onBeforeMount(checkPreviousSteps)
           v-focus="request.role === 'bookkeeper'"
           value="bookkeeper"
           name="role_permissions"
-          class="nui-focus !appearance-none rounded-lg !opacity-100"
+          class="focus-visible:nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -130,7 +130,7 @@ onBeforeMount(checkPreviousSteps)
           v-focus="request.role === 'cardonly'"
           value="cardonly"
           name="role_permissions"
-          class="nui-focus !appearance-none rounded-lg !opacity-100"
+          class="focus-visible:nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
@@ -167,7 +167,7 @@ onBeforeMount(checkPreviousSteps)
           v-focus="request.role === 'custom'"
           value="custom"
           name="role_permissions"
-          class="nui-focus !appearance-none rounded-lg !opacity-100"
+          class="focus-visible:nui-focus !appearance-none rounded-lg !opacity-100"
         >
           <div
             class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"

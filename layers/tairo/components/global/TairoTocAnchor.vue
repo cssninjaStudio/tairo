@@ -38,7 +38,7 @@ const anchor = computed(() => props.id || slug.value)
     :to="`#${anchor}`"
     :data-toc-level="props.level"
     :data-toc-label="props.label"
-    class="tairo-toc-anchor nui-focus group/toc relative"
+    class="tairo-toc-anchor focus-visible:nui-focus group/toc relative"
     :style="{ scrollMarginTop: '1.5rem' }"
   >
     <span

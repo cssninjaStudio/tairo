@@ -444,7 +444,7 @@ const archive = [
                 <div class="relative h-14 min-h-14">
                   <textarea
                     placeholder="Message Tairo GPT..."
-                    class="placeholder:text-muted-300 dark:placeholder:text-muted-700 nui-focus bg-muted-100 dark:bg-muted-950 relative h-14 min-h-14 w-full rounded-full px-16 leading-[3.5rem]"
+                    class="placeholder:text-muted-300 dark:placeholder:text-muted-700 focus-visible:nui-focus bg-muted-100 dark:bg-muted-950 relative h-14 min-h-14 w-full rounded-full px-16 leading-[3.5rem]"
                   />
                   <button
                     type="button"

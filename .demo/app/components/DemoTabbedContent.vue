@@ -41,7 +41,7 @@ const activeTab = ref('tab-1')
         >
           <button
             type="button"
-            class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
+            class="focus-visible:nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
             :class="[
               activeTab === 'tab-1' ? 'text-white' : 'text-muted-400',
               props.rounded === 'sm' ? 'rounded-md' : '',
@@ -55,7 +55,7 @@ const activeTab = ref('tab-1')
           </button>
           <button
             type="button"
-            class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
+            class="focus-visible:nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
             :class="[
               activeTab === 'tab-2' ? 'text-white' : 'text-muted-400',
               props.rounded === 'sm' ? 'rounded-md' : '',

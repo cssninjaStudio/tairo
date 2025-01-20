@@ -97,7 +97,7 @@ const showStackTrace = ref(true)
         <BaseCard
           v-focus
           rounded="lg"
-          class="nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
+          class="focus-visible:nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
           tabindex="0"
         >
           <div

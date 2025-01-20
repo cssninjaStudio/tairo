@@ -228,7 +228,7 @@ const buttonBorder = computed(() => {
           }"
         >
           <button
-            class="leading-0 text-muted-400 peer-focus-within:text-primary-500 nui-focus absolute right-0 top-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed"
+            class="leading-0 text-muted-400 peer-focus-within:text-primary-500 focus-visible:nui-focus absolute right-0 top-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed"
             :class="buttonBorder"
             type="button"
             tabindex="0"

@@ -58,7 +58,7 @@ const componentsWithoutPages = computed(() => {
           <NuxtLink
             v-for="component of componentsWithPages"
             :key="component.name"
-            class="nui-focus group rounded-md"
+            class="focus-visible:nui-focus group rounded-md"
             :to="component.route?._path"
           >
             <BaseCard class="flex h-full flex-col px-4 py-8" rounded="lg">

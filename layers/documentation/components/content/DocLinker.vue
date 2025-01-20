@@ -31,7 +31,7 @@ const tooltip = computed(() => {
 <template>
   <NuxtLink
     :to="data?._path"
-    class="nui-focus inline-block rounded font-mono text-sm"
+    class="focus-visible:nui-focus inline-block rounded font-mono text-sm"
     :class="[
       pending
         ? 'bg-muted-100 dark:bg-muted-800/60 text-muted-500 cursor-help no-underline'
