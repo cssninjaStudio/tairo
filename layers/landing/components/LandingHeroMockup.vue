@@ -36,7 +36,7 @@
                 class="nui-mask nui-mask-hexed relative mb-2 flex size-20 shrink-0 items-center justify-center"
               >
                 <div
-                  class="motion-safe:animate-spin-slow from-success-100 to-success-500 dark:from-success-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+                  class="motion-safe:animate-spin-slow from-success-100 to-success-500 dark:from-success-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-xs transition-all duration-200"
                 />
                 <div
                   class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[76px] items-center justify-center bg-white"
@@ -60,7 +60,7 @@
                 class="nui-mask nui-mask-hexed relative mb-2 flex size-20 shrink-0 items-center justify-center"
               >
                 <div
-                  class="motion-safe:animate-spin-slow [animation-delay: 0.3s] absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-sky-100 to-sky-500 blur-sm transition-all duration-200 dark:from-sky-800"
+                  class="motion-safe:animate-spin-slow [animation-delay: 0.3s] absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-sky-100 to-sky-500 blur-xs transition-all duration-200 dark:from-sky-800"
                 />
                 <div
                   class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[76px] items-center justify-center bg-white"
@@ -84,7 +84,7 @@
                 class="nui-mask nui-mask-hexed relative mb-2 flex size-20 shrink-0 items-center justify-center"
               >
                 <div
-                  class="motion-safe:animate-spin-slow [animation-delay: 0.6s] absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-indigo-100 to-indigo-500 blur-sm transition-all duration-200 dark:from-indigo-800"
+                  class="motion-safe:animate-spin-slow [animation-delay: 0.6s] absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-indigo-100 to-indigo-500 blur-xs transition-all duration-200 dark:from-indigo-800"
                 />
                 <div
                   class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[76px] items-center justify-center bg-white"

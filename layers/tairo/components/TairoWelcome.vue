@@ -70,7 +70,7 @@ const codeTailwind = [
         class="nui-mask nui-mask-hexed absolute inset-x-0 -top-10 mx-auto mb-2 flex size-[84px] shrink-0 items-center justify-center"
       >
         <div
-          class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+          class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-xs transition-all duration-200"
         />
         <div
           class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[80px] items-center justify-center bg-white"
@@ -116,7 +116,7 @@ const codeTailwind = [
                 class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+                  class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-xs transition-all duration-200"
                 />
                 <div
                   class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
@@ -152,7 +152,7 @@ const codeTailwind = [
                 class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow from-success-100 to-success-500 dark:from-success-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+                  class="animate-spin-slow from-success-100 to-success-500 dark:from-success-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-xs transition-all duration-200"
                 />
                 <div
                   class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
@@ -188,7 +188,7 @@ const codeTailwind = [
                 class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-purple-100 to-purple-500 blur-sm transition-all duration-200 dark:from-purple-800"
+                  class="animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-purple-100 to-purple-500 blur-xs transition-all duration-200 dark:from-purple-800"
                 />
                 <div
                   class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
@@ -224,7 +224,7 @@ const codeTailwind = [
                 class="nui-mask nui-mask-hexed relative flex size-16 shrink-0 items-center justify-center"
               >
                 <div
-                  class="animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-blue-100 to-blue-500 blur-sm transition-all duration-200 dark:from-blue-800"
+                  class="animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr from-blue-100 to-blue-500 blur-xs transition-all duration-200 dark:from-blue-800"
                 />
                 <div
                   class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[60px] items-center justify-center bg-white"
@@ -263,7 +263,7 @@ const codeTailwind = [
               class="nui-mask nui-mask-hexed relative mb-2 flex size-[84px] shrink-0 items-center justify-center"
             >
               <div
-                class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm transition-all duration-200"
+                class="animate-spin-slow from-primary-100 to-primary-500 dark:from-primary-800 absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-xs transition-all duration-200"
               />
               <div
                 class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-[80px] items-center justify-center bg-white"

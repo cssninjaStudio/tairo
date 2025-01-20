@@ -34,7 +34,7 @@ const props = withDefaults(
           class="nui-mask nui-mask-hexed relative mb-2 flex size-[84px] shrink-0 items-center justify-center"
         >
           <div
-            class="motion-safe:animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-sm motion-safe:transition-all motion-safe:duration-200"
+            class="motion-safe:animate-spin-slow absolute inset-0 flex size-full items-center justify-center bg-gradient-to-tr blur-xs motion-safe:transition-all motion-safe:duration-200"
             :class="[
               props.color === 'primary'
                 ? 'from-primary-100 to-primary-500 dark:from-primary-800'
