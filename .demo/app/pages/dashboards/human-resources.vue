@@ -58,7 +58,7 @@ const items = [
                   size="3xl"
                   weight="bold"
                   lead="none"
-                  class="ltablet:!text-2xl text-white"
+                  class="ltablet:text-2xl! text-white"
                 >
                   <span>Welcome back, Maya.</span>
                 </BaseHeading>

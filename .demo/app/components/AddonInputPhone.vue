@@ -300,11 +300,11 @@ const iconSize = computed(() => {
 const inputStart = computed(() => {
   switch (props.size) {
     case 'lg':
-      return '!ps-[5rem]'
+      return 'ps-[5rem]!'
     case 'sm':
     case 'md':
     default:
-      return '!ps-[4.5rem]'
+      return 'ps-[4.5rem]!'
   }
 })
 const dropdownBorder = computed(() => {
@@ -371,7 +371,7 @@ const dropdownBorder = computed(() => {
         <div
           v-bind="containerProps"
           :style="{ height: `${dropdownHeight}px` }"
-          class="nui-slimscroll !mt-2"
+          class="nui-slimscroll mt-2!"
         >
           <div v-bind="wrapperProps">
             <div
@@ -437,7 +437,7 @@ const dropdownBorder = computed(() => {
       :error="props.error"
       :disabled="props.disabled"
       :rounded="props.rounded"
-      :classes="{ wrapper: 'relative grow [&_.nui-input-placeload]:ms-16', input: `${inputStart} !pe-8`, icon: '!w-16' }"
+      :classes="{ wrapper: 'relative grow [&_.nui-input-placeload]:ms-16', input: `${inputStart} pe-8!`, icon: 'w-16!' }"
       v-bind="$attrs"
       @update:model-value="
         (value) => {

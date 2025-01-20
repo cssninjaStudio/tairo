@@ -41,7 +41,7 @@ const showStackTrace = ref(true)
       :title="title"
       :subtitle="description"
       image-size="md"
-      class="relative !items-end"
+      class="relative items-end!"
     >
       <template #image>
         <component
@@ -62,7 +62,7 @@ const showStackTrace = ref(true)
         >
           <BaseButton
             rounded="lg"
-            class="mx-auto !h-12 w-full max-w-[160px] items-center gap-2"
+            class="mx-auto h-12! w-full max-w-[160px] items-center gap-2"
             @click="handleError"
           >
             <Icon name="feather:arrow-left" />
@@ -72,7 +72,7 @@ const showStackTrace = ref(true)
             <BaseButton
               color="muted"
               rounded="lg"
-              class="mx-auto !h-12 w-full max-w-[160px]"
+              class="mx-auto h-12! w-full max-w-[160px]"
               @click="retry"
             >
               <Icon name="feather:refresh-cw" class="size-3" />

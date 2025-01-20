@@ -63,7 +63,7 @@ const pricingMode = ref('free')
                   >
                     <BaseCard
                       rounded="lg"
-                      class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
+                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
                     >
                       <div class="flex flex-col text-center">
                         <img
@@ -110,7 +110,7 @@ const pricingMode = ref('free')
                   >
                     <BaseCard
                       rounded="lg"
-                      class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
+                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
                     >
                       <div class="flex flex-col text-center">
                         <img
@@ -157,7 +157,7 @@ const pricingMode = ref('free')
                   >
                     <BaseCard
                       rounded="lg"
-                      class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
+                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
                     >
                       <div class="flex flex-col text-center">
                         <img
@@ -203,7 +203,7 @@ const pricingMode = ref('free')
                     to="/dashboards"
                     type="button"
                     rounded="lg"
-                    class="!h-12 w-48"
+                    class="h-12! w-48"
                     color="primary"
                   >
                     Confirm

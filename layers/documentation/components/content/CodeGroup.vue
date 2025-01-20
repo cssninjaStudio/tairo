@@ -41,7 +41,7 @@ export default defineComponent({
           h(
             'div',
             {
-              class: 'relative group/code w-full bg-white dark:bg-muted-950 rounded-lg overflow-hidden border !border-muted-300 dark:!border-muted-800',
+              class: 'relative group/code w-full bg-white dark:bg-muted-950 rounded-lg overflow-hidden border border-muted-300! dark:border-muted-800!',
             },
             [
               h(

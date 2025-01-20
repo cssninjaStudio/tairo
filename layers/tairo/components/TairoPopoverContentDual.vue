@@ -108,7 +108,7 @@ const props = defineProps<{
           <BaseAvatar
             :src="props.image"
             size="lg"
-            class="mx-auto !block"
+            class="mx-auto block!"
           />
           <div>
             <BaseHeading

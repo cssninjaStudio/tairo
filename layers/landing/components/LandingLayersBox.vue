@@ -18,13 +18,13 @@ const props = withDefaults(
     <BaseCard
       rounded="lg"
       elevated-hover
-      class="dark:!bg-muted-900 relative z-10 p-5 motion-reduce:hover:shadow-none"
+      class="dark:bg-muted-900! relative z-10 p-5 motion-reduce:hover:shadow-none"
       :class="[
         props.color === 'primary'
-          ? 'motion-safe:hover:!border-primary-500'
+          ? 'motion-safe:hover:border-primary-500!'
           : '',
-        props.color === 'purple' ? 'motion-safe:hover:!border-purple-500' : '',
-        props.color === 'indigo' ? 'motion-safe:hover:!border-indigo-500' : '',
+        props.color === 'purple' ? 'motion-safe:hover:border-purple-500!' : '',
+        props.color === 'indigo' ? 'motion-safe:hover:border-indigo-500!' : '',
       ]"
     >
       <div

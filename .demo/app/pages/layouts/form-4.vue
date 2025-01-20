@@ -245,8 +245,8 @@ const people = ref([
                   icon="ph:ticket-duotone"
                   placeholder="Ex: Next team building party"
                   :classes="{
-                    input: '!h-11 !ps-11',
-                    icon: '!h-11 !w-11',
+                    input: 'h-11! ps-11!',
+                    icon: 'h-11! w-11!',
                   }"
                   :model-value="field.value"
                   :error="errorMessage"
@@ -268,8 +268,8 @@ const people = ref([
                   icon="ph:circles-four-duotone"
                   placeholder="Ex: We will meet to have fun together"
                   :classes="{
-                    input: '!h-11 !ps-11',
-                    icon: '!h-11 !w-11',
+                    input: 'h-11! ps-11!',
+                    icon: 'h-11! w-11!',
                   }"
                   :model-value="field.value"
                   :error="errorMessage"
@@ -308,8 +308,8 @@ const people = ref([
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.start"
                           :classes="{
-                            input: '!h-11 !ps-11',
-                            icon: '!h-11 !w-11',
+                            input: 'h-11! ps-11!',
+                            icon: 'h-11! w-11!',
                           }"
                           :error="errorMessage"
                           :disabled="isSubmitting"
@@ -324,8 +324,8 @@ const people = ref([
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.end"
                           :classes="{
-                            input: '!h-11 !ps-11',
-                            icon: '!h-11 !w-11',
+                            input: 'h-11! ps-11!',
+                            icon: 'h-11! w-11!',
                           }"
                           :error="errorMessage"
                           :disabled="isSubmitting"
@@ -390,8 +390,8 @@ const people = ref([
                   icon="ph:drop-half-duotone"
                   placeholder="Pick an event color..."
                   :classes="{
-                    input: '!h-11 !ps-11 appearance-none',
-                    icon: '!h-11 !w-11',
+                    input: 'h-11! ps-11! appearance-none',
+                    icon: 'h-11! w-11!',
                   }"
                   :model-value="field.value"
                   :error="errorMessage"
@@ -425,8 +425,8 @@ const people = ref([
                   icon="ph:ticket-duotone"
                   placeholder="Pick a category..."
                   :classes="{
-                    input: '!h-11 !ps-11',
-                    icon: '!h-11 !w-11',
+                    input: 'h-11! ps-11!',
+                    icon: 'h-11! w-11!',
                   }"
                   :model-value="field.value"
                   :error="errorMessage"
@@ -445,14 +445,14 @@ const people = ref([
             </div>
           </div>
           <div class="flex items-center gap-4 pt-4">
-            <BaseButton rounded="lg" class="!h-12 w-full">
+            <BaseButton rounded="lg" class="h-12! w-full">
               Cancel
             </BaseButton>
             <BaseButton
               type="submit"
               rounded="lg"
               color="primary"
-              class="!h-12 w-full"
+              class="h-12! w-full"
             >
               Create
             </BaseButton>

@@ -526,7 +526,7 @@ const total = computed(() => {
               <BaseButton
                 color="none"
                 rounded="lg"
-                class="text-muted-800 group !h-14 w-full !gap-3 bg-yellow-400 hover:!shadow-xl hover:!shadow-yellow-400/20"
+                class="text-muted-800 group h-14! w-full gap-3! bg-yellow-400 hover:shadow-xl! hover:shadow-yellow-400/20!"
               >
                 <span class="text-base font-medium">Checkout</span>
                 <Icon

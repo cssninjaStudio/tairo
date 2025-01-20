@@ -79,7 +79,7 @@ const isSearchOpen = useState('search-open', () => false)
                   size="xs"
                   rounded="md"
                   color="default"
-                  class="!px-2"
+                  class="px-2!"
                 >
                   K
                 </BaseKbd>
@@ -89,9 +89,9 @@ const isSearchOpen = useState('search-open', () => false)
         </div>
         <div class="nui-slimscroll flex flex-1 flex-col gap-y-2 overflow-y-auto px-4">
           <!-- Menu -->
-          <ul class="relative !min-h-[auto] !min-w-[auto]">
+          <ul class="relative min-h-[auto]! min-w-[auto]!">
             <template v-for="item in startMenuItems" :key="item.name">
-              <li v-if="!item.children" class="!overflow-visible">
+              <li v-if="!item.children" class="overflow-visible!">
                 <div class="flex">
                   <NuxtLink
                     v-if="item.to"
@@ -130,7 +130,7 @@ const isSearchOpen = useState('search-open', () => false)
                   </button>
                 </div>
               </li>
-              <li v-else class="!overflow-visible">
+              <li v-else class="overflow-visible!">
                 <Disclosure v-slot="{ open }">
                   <div class="flex">
                     <DisclosureButton
@@ -162,7 +162,7 @@ const isSearchOpen = useState('search-open', () => false)
                       <li
                         v-for="subitem in item.children"
                         :key="subitem.name"
-                        class="!overflow-visible"
+                        class="overflow-visible!"
                       >
                         <div class="relative flex">
                           <NuxtLink
@@ -190,7 +190,7 @@ const isSearchOpen = useState('search-open', () => false)
             <div class="border-muted-200 dark:border-muted-800 flex w-full border-t" />
           </div>
           <!-- Recent -->
-          <ul class="relative !min-h-[auto] !min-w-[auto]">
+          <ul class="relative min-h-[auto]! min-w-[auto]!">
             <slot name="center">
               <component
                 :is="
@@ -205,9 +205,9 @@ const isSearchOpen = useState('search-open', () => false)
           <!-- Spacer -->
           <div class="flex-1" />
           <!-- End Menu -->
-          <ul class="relative !min-h-[auto] !min-w-[auto]">
+          <ul class="relative min-h-[auto]! min-w-[auto]!">
             <template v-for="item in endMenuItems" :key="item.name">
-              <li v-if="!item.children" class="!overflow-visible">
+              <li v-if="!item.children" class="overflow-visible!">
                 <div class="flex">
                   <NuxtLink
                     v-if="item.to"
@@ -247,7 +247,7 @@ const isSearchOpen = useState('search-open', () => false)
                   </button>
                 </div>
               </li>
-              <li v-else class="!overflow-visible">
+              <li v-else class="overflow-visible!">
                 <Disclosure v-slot="{ open }">
                   <div class="flex">
                     <DisclosureButton
@@ -279,7 +279,7 @@ const isSearchOpen = useState('search-open', () => false)
                       <li
                         v-for="subitem in item.children"
                         :key="subitem.name"
-                        class="!overflow-visible"
+                        class="overflow-visible!"
                       >
                         <div class="relative flex">
                           <NuxtLink

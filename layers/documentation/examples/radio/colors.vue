@@ -10,7 +10,7 @@ const value = ref('pink')
       label="indigo"
       value="indigo"
       :classes="{
-        wrapper: '!text-indigo-500',
+        wrapper: 'text-indigo-500!',
       }"
     />
 
@@ -19,7 +19,7 @@ const value = ref('pink')
       name="checkbox_colors"
       label="lime"
       value="lime"
-      :classes="{ wrapper: '!text-lime-500' }"
+      :classes="{ wrapper: 'text-lime-500!' }"
     />
 
     <BaseRadio
@@ -27,7 +27,7 @@ const value = ref('pink')
       name="checkbox_colors"
       label="pink"
       value="pink"
-      :classes="{ wrapper: '!text-pink-500' }"
+      :classes="{ wrapper: 'text-pink-500!' }"
     />
 
     <BaseRadio
@@ -35,7 +35,7 @@ const value = ref('pink')
       name="checkbox_colors"
       label="sky"
       value="sky"
-      :classes="{ wrapper: '!text-sky-500' }"
+      :classes="{ wrapper: 'text-sky-500!' }"
     />
 
     <BaseRadio
@@ -43,7 +43,7 @@ const value = ref('pink')
       name="checkbox_colors"
       label="yellow"
       value="yellow"
-      :classes="{ wrapper: '!text-yellow-500' }"
+      :classes="{ wrapper: 'text-yellow-500!' }"
     />
 
     <BaseRadio
@@ -51,7 +51,7 @@ const value = ref('pink')
       name="checkbox_colors"
       label="purple"
       value="purple"
-      :classes="{ wrapper: '!text-purple-500' }"
+      :classes="{ wrapper: 'text-purple-500!' }"
     />
 
     <BaseRadio
@@ -59,7 +59,7 @@ const value = ref('pink')
       name="checkbox_colors"
       label="green"
       value="green"
-      :classes="{ wrapper: '!text-green-500' }"
+      :classes="{ wrapper: 'text-green-500!' }"
     />
 
     <BaseRadio
@@ -67,7 +67,7 @@ const value = ref('pink')
       name="checkbox_colors"
       label="fuchsia"
       value="fuchsia"
-      :classes="{ wrapper: '!text-fuchsia-500' }"
+      :classes="{ wrapper: 'text-fuchsia-500!' }"
     />
 
     <BaseRadio
@@ -76,7 +76,7 @@ const value = ref('pink')
       label="rose"
       value="rose"
       :classes="{
-        wrapper: '!text-rose-500',
+        wrapper: 'text-rose-500!',
       }"
     />
 
@@ -86,7 +86,7 @@ const value = ref('pink')
       label="blue"
       value="blue"
       :classes="{
-        wrapper: '!text-blue-500',
+        wrapper: 'text-blue-500!',
       }"
     />
 
@@ -96,7 +96,7 @@ const value = ref('pink')
       label="orange"
       value="orange"
       :classes="{
-        wrapper: '!text-orange-500',
+        wrapper: 'text-orange-500!',
       }"
     />
   </div>

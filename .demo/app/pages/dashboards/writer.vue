@@ -222,7 +222,7 @@ const activePosts = ref('recent')
                 class="bg-muted-200 rounded-xl"
               >
               <BaseCard
-                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 !rounded-2xl p-6 shadow-xl"
+                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 rounded-2xl! p-6 shadow-xl"
               >
                 <div class="mb-3">
                   <BaseHeading
@@ -273,7 +273,7 @@ const activePosts = ref('recent')
                 class="bg-muted-200 rounded-xl"
               >
               <BaseCard
-                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 !rounded-2xl p-6 shadow-xl"
+                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 rounded-2xl! p-6 shadow-xl"
               >
                 <div class="mb-3">
                   <BaseHeading

@@ -192,7 +192,7 @@ function closeUpgrade() {
               </BaseButton>
               <div class="group relative flex items-center rounded-md">
                 <NuxtLink
-                  class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 w-full items-center !justify-start gap-2 overflow-hidden rounded-lg px-2 !pe-0 text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
+                  class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 w-full items-center justify-start! gap-2 overflow-hidden rounded-lg px-2 pe-0! text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
                   :class="isCollapsed ? 'w-8' : ''"
                   to="/layouts/ai/ui"
                 >
@@ -204,7 +204,7 @@ function closeUpgrade() {
               </div>
               <div class="group relative flex items-center rounded-md">
                 <NuxtLink
-                  class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 w-full items-center !justify-start gap-2 overflow-hidden rounded-lg px-2 !pe-0 text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
+                  class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 w-full items-center justify-start! gap-2 overflow-hidden rounded-lg px-2 pe-0! text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
                   :class="isCollapsed ? 'w-8' : ''"
                   to="/layouts/ai/ui"
                 >
@@ -221,7 +221,7 @@ function closeUpgrade() {
               </div>
               <div class="group relative flex items-center rounded-md">
                 <NuxtLink
-                  class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 w-full items-center !justify-start gap-2 overflow-hidden rounded-lg px-2 !pe-0 text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
+                  class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 w-full items-center justify-start! gap-2 overflow-hidden rounded-lg px-2 pe-0! text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
                   :class="isCollapsed ? 'w-8' : ''"
                   to="/layouts/ai/ui"
                 >
@@ -325,7 +325,7 @@ function closeUpgrade() {
           <div class="flex items-center overflow-hidden p-2 transition-all duration-300">
             <div class="group relative flex items-center rounded-md transition-all duration-300" :class="isCollapsed ? 'w-8' : 'w-full'">
               <NuxtLink
-                class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 items-center !justify-start gap-2 overflow-hidden rounded-lg !pe-0 text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
+                class="group-hover:bg-muted-100 dark:group-hover:bg-muted-800 text-muted-600 dark:text-muted-500 hover:text-muted-900 focus:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 focus-visible:text-muted-900 dark:focus-visible:text-muted-100 peer relative flex h-8 items-center justify-start! gap-2 overflow-hidden rounded-lg pe-0! text-start text-sm font-normal transition-all duration-300 focus-visible:pe-10 group-hover:pe-10"
                 :class="isCollapsed ? 'w-8' : 'w-full px-2'"
                 to="/layouts/ai/ui"
               >
@@ -458,7 +458,7 @@ function closeUpgrade() {
                 as="h1"
                 size="lg"
                 weight="semibold"
-                class="text-muted-900 text-pretty text-center tracking-tighter sm:!text-xl md:!text-3xl dark:text-white"
+                class="text-muted-900 text-pretty text-center tracking-tighter sm:text-xl! md:text-3xl! dark:text-white"
               >
                 What do you want to ship?
               </BaseHeading>
@@ -588,7 +588,7 @@ function closeUpgrade() {
                     <span class="block sm:hidden">Get more messages with Premium.</span>
                     <span class="hidden sm:block">Need more messages? Get higher limits with Premium.</span>
                     <div class="flex items-center gap-1">
-                      <button type="button" class="text-primary-500 inline-flex h-5 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-lg bg-transparent !p-0 px-3 font-sans text-sm font-medium underline-offset-2 outline-none transition-all hover:underline">
+                      <button type="button" class="text-primary-500 inline-flex h-5 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-lg bg-transparent p-0! px-3 font-sans text-sm font-medium underline-offset-2 outline-none transition-all hover:underline">
                         Upgrade Plan
                       </button>
                       <button type="button" @click="closeUpgrade">
@@ -715,7 +715,7 @@ function closeUpgrade() {
     <div
       role="button"
       tabindex="0"
-      class="bg-muted-950/80 fixed start-0 top-0 z-[29] size-full transition-opacity duration-300 lg:!pointer-events-none lg:!opacity-0"
+      class="bg-muted-950/80 fixed start-0 top-0 z-[29] size-full transition-opacity duration-300 lg:pointer-events-none! lg:opacity-0!"
       :class="isMobileOpen ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'"
       @click="isMobileOpen = false"
     />

@@ -503,7 +503,7 @@ function openTaskPanel(id: number, tasks: any) {
             <div class="grid gap-6 sm:grid-cols-3">
               <BaseCard
                 elevated-hover
-                class="hover:!border-primary-500 relative"
+                class="hover:border-primary-500! relative"
               >
                 <NuxtLink to="#">
                   <Icon
@@ -542,7 +542,7 @@ function openTaskPanel(id: number, tasks: any) {
                 v-for="item in data?.project.team"
                 :key="item.id"
                 elevated-hover
-                class="hover:!border-primary-500"
+                class="hover:border-primary-500!"
               >
                 <NuxtLink to="#">
                   <div class="flex flex-col items-center p-5 sm:flex-row">
@@ -600,7 +600,7 @@ function openTaskPanel(id: number, tasks: any) {
                 v-for="item in data?.project.tasks"
                 :key="item.id"
                 elevated-hover
-                class="hover:!border-primary-500 flex cursor-pointer flex-col"
+                class="hover:border-primary-500! flex cursor-pointer flex-col"
                 @click="openTaskPanel(item.id, data?.project?.tasks)"
               >
                 <div class="flex flex-col items-center p-5 sm:flex-row">

@@ -82,7 +82,7 @@ const showStackTrace = ref(false)
       :title="title"
       :subtitle="description"
       image-size="md"
-      class="relative !items-end"
+      class="relative items-end!"
     >
       <template #image>
         <component
@@ -100,7 +100,7 @@ const showStackTrace = ref(false)
         </div>
         <BaseButton
           color="primary"
-          class="!h-12 w-48 items-center gap-2"
+          class="h-12! w-48 items-center gap-2"
           rounded="lg"
           @click="handleError"
         >

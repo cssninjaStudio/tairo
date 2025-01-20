@@ -70,7 +70,7 @@ export default defineComponent({
       :class="[
         inCodeGroup
           ? ''
-          : filename && isSupported ? '[&_.shiki]:pt-8' : '[&_.shiki]:!pe-10',
+          : filename && isSupported ? '[&_.shiki]:pt-8' : '[&_.shiki]:pe-10!',
       ]"
       :lines="false"
     />

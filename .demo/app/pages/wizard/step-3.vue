@@ -142,7 +142,7 @@ const budget = ref('< 5K')
               rounded="lg"
               placeholder="ex: Figma, Github, ..."
               :classes="{
-                input: 'h-12 text-base !ps-12',
+                input: 'h-12 text-base ps-12!',
                 icon: 'h-12 w-12',
               }"
             />
@@ -303,7 +303,7 @@ const budget = ref('< 5K')
           >
             <BaseButtonAction
               rounded="lg"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
+              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>&lt; 5K</span>
             </BaseButtonAction>
@@ -315,7 +315,7 @@ const budget = ref('< 5K')
           >
             <BaseButtonAction
               rounded="lg"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
+              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>&lt; 30K</span>
             </BaseButtonAction>
@@ -327,7 +327,7 @@ const budget = ref('< 5K')
           >
             <BaseButtonAction
               rounded="lg"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
+              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>&lt; 100K</span>
             </BaseButtonAction>
@@ -339,7 +339,7 @@ const budget = ref('< 5K')
           >
             <BaseButtonAction
               rounded="lg"
-              class="peer-checked:!bg-primary-500 peer-checked:!border-primary-500 peer-checked:shadow-primary-500/20 peer-checked:!text-white peer-checked:shadow-xl"
+              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
             >
               <span>100K+</span>
             </BaseButtonAction>

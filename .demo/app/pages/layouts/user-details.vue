@@ -472,7 +472,7 @@ definePageMeta({
               name="Kendra Wilson"
               number="•••• •••• •••• 4728"
               brand="mastercard"
-              class="!mx-0"
+              class="mx-0!"
             />
             <div class="mt-4">
               <DemoLinkArrow to="/layouts/cards" label="Manage your cards" />

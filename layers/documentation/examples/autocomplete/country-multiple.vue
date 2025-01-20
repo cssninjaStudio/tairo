@@ -53,7 +53,7 @@ onNuxtReady(() => {
           removeItem,
         }"
       >
-        <div class="nui-autocomplete-multiple-list-item flex gap-2 !px-2 !py-1">
+        <div class="nui-autocomplete-multiple-list-item flex gap-2 px-2! py-1!">
           <Icon
             :name="item.icon"
             class="w-4"

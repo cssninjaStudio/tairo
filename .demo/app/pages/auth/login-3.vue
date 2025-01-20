@@ -216,7 +216,7 @@ const onSubmit = handleSubmit(async (values) => {
                   :loading="isSubmitting"
                   type="submit"
                   color="primary"
-                  class="!h-11 w-full"
+                  class="h-11! w-full"
                 >
                   Sign in
                 </BaseButton>
@@ -228,7 +228,7 @@ const onSubmit = handleSubmit(async (values) => {
             class="border-muted-200 dark:border-muted-700 my-6 w-full border-t"
           >
 
-          <BaseButton class="!h-11 w-full">
+          <BaseButton class="h-11! w-full">
             <Icon name="logos:google-icon" class="me-1 size-4" />
             <span>Sign In with Google</span>
           </BaseButton>

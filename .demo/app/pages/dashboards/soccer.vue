@@ -219,7 +219,7 @@ const matches = [
               <BaseButton
                 color="primary"
                 rounded="lg"
-                class="!h-12 w-full"
+                class="h-12! w-full"
               >
                 <span>Watch Now</span>
               </BaseButton>

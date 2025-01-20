@@ -88,7 +88,7 @@ definePageMeta({
       <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
         <BaseCard
           rounded="md"
-          class="!bg-primary-800 !border-primary-800 h-full p-8"
+          class="bg-primary-800! border-primary-800! h-full p-8"
         >
           <div
             class="flex flex-col justify-between gap-y-16 sm:flex-row sm:gap-y-0"

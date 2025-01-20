@@ -36,7 +36,7 @@ onBeforeMount(checkPreviousSteps)
         as="h2"
         size="2xl"
         weight="medium"
-        class="md:!3xl text-muted-800 dark:text-white"
+        class="md:3xl! text-muted-800 dark:text-white"
       >
         {{ steps[currentStepId].meta.title }}
       </BaseHeading>

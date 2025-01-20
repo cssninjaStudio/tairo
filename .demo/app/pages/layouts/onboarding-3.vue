@@ -153,7 +153,7 @@ const roles = [
                     to="/dashboards"
                     type="button"
                     rounded="lg"
-                    class="!h-12 w-48"
+                    class="h-12! w-48"
                     color="primary"
                   >
                     Choose Profile

@@ -152,7 +152,7 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
             <BaseCard
               rounded="lg"
               elevated-hover
-              class="group-hover:!border-primary-500 p-5"
+              class="group-hover:border-primary-500! p-5"
             >
               <div class="mb-6 flex gap-2">
                 <BaseAvatar

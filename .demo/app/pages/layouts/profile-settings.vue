@@ -127,7 +127,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -139,7 +139,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="sm"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Company
               </BaseHeading>
@@ -152,7 +152,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -164,7 +164,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="sm"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Team
               </BaseHeading>
@@ -177,7 +177,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -189,7 +189,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="sm"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Projects
               </BaseHeading>
@@ -202,7 +202,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -214,7 +214,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="xs"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Permissions
               </BaseHeading>
@@ -227,7 +227,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -239,7 +239,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="xs"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Documents
               </BaseHeading>
@@ -252,7 +252,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -264,7 +264,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="xs"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Upload
               </BaseHeading>
@@ -277,7 +277,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -289,7 +289,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="xs"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Billing
               </BaseHeading>
@@ -302,7 +302,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -314,7 +314,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="xs"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Messaging
               </BaseHeading>
@@ -327,7 +327,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -339,7 +339,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="xs"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Security
               </BaseHeading>
@@ -352,7 +352,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         <BaseCard
           rounded="lg"
           elevated-hover
-          class="hover:!border-primary-500 group border-2"
+          class="hover:border-primary-500! group border-2"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
@@ -364,7 +364,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 tag="h3"
                 size="xs"
                 weight="semibold"
-                class="mt-2 !text-[0.65rem] uppercase"
+                class="mt-2 text-[0.65rem]! uppercase"
               >
                 Preferences
               </BaseHeading>

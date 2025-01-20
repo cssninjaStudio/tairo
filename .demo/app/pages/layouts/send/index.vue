@@ -36,7 +36,7 @@ onBeforeMount(checkPreviousSteps)
         as="h2"
         size="2xl"
         weight="medium"
-        class="md:!3xl text-muted-800 dark:text-white"
+        class="md:3xl! text-muted-800 dark:text-white"
       >
         {{ steps[currentStepId].meta.title }}
       </BaseHeading>
@@ -56,8 +56,8 @@ onBeforeMount(checkPreviousSteps)
         icon="ph:user-duotone"
         placeholder="Ex: John Doe"
         :classes="{
-          input: '!p-4 !ps-12 !h-12',
-          icon: '!h-12 !w-12',
+          input: 'p-4! ps-12! h-12!',
+          icon: 'h-12! w-12!',
         }"
       />
 

@@ -72,7 +72,7 @@ function setAccount(account: any) {
           as="h2"
           size="2xl"
           weight="medium"
-          class="md:!3xl text-muted-800 dark:text-white"
+          class="md:3xl! text-muted-800 dark:text-white"
         >
           Bank transfer
         </BaseHeading>
@@ -98,8 +98,8 @@ function setAccount(account: any) {
             placeholder="0.00"
             :classes="{
               input:
-                '!ps-14 !py-2 !h-14 !text-4xl !leading-5 !border-t-0 !border-l-0  !border-r-0 !border-b-2 focus:!border-primary-500 dark:!bg-muted-900 dark:focus:!border-primary-500',
-              icon: '!h-14 !w-14',
+                'ps-14! py-2! h-14! text-4xl! leading-5! border-t-0! border-l-0!  border-r-0! border-b-2! focus:border-primary-500! dark:bg-muted-900! dark:focus:border-primary-500!',
+              icon: 'h-14! w-14!',
             }"
           />
         </div>
@@ -157,13 +157,13 @@ function setAccount(account: any) {
             Transfer to:
           </BaseHeading>
 
-          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
             <template #button="{ open }">
               <BaseButton
                 size="xl"
                 rounded="lg"
-                class="!h-auto w-full !p-4"
-                :class="[errors.fields.account ? '!border-danger-500' : '']"
+                class="h-auto! w-full p-4!"
+                :class="[errors.fields.account ? 'border-danger-500!' : '']"
               >
                 <span class="flex w-full items-center gap-3 text-start">
                   <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
@@ -226,7 +226,7 @@ function setAccount(account: any) {
           as="h2"
           size="2xl"
           weight="medium"
-          class="md:!3xl text-muted-800 dark:text-white"
+          class="md:3xl! text-muted-800 dark:text-white"
         >
           Payment link
         </BaseHeading>
@@ -252,8 +252,8 @@ function setAccount(account: any) {
             placeholder="0.00"
             :classes="{
               input:
-                '!ps-14 !py-2 !h-14 !text-4xl !leading-5 !border-t-0 !border-l-0  !border-r-0 !border-b-2 focus:!border-primary-500 dark:!bg-muted-900 dark:focus:!border-primary-500',
-              icon: '!h-14 !w-14',
+                'ps-14! py-2! h-14! text-4xl! leading-5! border-t-0! border-l-0!  border-r-0! border-b-2! focus:border-primary-500! dark:bg-muted-900! dark:focus:border-primary-500!',
+              icon: 'h-14! w-14!',
             }"
           />
         </div>
@@ -276,8 +276,8 @@ function setAccount(account: any) {
               icon="lucide:mail"
               placeholder="Ex: johndoe@gmail.com"
               :classes="{
-                input: '!ps-12 !py-2 !h-12',
-                icon: '!h-12 !w-12',
+                input: 'ps-12! py-2! h-12!',
+                icon: 'h-12! w-12!',
               }"
             />
           </div>
@@ -294,13 +294,13 @@ function setAccount(account: any) {
             Transfer to:
           </BaseHeading>
 
-          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
             <template #button="{ open }">
               <BaseButton
                 size="xl"
                 rounded="lg"
-                class="!h-auto w-full !p-4"
-                :class="[errors.fields.account ? '!border-danger-500' : '']"
+                class="h-auto! w-full p-4!"
+                :class="[errors.fields.account ? 'border-danger-500!' : '']"
               >
                 <span class="flex w-full items-center gap-3 text-start">
                   <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
@@ -365,7 +365,7 @@ function setAccount(account: any) {
               as="h2"
               size="2xl"
               weight="medium"
-              class="md:!3xl text-muted-800 dark:text-white"
+              class="md:3xl! text-muted-800 dark:text-white"
             >
               Wire details
             </BaseHeading>
@@ -386,14 +386,14 @@ function setAccount(account: any) {
         </div>
         <!-- Account -->
 
-        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
           <template #button="{ open }">
             <BaseButton
               v-focus
               size="xl"
               rounded="lg"
-              class="!h-auto w-full !p-4"
-              :class="[errors.fields.account ? '!border-danger-500' : '']"
+              class="h-auto! w-full p-4!"
+              :class="[errors.fields.account ? 'border-danger-500!' : '']"
             >
               <span class="flex w-full items-center gap-3 text-start">
                 <TairoLogo v-if="request.account" class="text-primary-500 size-8" />

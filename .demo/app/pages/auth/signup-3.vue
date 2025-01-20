@@ -243,7 +243,7 @@ const onSubmit = handleSubmit(async (values) => {
                     placeholder="ex: maya@cssninja.io"
                     icon="lucide:mail"
                     :classes="{
-                      input: 'h-12 !ps-12',
+                      input: 'h-12 ps-12!',
                       icon: 'h-12 w-12',
                     }"
                     @update:model-value="handleChange"
@@ -265,7 +265,7 @@ const onSubmit = handleSubmit(async (values) => {
                     placeholder="••••••••••"
                     icon="lucide:lock"
                     :classes="{
-                      input: 'h-12 !ps-12',
+                      input: 'h-12 ps-12!',
                       icon: 'h-12 w-12',
                     }"
                     @update:model-value="handleChange"
@@ -286,7 +286,7 @@ const onSubmit = handleSubmit(async (values) => {
                     placeholder="••••••••••"
                     icon="lucide:lock"
                     :classes="{
-                      input: 'h-12 !ps-12',
+                      input: 'h-12 ps-12!',
                       icon: 'h-12 w-12',
                     }"
                     @update:model-value="handleChange"
@@ -328,7 +328,7 @@ const onSubmit = handleSubmit(async (values) => {
                   :loading="isSubmitting"
                   type="submit"
                   color="primary"
-                  class="!h-12 w-full"
+                  class="h-12! w-full"
                 >
                   Sign Up
                 </BaseButton>

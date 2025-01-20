@@ -632,8 +632,8 @@ async function submitMessage() {
           icon="lucide:search"
           placeholder="Search messages..."
           :classes="{
-            input: '!h-11 !ps-11',
-            icon: '!h-11 !w-11',
+            input: 'h-11! ps-11!',
+            icon: 'h-11! w-11!',
           }"
         />
       </div>
@@ -1040,7 +1040,7 @@ async function submitMessage() {
                     <span>Send</span>
                     <Icon
                       name="ph:paper-plane-right-duotone"
-                      class="!hidden size-5 sm:!block"
+                      class="hidden! size-5 sm:block!"
                     />
                   </BaseButton>
                 </div>

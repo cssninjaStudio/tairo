@@ -155,7 +155,7 @@ const onSubmit = handleSubmit(async (_values) => {
                     :loading="isSubmitting"
                     type="submit"
                     color="primary"
-                    class="!h-12 w-full"
+                    class="h-12! w-full"
                   >
                     Recover Password
                   </BaseButton>

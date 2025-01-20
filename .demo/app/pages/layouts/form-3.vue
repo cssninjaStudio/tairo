@@ -363,7 +363,7 @@ const termsApproval = ref(false)
         <div class="flex flex-col px-8 pt-4">
           <BaseButton
             color="primary"
-            class="!h-12 w-full"
+            class="h-12! w-full"
           >
             Start Subscription
           </BaseButton>

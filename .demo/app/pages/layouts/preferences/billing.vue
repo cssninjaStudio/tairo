@@ -163,7 +163,7 @@ const transactions = [
                         Expiry {{ card.expiry }}
                       </BaseParagraph>
 
-                      <div class="!mt-4 flex items-center gap-6">
+                      <div class="mt-4! flex items-center gap-6">
                         <BaseParagraph
                           size="sm"
                           weight="medium"

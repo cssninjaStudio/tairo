@@ -347,7 +347,7 @@ const selectedEventFeatures = computed({
             </span>
           </div>
         </div>
-        <div class="!mt-0 flex">
+        <div class="mt-0! flex">
           <!-- hours grid -->
           <div class="w-10">
             <div class="h-16" />
@@ -402,7 +402,7 @@ const selectedEventFeatures = computed({
                 >
                   <Icon
                     name="lucide:chevron-left"
-                    class="!top-auto !h-4 !w-4"
+                    class="top-auto! h-4! w-4!"
                   />
                 </BaseButtonIcon>
               </template>
@@ -415,7 +415,7 @@ const selectedEventFeatures = computed({
                 >
                   <Icon
                     name="lucide:chevron-right"
-                    class="!top-auto !h-4 !w-4"
+                    class="top-auto! h-4! w-4!"
                   />
                 </BaseButtonIcon>
               </template>
@@ -910,7 +910,7 @@ const selectedEventFeatures = computed({
 
             <!-- Draggable pending events cards -->
             <Container
-              class="flex !min-h-[300px] flex-col"
+              class="flex min-h-[300px]! flex-col"
               tag="div"
               orientation="vertical"
               group-name="unscheduled"
@@ -974,7 +974,7 @@ const selectedEventFeatures = computed({
                     <BaseParagraph
                       size="xs"
                       lead="tight"
-                      class="text-muted-400 mx-auto max-w-[200px] !font-sans"
+                      class="text-muted-400 mx-auto max-w-[200px] font-sans!"
                     >
                       <span>You've planned all your events for this week.</span>
                     </BaseParagraph>

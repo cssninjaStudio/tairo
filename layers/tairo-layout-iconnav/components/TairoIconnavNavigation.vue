@@ -65,7 +65,7 @@ const router = useRouter()
               class="group flex flex-col"
               :class="
                 selectedMenuItem?.activePath === item.activePath
-                  && '[&>div]:!bg-primary-500/10 [&>div]:!text-primary-500 dark:[&>div]:!bg-primary-500/20 [&>p]:!text-primary-500'
+                  && '[&>div]:bg-primary-500/10! [&>div]:text-primary-500! dark:[&>div]:bg-primary-500/20! [&>p]:text-primary-500!'
               "
               @click="
                 () => {
@@ -87,7 +87,7 @@ const router = useRouter()
               v-else-if="item.to"
               class="group flex flex-col"
               :to="item.to"
-              exact-active-class="[&>div]:!bg-primary-500/10 dark:[&>div]:!bg-primary-500/20 [&>div]:!text-primary-500 [&>p]:!text-primary-500"
+              exact-active-class="[&>div]:bg-primary-500/10! dark:[&>div]:bg-primary-500/20! [&>div]:text-primary-500! [&>p]:text-primary-500!"
             >
               <div
                 class="text-muted-400 group-hover:bg-muted-100 group-hover:text-muted-600 dark:group-hover:bg-muted-800 dark:group-hover:text-muted-300 relative mx-auto flex size-11 items-center justify-center rounded-xl transition-colors duration-300"
@@ -137,7 +137,7 @@ const router = useRouter()
           class="group flex flex-col"
           :class="
             selectedMenuItem?.activePath === item.activePath
-              && '[&>div]:!bg-primary-500/10 [&>div]:!text-primary-500 [&>p]:!text-primary-500'
+              && '[&>div]:bg-primary-500/10! [&>div]:text-primary-500! [&>p]:text-primary-500!'
           "
           @click="
             () => {
@@ -155,7 +155,7 @@ const router = useRouter()
           v-else-if="item.to"
           class="group flex flex-col"
           :to="item.to"
-          exact-active-class="[&>div]:!bg-primary-500/10 [&>div]:!text-primary-500 [&>p]:!text-primary-500"
+          exact-active-class="[&>div]:bg-primary-500/10! [&>div]:text-primary-500! [&>p]:text-primary-500!"
         >
           <div
             class="text-muted-400 group-hover:bg-muted-100 group-hover:text-muted-600 dark:group-hover:bg-muted-700 dark:group-hover:text-muted-300 relative mx-auto flex size-12 items-center justify-center rounded-xl transition-colors duration-300"
@@ -195,7 +195,7 @@ const router = useRouter()
           :key="index"
           :to="item.to"
           class="text-muted-400 hover:text-muted-500 dark:text-muted-600 dark:hover:text-muted-400 ltablet:pt-5 flex items-center justify-center border-b-2 border-transparent p-3 text-center transition-colors duration-300 lg:pt-5"
-          exact-active-class="!border-primary-500 !text-muted-800 dark:!text-muted-100"
+          exact-active-class="border-primary-500! text-muted-800! dark:text-muted-100!"
         >
           <BaseText size="sm">
             {{ item.name }}

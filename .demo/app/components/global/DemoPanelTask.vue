@@ -154,7 +154,7 @@ const commentArea = ref('')
                 <BaseParagraph
                   size="xs"
                   lead="tight"
-                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] !font-sans"
+                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] font-sans!"
                 >
                   <span>There is no checklist to show in here for now.</span>
                 </BaseParagraph>
@@ -173,7 +173,7 @@ const commentArea = ref('')
                     color="primary"
                     :label="item.text"
                     :classes="{
-                      wrapper: '!items-start max-w-[240px]',
+                      wrapper: 'items-start! max-w-[240px]',
                       label:
                         'text-[0.85rem] text-muted-500 dark:text-muted-300 leading-snug',
                     }"
@@ -202,7 +202,7 @@ const commentArea = ref('')
                 <BaseParagraph
                   size="xs"
                   lead="tight"
-                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] !font-sans"
+                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] font-sans!"
                 >
                   <span>There are no attached files to show in here for now.</span>
                 </BaseParagraph>
@@ -267,7 +267,7 @@ const commentArea = ref('')
                 <BaseParagraph
                   size="xs"
                   lead="tight"
-                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] !font-sans"
+                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] font-sans!"
                 >
                   <span>There are no comments to show in here for now.</span>
                 </BaseParagraph>

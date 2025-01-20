@@ -204,7 +204,7 @@ function handleClipboard() {
                     <BaseButton
                       v-if="isSupported"
                       rounded="lg"
-                      class="!h-12 w-full"
+                      class="h-12! w-full"
                       @click="handleClipboard"
                     >
                       <Icon name="ph:cards-duotone" class="size-5" />
@@ -221,7 +221,7 @@ function handleClipboard() {
                     <BaseButton
                       color="primary"
                       rounded="lg"
-                      class="!h-12 w-full"
+                      class="h-12! w-full"
                       @click="generatePassphrase()"
                     >
                       <Icon name="ph:arrows-clockwise" class="size-5" />
@@ -314,7 +314,7 @@ function handleClipboard() {
                     <BaseButton
                       v-if="isSupported"
                       rounded="lg"
-                      class="!h-12 w-full"
+                      class="h-12! w-full"
                       @click="handleClipboard"
                     >
                       <Icon name="ph:cards-duotone" class="size-5" />
@@ -331,7 +331,7 @@ function handleClipboard() {
                     <BaseButton
                       color="primary"
                       rounded="lg"
-                      class="!h-12 w-full"
+                      class="h-12! w-full"
                       :disabled="!hasChars"
                       @click="generatePassword()"
                     >

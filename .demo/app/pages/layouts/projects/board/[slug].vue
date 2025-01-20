@@ -335,7 +335,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                 <BaseParagraph
                   size="xs"
                   lead="tight"
-                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] !font-sans"
+                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] font-sans!"
                 >
                   <span>There are no pending tasks to show in here for now.</span>
                 </BaseParagraph>

@@ -264,7 +264,7 @@ const onSubmit = handleSubmit(async (_values) => {
           type="submit"
           rounded="lg"
           color="primary"
-          class="!h-11 w-full"
+          class="h-11! w-full"
         >
           Create Account
         </BaseButton>

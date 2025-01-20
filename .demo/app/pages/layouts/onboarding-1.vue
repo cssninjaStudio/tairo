@@ -172,7 +172,7 @@ function focusField(n: any) {
                   >
                     <BaseCard
                       rounded="lg"
-                      class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
+                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
                     >
                       <div class="flex flex-col text-center">
                         <img
@@ -210,7 +210,7 @@ function focusField(n: any) {
                   >
                     <BaseCard
                       rounded="lg"
-                      class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
+                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
                     >
                       <div class="flex flex-col text-center">
                         <img
@@ -248,7 +248,7 @@ function focusField(n: any) {
                   >
                     <BaseCard
                       rounded="lg"
-                      class="peer-checked:!border-primary-500 relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:!opacity-100"
+                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
                     >
                       <div class="flex flex-col text-center">
                         <img
@@ -290,7 +290,7 @@ function focusField(n: any) {
                   <BaseButton
                     type="button"
                     rounded="lg"
-                    class="!h-12 w-48"
+                    class="h-12! w-48"
                     color="primary"
                     :loading="loading"
                     @click="goToStep(2)"
@@ -361,8 +361,8 @@ function focusField(n: any) {
               placeholder="Ex: johndoe@gmail.com"
               :classes="{
                 wrapper: 'w-full',
-                input: '!h-12 !ps-12',
-                icon: '!h-12 !w-12',
+                input: 'h-12! ps-12!',
+                icon: 'h-12! w-12!',
               }"
             />
             <BaseInput
@@ -373,8 +373,8 @@ function focusField(n: any) {
               placeholder="Ex: +15554815659"
               :classes="{
                 wrapper: 'w-full',
-                input: '!h-12 !ps-12',
-                icon: '!h-12 !w-12',
+                input: 'h-12! ps-12!',
+                icon: 'h-12! w-12!',
               }"
             />
             <div v-else-if="twoFaMode === 'app_id'" class="space-y-4">
@@ -403,8 +403,8 @@ function focusField(n: any) {
                 placeholder="Ex: efcdwdeg16jei85"
                 :classes="{
                   wrapper: 'w-full',
-                  input: '!h-12 !ps-12',
-                  icon: '!h-12 !w-12',
+                  input: 'h-12! ps-12!',
+                  icon: 'h-12! w-12!',
                 }"
               />
             </div>
@@ -413,7 +413,7 @@ function focusField(n: any) {
             <BaseButton
               type="button"
               rounded="lg"
-              class="!h-12 w-48"
+              class="h-12! w-48"
               color="primary"
               :loading="loading"
               @click="goToStep(3)"
@@ -508,7 +508,7 @@ function focusField(n: any) {
                 <BaseButton
                   to="/dashboards"
                   rounded="lg"
-                  class="!h-12"
+                  class="h-12!"
                   :color="validatePin ? 'primary' : 'default'"
                   :disabled="!validatePin"
                 >

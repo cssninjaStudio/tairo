@@ -367,7 +367,7 @@ function setAccount(account: any) {
                 type="submit"
                 rounded="md"
                 color="primary"
-                class="!h-12 w-full"
+                class="h-12! w-full"
               >
                 Send Money
               </BaseButton>

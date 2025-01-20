@@ -675,13 +675,13 @@ const currentRatingText = computed(() => {
               <div
                 class="-mt-4 inline-flex w-full items-center justify-end gap-2 sm:w-auto"
               >
-                <BaseButton class="!h-12 w-full sm:w-40">
+                <BaseButton class="h-12! w-full sm:w-40">
                   Cancel
                 </BaseButton>
                 <BaseButton
                   type="submit"
                   color="primary"
-                  class="!h-12 w-full sm:w-40"
+                  class="h-12! w-full sm:w-40"
                 >
                   Submit
                 </BaseButton>

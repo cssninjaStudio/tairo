@@ -123,7 +123,7 @@ async function loadDemo() {
         <BaseCheckbox
           v-model="forceDark"
           :classes="{
-            label: '!text-xs mt-1',
+            label: 'text-xs! mt-1',
             wrapper:
               'dark:hidden scale-90 gap-2 items-center uppercase opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex-row-reverse',
           }"

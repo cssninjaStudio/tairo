@@ -41,7 +41,7 @@ definePageMeta({
                 tag="h3"
                 size="xs"
                 weight="medium"
-                class="text-muted-400 mb-2 !text-[0.65rem] uppercase"
+                class="text-muted-400 mb-2 text-[0.65rem]! uppercase"
               >
                 Message from Kendra
               </BaseHeading>

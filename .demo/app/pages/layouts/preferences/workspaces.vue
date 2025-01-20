@@ -130,7 +130,7 @@ const workspaces = [
                 <div class="ms-auto flex items-center gap-2">
                   <BaseButton
                     v-if="selectedWorkspace === index"
-                    class="!text-primary-500 font-medium"
+                    class="text-primary-500! font-medium"
                     rounded="md"
                     size="sm"
                   >
@@ -230,7 +230,7 @@ const workspaces = [
 
                 <div class="ms-auto flex items-center gap-2">
                   <BaseButton
-                    class="!text-primary-500 font-medium"
+                    class="text-primary-500! font-medium"
                     rounded="md"
                     size="sm"
                   >

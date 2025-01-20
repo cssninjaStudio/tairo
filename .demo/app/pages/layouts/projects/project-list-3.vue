@@ -151,7 +151,7 @@ const { data, pending, error, refresh } = await useFetch(
                   :key="index"
                   rounded="lg"
                   elevated-hover
-                  class="hover:!border-primary-500"
+                  class="hover:border-primary-500!"
                 >
                   <NuxtLink
                     class="group"

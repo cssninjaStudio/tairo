@@ -22,7 +22,7 @@
                 <BaseButton
                   to="/documentation"
                   rounded="lg"
-                  class="!h-11"
+                  class="h-11!"
                 >
                   Open Documentation
                 </BaseButton>

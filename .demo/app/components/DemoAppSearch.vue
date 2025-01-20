@@ -114,7 +114,7 @@ const metaKey = useMetaKey()
   <div>
     <TairoModal
       :classes="{
-        wrapper: '!items-start pt-20',
+        wrapper: 'items-start! pt-20',
         dialog: 'p-3 rounded-xl',
       }"
       :open="isOpen"

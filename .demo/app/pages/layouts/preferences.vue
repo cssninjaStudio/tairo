@@ -43,35 +43,35 @@ definePageMeta({
             <NuxtLink
               to="/layouts/preferences"
               class="text-muted-400 hover:text-muted-800 dark:text-muted-500 dark:hover:text-muted-100 hover:border-muted-300 dark:hover:border-muted-700 whitespace-nowrap border-b-2 border-transparent py-4 text-sm font-medium transition-all duration-200"
-              exact-active-class="!border-primary-500 !text-primary-500"
+              exact-active-class="border-primary-500! text-primary-500!"
             >
               Profile
             </NuxtLink>
             <NuxtLink
               to="/layouts/preferences/workspaces"
               class="text-muted-400 hover:text-muted-800 dark:text-muted-500 dark:hover:text-muted-100 hover:border-muted-300 dark:hover:border-muted-700 whitespace-nowrap border-b-2 border-transparent py-4 text-sm font-medium transition-all duration-200"
-              exact-active-class="!border-primary-500 !text-primary-500"
+              exact-active-class="border-primary-500! text-primary-500!"
             >
               Workspaces
             </NuxtLink>
             <NuxtLink
               to="/layouts/preferences/wallet"
               class="text-muted-400 hover:text-muted-800 dark:text-muted-500 dark:hover:text-muted-100 hover:border-muted-300 dark:hover:border-muted-700 whitespace-nowrap border-b-2 border-transparent py-4 text-sm font-medium transition-all duration-200"
-              exact-active-class="!border-primary-500 !text-primary-500"
+              exact-active-class="border-primary-500! text-primary-500!"
             >
               Wallet
             </NuxtLink>
             <NuxtLink
               to="/layouts/preferences/integrations"
               class="text-muted-400 hover:text-muted-800 dark:text-muted-500 dark:hover:text-muted-100 hover:border-muted-300 dark:hover:border-muted-700 whitespace-nowrap border-b-2 border-transparent py-4 text-sm font-medium transition-all duration-200"
-              exact-active-class="!border-primary-500 !text-primary-500"
+              exact-active-class="border-primary-500! text-primary-500!"
             >
               Integrations
             </NuxtLink>
             <NuxtLink
               to="/layouts/preferences/billing"
               class="text-muted-400 hover:text-muted-800 dark:text-muted-500 dark:hover:text-muted-100 hover:border-muted-300 dark:hover:border-muted-700 whitespace-nowrap border-b-2 border-transparent py-4 text-sm font-medium transition-all duration-200"
-              exact-active-class="!border-primary-500 !text-primary-500"
+              exact-active-class="border-primary-500! text-primary-500!"
             >
               Billing
             </NuxtLink>

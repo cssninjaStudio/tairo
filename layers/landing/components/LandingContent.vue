@@ -191,7 +191,7 @@
             color="primary"
             rounded="lg"
             shadow="hover"
-            class="!h-11 w-48"
+            class="h-11! w-48"
             to="https://go.cssninja.io/buy-tairo"
           >
             <Icon name="cib:envato" class="size-4" />

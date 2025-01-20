@@ -146,7 +146,7 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             rounded="sm"
-            class="text-muted-400/50 peer-checked:!border-success-500 peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 peer-checked:border-success-500! peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:opacity-100!"
           >
             <div
               class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
@@ -178,7 +178,7 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             rounded="sm"
-            class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-yellow-400 peer-checked:text-yellow-400 peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 group relative p-6 text-center peer-checked:border-yellow-400! peer-checked:text-yellow-400 peer-checked:[&_.child]:opacity-100!"
           >
             <div
               class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
@@ -210,7 +210,7 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             rounded="sm"
-            class="text-muted-400/50 group relative p-6 text-center peer-checked:!border-indigo-500 peer-checked:text-indigo-500 peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 group relative p-6 text-center peer-checked:border-indigo-500! peer-checked:text-indigo-500 peer-checked:[&_.child]:opacity-100!"
           >
             <div
               class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
@@ -242,7 +242,7 @@ const billingCycles = ref('monthly')
         >
           <BaseCard
             rounded="sm"
-            class="text-muted-400/50 peer-checked:!border-primary-500 peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:!opacity-100"
+            class="text-muted-400/50 peer-checked:border-primary-500! peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:opacity-100!"
           >
             <div
               class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"

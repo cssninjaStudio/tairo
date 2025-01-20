@@ -29,7 +29,7 @@ const value = ref('value_1')
           >
             <BaseCard
               rounded="lg"
-              class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
+              class="peer-checked:border-success-500! peer-checked:bg-success-500/10! relative border-2 p-5 peer-checked:[&_.child]:opacity-100!"
             >
               <div class="flex flex-col">
                 <h4
@@ -64,7 +64,7 @@ const value = ref('value_1')
           >
             <BaseCard
               rounded="lg"
-              class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
+              class="peer-checked:border-success-500! peer-checked:bg-success-500/10! relative border-2 p-5 peer-checked:[&_.child]:opacity-100!"
             >
               <div class="flex flex-col">
                 <h4
@@ -99,7 +99,7 @@ const value = ref('value_1')
           >
             <BaseCard
               rounded="lg"
-              class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
+              class="peer-checked:border-success-500! peer-checked:bg-success-500/10! relative border-2 p-5 peer-checked:[&_.child]:opacity-100!"
             >
               <div class="flex flex-col">
                 <h4
@@ -134,7 +134,7 @@ const value = ref('value_1')
           >
             <BaseCard
               rounded="lg"
-              class="peer-checked:!border-success-500 peer-checked:!bg-success-500/10 relative border-2 p-5 peer-checked:[&_.child]:!opacity-100"
+              class="peer-checked:border-success-500! peer-checked:bg-success-500/10! relative border-2 p-5 peer-checked:[&_.child]:opacity-100!"
             >
               <div class="flex flex-col">
                 <h4

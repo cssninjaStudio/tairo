@@ -91,7 +91,7 @@ watch(selectedStyle, (value) => {
             <BaseCard
               v-if="selectedStyle === 'smart'"
               rounded="lg"
-              class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
+              class="border-primary-600! relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
@@ -107,7 +107,7 @@ watch(selectedStyle, (value) => {
                 size="xl"
                 src="/img/avatars/24.svg"
                 badge-src="/img/stacks/html5.svg"
-                class="mx-auto !flex !transition-all !duration-200"
+                class="mx-auto flex! transition-all! duration-200!"
                 rounded="full"
               />
               <div class="mt-3 text-center">
@@ -144,7 +144,7 @@ watch(selectedStyle, (value) => {
               </div>
               <div>
                 <BaseButton
-                  class="!h-12 w-full"
+                  class="h-12! w-full"
                   rounded="lg"
                   color="primary"
                   variant="pastel"
@@ -163,7 +163,7 @@ watch(selectedStyle, (value) => {
             <BaseCard
               v-if="selectedStyle === 'creative'"
               rounded="lg"
-              class="!border-primary-600 relative z-20 mx-auto max-w-[340px] overflow-hidden p-6"
+              class="border-primary-600! relative z-20 mx-auto max-w-[340px] overflow-hidden p-6"
             >
               <div
                 class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 size-72 rounded-full transition-transform delay-150 duration-500"
@@ -191,7 +191,7 @@ watch(selectedStyle, (value) => {
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/10.svg"
-                class="nui-mask nui-mask-hexed mx-auto !flex !transition-all !duration-200"
+                class="nui-mask nui-mask-hexed mx-auto flex! transition-all! duration-200!"
                 rounded="none"
               />
               <div class="mt-3 text-center">
@@ -227,13 +227,13 @@ watch(selectedStyle, (value) => {
                 />
               </div>
               <div class="flex gap-2">
-                <BaseButton class="!h-11 w-full" rounded="full">
+                <BaseButton class="h-11! w-full" rounded="full">
                   <Icon name="lucide:bookmark" class="size-4" />
                   <span>Save</span>
                 </BaseButton>
 
                 <BaseButton
-                  class="!h-11 w-full"
+                  class="h-11! w-full"
                   rounded="full"
                   color="primary"
                 >
@@ -251,7 +251,7 @@ watch(selectedStyle, (value) => {
             <BaseCard
               v-if="selectedStyle === 'corporate'"
               rounded="sm"
-              class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
+              class="border-primary-600! relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
@@ -267,7 +267,7 @@ watch(selectedStyle, (value) => {
                 size="xl"
                 src="/img/avatars/25.svg"
                 badge-src="/img/stacks/illustrator.svg"
-                class="mx-auto !flex !transition-all !duration-200"
+                class="mx-auto flex! transition-all! duration-200!"
                 rounded="lg"
               />
               <div class="mt-3 text-center">
@@ -308,7 +308,7 @@ watch(selectedStyle, (value) => {
               </div>
               <div>
                 <BaseButton
-                  class="!h-11 w-full"
+                  class="h-11! w-full"
                   rounded="sm"
                   color="primary"
                 >
@@ -320,7 +320,7 @@ watch(selectedStyle, (value) => {
             <BaseCard
               v-if="selectedStyle === 'classic'"
               rounded="none"
-              class="!border-primary-600 relative z-20 mx-auto max-w-[340px] p-6"
+              class="border-primary-600! relative z-20 mx-auto max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
@@ -335,7 +335,7 @@ watch(selectedStyle, (value) => {
               <BaseAvatar
                 size="xl"
                 src="/img/avatars/8.svg"
-                class="mx-auto !flex !transition-all !duration-200"
+                class="mx-auto flex! transition-all! duration-200!"
                 rounded="none"
               />
               <div class="mt-3 text-center">
@@ -379,7 +379,7 @@ watch(selectedStyle, (value) => {
               </div>
               <div>
                 <BaseButton
-                  class="!h-11 w-full"
+                  class="h-11! w-full"
                   rounded="none"
                   color="primary"
                   variant="outline"

@@ -36,7 +36,7 @@ const recentItems = [
 </script>
 
 <template>
-  <li tag="li" class="!overflow-visible">
+  <li tag="li" class="overflow-visible!">
     <Disclosure v-slot="{ open }" default-open>
       <div class="flex">
         <DisclosureButton
@@ -63,7 +63,7 @@ const recentItems = [
           <li
             v-for="item in recentItems"
             :key="item.name"
-            class="!overflow-visible"
+            class="overflow-visible!"
           >
             <div class="relative flex">
               <NuxtLink

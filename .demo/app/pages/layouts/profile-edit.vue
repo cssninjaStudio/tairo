@@ -44,7 +44,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit"
-                exact-active-class="!text-primary-500 !bg-primary-500/10"
+                exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
                 <Icon name="ph:user-duotone" class="size-4" />
@@ -54,7 +54,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit/experience"
-                exact-active-class="!text-primary-500 !bg-primary-500/10"
+                exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
                 <Icon name="ph:buildings-duotone" class="size-4" />
@@ -64,7 +64,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit/skills"
-                exact-active-class="!text-primary-500 !bg-primary-500/10"
+                exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
                 <Icon name="ph:sketch-logo-duotone" class="size-4" />
@@ -74,7 +74,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <li>
               <NuxtLink
                 to="/layouts/profile-edit/settings"
-                exact-active-class="!text-primary-500 !bg-primary-500/10"
+                exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
                 <Icon name="ph:gear-six-duotone" class="size-4" />

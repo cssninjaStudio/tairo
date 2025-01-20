@@ -153,7 +153,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     <BaseParagraph
                       lead="none"
                       weight="semibold"
-                      class="text-muted-400 !text-[0.65rem] uppercase"
+                      class="text-muted-400 text-[0.65rem]! uppercase"
                     >
                       <span>Projects</span>
                     </BaseParagraph>
@@ -170,7 +170,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     <BaseParagraph
                       lead="none"
                       weight="semibold"
-                      class="text-muted-400 !text-[0.65rem] uppercase"
+                      class="text-muted-400 text-[0.65rem]! uppercase"
                     >
                       <span>Replies</span>
                     </BaseParagraph>
@@ -187,7 +187,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     <BaseParagraph
                       lead="none"
                       weight="semibold"
-                      class="text-muted-400 !text-[0.65rem] uppercase"
+                      class="text-muted-400 text-[0.65rem]! uppercase"
                     >
                       <span>Posts</span>
                     </BaseParagraph>

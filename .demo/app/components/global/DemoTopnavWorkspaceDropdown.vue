@@ -85,7 +85,7 @@ function setWorkspace(workspace: any) {
                 icon="lucide:search"
                 placeholder="Find a team..."
                 :classes="{
-                  input: 'border-none !outline-none !bg-transparent',
+                  input: 'border-none outline-none! bg-transparent!',
                 }"
               />
               <button
@@ -143,7 +143,7 @@ function setWorkspace(workspace: any) {
                 icon="lucide:search"
                 placeholder="Find project..."
                 :classes="{
-                  input: 'border-none !outline-none !bg-transparent',
+                  input: 'border-none outline-none! bg-transparent!',
                 }"
               />
               <button

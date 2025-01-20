@@ -60,8 +60,8 @@ const filteredResults = computed(() => {
         rounded="full"
         :classes="{
           wrapper: 'w-full',
-          input: 'h-12 !ps-12',
-          icon: 'h-12 w-12 [& > svg]:!w-7 [& > svg]:!h-7',
+          input: 'h-12 ps-12!',
+          icon: 'h-12 w-12 [& > svg]:w-7! [& > svg]:h-7!',
         }"
       />
     </div>

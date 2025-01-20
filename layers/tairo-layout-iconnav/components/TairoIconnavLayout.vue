@@ -53,7 +53,7 @@ const mainClass = computed(() => {
   ]
 
   if (props.display === 'horizontal-scroll') {
-    list.push('!pe-0 xl:!pe-0')
+    list.push('pe-0! xl:pe-0!')
   }
 
   return list

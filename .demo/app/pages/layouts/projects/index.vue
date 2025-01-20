@@ -110,7 +110,7 @@ const { data, pending, error, refresh } = await useFetch(
                   <BaseCard
                     rounded="sm"
                     elevated-hover
-                    class="group-hover:!border-primary-500 p-5"
+                    class="group-hover:border-primary-500! p-5"
                   >
                     <div class="mb-6 flex gap-2">
                       <BaseAvatar
@@ -207,7 +207,7 @@ const { data, pending, error, refresh } = await useFetch(
                   :key="index"
                   rounded="sm"
                   elevated-hover
-                  class="hover:!border-primary-500"
+                  class="hover:border-primary-500!"
                 >
                   <NuxtLink
                     class="group"

@@ -91,7 +91,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
               <Icon
                 v-if="slide.icon"
                 :name="slide.icon"
-                class="mx-auto mb-2 !block size-7"
+                class="mx-auto mb-2 block! size-7"
               />
               <BaseHeading
                 size="sm"

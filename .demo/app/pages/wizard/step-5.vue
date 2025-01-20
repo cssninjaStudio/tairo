@@ -154,7 +154,7 @@ watchEffect(() => {
               placeholder="ex: Clarissa, Kendra, ..."
               :classes="{
                 wrapper: 'w-full relative z-10',
-                input: 'h-12 text-base !ps-12',
+                input: 'h-12 text-base ps-12!',
                 icon: 'h-12 w-12',
               }"
             />

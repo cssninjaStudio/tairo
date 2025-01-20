@@ -66,7 +66,7 @@ function setAccount(account: any) {
         as="h2"
         size="2xl"
         weight="medium"
-        class="md:!3xl text-muted-800 dark:text-white"
+        class="md:3xl! text-muted-800 dark:text-white"
       >
         {{ steps[currentStepId].meta.title }}
       </BaseHeading>
@@ -92,8 +92,8 @@ function setAccount(account: any) {
           :max="request.account ? request.account.balance : undefined"
           :classes="{
             input:
-              '!ps-14 !py-2 !h-14 !text-4xl !leading-5 !border-t-0 !border-l-0  !border-r-0 !border-b-2 focus:!border-primary-500 dark:!bg-muted-900 dark:focus:!border-primary-500',
-            icon: '!h-14 !w-14',
+              'ps-14! py-2! h-14! text-4xl! leading-5! border-t-0! border-l-0!  border-r-0! border-b-2! focus:border-primary-500! dark:bg-muted-900! dark:focus:border-primary-500!',
+            icon: 'h-14! w-14!',
           }"
         />
       </div>
@@ -106,13 +106,13 @@ function setAccount(account: any) {
           Transfer from:
         </h4>
 
-        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
           <template #button="{ open }">
             <BaseButton
               size="xl"
               rounded="lg"
-              class="!h-auto w-full !p-4"
-              :class="[errors.fields.account ? '!border-danger-500' : '']"
+              class="h-auto! w-full p-4!"
+              :class="[errors.fields.account ? 'border-danger-500!' : '']"
             >
               <span class="flex w-full items-center gap-3 text-start">
                 <TairoLogo v-if="request.account" class="text-primary-500 size-8" />

@@ -261,7 +261,7 @@ const onSubmit = handleSubmit(async (values) => {
                     type="submit"
                     color="primary"
                     rounded="lg"
-                    class="!h-11 w-full"
+                    class="h-11! w-full"
                   >
                     Sign in
                   </BaseButton>

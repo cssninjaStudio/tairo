@@ -87,7 +87,7 @@ const archive = [
     <div
       class="bg-muted-100 dark:bg-muted-950 fixed start-0 top-0 z-40 flex h-full w-[260px] flex-col transition-transform duration-300"
       :class="[
-        isOpen ? 'lg:translate-x-0' : 'lg:!-translate-x-full',
+        isOpen ? 'lg:translate-x-0' : 'lg:-translate-x-full!',
         isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
       ]"
     >
@@ -284,7 +284,7 @@ const archive = [
                       color="default-contrast"
                       rounded="lg"
                       :classes="{
-                        menu: '!w-80',
+                        menu: 'w-80!',
                       }"
                     >
                       <template #button="{ open = false }">
@@ -382,7 +382,7 @@ const archive = [
                   <BaseCard
                     rounded="lg"
                     shadow="flat"
-                    class="hover:!border-muted-900 dark:hover:!border-muted-400 h-full p-4"
+                    class="hover:border-muted-900! dark:hover:border-muted-400! h-full p-4"
                     role="button"
                   >
                     <div class="mb-2">
@@ -397,7 +397,7 @@ const archive = [
                   <BaseCard
                     rounded="lg"
                     shadow="flat"
-                    class="hover:!border-muted-900 dark:hover:!border-muted-400 h-full p-4"
+                    class="hover:border-muted-900! dark:hover:border-muted-400! h-full p-4"
                     role="button"
                   >
                     <div class="mb-2">
@@ -412,7 +412,7 @@ const archive = [
                   <BaseCard
                     rounded="lg"
                     shadow="flat"
-                    class="hover:!border-muted-900 dark:hover:!border-muted-400 h-full p-4"
+                    class="hover:border-muted-900! dark:hover:border-muted-400! h-full p-4"
                     role="button"
                   >
                     <div class="mb-2">
@@ -427,7 +427,7 @@ const archive = [
                   <BaseCard
                     rounded="lg"
                     shadow="flat"
-                    class="hover:!border-muted-900 dark:hover:!border-muted-400 h-full p-4"
+                    class="hover:border-muted-900! dark:hover:border-muted-400! h-full p-4"
                     role="button"
                   >
                     <div class="mb-2">
@@ -477,7 +477,7 @@ const archive = [
     <div
       role="button"
       tabindex="0"
-      class="bg-muted-950/80 fixed start-0 top-0 z-[39] size-full transition-opacity duration-300 lg:!pointer-events-none lg:!opacity-0"
+      class="bg-muted-950/80 fixed start-0 top-0 z-[39] size-full transition-opacity duration-300 lg:pointer-events-none! lg:opacity-0!"
       :class="isMobileOpen ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'"
       @click="isMobileOpen = false"
     />

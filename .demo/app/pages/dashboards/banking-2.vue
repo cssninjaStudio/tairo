@@ -319,7 +319,7 @@ function useAreaExpenses() {
         </div>
       </BaseCard>
       <BaseCard
-        class="ltablet:flex-row !bg-muted-200 dark:!bg-muted-800 flex flex-col gap-y-10 p-6 sm:p-10 lg:flex-row"
+        class="ltablet:flex-row bg-muted-200! dark:bg-muted-800! flex flex-col gap-y-10 p-6 sm:p-10 lg:flex-row"
       >
         <div
           class="ltablet:w-3/5 ltablet:border-r border-muted-300 dark:border-muted-700 w-full lg:w-3/5 lg:border-r"

@@ -87,7 +87,7 @@ const products = [
       <BaseButton
         color="primary"
         :rounded="props.rounded"
-        class="!h-12 w-full"
+        class="h-12! w-full"
       >
         Checkout
       </BaseButton>

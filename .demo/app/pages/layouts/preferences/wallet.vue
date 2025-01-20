@@ -75,7 +75,7 @@ const wallets = [
               rounded="lg"
               :shadow="selectedBlockchain === index ? 'flat' : 'hover'"
               class="relative cursor-pointer overflow-hidden"
-              :class="selectedBlockchain === index ? '!border-primary-500' : ''"
+              :class="selectedBlockchain === index ? 'border-primary-500!' : ''"
               role="button"
               tabindex="0"
               @click="selectedBlockchain = index"
@@ -135,7 +135,7 @@ const wallets = [
               rounded="lg"
               tabindex="0"
               :shadow="selectedWallet === i ? 'flat' : 'hover'"
-              :class="selectedWallet === i ? '!border-primary-500' : ''"
+              :class="selectedWallet === i ? 'border-primary-500!' : ''"
               @click="selectedWallet = i"
             >
               <div class="p-4">

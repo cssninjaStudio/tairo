@@ -22,7 +22,7 @@ const search = ref('')
         :classes="{
           wrapper: 'w-full',
           input:
-            'pe-24 !bg-muted-100 dark:!bg-muted-700 focus:!bg-white dark:focus:!bg-muted-900',
+            'pe-24 bg-muted-100! dark:bg-muted-700! focus:bg-white! dark:focus:bg-muted-900!',
         }"
       />
       <button

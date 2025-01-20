@@ -480,7 +480,7 @@ const onSubmit = handleSubmit(
                     >
                       <BaseCard
                         rounded="sm"
-                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-4"
+                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-4"
                         color="none"
                       >
                         <div
@@ -535,7 +535,7 @@ const onSubmit = handleSubmit(
                     >
                       <BaseCard
                         rounded="sm"
-                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-4"
+                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-4"
                         color="none"
                       >
                         <div
@@ -590,7 +590,7 @@ const onSubmit = handleSubmit(
                     >
                       <BaseCard
                         rounded="sm"
-                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:!text-primary-500 relative border px-2 py-4"
+                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-4"
                         color="none"
                       >
                         <div
@@ -788,7 +788,7 @@ const onSubmit = handleSubmit(
               <BaseButton
                 type="submit"
                 color="primary"
-                class="!h-12 w-full sm:w-40"
+                class="h-12! w-full sm:w-40"
               >
                 Create Company
               </BaseButton>

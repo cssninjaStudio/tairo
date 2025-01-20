@@ -441,7 +441,7 @@ definePageMeta({
               name="Acme LLC"
               number="•••• •••• •••• 7297"
               brand="visa"
-              class="!mx-0"
+              class="mx-0!"
             />
             <div class="mt-4">
               <DemoLinkArrow to="#" label="Manage company card" />

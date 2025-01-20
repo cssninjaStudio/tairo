@@ -195,7 +195,7 @@ const onSubmit = handleSubmit(async (values) => {
                   :loading="isSubmitting"
                   type="submit"
                   color="primary"
-                  class="!h-12 w-full"
+                  class="h-12! w-full"
                 >
                   Sign In
                 </BaseButton>

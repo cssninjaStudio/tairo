@@ -210,7 +210,7 @@ const buttonBorder = computed(() => {
       :disabled="props.disabled"
       :rounded="props.rounded"
       v-bind="$attrs"
-      :classes="{ input: `!pe-12` }"
+      :classes="{ input: `pe-12!` }"
       @update:model-value="
         (value) => {
           handleInput(String(value))

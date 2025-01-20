@@ -268,13 +268,13 @@ const onSubmit = handleSubmit(
                       Associated account
                     </BaseHeading>
                     <!-- Dropdown -->
-                    <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: '!w-full' }">
+                    <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
                       <template #button="{ open }">
                         <BaseButton
                           size="xl"
                           rounded="lg"
-                          class="!h-auto w-full !p-4"
-                          :class="[errors.account ? '!border-danger-500' : '']"
+                          class="h-auto! w-full p-4!"
+                          :class="[errors.account ? 'border-danger-500!' : '']"
                         >
                           <span class="flex w-full items-center gap-3 text-start">
                             <TairoLogo v-if="values?.account" class="text-primary-500 size-8" />
