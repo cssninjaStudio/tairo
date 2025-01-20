@@ -20,7 +20,7 @@ const { data: project, errors, checkPreviousSteps } = useMultiStepForm<Project, 
 
 onBeforeMount(checkPreviousSteps)
 
-const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
+const avatarPreview = useNuiFilePreview(() => project.value.avatar)
 
 // BaseInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form

@@ -5,12 +5,14 @@ const toc = useState<any[]>('tairo-toc', () => [])
 
 const ids = computed(() => toc.value.map(({ id }: any) => `#${id}`))
 
-const { activeIds } = useNinjaScrollspy(
-  {
-    rootMargin: '0px 0px -90% 0px',
-  },
-  () => ids.value,
-)
+// @todo: use vueuse
+const activeIds = ref<string[]>([])
+// const { activeIds } = useNinjaScrollspy(
+//   {
+//     rootMargin: '0px 0px -90% 0px',
+//   },
+//   () => ids.value,
+// )
 const nuxtApp = useNuxtApp()
 
 if (import.meta.client) {

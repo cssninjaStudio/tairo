@@ -25,7 +25,7 @@ const {
 
 onBeforeMount(checkPreviousSteps)
 
-const avatarPreview = useNinjaFilePreview(() => project.value.avatar)
+const avatarPreview = useNuiFilePreview(() => project.value.avatar)
 </script>
 
 <template>

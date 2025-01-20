@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { y } = useNinjaWindowScroll()
+const { y } = useNuiWindowScroll()
 const app = useAppConfig()
 
 const isOpened = ref(false)
