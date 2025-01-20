@@ -3,16 +3,14 @@ const value = ref('primary')
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
+  <BaseRadioGroup v-model="value" class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseRadio
-      v-model="value"
       name="checkbox_base"
       label="default"
       value="default"
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_base"
       label="primary"
       value="primary"
@@ -20,7 +18,6 @@ const value = ref('primary')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_base"
       value="muted"
       label="muted"
@@ -28,7 +25,6 @@ const value = ref('primary')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_base"
       value="info"
       label="info"
@@ -36,7 +32,6 @@ const value = ref('primary')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_base"
       value="success"
       label="success"
@@ -44,7 +39,6 @@ const value = ref('primary')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_base"
       value="warning"
       label="warning"
@@ -52,11 +46,10 @@ const value = ref('primary')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_base"
       value="danger"
       label="danger"
       color="danger"
     />
-  </div>
+  </BaseRadioGroup>
 </template>

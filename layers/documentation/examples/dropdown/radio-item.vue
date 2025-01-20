@@ -25,13 +25,13 @@ const value = ref('personal')
             color="primary"
           >
             <template #start>
-              <BaseRadio
+              <!-- @todo: dropdown radio item <BaseRadio
                 v-model="value"
                 value="personal"
                 rounded="curved"
                 color="primary"
                 name="demo_radio_dropdown"
-              />
+              /> -->
             </template>
           </BaseDropdownItem>
         </BaseRadioHeadless>
@@ -53,13 +53,13 @@ const value = ref('personal')
             color="primary"
           >
             <template #start>
-              <BaseRadio
+              <!-- @todo: dropdown radio item <BaseRadio
                 v-model="value"
                 value="company"
                 rounded="curved"
                 color="primary"
                 name="demo_radio_dropdown"
-              />
+              /> -->
             </template>
           </BaseDropdownItem>
         </BaseRadioHeadless>
@@ -81,13 +81,13 @@ const value = ref('personal')
             color="primary"
           >
             <template #start>
-              <BaseRadio
+              <!-- @todo: dropdown radio item <BaseRadio
                 v-model="value"
                 value="nonprofit"
                 rounded="curved"
                 color="primary"
                 name="demo_radio_dropdown"
-              />
+              /> -->
             </template>
           </BaseDropdownItem>
         </BaseRadioHeadless>

@@ -403,7 +403,7 @@ const colorCode = ref('color_code_1')
           <div class="relative z-0 col-span-12">
             <div class="my-4">
               <label class="nui-label pb-4 text-[0.825rem]">Meeting frequency</label>
-              <div class="flex items-center gap-6">
+              <BaseRadioGroup class="flex items-center gap-6">
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="meeting.frequency"
@@ -445,7 +445,7 @@ const colorCode = ref('color_code_1')
                     @blur="handleBlur"
                   />
                 </Field>
-              </div>
+              </BaseRadioGroup>
             </div>
           </div>
         </div>

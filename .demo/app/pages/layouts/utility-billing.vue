@@ -471,10 +471,9 @@ const billingCycles = ref('monthly')
                 </NuxtLink>
               </div>
             </div>
-            <div class="flex items-center gap-6">
+            <BaseRadioGroup v-model="billingCycles" class="flex items-center gap-6">
               <BaseRadio
                 id="demo-cycle-1"
-                v-model="billingCycles"
                 name="monthly_billing"
                 label="Monthly"
                 value="monthly"
@@ -483,7 +482,6 @@ const billingCycles = ref('monthly')
 
               <BaseRadio
                 id="demo-cycle-2"
-                v-model="billingCycles"
                 name="semestral_billing"
                 label="Semestral"
                 value="semestral"
@@ -492,13 +490,12 @@ const billingCycles = ref('monthly')
 
               <BaseRadio
                 id="demo-cycle-3"
-                v-model="billingCycles"
                 name="yearly_billing"
                 label="Yearly"
                 value="yearly"
                 color="primary"
               />
-            </div>
+            </BaseRadioGroup>
           </BaseCard>
         </div>
       </div>

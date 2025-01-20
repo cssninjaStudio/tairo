@@ -268,10 +268,9 @@ const termsApproval = ref(false)
         <div class="px-8 pt-5">
           <div class="mb-6">
             <label class="nui-label pb-3 text-[0.825rem]">Billing cycle</label>
-            <div class="flex items-center gap-6">
+            <BaseRadioGroup v-model="billingCycles" class="flex items-center gap-6">
               <BaseRadio
                 id="demo-cycle-1"
-                v-model="billingCycles"
                 name="monthly_billing"
                 label="Monthly"
                 value="monthly"
@@ -283,7 +282,6 @@ const termsApproval = ref(false)
 
               <BaseRadio
                 id="demo-cycle-2"
-                v-model="billingCycles"
                 name="yearly_billing"
                 label="Yearly"
                 value="yearly"
@@ -292,7 +290,7 @@ const termsApproval = ref(false)
                   label: 'relative top-0.5 text-xs',
                 }"
               />
-            </div>
+            </BaseRadioGroup>
           </div>
           <div class="flex items-center">
             <BaseHeading

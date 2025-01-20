@@ -3,9 +3,8 @@ const value = ref('pink')
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
+  <BaseRadioGroup v-model="value" class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="indigo"
       value="indigo"
@@ -15,7 +14,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="lime"
       value="lime"
@@ -23,7 +21,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="pink"
       value="pink"
@@ -31,7 +28,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="sky"
       value="sky"
@@ -39,7 +35,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="yellow"
       value="yellow"
@@ -47,7 +42,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="purple"
       value="purple"
@@ -55,7 +49,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="green"
       value="green"
@@ -63,7 +56,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="fuchsia"
       value="fuchsia"
@@ -71,7 +63,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="rose"
       value="rose"
@@ -81,7 +72,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="blue"
       value="blue"
@@ -91,7 +81,6 @@ const value = ref('pink')
     />
 
     <BaseRadio
-      v-model="value"
       name="checkbox_colors"
       label="orange"
       value="orange"
@@ -99,5 +88,5 @@ const value = ref('pink')
         wrapper: 'text-orange-500!',
       }"
     />
-  </div>
+  </BaseRadioGroup>
 </template>
