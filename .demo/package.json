@@ -42,7 +42,7 @@
     "@mapbox/mapbox-gl-geocoder": "5.0.3",
     "@popperjs/core": "2.11.8",
     "@shikijs/rehype": "2.0.1",
-    "@shuriken-ui/tailwind": "4.0.0-alpha.6",
+    "@shuriken-ui/tailwind": "4.0.0-alpha.27",
     "@types/geojson": "^7946.0.15",
     "@types/mapbox-gl": "3.4.1",
     "@vee-validate/zod": "^4.15.0",
