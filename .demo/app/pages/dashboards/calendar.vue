@@ -394,9 +394,9 @@ const selectedEventFeatures = computed({
               @update:pages="onPageChange"
             >
               <template #header-left-button="{ movePrev }">
-                <BaseButtonIcon
+                <BaseButton
                   rounded="full"
-                  small
+                  size="icon-sm"
                   @click="movePrev"
                   @keydown.space.enter="movePrev"
                 >
@@ -404,10 +404,10 @@ const selectedEventFeatures = computed({
                     name="lucide:chevron-left"
                     class="top-auto! h-4! w-4!"
                   />
-                </BaseButtonIcon>
+                </BaseButton>
               </template>
               <template #header-right-button="{ moveNext }">
-                <BaseButtonIcon
+                <BaseButton
                   rounded="full"
                   small
                   @click="moveNext"
@@ -417,7 +417,7 @@ const selectedEventFeatures = computed({
                     name="lucide:chevron-right"
                     class="top-auto! h-4! w-4!"
                   />
-                </BaseButtonIcon>
+                </BaseButton>
               </template>
               <template
                 #day-content="{

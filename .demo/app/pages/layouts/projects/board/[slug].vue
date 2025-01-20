@@ -180,16 +180,17 @@ function onDrop(column: ColumnContent, dropResult: any) {
       </div>
       <div class="flex items-center gap-2">
         <BaseAvatarGroup :avatars="data?.project.team" size="xs" />
-        <BaseButtonIcon
+        <BaseButton
           :to="`/layouts/projects/details/${slug}`"
+          size="icon-md"
           rounded="lg"
           data-nui-tooltip="Project details"
         >
           <Icon name="lucide:layout-template" class="size-4" />
-        </BaseButtonIcon>
-        <BaseButtonIcon rounded="full" data-nui-tooltip="New task">
+        </BaseButton>
+        <BaseButton rounded="full" data-nui-tooltip="New task">
           <Icon name="lucide:plus" class="size-4" />
-        </BaseButtonIcon>
+        </BaseButton>
       </div>
     </div>
     <div class="flex h-[calc(100vh_-_133px)] grow space-x-6 overflow-auto pt-2">

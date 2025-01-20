@@ -126,9 +126,9 @@ const amount = ref<number>(0)
             >
               <span>My Cards</span>
             </BaseHeading>
-            <BaseButtonIcon rounded="full" small>
+            <BaseButton rounded="full" size="icon-sm">
               <Icon name="lucide:plus" class="size-3" />
-            </BaseButtonIcon>
+            </BaseButton>
           </div>
           <div class="mb-8 flex items-center gap-4 px-6">
             <DemoCreditCardSmall class="text-primary-500" />

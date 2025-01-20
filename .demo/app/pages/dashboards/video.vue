@@ -217,9 +217,9 @@ const videos = [
           My Team
         </span>
         <div class="flex items-center justify-center gap-2 md:justify-start">
-          <BaseButtonIcon small>
+          <BaseButton size="icon-sm">
             <Icon name="lucide:plus" class="size-4" />
-          </BaseButtonIcon>
+          </BaseButton>
           <BaseAvatar
             size="xs"
             rounded="none"

@@ -29,13 +29,13 @@ definePageMeta({
             >
               Your cards
             </BaseHeading>
-            <BaseButtonIcon
+            <BaseButton
               to="/layouts/card/new"
               rounded="lg"
-              size="sm"
+              size="icon-sm"
             >
               <Icon name="lucide:plus" class="size-4" />
-            </BaseButtonIcon>
+            </BaseButton>
           </div>
           <!-- Cards and accounts -->
           <div
@@ -143,9 +143,9 @@ definePageMeta({
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon rounded="lg" size="sm">
+                <BaseButton rounded="lg" size="icon-sm">
                   <Icon name="lucide:chevron-right" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </NuxtLink>
             <!-- Payment -->
@@ -180,9 +180,9 @@ definePageMeta({
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon rounded="lg" size="sm">
+                <BaseButton rounded="lg" size="icon-sm">
                   <Icon name="lucide:chevron-right" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </NuxtLink>
           </div>
@@ -203,13 +203,13 @@ definePageMeta({
             >
               Quick transaction
             </BaseHeading>
-            <BaseButtonIcon
+            <BaseButton
               to="/layouts/send"
               rounded="lg"
-              size="sm"
+              size="icon-sm"
             >
               <Icon name="lucide:plus" class="size-4" />
-            </BaseButtonIcon>
+            </BaseButton>
           </div>
           <div
             class="nui-slimscroll ltablet:overflow-x-hidden flex gap-4 overflow-x-auto lg:overflow-x-hidden"

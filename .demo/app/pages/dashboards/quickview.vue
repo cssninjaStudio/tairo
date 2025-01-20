@@ -492,9 +492,9 @@ definePageMeta({
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon rounded="lg" size="sm">
+                <BaseButton rounded="lg" size="icon-sm">
                   <Icon name="lucide:chevron-right" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </NuxtLink>
             <!-- Payment -->
@@ -529,9 +529,9 @@ definePageMeta({
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon rounded="lg" size="sm">
+                <BaseButton rounded="lg" size="icon-sm">
                   <Icon name="lucide:chevron-right" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </NuxtLink>
           </div>

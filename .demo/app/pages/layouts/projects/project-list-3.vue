@@ -99,9 +99,9 @@ const { data, pending, error, refresh } = await useFetch(
               />
             </div>
             <div class="flex items-center justify-center">
-              <BaseButtonIcon muted>
+              <BaseButton variant="muted" size="icon-md">
                 <Icon name="lucide:plus" />
-              </BaseButtonIcon>
+              </BaseButton>
             </div>
           </div>
         </BaseCard>

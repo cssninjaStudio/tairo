@@ -940,12 +940,12 @@ async function submitMessage() {
           >
             <span>User details</span>
           </BaseHeading>
-          <BaseButtonIcon small @click="expanded = true">
+          <BaseButton size="icon-sm" @click="expanded = true">
             <Icon
               name="lucide:arrow-right"
               class="pointer-events-none size-4"
             />
-          </BaseButtonIcon>
+          </BaseButton>
         </div>
         <div class="relative flex w-full flex-col px-8">
           <!-- Loader -->

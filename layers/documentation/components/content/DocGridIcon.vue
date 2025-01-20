@@ -90,16 +90,17 @@ const iconColor = computed(() => {
       v-if="props.to"
       class="ms-auto flex -translate-x-1 items-center opacity-0 transition-all duration-300 group-focus-within/grid-icon:translate-x-0 group-focus-within/grid-icon:opacity-100 group-hover/grid-icon:translate-x-0 group-hover/grid-icon:opacity-100"
     >
-      <BaseButtonIcon
+      <BaseButton
         :to="props.to"
         :target="isExternal ? '_blank' : undefined"
         :rel="isExternal ? 'noopener' : undefined"
         rounded="lg"
-        muted
+        variant="muted"
+        size="icon-md"
         class="scale-75"
       >
         <Icon name="lucide:arrow-right" class="size-4" />
-      </BaseButtonIcon>
+      </BaseButton>
     </div>
   </BaseCard>
 </template>

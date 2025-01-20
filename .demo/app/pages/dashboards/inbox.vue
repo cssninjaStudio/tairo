@@ -421,21 +421,21 @@ const panelActive = ref(false)
                 </div>
                 <div>
                   <div class="ltablet:mb-0 mb-2 flex gap-x-2 lg:mb-0">
-                    <BaseButtonIcon small class="scale-[0.8]">
+                    <BaseButton size="icon-sm" class="scale-[0.8]">
                       <Icon
                         name="ph:arrow-bend-down-left-duotone"
                         class="size-4"
                       />
-                    </BaseButtonIcon>
-                    <BaseButtonIcon small class="scale-[0.8]">
+                    </BaseButton>
+                    <BaseButton size="icon-sm" class="scale-[0.8]">
                       <Icon name="ph:bookmark-simple-duotone" class="size-4" />
-                    </BaseButtonIcon>
-                    <BaseButtonIcon small class="scale-[0.8]">
+                    </BaseButton>
+                    <BaseButton size="icon-sm" class="scale-[0.8]">
                       <Icon name="ph:printer-duotone" class="size-4" />
-                    </BaseButtonIcon>
-                    <BaseButtonIcon small class="scale-[0.8]">
+                    </BaseButton>
+                    <BaseButton size="icon-sm" class="scale-[0.8]">
                       <Icon name="ph:trash-duotone" class="size-4" />
-                    </BaseButtonIcon>
+                    </BaseButton>
                   </div>
                 </div>
               </div>

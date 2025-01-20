@@ -102,9 +102,9 @@ const items = [
                     src="/img/avatars/5.svg"
                     class="nui-mask nui-mask-blob"
                   />
-                  <BaseButtonIcon>
+                  <BaseButton size="icon-md">
                     <Icon name="lucide:plus" class="size-4" />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
               </div>
               <div

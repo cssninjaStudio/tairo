@@ -3,9 +3,9 @@
     <div class="relative mx-auto mb-4 size-20">
       <BaseAvatar size="xl" src="/img/icons/logos/slicer.svg" />
       <div class="absolute bottom-0 end-0">
-        <BaseButtonIcon rounded="full" small>
+        <BaseButton size="icon-sm" rounded="full">
           <Icon name="ph:camera-duotone" />
-        </BaseButtonIcon>
+        </BaseButton>
       </div>
     </div>
     <div class="text-center">

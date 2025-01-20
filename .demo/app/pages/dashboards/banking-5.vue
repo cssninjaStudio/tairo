@@ -160,9 +160,9 @@ definePageMeta({
               </BaseHeading>
             </div>
             <div>
-              <BaseButtonIcon size="sm" rounded="lg">
+              <BaseButton size="icon-sm" rounded="lg">
                 <Icon name="lucide:arrow-right" />
-              </BaseButtonIcon>
+              </BaseButton>
             </div>
           </div>
         </BaseCard>
@@ -201,9 +201,9 @@ definePageMeta({
               </BaseHeading>
             </div>
             <div>
-              <BaseButtonIcon size="sm" rounded="lg">
+              <BaseButton size="sm" rounded="lg">
                 <Icon name="lucide:arrow-right" />
-              </BaseButtonIcon>
+              </BaseButton>
             </div>
           </div>
         </BaseCard>
@@ -242,9 +242,9 @@ definePageMeta({
               </BaseHeading>
             </div>
             <div>
-              <BaseButtonIcon size="sm" rounded="lg">
+              <BaseButton size="sm" rounded="lg">
                 <Icon name="lucide:arrow-right" />
-              </BaseButtonIcon>
+              </BaseButton>
             </div>
           </div>
         </BaseCard>

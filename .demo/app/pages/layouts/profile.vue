@@ -447,14 +447,14 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     </BaseParagraph>
                   </div>
                   <div class="ms-auto">
-                    <BaseButtonIcon
+                    <BaseButton
                       to="#"
-                      size="sm"
+                      size="icon-sm"
                       rounded="full"
                       data-nui-tooltip="View Profile"
                     >
                       <Icon name="lucide:arrow-right" class="size-4" />
-                    </BaseButtonIcon>
+                    </BaseButton>
                   </div>
                 </div>
               </div>

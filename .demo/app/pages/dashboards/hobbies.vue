@@ -326,13 +326,14 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon
+                  <BaseButton
                     rounded="lg"
-                    muted
+                    size="icon-md"
+                    variant="muted"
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
               </BaseCard>
             </div>
@@ -387,13 +388,13 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon
+                  <BaseButton
                     rounded="lg"
-                    muted
+                    variant="muted"
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
               </BaseCard>
             </div>
@@ -467,13 +468,13 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon
+                  <BaseButton
                     rounded="lg"
                     muted
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
               </NuxtLink>
               <!-- Item -->
@@ -501,13 +502,13 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon
+                  <BaseButton
                     rounded="lg"
                     muted
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
               </NuxtLink>
               <!-- Item -->
@@ -535,13 +536,13 @@ const popular = [
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
-                  <BaseButtonIcon
+                  <BaseButton
                     rounded="lg"
                     muted
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
               </NuxtLink>
             </div>

@@ -165,13 +165,13 @@ function closeUpgrade() {
               class="absolute z-10 transition-all duration-300 group-hover/sidebar:opacity-100"
               :class="isCollapsed ? 'opacity-0 -start-6 hidden' : 'w-[--sidebar-width] start-[calc(var(--sidebar-width)-theme(spacing.10))] opacity-100'"
             >
-              <BaseButtonIcon
-                size="sm"
+              <BaseButton
+                size="icon-sm"
                 rounded="md"
                 @click="isCollapsed = !isCollapsed"
               >
                 <Icon name="solar:siderbar-linear" class="size-4" />
-              </BaseButtonIcon>
+              </BaseButton>
             </div>
           </div>
           <div class="transition-sidebar grid w-full min-w-0 p-2">
@@ -312,14 +312,14 @@ function closeUpgrade() {
               </ul>
             </div>
             <div class="transition-sidebar mt-auto grid w-full min-w-0 p-2">
-              <BaseButtonIcon
-                size="sm"
+              <BaseButton
+                size="icon-sm"
                 rounded="md"
                 :class="isCollapsed ? 'flex' : 'hidden'"
                 @click="isCollapsed = !isCollapsed"
               >
                 <Icon name="solar:siderbar-linear" class="size-4" />
-              </BaseButtonIcon>
+              </BaseButton>
             </div>
           </div>
           <div class="flex items-center overflow-hidden p-2 transition-all duration-300">
@@ -620,12 +620,12 @@ function closeUpgrade() {
                               class="me-1"
                               size="xs"
                             />
-                            <BaseButtonIcon
-                              size="sm"
+                            <BaseButton
+                              size="icon-sm"
                               rounded="md"
                             >
                               <Icon name="lucide:paperclip" class="size-4" />
-                            </BaseButtonIcon>
+                            </BaseButton>
                             <BaseButton
                               size="sm"
                               rounded="md"
@@ -636,7 +636,7 @@ function closeUpgrade() {
                           </div>
 
                           <div class="flex items-center gap-2">
-                            <BaseButtonIcon
+                            <BaseButton
                               size="sm"
                               rounded="md"
                               color="dark"
@@ -644,7 +644,7 @@ function closeUpgrade() {
                               @click="addMessage"
                             >
                               <Icon name="lucide:arrow-up" class="size-4" />
-                            </BaseButtonIcon>
+                            </BaseButton>
                           </div>
                         </template>
                       </BaseTextarea>

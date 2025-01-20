@@ -160,15 +160,15 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     >
                       <span>Cook</span>
                     </BaseButton>
-                    <BaseButtonIcon
+                    <BaseButton
                       rounded="full"
-                      size="sm"
+                      size="icon-sm"
                       muted
                       data-nui-tooltip="Save recipe"
                       class="hidden sm:inline-flex"
                     >
                       <Icon name="ph:heart-duotone" class="size-4" />
-                    </BaseButtonIcon>
+                    </BaseButton>
                   </div>
                 </div>
               </BaseCard>

@@ -286,13 +286,13 @@ const itemSubtotal = computed(() =>
                       >
                         Payment method
                       </BaseHeading>
-                      <BaseButtonIcon
+                      <BaseButton
                         to="/layouts/card/new"
                         rounded="lg"
-                        size="sm"
+                        size="icon-sm"
                       >
                         <Icon name="lucide:edit-2" class="size-4" />
-                      </BaseButtonIcon>
+                      </BaseButton>
                     </div>
                     <div class="bg-muted-100 dark:bg-muted-900 rounded-xl p-6">
                       <div class="mb-6 flex items-center justify-between">
@@ -365,13 +365,13 @@ const itemSubtotal = computed(() =>
                         >
                           Amount billed
                         </BaseHeading>
-                        <BaseButtonIcon
+                        <BaseButton
                           to="/layouts/card/new"
                           rounded="lg"
-                          size="sm"
+                          size="icon-sm"
                         >
                           <Icon name="lucide:printer" class="size-4" />
-                        </BaseButtonIcon>
+                        </BaseButton>
                       </div>
                       <div class="flex items-center justify-between">
                         <BaseParagraph

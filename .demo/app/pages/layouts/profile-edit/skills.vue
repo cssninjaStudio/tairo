@@ -189,9 +189,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon rounded="full" size="sm">
+                <BaseButton rounded="full" size="icon-sm">
                   <Icon name="lucide:plus" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </div>
           </TairoFormGroup>
@@ -317,9 +317,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon rounded="full" size="sm">
+                <BaseButton rounded="full" size="icon-sm">
                   <Icon name="lucide:plus" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </div>
           </TairoFormGroup>
@@ -439,9 +439,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButtonIcon rounded="full" size="sm">
+                <BaseButton rounded="full" size="sm">
                   <Icon name="lucide:plus" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </div>
           </TairoFormGroup>

@@ -192,13 +192,13 @@ watchEffect(() => {
                     </p>
                   </div>
                   <div class="ms-auto">
-                    <BaseButtonIcon
-                      small
+                    <BaseButton
+                      size="icon-sm"
                       rounded="full"
                       @click="addTeammate(user)"
                     >
                       <Icon name="lucide:plus" class="size-4" />
-                    </BaseButtonIcon>
+                    </BaseButton>
                   </div>
                 </div>
               </div>
@@ -308,13 +308,13 @@ watchEffect(() => {
                     </div>
                   </div>
                   <div class="ms-8">
-                    <BaseButtonIcon
-                      small
+                    <BaseButton
+                      size="icon-sm"
                       rounded="full"
                       @click="removeTeammate(idx)"
                     >
                       <Icon name="lucide:x" class="size-4" />
-                    </BaseButtonIcon>
+                    </BaseButton>
                   </div>
                 </div>
               </div>

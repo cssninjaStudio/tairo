@@ -148,15 +148,15 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   >
                     <span>Apply</span>
                   </BaseButton>
-                  <BaseButtonIcon
+                  <BaseButton
                     rounded="full"
-                    size="sm"
+                    size="icon-sm"
                     muted
                     data-nui-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
                   >
                     <Icon name="ph:bookmark-duotone" class="size-4" />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
               </BaseCard>
             </TransitionGroup>

@@ -197,9 +197,9 @@ function useAreaExpenses() {
             class="ltablet:pe-12 flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 lg:pe-12"
           >
             <div>
-              <BaseButtonIcon rounded="sm">
+              <BaseButton size="icon-md" rounded="sm">
                 <Icon name="lucide:plus" class="size-4" />
-              </BaseButtonIcon>
+              </BaseButton>
             </div>
             <div
               class="nui-slimscroll grid max-h-[164px] w-full gap-4 overflow-y-auto px-6 sm:grid-cols-2"

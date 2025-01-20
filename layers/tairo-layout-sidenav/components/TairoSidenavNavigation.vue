@@ -38,14 +38,14 @@ const isSearchOpen = useState('search-open', () => false)
             />
           </slot>
           <div class="ltablet:block ms-auto lg:hidden">
-            <BaseButtonIcon
-              size="sm"
+            <BaseButton
+              size="icon-sm"
               rounded="lg"
               class="mt-0.5 scale-90"
               @click="toggle"
             >
               <Icon name="lucide:x" class="size-4" />
-            </BaseButtonIcon>
+            </BaseButton>
           </div>
         </div>
       </div>

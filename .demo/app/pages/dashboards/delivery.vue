@@ -299,13 +299,14 @@ const total = computed(() => {
               </div>
 
               <div class="hidden items-center justify-center sm:flex">
-                <BaseButtonIcon
+                <BaseButton
+                  size="icon-md"
                   rounded="full"
                   class="hover:border-yellow-500 hover:text-yellow-500"
                   data-nui-tooltip="All categories"
                 >
                   <Icon name="lucide:chevron-right" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </div>
             <!-- Meals -->

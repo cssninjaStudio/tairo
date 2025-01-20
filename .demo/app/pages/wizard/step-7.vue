@@ -51,14 +51,14 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
           />
           <!-- Edit -->
           <div class="absolute bottom-0 end-0 z-10">
-            <BaseButtonIcon
-              small
+            <BaseButton
+              size="icon-sm"
               rounded="full"
               class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
               :to="getStep(1)?.to"
             >
               <Icon name="lucide:edit-2" class="pointer-events-none size-3" />
-            </BaseButtonIcon>
+            </BaseButton>
           </div>
         </div>
         <div class="mx-auto flex w-full max-w-xl flex-col gap-4">
@@ -75,8 +75,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(1)?.to"
@@ -85,7 +85,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <BaseHeading size="xs" class="mb-4 uppercase">
                   <span class="text-muted-500 dark:text-muted-400">
@@ -113,8 +113,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(0)?.to"
@@ -123,7 +123,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <div class="flex w-full items-center gap-2">
                   <BaseIconBox
@@ -182,8 +182,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2)?.to"
@@ -192,7 +192,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <div class="flex w-full items-center gap-2">
                   <BaseAvatar
@@ -230,8 +230,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2)?.to"
@@ -240,7 +240,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <div
                   class="flex flex-col items-center justify-center text-center"
@@ -265,8 +265,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative h-full p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(2)?.to"
@@ -275,7 +275,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <div
                   class="flex h-full flex-col items-center justify-center text-center"
@@ -304,8 +304,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(3)?.to"
@@ -314,7 +314,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <div
                   class="flex flex-col items-center justify-center text-center"
@@ -339,8 +339,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(4)?.to"
@@ -349,7 +349,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <BaseHeading size="xs" class="mb-4 uppercase">
                   <span class="text-muted-500 dark:text-muted-400">
@@ -394,8 +394,8 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
               <BaseCard rounded="lg" class="group relative p-6">
                 <!-- Edit -->
                 <div class="absolute end-3 top-3 z-10">
-                  <BaseButtonIcon
-                    small
+                  <BaseButton
+                    size="icon-sm"
                     rounded="full"
                     class="hover:border-primary-500 hover:text-primary-500 dark:hover:border-primary-500 dark:hover:text-primary-500 pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
                     :to="getStep(5)?.to"
@@ -404,7 +404,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                       name="lucide:edit-2"
                       class="pointer-events-none size-3"
                     />
-                  </BaseButtonIcon>
+                  </BaseButton>
                 </div>
                 <BaseHeading size="xs" class="mb-4 uppercase">
                   <span class="text-muted-500 dark:text-muted-400">

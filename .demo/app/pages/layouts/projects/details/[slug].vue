@@ -356,13 +356,13 @@ function openTaskPanel(id: number, tasks: any) {
                             </BaseParagraph>
                           </div>
                           <div class="ms-auto">
-                            <BaseButtonIcon
+                            <BaseButton
                               rounded="full"
                               data-nui-tooltip="Download file"
-                              size="sm"
+                              size="icon-sm"
                             >
                               <Icon name="lucide:arrow-down" />
-                            </BaseButtonIcon>
+                            </BaseButton>
                           </div>
                         </div>
                       </div>

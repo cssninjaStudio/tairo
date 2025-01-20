@@ -163,13 +163,13 @@ const budget = ref('< 5K')
                 </p>
               </div>
               <div class="me-3 ms-auto">
-                <BaseButtonIcon
-                  small
+                <BaseButton
+                  size="icon-sm"
                   rounded="full"
                   @click="dismissCustomer"
                 >
                   <Icon name="lucide:x" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
             </div>
 
@@ -207,13 +207,13 @@ const budget = ref('< 5K')
                     </p>
                   </div>
                   <div class="ms-auto">
-                    <BaseButtonIcon
-                      small
+                    <BaseButton
+                      size="icon-sm"
                       rounded="full"
                       @click="selectCustomer(customer)"
                     >
                       <Icon name="lucide:plus" class="size-4" />
-                    </BaseButtonIcon>
+                    </BaseButton>
                   </div>
                 </div>
               </div>

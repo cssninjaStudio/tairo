@@ -1,23 +1,23 @@
 <template>
   <div class="flex flex-wrap items-end gap-2">
-    <BaseButtonIcon rounded="none" color="danger">
+    <BaseButton rounded="none" variant="destructive" size="icon-md">
       <Icon name="ph:moon-duotone" class="size-5" />
-    </BaseButtonIcon>
+    </BaseButton>
 
-    <BaseButtonIcon rounded="sm" color="danger">
+    <BaseButton rounded="sm" variant="destructive" size="icon-md">
       <Icon name="ph:github-logo-duotone" class="size-5" />
-    </BaseButtonIcon>
+    </BaseButton>
 
-    <BaseButtonIcon rounded="md" color="danger">
+    <BaseButton rounded="md" variant="destructive" size="icon-md">
       <Icon name="ph:game-controller-duotone" class="size-5" />
-    </BaseButtonIcon>
+    </BaseButton>
 
-    <BaseButtonIcon rounded="lg" color="danger">
+    <BaseButton rounded="lg" variant="destructive" size="icon-md">
       <Icon name="ph:alien-duotone" class="size-5" />
-    </BaseButtonIcon>
+    </BaseButton>
 
-    <BaseButtonIcon rounded="full" color="danger">
+    <BaseButton rounded="full" variant="destructive" size="icon-md">
       <Icon name="ph:heart-duotone" class="size-5" />
-    </BaseButtonIcon>
+    </BaseButton>
   </div>
 </template>

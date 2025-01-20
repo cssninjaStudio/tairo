@@ -324,25 +324,25 @@ const onSubmit = handleSubmit(
                         v-if="files?.length && files.item(0)"
                         class="absolute bottom-1 end-1 z-20"
                       >
-                        <BaseButtonIcon
-                          size="sm"
+                        <BaseButton
+                          size="icon-sm"
                           rounded="full"
                           data-tooltip="Remove image"
                           class="scale-90"
                           @click="remove(files.item(0)!)"
                         >
                           <Icon name="lucide:x" class="size-4" />
-                        </BaseButtonIcon>
+                        </BaseButton>
                       </div>
                       <div v-else class="absolute bottom-1 end-1 z-20">
                         <div class="relative" data-tooltip="Upload image">
-                          <BaseButtonIcon
-                            size="sm"
+                          <BaseButton
+                            size="icon-sm"
                             rounded="full"
                             @click="open"
                           >
                             <Icon name="lucide:plus" class="size-4" />
-                          </BaseButtonIcon>
+                          </BaseButton>
                         </div>
                       </div>
                     </div>

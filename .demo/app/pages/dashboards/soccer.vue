@@ -418,12 +418,12 @@ const matches = [
                         </td>
                         <td class="xs:px-4 py-4">
                           <div>
-                            <BaseButtonIcon small muted>
+                            <BaseButton size="icon-sm" variant="muted">
                               <Icon
                                 name="lucide:more-horizontal"
                                 class="size-4"
                               />
-                            </BaseButtonIcon>
+                            </BaseButton>
                           </div>
                         </td>
                       </tr>

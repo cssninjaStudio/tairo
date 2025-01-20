@@ -71,34 +71,34 @@ const totalData = computed(() => {
         </BaseHeading>
       </div>
       <div class="flex items-center justify-end gap-3">
-        <BaseButtonIcon
-          size="sm"
+        <BaseButton
+          size="icon-sm"
           rounded="full"
           data-nui-tooltip="Edit invoice"
         >
           <Icon name="ph:pencil-duotone" class="size-4" />
-        </BaseButtonIcon>
-        <BaseButtonIcon
-          size="sm"
+        </BaseButton>
+        <BaseButton
+          size="icon-sm"
           rounded="full"
           data-nui-tooltip="Send by email"
         >
           <Icon name="ph:envelope-duotone" class="size-4" />
-        </BaseButtonIcon>
-        <BaseButtonIcon
-          size="sm"
+        </BaseButton>
+        <BaseButton
+          size="icon-sm"
           rounded="full"
           data-nui-tooltip="Print invoice"
         >
           <Icon name="ph:printer-duotone" class="size-4" />
-        </BaseButtonIcon>
-        <BaseButtonIcon
-          size="sm"
+        </BaseButton>
+        <BaseButton
+          size="icon-sm"
           rounded="full"
           data-nui-tooltip="Download as PDF"
         >
           <Icon name="ph:download-duotone" class="size-4" />
-        </BaseButtonIcon>
+        </BaseButton>
       </div>
     </div>
     <div>

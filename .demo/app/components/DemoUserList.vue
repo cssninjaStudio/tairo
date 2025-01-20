@@ -88,14 +88,14 @@ const users = [
         >
           <span>{{ user.progress }}%</span>
         </BaseParagraph>
-        <BaseButtonIcon
+        <BaseButton
           to="#"
-          muted
-          small
+          variant="muted"
+          size="icon-sm"
           :rounded="props.rounded"
         >
           <Icon name="lucide:chevron-right" class="size-4" />
-        </BaseButtonIcon>
+        </BaseButton>
       </div>
     </div>
   </div>

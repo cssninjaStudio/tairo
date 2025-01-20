@@ -48,8 +48,8 @@ const { copy, copied, isSupported } = useClipboard({
       class="pointer-events-none absolute z-[2] mt-12 opacity-0 transition-opacity duration-300 group-hover/code:pointer-events-auto group-hover/code:opacity-100"
       :class="hasPreview ? 'end-4' : 'end-2'"
     >
-      <BaseButtonIcon
-        size="sm"
+      <BaseButton
+        size="icon-sm"
         rounded="md"
         :data-nui-tooltip="copied ? 'Copied!' : 'Copy'"
         data-nui-tooltip-position="start"
@@ -66,7 +66,7 @@ const { copy, copied, isSupported } = useClipboard({
           name="lucide:check"
           class="text-success-500 size-4"
         />
-      </BaseButtonIcon>
+      </BaseButton>
     </div>
     <div class="absolute z-[2] mt-1.5" :class="hasPreview ? 'end-5' : 'end-3'">
       <span v-if="activeTab?.language" class="text-muted-500 text-xs font-medium">

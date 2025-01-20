@@ -54,13 +54,14 @@ const currencies = [
         </BaseParagraph>
       </div>
       <div class="ms-auto flex items-center">
-        <BaseButtonIcon
+        <BaseButton
           rounded="lg"
-          muted
+          variant="muted"
+          size="icon-md"
           class="scale-75"
         >
           <Icon name="lucide:arrow-right" class="size-5" />
-        </BaseButtonIcon>
+        </BaseButton>
       </div>
     </div>
   </div>

@@ -228,9 +228,9 @@ function setAccount(account: any) {
               <div
                 class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
               >
-                <BaseButtonIcon rounded="full">
+                <BaseButton size="icon-md" rounded="full">
                   <Icon name="lucide:plus" class="size-4" />
-                </BaseButtonIcon>
+                </BaseButton>
               </div>
               <BaseRadioHeadless
                 v-model="selectedPerson"
