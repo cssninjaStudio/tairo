@@ -9,6 +9,6 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "devDependencies": {
-    "nuxt": "^3.14.1592"
+    "nuxt": "^3.15.2"
   }
 }

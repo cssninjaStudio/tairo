@@ -72,7 +72,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <BaseProviders>
     <!--
       Global app search modal
       @see .demo/components/DemoAppSearch.vue
@@ -94,5 +94,5 @@ useHead({
       <NuxtLoadingIndicator color="var(--color-primary-500)" />
       <NuxtPage />
     </NuxtLayout>
-  </div>
+  </BaseProviders>
 </template>
