@@ -1,5 +1,5 @@
-@import 'tailwindcss/theme' theme(reference);
-@import '@shuriken-ui/tailwind/theme.css' theme(reference);
+@reference 'tailwindcss/theme';
+@reference '@shuriken-ui/tailwind/theme.css';
 
 .vc-pane-container .vc-pane-layout {
   @apply font-sans;

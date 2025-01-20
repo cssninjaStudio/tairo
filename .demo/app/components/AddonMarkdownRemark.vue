@@ -118,11 +118,11 @@ html.dark .shiki span {
 </style>
 
 <style scoped>
-@import 'tailwindcss/theme' theme(reference);
-@import '@shuriken-ui/tailwind/theme.css' theme(reference);
+@reference 'tailwindcss/theme';
+@reference '@shuriken-ui/tailwind/theme.css';
 
 .markdown :deep(.shiki) {
   direction: ltr;
-  /* @todo focus-visible:nui-focus not found   @apply focus-visible:nui-focus; */
+  @apply focus:nui-focus;
 }
-</style>
+</stye>

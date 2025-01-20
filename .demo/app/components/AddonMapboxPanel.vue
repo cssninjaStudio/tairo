@@ -559,9 +559,9 @@ watch(
   </div>
 </template>
 
-<style lang="pcss">
-@import 'tailwindcss/theme' theme(reference);
-@import '@shuriken-ui/tailwind/theme.css' theme(reference);
+<style>
+@reference 'tailwindcss/theme';
+@reference '@shuriken-ui/tailwind/theme.css';
 
 .mapboxgl-popup .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
   @apply relative z-[30] top-[-2px];
