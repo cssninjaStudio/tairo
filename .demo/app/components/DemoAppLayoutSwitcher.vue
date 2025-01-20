@@ -52,7 +52,9 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
           Theme configuration
         </h3>
 
-        <BaseButtonClose @click="closeModal" />
+        <BaseButton class="icon-md" @click="closeModal">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 

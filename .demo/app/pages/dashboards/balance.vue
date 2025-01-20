@@ -107,12 +107,14 @@ function useGaugePersonal() {
           <!-- Features widget -->
           <DemoWidgetFeatures>
             <template #actions>
-              <BaseButtonClose
-                size="sm"
-                color="muted"
+              <BaseButton
+                size="icon-sm"
+                variant="muted"
                 data-nui-tooltip="Hide this"
                 @click="showFeatures = false"
-              />
+              >
+                <Icon name="lucide:x" class="size-4" />
+              </BaseButton>
             </template>
           </DemoWidgetFeatures>
         </div>

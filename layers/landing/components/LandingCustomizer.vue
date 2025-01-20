@@ -101,7 +101,9 @@ watch(selectedStyle, (value) => {
                 >
                   Member
                 </BaseTag>
-                <BaseButtonClose rounded="full" color="muted" />
+                <BaseButton class="icon-md" rounded="full" variant="muted">
+                  <Icon name="lucide:x" class="size-4" />
+                </BaseButton>
               </div>
               <BaseAvatar
                 size="xl"
@@ -261,7 +263,9 @@ watch(selectedStyle, (value) => {
                 >
                   Member
                 </BaseTag>
-                <BaseButtonClose rounded="lg" color="primary" />
+                <BaseButton class="icon-md" rounded="lg" variant="primary">
+                  <Icon name="lucide:x" class="size-4" />
+                </BaseButton>
               </div>
               <BaseAvatar
                 size="xl"
@@ -330,7 +334,9 @@ watch(selectedStyle, (value) => {
                 >
                   Member
                 </BaseTag>
-                <BaseButtonClose rounded="none" />
+                <BaseButton class="icon-md" rounded="none">
+                  <Icon name="lucide:x" class="size-4" />
+                </BaseButton>
               </div>
               <BaseAvatar
                 size="xl"

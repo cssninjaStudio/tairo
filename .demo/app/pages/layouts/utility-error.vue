@@ -142,11 +142,14 @@ const showStackTrace = ref(false)
           >
             {{ props.error.url }}
           </BaseTag>
-          <BaseButtonClose
-            color="muted"
+          <BaseButton
+            variant="muted"
+            size="icon-md"
             class="ms-auto"
             @click="showStackTrace = false"
-          />
+          >
+            <Icon name="lucide:x" class="size-4" />
+          </BaseButton>
         </div>
         <div class="mb-4 flex items-center gap-2">
           <BaseIconBox

@@ -439,7 +439,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButton rounded="full" size="sm">
+                <BaseButton rounded="full" size="icon-sm">
                   <Icon name="lucide:plus" class="size-4" />
                 </BaseButton>
               </div>

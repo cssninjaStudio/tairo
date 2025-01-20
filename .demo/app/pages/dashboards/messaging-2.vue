@@ -667,11 +667,14 @@ async function submitMessage() {
             <TairoLogo class="text-muted-800 h-9 dark:text-white" />
             <TairoLogoText class="text-muted-800 h-3 dark:text-white" />
           </NuxtLink>
-          <BaseButtonClose
-            color="muted"
+          <BaseButton
+            size="icon-md"
+            variant="muted"
             rounded="lg"
             @click="mobileOpen = false"
-          />
+          >
+            <Icon name="lucide:x" class="size-4" />
+          </BaseButton>
         </div>
         <div class="ltablet:pe-0 flex h-full flex-col pe-2 lg:pe-0">
           <!-- New conversation -->

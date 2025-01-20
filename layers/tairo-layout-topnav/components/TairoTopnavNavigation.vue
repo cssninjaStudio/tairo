@@ -53,11 +53,9 @@ const { menuItems, isMobileOpen } = useTopnav()
           :class="isMobileOpen ? 'flex' : 'hidden'"
         >
           <div class="me-auto block md:hidden">
-            <BaseButtonClose
-              color="muted"
-              rounded="full"
-              @click="isMobileOpen = false"
-            />
+            <BaseButton class="icon-md" rounded="full" variant="muted" @click="isMobileOpen = false">
+              <Icon name="lucide:x" class="size-4" />
+            </BaseButton>
           </div>
           <slot name="toolbar">
             <BaseButton to="#" color="primary">

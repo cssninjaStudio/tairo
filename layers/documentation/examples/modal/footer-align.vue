@@ -59,7 +59,9 @@ const isModalBodyOpen = ref(false)
           Medium dialog
         </h3>
 
-        <BaseButtonClose @click="isModalStartOpen = false" />
+        <BaseButton class="icon-md" @click="isModalStartOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 
@@ -118,7 +120,9 @@ const isModalBodyOpen = ref(false)
           Medium dialog
         </h3>
 
-        <BaseButtonClose @click="isModalEndOpen = false" />
+        <BaseButton class="icon-md" @click="isModalEndOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 
@@ -177,7 +181,9 @@ const isModalBodyOpen = ref(false)
           Medium dialog
         </h3>
 
-        <BaseButtonClose @click="isModalCenterOpen = false" />
+        <BaseButton class="icon-md" @click="isModalCenterOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 
@@ -236,7 +242,9 @@ const isModalBodyOpen = ref(false)
           Medium dialog
         </h3>
 
-        <BaseButtonClose @click="isModalBetweenOpen = false" />
+        <BaseButton class="icon-md" @click="isModalBetweenOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 
@@ -298,7 +306,9 @@ const isModalBodyOpen = ref(false)
           Medium dialog
         </h3>
 
-        <BaseButtonClose @click="isModalBodyOpen = false" />
+        <BaseButton class="icon-md" @click="isModalBodyOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 

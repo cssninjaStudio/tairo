@@ -41,7 +41,9 @@ const isModalMdOpen = ref(false)
         >
           Small dialog
         </h3>
-        <BaseButtonClose @click="closeModal" />
+        <BaseButton class="icon-md" @click="closeModal = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 
@@ -102,7 +104,9 @@ const isModalMdOpen = ref(false)
         >
           Medium dialog
         </h3>
-        <BaseButtonClose @click="isModalMdOpen = false" />
+        <BaseButton class="icon-md" @click="isModalMdOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 

@@ -104,7 +104,9 @@ const iconClasses = computed(() => {
     </div>
 
     <div v-if="props.closable" class="absolute end-2 top-2">
-      <BaseButtonClose @click="state.close" />
+      <BaseButton class="icon-md" @click="state.close">
+        <Icon name="lucide:x" class="size-4" />
+      </BaseButton>
     </div>
 
     <div

@@ -709,11 +709,13 @@ const selectedEventFeatures = computed({
               class="text-muted-400 dark:text-muted-500 mb-4 flex items-center justify-between uppercase"
             >
               <span>Event Info</span>
-              <BaseButtonClose
-                color="default"
+              <BaseButton
+                size="icon-md"
                 class="dark:bg-muted-800 bg-white"
                 @click="selectedEventId = undefined"
-              />
+              >
+                <Icon name="lucide:x" class="size-4" />
+              </BaseButton>
             </BaseHeading>
 
             <div class="flex flex-col gap-2">

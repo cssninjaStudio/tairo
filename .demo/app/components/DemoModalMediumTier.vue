@@ -35,7 +35,9 @@ const isModalXlOpen = ref(false)
         >
           Large dialog
         </h3>
-        <BaseButtonClose @click="isModalLgOpen = false" />
+        <BaseButton class="icon-md" @click="isModalLgOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 
@@ -96,7 +98,9 @@ const isModalXlOpen = ref(false)
         >
           Xl dialog
         </h3>
-        <BaseButtonClose @click="isModalXlOpen = false" />
+        <BaseButton class="icon-md" @click="isModalXlOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
     <!-- Body -->

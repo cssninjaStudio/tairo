@@ -34,7 +34,9 @@ const isModal3XlOpen = ref(false)
           2Xl dialog
         </h3>
 
-        <BaseButtonClose @click="isModal2XlOpen = false" />
+        <BaseButton class="icon-md" @click="isModal2XlOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
 
@@ -92,7 +94,9 @@ const isModal3XlOpen = ref(false)
           3Xl dialog
         </h3>
 
-        <BaseButtonClose @click="isModal3XlOpen = false" />
+        <BaseButton class="icon-md" @click="isModal3XlOpen = false">
+          <Icon name="lucide:x" class="size-4" />
+        </BaseButton>
       </div>
     </template>
     <!-- Body -->
