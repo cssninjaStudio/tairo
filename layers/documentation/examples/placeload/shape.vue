@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap items-end gap-2">
-    <BasePlaceload class="size-10 rounded" />
+    <BasePlaceload class="size-10 rounded-sm" />
 
     <BasePlaceload class="size-12 rounded-xl" />
 

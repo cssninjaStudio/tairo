@@ -107,7 +107,7 @@ const isSearchOpen = useState('search-open', () => false)
                     <span class="relative truncate text-sm">{{ item.name }}</span>
                     <span
                       v-if="item.count"
-                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
+                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
                     >{{ item.count }}
                     </span>
                   </NuxtLink>
@@ -124,7 +124,7 @@ const isSearchOpen = useState('search-open', () => false)
                     <span class="relative truncate text-sm">{{ item.name }}</span>
                     <span
                       v-if="item.count"
-                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
+                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
                     >{{ item.count }}
                     </span>
                   </button>
@@ -223,7 +223,7 @@ const isSearchOpen = useState('search-open', () => false)
                     <span class="relative truncate text-sm">{{ item.name }}</span>
                     <span
                       v-if="item.count"
-                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
+                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
                     >{{ item.count }}
                     </span>
                   </NuxtLink>
@@ -241,7 +241,7 @@ const isSearchOpen = useState('search-open', () => false)
                     <span class="relative truncate text-sm">{{ item.name }}</span>
                     <span
                       v-if="item.count"
-                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
+                      class="bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset"
                     >{{ item.count }}
                     </span>
                   </button>

@@ -30,7 +30,7 @@ const props = defineProps<{
             {{ props.event.title }}
           </div>
           <div class="text-muted-400 flex items-center gap-1 text-xs">
-            <!-- <div class="w-2 h-2 rounded-sm" :class="[categoryTheme[props.event.category].color]"></div>
+            <!-- <div class="w-2 h-2 rounded-xs" :class="[categoryTheme[props.event.category].color]"></div>
             <span>{{ categoryTheme[props.event.category].name }}</span> -->
             <!-- <span class="text-muted-200">|</span> -->
             <Icon name="ph:clock" class="text-muted-400 size-4" />

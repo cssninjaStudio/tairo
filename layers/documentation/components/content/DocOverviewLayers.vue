@@ -695,7 +695,7 @@ const mergedTree = [
               <span class="inline-flex items-center gap-2">
                 <span
                   v-if="child?.item?.color"
-                  class="inline-block size-2 rounded-sm"
+                  class="inline-block size-2 rounded-xs"
                   :class="child?.item?.color"
                 />
                 <span
@@ -747,7 +747,7 @@ const mergedTree = [
               <span class="inline-flex items-center gap-2">
                 <span
                   v-if="child?.item?.color"
-                  class="inline-block size-2 rounded-sm"
+                  class="inline-block size-2 rounded-xs"
                   :class="child?.item?.color"
                 />
                 <span

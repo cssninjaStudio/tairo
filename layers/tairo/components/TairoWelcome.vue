@@ -88,7 +88,7 @@ const codeTailwind = [
         >
           Welcome to the Tairo app starter. You are here because you ran the
           <code
-            class="bg-muted-100 dark:bg-muted-700/70 text-primary-500 rounded p-1 font-mono"
+            class="bg-muted-100 dark:bg-muted-700/70 text-primary-500 rounded-sm p-1 font-mono"
           >
             {{ command }}
           </code>

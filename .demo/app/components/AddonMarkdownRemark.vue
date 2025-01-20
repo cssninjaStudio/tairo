@@ -95,7 +95,7 @@ watch([() => props.source, processor], async ([source, _processor]) => {
 </script>
 
 <template>
-  <BasePlaceload v-if="!loaded" class="h-24 w-full rounded" />
+  <BasePlaceload v-if="!loaded" class="h-24 w-full rounded-sm" />
   <BaseProse
     v-else
     class="markdown" :class="[

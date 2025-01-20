@@ -799,8 +799,8 @@ async function submitMessage() {
                       :height="32"
                     />
                     <div class="grow space-y-2">
-                      <BasePlaceload class="h-3 w-full max-w-56 rounded" />
-                      <BasePlaceload class="h-3 w-full max-w-32 rounded" />
+                      <BasePlaceload class="h-3 w-full max-w-56 rounded-sm" />
+                      <BasePlaceload class="h-3 w-full max-w-32 rounded-sm" />
                     </div>
                   </div>
                   <div class="flex w-full max-w-md gap-4">
@@ -810,8 +810,8 @@ async function submitMessage() {
                       :height="32"
                     />
                     <div class="grow space-y-2">
-                      <BasePlaceload class="h-3 w-full max-w-64 rounded" />
-                      <BasePlaceload class="h-3 w-full max-w-48 rounded" />
+                      <BasePlaceload class="h-3 w-full max-w-64 rounded-sm" />
+                      <BasePlaceload class="h-3 w-full max-w-48 rounded-sm" />
                     </div>
                   </div>
                   <div
@@ -824,10 +824,10 @@ async function submitMessage() {
                     />
                     <div class="grow space-y-2">
                       <BasePlaceload
-                        class="ms-auto h-3 w-full max-w-64 rounded"
+                        class="ms-auto h-3 w-full max-w-64 rounded-sm"
                       />
                       <BasePlaceload
-                        class="ms-auto h-3 w-full max-w-48 rounded"
+                        class="ms-auto h-3 w-full max-w-48 rounded-sm"
                       />
                     </div>
                   </div>
@@ -841,10 +841,10 @@ async function submitMessage() {
                     />
                     <div class="grow space-y-2">
                       <BasePlaceload
-                        class="ms-auto h-3 w-full max-w-56 rounded"
+                        class="ms-auto h-3 w-full max-w-56 rounded-sm"
                       />
                       <BasePlaceload
-                        class="ms-auto h-3 w-full max-w-32 rounded"
+                        class="ms-auto h-3 w-full max-w-32 rounded-sm"
                       />
                     </div>
                   </div>
@@ -855,8 +855,8 @@ async function submitMessage() {
                       :height="32"
                     />
                     <div class="grow space-y-2">
-                      <BasePlaceload class="h-3 w-full max-w-56 rounded" />
-                      <BasePlaceload class="h-3 w-full max-w-32 rounded" />
+                      <BasePlaceload class="h-3 w-full max-w-56 rounded-sm" />
+                      <BasePlaceload class="h-3 w-full max-w-32 rounded-sm" />
                     </div>
                   </div>
                   <div class="flex w-full max-w-md gap-4">
@@ -866,8 +866,8 @@ async function submitMessage() {
                       :height="32"
                     />
                     <div class="grow space-y-2">
-                      <BasePlaceload class="h-3 w-full max-w-64 rounded" />
-                      <BasePlaceload class="h-3 w-full max-w-48 rounded" />
+                      <BasePlaceload class="h-3 w-full max-w-64 rounded-sm" />
+                      <BasePlaceload class="h-3 w-full max-w-48 rounded-sm" />
                     </div>
                   </div>
                 </div>
@@ -1064,23 +1064,23 @@ async function submitMessage() {
               />
             </div>
             <div class="flex flex-col items-center">
-              <BasePlaceload class="mb-2 h-3 w-full max-w-40 rounded" />
-              <BasePlaceload class="mb-2 h-3 w-full max-w-24 rounded" />
+              <BasePlaceload class="mb-2 h-3 w-full max-w-40 rounded-sm" />
+              <BasePlaceload class="mb-2 h-3 w-full max-w-24 rounded-sm" />
               <div class="my-4 flex w-full flex-col items-center">
-                <BasePlaceload class="mb-2 h-2 w-full max-w-60 rounded" />
-                <BasePlaceload class="mb-2 h-2 w-full max-w-52 rounded" />
+                <BasePlaceload class="mb-2 h-2 w-full max-w-60 rounded-sm" />
+                <BasePlaceload class="mb-2 h-2 w-full max-w-52 rounded-sm" />
               </div>
               <div class="mb-6 flex w-full items-center justify-center">
                 <div class="px-4">
-                  <BasePlaceload class="h-3 w-14 rounded" />
+                  <BasePlaceload class="h-3 w-14 rounded-sm" />
                 </div>
                 <div class="px-4">
-                  <BasePlaceload class="h-3 w-14 rounded" />
+                  <BasePlaceload class="h-3 w-14 rounded-sm" />
                 </div>
               </div>
               <div class="w-full">
                 <BasePlaceload class="h-10 w-full rounded-xl" />
-                <BasePlaceload class="mx-auto mt-3 h-3 w-[7.5rem] rounded" />
+                <BasePlaceload class="mx-auto mt-3 h-3 w-[7.5rem] rounded-sm" />
               </div>
             </div>
           </div>

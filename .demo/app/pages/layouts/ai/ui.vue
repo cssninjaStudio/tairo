@@ -530,21 +530,21 @@ function closeUpgrade() {
                                   <div>
                                     <div v-if="loading && index === conversation.length - 1" class="space-y-8">
                                       <div class="space-y-3">
-                                        <BasePlaceload class="h-3 w-full rounded" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded" />
-                                        <BasePlaceload class="h-3 w-3/5 rounded" />
+                                        <BasePlaceload class="h-3 w-full rounded-sm" />
+                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                        <BasePlaceload class="h-3 w-3/5 rounded-sm" />
                                       </div>
                                       <div class="space-y-3">
-                                        <BasePlaceload class="h-3 w-full rounded" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded" />
+                                        <BasePlaceload class="h-3 w-full rounded-sm" />
+                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
                                       </div>
                                       <div class="space-y-3">
-                                        <BasePlaceload class="h-3 w-full rounded" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded" />
-                                        <BasePlaceload class="h-3 w-full rounded" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded" />
-                                        <BasePlaceload class="h-3 w-full rounded" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded" />
+                                        <BasePlaceload class="h-3 w-full rounded-sm" />
+                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                        <BasePlaceload class="h-3 w-full rounded-sm" />
+                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                        <BasePlaceload class="h-3 w-full rounded-sm" />
+                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
                                       </div>
                                     </div>
                                     <div

@@ -2,7 +2,7 @@
 import Slider from '@vueform/slider'
 import '~/assets/css/slider.css'
 
-const rounded = ref(20)
+const rounded-sm = ref(20)
 </script>
 
 <template>

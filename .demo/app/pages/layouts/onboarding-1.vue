@@ -476,7 +476,7 @@ function focusField(n: any) {
               </BaseText>
             </div>
             <div
-              class="text-muted-800 dark:text-muted-100 mx-auto flex h-60 w-72 flex-col rounded text-center"
+              class="text-muted-800 dark:text-muted-100 mx-auto flex h-60 w-72 flex-col rounded-sm text-center"
             >
               <div
                 class="flex w-full justify-center gap-3"
