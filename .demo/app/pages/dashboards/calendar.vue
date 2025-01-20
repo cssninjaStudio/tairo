@@ -914,7 +914,7 @@ const selectedEventFeatures = computed({
               tag="div"
               orientation="vertical"
               group-name="unscheduled"
-              drag-class="transform cursor-grabbing drop-shadow rotate-2 transform-gpu"
+              drag-class="transform cursor-grabbing drop-shadow-sm rotate-2 transform-gpu"
               drag-handle-selector=".dnd-drag-handler"
               :should-accept-drop="() => false"
               :get-child-payload="(idx: number) => getChildPayload(idx)"

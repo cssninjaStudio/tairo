@@ -82,7 +82,7 @@ const activeTab = ref('tab-1')
               >
                 <img
                   src="/img/avatars/2.svg"
-                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                   alt=""
                 >
               </div>
@@ -112,7 +112,7 @@ const activeTab = ref('tab-1')
               >
                 <img
                   src="/img/avatars/16.svg"
-                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                   alt=""
                 >
               </div>
@@ -142,7 +142,7 @@ const activeTab = ref('tab-1')
               >
                 <img
                   src="/img/avatars/3.svg"
-                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                   alt=""
                 >
               </div>
@@ -172,7 +172,7 @@ const activeTab = ref('tab-1')
               >
                 <img
                   src="/img/avatars/19.svg"
-                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                   alt=""
                 >
               </div>
@@ -207,7 +207,7 @@ const activeTab = ref('tab-1')
                 >
                   <img
                     src="/img/icons/logos/slicer.svg"
-                    class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-xl object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -243,7 +243,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/2.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -252,7 +252,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/3.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -261,7 +261,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/4.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -287,7 +287,7 @@ const activeTab = ref('tab-1')
                 >
                   <img
                     src="/img/icons/logos/metamovies.svg"
-                    class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-xl object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -323,7 +323,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/13.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -332,7 +332,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/24.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -349,7 +349,7 @@ const activeTab = ref('tab-1')
                 >
                   <img
                     src="/img/icons/logos/fastpizza.svg"
-                    class="max-w-full rounded-xl object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-xl object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -385,7 +385,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/11.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -394,7 +394,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/3.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -439,7 +439,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/3.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -487,7 +487,7 @@ const activeTab = ref('tab-1')
                   >
                     <img
                       src="/img/avatars/18.svg"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>

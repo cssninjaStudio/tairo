@@ -254,7 +254,7 @@ const onSubmit = handleSubmit(async (values) => {
 
               <!-- Submit -->
               <div class="mt-6">
-                <div class="block w-full rounded-md shadow-sm">
+                <div class="block w-full rounded-md shadow-xs">
                   <BaseButton
                     :disabled="isSubmitting"
                     :loading="isSubmitting"

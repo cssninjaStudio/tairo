@@ -150,7 +150,7 @@ onMounted(() => {
     <input
       v-model="datepickerValue"
       type="text"
-      class="text-muted-600 hidden w-full rounded-lg py-3 pe-10 ps-4 font-medium leading-none shadow-sm focus:outline-none focus:ring focus:ring-blue-600/50"
+      class="text-muted-600 hidden w-full rounded-lg py-3 pe-10 ps-4 font-medium leading-none shadow-xs focus:outline-none focus:ring focus:ring-blue-600/50"
       placeholder="Select date"
       readonly
       @click="showDatepicker = !showDatepicker"

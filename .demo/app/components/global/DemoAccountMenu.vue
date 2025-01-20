@@ -23,7 +23,7 @@ const props = defineProps<{
           >
             <img
               src="/img/avatars/2.svg"
-              class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+              class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
               alt=""
             >
           </div>
@@ -49,7 +49,7 @@ const props = defineProps<{
               >
                 <img
                   src="/img/avatars/2.svg"
-                  class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                   alt=""
                 >
               </div>

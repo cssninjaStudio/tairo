@@ -51,7 +51,7 @@ const isModalMdOpen = ref(false)
         <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/3.svg"
-            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+            class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
             alt=""
           >
         </div>
@@ -112,7 +112,7 @@ const isModalMdOpen = ref(false)
         <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/7.svg"
-            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+            class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
             alt=""
           >
         </div>

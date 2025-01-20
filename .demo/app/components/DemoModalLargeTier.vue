@@ -45,7 +45,7 @@ const isModal3XlOpen = ref(false)
         <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/13.svg"
-            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+            class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
             alt=""
           >
         </div>
@@ -105,7 +105,7 @@ const isModal3XlOpen = ref(false)
         <div class="relative mx-auto mb-4 flex size-24">
           <img
             src="https://media.cssninja.io/shuriken/avatars/17.svg"
-            class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+            class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
             alt=""
           >
         </div>

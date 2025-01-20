@@ -123,7 +123,7 @@ const comboInput = ref(null)
                   >
                     <img
                       :src="person.avatar"
-                      class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                       alt=""
                     >
                   </div>
@@ -159,7 +159,7 @@ const comboInput = ref(null)
                 >
                   <img
                     src="/img/avatars/3.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -183,7 +183,7 @@ const comboInput = ref(null)
                 >
                   <img
                     src="/img/avatars/18.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -207,7 +207,7 @@ const comboInput = ref(null)
                 >
                   <img
                     src="/img/avatars/11.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>

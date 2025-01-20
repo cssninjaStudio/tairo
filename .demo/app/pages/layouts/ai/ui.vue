@@ -490,7 +490,7 @@ function closeUpgrade() {
                                 <p>{{ item.text }}</p>
                               </div>
                               <div class="absolute inset-y-0 right-0 z-10">
-                                <div class="dark:bg-muted-950 border-muted-200 dark:border-muted-700 pointer-events-auto sticky top-3 flex w-fit -translate-y-1.5 items-center gap-1 rounded-[10px] border bg-white p-1 opacity-0 shadow-sm group-hover:opacity-100">
+                                <div class="dark:bg-muted-950 border-muted-200 dark:border-muted-700 pointer-events-auto sticky top-3 flex w-fit -translate-y-1.5 items-center gap-1 rounded-[10px] border bg-white p-1 opacity-0 shadow-xs group-hover:opacity-100">
                                   <button
                                     class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
                                   >

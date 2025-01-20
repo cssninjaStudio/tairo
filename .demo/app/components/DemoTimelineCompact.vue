@@ -78,7 +78,7 @@ const items = [
         <img
           v-if="item.image"
           :src="item.image"
-          class="max-w-full object-cover shadow-sm dark:border-transparent"
+          class="max-w-full object-cover shadow-xs dark:border-transparent"
           :class="[
             props.shape === 'rounded' ? 'rounded-md' : '',
             props.shape === 'curved' ? 'rounded-xl' : '',

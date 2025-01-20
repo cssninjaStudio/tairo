@@ -66,7 +66,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 >
                   <img
                     src="/img/avatars/12.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -103,7 +103,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 >
                   <img
                     src="/img/avatars/19.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -140,7 +140,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 >
                   <img
                     src="/img/avatars/3.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -177,7 +177,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 >
                   <img
                     src="/img/avatars/4.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
@@ -214,7 +214,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                 >
                   <img
                     src="/img/avatars/8.svg"
-                    class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
+                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
                 </div>
