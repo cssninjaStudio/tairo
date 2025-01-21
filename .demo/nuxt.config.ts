@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import {
   demoRules,
   documentationRules,
@@ -18,7 +19,6 @@ export default defineNuxtConfig({
      * - documentation: contains all /documentation pages
      */
     '../layers/landing',
-    import.meta.env.ENABLE_DOCUMENTATION && '../layers/documentation',
 
     /**
      * This extends the base Tairo layer.
@@ -43,13 +43,43 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    /**
-     * Swiper is a nuxt module that allows us to use swiper in nuxt
-     * wich is a carousel component used in the demo
-     * @see https://github.com/cpreston321/nuxt-swiper
-     */
     'nuxt-swiper',
+    '@nuxt/content',
+    'nuxt-component-meta',
   ],
+  alias: {
+    '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
+  },
+  content: {
+    build: {
+      markdown: {
+        toc: { depth: 3, searchDepth: 3 },
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+          },
+        },
+      },
+    },
+    renderer: {
+      anchorLinks: true,
+    },
+  },
+  componentMeta: {
+    metaSources: ['@shuriken-ui/nuxt-component-meta'],
+    exclude: [
+      (component: any) => {
+        const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+        const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+        const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
+
+        const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
+
+        return isBlacklisted || isExcluded
+      },
+    ],
+  },
 
   css: [
     /**
@@ -91,7 +121,7 @@ export default defineNuxtConfig({
   routeRules: {
     ...demoRules,
     ...landingRules,
-    ...(import.meta.env.ENABLE_DOCUMENTATION ? documentationRules : {}),
+    ...documentationRules,
   },
 
   // nuxt build configuration

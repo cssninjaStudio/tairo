@@ -20,33 +20,34 @@ const { data: contentDocs } = useAsyncData(
     if (!search.value)
       return Promise.resolve([] as any[])
 
-    // @ts-ignore This may be undefined if documentation is disabled
-    return queryContent()
-      .where({
-        $and: [
-          {
-            _type: 'markdown',
-            _draft: false,
-            _partial: false,
-          },
-          {
-            $or: [
-              {
-                components: { $icontains: search.value },
-              },
-              {
-                title: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
-              },
-              {
-                _path: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
-              },
-            ],
-          },
-        ],
-      })
-      .limit(6)
-      .find()
-      .catch(() => []) as Promise<any[]>
+    // @todo: content v3 search
+    return Promise.resolve([])
+    // return queryCollection()
+    //   .where({
+    //     $and: [
+    //       {
+    //         _type: 'markdown',
+    //         _draft: false,
+    //         _partial: false,
+    //       },
+    //       {
+    //         $or: [
+    //           {
+    //             components: { $icontains: search.value },
+    //           },
+    //           {
+    //             title: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
+    //           },
+    //           {
+    //             _path: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //   })
+    //   .limit(6)
+    //   .find()
+    //   .catch(() => []) as Promise<any[]>
   },
   {
     watch: [search],
@@ -168,14 +169,14 @@ const metaKey = useMetaKey()
           <ul>
             <li
               v-for="page in contentDocsResults"
-              :key="page?._path"
+              :key="page?.path"
               class=""
             >
               <DemoAppSearchResult
-                :to="page?._path"
+                :to="page?.path"
                 :search="search"
                 :title="page?.title"
-                :subtitle="page?._path"
+                :subtitle="page?.path"
                 :icon="page?.icon?.src"
                 @click.passive="onClick"
               />

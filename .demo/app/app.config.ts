@@ -84,6 +84,12 @@ export default defineAppConfig({
             to: '/dashboards/messaging',
           },
           {
+            title: 'Documentation',
+            icon: { name: 'ph:grid-four-duotone', class: 'w-5 h-5' },
+            subsidebar: { component: 'DocSubsidebarDocumentation' },
+            activePath: '/documentation',
+          },
+          {
             title: 'Customize',
             icon: { name: 'ph:drop-half-bottom-duotone', class: 'w-5 h-5' },
             click: () => {

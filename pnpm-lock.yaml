@@ -97,13 +97,25 @@ importers:
       '@iconify-json/fa-brands':
         specifier: ^1.2.1
         version: 1.2.1
+      '@iconify-json/fa6-brands':
+        specifier: ^1.2.5
+        version: 1.2.5
       '@iconify-json/feather':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/file-icons':
         specifier: ^1.2.1
         version: 1.2.1
       '@iconify-json/gg':
         specifier: ^1.2.2
         version: 1.2.2
       '@iconify-json/guidance':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/ic':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/icon-park-outline':
         specifier: ^1.2.2
         version: 1.2.2
       '@iconify-json/ion':
@@ -121,13 +133,28 @@ importers:
       '@iconify-json/mdi-light':
         specifier: ^1.2.2
         version: 1.2.2
+      '@iconify-json/mingcute':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@iconify-json/nonicons':
+        specifier: ^1.2.2
+        version: 1.2.2
       '@iconify-json/pajamas':
         specifier: ^1.2.4
         version: 1.2.4
+      '@iconify-json/ph':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.20
+        version: 1.2.20
       '@iconify-json/solar':
         specifier: ^1.2.2
         version: 1.2.2
       '@iconify-json/streamline':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/system-uicons':
         specifier: ^1.2.2
         version: 1.2.2
       '@iconify-json/teenyicons':
@@ -145,12 +172,18 @@ importers:
       '@mapbox/mapbox-gl-geocoder':
         specifier: 5.0.3
         version: 5.0.3
+      '@nuxt/content':
+        specifier: 3.0.0
+        version: 3.0.0(@libsql/client@0.14.0)(magicast@0.3.5)(pg@8.13.1)(rollup@4.31.0)
       '@popperjs/core':
         specifier: 2.11.8
         version: 2.11.8
       '@shikijs/rehype':
         specifier: 2.0.1
         version: 2.0.1
+      '@shuriken-ui/nuxt-component-meta':
+        specifier: 4.0.0-alpha.27
+        version: 4.0.0-alpha.27
       '@shuriken-ui/tailwind':
         specifier: 4.0.0-alpha.27
         version: 4.0.0-alpha.27
@@ -217,6 +250,9 @@ importers:
       nuxt:
         specifier: 3.15.2
         version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
+      nuxt-component-meta:
+        specifier: 0.10.0
+        version: 0.10.0(magicast@0.3.5)(rollup@4.31.0)
       nuxt-swiper:
         specifier: 2.0.0
         version: 2.0.0(magicast@0.3.5)(rollup@4.31.0)
@@ -289,6 +325,9 @@ importers:
       vue-axe:
         specifier: 3.1.2
         version: 3.1.2(axe-core@4.10.2)(vue@3.5.13(typescript@5.7.3))
+      vue-component-meta:
+        specifier: 2.2.0
+        version: 2.2.0(typescript@5.7.3)
       vue-router:
         specifier: ^4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.7.3))
@@ -1090,11 +1129,20 @@ packages:
   '@iconify-json/feather@1.2.1':
     resolution: {integrity: sha512-gURNg2TJYuO1U7DoOGCylm9TwkMfzjOH2BHdWsE0IXLXj/MNkFIJu56Wu1xRws27M8hzDzUDt/biGUa/LfAjdg==}
 
+  '@iconify-json/file-icons@1.2.1':
+    resolution: {integrity: sha512-ciDy+wGZpF2QELM5aGVTwsvh6l3puPbdrIy+L9sVAv1tvSHWFZB2UuadfiLODlVtZFUrzuO404NxESwH88MY1Q==}
+
   '@iconify-json/gg@1.2.2':
     resolution: {integrity: sha512-8iQh8+Tdb/0jakNYy0+t2GVubjhbaJbuYoPsRhFw8IAs00IQV2BjE9GoB2kGF/UObaJCqvCelB3qRaUdizkrmg==}
 
   '@iconify-json/guidance@1.2.2':
     resolution: {integrity: sha512-djIJ7TXV9xSZSmKm07+rKZ8iKEKo4k8dvE5TtcrM9ZGnwZWe/8IY2PvDTcVPZC7ySryqBrFDMCdjLZBldJ+ShQ==}
+
+  '@iconify-json/ic@1.2.2':
+    resolution: {integrity: sha512-QmjwS3lYiOmVWgTCEOTFyGODaR/+689+ajep/VsrCcsUN0Gdle5PmIcibDsdmRyrOsW/E77G41UUijdbjQUofw==}
+
+  '@iconify-json/icon-park-outline@1.2.2':
+    resolution: {integrity: sha512-7VkMWOZTIMNkC9+oAL4I5kVlVC5Pq3nQpruZ4E3cLyKaeV95gaUrEilUkvGW71fgsFYCBWAmOZ3KpM4ux0j0zA==}
 
   '@iconify-json/ion@1.2.2':
     resolution: {integrity: sha512-GysHYDAyy3K4R2Xxsab3I0ZFmQA4oorfIkwX0g6xfZJNVZcFyAlA4pa1jAJC9Bk3cLiWUtnN8ZyWs6cP3nxlnw==}
@@ -1111,6 +1159,12 @@ packages:
   '@iconify-json/mdi@1.2.2':
     resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
 
+  '@iconify-json/mingcute@1.2.3':
+    resolution: {integrity: sha512-yiEQfLBF5iwyOdxuY0kEU06+8Mp6Mrp14KVXTb+5jjSVuD71C9EQrzM/mm1Efd8Nu2amJalTPisl3loC8pHBqQ==}
+
+  '@iconify-json/nonicons@1.2.2':
+    resolution: {integrity: sha512-W68A8EuZxQTsaLh9jI44DhGUJwhyaqUWlGjhkM9791tOV1iYiB8Eigsu63sz59M9zueaFNuOCLKdUF69ayulwA==}
+
   '@iconify-json/pajamas@1.2.4':
     resolution: {integrity: sha512-W6SmAX+eeVyREO91Ly50DpdG6h+9wk0DVm2PCohZxTmJ9gHfUOenpKnhYbh6+uzBCVcjbZTjBMxxn2YdwAvNOA==}
 
@@ -1125,6 +1179,9 @@ packages:
 
   '@iconify-json/streamline@1.2.2':
     resolution: {integrity: sha512-hPa+V7Vuy4lDI06+MbeRSMEIonCADLn3+7syJHLekQT3Wh1SnHTpUh6j0zv1sBFEoYXP5TUNYM3qcadXZq9PGw==}
+
+  '@iconify-json/system-uicons@1.2.2':
+    resolution: {integrity: sha512-E5mwm7F3ahs58YacvifJlj7tPN/QYTMWtLe38bwS9LVylyfT7hAsHdBiBUcsgM5Isdr+6x1TTSz1iAq+/bkUcw==}
 
   '@iconify-json/teenyicons@1.2.2':
     resolution: {integrity: sha512-Do08DrvNpT+pKVeyFqn7nZiIviAAY8KbduSfpNKzE1bgVekAIJ/AAJtOBSUFpV4vTk+hXw195+jmCv8/0cJSKA==}
@@ -5851,6 +5908,9 @@ packages:
   remark-mdc@3.5.2:
     resolution: {integrity: sha512-DMNyAwWfVtFIHP80IngiLhN4xXRGKO8OpvWYhsT468dXsjc4tvrENjQwZABPwgKXcFpHwwIZL2i/Wq/IDGF8VQ==}
 
+  remark-mdc@3.5.3:
+    resolution: {integrity: sha512-XmIAhEYBCtDvGjvLfyCtF8Bj1Uey9v3JD2f9WutM32Xfy9Uif3vPqJtg9n2whwIsXBtD+nvK+bEBt0zrq1DqtA==}
+
   remark-parse@10.0.2:
     resolution: {integrity: sha512-3ydxgHa/ZQzG8LvC7jTXccARYDcRld3VfcgIIFs7bI6vbRSxJJmzgLEIIoYKyrfhaY+ujuWaf/PJiMZXoiCXgw==}
 
@@ -7868,11 +7928,23 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/file-icons@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/gg@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 
   '@iconify-json/guidance@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ic@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/icon-park-outline@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7896,6 +7968,14 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/mingcute@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/nonicons@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/pajamas@1.2.4':
     dependencies:
       '@iconify/types': 2.0.0
@@ -7913,6 +7993,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/streamline@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/system-uicons@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -8289,7 +8373,7 @@ snapshots:
       pathe: 2.0.2
       pg: 8.13.1
       pkg-types: 1.3.1
-      remark-mdc: 3.5.2
+      remark-mdc: 3.5.3
       scule: 1.3.0
       shiki: 1.29.1
       slugify: 1.6.6
@@ -8600,7 +8684,7 @@ snapshots:
       rehype-sort-attributes: 5.0.1
       remark-emoji: 5.0.1
       remark-gfm: 4.0.0
-      remark-mdc: 3.5.2
+      remark-mdc: 3.5.3
       remark-parse: 11.0.0
       remark-rehype: 11.1.1
       remark-stringify: 11.0.0
@@ -13999,6 +14083,29 @@ snapshots:
       - supports-color
 
   remark-mdc@3.5.2:
+    dependencies:
+      '@types/mdast': 4.0.4
+      '@types/unist': 3.0.3
+      flat: 6.0.1
+      mdast-util-from-markdown: 2.0.2
+      mdast-util-to-markdown: 2.1.2
+      micromark: 4.0.1
+      micromark-core-commonmark: 2.0.2
+      micromark-factory-space: 2.0.1
+      micromark-factory-whitespace: 2.0.1
+      micromark-util-character: 2.1.1
+      micromark-util-types: 2.0.1
+      parse-entities: 4.0.2
+      scule: 1.3.0
+      stringify-entities: 4.0.4
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.1
+      yaml: 2.7.0
+    transitivePeerDependencies:
+      - supports-color
+
+  remark-mdc@3.5.3:
     dependencies:
       '@types/mdast': 4.0.4
       '@types/unist': 3.0.3
