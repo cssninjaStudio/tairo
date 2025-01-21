@@ -1,5 +1,5 @@
 <template>
-  <BaseButtonGroup>
+  <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
     <BaseButton color="default">
       <Icon name="lucide:edit-3" class="-ms-1 size-3" />
 
@@ -23,5 +23,5 @@
 
       <span>Share</span>
     </BaseButton>
-  </BaseButtonGroup>
+  </div>
 </template>

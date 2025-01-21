@@ -4,7 +4,7 @@ const taxes = ref('With taxes')
 </script>
 
 <template>
-  <BaseButtonGroup>
+  <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
     <BaseButton color="muted">
       <span>USD</span>
     </BaseButton>
@@ -32,5 +32,5 @@ const taxes = ref('With taxes')
         Without taxes
       </option>
     </BaseSelect>
-  </BaseButtonGroup>
+  </div>
 </template>

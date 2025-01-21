@@ -647,9 +647,10 @@ const selectedEventFeatures = computed({
                 Saturday
               </option>
             </BaseSelect>
-            <BaseButtonGroup>
+            <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
               <BaseButton
                 rounded="lg"
+                size="sm"
                 :color="settings.hourHeight === 480 ? 'muted' : 'default'"
                 @click="() => updateHeight(480)"
               >
@@ -657,12 +658,13 @@ const selectedEventFeatures = computed({
               </BaseButton>
               <BaseButton
                 rounded="lg"
+                size="sm"
                 :color="settings.hourHeight === 160 ? 'muted' : 'default'"
                 @click="() => updateHeight()"
               >
                 <Icon name="carbon:minimize" />
               </BaseButton>
-            </BaseButtonGroup>
+            </div>
           </div>
 
           <div class="mt-4">

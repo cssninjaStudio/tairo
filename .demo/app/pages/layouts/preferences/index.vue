@@ -137,7 +137,7 @@ const form = reactive({
             </BaseParagraph>
           </div>
           <div class="mt-2 sm:col-span-2 sm:mt-0">
-            <BaseButtonGroup>
+            <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
               <BaseButton
                 size="lg"
                 color="muted"
@@ -156,14 +156,14 @@ const form = reactive({
                   wrapper: 'grow',
                 }"
               />
-            </BaseButtonGroup>
+            </div>
           </div>
         </div>
 
         <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-5">
           <label class="text-muted-900 dark:text-muted-100 block font-sans text-sm font-medium sm:mt-px sm:pt-2"> Website </label>
           <div class="mt-2 sm:col-span-2 sm:mt-0">
-            <BaseButtonGroup>
+            <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
               <BaseButton
                 size="lg"
                 color="muted"
@@ -182,7 +182,7 @@ const form = reactive({
                   wrapper: 'grow',
                 }"
               />
-            </BaseButtonGroup>
+            </div>
           </div>
         </div>
 

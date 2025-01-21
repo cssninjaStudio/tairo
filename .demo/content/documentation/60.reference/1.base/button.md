@@ -2,7 +2,6 @@
 title: BaseButton
 components:
   - BaseButton
-  - BaseButtonGroup
 description: Use buttons to trigger actions or to navigate to a new page. Explore the different button types and their variations.
 icon:
   src: /img/illustrations/components/button-icon.svg
@@ -108,14 +107,5 @@ demo: '#examples/button/disabled.vue'
 Buttons can be shown in a disabled state. Use the `disabled` prop to disable the button.
 ::
 
-::doc-component-demo
----
-title: Button group
-demo: '#examples/button/group.vue'
----
-Buttons can be grouped together. Use them inside a `BaseButtonGroup` component.
-::
-
 :doc-component-meta{name="BaseButton"}
 
-:doc-component-meta{name="BaseButtonGroup"}
