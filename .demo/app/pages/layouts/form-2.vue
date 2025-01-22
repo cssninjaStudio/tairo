@@ -416,22 +416,21 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden />
-                      <option value="Surgery">
+                      <BaseSelectItem value="Surgery">
                         Surgery
-                      </option>
-                      <option value="Cardiology">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="Cardiology">
                         Cardiology
-                      </option>
-                      <option value="Pediatry">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="Pediatry">
                         Pediatry
-                      </option>
-                      <option value="Dermatology">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="Dermatology">
                         Dermatology
-                      </option>
-                      <option value="Traumatology">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="Traumatology">
                         Traumatology
-                      </option>
+                      </BaseSelectItem>
                     </BaseSelect>
                   </Field>
                 </div>
@@ -487,16 +486,15 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden />
-                      <option value="intern">
+                      <BaseSelectItem value="intern">
                         Intern
-                      </option>
-                      <option value="resident">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="resident">
                         Resident
-                      </option>
-                      <option value="titular">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="titular">
                         Titular
-                      </option>
+                      </BaseSelectItem>
                     </BaseSelect>
                   </Field>
                 </div>
@@ -515,19 +513,18 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden />
-                      <option value="0-5">
+                      <BaseSelectItem value="0-5">
                         0-5
-                      </option>
-                      <option value="5-10">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="5-10">
                         5-10
-                      </option>
-                      <option value="10-15">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="10-15">
                         10-15
-                      </option>
-                      <option value="15+">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="15+">
                         15+
-                      </option>
+                      </BaseSelectItem>
                     </BaseSelect>
                   </Field>
                 </div>
@@ -546,22 +543,21 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <option value="" hidden />
-                      <option value="1">
+                      <BaseSelectItem value="1">
                         B+
-                      </option>
-                      <option value="2">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="2">
                         A
-                      </option>
-                      <option value="3">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="3">
                         A+
-                      </option>
-                      <option value="4">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="4">
                         S
-                      </option>
-                      <option value="5">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="5">
                         S+
-                      </option>
+                      </BaseSelectItem>
                     </BaseSelect>
                   </Field>
                 </div>

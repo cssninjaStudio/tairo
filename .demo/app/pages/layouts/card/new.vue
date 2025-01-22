@@ -356,21 +356,21 @@ const onSubmit = handleSubmit(
                           @update:model-value="handleChange"
                           @blur="handleBlur"
                         >
-                          <option value="Maya Rosselini">
+                          <BaseSelectItem value="Maya Rosselini">
                             Maya Rosselini
-                          </option>
-                          <option value="Kaleb Wilson">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="Kaleb Wilson">
                             Kaleb Wilson
-                          </option>
-                          <option value="Amber Wilson">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="Amber Wilson">
                             Amber Wilson
-                          </option>
-                          <option value="Jennifer Wilson">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="Jennifer Wilson">
                             Jennifer Wilson
-                          </option>
-                          <option value="John Baxter">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="John Baxter">
                             John Baxter
-                          </option>
+                          </BaseSelectItem>
                         </BaseSelect>
                       </Field>
                     </div>
@@ -404,12 +404,12 @@ const onSubmit = handleSubmit(
                           @update:model-value="handleChange"
                           @blur="handleBlur"
                         >
-                          <option value="visa">
+                          <BaseSelectItem value="visa">
                             Visa
-                          </option>
-                          <option value="mastercard">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="mastercard">
                             Mastercard
-                          </option>
+                          </BaseSelectItem>
                         </BaseSelect>
                       </Field>
                     </div>
@@ -443,12 +443,12 @@ const onSubmit = handleSubmit(
                           @update:model-value="handleChange"
                           @blur="handleBlur"
                         >
-                          <option value="physical">
+                          <BaseSelectItem value="physical">
                             Physical
-                          </option>
-                          <option value="virtual">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="virtual">
                             Virtual
-                          </option>
+                          </BaseSelectItem>
                         </BaseSelect>
                       </Field>
                     </div>

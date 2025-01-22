@@ -400,16 +400,16 @@ const people = ref([
                   @blur="handleBlur"
                 />
                 <datalist id="eventColors">
-                  <option value="#84cc16" />
-                  <option value="#22c55e" />
-                  <option value="#0ea5e9" />
-                  <option value="#6366f1" />
-                  <option value="#8b5cf6" />
-                  <option value="#d946ef" />
-                  <option value="#f43f5e" />
-                  <option value="#facc15" />
-                  <option value="#fb923c" />
-                  <option value="#9ca3af" />
+                  <BaseSelectItem value="#84cc16" />
+                  <BaseSelectItem value="#22c55e" />
+                  <BaseSelectItem value="#0ea5e9" />
+                  <BaseSelectItem value="#6366f1" />
+                  <BaseSelectItem value="#8b5cf6" />
+                  <BaseSelectItem value="#d946ef" />
+                  <BaseSelectItem value="#f43f5e" />
+                  <BaseSelectItem value="#facc15" />
+                  <BaseSelectItem value="#fb923c" />
+                  <BaseSelectItem value="#9ca3af" />
                 </datalist>
               </Field>
             </div>
@@ -435,11 +435,11 @@ const people = ref([
                   @blur="handleBlur"
                 />
                 <datalist id="eventCategories">
-                  <option value="Chrome" />
-                  <option value="Firefox" />
-                  <option value="Opera" />
-                  <option value="Safari" />
-                  <option value="Microsoft Edge" />
+                  <BaseSelectItem value="Chrome" />
+                  <BaseSelectItem value="Firefox" />
+                  <BaseSelectItem value="Opera" />
+                  <BaseSelectItem value="Safari" />
+                  <BaseSelectItem value="Microsoft Edge" />
                 </datalist>
               </Field>
             </div>

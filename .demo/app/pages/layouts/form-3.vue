@@ -14,8 +14,8 @@ definePageMeta({
 const cardInfo = ref({
   name: undefined,
   number: undefined,
-  expiryYear: '',
-  expiryMonth: '',
+  expiryYear: undefined,
+  expiryMonth: undefined,
   cvc: undefined,
 })
 
@@ -153,42 +153,42 @@ const termsApproval = ref(false)
                           label="Exp. month"
                           placeholder="Month"
                         >
-                          <option value="01">
+                          <BaseSelectItem value="01">
                             01
-                          </option>
-                          <option value="02">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="02">
                             02
-                          </option>
-                          <option value="03">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="03">
                             03
-                          </option>
-                          <option value="04">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="04">
                             04
-                          </option>
-                          <option value="05">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="05">
                             05
-                          </option>
-                          <option value="06">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="06">
                             06
-                          </option>
-                          <option value="07">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="07">
                             07
-                          </option>
-                          <option value="08">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="08">
                             08
-                          </option>
-                          <option value="09">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="09">
                             09
-                          </option>
-                          <option value="10">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="10">
                             10
-                          </option>
-                          <option value="11">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="11">
                             11
-                          </option>
-                          <option value="12">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="12">
                             12
-                          </option>
+                          </BaseSelectItem>
                         </BaseSelect>
                       </div>
                       <div>
@@ -197,30 +197,30 @@ const termsApproval = ref(false)
                           label="Exp. year"
                           placeholder="Year"
                         >
-                          <option value="23">
+                          <BaseSelectItem value="23">
                             23
-                          </option>
-                          <option value="24">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="24">
                             24
-                          </option>
-                          <option value="25">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="25">
                             25
-                          </option>
-                          <option value="26">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="26">
                             26
-                          </option>
-                          <option value="27">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="27">
                             27
-                          </option>
-                          <option value="28">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="28">
                             28
-                          </option>
-                          <option value="29">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="29">
                             29
-                          </option>
-                          <option value="30">
+                          </BaseSelectItem>
+                          <BaseSelectItem value="30">
                             30
-                          </option>
+                          </BaseSelectItem>
                         </BaseSelect>
                       </div>
                       <div>

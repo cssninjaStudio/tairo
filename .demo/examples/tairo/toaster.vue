@@ -261,81 +261,81 @@ function showToast() {
 
         <div class="col-span-12 sm:col-span-6">
           <BaseSelect v-model="toast.color" label="Color">
-            <option value="primary">
+            <BaseSelectItem value="primary">
               Primary
-            </option>
+            </BaseSelectItem>
 
-            <option value="success">
+            <BaseSelectItem value="success">
               Success
-            </option>
+            </BaseSelectItem>
 
-            <option value="info">
+            <BaseSelectItem value="info">
               Info
-            </option>
+            </BaseSelectItem>
 
-            <option value="warning">
+            <BaseSelectItem value="warning">
               Warning
-            </option>
+            </BaseSelectItem>
 
-            <option value="danger">
+            <BaseSelectItem value="danger">
               Danger
-            </option>
+            </BaseSelectItem>
 
-            <option value="muted">
+            <BaseSelectItem value="muted">
               Muted
-            </option>
+            </BaseSelectItem>
           </BaseSelect>
         </div>
 
         <div class="col-span-12 sm:col-span-6">
           <BaseSelect v-model="toast.icon" label="Icon">
-            <option value="lucide:check">
+            <BaseSelectItem value="lucide:check">
               Check icon
-            </option>
+            </BaseSelectItem>
 
-            <option value="lucide:x">
+            <BaseSelectItem value="lucide:x">
               Close icon
-            </option>
+            </BaseSelectItem>
 
-            <option value="lucide:alert-triangle">
+            <BaseSelectItem value="lucide:alert-triangle">
               Warning icon
-            </option>
+            </BaseSelectItem>
 
-            <option value="lucide:alert-octagon">
+            <BaseSelectItem value="lucide:alert-octagon">
               Danger icon
-            </option>
+            </BaseSelectItem>
 
-            <option value="lucide:info">
+            <BaseSelectItem value="lucide:info">
               Info icon
-            </option>
+            </BaseSelectItem>
           </BaseSelect>
         </div>
 
         <div class="col-span-12 sm:col-span-6">
           <BaseSelect v-model="position" label="Position">
-            <option value="top-start">
+            <BaseSelectItem value="top-start">
               top-start
-            </option>
+            </BaseSelectItem>
 
-            <option value="top-center">
+            <BaseSelectItem value="top-center">
               top-center
-            </option>
+            </BaseSelectItem>
 
-            <option value="top-end">
+            <BaseSelectItem value="top-end">
               top-end
-            </option>
+            </BaseSelectItem>
 
-            <option value="bottom-start">
+            <BaseSelectItem value="bottom-start">
               bottom-start
-            </option>
+            </BaseSelectItem>
 
-            <option value="bottom-center">
+            <BaseSelectItem value="bottom-center">
               bottom-center
-            </option>
+            </BaseSelectItem>
 
-            <option value="bottom-end">
+            <BaseSelectItem value="bottom-end">
               bottom-end
-            </option>
+            </BaseSelectItem>
           </BaseSelect>
         </div>
 

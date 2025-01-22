@@ -107,21 +107,21 @@ onBeforeMount(checkPreviousSteps)
               label="Country"
               autocomplete="country"
             >
-              <option value="United States">
+              <BaseSelectItem value="United States">
                 United States
-              </option>
-              <option value="Canada">
+              </BaseSelectItem>
+              <BaseSelectItem value="Canada">
                 Canada
-              </option>
-              <option value="France">
+              </BaseSelectItem>
+              <BaseSelectItem value="France">
                 France
-              </option>
-              <option value="China">
+              </BaseSelectItem>
+              <BaseSelectItem value="China">
                 China
-              </option>
-              <option value="Germany">
+              </BaseSelectItem>
+              <BaseSelectItem value="Germany">
                 Germany
-              </option>
+              </BaseSelectItem>
             </BaseSelect>
           </div>
         </div>

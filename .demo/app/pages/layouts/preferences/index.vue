@@ -216,25 +216,23 @@ const form = reactive({
               contrast="default-contrast"
               size="lg"
               rounded="md"
+              placeholder="Select a country"
             >
-              <option value="">
-                Select a country
-              </option>
-              <option value="United States">
+              <BaseSelectItem value="United States">
                 United States
-              </option>
-              <option value="Canada">
+              </BaseSelectItem>
+              <BaseSelectItem value="Canada">
                 Canada
-              </option>
-              <option value="United Kingdom">
+              </BaseSelectItem>
+              <BaseSelectItem value="United Kingdom">
                 United Kingdom
-              </option>
-              <option value="France">
+              </BaseSelectItem>
+              <BaseSelectItem value="France">
                 France
-              </option>
-              <option value="China">
+              </BaseSelectItem>
+              <BaseSelectItem value="China">
                 China
-              </option>
+              </BaseSelectItem>
             </BaseSelect>
           </div>
         </div>

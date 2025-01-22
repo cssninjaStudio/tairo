@@ -46,15 +46,15 @@ const format = ref('quickbooks')
         </div>
         <div class="sm:ms-auto">
           <BaseSelect v-model="format" rounded="full">
-            <option value="quickbooks">
+            <BaseSelectItem value="quickbooks">
               Quickbooks CSV
-            </option>
-            <option value="xero">
+            </BaseSelectItem>
+            <BaseSelectItem value="xero">
               Xero CSV
-            </option>
-            <option value="freshbooks">
+            </BaseSelectItem>
+            <BaseSelectItem value="freshbooks">
               Freshbooks CSV
-            </option>
+            </BaseSelectItem>
           </BaseSelect>
         </div>
       </div>

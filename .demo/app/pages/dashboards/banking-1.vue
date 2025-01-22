@@ -626,16 +626,15 @@ const amount = ref<number>(0)
                       label="Currency"
                       class="w-16"
                     >
-                      <option value="" />
-                      <option value="usd">
+                      <BaseSelectItem value="usd">
                         $
-                      </option>
-                      <option value="gbp">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="gbp">
                         £
-                      </option>
-                      <option value="eur">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="eur">
                         €
-                      </option>
+                      </BaseSelectItem>
                     </BaseSelect>
                     <BaseInputNumber
                       v-model="amount"

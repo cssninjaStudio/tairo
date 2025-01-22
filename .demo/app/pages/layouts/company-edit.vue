@@ -623,28 +623,27 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="United States">
+                            <BaseSelectItem value="United States">
                               United States
-                            </option>
-                            <option value="Canada">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Canada">
                               Canada
-                            </option>
-                            <option value="France">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="France">
                               France
-                            </option>
-                            <option value="Germany">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Germany">
                               Germany
-                            </option>
-                            <option value="Spain">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Spain">
                               Spain
-                            </option>
-                            <option value="China">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="China">
                               China
-                            </option>
-                            <option value="Japan">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Japan">
                               Japan
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>
@@ -789,28 +788,27 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="United States">
+                            <BaseSelectItem value="United States">
                               United States
-                            </option>
-                            <option value="Canada">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Canada">
                               Canada
-                            </option>
-                            <option value="France">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="France">
                               France
-                            </option>
-                            <option value="Germany">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Germany">
                               Germany
-                            </option>
-                            <option value="Spain">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Spain">
                               Spain
-                            </option>
-                            <option value="China">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="China">
                               China
-                            </option>
-                            <option value="Japan">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Japan">
                               Japan
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>

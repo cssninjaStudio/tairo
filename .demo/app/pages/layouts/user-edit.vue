@@ -532,19 +532,18 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="single">
+                            <BaseSelectItem value="single">
                               Single
-                            </option>
-                            <option value="married">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="married">
                               Married
-                            </option>
-                            <option value="divorced">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="divorced">
                               Divorced
-                            </option>
-                            <option value="widower">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="widower">
                               Widow/Widower
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>
@@ -567,14 +566,13 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option
+                            <BaseSelectItem
                               v-for="index in 31"
                               :key="index"
                               :value="index"
                             >
                               {{ index }}
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>
@@ -597,43 +595,42 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="january">
+                            <BaseSelectItem value="january">
                               January
-                            </option>
-                            <option value="february">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="february">
                               February
-                            </option>
-                            <option value="march">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="march">
                               March
-                            </option>
-                            <option value="april">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="april">
                               April
-                            </option>
-                            <option value="may">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="may">
                               May
-                            </option>
-                            <option value="june">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="june">
                               June
-                            </option>
-                            <option value="july">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="july">
                               July
-                            </option>
-                            <option value="august">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="august">
                               August
-                            </option>
-                            <option value="september">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="september">
                               September
-                            </option>
-                            <option value="october">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="october">
                               October
-                            </option>
-                            <option value="november">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="november">
                               November
-                            </option>
-                            <option value="december">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="december">
                               December
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>
@@ -963,28 +960,27 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="United States">
+                            <BaseSelectItem value="United States">
                               United States
-                            </option>
-                            <option value="Canada">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Canada">
                               Canada
-                            </option>
-                            <option value="France">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="France">
                               France
-                            </option>
-                            <option value="Germany">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Germany">
                               Germany
-                            </option>
-                            <option value="Spain">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Spain">
                               Spain
-                            </option>
-                            <option value="China">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="China">
                               China
-                            </option>
-                            <option value="Japan">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Japan">
                               Japan
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>
@@ -1129,28 +1125,27 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="United States">
+                            <BaseSelectItem value="United States">
                               United States
-                            </option>
-                            <option value="Canada">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Canada">
                               Canada
-                            </option>
-                            <option value="France">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="France">
                               France
-                            </option>
-                            <option value="Germany">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Germany">
                               Germany
-                            </option>
-                            <option value="Spain">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Spain">
                               Spain
-                            </option>
-                            <option value="China">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="China">
                               China
-                            </option>
-                            <option value="Japan">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Japan">
                               Japan
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>

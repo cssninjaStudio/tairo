@@ -652,22 +652,21 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value="" hidden />
-                    <option value="0 - 250K">
+                    <BaseSelectItem value="0 - 250K">
                       0 - 250K
-                    </option>
-                    <option value="250K - 500K">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="250K - 500K">
                       250K - 500K
-                    </option>
-                    <option value="500K - 1M">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="500K - 1M">
                       500K - 1M
-                    </option>
-                    <option value="1M - 5M">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="1M - 5M">
                       1M - 5M
-                    </option>
-                    <option value="10M+">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="10M+">
                       10M+
-                    </option>
+                    </BaseSelectItem>
                   </BaseSelect>
                 </Field>
               </div>
@@ -685,19 +684,18 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value="" hidden />
-                    <option value="1-10 employees">
+                    <BaseSelectItem value="1-10 employees">
                       1-10 employees
-                    </option>
-                    <option value="10-50 employees">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="10-50 employees">
                       10-50 employees
-                    </option>
-                    <option value="50-100 employees">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="50-100 employees">
                       50-100 employees
-                    </option>
-                    <option value="100+ employees">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="100+ employees">
                       100+ employees
-                    </option>
+                    </BaseSelectItem>
                   </BaseSelect>
                 </Field>
               </div>
@@ -737,13 +735,12 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <option value="" hidden />
-                    <option value="active">
+                    <BaseSelectItem value="active">
                       Active
-                    </option>
-                    <option value="inactive">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="inactive">
                       Inactive
-                    </option>
+                    </BaseSelectItem>
                   </BaseSelect>
                 </Field>
               </div>

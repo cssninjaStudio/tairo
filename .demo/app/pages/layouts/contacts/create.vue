@@ -528,13 +528,12 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="active">
+                            <BaseSelectItem value="active">
                               Active
-                            </option>
-                            <option value="inactive">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="inactive">
                               Inactive
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>
@@ -951,28 +950,27 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="United States">
+                            <BaseSelectItem value="United States">
                               United States
-                            </option>
-                            <option value="Canada">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Canada">
                               Canada
-                            </option>
-                            <option value="France">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="France">
                               France
-                            </option>
-                            <option value="Germany">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Germany">
                               Germany
-                            </option>
-                            <option value="Spain">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Spain">
                               Spain
-                            </option>
-                            <option value="China">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="China">
                               China
-                            </option>
-                            <option value="Japan">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="Japan">
                               Japan
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>
@@ -1096,16 +1094,15 @@ const onSubmit = handleSubmit(
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <option value="" hidden />
-                            <option value="stripe">
+                            <BaseSelectItem value="stripe">
                               Stripe
-                            </option>
-                            <option value="paypal">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="paypal">
                               Paypal
-                            </option>
-                            <option value="custom">
+                            </BaseSelectItem>
+                            <BaseSelectItem value="custom">
                               Custom
-                            </option>
+                            </BaseSelectItem>
                           </BaseSelect>
                         </Field>
                       </div>

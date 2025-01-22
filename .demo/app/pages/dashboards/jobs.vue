@@ -219,25 +219,23 @@ const jobs = [
             icon="lucide:briefcase"
             label=""
             hide-label
+            placeholder="Select a type"
           >
-            <option value="">
-              Select a type
-            </option>
-            <option value="all">
+            <BaseSelectItem value="all">
               All
-            </option>
-            <option value="design">
+            </BaseSelectItem>
+            <BaseSelectItem value="design">
               Design
-            </option>
-            <option value="engineering">
+            </BaseSelectItem>
+            <BaseSelectItem value="engineering">
               Engineering
-            </option>
-            <option value="frontend">
+            </BaseSelectItem>
+            <BaseSelectItem value="frontend">
               Frontend
-            </option>
-            <option value="backend">
+            </BaseSelectItem>
+            <BaseSelectItem value="backend">
               Backend
-            </option>
+            </BaseSelectItem>
           </BaseSelect>
         </div>
         <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
@@ -246,26 +244,23 @@ const jobs = [
             rounded="lg"
             icon="lucide:dollar-sign"
             label=""
-            hide-label
+            placeholder="Select a range"
           >
-            <option value="">
-              Select a range
-            </option>
-            <option value="all">
+            <BaseSelectItem value="all">
               All
-            </option>
-            <option value="10k-20k">
+            </BaseSelectItem>
+            <BaseSelectItem value="10k-20k">
               10k ~ 20k
-            </option>
-            <option value="20k-30k">
+            </BaseSelectItem>
+            <BaseSelectItem value="20k-30k">
               20k ~ 40k
-            </option>
-            <option value="40k-75k">
+            </BaseSelectItem>
+            <BaseSelectItem value="40k-75k">
               40k ~ 75k
-            </option>
-            <option value="75k">
+            </BaseSelectItem>
+            <BaseSelectItem value="75k">
               75k+
-            </option>
+            </BaseSelectItem>
           </BaseSelect>
         </div>
         <div class="ptablet:col-span-12 w-full px-4 py-2 sm:w-auto">

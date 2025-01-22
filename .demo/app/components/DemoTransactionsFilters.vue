@@ -196,24 +196,24 @@ const paymentMethods = ref([''])
                       label="Show transactions made within"
                       class="border-muted-300 text-muted-600 focus:border-muted-300 dark:bg-muted-900 dark:text-muted-200 dark:border-muted-800 dark:focus:border-muted-800 tw-accessibility h-10 w-full appearance-none rounded-sm border bg-white px-3 py-2 font-sans text-sm leading-5 transition-all duration-300 placeholder:text-gray-300 focus:shadow-lg dark:placeholder:text-gray-600"
                     >
-                      <option value="all">
+                      <BaseSelectItem value="all">
                         All time
-                      </option>
-                      <option value="30_days">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="30_days">
                         Last 30 days
-                      </option>
-                      <option value="this_month">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="this_month">
                         This month
-                      </option>
-                      <option value="last_month">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="last_month">
                         Last month
-                      </option>
-                      <option value="this_year">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="this_year">
                         This year
-                      </option>
-                      <option value="last_year">
+                      </BaseSelectItem>
+                      <BaseSelectItem value="last_year">
                         Last year
-                      </option>
+                      </BaseSelectItem>
                     </BaseSelect>
                   </div>
                   <hr

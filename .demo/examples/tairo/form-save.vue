@@ -2,7 +2,7 @@
 const firstName = ref('')
 const lastName = ref('')
 const email = ref('')
-const country = ref('')
+const country = ref<string>()
 const address = ref('')
 </script>
 
@@ -46,33 +46,29 @@ const address = ref('')
         <div class="grid grid-cols-12 gap-3">
           <div class="col-span-12 sm:col-span-6">
             <BaseSelect v-model="country" label="Country">
-              <option value="">
-                Select a country
-              </option>
-
-              <option value="italy">
+              <BaseSelectItem value="italy">
                 United States
-              </option>
+              </BaseSelectItem>
 
-              <option value="italy">
+              <BaseSelectItem value="italy">
                 Italy
-              </option>
+              </BaseSelectItem>
 
-              <option value="france">
+              <BaseSelectItem value="france">
                 France
-              </option>
+              </BaseSelectItem>
 
-              <option value="spain">
+              <BaseSelectItem value="spain">
                 Spain
-              </option>
+              </BaseSelectItem>
 
-              <option value="germany">
+              <BaseSelectItem value="germany">
                 Germany
-              </option>
+              </BaseSelectItem>
 
-              <option value="portugal">
+              <BaseSelectItem value="portugal">
                 China
-              </option>
+              </BaseSelectItem>
             </BaseSelect>
           </div>
 

@@ -22,8 +22,8 @@ function prevStep() {
 }
 
 const fullName = ref('')
-const duration = ref('')
-const amount = ref('')
+const duration = ref<string>()
+const amount = ref<string>()
 </script>
 
 <template>
@@ -243,51 +243,45 @@ const amount = ref('')
               <div class="grid gap-4 md:grid-cols-2">
                 <!-- Field -->
                 <div class="relative">
-                  <BaseSelect v-model="amount" label="Requested amount">
-                    <option value="">
-                      Select a range
-                    </option>
-                    <option value="5k-20k">
+                  <BaseSelect v-model="amount" label="Requested amount" placeholder="Select a range">
+                    <BaseSelectItem value="5k-20k">
                       From $5k to $20k
-                    </option>
-                    <option value="20k-50k">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="20k-50k">
                       From $20k to $50k
-                    </option>
-                    <option value="50k-100k">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="50k-100k">
                       From $50k to $100k
-                    </option>
-                    <option value="100k-500k">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="100k-500k">
                       From $100k to $500k
-                    </option>
-                    <option value="500k-1M">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="500k-1M">
                       From $500k to $1M
-                    </option>
-                    <option value="1M">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="1M">
                       Starting from $1M
-                    </option>
+                    </BaseSelectItem>
                   </BaseSelect>
                 </div>
                 <!-- Field -->
                 <div class="relative">
-                  <BaseSelect v-model="amount" label="Requested duration">
-                    <option value="">
-                      Select a duration
-                    </option>
-                    <option value="5">
+                  <BaseSelect v-model="duration" label="Requested duration" placeholder="Select a duration">
+                    <BaseSelectItem value="5">
                       5 years
-                    </option>
-                    <option value="10">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="10">
                       10 years
-                    </option>
-                    <option value="15">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="15">
                       15 years
-                    </option>
-                    <option value="20">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="20">
                       20 years
-                    </option>
-                    <option value="25">
+                    </BaseSelectItem>
+                    <BaseSelectItem value="25">
                       25 years
-                    </option>
+                    </BaseSelectItem>
                   </BaseSelect>
                 </div>
               </div>

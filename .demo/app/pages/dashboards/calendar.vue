@@ -618,34 +618,34 @@ const selectedEventFeatures = computed({
           </div>
           <div class="grid grid-cols-3 items-end gap-x-2 gap-y-4">
             <BaseSelect
-              v-model.number="settings.weekStartsOn"
+              v-model="settings.weekStartsOn"
               label="Week starts on"
               size="sm"
               :classes="{
                 wrapper: 'col-span-2',
               }"
             >
-              <option :value="0">
+              <BaseSelectItem :value="0">
                 Sunday
-              </option>
-              <option :value="1">
+              </BaseSelectItem>
+              <BaseSelectItem :value="1">
                 Monday
-              </option>
-              <option :value="2">
+              </BaseSelectItem>
+              <BaseSelectItem :value="2">
                 Tuesday
-              </option>
-              <option :value="3">
+              </BaseSelectItem>
+              <BaseSelectItem :value="3">
                 Wednesday
-              </option>
-              <option :value="4">
+              </BaseSelectItem>
+              <BaseSelectItem :value="4">
                 Thursday
-              </option>
-              <option :value="5">
+              </BaseSelectItem>
+              <BaseSelectItem :value="5">
                 Friday
-              </option>
-              <option :value="6">
+              </BaseSelectItem>
+              <BaseSelectItem :value="6">
                 Saturday
-              </option>
+              </BaseSelectItem>
             </BaseSelect>
             <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
               <BaseButton

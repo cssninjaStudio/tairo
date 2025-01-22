@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const first = ref('')
-const second = ref('')
-const third = ref('')
+const first = ref<string>()
+const second = ref<string>()
+const third = ref<string>()
 </script>
 
 <template>
@@ -13,32 +13,28 @@ const third = ref('')
         rounded="md"
         label="Rounded: md"
       >
-        <option value="">
-          Select a hero
-        </option>
-
         <optgroup label="Marvel">
-          <option value="Iron man">
+          <BaseSelectItem value="Iron man">
             Iron man
-          </option>
+          </BaseSelectItem>
 
-          <option value="Magneto">
+          <BaseSelectItem value="Magneto">
             Magneto
-          </option>
+          </BaseSelectItem>
 
-          <option value="Cyclops">
+          <BaseSelectItem value="Cyclops">
             Cyclops
-          </option>
+          </BaseSelectItem>
         </optgroup>
 
         <optgroup label="DC Comics">
-          <option value="Superman">
+          <BaseSelectItem value="Superman">
             Superman
-          </option>
+          </BaseSelectItem>
 
-          <option value="Batman">
+          <BaseSelectItem value="Batman">
             Batman
-          </option>
+          </BaseSelectItem>
         </optgroup>
       </BaseSelect>
     </div>
@@ -50,32 +46,28 @@ const third = ref('')
         rounded="md"
         label="Rounded: md"
       >
-        <option value="">
-          Select a hero
-        </option>
-
         <optgroup label="Marvel">
-          <option value="Iron man">
+          <BaseSelectItem value="Iron man">
             Iron man
-          </option>
+          </BaseSelectItem>
 
-          <option value="Magneto">
+          <BaseSelectItem value="Magneto">
             Magneto
-          </option>
+          </BaseSelectItem>
 
-          <option value="Cyclops">
+          <BaseSelectItem value="Cyclops">
             Cyclops
-          </option>
+          </BaseSelectItem>
         </optgroup>
 
         <optgroup label="DC Comics">
-          <option value="Superman">
+          <BaseSelectItem value="Superman">
             Superman
-          </option>
+          </BaseSelectItem>
 
-          <option value="Batman">
+          <BaseSelectItem value="Batman">
             Batman
-          </option>
+          </BaseSelectItem>
         </optgroup>
       </BaseSelect>
     </div>
@@ -87,32 +79,28 @@ const third = ref('')
         rounded="md"
         label="Rounded: md"
       >
-        <option value="">
-          Select a hero
-        </option>
-
         <optgroup label="Marvel">
-          <option value="Iron man">
+          <BaseSelectItem value="Iron man">
             Iron man
-          </option>
+          </BaseSelectItem>
 
-          <option value="Magneto">
+          <BaseSelectItem value="Magneto">
             Magneto
-          </option>
+          </BaseSelectItem>
 
-          <option value="Cyclops">
+          <BaseSelectItem value="Cyclops">
             Cyclops
-          </option>
+          </BaseSelectItem>
         </optgroup>
 
         <optgroup label="DC Comics">
-          <option value="Superman">
+          <BaseSelectItem value="Superman">
             Superman
-          </option>
+          </BaseSelectItem>
 
-          <option value="Batman">
+          <BaseSelectItem value="Batman">
             Batman
-          </option>
+          </BaseSelectItem>
         </optgroup>
       </BaseSelect>
     </div>

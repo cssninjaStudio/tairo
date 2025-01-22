@@ -24,13 +24,13 @@ const taxes = ref('With taxes')
         wrapper: 'w-36',
       }"
     >
-      <option value="With taxes">
+      <BaseSelectItem value="With taxes">
         With taxes
-      </option>
+      </BaseSelectItem>
 
-      <option value="Without taxes">
+      <BaseSelectItem value="Without taxes">
         Without taxes
-      </option>
+      </BaseSelectItem>
     </BaseSelect>
   </div>
 </template>

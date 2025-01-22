@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const options = reactive({
-  first: '',
-  second: '',
-  third: '',
-  fourth: '',
-  fifth: '',
+  first: undefined,
+  second: undefined,
+  third: undefined,
+  fourth: undefined,
+  fifth: undefined,
 })
 </script>
 
@@ -15,29 +15,25 @@ const options = reactive({
       rounded="none"
       label="Rounded: none"
     >
-      <option value="">
-        Select a hero
-      </option>
-
-      <option value="Superman">
+      <BaseSelectItem value="Superman">
         Superman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Batman">
+      <BaseSelectItem value="Batman">
         Batman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Iron man">
+      <BaseSelectItem value="Iron man">
         Iron man
-      </option>
+      </BaseSelectItem>
 
-      <option value="Magneto">
+      <BaseSelectItem value="Magneto">
         Magneto
-      </option>
+      </BaseSelectItem>
 
-      <option value="Cyclops">
+      <BaseSelectItem value="Cyclops">
         Cyclops
-      </option>
+      </BaseSelectItem>
     </BaseSelect>
 
     <BaseSelect
@@ -45,29 +41,25 @@ const options = reactive({
       rounded="sm"
       label="Rounded: sm"
     >
-      <option value="">
-        Select a hero
-      </option>
-
-      <option value="Superman">
+      <BaseSelectItem value="Superman">
         Superman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Batman">
+      <BaseSelectItem value="Batman">
         Batman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Iron man">
+      <BaseSelectItem value="Iron man">
         Iron man
-      </option>
+      </BaseSelectItem>
 
-      <option value="Magneto">
+      <BaseSelectItem value="Magneto">
         Magneto
-      </option>
+      </BaseSelectItem>
 
-      <option value="Cyclops">
+      <BaseSelectItem value="Cyclops">
         Cyclops
-      </option>
+      </BaseSelectItem>
     </BaseSelect>
 
     <BaseSelect
@@ -75,29 +67,25 @@ const options = reactive({
       rounded="md"
       label="Rounded: md"
     >
-      <option value="">
-        Select a hero
-      </option>
-
-      <option value="Superman">
+      <BaseSelectItem value="Superman">
         Superman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Batman">
+      <BaseSelectItem value="Batman">
         Batman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Iron man">
+      <BaseSelectItem value="Iron man">
         Iron man
-      </option>
+      </BaseSelectItem>
 
-      <option value="Magneto">
+      <BaseSelectItem value="Magneto">
         Magneto
-      </option>
+      </BaseSelectItem>
 
-      <option value="Cyclops">
+      <BaseSelectItem value="Cyclops">
         Cyclops
-      </option>
+      </BaseSelectItem>
     </BaseSelect>
 
     <BaseSelect
@@ -105,29 +93,25 @@ const options = reactive({
       rounded="lg"
       label="Rounded: lg"
     >
-      <option value="">
-        Select a hero
-      </option>
-
-      <option value="Superman">
+      <BaseSelectItem value="Superman">
         Superman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Batman">
+      <BaseSelectItem value="Batman">
         Batman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Iron man">
+      <BaseSelectItem value="Iron man">
         Iron man
-      </option>
+      </BaseSelectItem>
 
-      <option value="Magneto">
+      <BaseSelectItem value="Magneto">
         Magneto
-      </option>
+      </BaseSelectItem>
 
-      <option value="Cyclops">
+      <BaseSelectItem value="Cyclops">
         Cyclops
-      </option>
+      </BaseSelectItem>
     </BaseSelect>
 
     <BaseSelect
@@ -135,29 +119,25 @@ const options = reactive({
       rounded="full"
       label="Rounded: full"
     >
-      <option value="">
-        Select a hero
-      </option>
-
-      <option value="Superman">
+      <BaseSelectItem value="Superman">
         Superman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Batman">
+      <BaseSelectItem value="Batman">
         Batman
-      </option>
+      </BaseSelectItem>
 
-      <option value="Iron man">
+      <BaseSelectItem value="Iron man">
         Iron man
-      </option>
+      </BaseSelectItem>
 
-      <option value="Magneto">
+      <BaseSelectItem value="Magneto">
         Magneto
-      </option>
+      </BaseSelectItem>
 
-      <option value="Cyclops">
+      <BaseSelectItem value="Cyclops">
         Cyclops
-      </option>
+      </BaseSelectItem>
     </BaseSelect>
   </BaseFocusLoop>
 </template>

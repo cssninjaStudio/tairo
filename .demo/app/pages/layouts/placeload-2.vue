@@ -11,7 +11,7 @@ definePageMeta({
   },
 })
 const fake = ref('')
-const fakePerPage = ref('')
+const fakePerPage = ref<string>()
 const fakeAll = ref(true)
 const fakeItems = ref([])
 </script>
@@ -40,18 +40,18 @@ const fakeItems = ref([])
           }"
           disabled
         >
-          <option :value="10">
+          <BaseSelectItem :value="10">
             10 per page
-          </option>
-          <option :value="25">
+          </BaseSelectItem>
+          <BaseSelectItem :value="25">
             25 per page
-          </option>
-          <option :value="50">
+          </BaseSelectItem>
+          <BaseSelectItem :value="50">
             50 per page
-          </option>
-          <option :value="100">
+          </BaseSelectItem>
+          <BaseSelectItem :value="100">
             100 per page
-          </option>
+          </BaseSelectItem>
         </BaseSelect>
       </template>
       <div>
