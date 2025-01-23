@@ -53,24 +53,9 @@ const zodSchema = z
           z.literal('10+ years'),
         ])
         .nullable(),
-      firstJob: z
-        .object({
-          label: z.string(),
-          value: z.boolean(),
-        })
-        .nullable(),
-      flexible: z
-        .object({
-          label: z.string(),
-          value: z.boolean(),
-        })
-        .nullable(),
-      remote: z
-        .object({
-          label: z.string(),
-          value: z.boolean(),
-        })
-        .nullable(),
+      firstJob: z.string().nullable(),
+      flexible: z.string().nullable(),
+      remote: z.string().nullable(),
     }),
     social: z.object({
       facebook: z.string(),
@@ -158,11 +143,11 @@ const experience = ['0-2 years', '2-5 years', '5-10 years', '10+ years']
 const answers = [
   {
     label: 'Yes',
-    value: true,
+    value: 'yes',
   },
   {
     label: 'No',
-    value: false,
+    value: 'no',
   },
 ]
 
@@ -513,13 +498,16 @@ const onSubmit = handleSubmit(
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="info.experience"
                 >
-                  <BaseListbox
+                  <BaseSelect
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    :items="experience"
                     placeholder="Experience"
                     rounded="sm"
+                    :items="experience.map((value) => ({
+                      value,
+                      textValue: value,
+                    }))"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -530,14 +518,16 @@ const onSubmit = handleSubmit(
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="info.firstJob"
                 >
-                  <BaseListbox
+                  <BaseSelect
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    :items="answers"
-                    :properties="{ label: 'label', value: 'value' }"
                     placeholder="Is this your first job?"
                     rounded="sm"
+                    :items="answers.map((item) => ({
+                      value: item.value,
+                      textValue: item.label,
+                    }))"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -548,14 +538,16 @@ const onSubmit = handleSubmit(
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="info.flexible"
                 >
-                  <BaseListbox
+                  <BaseSelect
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    :items="answers"
-                    :properties="{ label: 'label', value: 'value' }"
                     placeholder="Are you flexible?"
                     rounded="sm"
+                    :items="answers.map((item) => ({
+                      value: item.value,
+                      textValue: item.label,
+                    }))"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -566,14 +558,16 @@ const onSubmit = handleSubmit(
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="info.remote"
                 >
-                  <BaseListbox
+                  <BaseSelect
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    :items="answers"
-                    :properties="{ label: 'label', value: 'value' }"
                     placeholder="Do you work remotely?"
                     rounded="sm"
+                    :items="answers.map((item) => ({
+                      value: item.value,
+                      textValue: item.label,
+                    }))"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />

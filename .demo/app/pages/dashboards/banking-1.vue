@@ -486,16 +486,16 @@ const amount = ref<number>(0)
                 </BaseHeading>
               </div>
               <div>
-                <BaseListbox
-                  v-model="selectedBankTransfert"
-                  :items="banks"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                    media: 'media',
-                  }"
-                />
+                <BaseSelect v-model="selectedBankTransfert">
+                  <TairoSelectItem
+                    v-for="item in banks"
+                    :key="item.id"
+                    :value="item"
+                    :media="item.media"
+                    :name="item.name"
+                    :text="item.text"
+                  />
+                </BaseSelect>
                 <div class="mt-2">
                   <p
                     class="text-muted-500 dark:text-muted-400 font-sans text-xs leading-tight"
@@ -608,16 +608,16 @@ const amount = ref<number>(0)
               <div class="mt-auto">
                 <div class="space-y-3">
                   <div>
-                    <BaseListbox
-                      v-model="selectedBankSendTo"
-                      :items="banks"
-                      :properties="{
-                        value: 'id',
-                        label: 'name',
-                        sublabel: 'text',
-                        media: 'media',
-                      }"
-                    />
+                    <BaseSelect v-model="selectedBankSendTo">
+                      <TairoSelectItem
+                        v-for="item in banks"
+                        :key="item.id"
+                        :value="item"
+                        :media="item.media"
+                        :name="item.name"
+                        :text="item.text"
+                      />
+                    </BaseSelect>
                   </div>
                   <div class="flex w-full gap-2">
                     <BaseSelect

@@ -704,21 +704,23 @@ const onSubmit = handleSubmit(
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="company.manager"
                 >
-                  <BaseListbox
+                  <BaseSelect
                     label="Manager"
-                    :items="people"
-                    :properties="{
-                      value: 'id',
-                      label: 'name',
-                      sublabel: 'text',
-                      media: 'media',
-                    }"
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
-                  />
+                  >
+                    <TairoSelectItem
+                      v-for="item in people"
+                      :key="item.id"
+                      :value="item"
+                      :media="item.media"
+                      :name="item.name"
+                      :text="item.text"
+                    />
+                  </BaseSelect>
                 </Field>
               </div>
               <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">

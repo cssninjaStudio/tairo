@@ -727,19 +727,12 @@ const selectedEventFeatures = computed({
                 label="Title"
               />
 
-              <BaseListbox
-                v-model.prop="selectedEvent.category"
-                label="Category"
-                :properties="{
-                  value: 'value',
-                  label: 'label',
-                }"
-                :items="
-                  (Object.entries(categoryTheme).map(([key, item]) => ({
-                    value: key,
-                    label: item.name,
-                  })) as any)
-                "
+              <BaseSelect
+                v-model="selectedEvent.category"
+                :items="Object.entries(categoryTheme).map(([key, item]) => ({
+                  value: key,
+                  textValue: item.name,
+                }))"
               />
 
               <BaseAutocomplete

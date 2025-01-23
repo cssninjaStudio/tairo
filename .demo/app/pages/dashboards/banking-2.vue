@@ -241,18 +241,16 @@ function useAreaExpenses() {
               <div
                 class="ltablet:max-w-[230px] hidden max-w-[260px] grow sm:block"
               >
-                <BaseListbox
-                  v-model="selectedBank"
-                  label="Accounts"
-                  :items="banks"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                    media: 'media',
-                  }"
-                  hide-label
-                />
+                <BaseSelect v-model="selectedBank">
+                  <TairoSelectItem
+                    v-for="item in banks"
+                    :key="item.id"
+                    :value="item"
+                    :media="item.media"
+                    :name="item.name"
+                    :text="item.text"
+                  />
+                </BaseSelect>
               </div>
             </div>
             <div

@@ -48,7 +48,7 @@ const zodSchema = z.object({
     ),
     location: z.string(),
     url: z.string().optional(),
-    calendar: z.string(),
+    calendar: z.string().optional(),
     description: z.string().min(40, VALIDATION_TEXT.FIRSTNAME_REQUIRED),
     colorCode: z.string(),
     notifications: z.object({
@@ -76,7 +76,7 @@ const initialValues = {
     participants: [],
     location: '',
     url: '',
-    calendar: '',
+    calendar: undefined,
     description: '',
     colorCode: '',
     notifications: {
@@ -563,21 +563,23 @@ const colorCode = ref('color_code_1')
                 v-slot="{ field, errorMessage, handleChange, handleBlur }"
                 name="meeting.calendar"
               >
-                <BaseListbox
-                  :items="calendars"
-                  :properties="{
-                    value: 'id',
-                    label: 'name',
-                    sublabel: 'text',
-                    icon: 'icon',
-                  }"
+                <BaseSelect
                   :model-value="field.value"
-                  :model-modifiers="{ prop: true }"
                   :error="errorMessage"
                   :disabled="isSubmitting"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
-                />
+                >
+                  <TairoSelectItem
+                    v-for="item in calendars"
+                    :key="item.id"
+                    :value="item.id"
+                    :text-value="item.name"
+                    :icon="item.icon"
+                    :name="item.name"
+                    :text="item.text"
+                  />
+                </BaseSelect>
               </Field>
             </div>
           </div>
