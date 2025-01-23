@@ -34,7 +34,7 @@ const props = withDefaults(defineProps<{
   /**
    * The size of the input.
    */
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
   /**
    * The radius of the input.
    */
@@ -71,6 +71,9 @@ const vcountry = useVModel(props, 'country', emits, {
   defaultValue: undefined,
 })
 
+const iconCheck = useNuiConfig('icon', 'check')
+const iconAlert = useNuiConfig('icon', 'alert')
+
 const countriesMap = shallowRef<CountriesInfo>({})
 const countries = computed(() => Object.values(countriesMap.value))
 const possibleCountries = shallowRef<CountryCode[]>([])
@@ -88,12 +91,10 @@ const countriesFiltered = computed(() => {
 
   return source.filter((country) => {
     return (
-      country?.label.toLowerCase().includes(filter.value.toLowerCase())
-      || country?.labelLocal.toLowerCase().includes(filter.value.toLowerCase())
-      || country?.code.toLowerCase().includes(filter.value.toLowerCase())
-      || country?.callingCode
-        .toLowerCase()
-        .includes(filter.value.toLowerCase())
+      country?.label?.toLowerCase().includes(filter.value.toLowerCase())
+      || country?.labelLocal?.toLowerCase().includes(filter.value.toLowerCase())
+      || country?.code?.toLowerCase().includes(filter.value.toLowerCase())
+      || country?.callingCode?.toLowerCase().includes(filter.value.toLowerCase())
     )
   })
 })
@@ -264,29 +265,21 @@ onNuxtReady(() => {
   })
 })
 
-// styles
-const addonHeight = computed(() => {
-  switch (props.size) {
-    case 'sm':
-      return 'h-8'
-    case 'lg':
-      return 'h-12'
-    case 'md':
-    default:
-      return 'h-10'
-  }
-})
-const addonTop = computed(() => {
-  switch (props.size) {
-    case 'sm':
-      return 'top-[1.58rem]'
-    case 'lg':
-      return 'top-[1.7rem]'
-    case 'md':
-    default:
-      return 'top-[1.5rem]'
-  }
-})
+const radiuses = {
+  none: '',
+  sm: 'rounded-sm *:first:rounded-s-sm *:last:rounded-e-sm *:last:border-e-1',
+  md: 'rounded-md *:first:rounded-s-md *:last:rounded-e-md',
+  lg: 'rounded-lg *:first:rounded-s-lg *:last:rounded-e-lg',
+  full: 'rounded-full *:first:rounded-s-full *:last:rounded-e-full',
+} as const
+
+const sizes = {
+  sm: 'h-8!',
+  md: 'h-10!',
+  lg: 'h-12!',
+  xl: 'h-14!',
+} as const
+
 const iconSize = computed(() => {
   switch (props.size) {
     case 'lg':
@@ -297,136 +290,117 @@ const iconSize = computed(() => {
       return 'w-4'
   }
 })
-const inputStart = computed(() => {
-  switch (props.size) {
-    case 'lg':
-      return 'ps-[5rem]!'
-    case 'sm':
-    case 'md':
-    default:
-      return 'ps-[4.5rem]!'
-  }
-})
-const dropdownBorder = computed(() => {
-  switch (props.rounded) {
-    case 'sm':
-      return '[&_.nui-text-button]:rounded-s'
-    case 'md':
-      return '[&_.nui-text-button]:rounded-s-md'
-    case 'lg':
-      return '[&_.nui-text-button]:rounded-s-xl'
-    case 'full':
-      return '[&_.nui-text-button]:rounded-s-full'
-    case 'none':
-    default:
-      return ''
-  }
-})
 </script>
 
 <template>
-  <div class="relative flex w-full">
-    <div
-      class="absolute start-0 flex items-center"
+  <div
+    class="relative flex w-full focus-within:nui-focus *:border *:not-last:border-e-0 *:rounded-e-none *:border-input-default-border *:bg-input-default-bg *:text-input-default-text has-aria-invalid:*:border-destructive-base! has-aria-invalid:ring-destructive-base"
+    :class="[
+      sizes[props.size],
+      radiuses[props.rounded],
+    ]"
+  >
+    <BaseDropdown
+      ref="dropdownRef"
+      :rounded="props.rounded"
+      :disabled="props.disabled"
+      class="border-e-0! focus-visible:ring-0"
       :class="[
-        addonHeight,
-        $attrs.label && !('label-float' in $attrs) ? addonTop : 'top-0',
+        sizes[props.size],
       ]"
     >
-      <BaseDropdown
-        ref="dropdownRef"
-        variant="text"
-        :rounded="props.rounded"
-        size="lg"
-        class="[&_.nui-text-button]:border-muted-200 text-muted-400 dark:[&_.nui-text-button]:border-muted-800 flex h-full [&_.nui-text-button]:relative [&_.nui-text-button]:-top-0.5 [&_.nui-text-button]:z-10 [&_.nui-text-button]:size-full [&_.nui-text-button]:border-e [&_.nui-text-button]:pe-2 [&_.nui-text-button]:ps-4"
-        :class="dropdownBorder"
-      >
-        <template #label>
-          <slot name="country-label" v-bind="{ modelValue: vmodel, country: vcountry, validation, filter, currentCountry }">
-            <Icon
-              v-if="currentCountry?.icon"
-              :name="currentCountry.icon"
-              class="-mt-0.5"
-              :class="iconSize"
-            >
-              {{ currentCountry.code }}
-            </Icon>
-            <Icon
-              v-else
-              :name="props.icon"
-              class="-mt-0.5"
-              :class="[iconSize, props.error ? 'text-danger-500' : '']"
-            />
-          </slot>
-        </template>
+      <template #label>
+        <slot name="country-label" v-bind="{ modelValue: vmodel, country: vcountry, validation, filter, currentCountry }">
+          <Icon
+            v-if="currentCountry?.icon"
+            :name="currentCountry.icon"
+            class="-mt-0.5"
+            :class="iconSize"
+          />
+          <Icon
+            v-else
+            :name="props.icon"
+            class="-mt-0.5 shrink-0"
+            :class="[iconSize]"
+          />
+        </slot>
+      </template>
 
+      <div
+        class="flex focus-within:nui-focus *:border *:not-last:border-e-0 *:rounded-e-none *:border-input-default-border *:bg-input-default-bg *:text-input-default-text"
+        :class="[
+          radiuses[props.rounded === 'full' ? 'lg' : props.rounded],
+        ]"
+      >
+        <div class="bg-input-default-bg text-input-default-text border border-input-default-border flex items-center ps-2 border-e-0">
+          <Icon name="ph:magnifying-glass" class="size-4" />
+        </div>
         <BaseInput
           ref="filterRef"
           v-model="filter"
-          :rounded="rounded === 'full' ? 'lg' : rounded"
+          v-focus
+          rounded="none"
           size="sm"
-          icon="ph:magnifying-glass"
+          class="rounded-s-none! border-s-0! focus-visible:ring-0"
         />
+      </div>
 
-        <div
-          v-bind="containerProps"
-          :style="{ height: `${dropdownHeight}px` }"
-          class="nui-slimscroll mt-2!"
-        >
-          <div v-bind="wrapperProps">
+      <div
+        v-bind="containerProps"
+        :style="{ height: `${dropdownHeight}px` }"
+        class="nui-slimscroll mt-2!"
+      >
+        <div v-bind="wrapperProps">
+          <div
+            v-if="list.length === 0"
+            :style="{ height: `${itemHeight}px` }"
+          >
+            <slot name="country-placeholder" v-bind="{ modelValue: vmodel, country: vcountry, validation, filter, currentCountry, selectCountry }">
+              <BaseDropdownItem
+                title="No results"
+                text="Try searching by country name or code"
+                :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
+              />
+            </slot>
+          </div>
+          <template v-else>
             <div
-              v-if="list.length === 0"
+              v-for="{ data } in list"
+              :key="data?.code"
               :style="{ height: `${itemHeight}px` }"
             >
-              <slot name="country-placeholder" v-bind="{ modelValue: vmodel, country: vcountry, validation, filter, currentCountry, selectCountry }">
+              <slot name="country-item" v-bind="{ item: data, modelValue: vmodel, country: vcountry, validation, filter, currentCountry, selectCountry }">
                 <BaseDropdownItem
-                  title="No results"
-                  text="Try searching by country name or code"
+                  :title="data?.label"
+                  :text="`+${data?.callingCode}`"
+                  :tabindex="0"
                   :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
-                />
+                  @click="selectCountry(data?.code)"
+                  @keyboard.enter.prevent="selectCountry(data?.code)"
+                >
+                  <template #start>
+                    <span class="me-1 size-6 shrink-0 text-center">
+                      <Icon
+                        v-if="data?.icon"
+                        :name="data.icon"
+                        class="size-6"
+                      />
+                    </span>
+                  </template>
+                  <template #end>
+                    <Icon
+                      v-if="vcountry === data?.code"
+                      name="ph:check"
+                      class="text-success-500 size-4 shrink-0"
+                    />
+                  </template>
+                </BaseDropdownItem>
               </slot>
             </div>
-            <template v-else>
-              <div
-                v-for="{ data } in list"
-                :key="data?.code"
-                :style="{ height: `${itemHeight}px` }"
-              >
-                <slot name="country-item" v-bind="{ item: data, modelValue: vmodel, country: vcountry, validation, filter, currentCountry, selectCountry }">
-                  <BaseDropdownItem
-                    :title="data?.label"
-                    :text="`+${data?.callingCode}`"
-                    :tabindex="0"
-                    :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
-                    @click="selectCountry(data?.code)"
-                    @keyboard.enter.prevent="selectCountry(data?.code)"
-                  >
-                    <template #start>
-                      <span class="me-1 size-6 shrink-0 text-center">
-                        <Icon
-                          v-if="data?.icon"
-                          :name="data.icon"
-                          class="size-6"
-                        >
-                          {{ data.code }}
-                        </Icon>
-                      </span>
-                    </template>
-                    <template #end>
-                      <Icon
-                        v-if="vcountry === data?.code"
-                        name="ph:check"
-                        class="text-success-500 size-4 shrink-0"
-                      />
-                    </template>
-                  </BaseDropdownItem>
-                </slot>
-              </div>
-            </template>
-          </div>
+          </template>
         </div>
-      </BaseDropdown>
-    </div>
+      </div>
+    </BaseDropdown>
 
     <BaseInput
       ref="inputRef"
@@ -434,10 +408,10 @@ const dropdownBorder = computed(() => {
       type="tel"
       autocomplete="tel"
       :size="props.size"
-      :error="props.error"
+      :aria-invalid="props.error ? 'true' : undefined"
       :disabled="props.disabled"
-      :rounded="props.rounded"
-      :classes="{ wrapper: 'relative grow [&_.nui-input-placeload]:ms-16', input: `${inputStart} pe-8!`, icon: 'w-16!' }"
+      rounded="none"
+      class="focus-visible:ring-0 aria-invalid:border-s-input-default-border!"
       v-bind="$attrs"
       @update:model-value="
         (value) => {
@@ -451,22 +425,18 @@ const dropdownBorder = computed(() => {
     >
       <div
         v-if="validation.touched && vmodel"
-        class="border-muted-200 dark:border-muted-800 absolute end-0 z-[1] flex items-center pe-3"
-        :class="[
-          addonHeight,
-          $attrs.label && !('label-float' in $attrs) ? addonTop : 'top-0',
-        ]"
+        class="bg-input-default-bg text-input-default-text border border-input-default-border flex items-center pe-2 border-s-0!"
       >
         <Icon
           v-if="validation.valid"
-          name="ph:check"
+          :name="iconCheck"
           class="text-success-500 shrink-0"
           :class="iconSize"
         />
         <Icon
           v-else
-          name="ph:x"
-          class="text-danger-500 -mt-0.5"
+          :name="iconAlert"
+          class="text-destructive-500 -mt-0.5"
           :class="iconSize"
         />
       </div>

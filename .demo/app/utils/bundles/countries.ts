@@ -2,11 +2,11 @@ import { type CountryProperty, customList } from 'country-codes-list'
 
 export interface CountryInfo {
   code: string
-  label: string
-  labelLocal: string
-  callingCode: string
+  label?: string
+  labelLocal?: string
+  callingCode?: string
   icon: string
-  region: string
+  region?: string
 }
 export type CountriesInfo = Record<
   string,
