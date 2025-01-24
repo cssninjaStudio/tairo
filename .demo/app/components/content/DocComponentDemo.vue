@@ -68,11 +68,11 @@ async function loadDemo() {
   // this is a limitation of vite
   try {
     const [compo, source] = await Promise.all([
-      import(`../../../examples/${info.value.folder}/${info.value.file}.vue`).then(
+      import(`#examples/${info.value.folder}/${info.value.file}.vue`).then(
         m => m.default,
       ),
       import(
-        `../../../examples/${info.value.folder}/${info.value.file}.vue?raw`
+        `#examples/${info.value.folder}/${info.value.file}.vue?raw`
       ).then(m => m.default),
     ])
     exampleComponent.value = markRaw(compo)
