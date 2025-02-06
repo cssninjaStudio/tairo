@@ -184,7 +184,6 @@ const archive = [
                   </button>
                   <div class="absolute end-0 top-0">
                     <BaseDropdown
-                      variant="context"
                       rounded="lg"
                       label="Dropdown"
                       orientation="start"
@@ -278,7 +277,6 @@ const archive = [
                       <Icon name="lucide:menu" class="size-5" />
                     </button>
                     <BaseDropdown
-                      variant="button"
                       label="Dropdown"
                       orientation="start"
                       color="default-contrast"
@@ -327,7 +325,7 @@ const archive = [
                           </span>
                         </template>
                       </BaseDropdownItem>
-                      <BaseDropdownDivider />
+                      <BaseDropdownSeparator />
                       <BaseDropdownItem
                         to="#"
                         title="Ephemeral chat"

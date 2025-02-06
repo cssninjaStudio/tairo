@@ -122,7 +122,6 @@ const savedFiles = [
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                variant="context"
                 label="Dropdown"
                 placement="bottom-end"
                 size="md"
@@ -153,7 +152,7 @@ const savedFiles = [
                     />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivider />
+                <BaseDropdownSeparator />
                 <BaseDropdownItem
                   to="#"
                   title="Permissions"
@@ -172,7 +171,7 @@ const savedFiles = [
                     <Icon name="ph:share-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivider />
+                <BaseDropdownSeparator />
                 <BaseDropdownItem
                   to="#"
                   title="Delete"
@@ -215,7 +214,6 @@ const savedFiles = [
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                variant="context"
                 label="Dropdown"
                 placement="bottom-end"
                 size="md"
@@ -246,7 +244,7 @@ const savedFiles = [
                     />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivider />
+                <BaseDropdownSeparator />
                 <BaseDropdownItem
                   to="#"
                   title="Permissions"
@@ -265,7 +263,7 @@ const savedFiles = [
                     <Icon name="ph:share-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivider />
+                <BaseDropdownSeparator />
                 <BaseDropdownItem
                   to="#"
                   title="Delete"

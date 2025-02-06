@@ -1,7 +1,6 @@
 <template>
   <div class="flex w-full justify-start">
     <BaseDropdown
-      variant="button"
       label="Dropdown"
       placement="bottom-start"
     >
@@ -38,7 +37,7 @@
         </template>
       </BaseDropdownItem>
 
-      <BaseDropdownDivider />
+      <BaseDropdownSeparator />
 
       <BaseDropdownItem
         to="#"

@@ -1,7 +1,6 @@
 <template>
   <div class="flex w-full justify-end">
     <BaseDropdown
-      variant="context"
       label="Dropdown"
       placement="bottom-end"
     >

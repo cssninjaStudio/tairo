@@ -126,7 +126,6 @@ const { data, pending, error, refresh } = await useFetch(
                   </div>
                   <div class="ms-auto">
                     <BaseDropdown
-                      variant="context"
                       label="Dropdown"
                       placement="bottom-end"
                       size="md"
@@ -145,7 +144,7 @@ const { data, pending, error, refresh } = await useFetch(
                           />
                         </template>
                       </BaseDropdownItem>
-                      <BaseDropdownDivider />
+                      <BaseDropdownSeparator />
                       <BaseDropdownItem
                         to="#"
                         title="Permissions"
@@ -170,7 +169,7 @@ const { data, pending, error, refresh } = await useFetch(
                           />
                         </template>
                       </BaseDropdownItem>
-                      <BaseDropdownDivider />
+                      <BaseDropdownSeparator />
                       <BaseDropdownItem
                         to="#"
                         title="Delete"

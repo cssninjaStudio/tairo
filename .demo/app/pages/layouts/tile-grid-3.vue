@@ -152,7 +152,6 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    variant="context"
                     label="Dropdown"
                     placement="bottom-end"
                     size="md"
@@ -171,7 +170,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                         />
                       </template>
                     </BaseDropdownItem>
-                    <BaseDropdownDivider />
+                    <BaseDropdownSeparator />
                     <BaseDropdownItem
                       to="#"
                       title="Share"
@@ -184,7 +183,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                         />
                       </template>
                     </BaseDropdownItem>
-                    <BaseDropdownDivider />
+                    <BaseDropdownSeparator />
                     <BaseDropdownItem
                       to="#"
                       title="Save"

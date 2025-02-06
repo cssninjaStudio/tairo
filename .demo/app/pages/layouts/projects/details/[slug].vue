@@ -71,7 +71,6 @@ function openTaskPanel(id: number, tasks: any) {
     </div>
     <div class="absolute end-0 top-2 z-20">
       <BaseDropdown
-        variant="context"
         label="Dropdown"
         placement="bottom-end"
         size="md"
@@ -88,7 +87,7 @@ function openTaskPanel(id: number, tasks: any) {
             <Icon name="ph:kanban-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivider />
+        <BaseDropdownSeparator />
         <BaseDropdownItem
           to="#"
           title="Edit"
@@ -98,7 +97,7 @@ function openTaskPanel(id: number, tasks: any) {
             <Icon name="ph:pencil-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivider />
+        <BaseDropdownSeparator />
         <BaseDropdownItem
           to="#"
           title="Permissions"
@@ -117,7 +116,7 @@ function openTaskPanel(id: number, tasks: any) {
             <Icon name="ph:file-duotone" class="me-2 block size-5" />
           </template>
         </BaseDropdownItem>
-        <BaseDropdownDivider />
+        <BaseDropdownSeparator />
         <BaseDropdownItem
           to="#"
           title="Delete"

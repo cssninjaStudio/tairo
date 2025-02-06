@@ -48,7 +48,7 @@
         </template>
       </BaseDropdownItem>
 
-      <BaseDropdownDivider />
+      <BaseDropdownSeparator />
 
       <BaseDropdownItem
         to="#"

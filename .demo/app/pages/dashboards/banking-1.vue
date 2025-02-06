@@ -148,7 +148,6 @@ const amount = ref<number>(0)
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                variant="context"
                 label="Dropdown"
                 placement="bottom-end"
                 size="md"
@@ -184,7 +183,7 @@ const amount = ref<number>(0)
                     <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivider />
+                <BaseDropdownSeparator />
                 <BaseDropdownItem
                   to="#"
                   title="Wallet"
@@ -286,7 +285,7 @@ const amount = ref<number>(0)
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                variant="context"
+                
                 label="Dropdown"
                 placement="bottom-end"
                 size="md"
@@ -322,7 +321,7 @@ const amount = ref<number>(0)
                     <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                   </template>
                 </BaseDropdownItem>
-                <BaseDropdownDivider />
+                <BaseDropdownSeparator />
                 <BaseDropdownItem
                   to="#"
                   title="Wallet"

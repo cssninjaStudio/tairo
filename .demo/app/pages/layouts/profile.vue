@@ -20,14 +20,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
     <div v-else class="relative w-full">
       <div class="absolute end-0 top-2 z-20">
         <BaseDropdown
-          variant="context"
           label="Dropdown"
           placement="bottom-end"
           size="md"
           class="z-20"
           rounded="lg"
         >
-          <BaseDropdownDivider />
+          <BaseDropdownSeparator />
           <BaseDropdownItem
             to="/layouts/profile-edit"
             title="Edit"
@@ -37,7 +36,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <Icon name="ph:pencil-duotone" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
-          <BaseDropdownDivider />
+          <BaseDropdownSeparator />
           <BaseDropdownItem
             to="#"
             title="Security"
@@ -56,7 +55,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <Icon name="ph:bank-duotone" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
-          <BaseDropdownDivider />
+          <BaseDropdownSeparator />
           <BaseDropdownItem
             to="#"
             title="Share"

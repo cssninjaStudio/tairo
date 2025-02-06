@@ -302,7 +302,6 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              variant="context"
               label="Dropdown"
               placement="bottom-end"
               class="z-20"
@@ -337,7 +336,7 @@ function useBarProfit() {
                   <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownDivider />
+              <BaseDropdownSeparator />
               <BaseDropdownItem
                 to="#"
                 title="Wallet"
@@ -402,7 +401,6 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              variant="context"
               label="Dropdown"
               placement="bottom-end"
               class="z-20"
@@ -437,7 +435,7 @@ function useBarProfit() {
                   <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownDivider />
+              <BaseDropdownSeparator />
               <BaseDropdownItem
                 to="#"
                 title="Wallet"
@@ -504,7 +502,6 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              variant="context"
               label="Dropdown"
               placement="bottom-end"
               class="z-20"
@@ -539,7 +536,7 @@ function useBarProfit() {
                   <Icon name="ph:bank-duotone" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownDivider />
+              <BaseDropdownSeparator />
               <BaseDropdownItem
                 to="#"
                 title="Wallet"

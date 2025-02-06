@@ -57,7 +57,7 @@ const VALIDATION_TEXT = {
 // It's used to define the shape that the form data will have
 const zodSchema = z
   .object({
-    owner: z.string().min(1, VALIDATION_TEXT.OWNER_SELECTION),
+    owner: z.string().min(1, VALIDATION_TEXT.OWNER_SELECTION).nullable(),
     account: z
       .object({
         id: z.number(),
@@ -67,8 +67,8 @@ const zodSchema = z
         balance: z.number(),
       })
       .nullable(),
-    brand: z.string().min(1, VALIDATION_TEXT.BRAND_SELECTION),
-    type: z.string().min(1, VALIDATION_TEXT.TYPE_SELECTION),
+    brand: z.string().min(1, VALIDATION_TEXT.BRAND_SELECTION).nullable(),
+    type: z.string().min(1, VALIDATION_TEXT.TYPE_SELECTION).nullable(),
     dailySpend: z.number(),
     dailyWithdraw: z.number(),
   })
@@ -104,10 +104,10 @@ type FormInput = z.infer<typeof zodSchema>
 
 const validationSchema = toTypedSchema(zodSchema)
 const initialValues = {
-  owner: '',
+  owner: null,
   account: null,
-  brand: '',
-  type: '',
+  brand: null,
+  type: null,
   dailySpend: 0,
   dailyWithdraw: 0,
 } satisfies FormInput

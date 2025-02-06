@@ -249,7 +249,6 @@ function closeUpgrade() {
                   </button>
                   <div class="absolute end-0 top-0">
                     <BaseDropdown
-                      variant="context"
                       rounded="lg"
                       label="Dropdown"
                       orientation="start"
@@ -388,7 +387,6 @@ function closeUpgrade() {
                   <BaseThemeSwitch />
                 </div>
                 <BaseDropdown
-                  variant="context"
                   rounded="lg"
                   label="Dropdown"
                   orientation="start"

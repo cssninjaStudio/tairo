@@ -266,7 +266,6 @@ function toggleAllVisibleSelection() {
                 <TairoTableCell spaced>
                   <div class="flex justify-end">
                     <BaseDropdown
-                      variant="context"
                       label="Dropdown"
                       placement="bottom-end"
                       rounded="md"

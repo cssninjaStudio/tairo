@@ -132,14 +132,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    variant="context"
                     label="Dropdown"
                     placement="bottom-end"
                     size="md"
                     class="z-20"
                     rounded="lg"
                   >
-                    <BaseDropdownDivider />
+                    <BaseDropdownSeparator />
                     <BaseDropdownItem
                       to="#"
                       title="Edit"
@@ -260,14 +259,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    variant="context"
                     label="Dropdown"
                     placement="bottom-end"
                     size="md"
                     class="z-20"
                     rounded="lg"
                   >
-                    <BaseDropdownDivider />
+                    <BaseDropdownSeparator />
                     <BaseDropdownItem
                       to="#"
                       title="Edit"
@@ -382,14 +380,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    variant="context"
                     label="Dropdown"
                     placement="bottom-end"
                     size="md"
                     class="z-20"
                     rounded="lg"
                   >
-                    <BaseDropdownDivider />
+                    <BaseDropdownSeparator />
                     <BaseDropdownItem
                       to="#"
                       title="Edit"
