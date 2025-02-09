@@ -1,0 +1,11 @@
+@layer base {
+  :root {
+    --icon-sidebar-width: 3.5rem;
+    --subsidebar-width: 15rem;
+  }
+
+  #teleports {
+    z-index: 1000;
+    position: relative;
+  }
+}

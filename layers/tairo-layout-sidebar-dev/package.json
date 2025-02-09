@@ -8,6 +8,9 @@
     "prepare": "nuxt prepare",
     "clean": "rimraf .nuxt .output node_modules"
   },
+  "dependencies": {
+    "@vueuse/core": "^12.4.0"
+  },
   "devDependencies": {
     "nuxt": "^3.15.2"
   }

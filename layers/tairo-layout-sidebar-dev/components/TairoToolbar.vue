@@ -4,7 +4,7 @@ import { usePanels } from '../../tairo/composables/panels'
 const route = useRoute()
 const isSearchOpen = useState('search-open', () => false)
 const { open } = usePanels()
-const { isOpen } = useLayoutSidebarContext()
+const { isMobileOpen } = useLayoutSidebarContext()
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const { isOpen } = useLayoutSidebarContext()
         <button
           type="button"
           class="flex xl:hidden items-center"
-          @click="isOpen = true"
+          @click="isMobileOpen = true"
         >
           <span class="flex flex-col gap-1.5">
             <span class="block w-4 h-0.5 bg-muted-500" />

@@ -1,31 +1,31 @@
 <script setup lang="ts">
+import { useVModel } from '@vueuse/core'
 import { createLayoutSidebarContext, useLayoutSidebarContext } from '../composables/sidebar'
 
-const { isOpen } = createLayoutSidebarContext()
+const props = defineProps<{
+  defaultValue?: string
+  modelValue?: string
+}>()
+const emits = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
+
+const modelValue = useVModel(props, 'modelValue', emits, {
+  defaultValue: props.defaultValue,
+  passive: (props.modelValue === undefined) as false,
+})
+
+createLayoutSidebarContext({
+  modelValue,
+  defaultSubsidebarId: props.defaultValue,
+})
 </script>
 
 <template>
   <div class="min-h-screen w-full bg-white dark:bg-muted-900">
-    <slot />
-    <div
-      role="button"
-      tabindex="0"
-      class="bg-muted-800 dark:bg-muted-900 fixed start-0 top-0 z-40 block size-full transition-opacity duration-300 xl:hidden"
-      :class="
-        isOpen
-          ? 'opacity-50 dark:opacity-75'
-          : 'opacity-0 pointer-events-none'
-      "
-      @click="isOpen = false"
-    />
+    <div>
+      <slot />
+    </div>
+    <TairoSidebarBackdrop />
   </div>
 </template>
-
-<style>
-:root {
-  --icon-sidebar-width: 3.5rem;
-  --subsidebar-width: 15rem;
-  --content-width: calc(100% - (var(--icon-sidebar-width) + var(--subsidebar-width)));
-  --content-offset: calc(var(--icon-sidebar-width) + var(--subsidebar-width));
-}
-</style>

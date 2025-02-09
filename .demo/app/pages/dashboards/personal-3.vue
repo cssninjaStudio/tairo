@@ -309,22 +309,24 @@ const candidates = [
       <!-- Grid item -->
       <div>
         <BaseCard class="p-4" rounded="lg">
-          <Calendar
-            :attributes="[
-              {
-                key: 'today',
-                highlight: true,
-                order: 0,
-                dates: [new Date()],
-              },
-            ]"
-            title-position="left"
-            expanded
-            borderless
-            transparent
-            trim-weeks
-            class="max-w-full rounded-xl"
-          />
+          <ClientOnly>
+            <Calendar
+              :attributes="[
+                {
+                  key: 'today',
+                  highlight: true,
+                  order: 0,
+                  dates: [new Date()],
+                },
+              ]"
+              title-position="left"
+              expanded
+              borderless
+              transparent
+              trim-weeks
+              class="max-w-full rounded-xl"
+            />
+          </ClientOnly>
         </BaseCard>
       </div>
       <!-- Grid item -->

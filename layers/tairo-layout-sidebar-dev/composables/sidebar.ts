@@ -1,21 +1,24 @@
 import type { InjectionKey } from 'vue'
 
 interface LayoutSidebarContext {
-  isOpen: Ref<boolean>
-  currentMenu: Ref<string>
-  currentMenuName: Ref<string>
+  isMobileOpen: Ref<boolean>
+  currentSubsidebarId: Ref<string | undefined>
 }
 
 const LayoutSidebarContextSymbol = Symbol('LayoutSidebarContext') as InjectionKey<LayoutSidebarContext>
 
-export function createLayoutSidebarContext(): LayoutSidebarContext {
-  const isOpen = ref(false)
-  const currentMenu = ref('dashboards')
-  const currentMenuName = ref('Dashboards')
+export function createLayoutSidebarContext({
+  defaultSubsidebarId = '',
+  modelValue,
+}: {
+  defaultSubsidebarId?: string
+  modelValue?: Ref<string | undefined>
+} = {}): LayoutSidebarContext {
+  const isMobileOpen = ref(false)
+  const currentSubsidebarId = modelValue !== undefined ? modelValue : ref(defaultSubsidebarId)
   const context = {
-    isOpen,
-    currentMenu,
-    currentMenuName,
+    isMobileOpen,
+    currentSubsidebarId,
   }
   provide(LayoutSidebarContextSymbol, context)
   return context
