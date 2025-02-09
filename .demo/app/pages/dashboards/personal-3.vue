@@ -6,6 +6,7 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Interviews',
+  layout: 'dev',
   preview: {
     title: 'Personal dashboard v3',
     description: 'For personal usage and reports',
@@ -113,353 +114,358 @@ const candidates = [
 </script>
 
 <template>
-  <div
-    class="ltablet:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-  >
-    <!-- Grid item -->
-    <div>
-      <BaseCard
-        class="bg-muted-200 flex h-full flex-col border-0 p-8"
-        rounded="lg"
-      >
-        <div class="mb-5">
-          <BaseHeading
-            as="h2"
-            size="3xl"
-            weight="light"
-            lead="tight"
-            class="text-muted-800 mb-2 dark:text-white"
-          >
-            <span>Hi, Maya R.</span>
-          </BaseHeading>
-          <BaseParagraph size="sm">
-            <span class="text-muted-400">
-              You have 6 interviews to conduct during this week. Your current
-              progress is great. Check your schedule and don't miss any
-              activity.
-            </span>
-          </BaseParagraph>
-        </div>
-        <div class="mb-4 mt-auto flex items-center gap-2">
-          <div class="text-4xl">
-            <span>🎉</span>
-          </div>
-          <div>
-            <BaseParagraph size="xs">
-              <span class="text-muted-400 mb-2">Your Progress</span>
-            </BaseParagraph>
+  <div class="min-h-screen px-4 md:px-6 lg:px-8 xl:px-10 pb-12">
+    <TairoToolbar />
+    <div
+      class="relative z-0 ltablet:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <!-- Grid item -->
+      <div>
+        <BaseCard
+          class="bg-muted-200 flex h-full flex-col border-0 p-8"
+          rounded="lg"
+        >
+          <div class="mb-5">
             <BaseHeading
-              as="h4"
-              size="md"
+              as="h2"
+              size="3xl"
               weight="light"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-800 mb-2 dark:text-white"
             >
-              <span>Outstanding</span>
+              <span>Hi, Maya R.</span>
             </BaseHeading>
+            <BaseParagraph size="sm">
+              <span class="text-muted-400">
+                You have 6 interviews to conduct during this week. Your current
+                progress is great. Check your schedule and don't miss any
+                activity.
+              </span>
+            </BaseParagraph>
           </div>
-        </div>
-        <div>
-          <BaseButton
-            color="primary"
-            rounded="lg"
-            class="h-11 w-full"
-          >
-            <span>View Schedule</span>
-          </BaseButton>
-        </div>
-      </BaseCard>
-    </div>
-    <!-- Grid item -->
-    <div class="grid grid-cols-2 gap-4">
-      <!-- Inner item -->
-      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
-        <BaseIconBox
-          size="sm"
-          class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-info-500 dark:border-2"
-          rounded="full"
-          color="none"
-        >
-          <Icon name="ph:timer-duotone" class="size-5" />
-        </BaseIconBox>
-        <div>
-          <BaseHeading
-            as="h2"
+          <div class="mb-4 mt-auto flex items-center gap-2">
+            <BaseTooltip content="Subsidebar 1">
+              <div class="text-4xl">
+                <span>🎉</span>
+              </div>
+            </BaseTooltip>
+            <div>
+              <BaseParagraph size="xs">
+                <span class="text-muted-400 mb-2">Your Progress</span>
+              </BaseParagraph>
+              <BaseHeading
+                as="h4"
+                size="md"
+                weight="light"
+                lead="tight"
+                class="text-muted-800 dark:text-white"
+              >
+                <span>Outstanding</span>
+              </BaseHeading>
+            </div>
+          </div>
+          <div>
+            <BaseButton
+              color="primary"
+              rounded="lg"
+              class="h-11 w-full"
+            >
+              <span>View Schedule</span>
+            </BaseButton>
+          </div>
+        </BaseCard>
+      </div>
+      <!-- Grid item -->
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Inner item -->
+        <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
+          <BaseIconBox
             size="sm"
-            weight="semibold"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="bg-info-100 text-info-500 dark:bg-info-500/20 dark:text-info-400 dark:border-info-500 dark:border-2"
+            rounded="full"
+            color="none"
           >
-            <span>62K</span>
-          </BaseHeading>
-          <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">Minutes</span>
-          </BaseParagraph>
-        </div>
-      </BaseCard>
-      <!-- Inner item -->
-      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
-        <BaseIconBox
-          size="sm"
-          class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
-          rounded="full"
-          color="none"
-        >
-          <Icon name="ph:broadcast-duotone" class="size-5" />
-        </BaseIconBox>
-        <div>
-          <BaseHeading
-            as="h2"
-            size="sm"
-            weight="semibold"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>263</span>
-          </BaseHeading>
-          <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">Interviews</span>
-          </BaseParagraph>
-        </div>
-      </BaseCard>
-      <!-- Inner item -->
-      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
-        <BaseIconBox
-          size="sm"
-          class="bg-lime-100 text-lime-500 dark:border-2 dark:border-lime-500 dark:bg-lime-500/20 dark:text-lime-400"
-          rounded="full"
-          color="none"
-        >
-          <Icon name="ph:user-plus-duotone" class="size-5" />
-        </BaseIconBox>
-        <div>
-          <BaseHeading
-            as="h2"
-            size="sm"
-            weight="semibold"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>49</span>
-          </BaseHeading>
-          <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">Approved</span>
-          </BaseParagraph>
-        </div>
-      </BaseCard>
-      <!-- Inner item -->
-      <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
-        <BaseIconBox
-          size="sm"
-          class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
-          rounded="full"
-          color="none"
-        >
-          <Icon name="ph:door-duotone" class="size-5" />
-        </BaseIconBox>
-        <div>
-          <BaseHeading
-            as="h2"
-            size="sm"
-            weight="semibold"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>214</span>
-          </BaseHeading>
-          <BaseParagraph size="xs">
-            <span class="text-muted-500 dark:text-muted-400">Rejected</span>
-          </BaseParagraph>
-        </div>
-      </BaseCard>
-      <!-- Inner item -->
-      <div class="col-span-2">
-        <div class="mt-auto flex h-full items-end justify-between pb-4">
+            <Icon name="ph:timer-duotone" class="size-5" />
+          </BaseIconBox>
           <div>
             <BaseHeading
               as="h2"
+              size="sm"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>62K</span>
+            </BaseHeading>
+            <BaseParagraph size="xs">
+              <span class="text-muted-500 dark:text-muted-400">Minutes</span>
+            </BaseParagraph>
+          </div>
+        </BaseCard>
+        <!-- Inner item -->
+        <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
+          <BaseIconBox
+            size="sm"
+            class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
+            rounded="full"
+            color="none"
+          >
+            <Icon name="ph:broadcast-duotone" class="size-5" />
+          </BaseIconBox>
+          <div>
+            <BaseHeading
+              as="h2"
+              size="sm"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>263</span>
+            </BaseHeading>
+            <BaseParagraph size="xs">
+              <span class="text-muted-500 dark:text-muted-400">Interviews</span>
+            </BaseParagraph>
+          </div>
+        </BaseCard>
+        <!-- Inner item -->
+        <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
+          <BaseIconBox
+            size="sm"
+            class="bg-lime-100 text-lime-500 dark:border-2 dark:border-lime-500 dark:bg-lime-500/20 dark:text-lime-400"
+            rounded="full"
+            color="none"
+          >
+            <Icon name="ph:user-plus-duotone" class="size-5" />
+          </BaseIconBox>
+          <div>
+            <BaseHeading
+              as="h2"
+              size="sm"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>49</span>
+            </BaseHeading>
+            <BaseParagraph size="xs">
+              <span class="text-muted-500 dark:text-muted-400">Approved</span>
+            </BaseParagraph>
+          </div>
+        </BaseCard>
+        <!-- Inner item -->
+        <BaseCard rounded="lg" class="flex items-center gap-2 p-3">
+          <BaseIconBox
+            size="sm"
+            class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
+            rounded="full"
+            color="none"
+          >
+            <Icon name="ph:door-duotone" class="size-5" />
+          </BaseIconBox>
+          <div>
+            <BaseHeading
+              as="h2"
+              size="sm"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>214</span>
+            </BaseHeading>
+            <BaseParagraph size="xs">
+              <span class="text-muted-500 dark:text-muted-400">Rejected</span>
+            </BaseParagraph>
+          </div>
+        </BaseCard>
+        <!-- Inner item -->
+        <div class="col-span-2">
+          <div class="mt-auto flex h-full items-end justify-between pb-4">
+            <div>
+              <BaseHeading
+                as="h2"
+                size="md"
+                weight="semibold"
+                lead="tight"
+                class="text-muted-800 dark:text-white"
+              >
+                <span>Total Interviews</span>
+              </BaseHeading>
+              <BaseParagraph size="xs">
+                <span class="text-muted-500 dark:text-muted-400">
+                  23 interviews this month
+                </span>
+              </BaseParagraph>
+            </div>
+            <div>
+              <BaseAvatarGroup
+                :avatars="candidates"
+                size="sm"
+                :limit="2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Grid item -->
+      <div>
+        <BaseCard class="p-4" rounded="lg">
+          <Calendar
+            :attributes="[
+              {
+                key: 'today',
+                highlight: true,
+                order: 0,
+                dates: [new Date()],
+              },
+            ]"
+            title-position="left"
+            expanded
+            borderless
+            transparent
+            trim-weeks
+            class="max-w-full rounded-xl"
+          />
+        </BaseCard>
+      </div>
+      <!-- Grid item -->
+      <div>
+        <BaseCard class="p-6" rounded="lg">
+          <!-- Title -->
+          <div class="mb-8 flex items-center justify-between">
+            <BaseHeading
+              as="h3"
               size="md"
               weight="semibold"
               lead="tight"
               class="text-muted-800 dark:text-white"
             >
-              <span>Total Interviews</span>
+              <span>Trending skills</span>
+            </BaseHeading>
+            <BaseButton
+              color="primary"
+              size="sm"
+              variant="pastel"
+              rounded="md"
+            >
+              View all
+            </BaseButton>
+          </div>
+          <DemoTrendingSkills />
+        </BaseCard>
+      </div>
+      <!-- Grid item -->
+      <div>
+        <!-- Chart -->
+        <BaseCard rounded="lg" class="p-6">
+          <div class="mb-6 flex items-center justify-between">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Interviews</span>
+            </BaseHeading>
+            <BaseButton
+              color="primary"
+              size="sm"
+              variant="pastel"
+              rounded="md"
+            >
+              Reports
+            </BaseButton>
+          </div>
+          <AddonApexcharts v-bind="areaInterviews" />
+        </BaseCard>
+      </div>
+      <!-- Grid item -->
+      <div class="flex flex-col gap-4">
+        <!-- Card -->
+        <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
+          <BaseAvatar src="/img/avatars/11.svg" size="md" />
+          <div>
+            <BaseHeading
+              as="h4"
+              size="sm"
+              weight="light"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Jonathan K.</span>
             </BaseHeading>
             <BaseParagraph size="xs">
-              <span class="text-muted-500 dark:text-muted-400">
-                23 interviews this month
-              </span>
+              <span class="text-muted-400">8:00 am — 9:00 am</span>
             </BaseParagraph>
           </div>
-          <div>
-            <BaseAvatarGroup
-              :avatars="candidates"
-              size="sm"
-              :limit="2"
-            />
+          <div class="ms-auto flex items-center">
+            <BaseButton
+              rounded="lg"
+              variant="muted"
+              size="icon-md"
+              class="scale-75"
+            >
+              <Icon name="lucide:arrow-right" class="size-5" />
+            </BaseButton>
           </div>
-        </div>
+        </BaseCard>
+        <!-- Card -->
+        <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
+          <BaseAvatar src="/img/avatars/16.svg" size="md" />
+          <div>
+            <BaseHeading
+              as="h4"
+              size="sm"
+              weight="light"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Erwin S.</span>
+            </BaseHeading>
+            <BaseParagraph size="xs">
+              <span class="text-muted-400">10:30 am — 11:30 am</span>
+            </BaseParagraph>
+          </div>
+          <div class="ms-auto flex items-center">
+            <BaseButton
+              rounded="lg"
+              variant="muted"
+              size="icon-md"
+              class="scale-75"
+            >
+              <Icon name="lucide:arrow-right" class="size-5" />
+            </BaseButton>
+          </div>
+        </BaseCard>
+        <!-- Card -->
+        <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
+          <BaseAvatar src="/img/avatars/5.svg" size="md" />
+          <div>
+            <BaseHeading
+              as="h4"
+              size="sm"
+              weight="light"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>Jennifer M.</span>
+            </BaseHeading>
+            <BaseParagraph size="xs">
+              <span class="text-muted-400">2:00 pm — 3:00 pm</span>
+            </BaseParagraph>
+          </div>
+          <div class="ms-auto flex items-center">
+            <BaseButton
+              rounded="lg"
+              variant="muted"
+              size="icon-md"
+              class="scale-75"
+            >
+              <Icon name="lucide:arrow-right" class="size-5" />
+            </BaseButton>
+          </div>
+        </BaseCard>
       </div>
-    </div>
-    <!-- Grid item -->
-    <div>
-      <BaseCard class="p-4" rounded="lg">
-        <Calendar
-          :attributes="[
-            {
-              key: 'today',
-              highlight: true,
-              order: 0,
-              dates: [new Date()],
-            },
-          ]"
-          title-position="left"
-          expanded
-          borderless
-          transparent
-          trim-weeks
-          class="max-w-full rounded-xl"
-        />
-      </BaseCard>
-    </div>
-    <!-- Grid item -->
-    <div>
-      <BaseCard class="p-6" rounded="lg">
-        <!-- Title -->
-        <div class="mb-8 flex items-center justify-between">
-          <BaseHeading
-            as="h3"
-            size="md"
-            weight="semibold"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>Trending skills</span>
-          </BaseHeading>
-          <BaseButton
-            color="primary"
-            size="sm"
-            variant="pastel"
-            rounded="md"
-          >
-            View all
-          </BaseButton>
-        </div>
-        <DemoTrendingSkills />
-      </BaseCard>
-    </div>
-    <!-- Grid item -->
-    <div>
-      <!-- Chart -->
-      <BaseCard rounded="lg" class="p-6">
-        <div class="mb-6 flex items-center justify-between">
-          <BaseHeading
-            as="h3"
-            size="md"
-            weight="semibold"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>Interviews</span>
-          </BaseHeading>
-          <BaseButton
-            color="primary"
-            size="sm"
-            variant="pastel"
-            rounded="md"
-          >
-            Reports
-          </BaseButton>
-        </div>
-        <AddonApexcharts v-bind="areaInterviews" />
-      </BaseCard>
-    </div>
-    <!-- Grid item -->
-    <div class="flex flex-col gap-4">
-      <!-- Card -->
-      <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
-        <BaseAvatar src="/img/avatars/11.svg" size="md" />
-        <div>
-          <BaseHeading
-            as="h4"
-            size="sm"
-            weight="light"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>Jonathan K.</span>
-          </BaseHeading>
-          <BaseParagraph size="xs">
-            <span class="text-muted-400">8:00 am — 9:00 am</span>
-          </BaseParagraph>
-        </div>
-        <div class="ms-auto flex items-center">
-          <BaseButton
-            rounded="lg"
-            variant="muted"
-            size="icon-md"
-            class="scale-75"
-          >
-            <Icon name="lucide:arrow-right" class="size-5" />
-          </BaseButton>
-        </div>
-      </BaseCard>
-      <!-- Card -->
-      <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
-        <BaseAvatar src="/img/avatars/16.svg" size="md" />
-        <div>
-          <BaseHeading
-            as="h4"
-            size="sm"
-            weight="light"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>Erwin S.</span>
-          </BaseHeading>
-          <BaseParagraph size="xs">
-            <span class="text-muted-400">10:30 am — 11:30 am</span>
-          </BaseParagraph>
-        </div>
-        <div class="ms-auto flex items-center">
-          <BaseButton
-            rounded="lg"
-            variant="muted"
-            size="icon-md"
-            class="scale-75"
-          >
-            <Icon name="lucide:arrow-right" class="size-5" />
-          </BaseButton>
-        </div>
-      </BaseCard>
-      <!-- Card -->
-      <BaseCard rounded="lg" class="flex items-center gap-3 p-4">
-        <BaseAvatar src="/img/avatars/5.svg" size="md" />
-        <div>
-          <BaseHeading
-            as="h4"
-            size="sm"
-            weight="light"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>Jennifer M.</span>
-          </BaseHeading>
-          <BaseParagraph size="xs">
-            <span class="text-muted-400">2:00 pm — 3:00 pm</span>
-          </BaseParagraph>
-        </div>
-        <div class="ms-auto flex items-center">
-          <BaseButton
-            rounded="lg"
-            variant="muted"
-            size="icon-md"
-            class="scale-75"
-          >
-            <Icon name="lucide:arrow-right" class="size-5" />
-          </BaseButton>
-        </div>
-      </BaseCard>
     </div>
   </div>
 </template>
