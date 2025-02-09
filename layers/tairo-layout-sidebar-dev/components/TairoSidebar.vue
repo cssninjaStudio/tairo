@@ -3,6 +3,7 @@ import { useLayoutSidebarContext } from '../composables/sidebar'
 import TairoSubsidebar from './TairoSubsidebar.vue'
 
 const { isOpen, currentMenuName } = useLayoutSidebarContext()
+const isSwitcherOpen = useState('switcher-open', () => false)
 
 const menuItems = [
   {
@@ -118,6 +119,11 @@ const menuItems = [
       </div>
       <div class="flex flex-col shrink-0 mt-auto">
         <slot name="icon-bottom">
+          <TairoSidebarIcon
+            icon="solar:palette-round-linear"
+            title="Customize"
+            @click="isSwitcherOpen = true"
+          />
           <TairoSidebarIcon
             icon="solar:settings-linear"
             to="/settings"
