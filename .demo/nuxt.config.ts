@@ -35,7 +35,7 @@ export default defineNuxtConfig({
      * with only your source code and no demo.
      */
     '../layers/tairo-layout-sidebar-dev',
-    '../layers/tairo-layout-collapse',
+    '../layers/tairo-layout-collapse-dev',
     '../layers/tairo-layout-sidenav',
     '../layers/tairo-layout-topnav',
     '../layers/tairo-layout-iconnav',

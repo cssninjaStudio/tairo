@@ -1,0 +1,11 @@
+@layer base {
+  :root {
+    --collapse-width-open: 17.5rem;
+    --collapse-width-collapsed: 5rem;
+  }
+
+  #teleports {
+    z-index: 1000;
+    position: relative;
+  }
+}

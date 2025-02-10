@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <TairoSidebarLayout>
+  <TairoSidebarLayoutDev>
     <TairoError :error="props.error" />
-  </TairoSidebarLayout>
+  </TairoSidebarLayoutDev>
 </template>
