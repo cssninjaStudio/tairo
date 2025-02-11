@@ -1,7 +1,6 @@
 @layer base {
   :root {
-    --collapse-width-open: 16rem;
-    --collapse-width-collapsed: 5rem;
+    --sidenav-sidebar-width: 16.25rem;
   }
 
   #teleports {
