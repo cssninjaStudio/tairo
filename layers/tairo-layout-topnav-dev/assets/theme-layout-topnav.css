@@ -1,0 +1,10 @@
+@layer base {
+  :root {
+    --topnav-width: 100%;
+  }
+
+  #teleports {
+    z-index: 1000;
+    position: relative;
+  }
+}

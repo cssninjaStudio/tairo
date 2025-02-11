@@ -1,0 +1,11 @@
+<script setup lang="ts">
+import { useLayoutTopnavContext } from '../composables/topnav'
+
+const { isMobileOpen } = useLayoutTopnavContext()
+</script>
+
+<template>
+  <div class="relative z-10 flex w-full max-w-[var(--topnav-width)] mx-auto items-center justify-between h-14">
+    <slot />
+  </div>
+</template>
