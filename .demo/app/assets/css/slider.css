@@ -1,5 +1,4 @@
-@reference 'tailwindcss/theme';
-@reference '@shuriken-ui/tailwind/theme.css';
+@reference '~/assets/tailwind.css';
 
 .slider-target,
 .slider-target * {

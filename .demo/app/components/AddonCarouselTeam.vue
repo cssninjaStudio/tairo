@@ -133,8 +133,7 @@ const props = withDefaults(defineProps<CarouselProps>(), {
 </template>
 
 <style scoped>
-@reference 'tailwindcss/theme';
-@reference '@shuriken-ui/tailwind/theme.css';
+@reference '~/assets/tailwind.css';
 
 .carousel__slide {
   @apply p-2;
