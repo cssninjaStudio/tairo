@@ -29,7 +29,7 @@
     "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix layers/documentation/examples"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^1.5.4",
+    "@stylistic/eslint-plugin": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "7.6.0",
     "eslint": "8.57.0",
     "eslint-plugin-sonarjs": "^0.25.1",
