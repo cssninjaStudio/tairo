@@ -46,23 +46,16 @@ const { data, pending, error, refresh } = await useFetch(
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #right>
         <BaseSelect
           v-model="perPage"
           placeholder="Items per page"
-          label=""
-          :classes="{
-            wrapper: 'w-full sm:w-40',
-          }"
         >
           <BaseSelectItem :value="10">
             10 per page

@@ -59,14 +59,12 @@ function statusColor(itemStatus: string) {
   <div class="w-full pb-24">
     <!-- Header -->
     <div class="flex items-center justify-between py-6">
-      <div>
-        <BaseInput
-          v-model="filter"
-          icon="lucide:search"
-          rounded="lg"
-          placeholder="Search transactions..."
-        />
-      </div>
+      <TairoInput
+        v-model="filter"
+        icon="lucide:search"
+        rounded="lg"
+        placeholder="Search transactions..."
+      />
       <div class="flex items-center gap-2">
         <span class="text-muted-400 font-sans text-sm">
           0-{{ perPage }} of {{ data?.total }}

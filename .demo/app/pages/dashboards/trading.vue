@@ -782,6 +782,8 @@ function useStockPrice() {
                     <BaseInputNumber
                       v-model="orderShares"
                       placeholder="0.00"
+                      :min="0"
+                      :step="0.01"
                     />
                   </div>
                 </div>

@@ -234,64 +234,81 @@ const onSubmit = handleSubmit(async (values) => {
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="email"
                 >
-                  <BaseInput
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Email address"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="email"
-                    label="Email address"
-                    placeholder="ex: maya@cssninja.io"
-                    icon="lucide:mail"
-                    :classes="{
-                      input: 'h-12 ps-12!',
-                      icon: 'h-12 w-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      placeholder="ex: maya@cssninja.io"
+                      type="email"
+                      autocomplete="email"
+                      icon="lucide:mail"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
 
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="password"
                 >
-                  <AddonInputPassword
-                    ref="passwordRef"
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs }"
+                    label="Password"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    :user-inputs="[values.email ?? '']"
-                    label="Password"
-                    placeholder="••••••••••"
-                    icon="lucide:lock"
-                    :classes="{
-                      input: 'h-12 ps-12!',
-                      icon: 'h-12 w-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <AddonInputPassword
+                      ref="passwordRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      :user-inputs="[values.email ?? '']"
+                      placeholder="••••••••••"
+                      icon="lucide:lock"
+                      class="border-s-0 rounded-s-none ring-0!"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
 
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="confirmPassword"
                 >
-                  <BaseInput
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Confirm password"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="password"
-                    label="Confirm Password"
-                    placeholder="••••••••••"
-                    icon="lucide:lock"
-                    :classes="{
-                      input: 'h-12 ps-12!',
-                      icon: 'h-12 w-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      type="password"
+                      placeholder="••••••••••"
+                      icon="lucide:lock"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
               </div>
               <div class="mb-6">

@@ -46,14 +46,11 @@ const { data, pending, error, refresh } = await useFetch(
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <tairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="lg"
           placeholder="Filter files..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #right>

@@ -17,16 +17,11 @@ const searchTerms = ref('Ice cream pizza')
 <template>
   <div class="mx-auto w-full max-w-5xl">
     <div class="mx-auto mt-6 flex w-full max-w-sm items-center justify-center">
-      <BaseInput
+      <TairoInput
         v-model="searchTerms"
         icon="lucide:search"
         placeholder="Search..."
         rounded="full"
-        :classes="{
-          wrapper: 'w-full',
-          input: 'h-12 ps-12!',
-          icon: 'h-12 w-12 [& > svg]:w-7! [& > svg]:h-7!',
-        }"
       />
     </div>
     <div class="mb-12 mt-2 text-center">

@@ -151,33 +151,49 @@ const onSubmit = handleSubmit(async (values) => {
                 v-slot="{ field, errorMessage, handleChange, handleBlur }"
                 name="email"
               >
-                <BaseInput
-                  :model-value="field.value"
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Email address"
+                  :state="errorMessage ? 'error' : 'idle'"
                   :error="errorMessage"
                   :disabled="isSubmitting"
-                  type="email"
-                  label="Email address"
-                  placeholder="Email address"
-                  icon="ph:user-duotone"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
+                  required
+                >
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    :model-value="field.value"
+                    autocomplete="email"
+                    rounded="md"
+                    icon="ph:user-duotone"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
               </Field>
               <Field
                 v-slot="{ field, errorMessage, handleChange, handleBlur }"
                 name="password"
               >
-                <BaseInput
-                  :model-value="field.value"
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Password"
+                  :state="errorMessage ? 'error' : 'idle'"
                   :error="errorMessage"
                   :disabled="isSubmitting"
-                  type="password"
-                  label="Password"
-                  placeholder="Password"
-                  icon="ph:lock-duotone"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
+                  required
+                >
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    :model-value="field.value"
+                    type="password"
+                    icon="ph:lock-duotone"
+                    autocomplete="current-password"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
               </Field>
             </div>
 

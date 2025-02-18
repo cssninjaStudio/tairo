@@ -131,26 +131,29 @@ const termsApproval = ref(false)
             <div>
               <form>
                 <div class="grid grid-cols-12 gap-4">
-                  <div class="col-span-12">
+                  <BaseField v-slot="{ inputAttrs, inputRef }" label="Name on card" class="col-span-12">
                     <BaseInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       v-model="cardInfo.name"
-                      label="Name on card"
                       placeholder="ex: John Doe"
                     />
-                  </div>
-                  <div class="col-span-12">
+                  </BaseField>
+                  <BaseField v-slot="{ inputAttrs, inputRef }" label="Card number" class="col-span-12">
                     <BaseInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       v-model="cardInfo.number"
-                      label="Card number"
                       placeholder="ex: 4242 4242 4242 4242"
                     />
-                  </div>
+                  </BaseField>
                   <div class="col-span-12">
                     <div class="grid gap-4 sm:grid-cols-3">
-                      <div>
+                      <BaseField v-slot="{ inputAttrs, inputRef }" label="Exp. month">
                         <BaseSelect
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
                           v-model="cardInfo.expiryMonth"
-                          label="Exp. month"
                           placeholder="Month"
                         >
                           <BaseSelectItem value="01">
@@ -190,11 +193,12 @@ const termsApproval = ref(false)
                             12
                           </BaseSelectItem>
                         </BaseSelect>
-                      </div>
-                      <div>
+                      </BaseField>
+                      <BaseField v-slot="{ inputAttrs, inputRef }" label="Exp. year">
                         <BaseSelect
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
                           v-model="cardInfo.expiryYear"
-                          label="Exp. year"
                           placeholder="Year"
                         >
                           <BaseSelectItem value="23">
@@ -222,28 +226,28 @@ const termsApproval = ref(false)
                             30
                           </BaseSelectItem>
                         </BaseSelect>
-                      </div>
-                      <div>
+                      </BaseField>
+                      <BaseField v-slot="{ inputAttrs, inputRef }" label="CVC">
                         <BaseInput
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
                           v-model="cardInfo.cvc"
-                          label="CVC"
                           placeholder="ex: 239"
                         />
-                      </div>
+                      </BaseField>
                     </div>
                   </div>
                 </div>
               </form>
             </div>
-            <div class="mt-6">
-              <DemoCreditCardReal
-                :name="cardInfo.name"
-                :number="cardInfo.number"
-                :expiry-month="cardInfo.expiryMonth"
-                :expiry-year="cardInfo.expiryYear"
-                :cvc="cardInfo.cvc"
-              />
-            </div>
+            <DemoCreditCardReal
+              :name="cardInfo.name"
+              :number="cardInfo.number"
+              :expiry-month="cardInfo.expiryMonth"
+              :expiry-year="cardInfo.expiryYear"
+              :cvc="cardInfo.cvc"
+              class="mt-6"
+            />
           </div>
         </div>
       </BaseCard>

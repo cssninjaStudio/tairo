@@ -570,7 +570,7 @@ async function submitMessage() {
 
   await new Promise(resolve => setTimeout(resolve, 200))
 
-  conversations.value[index].messages.push(newMessage)
+  conversations.value[index]?.messages.push(newMessage)
   message.value = ''
   messageLoading.value = false
 
@@ -626,15 +626,11 @@ async function submitMessage() {
       <div
         class="ltablet:max-w-sm mx-auto hidden max-w-xs grow sm:block lg:max-w-xl"
       >
-        <BaseInput
+        <TairoInput
           v-model="searchMessages"
           rounded="lg"
-          icon="lucide:search"
           placeholder="Search messages..."
-          :classes="{
-            input: 'h-11! ps-11!',
-            icon: 'h-11! w-11!',
-          }"
+          icon="lucide:search"
         />
       </div>
       <div class="flex w-1/2 items-center justify-end gap-4 sm:w-1/5">
@@ -1009,9 +1005,7 @@ async function submitMessage() {
                       v-model.trim="message"
                       :disabled="messageLoading"
                       rounded="lg"
-                      :classes="{
-                        input: 'pe-10',
-                      }"
+                      class="pe-10"
                       placeholder="Write a message..."
                     />
                     <button

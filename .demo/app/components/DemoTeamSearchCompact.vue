@@ -68,14 +68,14 @@ const filteredMembers = computed(() => {
 
 <template>
   <div class="mb-2 space-y-1">
-    <div class="relative mb-4">
-      <BaseInput
+    <BaseField class="mb-4">
+      <TairoInput
         v-model="filter"
-        icon="lucide:search"
         placeholder="Search team members..."
         :rounded="props.rounded"
+        icon="lucide:search"
       />
-    </div>
+    </BaseField>
     <div v-if="filteredMembers.length === 0">
       <div class="flex flex-col items-center py-10 text-center">
         <Icon name="pepicons-print:person" class="text-primary-500 size-10" />

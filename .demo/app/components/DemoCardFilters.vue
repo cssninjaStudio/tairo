@@ -366,24 +366,24 @@ const timeCategoryTo = ref('')
 
                   <div class="space-y-4">
                     <!-- Account -->
-                    <div>
-                      <BaseInput
+                    <BaseField v-slot="{ inputAttrs, inputRef }" label="At least">
+                      <BaseInputNumber
+                        :ref="inputRef"
                         v-model="spentStart"
-                        type="number"
-                        icon="lucide:chevron-right"
-                        label="At least"
+                        v-bind="inputAttrs"
                         placeholder=""
+                        :min="0"
                       />
-                    </div>
-                    <div>
-                      <BaseInput
+                    </BaseField>
+                    <BaseField v-slot="{ inputAttrs, inputRef }" label="No more than...">
+                      <BaseInputNumber
+                        :ref="inputRef"
                         v-model="spentEnd"
-                        type="number"
-                        icon="lucide:chevron-left"
-                        label="No more than..."
+                        v-bind="inputAttrs"
                         placeholder=""
+                        :min="0"
                       />
-                    </div>
+                    </BaseField>
                   </div>
                 </div>
               </div>

@@ -197,19 +197,19 @@ const jobs = [
         <div
           class="ptablet:ps-4 ptablet:col-span-6 w-full py-2 pe-4 ps-4 sm:w-auto sm:grow sm:ps-2"
         >
-          <BaseInput
+          <TairoInput
             v-model.trim="search"
             rounded="lg"
-            icon="lucide:search"
             placeholder="Job keywords"
+            icon="lucide:search"
           />
         </div>
         <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
-          <BaseInput
+          <TairoInput
             v-model.trim="location"
             rounded="lg"
-            icon="lucide:map-pin"
             placeholder="Location"
+            icon="lucide:map-pin"
           />
         </div>
         <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
@@ -306,7 +306,6 @@ const jobs = [
               <BaseInput
                 v-model.trim="alertKeyword"
                 rounded="lg"
-                icon="lucide:search"
                 placeholder="Job keywords"
               />
               <BaseButton

@@ -328,14 +328,15 @@ const paymentMethods = ref([''])
             <div v-else-if="activeFilterTab === 'filter-2'">
               <div class="flex flex-col">
                 <div class="px-3">
-                  <div class="relative">
-                    <BaseInput
+                  <BaseField label="Search for specific keywords">
+                    <TairoInput
                       v-model="keywords"
-                      label="Search for specific keywords"
-                      icon="lucide:search"
                       placeholder="Your keywords..."
+                      rounded="md"
+                      icon="lucide:search"
+                      class="outline-none ring-0! border-s-0"
                     />
-                  </div>
+                  </BaseField>
                   <hr
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >

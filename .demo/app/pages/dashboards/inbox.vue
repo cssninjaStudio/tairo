@@ -296,11 +296,11 @@ const panelActive = ref(false)
           >
             <!-- Head (search) -->
             <div class="h-16 w-full px-4 sm:px-8">
-              <BaseInput
+              <TairoInput
                 v-model.trim="search"
                 rounded="lg"
-                icon="lucide:search"
                 placeholder="Search"
+                icon="lucide:search"
               />
             </div>
 
@@ -538,7 +538,7 @@ const panelActive = ref(false)
                     </button>
                     <BaseButton
                       rounded="lg"
-                      color="primary"
+                      variant="primary"
                       class="w-24"
                     >
                       <span>Reply</span>

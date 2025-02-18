@@ -43,14 +43,11 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
   <div>
     <TairoContentWrapperTabbed :labels="['All', 'Saved']" rounded="lg">
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="lg"
           placeholder="Filter recipes..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>

@@ -64,14 +64,11 @@ function difficultyLabel(itemDifficulty: number) {
       rounded="lg"
     >
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           rounded="lg"
           icon="lucide:search"
           placeholder="Filter courses..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>

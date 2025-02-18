@@ -235,21 +235,21 @@ const itemSubtotal = computed(() =>
                         <BaseInput v-model="itemHours" placeholder="0" />
                       </td>
                       <td class="px-2 py-4">
-                        <BaseInput
+                        <TairoInput
                           v-model="hourRate"
                           icon="lucide:dollar-sign"
                           placeholder="0.00"
                         />
                       </td>
                       <td class="px-2 py-4">
-                        <BaseInput
+                        <TairoInput
                           v-model="taxRate"
                           icon="lucide:percent"
                           placeholder="0"
                         />
                       </td>
                       <td class="px-2 py-4">
-                        <BaseInput
+                        <TairoInput
                           v-model="itemSubtotal"
                           icon="lucide:dollar-sign"
                           placeholder="0.00"

@@ -43,13 +43,10 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
   <div>
     <TairoContentWrapperTabbed :labels="['Active', 'Inactive']">
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           placeholder="Filter properties..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>

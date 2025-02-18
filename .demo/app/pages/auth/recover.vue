@@ -132,20 +132,23 @@ const onSubmit = handleSubmit(async (_values) => {
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="email"
                   >
-                    <BaseInput
-                      :model-value="field.value"
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Email address"
+                      :state="errorMessage ? 'error' : 'idle'"
                       :error="errorMessage"
                       :disabled="isSubmitting"
-                      type="email"
-                      label="Email address"
-                      placeholder="Email address"
-                      autocomplete="email"
-                      :classes="{
-                        input: 'h-12',
-                      }"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
+                      required
+                    >
+                      <BaseInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        autocomplete="email"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
                   </Field>
                 </div>
 

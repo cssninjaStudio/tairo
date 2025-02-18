@@ -20,13 +20,10 @@ const fakeItems = ref([])
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="fake"
           icon="lucide:search"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
           disabled
         />
       </template>
@@ -34,10 +31,6 @@ const fakeItems = ref([])
         <BaseSelect
           v-model="fakePerPage"
           placeholder="Items per page"
-          label=""
-          :classes="{
-            wrapper: 'w-full sm:w-40',
-          }"
           disabled
         >
           <BaseSelectItem :value="10">

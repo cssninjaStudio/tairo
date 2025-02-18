@@ -520,105 +520,97 @@ const billingCycles = ref('monthly')
           <div class="mt-5">
             <form>
               <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-12">
-                  <BaseInput
-                    v-model="cardInfo.name"
-                    label="Name on card"
-                    placeholder="ex: John Doe"
-                  />
-                </div>
-                <div class="col-span-12">
-                  <BaseInput
-                    v-model="cardInfo.number"
-                    label="Card number"
-                    placeholder="ex: 4242 4242 4242 4242"
-                  />
-                </div>
+                <BaseInput
+                  v-model="cardInfo.name"
+                  label="Name on card"
+                  placeholder="ex: John Doe"
+                  class="col-span-12"
+                />
+                <BaseInput
+                  v-model="cardInfo.number"
+                  label="Card number"
+                  placeholder="ex: 4242 4242 4242 4242"
+                  class="col-span-12"
+                />
                 <div class="col-span-12">
                   <div class="grid gap-4 sm:grid-cols-3">
-                    <div>
-                      <BaseSelect
-                        v-model="cardInfo.expiryMonth"
-                        label="Exp. month"
-                        placeholder="Month"
-                      >
-                        <BaseSelectItem value="01">
-                          01
-                        </BaseSelectItem>
-                        <BaseSelectItem value="02">
-                          02
-                        </BaseSelectItem>
-                        <BaseSelectItem value="03">
-                          03
-                        </BaseSelectItem>
-                        <BaseSelectItem value="04">
-                          04
-                        </BaseSelectItem>
-                        <BaseSelectItem value="05">
-                          05
-                        </BaseSelectItem>
-                        <BaseSelectItem value="06">
-                          06
-                        </BaseSelectItem>
-                        <BaseSelectItem value="07">
-                          07
-                        </BaseSelectItem>
-                        <BaseSelectItem value="08">
-                          08
-                        </BaseSelectItem>
-                        <BaseSelectItem value="09">
-                          09
-                        </BaseSelectItem>
-                        <BaseSelectItem value="10">
-                          10
-                        </BaseSelectItem>
-                        <BaseSelectItem value="11">
-                          11
-                        </BaseSelectItem>
-                        <BaseSelectItem value="12">
-                          12
-                        </BaseSelectItem>
-                      </BaseSelect>
-                    </div>
-                    <div>
-                      <BaseSelect
-                        v-model="cardInfo.expiryYear"
-                        label="Exp. month"
-                        placeholder="Year"
-                      >
-                        <BaseSelectItem value="23">
-                          23
-                        </BaseSelectItem>
-                        <BaseSelectItem value="24">
-                          24
-                        </BaseSelectItem>
-                        <BaseSelectItem value="25">
-                          25
-                        </BaseSelectItem>
-                        <BaseSelectItem value="26">
-                          26
-                        </BaseSelectItem>
-                        <BaseSelectItem value="27">
-                          27
-                        </BaseSelectItem>
-                        <BaseSelectItem value="28">
-                          28
-                        </BaseSelectItem>
-                        <BaseSelectItem value="29">
-                          29
-                        </BaseSelectItem>
-                        <BaseSelectItem value="30">
-                          30
-                        </BaseSelectItem>
-                      </BaseSelect>
-                    </div>
-                    <div>
-                      <BaseInput
-                        v-model="cardInfo.cvc"
-                        label="CVC"
-                        placeholder="ex: 239"
-                      />
-                    </div>
+                    <BaseSelect
+                      v-model="cardInfo.expiryMonth"
+                      label="Exp. month"
+                      placeholder="Month"
+                    >
+                      <BaseSelectItem value="01">
+                        01
+                      </BaseSelectItem>
+                      <BaseSelectItem value="02">
+                        02
+                      </BaseSelectItem>
+                      <BaseSelectItem value="03">
+                        03
+                      </BaseSelectItem>
+                      <BaseSelectItem value="04">
+                        04
+                      </BaseSelectItem>
+                      <BaseSelectItem value="05">
+                        05
+                      </BaseSelectItem>
+                      <BaseSelectItem value="06">
+                        06
+                      </BaseSelectItem>
+                      <BaseSelectItem value="07">
+                        07
+                      </BaseSelectItem>
+                      <BaseSelectItem value="08">
+                        08
+                      </BaseSelectItem>
+                      <BaseSelectItem value="09">
+                        09
+                      </BaseSelectItem>
+                      <BaseSelectItem value="10">
+                        10
+                      </BaseSelectItem>
+                      <BaseSelectItem value="11">
+                        11
+                      </BaseSelectItem>
+                      <BaseSelectItem value="12">
+                        12
+                      </BaseSelectItem>
+                    </BaseSelect>
+                    <BaseSelect
+                      v-model="cardInfo.expiryYear"
+                      label="Exp. month"
+                      placeholder="Year"
+                    >
+                      <BaseSelectItem value="23">
+                        23
+                      </BaseSelectItem>
+                      <BaseSelectItem value="24">
+                        24
+                      </BaseSelectItem>
+                      <BaseSelectItem value="25">
+                        25
+                      </BaseSelectItem>
+                      <BaseSelectItem value="26">
+                        26
+                      </BaseSelectItem>
+                      <BaseSelectItem value="27">
+                        27
+                      </BaseSelectItem>
+                      <BaseSelectItem value="28">
+                        28
+                      </BaseSelectItem>
+                      <BaseSelectItem value="29">
+                        29
+                      </BaseSelectItem>
+                      <BaseSelectItem value="30">
+                        30
+                      </BaseSelectItem>
+                    </BaseSelect>
+                    <BaseInput
+                      v-model="cardInfo.cvc"
+                      label="CVC"
+                      placeholder="ex: 239"
+                    />
                   </div>
                 </div>
               </div>

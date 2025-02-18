@@ -285,7 +285,6 @@ const amount = ref<number>(0)
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                
                 label="Dropdown"
                 placement="bottom-end"
                 size="md"
@@ -637,7 +636,6 @@ const amount = ref<number>(0)
                     </BaseSelect>
                     <BaseInputNumber
                       v-model="amount"
-                      :classes="{ wrapper: 'grow' }"
                       placeholder="0.00"
                       rounded="sm"
                       label="Amount"

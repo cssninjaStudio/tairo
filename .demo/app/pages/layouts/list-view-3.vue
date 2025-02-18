@@ -47,14 +47,11 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
       reverse
     >
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="full"
           placeholder="Filter jobs..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>

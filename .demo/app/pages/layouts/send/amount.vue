@@ -68,35 +68,27 @@ function setAccount(account: any) {
         weight="medium"
         class="md:3xl! text-muted-800 dark:text-white"
       >
-        {{ steps[currentStepId].meta.title }}
+        {{ steps[currentStepId]?.meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStepId].meta.subtitle }}
+        {{ steps[currentStepId]?.meta.subtitle }}
       </BaseParagraph>
     </div>
 
     <div class="w-full max-w-md">
-      <!-- Amount input -->
-      <div class="relative">
-        <BaseInput
-          v-model="request.amount"
-          v-focus
-          type="number"
-          :error="errors.fields?.amount"
-          rounded="none"
-          icon="lucide:dollar-sign"
-          placeholder="0.00"
-          :max="request.account ? request.account.balance : undefined"
-          :classes="{
-            input:
-              'ps-14! py-2! h-14! text-4xl! leading-5! border-t-0! border-l-0!  border-r-0! border-b-2! focus:border-primary-500! dark:bg-muted-900! dark:focus:border-primary-500!',
-            icon: 'h-14! w-14!',
-          }"
-        />
-      </div>
+      <TairoInput
+        v-model="request.amount"
+        v-focus
+        type="number"
+        :error="errors.fields?.amount"
+        rounded="none"
+        icon="lucide:dollar-sign"
+        placeholder="0.00"
+        :max="request.account ? request.account.balance : undefined"
+      />
 
       <!-- Transfer account -->
       <div class="py-10">

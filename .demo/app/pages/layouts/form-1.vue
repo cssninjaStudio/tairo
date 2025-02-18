@@ -317,6 +317,7 @@ const onSubmit = handleSubmit(
         method="POST"
         action=""
         class="divide-muted-200 dark:divide-muted-700 grid divide-x sm:grid-cols-2"
+        novalidate
         @submit.prevent="onSubmit"
       >
         <div
@@ -397,16 +398,24 @@ const onSubmit = handleSubmit(
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="company.name"
                   >
-                    <BaseInput
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
                       label="Company Name"
-                      placeholder="Ex: Acme Inc."
-                      :model-value="field.value"
+                      :state="errorMessage ? 'error' : 'idle'"
                       :error="errorMessage"
                       :disabled="isSubmitting"
-                      type="text"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
+                      required
+                    >
+                      <BaseInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="Ex: Acme Inc."
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
                   </Field>
                 </div>
                 <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
@@ -414,16 +423,24 @@ const onSubmit = handleSubmit(
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="company.email"
                   >
-                    <BaseInput
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
                       label="Company Email"
-                      placeholder="Ex: hello@acme.co"
-                      :model-value="field.value"
+                      :state="errorMessage ? 'error' : 'idle'"
                       :error="errorMessage"
                       :disabled="isSubmitting"
-                      type="email"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
+                      required
+                    >
+                      <BaseInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="Ex: hello@acme.co"
+                        type="email"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
                   </Field>
                 </div>
                 <div class="col-span-12">
@@ -431,17 +448,24 @@ const onSubmit = handleSubmit(
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="company.website"
                   >
-                    <BaseInput
-                      icon="lucide:globe"
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
                       label="Company website"
-                      placeholder="Ex: https://acme.co"
-                      :model-value="field.value"
+                      :state="errorMessage ? 'error' : 'idle'"
                       :error="errorMessage"
                       :disabled="isSubmitting"
-                      type="text"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
+                    >
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="Ex: https://acme.co"
+                        icon="lucide:globe"
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
                   </Field>
                 </div>
                 <div class="col-span-12">
@@ -449,15 +473,23 @@ const onSubmit = handleSubmit(
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="company.phone"
                   >
-                    <AddonInputPhone
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
                       label="Company Phone"
-                      placeholder="Ex: +1 555 555 5555"
-                      :model-value="field.value"
+                      :state="errorMessage ? 'error' : 'idle'"
                       :error="errorMessage"
                       :disabled="isSubmitting"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
+                    >
+                      <AddonInputPhone
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        label="Company Phone"
+                        placeholder="Ex: +1 555 555 5555"
+                        :model-value="field.value"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
                   </Field>
                 </div>
               </div>
@@ -638,77 +670,85 @@ const onSubmit = handleSubmit(
         <div rounded="lg" class="w-full space-y-8 p-10">
           <div class="mx-auto w-full max-w-[410px] sm:pt-28">
             <div class="grid grid-cols-12 gap-4">
-              <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="company.income"
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="company.income"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Income"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                  required
                 >
                   <BaseSelect
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     rounded="sm"
-                    label="Income"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <BaseSelectItem value="0 - 250K">
-                      0 - 250K
-                    </BaseSelectItem>
-                    <BaseSelectItem value="250K - 500K">
-                      250K - 500K
-                    </BaseSelectItem>
-                    <BaseSelectItem value="500K - 1M">
-                      500K - 1M
-                    </BaseSelectItem>
-                    <BaseSelectItem value="1M - 5M">
-                      1M - 5M
-                    </BaseSelectItem>
-                    <BaseSelectItem value="10M+">
-                      10M+
+                    <BaseSelectItem
+                      v-for="value in ['0 - 250K', '250K - 500K', '500K - 1M', '1M - 5M', '10M+']"
+                      :key="value"
+                      :value
+                    >
+                      {{ value }}
                     </BaseSelectItem>
                   </BaseSelect>
-                </Field>
-              </div>
-              <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="company.employees"
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="company.employees"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Employees"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                  required
                 >
                   <BaseSelect
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     rounded="sm"
-                    label="Employees"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
-                    <BaseSelectItem value="1-10 employees">
-                      1-10 employees
-                    </BaseSelectItem>
-                    <BaseSelectItem value="10-50 employees">
-                      10-50 employees
-                    </BaseSelectItem>
-                    <BaseSelectItem value="50-100 employees">
-                      50-100 employees
-                    </BaseSelectItem>
-                    <BaseSelectItem value="100+ employees">
-                      100+ employees
+                    <BaseSelectItem
+                      v-for="value in ['1-10 employees', '10-50 employees', '50-100 employees', '100+ employees']"
+                      :key="value"
+                      :value
+                    >
+                      {{ value }}
                     </BaseSelectItem>
                   </BaseSelect>
-                </Field>
-              </div>
-              <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="company.manager"
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="company.manager"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Manager"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="ltablet:col-span-8 col-span-12 lg:col-span-8"
+                  required
                 >
                   <BaseSelect
-                    label="Manager"
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
@@ -721,19 +761,26 @@ const onSubmit = handleSubmit(
                       :text="item.text"
                     />
                   </BaseSelect>
-                </Field>
-              </div>
-              <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="company.status"
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="company.status"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Status"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                  required
                 >
                   <BaseSelect
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     rounded="sm"
-                    label="Status"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
@@ -744,25 +791,31 @@ const onSubmit = handleSubmit(
                       Inactive
                     </BaseSelectItem>
                   </BaseSelect>
-                </Field>
-              </div>
+                </BaseField>
+              </Field>
 
-              <div class="col-span-12">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="company.notes"
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="company.notes"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Company notes"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
                 >
                   <BaseTextarea
-                    label="Company notes"
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     placeholder="Write some notes..."
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
-                </Field>
-              </div>
+                </BaseField>
+              </Field>
               <div class="col-span-12">
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"

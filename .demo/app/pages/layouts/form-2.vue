@@ -318,6 +318,7 @@ const currentRatingText = computed(() => {
     action=""
     method="POST"
     class="grid grid-cols-12 gap-6"
+    novalidate
     @submit.prevent="onSubmit"
   >
     <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
@@ -345,74 +346,99 @@ const currentRatingText = computed(() => {
               sublabel="Some general information"
             >
               <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-12 md:col-span-6">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.firstName"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.firstName"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="First name"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 md:col-span-6"
+                    required
                   >
-                    <BaseInput
-                      label="First name"
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:user-duotone"
                       placeholder="Ex: John"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       type="text"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12 md:col-span-6">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.lastName"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.lastName"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Last name"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 md:col-span-6"
                   >
-                    <BaseInput
-                      label="Last name"
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:user-duotone"
                       placeholder="Ex: Doe"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       type="text"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12 md:col-span-6">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.email"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.email"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Email Address"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 md:col-span-6"
                   >
-                    <BaseInput
-                      label="Email Address"
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:envelope-duotone"
                       placeholder="Ex: johndoe@gmail.com"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       type="email"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12 md:col-span-6">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.speciality"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.speciality"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Speciality"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 md:col-span-6"
                   >
-                    <BaseSelect
-                      label="Speciality"
+                    <TairoSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:first-aid-duotone"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
@@ -431,18 +457,26 @@ const currentRatingText = computed(() => {
                       <BaseSelectItem value="Traumatology">
                         Traumatology
                       </BaseSelectItem>
-                    </BaseSelect>
-                  </Field>
-                </div>
+                    </TairoSelect>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.phone"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.phone"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Emergency Phone"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12"
+                    required
                   >
                     <AddonInputPhone
+                      v-bind="inputAttrs"
                       ref="inputPhoneRef"
-                      label="Emergency Phone"
                       placeholder="Ex: +1 555 555 5555"
                       icon="lucide:phone"
                       :model-value="field.value"
@@ -451,38 +485,50 @@ const currentRatingText = computed(() => {
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.comments"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.comments"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Comments"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12"
                   >
                     <BaseTextarea
-                      label="Comments"
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       placeholder="Ex: General Orthopedic Surgery, Foot & Ankle Surgery"
                       rows="3"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12 md:col-span-4">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.status"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.status"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Status"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 md:col-span-4"
                   >
-                    <BaseSelect
-                      label="Status"
+                    <TairoSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:heartbeat-duotone"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
@@ -495,47 +541,56 @@ const currentRatingText = computed(() => {
                       <BaseSelectItem value="titular">
                         Titular
                       </BaseSelectItem>
-                    </BaseSelect>
-                  </Field>
-                </div>
+                    </TairoSelect>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12 md:col-span-4">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.experience"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.experience"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Experience"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 md:col-span-4"
                   >
-                    <BaseSelect
-                      label="Experience"
+                    <TairoSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:trophy-duotone"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
-                      <BaseSelectItem value="0-5">
-                        0-5
+                      <BaseSelectItem
+                        v-for="value in ['0-5', '5-10', '10-15', '15+']"
+                        :key="value"
+                        :value
+                      >
+                        {{ value }}
                       </BaseSelectItem>
-                      <BaseSelectItem value="5-10">
-                        5-10
-                      </BaseSelectItem>
-                      <BaseSelectItem value="10-15">
-                        10-15
-                      </BaseSelectItem>
-                      <BaseSelectItem value="15+">
-                        15+
-                      </BaseSelectItem>
-                    </BaseSelect>
-                  </Field>
-                </div>
+                    </TairoSelect>
+                  </BaseField>
+                </Field>
 
-                <div class="col-span-12 md:col-span-4">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.rating"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.rating"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Rating"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 md:col-span-4"
                   >
-                    <BaseSelect
-                      label="Rating"
+                    <TairoSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:star-duotone"
                       :model-value="field.value"
                       :error="errorMessage"
@@ -558,9 +613,9 @@ const currentRatingText = computed(() => {
                       <BaseSelectItem value="5">
                         S+
                       </BaseSelectItem>
-                    </BaseSelect>
-                  </Field>
-                </div>
+                    </TairoSelect>
+                  </BaseField>
+                </Field>
               </div>
             </TairoFormGroup>
 
@@ -569,77 +624,105 @@ const currentRatingText = computed(() => {
               sublabel="Some personal information"
             >
               <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-12">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.address"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.address"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Address / Street"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12"
+                    required
                   >
-                    <BaseInput
-                      label="Address / Street"
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:map-pin-duotone"
                       placeholder="Ex: App 2 suite g3 santa monica"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
-                <div class="col-span-12 sm:col-span-4">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.city"
+                  </BaseField>
+                </Field>
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.city"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="City"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 sm:col-span-4"
+                    required
                   >
-                    <BaseInput
-                      label="City"
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:buildings-duotone"
                       placeholder="Ex: Los Angeles"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       type="text"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
-                <div class="col-span-12 sm:col-span-4">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.state"
+                  </BaseField>
+                </Field>
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.state"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="State / Province"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 sm:col-span-4"
+                    required
                   >
-                    <BaseInput
-                      label="State/Province"
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:globe-duotone"
                       placeholder="Ex: CA"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
                       type="text"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
-                <div class="col-span-12 sm:col-span-4">
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="doctor.zipcode"
+                  </BaseField>
+                </Field>
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="doctor.zipcode"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Zip Code"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12 sm:col-span-4"
+                    required
                   >
-                    <BaseInput
-                      type="text"
-                      label="Zip Code"
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
                       icon="ph:paper-plane-tilt-duotone"
                       placeholder="Ex: 912656"
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
+                      type="text"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
-                  </Field>
-                </div>
+                  </BaseField>
+                </Field>
                 <div class="col-span-12">
                   <div
                     class="bg-muted-100 dark:bg-muted-700/70 flex items-center gap-2 rounded-lg p-4"

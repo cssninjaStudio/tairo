@@ -135,16 +135,12 @@ const budget = ref('< 5K')
         </div>
         <div>
           <div class="relative">
-            <BaseInput
+            <TairoInput
               v-if="!itemSelected"
               v-model="search"
               icon="lucide:search"
               rounded="lg"
               placeholder="ex: Figma, Github, ..."
-              :classes="{
-                input: 'h-12 text-base ps-12!',
-                icon: 'h-12 w-12',
-              }"
             />
             <div v-else class="flex items-center gap-3">
               <BaseAvatar

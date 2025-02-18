@@ -118,18 +118,12 @@ onBeforeMount(checkPreviousSteps)
             Send to
           </BaseParagraph>
 
-          <div class="relative">
-            <BaseInput
-              v-model="request.email"
-              icon="lucide:mail"
-              placeholder="Ex: johndoe@gmail.com"
-              :classes="{
-                input: 'ps-12! py-2! h-12!',
-                icon: 'h-12! w-12!',
-              }"
-              readonly
-            />
-          </div>
+          <TairoInput
+            v-model="request.email"
+            icon="lucide:mail"
+            placeholder="Ex: johndoe@gmail.com"
+            readonly
+          />
         </div>
 
         <!-- Account -->

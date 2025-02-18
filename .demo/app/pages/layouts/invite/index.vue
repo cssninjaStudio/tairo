@@ -50,31 +50,28 @@ onBeforeMount(checkPreviousSteps)
 
     <div class="w-full max-w-md">
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-12 sm:col-span-6">
+        <BaseField label="First name" class="col-span-12 sm:col-span-6">
           <BaseInput
             v-model="request.firstName"
             v-focus
             :error="errors.fields.firstName"
-            label="First name"
             placeholder="Ex: John"
           />
-        </div>
-        <div class="col-span-12 sm:col-span-6">
+        </BaseField>
+        <BaseField label="Last name" class="col-span-12 sm:col-span-6">
           <BaseInput
             v-model="request.lastName"
             :error="errors.fields.lastName"
-            label="Last name"
             placeholder="Ex: Doe"
           />
-        </div>
-        <div class="col-span-12">
+        </BaseField>
+        <BaseField label="Email address" class="col-span-12">
           <BaseInput
             v-model="request.email"
             :error="errors.fields.email"
-            label="Email address"
             placeholder="Ex: johndoe@gmail.com"
           />
-        </div>
+        </BaseField>
       </div>
 
       <div class="mt-6 flex gap-4">

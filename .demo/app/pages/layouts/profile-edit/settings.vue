@@ -82,8 +82,6 @@ const zodSchema = z
 // infer the shape of the schema into a TypeScript type
 type FormInput = z.infer<typeof zodSchema>
 
-const { data, pending, error, refresh } = await useFetch('/api/profile')
-
 const validationSchema = toTypedSchema(zodSchema)
 const initialValues = {
   currentPassword: 'password',
@@ -120,16 +118,19 @@ const success = ref(false)
 const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 
 // Here we register the phone number input with IMask
-const phoneInput = ref<any>()
+const phoneInput = useTemplateRef<any>('phoneInput')
 const mask = shallowRef<InputMask<{ mask: string }> | undefined>(undefined)
-onMounted(() => {
-  mask.value = IMask(phoneInput.value?.el, {
-    mask: '(000) 000-0000',
-  })
-})
-onBeforeUnmount(() => {
-  mask.value?.destroy()
-  mask.value = undefined
+watchEffect(() => {
+  if (phoneInput.value?.$el) {
+    mask.value = IMask(phoneInput.value?.$el, {
+      mask: '(000) 000-0000',
+    })
+  }
+
+  return () => {
+    mask.value?.destroy()
+    mask.value = undefined
+  }
 })
 
 // Reset notifications when the user disables them
@@ -290,16 +291,24 @@ const onSubmit = handleSubmit(
             label="Change Password"
             sublabel="For an improved account security"
           >
+            <input id="username" type="email" name="username" autocomplete="username" value="maya@cssninja.io" class="sr-only" readonly>
             <div class="grid grid-cols-12 gap-4">
-              <div class="col-span-12">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="currentPassword"
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="currentPassword"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
                 >
-                  <BaseInput
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
+                    :aria-invalid="errorMessage ? 'true' : undefined"
                     type="password"
                     icon="ph:lock-duotone"
                     placeholder="Old password"
@@ -307,17 +316,24 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
-                </Field>
-              </div>
-              <div class="col-span-12">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="newPassword"
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="newPassword"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
                 >
-                  <BaseInput
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
+                    :aria-invalid="errorMessage ? 'true' : undefined"
                     type="password"
                     icon="ph:lock-duotone"
                     placeholder="New password"
@@ -325,25 +341,33 @@ const onSubmit = handleSubmit(
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
-                </Field>
-              </div>
-              <div class="col-span-12">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="confirmPassword"
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="confirmPassword"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
                 >
-                  <BaseInput
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
+                    :aria-invalid="errorMessage ? 'true' : undefined"
                     type="password"
+                    autocomplete="new-password"
                     icon="ph:lock-duotone"
                     placeholder="Repeat new password"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
-                </Field>
-              </div>
+                </BaseField>
+              </Field>
             </div>
           </TairoFormGroup>
           <TairoFormGroup
@@ -367,25 +391,32 @@ const onSubmit = handleSubmit(
                   />
                 </Field>
               </div>
-              <div v-show="values.twoFactor?.enabled" class="col-span-12">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="twoFactor.phoneNumber"
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="twoFactor.phoneNumber"
+              >
+                <BaseField
+                  v-show="values.twoFactor?.enabled"
+                  v-slot="{ inputAttrs, inputRef }"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
                 >
-                  <BaseInput
+                  <TairoInput
                     ref="phoneInput"
+                    v-bind="inputAttrs"
                     :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
+                    :aria-invalid="errorMessage ? 'true' : undefined"
                     type="tel"
                     icon="ph:phone-duotone"
-                    placeholder="Phone number"
+                    placeholder="(000) 000-0000"
                     autocomplete="tel"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
-                </Field>
-              </div>
+                </BaseField>
+              </Field>
             </div>
           </TairoFormGroup>
           <TairoFormGroup

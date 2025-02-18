@@ -317,7 +317,7 @@ const onSubmit = handleSubmit(
       <form
         method="POST"
         action=""
-        class=""
+        novalidate
         @submit.prevent="onSubmit"
       >
         <div class="space-y-8">
@@ -398,137 +398,178 @@ const onSubmit = handleSubmit(
                     sublabel="Basic info about you"
                   >
                     <div class="grid grid-cols-12 gap-4">
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.firstName"
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.firstName"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="First Name"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
-                          <BaseInput
-                            label="First Name"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:user-duotone"
                             placeholder="Ex: John"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.lastName"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.lastName"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Last Name"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
-                          <BaseInput
-                            label="Last Name"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:user-duotone"
                             placeholder="Ex: Doe"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.preferredName"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.preferredName"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Preferred Name"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
                         >
-                          <BaseInput
-                            label="Preferred Name"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:mask-happy-duotone"
                             placeholder="Ex: John Doe"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.email"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.email"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Email Address"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
-                          <BaseInput
-                            label="Email Address"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:envelope-duotone"
                             placeholder="Ex: johndoe@gmail.com"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="email"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.phone"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.phone"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Phone Number"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
-                          <BaseInput
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="lucide:phone"
-                            label="Phone Number"
                             placeholder="Ex: +1 555 123 4567"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
-                            type="text"
+                            type="tel"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.status"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.status"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Family Status"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
                           <BaseSelect
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             rounded="md"
-                            label="Family Status"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
@@ -545,24 +586,31 @@ const onSubmit = handleSubmit(
                               Widow/Widower
                             </BaseSelectItem>
                           </BaseSelect>
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.birthday.day"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.birthday.day"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Birthday"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                          required
                         >
                           <BaseSelect
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             rounded="md"
-                            label="Birthday"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
@@ -574,88 +622,73 @@ const onSubmit = handleSubmit(
                               {{ index }}
                             </BaseSelectItem>
                           </BaseSelect>
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.birthday.month"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.birthday.month"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Birth Month"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                          required
                         >
                           <BaseSelect
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             rounded="md"
-                            label="Birth Month"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <BaseSelectItem value="january">
-                              January
-                            </BaseSelectItem>
-                            <BaseSelectItem value="february">
-                              February
-                            </BaseSelectItem>
-                            <BaseSelectItem value="march">
-                              March
-                            </BaseSelectItem>
-                            <BaseSelectItem value="april">
-                              April
-                            </BaseSelectItem>
-                            <BaseSelectItem value="may">
-                              May
-                            </BaseSelectItem>
-                            <BaseSelectItem value="june">
-                              June
-                            </BaseSelectItem>
-                            <BaseSelectItem value="july">
-                              July
-                            </BaseSelectItem>
-                            <BaseSelectItem value="august">
-                              August
-                            </BaseSelectItem>
-                            <BaseSelectItem value="september">
-                              September
-                            </BaseSelectItem>
-                            <BaseSelectItem value="october">
-                              October
-                            </BaseSelectItem>
-                            <BaseSelectItem value="november">
-                              November
-                            </BaseSelectItem>
-                            <BaseSelectItem value="december">
-                              December
+                            <BaseSelectItem
+                              v-for="value in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']"
+                              :key="value"
+                              :value
+                            >
+                              {{ value }}
                             </BaseSelectItem>
                           </BaseSelect>
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="profile.birthday.year"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="profile.birthday.year"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Birth Year"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                          required
                         >
                           <BaseInput
-                            label="Birth Year"
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             placeholder="Ex: 1992"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="number"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
+                        </BaseField>
+                      </Field>
                       <div class="col-span-12">
                         <div class="">
                           <label class="nui-label pb-2 text-[0.825rem]">Gender</label>
@@ -838,16 +871,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.mailingAddress.address"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Address"
-                            icon="ph:map-pin-duotone"
-                            placeholder="Ex: 48, Santa Barbara Railroad"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:map-pin-duotone"
+                              placeholder="Ex: 48, Santa Barbara Railroad"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12">
@@ -860,16 +901,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.mailingAddress.suite"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Street / Suite"
-                            icon="ph:map-pin-duotone"
-                            placeholder="Ex: App 12 suite G4"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:map-pin-duotone"
+                              placeholder="Ex: App 12 suite G4"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12 sm:col-span-4">
@@ -882,17 +931,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.mailingAddress.city"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="City"
-                            icon="ph:buildings-duotone"
-                            placeholder="Ex: Los Angeles"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:buildings-duotone"
+                              placeholder="Ex: Los Angeles"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12 sm:col-span-4">
@@ -905,17 +961,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.mailingAddress.state"
                         >
-                          <BaseInput
-                            label="State/Province"
-                            icon="ph:globe-duotone"
-                            placeholder="Ex: CA"
-                            :model-value="field.value"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
+                            label="State / Province"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:globe-duotone"
+                              placeholder="Ex: CA"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12 sm:col-span-4">
@@ -928,17 +991,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.mailingAddress.zipcode"
                         >
-                          <BaseInput
-                            type="text"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Zip Code"
-                            icon="ph:paper-plane-tilt-duotone"
-                            placeholder="Ex: 912656"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:paper-plane-tilt-duotone"
+                              placeholder="Ex: 912656"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12">
@@ -951,37 +1021,31 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.mailingAddress.country"
                         >
-                          <BaseSelect
-                            rounded="md"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Country"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
+                            required
                           >
-                            <BaseSelectItem value="United States">
-                              United States
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Canada">
-                              Canada
-                            </BaseSelectItem>
-                            <BaseSelectItem value="France">
-                              France
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Germany">
-                              Germany
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Spain">
-                              Spain
-                            </BaseSelectItem>
-                            <BaseSelectItem value="China">
-                              China
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Japan">
-                              Japan
-                            </BaseSelectItem>
-                          </BaseSelect>
+                            <BaseSelect
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              rounded="md"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            >
+                              <BaseSelectItem
+                                v-for="value in ['United States', 'Canada', 'France', 'Germany', 'Spain', 'China', 'Japan']"
+                                :key="value"
+                                :value
+                              >
+                                {{ value }}
+                              </BaseSelectItem>
+                            </BaseSelect>
+                          </BaseField>
                         </Field>
                       </div>
                     </div>
@@ -1003,16 +1067,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.legalAddress.address"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Address"
-                            icon="ph:map-pin-duotone"
-                            placeholder="Ex: 48, Santa Barbara Railroad"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:map-pin-duotone"
+                              placeholder="Ex: 48, Santa Barbara Railroad"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12">
@@ -1025,16 +1097,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.legalAddress.suite"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Street / Suite"
-                            icon="ph:map-pin-duotone"
-                            placeholder="Ex: App 12 suite G4"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:map-pin-duotone"
+                              placeholder="Ex: App 12 suite G4"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12 sm:col-span-4">
@@ -1047,17 +1127,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.legalAddress.city"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="City"
-                            icon="ph:buildings-duotone"
-                            placeholder="Ex: Los Angeles"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:buildings-duotone"
+                              placeholder="Ex: Los Angeles"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12 sm:col-span-4">
@@ -1070,17 +1157,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.legalAddress.state"
                         >
-                          <BaseInput
-                            label="State/Province"
-                            icon="ph:globe-duotone"
-                            placeholder="Ex: CA"
-                            :model-value="field.value"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
+                            label="State / Province"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:globe-duotone"
+                              placeholder="Ex: CA"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12 sm:col-span-4">
@@ -1093,17 +1187,24 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.legalAddress.zipcode"
                         >
-                          <BaseInput
-                            type="text"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Zip Code"
-                            icon="ph:paper-plane-tilt-duotone"
-                            placeholder="Ex: 912656"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:paper-plane-tilt-duotone"
+                              placeholder="Ex: 912656"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12">
@@ -1116,37 +1217,31 @@ const onSubmit = handleSubmit(
                           }"
                           name="profile.legalAddress.country"
                         >
-                          <BaseSelect
-                            rounded="md"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Country"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
+                            required
                           >
-                            <BaseSelectItem value="United States">
-                              United States
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Canada">
-                              Canada
-                            </BaseSelectItem>
-                            <BaseSelectItem value="France">
-                              France
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Germany">
-                              Germany
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Spain">
-                              Spain
-                            </BaseSelectItem>
-                            <BaseSelectItem value="China">
-                              China
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Japan">
-                              Japan
-                            </BaseSelectItem>
-                          </BaseSelect>
+                            <BaseSelect
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              rounded="md"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            >
+                              <BaseSelectItem
+                                v-for="value in ['United States', 'Canada', 'France', 'Germany', 'Spain', 'China', 'Japan']"
+                                :key="value"
+                                :value
+                              >
+                                {{ value }}
+                              </BaseSelectItem>
+                            </BaseSelect>
+                          </BaseField>
                         </Field>
                       </div>
                     </div>

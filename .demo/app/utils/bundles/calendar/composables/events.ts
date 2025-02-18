@@ -44,10 +44,12 @@ export function useCalendarEvents(props: UseCalendarEventsProps) {
         },
         participants: [
           {
+            id: 16,
             photo: '/img/avatars/16.svg',
             name: 'Hermann Mayer',
           },
           {
+            id: 10,
             photo: '/img/avatars/10.svg',
             name: 'Kendra Wilson',
           },
@@ -64,14 +66,17 @@ export function useCalendarEvents(props: UseCalendarEventsProps) {
         },
         participants: [
           {
+            id: 5,
             photo: '/img/avatars/5.svg',
             name: 'Clarissa Miller',
           },
           {
+            id: 8,
             photo: '/img/avatars/8.svg',
             name: 'Eddy Bricks',
           },
           {
+            id: 3,
             photo: '/img/avatars/3.svg',
             name: 'Clark Smith',
           },
@@ -105,10 +110,9 @@ export function useCalendarEvents(props: UseCalendarEventsProps) {
       const events: CalendarCustomAttribute<CalendarEvent>[] = []
       const count = Math.floor(Math.random() * 3)
       for (let j = 0; j < count; j++) {
-        const event
-          = pendingEvents.value[
-            Math.floor(Math.random() * pendingEvents.value.length)
-          ]
+        const event = pendingEvents.value[
+          Math.floor(Math.random() * pendingEvents.value.length)
+        ]!
         const startDate = randomDate(addHours(date, 8), addHours(date, 18))
         const endDate = addMinutes(startDate, event.duration)
         events.push({

@@ -358,7 +358,6 @@ function setAccount(account: any) {
             <div class="relative">
               <BaseInputNumber
                 v-model="amount"
-                icon="lucide:dollar-sign"
                 placeholder="Transfer amount"
               />
             </div>

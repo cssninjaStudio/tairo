@@ -353,29 +353,21 @@ function focusField(n: any) {
           </div>
 
           <div class="mx-auto w-full max-w-sm py-6">
-            <BaseInput
+            <TairoInput
               v-if="twoFaMode === 'email_address'"
               v-model="email"
               icon="ph:envelope-duotone"
               rounded="lg"
+              type="email"
               placeholder="Ex: johndoe@gmail.com"
-              :classes="{
-                wrapper: 'w-full',
-                input: 'h-12! ps-12!',
-                icon: 'h-12! w-12!',
-              }"
             />
-            <BaseInput
+            <TairoInput
               v-else-if="twoFaMode === 'phone_number'"
               v-model="tel"
               icon="ph:device-mobile-speaker-duotone"
               rounded="lg"
+              type="tel"
               placeholder="Ex: +15554815659"
-              :classes="{
-                wrapper: 'w-full',
-                input: 'h-12! ps-12!',
-                icon: 'h-12! w-12!',
-              }"
             />
             <div v-else-if="twoFaMode === 'app_id'" class="space-y-4">
               <div class="flex items-center gap-2">
@@ -396,16 +388,11 @@ function focusField(n: any) {
                   </BaseText>
                 </div>
               </div>
-              <BaseInput
+              <TairoInput
                 v-model="code"
                 icon="ph:fingerprint-duotone"
                 rounded="lg"
                 placeholder="Ex: efcdwdeg16jei85"
-                :classes="{
-                  wrapper: 'w-full',
-                  input: 'h-12! ps-12!',
-                  icon: 'h-12! w-12!',
-                }"
               />
             </div>
           </div>

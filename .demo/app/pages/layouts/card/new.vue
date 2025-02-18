@@ -255,21 +255,17 @@ const onSubmit = handleSubmit(
                 </div>
 
                 <div
-                  class="divide-muted-200 dark:divide-muted-800 space-y-8 divide-y"
+                  class="space-y-8"
                 >
                   <!-- Field -->
-                  <div class="pt-8">
-                    <BaseHeading
-                      as="h4"
-                      size="sm"
-                      weight="medium"
-                      class="text-muted-600 dark:text-muted-400 mb-1"
-                    >
-                      Associated account
-                    </BaseHeading>
+                  <BaseField
+                    label="Associated account"
+                    :error="errors.account"
+                    class="pt-8"
+                  >
                     <!-- Dropdown -->
-                    <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
-                      <template #button="{ open }">
+                    <BaseDropdown rounded="lg">
+                      <template #button>
                         <BaseButton
                           size="xl"
                           rounded="lg"
@@ -302,8 +298,7 @@ const onSubmit = handleSubmit(
                             </span>
                             <Icon
                               name="lucide:chevron-down"
-                              class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                              :class="open && 'rotate-180'"
+                              class="text-muted-400 ms-auto size-4 transition-transform duration-300 in-data-[state=open]:rotate-180"
                             />
                           </span>
                         </BaseButton>
@@ -322,203 +317,168 @@ const onSubmit = handleSubmit(
                         </template>
                       </BaseDropdownItem>
                     </BaseDropdown>
-
-                    <BaseInputHelpText v-if="errors.account" color="danger">
-                      {{ errors.account }}
-                    </BaseInputHelpText>
-                  </div>
-                  <!-- Field -->
-                  <div class="pt-8">
-                    <BaseHeading
-                      as="h4"
-                      size="sm"
-                      weight="medium"
-                      class="text-muted-600 dark:text-muted-400 mb-1"
+                  </BaseField>
+                  <Field
+                    v-slot="{
+                      field,
+                      errorMessage,
+                      handleChange,
+                      handleBlur,
+                    }"
+                    name="owner"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Who is this card for?"
+                      :error="errorMessage"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :disabled="isSubmitting"
                     >
-                      Who is this card for?
-                    </BaseHeading>
-                    <!-- Select -->
-                    <div class="relative">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="owner"
+                      <BaseSelect
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="Select Someone"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
                       >
-                        <BaseSelect
-                          :model-value="field.value"
-                          :error="errorMessage"
-                          :disabled="isSubmitting"
-                          placeholder="Select Someone"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        >
-                          <BaseSelectItem value="Maya Rosselini">
-                            Maya Rosselini
-                          </BaseSelectItem>
-                          <BaseSelectItem value="Kaleb Wilson">
-                            Kaleb Wilson
-                          </BaseSelectItem>
-                          <BaseSelectItem value="Amber Wilson">
-                            Amber Wilson
-                          </BaseSelectItem>
-                          <BaseSelectItem value="Jennifer Wilson">
-                            Jennifer Wilson
-                          </BaseSelectItem>
-                          <BaseSelectItem value="John Baxter">
-                            John Baxter
-                          </BaseSelectItem>
-                        </BaseSelect>
-                      </Field>
-                    </div>
-                  </div>
-                  <!-- Field -->
-                  <div class="pt-8">
-                    <BaseHeading
-                      as="h4"
-                      size="sm"
-                      weight="medium"
-                      class="text-muted-600 dark:text-muted-400 mb-1"
+                        <BaseSelectItem value="Maya Rosselini">
+                          Maya Rosselini
+                        </BaseSelectItem>
+                        <BaseSelectItem value="Kaleb Wilson">
+                          Kaleb Wilson
+                        </BaseSelectItem>
+                        <BaseSelectItem value="Amber Wilson">
+                          Amber Wilson
+                        </BaseSelectItem>
+                        <BaseSelectItem value="Jennifer Wilson">
+                          Jennifer Wilson
+                        </BaseSelectItem>
+                        <BaseSelectItem value="John Baxter">
+                          John Baxter
+                        </BaseSelectItem>
+                      </BaseSelect>
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{
+                      field,
+                      errorMessage,
+                      handleChange,
+                      handleBlur,
+                    }"
+                    name="brand"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="What kind of card do you need?"
+                      :error="errorMessage"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :disabled="isSubmitting"
                     >
-                      What kind of card do you need?
-                    </BaseHeading>
-                    <!-- Select -->
-                    <div class="relative">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="brand"
+                      <BaseSelect
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="Select a card brand"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
                       >
-                        <BaseSelect
-                          :model-value="field.value"
-                          :error="errorMessage"
-                          :disabled="isSubmitting"
-                          placeholder="Select a card brand"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        >
-                          <BaseSelectItem value="visa">
-                            Visa
-                          </BaseSelectItem>
-                          <BaseSelectItem value="mastercard">
-                            Mastercard
-                          </BaseSelectItem>
-                        </BaseSelect>
-                      </Field>
-                    </div>
-                  </div>
-                  <!-- Field -->
-                  <div class="pt-8">
-                    <BaseHeading
-                      as="h4"
-                      size="sm"
-                      weight="medium"
-                      class="text-muted-600 dark:text-muted-400 mb-1"
+                        <BaseSelectItem value="visa">
+                          Visa
+                        </BaseSelectItem>
+                        <BaseSelectItem value="mastercard">
+                          Mastercard
+                        </BaseSelectItem>
+                      </BaseSelect>
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{
+                      field,
+                      errorMessage,
+                      handleChange,
+                      handleBlur,
+                    }"
+                    name="type"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="What type of card is it?"
+                      :error="errorMessage"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :disabled="isSubmitting"
                     >
-                      What type of card is it?
-                    </BaseHeading>
-                    <!-- Select -->
-                    <div class="group relative">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="type"
+                      <BaseSelect
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="Select a card type"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
                       >
-                        <BaseSelect
-                          :model-value="field.value"
-                          :error="errorMessage"
-                          :disabled="isSubmitting"
-                          placeholder="Select a card type"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        >
-                          <BaseSelectItem value="physical">
-                            Physical
-                          </BaseSelectItem>
-                          <BaseSelectItem value="virtual">
-                            Virtual
-                          </BaseSelectItem>
-                        </BaseSelect>
-                      </Field>
-                    </div>
-                  </div>
+                        <BaseSelectItem value="physical">
+                          Physical
+                        </BaseSelectItem>
+                        <BaseSelectItem value="virtual">
+                          Virtual
+                        </BaseSelectItem>
+                      </BaseSelect>
+                    </BaseField>
+                  </Field>
                   <!-- Field -->
-                  <div class="pt-8">
-                    <BaseHeading
-                      as="h4"
-                      size="sm"
-                      weight="medium"
-                      class="text-muted-600 dark:text-muted-400 mb-1"
+                  <Field
+                    v-slot="{
+                      field,
+                      errorMessage,
+                      handleChange,
+                      handleBlur,
+                    }"
+                    name="dailySpend"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="What's the daily spend limit?"
+                      :error="errorMessage"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :disabled="isSubmitting"
                     >
-                      What's the daily spend limit?
-                    </BaseHeading>
-                    <!-- Select -->
-                    <div class="relative">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="dailySpend"
-                      >
-                        <BaseInputNumber
-                          :model-value="field.value"
-                          :error="errorMessage"
-                          :disabled="isSubmitting"
-                          icon="lucide:dollar-sign"
-                          placeholder="0.00"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        />
-                      </Field>
-                    </div>
-                  </div>
-                  <!-- Field -->
-                  <div class="pt-8">
-                    <BaseHeading
-                      as="h4"
-                      size="sm"
-                      weight="medium"
-                      class="text-muted-600 dark:text-muted-400 mb-1"
+                      <BaseInputNumber
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="0.00"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{
+                      field,
+                      errorMessage,
+                      handleChange,
+                      handleBlur,
+                    }"
+                    name="dailyWithdraw"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="What's the daily withdrawal limit?"
+                      :error="errorMessage"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :disabled="isSubmitting"
                     >
-                      What's the daily withdrawal limit?
-                    </BaseHeading>
-                    <!-- Select -->
-                    <div class="relative">
-                      <Field
-                        v-slot="{
-                          field,
-                          errorMessage,
-                          handleChange,
-                          handleBlur,
-                        }"
-                        name="dailyWithdraw"
-                      >
-                        <BaseInputNumber
-                          :model-value="field.value"
-                          :error="errorMessage"
-                          :disabled="isSubmitting"
-                          icon="lucide:dollar-sign"
-                          placeholder="0.00"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        />
-                      </Field>
-                    </div>
-                  </div>
+                      <BaseInputNumber
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        :model-value="field.value"
+                        placeholder="0.00"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
                   <!-- Buttons -->
                   <div class="flex flex-col-reverse gap-4 py-8 sm:flex-row">
                     <div

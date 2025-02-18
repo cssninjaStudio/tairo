@@ -234,52 +234,58 @@ const people = ref([
         </div>
         <div class="divide-y divide-gray-200">
           <div class="grid grid-cols-12 gap-4 py-8">
-            <div class="col-span-12">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="event.title"
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="event.title"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="Event title"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
-                <BaseInput
-                  label="Event title"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
                   rounded="lg"
                   icon="ph:ticket-duotone"
                   placeholder="Ex: Next team building party"
-                  :classes="{
-                    input: 'h-11! ps-11!',
-                    icon: 'h-11! w-11!',
-                  }"
                   :model-value="field.value"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
                   type="text"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
                 />
-              </Field>
-            </div>
-            <div class="col-span-12">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="event.shortDesc"
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="event.shortDesc"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="Short description"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
-                <BaseInput
-                  label="Short description"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
                   rounded="lg"
                   icon="ph:circles-four-duotone"
                   placeholder="Ex: We will meet to have fun together"
-                  :classes="{
-                    input: 'h-11! ps-11!',
-                    icon: 'h-11! w-11!',
-                  }"
                   :model-value="field.value"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
                   type="text"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
                 />
-              </Field>
-            </div>
+              </BaseField>
+            </Field>
             <div class="relative z-20 col-span-12">
               <Field
                 v-slot="{
@@ -301,148 +307,171 @@ const people = ref([
                 >
                   <template #default="{ inputValue, inputEvents }">
                     <div class="flex w-full flex-col gap-4 sm:flex-row">
-                      <div class="relative grow">
-                        <BaseInput
+                      <BaseField
+                        v-slot="{ inputAttrs, inputRef }"
+                        label="Start date"
+                        :state="errorMessage ? 'error' : 'idle'"
+                        :error="errorMessage"
+                        :disabled="isSubmitting"
+                        class="relative grow"
+                        required
+                      >
+                        <TairoInput
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
                           rounded="lg"
-                          label="Start date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.start"
-                          :classes="{
-                            input: 'h-11! ps-11!',
-                            icon: 'h-11! w-11!',
-                          }"
-                          :error="errorMessage"
-                          :disabled="isSubmitting"
                           type="text"
                           v-on="inputEvents.start"
                         />
-                      </div>
-                      <div class="relative grow">
-                        <BaseInput
+                      </BaseField>
+                      <BaseField
+                        v-slot="{ inputAttrs, inputRef }"
+                        label="End date"
+                        :state="errorMessage ? 'error' : 'idle'"
+                        :error="errorMessage"
+                        :disabled="isSubmitting"
+                        class="relative grow"
+                        required
+                      >
+                        <TairoInput
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
                           rounded="lg"
-                          label="End date"
                           icon="ph:calendar-blank-duotone"
                           :value="inputValue.end"
-                          :classes="{
-                            input: 'h-11! ps-11!',
-                            icon: 'h-11! w-11!',
-                          }"
-                          :error="errorMessage"
-                          :disabled="isSubmitting"
                           type="text"
                           v-on="inputEvents.end"
                         />
-                      </div>
+                      </BaseField>
                     </div>
                   </template>
                 </DatePicker>
               </Field>
             </div>
-            <div class="col-span-12">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="event.longDesc"
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="event.longDesc"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="Long description"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
                 <BaseTextarea
-                  label="Long description"
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
                   rounded="lg"
                   placeholder="Ex: Some additional details about the event..."
                   rows="5"
                   :model-value="field.value"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
                 />
-              </Field>
-            </div>
-            <div class="col-span-12">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="event.participants"
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="event.participants"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="Participants"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
               >
                 <BaseAutocomplete
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
                   :items="people"
                   rounded="lg"
                   icon="ph:users-duotone"
                   placeholder="Add participants..."
-                  label="Participants"
                   multiple
                   allow-create
                   :model-value="field.value"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
                 />
-              </Field>
-            </div>
-            <div class="col-span-12 sm:col-span-6">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="event.color"
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="event.color"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="Event color"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseInput
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
                   type="color"
                   list="eventColors"
-                  label="Event color"
                   rounded="lg"
                   icon="ph:drop-half-duotone"
                   placeholder="Pick an event color..."
-                  :classes="{
-                    input: 'h-11! ps-11! appearance-none',
-                    icon: 'h-11! w-11!',
-                  }"
                   :model-value="field.value"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
                 />
                 <datalist id="eventColors">
-                  <BaseSelectItem value="#84cc16" />
-                  <BaseSelectItem value="#22c55e" />
-                  <BaseSelectItem value="#0ea5e9" />
-                  <BaseSelectItem value="#6366f1" />
-                  <BaseSelectItem value="#8b5cf6" />
-                  <BaseSelectItem value="#d946ef" />
-                  <BaseSelectItem value="#f43f5e" />
-                  <BaseSelectItem value="#facc15" />
-                  <BaseSelectItem value="#fb923c" />
-                  <BaseSelectItem value="#9ca3af" />
+                  <option value="#84cc16" />
+                  <option value="#22c55e" />
+                  <option value="#0ea5e9" />
+                  <option value="#6366f1" />
+                  <option value="#8b5cf6" />
+                  <option value="#d946ef" />
+                  <option value="#f43f5e" />
+                  <option value="#facc15" />
+                  <option value="#fb923c" />
+                  <option value="#9ca3af" />
                 </datalist>
-              </Field>
-            </div>
-            <div class="col-span-12 sm:col-span-6">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="event.category"
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="event.category"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="Event category"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseInput
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
                   list="eventCategories"
-                  label="Event category"
                   rounded="lg"
                   icon="ph:ticket-duotone"
                   placeholder="Pick a category..."
-                  :classes="{
-                    input: 'h-11! ps-11!',
-                    icon: 'h-11! w-11!',
-                  }"
                   :model-value="field.value"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
                 />
                 <datalist id="eventCategories">
-                  <BaseSelectItem value="Chrome" />
-                  <BaseSelectItem value="Firefox" />
-                  <BaseSelectItem value="Opera" />
-                  <BaseSelectItem value="Safari" />
-                  <BaseSelectItem value="Microsoft Edge" />
+                  <option value="Chrome" />
+                  <option value="Firefox" />
+                  <option value="Opera" />
+                  <option value="Safari" />
+                  <option value="Microsoft Edge" />
                 </datalist>
-              </Field>
-            </div>
+              </BaseField>
+            </Field>
           </div>
           <div class="flex items-center gap-4 pt-4">
             <BaseButton rounded="lg" class="h-12! w-full">
