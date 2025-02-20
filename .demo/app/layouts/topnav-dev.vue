@@ -136,10 +136,10 @@ const isSwitcherOpen = useState('switcher-open', () => false)
                         to="/"
                       >
                         <BaseHeading size="sm" weight="medium" class="text-muted-900 dark:text-white">
-                          Amazing UI
+                          Design System
                         </BaseHeading>
                         <BaseParagraph size="sm" class="max-w-[260px] text-muted-600 dark:text-muted-400">
-                          Build high-quality, accessible design systems and web apps.
+                          Create your design system with a set of consistent design patterns.
                         </BaseParagraph>
                       </TairoTopnavMenuLink>
                       <TairoTopnavMenuLink

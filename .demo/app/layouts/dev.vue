@@ -1,7 +1,738 @@
 <script setup lang="ts">
+import { Label } from 'reka-ui'
+
 const isSwitcherOpen = useState('switcher-open', () => false)
 
-const sidebarId = ref('subsidebar-3')
+const sidebarId = ref('Dashboards')
+
+const menu = [
+  {
+    label: 'Dashboards',
+    icon: 'solar:sidebar-minimalistic-linear',
+    links: [
+      {
+        label: 'Personal',
+        icon: 'solar:box-minimalistic-linear',
+        children: [
+          {
+            label: 'Personal v1',
+            to: '/dashboards',
+          },
+          {
+            label: 'Personal v2',
+            to: '/dashboards/personal-2',
+          },
+          {
+            label: 'Personal v3',
+            to: '/dashboards/personal-3',
+          },
+        ],
+      },
+      {
+        label: 'Banking',
+        icon: 'solar:buildings-linear',
+        children: [
+          {
+            label: 'Account balance',
+            to: '/dashboards/balance',
+          },
+          {
+            label: 'Account overview',
+            to: '/dashboards/banking-1',
+          },
+          {
+            label: 'Account expenses',
+            to: '/dashboards/banking-2',
+          },
+          {
+            label: 'Account aggregator',
+            to: '/dashboards/banking-5',
+          },
+        ],
+      },
+      {
+        label: 'Transactions',
+        icon: 'solar:card-linear',
+        children: [
+          {
+            label: 'Overview',
+            to: '/dashboards/overview',
+          },
+          {
+            label: 'Quickview',
+            to: '/dashboards/quickview',
+          },
+          {
+            label: 'Account tracking',
+            to: '/dashboards/banking-4',
+          },
+        ],
+      },
+      {
+        label: 'Finance',
+        icon: 'solar:chart-linear',
+        children: [
+          {
+            label: 'Analytics',
+            to: '/dashboards/analytics',
+          },
+          {
+            label: 'Stock market',
+            to: '/dashboards/stocks',
+          },
+          {
+            label: 'Stock tracking',
+            to: '/dashboards/trading',
+          },
+        ],
+      },
+      {
+        label: 'Business',
+        icon: 'solar:case-linear',
+        children: [
+          {
+            label: 'Flight booking',
+            to: '/dashboards',
+          },
+          {
+            label: 'Company overview',
+            to: '/dashboards/company',
+          },
+          {
+            label: 'Human Resources',
+            to: '/dashboards/human-resources',
+          },
+          {
+            label: 'Course overview',
+            to: '/dashboards/course',
+          },
+          {
+            label: 'Job search',
+            to: '/dashboards/jobs',
+          },
+        ],
+      },
+      {
+        label: 'Commerce',
+        icon: 'solar:cart-3-linear',
+        children: [
+          {
+            label: 'Sales overview',
+            to: '/dashboards/sales',
+          },
+          {
+            label: 'Store overview',
+            to: '/dashboards/ecommerce',
+          },
+        ],
+      },
+      {
+        label: 'Lifestyle',
+        icon: 'solar:confetti-minimalistic-linear',
+        children: [
+          {
+            label: 'Influencer',
+            to: '/dashboards/influencer',
+          },
+          {
+            label: 'Hobbies',
+            to: '/dashboards/hobbies',
+          },
+          {
+            label: 'Health',
+            to: '/dashboards/health',
+          },
+          {
+            label: 'Writer',
+            to: '/dashboards/writer',
+          },
+          {
+            label: 'Video log',
+            to: '/dashboards/video',
+          },
+          {
+            label: 'Soccer',
+            to: '/dashboards/soccer',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Applications',
+    icon: 'solar:widget-2-linear',
+    links: [
+      {
+        label: 'AI assistant',
+        icon: 'solar:sticker-smile-square-linear',
+        children: [
+          {
+            label: 'AI chat v1',
+            to: '/ai',
+          },
+          {
+            label: 'AI chat v2',
+            to: '/ai/ui',
+          },
+        ],
+      },
+      {
+        label: 'Calendar',
+        icon: 'solar:calendar-linear',
+        to: '/dashboards/calendar',
+      },
+      {
+        label: 'Food delivery',
+        icon: 'solar:map-point-wave-linear',
+        to: '/dashboards/delivery',
+      },
+      {
+        label: 'Map overview',
+        icon: 'solar:map-linear',
+        children: [
+          {
+            label: 'Left dock',
+            to: '/dashboards/map-left',
+          },
+          {
+            label: 'Right dock',
+            to: '/dashboards/map-right',
+          },
+        ],
+      },
+      {
+        label: 'Email inbox',
+        icon: 'solar:letter-unread-linear',
+        to: '/dashboards/inbox',
+      },
+      {
+        label: 'Direct messaging',
+        icon: 'solar:chat-square-linear',
+        children: [
+          {
+            label: 'Sidebar chat',
+            to: '/dashboards/messaging',
+          },
+          {
+            label: 'Standalone chat',
+            to: '/dashboards/messaging-2',
+          },
+        ],
+      },
+      {
+        label: 'Form layouts',
+        icon: 'solar:notes-linear',
+        children: [
+          {
+            label: 'Company info',
+            to: '/layouts/form-1',
+          },
+          {
+            label: 'Create doctor',
+            to: '/layouts/form-2',
+          },
+          {
+            label: 'Checkout order',
+            to: '/layouts/form-3',
+          },
+          {
+            label: 'Create event',
+            to: '/layouts/form-4',
+          },
+          {
+            label: 'Password gen',
+            to: '/layouts/form-5',
+          },
+          {
+            label: 'Create meeting',
+            to: '/layouts/form-6',
+          },
+          {
+            label: 'Create contact',
+            to: '/layouts/contacts/create',
+          },
+          {
+            label: 'Edit user',
+            to: '/layouts/user-edit',
+          },
+          {
+            label: 'Edit company',
+            to: '/layouts/company-edit',
+          },
+        ],
+      },
+      {
+        label: 'Multistep wizard',
+        icon: 'solar:bolt-linear',
+        to: '/wizard',
+      },
+      {
+        label: 'Widgets',
+        icon: 'solar:widget-add-linear',
+        children: [
+          {
+            label: 'UI widgets',
+            to: '/dashboards/widgets',
+          },
+          {
+            label: 'Creative widgets',
+            to: '/dashboards/widgets/creative',
+          },
+          {
+            label: 'List widgets',
+            to: '/dashboards/widgets/list',
+          },
+        ],
+      },
+      {
+        label: 'Apex charts',
+        icon: 'solar:pie-chart-2-linear',
+        to: '/dashboards/charts',
+      },
+    ],
+  },
+  {
+    label: 'Lists & grids',
+    icon: 'solar:align-vertical-spacing-linear',
+    links: [
+      {
+        label: 'List view',
+        icon: 'solar:slider-horizontal-linear',
+        children: [
+          {
+            label: 'List view v1',
+            to: '/layouts',
+          },
+          {
+            label: 'List view v2',
+            to: '/layouts/list-view-2',
+          },
+          {
+            label: 'List view v3',
+            to: '/layouts/list-view-3',
+          },
+          {
+            label: 'List view v4',
+            to: '/layouts/list-view-4',
+          },
+        ],
+      },
+      {
+        label: 'Flex list',
+        icon: 'solar:mirror-left-linear',
+        children: [
+          {
+            label: 'Flex list v1',
+            to: '/layouts/flex-list-1',
+          },
+          {
+            label: 'Flex list v2',
+            to: '/layouts/flex-list-2',
+          },
+          {
+            label: 'Flex list v3',
+            to: '/layouts/flex-list-3',
+          },
+        ],
+      },
+      {
+        label: 'Table list',
+        icon: 'solar:slider-minimalistic-horizontal-linear',
+        children: [
+          {
+            label: 'Table list v1',
+            to: '/layouts/table-list-1',
+          },
+          {
+            label: 'Table list v2',
+            to: '/layouts/table-list-2',
+          },
+          {
+            label: 'Table list v3',
+            to: '/layouts/table-list-3',
+          },
+        ],
+      },
+      {
+        label: 'Card grid',
+        icon: 'solar:posts-carousel-horizontal-linear',
+        children: [
+          {
+            label: 'Card grid v1',
+            to: '/layouts/card-grid-1',
+          },
+          {
+            label: 'Card grid v2',
+            to: '/layouts/card-grid-2',
+          },
+          {
+            label: 'Card grid v3',
+            to: '/layouts/card-grid-3',
+          },
+          {
+            label: 'Card grid v4',
+            to: '/layouts/card-grid-4',
+          },
+        ],
+      },
+      {
+        label: 'Tile grid',
+        icon: 'solar:posts-carousel-vertical-linear',
+        children: [
+          {
+            label: 'Tile grid v1',
+            to: '/layouts/tile-grid-1',
+          },
+          {
+            label: 'Tile grid v2',
+            to: '/layouts/tile-grid-2',
+          },
+          {
+            label: 'Tile grid v3',
+            to: '/layouts/tile-grid-3',
+          },
+        ],
+      },
+      {
+        label: 'User grid',
+        icon: 'solar:users-group-rounded-linear',
+        children: [
+          {
+            label: 'User grid v1',
+            to: '/layouts/user-grid-1',
+          },
+          {
+            label: 'User grid v2',
+            to: '/layouts/user-grid-2',
+          },
+          {
+            label: 'User grid v3',
+            to: '/layouts/user-grid-3',
+          },
+          {
+            label: 'User grid v4',
+            to: '/layouts/user-grid-4',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Projects',
+    icon: 'solar:suitcase-lines-linear',
+    links: [
+      {
+        label: 'Projects overview',
+        icon: 'solar:suitcase-linear',
+        children: [
+          {
+            label: 'Projects v1',
+            to: '/layouts/projects',
+          },
+          {
+            label: 'Projects v2',
+            to: '/layouts/projects/project-list-2',
+          },
+          {
+            label: 'Projects v3',
+            to: '/layouts/projects/project-list-3',
+          },
+        ],
+      },
+      {
+        label: 'Project details',
+        icon: 'solar:plate-linear',
+        to: '/layouts/projects/details',
+      },
+      {
+        label: 'Kanban board',
+        icon: 'solar:widget-4-linear',
+        to: '/layouts/projects/board',
+      },
+    ],
+  },
+  {
+    label: 'Banking',
+    icon: 'solar:safe-square-linear',
+    links: [
+      {
+        label: 'Accounts',
+        icon: 'solar:key-minimalistic-square-2-linear',
+        children: [
+          {
+            label: 'Account list',
+            to: '/layouts/accounts',
+          },
+          {
+            label: 'Linked accounts',
+            to: '/layouts/accounts/linked',
+          },
+          {
+            label: 'Account rules',
+            to: '/layouts/accounts/rules',
+          },
+        ],
+      },
+      {
+        label: 'Credit cards',
+        icon: 'solar:card-linear',
+        children: [
+          {
+            label: 'Card list',
+            to: '/layouts/cards',
+          },
+          {
+            label: 'New card',
+            to: '/layouts/card/new',
+          },
+        ],
+      },
+      {
+        label: 'Transactions',
+        icon: 'solar:transfer-horizontal-linear',
+        children: [
+          {
+            label: 'Transaction list',
+            to: '/layouts/transactions',
+          },
+          {
+            label: 'Outgoing payments',
+            to: '/layouts/payments',
+          },
+          {
+            label: 'Incoming payments',
+            to: '/layouts/payments/incoming',
+          },
+          {
+            label: 'Recipients',
+            to: '/layouts/payments/recipients',
+          },
+        ],
+      },
+      {
+        label: 'Wizards',
+        icon: 'solar:bolt-linear',
+        children: [
+          {
+            label: 'Send money',
+            to: '/layouts/send',
+          },
+          {
+            label: 'Receive money',
+            to: '/layouts/receive',
+          },
+          {
+            label: 'Invite people',
+            to: '/layouts/invite',
+          },
+        ],
+      },
+      {
+        label: 'Miscellaneous',
+        icon: 'solar:shield-check-linear',
+        children: [
+          {
+            label: 'Members',
+            to: '/layouts/accounts',
+          },
+          {
+            label: 'Investments',
+            to: '/layouts/invest',
+          },
+          {
+            label: 'Credit request',
+            to: '/layouts/credit',
+          },
+          {
+            label: 'Personal vault',
+            to: '/layouts/vault',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Utility',
+    icon: 'solar:graph-new-linear',
+    links: [
+      {
+        label: 'Login',
+        icon: 'solar:lock-linear',
+        children: [
+          {
+            label: 'Login v1',
+            to: '/auth',
+          },
+          {
+            label: 'Login v2',
+            to: '/auth/login-1',
+          },
+          {
+            label: 'Login v3',
+            to: '/auth/login-2',
+          },
+          {
+            label: 'Login v4',
+            to: '/auth/login-3',
+          },
+        ],
+      },
+      {
+        label: 'Signup',
+        icon: 'solar:key-minimalistic-linear',
+        children: [
+          {
+            label: 'Signup v1',
+            to: '/auth/signup-1',
+          },
+          {
+            label: 'Signup v2',
+            to: '/auth/signup-2',
+          },
+          {
+            label: 'Signup v3',
+            to: '/auth/signup-3',
+          },
+        ],
+      },
+      {
+        label: 'Forgot password',
+        icon: 'solar:refresh-square-linear',
+        to: '/auth/forgot',
+      },
+      {
+        label: 'Account',
+        icon: 'solar:user-linear',
+        children: [
+          {
+            label: 'Profile',
+            to: '/layouts/profile',
+          },
+          {
+            label: 'Profile notifications',
+            to: '/layouts/profile-notifications',
+          },
+          {
+            label: 'Profile settings',
+            to: '/layouts/profile-settings',
+          },
+          {
+            label: 'Profile edit',
+            to: '/layouts/profile-edit',
+          },
+          {
+            label: 'User info',
+            to: '/layouts/user',
+          },
+          {
+            label: 'Company info',
+            to: '/layouts/company',
+          },
+        ],
+      },
+      {
+        label: 'Subpages',
+        icon: 'solar:document-linear',
+        children: [
+          {
+            label: 'Documents',
+            to: '/layouts/documents',
+          },
+          {
+            label: 'Downloads',
+            to: '/layouts/downloads',
+          },
+          {
+            label: 'Integrations',
+            to: '/layouts/integrations',
+          },
+          {
+            label: 'Offers',
+            to: '/layouts/offers',
+          },
+          {
+            label: 'SaaS billing',
+            to: '/layouts/utility-billing',
+          },
+        ],
+      },
+      {
+        label: 'Utility',
+        icon: 'solar:home-smile-linear',
+        children: [
+          {
+            label: 'Action v1',
+            to: '/layouts/utility-action-1',
+          },
+          {
+            label: 'Action v2',
+            to: '/layouts/utility-action-2',
+          },
+          {
+            label: 'Promotion',
+            to: '/layouts/utility-promotion',
+          },
+          {
+            label: 'Confirm action',
+            to: '/layouts/utility-confirm',
+          },
+          {
+            label: 'Invoice v1',
+            to: '/layouts/utility-invoice',
+          },
+          {
+            label: 'Invoice v2',
+            to: '/layouts/utility-invoice-2',
+          },
+          {
+            label: 'System status',
+            to: '/layouts/utility-status',
+          },
+          {
+            label: 'System error',
+            to: '/layouts/utility-error',
+          },
+          {
+            label: 'Search results',
+            to: '/layouts/search-results',
+          },
+          {
+            label: 'Search empty',
+            to: '/layouts/search-empty',
+          },
+        ],
+      },
+      {
+        label: 'Settings',
+        icon: 'solar:settings-linear',
+        to: '/layouts/settings',
+      },
+      {
+        label: 'Preferences',
+        icon: 'solar:tuning-2-linear',
+        to: '/layouts/preferences',
+      },
+      {
+        label: 'Onboarding',
+        icon: 'solar:plain-3-linear',
+        children: [
+          {
+            label: '2 factor auth',
+            to: '/layouts/onboarding-1',
+          },
+          {
+            label: 'Plan selection',
+            to: '/layouts/onboarding-2',
+          },
+          {
+            label: 'Role selection',
+            to: '/layouts/onboarding-3',
+          },
+        ],
+      },
+    ],
+  },
+]
 </script>
 
 <template>
@@ -14,51 +745,59 @@ const sidebarId = ref('subsidebar-3')
 
         <TairoSidebarLinks>
           <BaseTooltip
-            content="Dashboards"
+            v-for="item in menu"
+            :key="item.label"
+            :content="item.label"
             variant="dark"
             :bindings="{
               content: { side: 'left' },
               portal: { to: '#teleports' },
             }"
           >
-            <TairoSidebarTrigger value="dashboards">
-              <Icon name="solar:sidebar-minimalistic-linear" class="size-5" />
+            <TairoSidebarTrigger :value="item.label">
+              <Icon :name="item.icon" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
 
           <BaseTooltip
-            content="Subsidebar 1"
+            content="Messaging"
+            variant="dark"
             :bindings="{
               content: { side: 'left' },
               portal: { to: '#teleports' },
             }"
           >
-            <TairoSidebarTrigger value="subsidebar-2">
-              <Icon name="solar:sticker-square-linear" class="size-5" />
+            <TairoSidebarTrigger value="subsidebar-3">
+              <Icon name="solar:chat-round-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
-
-          <TairoSidebarTrigger value="subsidebar-3">
-            <Icon name="solar:calendar-linear" class="size-5" />
-          </TairoSidebarTrigger>
-        </TairoSidebarLinks>
-
-        <TairoSidebarLinks class="grow bg-muted-100 dark:bg-muted-900 overflow-y-auto nui-slimscroll">
-          <TairoSidebarTrigger value="subsidebar-4">
-            <Icon name="solar:widget-3-linear" class="size-5" />
-          </TairoSidebarTrigger>
-          <TairoSidebarTrigger value="subsidebar-5">
-            <Icon name="solar:widget-4-linear" class="size-5" />
-          </TairoSidebarTrigger>
         </TairoSidebarLinks>
 
         <TairoSidebarLinks class="shrink-0 mt-auto">
-          <TairoSidebarLink tabindex="0" @click="isSwitcherOpen = true">
-            <Icon name="solar:palette-round-linear" class="size-5" />
-          </TairoSidebarLink>
-          <TairoSidebarLink to="/layouts/settings">
-            <Icon name="solar:settings-linear" class="size-5" />
-          </TairoSidebarLink>
+          <BaseTooltip
+            content="Customize"
+            variant="dark"
+            :bindings="{
+              content: { side: 'left' },
+              portal: { to: '#teleports' },
+            }"
+          >
+            <TairoSidebarLink tabindex="0" @click="isSwitcherOpen = true">
+              <Icon name="solar:palette-round-linear" class="size-5" />
+            </TairoSidebarLink>
+          </BaseTooltip>
+          <BaseTooltip
+            content="Settings"
+            variant="dark"
+            :bindings="{
+              content: { side: 'left' },
+              portal: { to: '#teleports' },
+            }"
+          >
+            <TairoSidebarLink to="/layouts/settings">
+              <Icon name="solar:settings-linear" class="size-5" />
+            </TairoSidebarLink>
+          </BaseTooltip>
           <TairoSidebarLink>
             <BaseThemeToggle class="scale-90" />
           </TairoSidebarLink>
@@ -73,60 +812,30 @@ const sidebarId = ref('subsidebar-3')
         </TairoSidebarLinks>
       </TairoSidebar>
 
-      <TairoSubsidebar value="dashboards">
+      <TairoSubsidebar v-for="item in menu" :key="item.label" :value="item.label">
         <TairoSubsidebarHeader>
-          Header
+          {{ item.label }}
         </TairoSubsidebarHeader>
         <TairoSubsidebarContent>
-          <TairoSubsidebarLink to="/dashboards/personal-3">
-            <Icon name="solar:spedometer-middle-linear" class="size-4 text-muted-500 dark:text-muted-400" />
-            <span>Dashboard</span>
-          </TairoSubsidebarLink>
+          <template v-for="link in item.links" :key="link.label">
+            <TairoSubsidebarLink v-if="!link.children" :to="link.to">
+              <Icon :name="link.icon" class="size-4 text-muted-500 dark:text-muted-400" />
+              <span>{{ link.label }}</span>
+            </TairoSubsidebarLink>
+            <TairoSubsidebarCollapsible
+              v-else
+              :children="link.children"
+            >
+              <template #trigger>
+                <TairoSubsidebarCollapsibleTrigger>
+                  <Icon :name="link.icon" class="size-4 text-muted-500 dark:text-muted-400" />
+                  <span>{{ link.label }}</span>
+                </TairoSubsidebarCollapsibleTrigger>
+              </template>
+            </TairoSubsidebarCollapsible>
+          </template>
 
-          <TairoSubsidebarCollapsible
-            :children="[
-              {
-                label: 'Gateways',
-                to: '#',
-              },
-              {
-                label: 'Statistics',
-                to: '#',
-              },
-              {
-                label: 'API Endpoints',
-                to: '#',
-              },
-            ]"
-          >
-            <template #trigger>
-              <TairoSubsidebarCollapsibleTrigger>
-                <Icon name="solar:spedometer-middle-linear" class="size-4 text-muted-500 dark:text-muted-400" />
-                <span>Dashboard</span>
-              </TairoSubsidebarCollapsibleTrigger>
-            </template>
-          </TairoSubsidebarCollapsible>
-
-          <TairoSubsidebarCollapsible>
-            <template #trigger>
-              <TairoSubsidebarCollapsibleTrigger>
-                <Icon name="solar:shop-linear" class="size-4 text-muted-500 dark:text-muted-400" />
-                <span>Test</span>
-              </TairoSubsidebarCollapsibleTrigger>
-            </template>
-
-            <TairoSubsidebarCollapsibleLink to="/dashboards/personal-3">
-              Overview
-            </TairoSubsidebarCollapsibleLink>
-            <TairoSubsidebarCollapsibleLink to="#">
-              Reports
-            </TairoSubsidebarCollapsibleLink>
-            <TairoSubsidebarCollapsibleLink to="#">
-              Forecast
-            </TairoSubsidebarCollapsibleLink>
-          </TairoSubsidebarCollapsible>
-
-          <TairoSubsidebarCollapsible
+          <!-- <TairoSubsidebarCollapsible
             icon="solar:card-linear"
             label="Payments"
             :children="[
@@ -143,11 +852,11 @@ const sidebarId = ref('subsidebar-3')
                 to: '#',
               },
             ]"
-          />
+          /> -->
         </TairoSubsidebarContent>
       </TairoSubsidebar>
 
-      <TairoSubsidebar value="subsidebar-2">
+      <!-- <TairoSubsidebar value="subsidebar-2">
         <TairoSubsidebarHeader>
           <span>Subsidebar 2</span>
 
@@ -171,14 +880,14 @@ const sidebarId = ref('subsidebar-3')
         <BaseMessage variant="info" class="mx-4 my-2">
           Hello, World!
         </BaseMessage>
-      </TairoSubsidebar>
+      </TairoSubsidebar> -->
 
       <TairoSubsidebar value="subsidebar-3">
         <TairoSubsidebarContent class="px-1!">
           <NuxtLink
             v-for="i in 26"
             :key="i"
-            to="#"
+            to="/layouts/profile"
             class="flex h-14 w-full items-center justify-center hover:bg-muted-100 dark:hover:bg-muted-900 rounded-lg transitions-colors duration-100"
             :class="i === 1 ? 'bg-primary-100 dark:bg-primary-950 rounded-s-none border-s border-primary-500' : ''"
           >

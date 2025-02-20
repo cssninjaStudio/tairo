@@ -6,7 +6,7 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Interviews',
-  layout: 'topnav-dev',
+  layout: 'dev',
   preview: {
     title: 'Personal dashboard v3',
     description: 'For personal usage and reports',
@@ -115,7 +115,7 @@ const candidates = [
 
 <template>
   <div class="min-h-screen px-4 md:px-6 lg:px-8 xl:px-10 pb-12">
-    <!-- <TairoToolbar /> -->
+    <TairoToolbar />
     <!-- <TairoCollapseToolbar /> -->
     <!-- <TairoSidenavToolbar /> -->
     <div
