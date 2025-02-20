@@ -1,6 +1,6 @@
 @layer base {
   :root {
-    --collapse-width-open: 16rem;
+    --collapse-width-open: 17rem;
     --collapse-width-collapsed: 5rem;
   }
 

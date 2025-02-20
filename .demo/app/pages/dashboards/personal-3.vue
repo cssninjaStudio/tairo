@@ -6,7 +6,7 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Interviews',
-  layout: 'dev',
+  layout: 'collapse-dev',
   preview: {
     title: 'Personal dashboard v3',
     description: 'For personal usage and reports',
@@ -115,8 +115,8 @@ const candidates = [
 
 <template>
   <div class="min-h-screen px-4 md:px-6 lg:px-8 xl:px-10 pb-12">
-    <TairoToolbar />
-    <!-- <TairoCollapseToolbar /> -->
+    <!-- <TairoToolbar /> -->
+    <TairoCollapseToolbar />
     <!-- <TairoSidenavToolbar /> -->
     <div
       class="relative z-0 ltablet:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
@@ -346,9 +346,8 @@ const candidates = [
               <span>Trending skills</span>
             </BaseHeading>
             <BaseButton
-              color="primary"
               size="sm"
-              variant="pastel"
+              variant="primary"
               rounded="md"
             >
               View all
@@ -372,9 +371,8 @@ const candidates = [
               <span>Interviews</span>
             </BaseHeading>
             <BaseButton
-              color="primary"
               size="sm"
-              variant="pastel"
+              variant="primary"
               rounded="md"
             >
               Reports
