@@ -12,7 +12,7 @@
     "@cssninja/nuxt-toaster": "^0.3.12",
     "@shuriken-ui/nuxt": "4.0.0-alpha.32",
     "@shuriken-ui/tailwind": "4.0.0-alpha.32",
-    "tailwindcss": "4.0.0-beta.9"
+    "tailwindcss": "^4.0.8"
   },
   "dependencies": {
     "@vueuse/core": "^12.4.0",

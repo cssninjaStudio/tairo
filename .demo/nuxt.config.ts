@@ -179,7 +179,6 @@ export default defineNuxtConfig({
         'unified',
         // useMultiStepForm
         'vue3-smooth-dnd',
-        'splitpanes',
         'mapbox-gl',
         '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js',
         // DocComponentMeta
