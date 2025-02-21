@@ -242,9 +242,8 @@ const items = [
                       class="w-full sm:w-16"
                     >
                       <BaseTag
-                        :color="item.status === 'new' ? 'success' : 'muted'"
+                        :variant="item.status === 'new' ? 'primary' : 'muted'"
                         rounded="full"
-                        variant="pastel"
                         size="sm"
                       >
                         {{ item.status }}

@@ -71,14 +71,12 @@ const isSearchOpen = useState('search-open', () => false)
                 <BaseKbd
                   size="xs"
                   rounded="md"
-                  color="default"
                 >
                   Ctrl
                 </BaseKbd>
                 <BaseKbd
                   size="xs"
                   rounded="md"
-                  color="default"
                   class="px-2!"
                 >
                   K

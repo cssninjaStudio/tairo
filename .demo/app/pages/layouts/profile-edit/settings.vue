@@ -385,7 +385,7 @@ const onSubmit = handleSubmit(
                     :disabled="isSubmitting"
                     label="Enabled"
                     sublabel="Toggle 2 factor authentication"
-                    color="primary"
+                    variant="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -434,7 +434,7 @@ const onSubmit = handleSubmit(
                     :disabled="isSubmitting"
                     label="Enabled"
                     sublabel="Receive emails notifications from the app"
-                    color="primary"
+                    variant="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -450,7 +450,7 @@ const onSubmit = handleSubmit(
                     :disabled="isSubmitting"
                     label="Flush"
                     sublabel="Discard low priority notifications"
-                    color="primary"
+                    variant="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -466,7 +466,7 @@ const onSubmit = handleSubmit(
                     :disabled="isSubmitting"
                     label="Marketing"
                     sublabel="Enable marketing emails"
-                    color="primary"
+                    variant="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -482,7 +482,7 @@ const onSubmit = handleSubmit(
                     :disabled="isSubmitting"
                     label="Partners"
                     sublabel="Enable partner emails"
-                    color="primary"
+                    variant="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />

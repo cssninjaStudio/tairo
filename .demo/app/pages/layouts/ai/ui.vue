@@ -265,7 +265,6 @@ function closeUpgrade() {
                         to="#"
                         title="Share"
                         text="Share this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -276,7 +275,6 @@ function closeUpgrade() {
                         to="#"
                         title="Rename"
                         text="Rename this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -287,7 +285,6 @@ function closeUpgrade() {
                         to="#"
                         title="Archive"
                         text="Archive this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -298,7 +295,6 @@ function closeUpgrade() {
                         to="#"
                         title="Delete"
                         text="Delete this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -390,7 +386,6 @@ function closeUpgrade() {
                   rounded="lg"
                   label="Dropdown"
                   orientation="start"
-                  color="default-contrast"
                   :classes="{
                     wrapper: 'group/dropdown',
                   }"
@@ -407,7 +402,6 @@ function closeUpgrade() {
                     to="#"
                     title="Share"
                     text="Share this chat"
-                    color="dark"
                     rounded="sm"
                   >
                     <template #start>
@@ -418,7 +412,6 @@ function closeUpgrade() {
                     to="#"
                     title="Rename"
                     text="Rename this chat"
-                    color="dark"
                     rounded="sm"
                   >
                     <template #start>
@@ -429,7 +422,6 @@ function closeUpgrade() {
                     to="#"
                     title="Archive"
                     text="Archive this chat"
-                    color="dark"
                     rounded="sm"
                   >
                     <template #start>
@@ -440,7 +432,6 @@ function closeUpgrade() {
                     to="#"
                     title="Delete"
                     text="Delete this chat"
-                    color="dark"
                     rounded="sm"
                   >
                     <template #start>

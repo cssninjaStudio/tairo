@@ -62,9 +62,8 @@ const iconColor = computed(() => {
       size="md"
       rounded="none"
       mask="blob"
-      color="none"
+      variant="none"
       :class="iconColor"
-      variant="pastel"
     >
       <Icon :name="props.name" class="size-6" />
     </BaseIconBox>

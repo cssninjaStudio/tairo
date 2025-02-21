@@ -96,8 +96,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="lg"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                 >
                   Member
                 </BaseTag>
@@ -173,8 +172,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="full"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                   class="relative z-10"
                 >
                   Member
@@ -257,8 +255,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="sm"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                 >
                   Member
                 </BaseTag>
@@ -328,8 +325,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="none"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                 >
                   Member
                 </BaseTag>

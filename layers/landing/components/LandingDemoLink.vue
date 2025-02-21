@@ -80,9 +80,7 @@ const props = defineProps<{
       </div>
       <BaseTag
         v-if="props.preview?.new"
-        color="danger"
         rounded="full"
-        shadow="flat"
         class="absolute end-3 top-3"
       >
         New

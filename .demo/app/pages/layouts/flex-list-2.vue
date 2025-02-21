@@ -54,11 +54,11 @@ const { data, pending, error, refresh } = await useFetch(
 function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'online':
-      return 'success'
+      return 'primary'
     case 'working':
-      return 'info'
+      return 'dark'
     case 'suspended':
-      return 'warning'
+      return 'muted'
     default:
       break
   }
@@ -165,9 +165,8 @@ function statusColor(itemStatus: string) {
                   class="w-full sm:w-16"
                 >
                   <BaseTag
-                    :color="statusColor(item.status)"
+                    :variant="statusColor(item.status)"
                     rounded="full"
-                    variant="pastel"
                     size="sm"
                     class="capitalize"
                   >

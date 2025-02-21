@@ -51,7 +51,7 @@ const props = withDefaults(
       :icon="props.icon"
       size="sm"
       class="bg-primary-500/20 text-primary-500"
-      color="none"
+      variant="none"
     >
       <Icon :name="props.icon" class="size-5" />
     </BaseIconBox>

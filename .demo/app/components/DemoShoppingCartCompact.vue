@@ -45,7 +45,7 @@ const products = [
         Shopping cart
       </BaseHeading>
       <BaseTag
-        color="primary"
+        variant="primary"
         size="sm"
         rounded="full"
       >

@@ -77,13 +77,13 @@ const totalReceived = computed(() => {
 function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'complete':
-      return 'muted'
-    case 'in progress':
       return 'primary'
+    case 'in progress':
+      return 'dark'
     case 'processing':
-      return 'info'
+      return 'default'
     case 'cancelled':
-      return 'warning'
+      return 'muted'
     default:
       break
   }
@@ -216,9 +216,8 @@ function statusColor(itemStatus: string) {
                 </div>
                 <BaseTag
                   rounded="full"
-                  variant="pastel"
-                  :color="
-                    data.recipient.status === 'active' ? 'success' : 'muted'
+                  :variant="
+                    data.recipient.status === 'active' ? 'primary' : 'muted'
                   "
                   size="sm"
                 >
@@ -300,7 +299,7 @@ function statusColor(itemStatus: string) {
                 Notifications
               </BaseText>
               <div>
-                <BaseSwitchBall v-model="notifications" color="primary" />
+                <BaseSwitchBall v-model="notifications" variant="primary" />
               </div>
             </div>
           </BaseCard>
@@ -479,9 +478,8 @@ function statusColor(itemStatus: string) {
                       </td>
                       <td class="px-4 py-2">
                         <BaseTag
-                          variant="pastel"
                           rounded="full"
-                          :color="statusColor(item.status)"
+                          :variant="statusColor(item.status)"
                           size="sm"
                         >
                           {{ item.status }}

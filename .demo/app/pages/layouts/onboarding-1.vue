@@ -264,8 +264,7 @@ function focusField(n: any) {
             class="pointer-events-none flex w-full items-center justify-center pt-8"
           >
             <BaseIconBox
-              color="primary"
-              variant="pastel"
+              variant="primary"
               size="lg"
               rounded="full"
               class="mx-auto"
@@ -376,8 +375,7 @@ function focusField(n: any) {
                 <TairoCheckAnimated v-if="validatePin" size="sm" />
                 <BaseIconBox
                   v-else
-                  color="primary"
-                  variant="pastel"
+                  variant="primary"
                   size="lg"
                   rounded="full"
                   class="mx-auto"

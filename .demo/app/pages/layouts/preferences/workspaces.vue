@@ -118,8 +118,7 @@ const workspaces = [
                 </div>
                 <div v-if="selectedWorkspace === index">
                   <BaseTag
-                    color="primary"
-                    variant="pastel"
+                    variant="primary"
                     size="sm"
                     rounded="full"
                   >
@@ -139,7 +138,7 @@ const workspaces = [
                   <BaseButton
                     rounded="md"
                     size="sm"
-                    color="muted"
+                    variant="muted"
                   >
                     Leave
                   </BaseButton>

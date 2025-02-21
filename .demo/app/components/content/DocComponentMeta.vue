@@ -66,7 +66,6 @@ function wrapExternalLinks(string: string) {
                     <code class="rounded-sm bg-primary-500/20 px-1 text-[0.8rem] font-medium text-primary-600 dark:text-primary-400">{{ kebabCase(docs.model.name) }}</code>
                     <div v-if="docs.model.description">
                       <BaseDropdown
-                        color="default-contrast"
                         orientation="start"
                         size="lg"
                         fixed
@@ -160,7 +159,6 @@ function wrapExternalLinks(string: string) {
                     <code class="rounded-sm bg-primary-500/20 px-1 text-[0.8rem] font-medium text-primary-600 dark:text-primary-400">{{ kebabCase(prop.name) }}</code>
                     <div v-if="prop.description">
                       <BaseDropdown
-                        color="default-contrast"
                         orientation="start"
                         size="md"
                       >
@@ -198,7 +196,6 @@ function wrapExternalLinks(string: string) {
                     </ComponentMetaCode>
                     <div v-if="prop.tags?.length > 0">
                       <BaseDropdown
-                        color="default-contrast"
                         orientation="end"
                         size="md"
                       >
@@ -275,7 +272,6 @@ function wrapExternalLinks(string: string) {
                     <code class="rounded-sm bg-primary-500/20 px-1 text-[0.8rem] font-medium text-primary-600 dark:text-primary-400">{{ kebabCase(event.name) }}</code>
                     <div v-if="event.description">
                       <BaseDropdown
-                        color="default-contrast"
                         orientation="start"
                         size="md"
                       >
@@ -378,7 +374,6 @@ function wrapExternalLinks(string: string) {
                       <code class="rounded-sm bg-primary-500/20 px-1 text-[0.8rem] font-medium text-primary-600 dark:text-primary-400">{{ kebabCase(exposed.name) }}</code>
                       <div v-if="exposed.description">
                         <BaseDropdown
-                          color="default-contrast"
                           orientation="start"
                           size="md"
                         >

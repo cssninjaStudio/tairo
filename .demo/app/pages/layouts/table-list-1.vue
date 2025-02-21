@@ -202,8 +202,7 @@ function toggleAllVisibleSelection() {
                   <TairoTableCell spaced class="capitalize">
                     <BaseTag
                       v-if="item.status === 'available'"
-                      color="success"
-                      variant="pastel"
+                      variant="primary"
                       rounded="full"
                       size="sm"
                       class="font-medium"
@@ -212,8 +211,7 @@ function toggleAllVisibleSelection() {
                     </BaseTag>
                     <BaseTag
                       v-else-if="item.status === 'new'"
-                      color="info"
-                      variant="pastel"
+                      variant="primary"
                       rounded="full"
                       size="sm"
                       class="font-medium"
@@ -222,8 +220,7 @@ function toggleAllVisibleSelection() {
                     </BaseTag>
                     <BaseTag
                       v-else-if="item.status === 'busy'"
-                      color="warning"
-                      variant="pastel"
+                      variant="dark"
                       rounded="full"
                       size="sm"
                       class="font-medium"
@@ -232,8 +229,7 @@ function toggleAllVisibleSelection() {
                     </BaseTag>
                     <BaseTag
                       v-else-if="item.status === 'offline'"
-                      color="muted"
-                      variant="pastel"
+                      variant="muted"
                       rounded="full"
                       size="sm"
                       class="font-medium"

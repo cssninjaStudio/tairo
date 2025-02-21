@@ -128,15 +128,12 @@ const showStackTrace = ref(false)
         >
           <BaseTag
             v-if="props.error.statusCode"
-            color="danger"
             size="sm"
           >
             {{ props.error.statusCode }}
           </BaseTag>
           <BaseTag
             v-if="props.error.url"
-            color="danger"
-            variant="outline"
             size="sm"
           >
             {{ props.error.url }}
@@ -152,7 +149,6 @@ const showStackTrace = ref(false)
         </div>
         <div class="mb-4 flex items-center gap-2">
           <BaseIconBox
-            color="danger"
             rounded="full"
             size="md"
           >

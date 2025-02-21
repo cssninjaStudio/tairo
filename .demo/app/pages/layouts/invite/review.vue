@@ -62,7 +62,6 @@ onBeforeMount(checkPreviousSteps)
                 rounded="none"
                 mask="blob"
                 :text="request?.firstName[0]"
-                color="primary"
               />
               <div>
                 <BaseHeading

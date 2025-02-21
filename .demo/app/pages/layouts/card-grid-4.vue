@@ -119,8 +119,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                   >
                   <BaseTag
                     rounded="full"
-                    color="primary"
-                    variant="pastel"
+                    variant="primary"
                     size="sm"
                     class="absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >

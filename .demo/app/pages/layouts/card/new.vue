@@ -245,7 +245,6 @@ const onSubmit = handleSubmit(
 
                 <div v-if="fieldsWithErrors" class="mt-8">
                   <BaseMessage
-                    color="warning"
                     icon
                     @close="() => setErrors({})"
                   >

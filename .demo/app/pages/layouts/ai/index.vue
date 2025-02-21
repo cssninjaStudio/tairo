@@ -200,7 +200,6 @@ const archive = [
                         to="#"
                         title="Share"
                         text="Share this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -211,7 +210,6 @@ const archive = [
                         to="#"
                         title="Rename"
                         text="Rename this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -222,7 +220,6 @@ const archive = [
                         to="#"
                         title="Archive"
                         text="Archive this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -233,7 +230,6 @@ const archive = [
                         to="#"
                         title="Delete"
                         text="Delete this chat"
-                        color="dark"
                         rounded="sm"
                       >
                         <template #start>
@@ -279,11 +275,7 @@ const archive = [
                     <BaseDropdown
                       label="Dropdown"
                       orientation="start"
-                      color="default-contrast"
                       rounded="lg"
-                      :classes="{
-                        menu: 'w-80!',
-                      }"
                     >
                       <template #button="{ open = false }">
                         <button type="button" class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex h-10 w-40 items-center gap-2 whitespace-nowrap rounded-lg border bg-white pe-12 ps-3 md:w-48">

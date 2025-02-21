@@ -341,7 +341,6 @@ const jobs = [
                     label="Full time jobs"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -355,7 +354,6 @@ const jobs = [
                     label="Part time jobs"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -369,7 +367,6 @@ const jobs = [
                     label="Remote jobs"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -383,7 +380,6 @@ const jobs = [
                     label="Internships"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -415,7 +411,6 @@ const jobs = [
                     label="Student level"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -429,7 +424,6 @@ const jobs = [
                     label="Entry level"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -443,7 +437,6 @@ const jobs = [
                     label="Mid level"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -457,7 +450,6 @@ const jobs = [
                     label="Senior level"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -471,7 +463,6 @@ const jobs = [
                     label="Director level"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -503,7 +494,6 @@ const jobs = [
                     label="10k ~ 20k"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -517,7 +507,6 @@ const jobs = [
                     label="20k ~ 40k"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -531,7 +520,6 @@ const jobs = [
                     label="40k ~ 75k"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -545,7 +533,6 @@ const jobs = [
                     label="75k+"
                   />
                   <BaseTag
-                    color="default"
                     rounded="full"
                     class="text-xs"
                     size="sm"
@@ -612,7 +599,6 @@ const jobs = [
                     <BaseTag
                       v-for="tag in job.tags"
                       :key="tag"
-                      color="default"
                       size="sm"
                       class="text-xs"
                     >

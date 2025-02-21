@@ -534,8 +534,6 @@ const itemSubtotal = computed(() =>
               </BaseHeading>
               <BaseTag
                 rounded="full"
-                variant="pastel"
-                color="danger"
               >
                 Due on Apr 11, 2024
               </BaseTag>
@@ -548,7 +546,7 @@ const itemSubtotal = computed(() =>
                 Attach PDF in mail
               </BaseText>
               <div>
-                <BaseSwitchBall v-model="pdfAttachment" color="primary" />
+                <BaseSwitchBall v-model="pdfAttachment" variant="primary" />
               </div>
             </div>
           </BaseCard>

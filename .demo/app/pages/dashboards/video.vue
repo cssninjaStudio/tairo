@@ -319,7 +319,7 @@ const videos = [
                     </div>
                     <div class="ms-auto">
                       <BaseTag
-                        color="primary"
+                        variant="primary"
                         rounded="full"
                         size="sm"
                       >
@@ -405,7 +405,7 @@ const videos = [
                           </div>
                           <div class="ms-auto">
                             <BaseTag
-                              color="primary"
+                              variant="primary"
                               rounded="full"
                               size="sm"
                             >
@@ -530,7 +530,7 @@ const videos = [
                   </div>
                   <div class="ms-auto">
                     <BaseTag
-                      color="primary"
+                      variant="primary"
                       rounded="full"
                       size="sm"
                     >

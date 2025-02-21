@@ -196,7 +196,7 @@ const filteredDemos = computed(() => {
             <li class="pb-4">
               <BaseSwitchThin
                 v-model="onlyNew"
-                color="primary"
+                variant="primary"
                 label="Only new"
               />
             </li>

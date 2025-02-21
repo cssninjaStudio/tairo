@@ -838,7 +838,7 @@ function useStockPrice() {
                 <div>
                   <BaseButton
                     rounded="md"
-                    color="primary"
+                    variant="primary"
                     class="w-full"
                   >
                     Buy Shares

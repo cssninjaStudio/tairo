@@ -84,7 +84,6 @@ const showStackTrace = ref(true)
           <div class="mt-6 flex items-center justify-center">
             <BaseSwitchBall
               v-model="showStackTrace"
-              color="danger"
               :label="`${showStackTrace ? 'Hide' : 'Show'} Stacktrace (dev)`"
             />
           </div>
@@ -105,15 +104,13 @@ const showStackTrace = ref(true)
           >
             <BaseTag
               v-if="props.error.statusCode"
-              color="danger"
               size="sm"
             >
               {{ props.error.statusCode }}
             </BaseTag>
             <BaseTag
               v-if="props.error.url"
-              color="danger"
-              variant="outline"
+              variant="muted"
               size="sm"
             >
               {{ props.error.url }}
@@ -121,7 +118,6 @@ const showStackTrace = ref(true)
           </div>
           <div class="mb-4 flex items-center gap-2">
             <BaseIconBox
-              color="danger"
               rounded="full"
               size="md"
             >

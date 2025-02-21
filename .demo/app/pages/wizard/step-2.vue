@@ -90,7 +90,7 @@ watch(inputFile, (value) => {
             </div>
           </div>
         </BaseInputFileHeadless>
-        <BaseInputHelpText v-if="errors.fields.avatar" color="danger">
+        <BaseInputHelpText v-if="errors.fields.avatar">
           {{ errors.fields.avatar }}
         </BaseInputHelpText>
       </div>

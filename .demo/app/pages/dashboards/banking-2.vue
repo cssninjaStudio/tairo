@@ -389,7 +389,7 @@ function useAreaExpenses() {
                       class="bg-success-500/10 text-success-500"
                       size="md"
                       rounded="full"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:pizza-duotone" class="size-5" />
                     </BaseIconBox>
@@ -421,7 +421,7 @@ function useAreaExpenses() {
                       class="bg-orange-500/10 text-orange-500"
                       size="md"
                       rounded="full"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:storefront-duotone" class="size-5" />
                     </BaseIconBox>
@@ -453,7 +453,7 @@ function useAreaExpenses() {
                       class="bg-indigo-500/10 text-indigo-500"
                       size="md"
                       rounded="full"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:shopping-cart-duotone" class="size-5" />
                     </BaseIconBox>

@@ -75,8 +75,7 @@ if (!data.value?.member) {
           </BaseParagraph>
           <BaseTag
             rounded="lg"
-            variant="pastel"
-            color="primary"
+            variant="primary"
           >
             {{ data?.member?.role?.label }}
           </BaseTag>

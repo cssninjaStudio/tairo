@@ -412,21 +412,21 @@ const billingCycles = ref('monthly')
                 :model-value="false"
                 label="Invoicing"
                 sublabel="Send new invoices to my inbox"
-                color="primary"
+                variant="primary"
               />
               <BaseSwitchBall
                 id="billing-ball-2"
                 :model-value="true"
                 label="Warnings"
                 sublabel="Warn me before the end of the billing period"
-                color="primary"
+                variant="primary"
               />
               <BaseSwitchBall
                 id="billing-ball-3"
                 :model-value="true"
                 label="Reports"
                 sublabel="Send monthly reports to my inbox"
-                color="primary"
+                variant="primary"
               />
             </div>
           </BaseCard>

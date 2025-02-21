@@ -71,7 +71,6 @@ const wallets = [
             <BaseCard
               v-for="(blockchain, index) in blockchains"
               :key="index"
-              color="default-contrast"
               rounded="lg"
               :shadow="selectedBlockchain === index ? 'flat' : 'hover'"
               class="relative cursor-pointer overflow-hidden"
@@ -129,7 +128,6 @@ const wallets = [
             <BaseCard
               v-for="(wallet, i) in wallets"
               :key="wallet.name"
-              color="default-contrast"
               class="cursor-pointer overflow-hidden"
               role="button"
               rounded="lg"

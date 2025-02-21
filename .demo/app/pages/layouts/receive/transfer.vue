@@ -206,7 +206,7 @@ function setAccount(account: any) {
             </BaseDropdownItem>
           </BaseDropdown>
 
-          <BaseInputHelpText v-if="errors.fields.account" color="danger">
+          <BaseInputHelpText v-if="errors.fields.account">
             {{ errors.fields.account }}
           </BaseInputHelpText>
         </div>
@@ -331,7 +331,7 @@ function setAccount(account: any) {
               </template>
             </BaseDropdownItem>
           </BaseDropdown>
-          <BaseInputHelpText v-if="errors.fields.account" color="danger">
+          <BaseInputHelpText v-if="errors.fields.account">
             {{ errors.fields.account }}
           </BaseInputHelpText>
         </div>
@@ -424,7 +424,7 @@ function setAccount(account: any) {
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
-        <BaseInputHelpText v-if="errors.fields.account" color="danger">
+        <BaseInputHelpText v-if="errors.fields.account">
           {{ errors.fields.account }}
         </BaseInputHelpText>
 

@@ -138,8 +138,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 >
                   <BaseTag
                     size="sm"
-                    color="primary"
-                    variant="pastel"
+                    variant="primary"
                     rounded="full"
                   >
                     {{ item.role }}
