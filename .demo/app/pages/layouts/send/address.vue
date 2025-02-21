@@ -74,8 +74,8 @@ onBeforeMount(checkPreviousSteps)
           <BaseField
             v-slot="{ inputAttrs, inputRef }"
             label="Address line 2"
-            :state="errors.fields?.['recipient.address.lineOne'] ? 'error' : 'idle'"
-            :error="errors.fields?.['recipient.address.lineOne']"
+            :state="errors.fields?.['recipient.address.lineTwo'] ? 'error' : 'idle'"
+            :error="errors.fields?.['recipient.address.lineTwo']"
             class="col-span-2"
           >
             <BaseInput
@@ -88,9 +88,10 @@ onBeforeMount(checkPreviousSteps)
           </BaseField>
           <BaseField
             v-slot="{ inputAttrs, inputRef }"
-            label="Address line 2"
+            label="City"
             :state="errors.fields?.['recipient.address.city'] ? 'error' : 'idle'"
             :error="errors.fields?.['recipient.address.city']"
+            required
           >
             <BaseInput
               :ref="inputRef"
@@ -106,6 +107,7 @@ onBeforeMount(checkPreviousSteps)
             label="Postal code"
             :state="errors.fields?.['recipient.address.postalCode'] ? 'error' : 'idle'"
             :error="errors.fields?.['recipient.address.postalCode']"
+            required
           >
             <BaseInput
               :ref="inputRef"

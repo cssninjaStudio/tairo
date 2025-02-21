@@ -691,165 +691,44 @@ const onSubmit = handleSubmit(
                       </Field>
                       <div class="col-span-12">
                         <div class="">
-                          <label class="nui-label pb-2 text-[0.825rem]">Gender</label>
-                          <div class="grid gap-4 sm:grid-cols-3">
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="profile.gender"
+                          <Field
+                            v-slot="{
+                              field,
+                              errorMessage,
+                              handleChange,
+                              handleBlur,
+                            }"
+                            name="profile.gender"
+                          >
+                            <BaseField
+                              label="Gender"
+                              :state="errorMessage ? 'error' : 'idle'"
+                              :error="errorMessage"
+                              :disabled="isSubmitting"
                             >
-                              <BaseRadioHeadless
-                                value="male"
+                              <BaseRadioGroup
                                 :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
+                                class="grid gap-4 sm:grid-cols-3 *:py-6"
                                 @update:model-value="handleChange"
-                                @blur="handleBlur"
                               >
-                                <BaseCard
-                                  rounded="md"
-                                  color="none"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:gender-male-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Male
-                                      </BaseHeading>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="profile.gender"
-                            >
-                              <BaseRadioHeadless
-                                value="female"
-                                :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
-                                @update:model-value="handleChange"
-                                @blur="handleBlur"
-                              >
-                                <BaseCard
-                                  rounded="md"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:gender-female-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Female
-                                      </BaseHeading>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="profile.gender"
-                            >
-                              <BaseRadioHeadless
-                                value="other"
-                                :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
-                                @update:model-value="handleChange"
-                                @blur="handleBlur"
-                              >
-                                <BaseCard
-                                  rounded="md"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:gender-neuter-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Other
-                                      </BaseHeading>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-                          </div>
+                                <TairoRadioCard
+                                  value="male"
+                                  icon="ph:gender-male-duotone"
+                                  label="Male"
+                                />
+                                <TairoRadioCard
+                                  value="female"
+                                  icon="ph:gender-female-duotone"
+                                  label="Female"
+                                />
+                                <TairoRadioCard
+                                  value="other"
+                                  icon="ph:gender-neuter-duotone"
+                                  label="Other"
+                                />
+                              </BaseRadioGroup>
+                            </BaseField>
+                          </Field>
                         </div>
                       </div>
                     </div>

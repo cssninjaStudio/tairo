@@ -56,6 +56,7 @@ const VALIDATION_TEXT = {
   OPTION_REQUIRED: 'Please select an option',
   MANAGER_REQUIRED: 'Please select a manager',
   STATUS_REQUIRED: 'Pick a status',
+  COMPANY_TYPE_REQUIRED: 'Please select a company type',
   AVATAR_TOO_BIG: `Avatar size must be less than 1MB`,
 }
 
@@ -67,7 +68,7 @@ const zodSchema = z
     company: z.object({
       name: z.string().min(1, VALIDATION_TEXT.NAME_REQUIRED),
       email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
-      type: z.string().optional(),
+      type: z.string().min(1, VALIDATION_TEXT.COMPANY_TYPE_REQUIRED),
       website: z.string().optional(),
       phone: z.string().optional(),
       status: z.union([z.literal('active'), z.literal('inactive')]).nullable(),
@@ -494,175 +495,46 @@ const onSubmit = handleSubmit(
                 </div>
               </div>
               <div class="mb-6 mt-4">
-                <label class="nui-label pb-2 text-[0.825rem]">Company type</label>
-                <div
-                  class="ptablet:grid-cols-2 ltablet:grid-cols-3 grid gap-4 lg:grid-cols-3"
+                <Field
+                  v-slot="{ field, errorMessage, handleChange }"
+                  name="company.type"
                 >
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="company.type"
+                  <BaseField
+                    label="Company type"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    required
                   >
-                    <BaseRadioHeadless
-                      value="team_member_1"
+                    <BaseRadioGroup
                       :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
+                      class="ptablet:grid-cols-2 ltablet:grid-cols-3 grid gap-4 lg:grid-cols-3"
                       @update:model-value="handleChange"
-                      @blur="handleBlur"
                     >
-                      <BaseCard
-                        rounded="sm"
-                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-4"
-                        color="none"
-                      >
-                        <div
-                          class="flex w-full flex-col items-center gap-2 text-center"
-                        >
-                          <Icon
-                            name="ph:house-simple-duotone"
-                            class="child mx-auto size-5"
-                          />
-
-                          <div>
-                            <BaseHeading
-                              as="h4"
-                              size="sm"
-                              weight="medium"
-                              lead="none"
-                            >
-                              Solo
-                            </BaseHeading>
-
-                            <BaseText
-                              size="xs"
-                              class="text-muted-400"
-                            >
-                              Small company
-                            </BaseText>
-                          </div>
-
-                          <div
-                            class="child text-muted-300 absolute right-2 top-2 ms-auto"
-                          >
-                            <div
-                              class="size-2 rounded-full bg-current"
-                            />
-                          </div>
-                        </div>
-                      </BaseCard>
-                    </BaseRadioHeadless>
-                  </Field>
-
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="company.type"
-                  >
-                    <BaseRadioHeadless
-                      value="team_member_2"
-                      :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    >
-                      <BaseCard
-                        rounded="sm"
-                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-4"
-                        color="none"
-                      >
-                        <div
-                          class="flex w-full flex-col items-center gap-2 text-center"
-                        >
-                          <Icon
-                            name="ph:storefront-duotone"
-                            class="child mx-auto size-5"
-                          />
-
-                          <div>
-                            <BaseHeading
-                              as="h4"
-                              size="sm"
-                              weight="medium"
-                              lead="none"
-                            >
-                              LLC
-                            </BaseHeading>
-
-                            <BaseText
-                              size="xs"
-                              class="text-muted-400"
-                            >
-                              Medium company
-                            </BaseText>
-                          </div>
-
-                          <div
-                            class="child text-muted-300 absolute right-2 top-2 ms-auto"
-                          >
-                            <div
-                              class="size-2 rounded-full bg-current"
-                            />
-                          </div>
-                        </div>
-                      </BaseCard>
-                    </BaseRadioHeadless>
-                  </Field>
-
-                  <Field
-                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                    name="company.type"
-                  >
-                    <BaseRadioHeadless
-                      value="team_member_3"
-                      :model-value="field.value"
-                      :error="errorMessage"
-                      :disabled="isSubmitting"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    >
-                      <BaseCard
-                        rounded="sm"
-                        class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-4"
-                        color="none"
-                      >
-                        <div
-                          class="flex w-full flex-col items-center gap-2 text-center"
-                        >
-                          <Icon
-                            name="ph:buildings-duotone"
-                            class="child mx-auto size-5"
-                          />
-
-                          <div>
-                            <BaseHeading
-                              as="h4"
-                              size="sm"
-                              weight="medium"
-                              lead="none"
-                            >
-                              Corp
-                            </BaseHeading>
-
-                            <BaseText
-                              size="xs"
-                              class="text-muted-400"
-                            >
-                              Bigger company
-                            </BaseText>
-                          </div>
-
-                          <div
-                            class="child text-muted-300 absolute right-2 top-2 ms-auto"
-                          >
-                            <div
-                              class="size-2 rounded-full bg-current"
-                            />
-                          </div>
-                        </div>
-                      </BaseCard>
-                    </BaseRadioHeadless>
-                  </Field>
-                </div>
+                      <TairoRadioCard
+                        value="team_member_1"
+                        icon="ph:house-simple-duotone"
+                        label="Solo"
+                        subtitle="Small company"
+                        variant="muted"
+                      />
+                      <TairoRadioCard
+                        value="team_member_2"
+                        icon="ph:storefront-duotone"
+                        label="LLC"
+                        subtitle="Medium company"
+                        variant="muted"
+                      />
+                      <TairoRadioCard
+                        value="team_member_3"
+                        icon="ph:buildings-duotone"
+                        label="Corp"
+                        subtitle="Bigger company"
+                        variant="muted"
+                      />
+                    </BaseRadioGroup>
+                  </BaseField>
+                </Field>
               </div>
             </div>
           </div>

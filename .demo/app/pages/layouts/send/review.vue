@@ -41,13 +41,13 @@ onBeforeMount(checkPreviousSteps)
           weight="medium"
           class="md:3xl! text-muted-800 dark:text-white"
         >
-          {{ steps[currentStepId].meta.title }}
+          {{ steps[currentStepId]?.meta.title }}
         </BaseHeading>
         <BaseParagraph
           size="sm"
           class="text-muted-500 dark:text-muted-400 max-w-sm"
         >
-          {{ steps[currentStepId].meta.subtitle }}
+          {{ steps[currentStepId]?.meta.subtitle }}
         </BaseParagraph>
       </div>
 
@@ -65,7 +65,7 @@ onBeforeMount(checkPreviousSteps)
               weight="medium"
               class="text-muted-800 dark:text-muted-100"
             >
-              ${{ request.amount.toFixed(2) }}
+              ${{ request.amount?.toFixed(2) }}
             </BaseHeading>
           </div>
           <!-- Amount -->

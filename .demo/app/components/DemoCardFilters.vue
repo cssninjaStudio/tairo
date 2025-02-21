@@ -409,26 +409,21 @@ const timeCategoryTo = ref('')
                             <Icon name="lucide:arrow-right" class="size-4" />
                           </button>
                         </div>
-                        <div class="grid grid-cols-3 gap-1">
-                          <div
+                        <RadioGroupRoot v-model="timeCategoryFrom" class="grid grid-cols-3 gap-1">
+                          <RadioGroupItem
                             v-for="month in months"
                             :key="month.id"
+                            :value="month.id"
                             class="flex items-center justify-center"
                           >
-                            <BaseRadioHeadless
-                              v-model="timeCategoryFrom"
-                              name="radio_date_from"
-                              :value="month.id"
+                            <RadioGroupIndicator
+                              force-mount
+                              class="text-muted-500 dark:text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 data-[state=checked]:text-primary-500 data-[state=checked]:bg-primary-500/10 hover:bg-muted-100 dark:hover:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200 cursor-pointer"
                             >
-                              <button
-                                type="button"
-                                class="text-muted-500 dark:text-muted-400 group-hover/nui-radio-headless:text-muted-600 dark:group-hover/nui-radio-headless:text-muted-200 peer-checked:text-primary-500 peer-checked:bg-primary-500/10 group-hover/nui-radio-headless:bg-muted-100 dark:group-hover/nui-radio-headless:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200"
-                              >
-                                {{ month.label }}
-                              </button>
-                            </BaseRadioHeadless>
-                          </div>
-                        </div>
+                              {{ month.label }}
+                            </RadioGroupIndicator>
+                          </RadioGroupItem>
+                        </RadioGroupRoot>
                       </div>
                     </div>
                     <!-- Calendar group -->
@@ -456,26 +451,21 @@ const timeCategoryTo = ref('')
                             <Icon name="lucide:arrow-right" class="size-4" />
                           </button>
                         </div>
-                        <div class="grid grid-cols-3 gap-1">
-                          <div
+                        <RadioGroupRoot v-model="timeCategoryTo" class="grid grid-cols-3 gap-1">
+                          <RadioGroupItem
                             v-for="month in months"
                             :key="month.id"
+                            :value="month.id"
                             class="flex items-center justify-center"
                           >
-                            <BaseRadioHeadless
-                              v-model="timeCategoryTo"
-                              name="radio_date_to"
-                              :value="month.id"
+                            <RadioGroupIndicator
+                              force-mount
+                              class="text-muted-500 dark:text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 data-[state=checked]:text-primary-500 data-[state=checked]:bg-primary-500/10 hover:bg-muted-100 dark:hover:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200 cursor-pointer"
                             >
-                              <button
-                                type="button"
-                                class="text-muted-500 dark:text-muted-400 group-hover/nui-radio-headless:text-muted-600 dark:group-hover/nui-radio-headless:text-muted-200 peer-checked:text-primary-500 peer-checked:bg-primary-500/10 group-hover/nui-radio-headless:bg-muted-100 dark:group-hover/nui-radio-headless:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200"
-                              >
-                                {{ month.label }}
-                              </button>
-                            </BaseRadioHeadless>
-                          </div>
-                        </div>
+                              {{ month.label }}
+                            </RadioGroupIndicator>
+                          </RadioGroupItem>
+                        </RadioGroupRoot>
                       </div>
                     </div>
                   </div>

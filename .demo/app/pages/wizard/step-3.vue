@@ -291,56 +291,52 @@ const budget = ref('< 5K')
             Initial budget
           </h3>
         </div>
-        <div class="flex w-full justify-center gap-3">
-          <BaseRadioHeadless
-            v-model="budget"
-            name="budget"
+        <RadioGroupRoot v-model="budget" class="flex w-full justify-center gap-3">
+          <RadioGroupItem
             value="< 5K"
+            class="group"
           >
             <BaseButton
               rounded="lg"
-              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
+              class="group-data-[state=checked]:bg-primary-500! group-data-[state=checked]:border-primary-500! group-data-[state=checked]:shadow-primary-500/20 group-data-[state=checked]:text-white! group-data-[state=checked]:shadow-xl"
             >
-              <span>&lt; 5K</span>
+              <span>&lt;&nbsp;5K</span>
             </BaseButton>
-          </BaseRadioHeadless>
-          <BaseRadioHeadless
-            v-model="budget"
-            name="budget"
+          </RadioGroupItem>
+          <RadioGroupItem
             value="< 30K"
+            class="group"
           >
             <BaseButton
               rounded="lg"
-              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
+              class="group-data-[state=checked]:bg-primary-500! group-data-[state=checked]:border-primary-500! group-data-[state=checked]:shadow-primary-500/20 group-data-[state=checked]:text-white! group-data-[state=checked]:shadow-xl"
             >
-              <span>&lt; 30K</span>
+              <span>&lt;&nbsp;30K</span>
             </BaseButton>
-          </BaseRadioHeadless>
-          <BaseRadioHeadless
-            v-model="budget"
-            name="budget"
+          </RadioGroupItem>
+          <RadioGroupItem
             value="< 100K"
+            class="group"
           >
             <BaseButton
               rounded="lg"
-              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
+              class="group-data-[state=checked]:bg-primary-500! group-data-[state=checked]:border-primary-500! group-data-[state=checked]:shadow-primary-500/20 group-data-[state=checked]:text-white! group-data-[state=checked]:shadow-xl"
             >
-              <span>&lt; 100K</span>
+              <span>&lt;&nbsp;100K</span>
             </BaseButton>
-          </BaseRadioHeadless>
-          <BaseRadioHeadless
-            v-model="budget"
-            name="budget"
+          </RadioGroupItem>
+          <RadioGroupItem
             value="100K+"
+            class="group"
           >
             <BaseButton
               rounded="lg"
-              class="peer-checked:bg-primary-500! peer-checked:border-primary-500! peer-checked:shadow-primary-500/20 peer-checked:text-white! peer-checked:shadow-xl"
+              class="group-data-[state=checked]:bg-primary-500! group-data-[state=checked]:border-primary-500! group-data-[state=checked]:shadow-primary-500/20 group-data-[state=checked]:text-white! group-data-[state=checked]:shadow-xl"
             >
               <span>100K+</span>
             </BaseButton>
-          </BaseRadioHeadless>
-        </div>
+          </RadioGroupItem>
+        </RadioGroupRoot>
       </BaseCard>
     </div>
   </div>

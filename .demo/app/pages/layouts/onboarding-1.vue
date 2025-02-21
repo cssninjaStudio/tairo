@@ -120,7 +120,7 @@ function focusField(n: any) {
   if (!n || n > codeLength.value) {
     n = 1
   }
-  inputElements.value?.[n].focus()
+  inputElements.value?.[n]?.focus()
 }
 </script>
 
@@ -164,128 +164,77 @@ function focusField(n: any) {
           <div class="w-full">
             <div class="mx-auto w-full">
               <div class="w-full">
-                <div class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
-                  <BaseRadioHeadless
-                    v-model="twoFaMode"
-                    name="radio_custom"
-                    value="email_address"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                <BaseRadioGroup v-model="twoFaMode" class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
+                  <TairoRadioCard value="email_address">
+                    <img
+                      src="/img/illustrations/onboarding/2fa-web.svg"
+                      alt="2 factor authentication with email"
+                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/2fa-web.svg"
-                          alt="2 factor authentication with email"
-                          class="mx-auto max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          With Email
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          We will send you a confirmation code to your email
-                          address
-                        </BaseParagraph>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                  <BaseRadioHeadless
-                    v-model="twoFaMode"
-                    name="radio_custom"
-                    value="phone_number"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/2fa-sms.svg"
-                          alt="2 factor authentication with SMS"
-                          class="mx-auto max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          With SMS
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          We will send you an SMS with the code on your mobile
-                          phone
-                        </BaseParagraph>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                  <BaseRadioHeadless
-                    v-model="twoFaMode"
-                    name="radio_custom"
-                    value="app_id"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                      With Email
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/2fa-app.svg"
-                          alt="2 factor authentication with app"
-                          class="mx-auto max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          With an App
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          We will send you the code on your
-                          <NuxtLink
-                            to="https://authy.com/"
-                            class="text-primary-500 underline-offset-4 hover:underline"
-                          >
-                            Authy
-                          </NuxtLink>
-                          authenticator app
-                        </BaseParagraph>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                </div>
+                      We will send you a confirmation code to your email
+                      address
+                    </BaseParagraph>
+                  </TairoRadioCard>
+                  <TairoRadioCard value="phone_number">
+                    <img
+                      src="/img/illustrations/onboarding/2fa-sms.svg"
+                      alt="2 factor authentication with SMS"
+                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                    >
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
+                    >
+                      With SMS
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
+                    >
+                      We will send you an SMS with the code on your mobile
+                      phone
+                    </BaseParagraph>
+                  </TairoRadioCard>
+                  <TairoRadioCard value="app_id">
+                    <img
+                      src="/img/illustrations/onboarding/2fa-app.svg"
+                      alt="2 factor authentication with app"
+                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                    >
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
+                    >
+                      With an App
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
+                    >
+                      We will send you the code on your
+                      <NuxtLink
+                        to="https://authy.com/"
+                        class="text-primary-500 underline-offset-4 hover:underline"
+                      >
+                        Authy
+                      </NuxtLink>
+                      authenticator app
+                    </BaseParagraph>
+                  </TairoRadioCard>
+                </BaseRadioGroup>
                 <div class="mx-auto flex flex-col items-center">
                   <BaseButton
                     type="button"

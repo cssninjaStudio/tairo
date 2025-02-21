@@ -443,50 +443,35 @@ const colorCode = ref('color_code_1')
           </div>
           <div class="relative z-0 col-span-12">
             <div class="my-4">
-              <label class="nui-label pb-4 text-[0.825rem]">Meeting frequency</label>
-              <BaseRadioGroup class="flex items-center gap-6">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.frequency"
+              <Field
+                v-slot="{ field, errorMessage, handleChange }"
+                name="meeting.frequency"
+              >
+                <BaseField
+                  label="Meeting frequency"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
                 >
-                  <BaseRadio
-                    id="frequency-1"
-                    name="unique_frequency"
-                    label="All day"
-                    value="day"
-                    color="primary"
-                    :classes="{
-                      label: 'relative top-0.5 text-xs',
-                    }"
+                  <BaseRadioGroup
                     :model-value="field.value"
-                    :error="errorMessage"
                     :disabled="isSubmitting"
+                    class="flex items-center gap-6"
                     @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.frequency"
-                >
-                  <BaseRadio
-                    id="frequency-2"
-                    name="weekly_frequency"
-                    label="Repeat every week"
-                    value="week"
-                    color="primary"
-                    :classes="{
-                      label: 'relative top-0.5 text-xs',
-                    }"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-              </BaseRadioGroup>
+                  >
+                    <BaseRadio
+                      label="All day"
+                      value="day"
+                      variant="primary"
+                    />
+                    <BaseRadio
+                      label="Repeat every week"
+                      value="week"
+                      variant="primary"
+                    />
+                  </BaseRadioGroup>
+                </BaseField>
+              </Field>
             </div>
           </div>
         </div>
@@ -842,121 +827,24 @@ const colorCode = ref('color_code_1')
               <label class="nui-label text-[0.825rem]">Color code</label>
             </div>
             <div class="col-span-12 sm:col-span-9">
-              <div class="flex items-center gap-3">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
+              <Field
+                v-slot="{ field, handleChange }"
+                name="meeting.colorCode"
+              >
+                <RadioGroupRoot
+                  :disabled="isSubmitting"
+                  :model-value="field.value"
+                  class="flex items-center gap-3"
+                  @update:model-value="handleChange"
                 >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_1"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-primary-500 peer-checked:bg-primary-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_2"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-info-500 peer-checked:bg-info-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_3"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-success-500 peer-checked:bg-success-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_4"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-danger-500 peer-checked:bg-danger-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_5"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="size-4 rounded-full border-2 border-lime-500 transition-colors duration-300 peer-checked:bg-lime-500"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_6"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="size-4 rounded-full border-2 border-pink-500 transition-colors duration-300 peer-checked:bg-pink-500"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-              </div>
+                  <RadioGroupItem value="color_code_1" class="border-primary-500 data-[state=checked]:bg-primary-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_2" class="border-info-500 data-[state=checked]:bg-info-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_3" class="border-success-500 data-[state=checked]:bg-success-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_4" class="border-destructive-500 data-[state=checked]:bg-destructive-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_5" class="size-4 rounded-full border-2 border-lime-500 transition-colors duration-300 data-[state=checked]:bg-lime-500" />
+                  <RadioGroupItem value="color_code_6" class="size-4 rounded-full border-2 border-pink-500 transition-colors duration-300 data-[state=checked]:bg-pink-500" />
+                </RadioGroupRoot>
+              </Field>
             </div>
           </div>
           <div class="col-span-12 grid grid-cols-12">

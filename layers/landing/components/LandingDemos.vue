@@ -203,7 +203,6 @@ const filteredDemos = computed(() => {
             <li class="capitalize">
               <BaseRadio
                 value=""
-                color="primary"
                 label="All"
               />
             </li>
@@ -214,7 +213,6 @@ const filteredDemos = computed(() => {
             >
               <BaseRadio
                 :value="category"
-                color="primary"
                 :label="category"
               />
             </li>

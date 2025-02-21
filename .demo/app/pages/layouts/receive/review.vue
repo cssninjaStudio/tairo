@@ -64,7 +64,7 @@ onBeforeMount(checkPreviousSteps)
               weight="medium"
               class="text-muted-800 dark:text-muted-100"
             >
-              ${{ request.amount.toFixed(2) }}
+              ${{ request.amount?.toFixed(2) }}
             </BaseHeading>
           </div>
           <!-- Payment method -->

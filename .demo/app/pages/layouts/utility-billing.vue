@@ -138,136 +138,112 @@ const billingCycles = ref('monthly')
     <div
       class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-2 xl:gap-8"
     >
-      <div class="grid grid-cols-2 gap-2 xl:gap-6">
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+      <BaseRadioGroup v-model="customRadio" class="grid grid-cols-2 gap-2 xl:gap-6">
+        <TairoRadioCard
           value="starter"
+          class="data-[state=checked]:ring-success-500! data-[state=checked]:border-success-500!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 peer-checked:border-success-500! peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-success-500 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Starter
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              A basic plan made for quickstarts
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-success-500" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Starter
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            A basic plan made for quickstarts
+          </BaseText>
+        </TairoRadioCard>
+        <TairoRadioCard
           value="freelancer"
+          class="data-[state=checked]:ring-yellow-400! data-[state=checked]:border-yellow-400!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 group relative p-6 text-center peer-checked:border-yellow-400! peer-checked:text-yellow-400 peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-yellow-400 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Freelancer
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              A plan for heavy working freelancers
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-yellow-400" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Freelancer
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            A plan for heavy working freelancers
+          </BaseText>
+        </TairoRadioCard>
+        <TairoRadioCard
           value="business"
+          class="data-[state=checked]:ring-indigo-500! data-[state=checked]:border-indigo-500!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 group relative p-6 text-center peer-checked:border-indigo-500! peer-checked:text-indigo-500 peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-indigo-500 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Business
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              An affordable medium business plan
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-indigo-500" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Business
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            An affordable medium business plan
+          </BaseText>
+        </TairoRadioCard>
+        <TairoRadioCard
           value="enterprise"
+          class="data-[state=checked]:ring-primary-500! data-[state=checked]:border-primary-500!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 peer-checked:border-primary-500! peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-primary-500 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Enterprise
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              A corporate and full fledged company plan
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-      </div>
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-primary-500" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Enterprise
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            A corporate and full fledged company plan
+          </BaseText>
+        </TairoRadioCard>
+      </BaseRadioGroup>
       <div>
         <BaseCard rounded="sm" class="flex h-full flex-col p-8">
           <div class="flex gap-12">
@@ -473,27 +449,18 @@ const billingCycles = ref('monthly')
             </div>
             <BaseRadioGroup v-model="billingCycles" class="flex items-center gap-6">
               <BaseRadio
-                id="demo-cycle-1"
-                name="monthly_billing"
                 label="Monthly"
                 value="monthly"
-                color="primary"
               />
 
               <BaseRadio
-                id="demo-cycle-2"
-                name="semestral_billing"
                 label="Semestral"
                 value="semestral"
-                color="primary"
               />
 
               <BaseRadio
-                id="demo-cycle-3"
-                name="yearly_billing"
                 label="Yearly"
                 value="yearly"
-                color="primary"
               />
             </BaseRadioGroup>
           </BaseCard>

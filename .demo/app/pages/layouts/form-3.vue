@@ -274,25 +274,15 @@ const termsApproval = ref(false)
             <label class="nui-label pb-3 text-[0.825rem]">Billing cycle</label>
             <BaseRadioGroup v-model="billingCycles" class="flex items-center gap-6">
               <BaseRadio
-                id="demo-cycle-1"
-                name="monthly_billing"
                 label="Monthly"
                 value="monthly"
-                color="primary"
-                :classes="{
-                  label: 'relative top-0.5 text-xs',
-                }"
+                variant="primary"
               />
 
               <BaseRadio
-                id="demo-cycle-2"
-                name="yearly_billing"
                 label="Yearly"
                 value="yearly"
-                color="primary"
-                :classes="{
-                  label: 'relative top-0.5 text-xs',
-                }"
+                variant="primary"
               />
             </BaseRadioGroup>
           </div>

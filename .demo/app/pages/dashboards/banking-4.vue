@@ -224,63 +224,34 @@ function setAccount(account: any) {
             >
               Quick Transfer
             </BaseHeading>
-            <div class="mt-6 flex justify-between gap-3">
+            <RadioGroupRoot v-model="selectedPerson" class="mt-6 flex justify-between gap-3">
               <div
-                class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
+                class="border-muted-200 hover:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2 transition-color duration-100"
               >
                 <BaseButton size="icon-md" rounded="full">
                   <Icon name="lucide:plus" class="size-4" />
                 </BaseButton>
               </div>
-              <BaseRadioHeadless
-                v-model="selectedPerson"
-                name="transfer"
-                value="John Baxter"
-                data-nui-tooltip="John Baxter"
+              <RadioGroupItem
+                v-for="person in [
+                  { name: 'John Baxter', avatar: '/img/avatars/8.svg' },
+                  { name: 'Amber Wilson', avatar: '/img/avatars/24.svg' },
+                  { name: 'Kaleb Wilson', avatar: '/img/avatars/3.svg' },
+                  { name: 'Jennifer Wilson', avatar: '/img/avatars/12.svg' },
+                ]"
+                :key="person.name"
+                :value="person.name"
+                :data-nui-tooltip="person.name"
+                class="rounded-full outline-none focus-visible:nui-focus"
               >
-                <div
-                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
+                <RadioGroupIndicator
+                  force-mount
+                  class="border-muted-200 data-[state=checked]:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
                 >
-                  <BaseAvatar src="/img/avatars/8.svg" size="sm" />
-                </div>
-              </BaseRadioHeadless>
-              <BaseRadioHeadless
-                v-model="selectedPerson"
-                name="transfer"
-                value="Amber Wilson"
-                data-nui-tooltip="Amber Wilson"
-              >
-                <div
-                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
-                >
-                  <BaseAvatar src="/img/avatars/24.svg" size="sm" />
-                </div>
-              </BaseRadioHeadless>
-              <BaseRadioHeadless
-                v-model="selectedPerson"
-                name="transfer"
-                value="Kaleb Wilson"
-                data-nui-tooltip="Kaleb Wilson"
-              >
-                <div
-                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
-                >
-                  <BaseAvatar src="/img/avatars/3.svg" size="sm" />
-                </div>
-              </BaseRadioHeadless>
-              <BaseRadioHeadless
-                v-model="selectedPerson"
-                name="transfer"
-                value="Jennifer Wilson"
-                data-nui-tooltip="Jennifer Wilson"
-              >
-                <div
-                  class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
-                >
-                  <BaseAvatar src="/img/avatars/12.svg" size="sm" />
-                </div>
-              </BaseRadioHeadless>
-            </div>
+                  <BaseAvatar :src="person.avatar" :alt="person.name" size="sm" />
+                </RadioGroupIndicator>
+              </RadioGroupItem>
+            </RadioGroupRoot>
           </div>
           <div class="mt-6 space-y-4">
             <!-- Dropdown -->
@@ -297,13 +268,13 @@ function setAccount(account: any) {
                       size="sm"
                       class="text-muted-800 dark:text-muted-200 block capitalize"
                     >
-                      {{ selectedAccount.type }} {{ selectedAccount.label }}
+                      {{ selectedAccount?.type }} {{ selectedAccount?.label }}
                     </BaseText>
                     <BaseText
                       size="xs"
                       class="text-muted-500 dark:text-muted-400 block"
                     >
-                      ${{ selectedAccount.balance.toFixed(2) }}
+                      ${{ selectedAccount?.balance.toFixed(2) }}
                     </BaseText>
                   </div>
                   <Icon

@@ -106,48 +106,42 @@ const roles = [
           <div class="w-full">
             <div class="mx-auto w-full max-w-3xl">
               <div class="w-full">
-                <div class="mb-8 grid grid-cols-3 sm:grid-cols-4">
-                  <div
+                <RadioGroupRoot v-model="roleType" class="mb-8 grid grid-cols-3 sm:grid-cols-4">
+                  <RadioGroupItem
                     v-for="role in roles"
                     :key="role.id"
-                    class="relative flex items-center justify-center p-4"
+                    :value="role.id"
+                    class="relative flex items-center justify-center p-4 group outline-none"
                   >
-                    <BaseRadioHeadless
-                      v-model="roleType"
-                      :name="`role-${role.id}`"
-                      :value="role.id"
-                      class="size-full"
+                    <div
+                      class="mx-auto flex size-20 items-center justify-center grayscale-100 transition-all duration-200 group-data-[state=checked]:grayscale-0 group-hover:grayscale-0"
                     >
-                      <div
-                        class="relative mx-auto flex size-20 items-center justify-center grayscale transition-all duration-200 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100"
+                      <RadioGroupIndicator
+                        class="dark:bg-muted-900 absolute end-0 top-0 z-20 flex size-6 items-center justify-center rounded-full bg-white"
                       >
-                        <div
-                          class="child dark:bg-muted-900 absolute end-0 top-0 z-20 flex size-6 items-center justify-center rounded-full bg-white opacity-0"
-                        >
-                          <Icon
-                            name="ph:check-circle-duotone"
-                            class="text-primary-500 size-6"
-                          />
-                        </div>
-                        <BaseAvatar
-                          size="xl"
-                          :src="role.avatar"
-                          :badge-src="role.logo"
-                          rounded="full"
-                          class="group-focus-within:outline-muted-300 dark:group-focus-within:outline-muted-600 mx-auto group-focus-within:outline-dashed group-focus-within:outline-offset-2"
+                        <Icon
+                          name="ph:check-circle-duotone"
+                          class="text-primary-500 size-6"
                         />
-                      </div>
-                      <div class="mt-3 text-center">
-                        <BaseText
-                          size="sm"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          {{ role.name }}
-                        </BaseText>
-                      </div>
-                    </BaseRadioHeadless>
-                  </div>
-                </div>
+                      </RadioGroupIndicator>
+                      <BaseAvatar
+                        size="xl"
+                        :src="role.avatar"
+                        :badge-src="role.logo"
+                        rounded="full"
+                        class="group-focus-within:outline-muted-300 dark:group-focus-within:outline-muted-600 mx-auto group-focus-within:outline-dashed group-focus-within:outline-offset-2"
+                      />
+                    </div>
+                    <div class="mt-3 text-center">
+                      <BaseText
+                        size="sm"
+                        class="text-muted-500 dark:text-muted-400"
+                      >
+                        {{ role.name }}
+                      </BaseText>
+                    </div>
+                  </RadioGroupItem>
+                </RadioGroupRoot>
                 <div class="mx-auto flex flex-col items-center">
                   <BaseButton
                     to="/dashboards"

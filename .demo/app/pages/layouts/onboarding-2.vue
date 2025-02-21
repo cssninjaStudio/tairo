@@ -55,149 +55,116 @@ const pricingMode = ref('free')
           <div class="w-full">
             <div class="mx-auto w-full">
               <div class="w-full">
-                <div class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
-                  <BaseRadioHeadless
-                    v-model="pricingMode"
-                    name="radio_custom"
-                    value="free"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                <BaseRadioGroup v-model="pricingMode" class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
+                  <TairoRadioCard value="free">
+                    <template #indicator>
+                      <Icon
+                        name="ph:check-circle-duotone"
+                        class="size-7 group-data-[state=unchecked]:opacity-0"
+                      />
+                    </template>
+                    <img
+                      src="/img/illustrations/onboarding/pricing-1.svg"
+                      alt="2 factor authentication with email"
+                      class="mx-auto mb-3 max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/pricing-1.svg"
-                          alt="2 factor authentication with email"
-                          class="mx-auto mb-3 max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          Free
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          Start for free with most of our features. Get familiar
-                          with it and upgrade when you are ready.
-                        </BaseParagraph>
-                        <div
-                          class="flex items-center justify-center gap-2 pt-4"
-                        >
-                          <BaseText>
-                            <span>$0</span>
-                            <span class="text-muted-400 text-xs">
-                              /per month</span>
-                          </BaseText>
-                        </div>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                  <BaseRadioHeadless
-                    v-model="pricingMode"
-                    name="radio_custom"
-                    value="starter"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/pricing-2.svg"
-                          alt="2 factor authentication with SMS"
-                          class="mx-auto mb-3 max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          Starter
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          A more advanced plan with more features and additional
-                          storage. Perfect to scale your business.
-                        </BaseParagraph>
-                        <div
-                          class="flex items-center justify-center gap-2 pt-4"
-                        >
-                          <BaseText>
-                            <span>$29</span>
-                            <span class="text-muted-400 text-xs">
-                              /per month</span>
-                          </BaseText>
-                        </div>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                  <BaseRadioHeadless
-                    v-model="pricingMode"
-                    name="radio_custom"
-                    value="business"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                      Free
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/pricing-3.svg"
-                          alt="2 factor authentication with app"
-                          class="mx-auto mb-3 max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          Business
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          An all-in-one plan for your business, with everything
-                          you need. Perfect for growing at large scale.
-                        </BaseParagraph>
-                        <div
-                          class="flex items-center justify-center gap-2 pt-4"
-                        >
-                          <BaseText>
-                            <span>$49</span>
-                            <span class="text-muted-400 text-xs">
-                              /per month</span>
-                          </BaseText>
-                        </div>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                </div>
+                      Start for free with most of our features. Get familiar
+                      with it and upgrade when you are ready.
+                    </BaseParagraph>
+                    <div
+                      class="flex items-center justify-center gap-2 pt-4"
+                    >
+                      <BaseText>
+                        <span>$0</span>
+                        <span class="text-muted-400 text-xs">
+                          /per month</span>
+                      </BaseText>
+                    </div>
+                  </TairoRadioCard>
+                  <TairoRadioCard value="starter">
+                    <template #indicator>
+                      <Icon
+                        name="ph:check-circle-duotone"
+                        class="size-7 group-data-[state=unchecked]:opacity-0"
+                      />
+                    </template>
+                    <img
+                      src="/img/illustrations/onboarding/pricing-2.svg"
+                      alt="2 factor authentication with SMS"
+                      class="mx-auto mb-3 max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                    >
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
+                    >
+                      Starter
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
+                    >
+                      A more advanced plan with more features and additional
+                      storage. Perfect to scale your business.
+                    </BaseParagraph>
+                    <div
+                      class="flex items-center justify-center gap-2 pt-4"
+                    >
+                      <BaseText>
+                        <span>$29</span>
+                        <span class="text-muted-400 text-xs">
+                          /per month</span>
+                      </BaseText>
+                    </div>
+                  </TairoRadioCard>
+                  <TairoRadioCard value="business">
+                    <template #indicator>
+                      <Icon
+                        name="ph:check-circle-duotone"
+                        class="size-7 group-data-[state=unchecked]:opacity-0"
+                      />
+                    </template>
+                    <img
+                      src="/img/illustrations/onboarding/pricing-3.svg"
+                      alt="2 factor authentication with app"
+                      class="mx-auto mb-3 max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                    >
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
+                    >
+                      Business
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
+                    >
+                      An all-in-one plan for your business, with everything
+                      you need. Perfect for growing at large scale.
+                    </BaseParagraph>
+                    <div
+                      class="flex items-center justify-center gap-2 pt-4"
+                    >
+                      <BaseText>
+                        <span>$49</span>
+                        <span class="text-muted-400 text-xs">
+                          /per month</span>
+                      </BaseText>
+                    </div>
+                  </TairoRadioCard>
+                </BaseRadioGroup>
                 <div class="mx-auto flex flex-col items-center">
                   <BaseButton
                     to="/dashboards"
