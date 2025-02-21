@@ -177,7 +177,6 @@ const form = reactive({
               placeholder="Job Title"
               rounded="md"
               size="lg"
-              contrast="default-contrast"
             />
 
             <div class="relative mt-2 flex items-center">
@@ -194,7 +193,6 @@ const form = reactive({
           <div class="mt-2 sm:col-span-2 sm:mt-0">
             <BaseSelect
               v-model="form.country"
-              contrast="default-contrast"
               size="lg"
               rounded="md"
               placeholder="Select a country"

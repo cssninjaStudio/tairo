@@ -594,7 +594,6 @@ function closeUpgrade() {
                       <BaseTextarea
                         v-model="input"
                         rounded="md"
-                        contrast="default-contrast"
                         placeholder="Ask Tairo a question…"
                         :rows="2"
                         :classes="{
