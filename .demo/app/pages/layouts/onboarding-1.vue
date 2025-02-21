@@ -16,9 +16,9 @@ const loading = ref(false)
 const twoFaMode = ref('email_address')
 const currentStep = ref(1)
 const codeLength = ref(4)
-const input = ref<Array<number | undefined>>([])
+const input = ref<string[]>([])
 const inputElements = useTemplateRef<HTMLInputElement[]>('inputElements')
-const correctPin = ref('1234')
+const correctPin = '1234'
 const onlyCheckOnLastFieldInput = ref(true)
 
 const email = ref('')
@@ -26,7 +26,7 @@ const tel = ref('')
 const code = ref('')
 
 const validatePin = computed(() => {
-  return input.value.join('') === correctPin.value
+  return input.value?.join('') === correctPin
 })
 
 function goToStep(n: number) {
@@ -44,83 +44,6 @@ function goToStep(n: number) {
     }
     clearTimeout(timer)
   }, 1000)
-}
-
-function paste(event: ClipboardEvent) {
-  const pasted = event.clipboardData
-    ?.getData('text')
-    ?.replace(/\D/g, '') // only get numbers
-    ?.substring(0, codeLength.value) // don't get more than the PIN codeLength
-
-  // if after all that sanitazation the string is not empty
-  if (pasted) {
-    // split the pasted string into an array and load it
-    input.value = pasted.split('').map(Number)
-    // check if the PIN is correct
-    return validatePin.value
-  }
-}
-function type(event: KeyboardEvent, index: number) {
-  if (event.code === 'ArrowRight') {
-    event.stopPropagation()
-    event.preventDefault()
-    nextTick(() => {
-      focusField(Math.min(codeLength.value, index + 1))
-    })
-    return
-  }
-
-  if (event.code === 'ArrowLeft') {
-    event.stopPropagation()
-    event.preventDefault()
-    nextTick(() => {
-      focusField(Math.max(0, index - 1))
-    })
-    return
-  }
-
-  if (event.code === 'Backspace') {
-    event.stopPropagation()
-    event.preventDefault()
-    input.value[index - 1] = undefined
-    nextTick(() => {
-      focusField(Math.max(0, index - 1))
-    })
-    return
-  }
-
-  if (event.code === 'a' && event.ctrlKey) {
-    event.stopPropagation()
-    event.preventDefault()
-    return
-  }
-
-  // only allow numbers
-  const key = event.key.replace(/\D/g, '')
-  if (key !== '') {
-    input.value[index - 1] = Number(key)
-  }
-  // check if the PIN is correct
-  if (
-    (onlyCheckOnLastFieldInput.value && index === codeLength.value)
-    || !onlyCheckOnLastFieldInput.value
-  ) {
-    event.stopPropagation()
-    event.preventDefault()
-    return
-  }
-  // go to the next field
-  // must happen on nextTick cause the field can be disabled.
-  nextTick(() => {
-    focusField(Math.min(codeLength.value, index + 1))
-  })
-}
-
-function focusField(n: any) {
-  if (!n || n > codeLength.value) {
-    n = 1
-  }
-  inputElements.value?.[n]?.focus()
 }
 </script>
 
@@ -412,32 +335,21 @@ function focusField(n: any) {
             <div
               class="text-muted-800 dark:text-muted-100 mx-auto flex h-60 w-72 flex-col rounded-sm text-center"
             >
-              <div
+              <PinInputRoot
+                v-model="input"
+                type="number"
+                otp
                 class="flex w-full justify-center gap-3"
-                :class="validatePin && 'pointer-events-none'"
+                :disabled="validatePin"
+                placeholder="0"
               >
-                <input
-                  v-for="i in codeLength"
-                  :key="`pin${i}`"
-                  :ref="
-                    (el) => {
-                      if (inputElements) {
-                        inputElements[i] = el as HTMLInputElement
-                      }
-                    }
-                  "
-                  v-focus="i === 1"
-                  type="text"
-                  :name="`pin${i}`"
-                  maxlength="1"
-                  class="dark:bg-muted-800 unselectable focus-visible:nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
-                  :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
-                  placeholder="0"
-                  :disabled="input.length < i - 1 || validatePin"
-                  @paste.prevent="(event) => paste(event)"
-                  @keydown="(event) => type(event, i)"
-                >
-              </div>
+                <PinInputInput
+                  v-for="(i, idx) in codeLength"
+                  :key="i"
+                  :index="idx"
+                  class="dark:bg-muted-800 focus-visible:nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
+                />
+              </PinInputRoot>
               <div class="mt-10">
                 <BaseButton
                   to="/dashboards"
