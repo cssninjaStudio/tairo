@@ -84,12 +84,6 @@ useHead({
     -->
     <DemoAppLayoutSwitcher />
 
-    <!--
-      Vue Axe Popup
-      @see .demo/plugins/vue-axe.client.ts
-    -->
-    <VueAxePopup />
-
     <NuxtLayout>
       <NuxtLoadingIndicator color="var(--color-primary-500)" />
       <NuxtPage />

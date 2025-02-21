@@ -100,7 +100,6 @@
     "v-calendar": "3.1.2",
     "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
-    "vue-axe": "3.1.2",
     "vue-component-meta": "2.2.0",
     "vue-router": "^4.5.0",
     "vue3-apexcharts": "1.8.0",
