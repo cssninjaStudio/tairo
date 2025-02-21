@@ -116,7 +116,7 @@ if (!data.value?.member) {
                   <Icon
                     v-else
                     name="lucide:x"
-                    class="text-danger-500 relative top-1 size-4 shrink-0"
+                    class="text-destructive-500 relative top-1 size-4 shrink-0"
                   />
                   <BaseParagraph size="sm" class="text-muted-400">
                     {{
@@ -177,7 +177,7 @@ if (!data.value?.member) {
                               card.cardInfo.status === 'expired'
                                 && 'bg-warning-500',
                               card.cardInfo.status === 'locked'
-                                && 'bg-danger-500',
+                                && 'bg-destructive-500',
                             ]"
                           />
                           <span>{{ card.cardInfo.status }}</span>

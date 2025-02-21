@@ -270,7 +270,7 @@ const onSubmit = handleSubmit(
                           size="xl"
                           rounded="lg"
                           class="h-auto! w-full p-4!"
-                          :class="[errors.account ? 'border-danger-500!' : '']"
+                          :class="[errors.account ? 'border-destructive-500!' : '']"
                         >
                           <span class="flex w-full items-center gap-3 text-start">
                             <TairoLogo v-if="values?.account" class="text-primary-500 size-8" />

@@ -72,7 +72,7 @@ const commentArea = ref('')
                 :class="[
                   props.task?.status === 0 && 'bg-info-500',
                   props.task?.status === 1 && 'bg-primary-500',
-                  props.task?.status === 2 && 'bg-danger-500',
+                  props.task?.status === 2 && 'bg-destructive-500',
                   props.task?.status === 3 && 'bg-warning-500',
                   props.task?.status === 4 && 'bg-yellow-400',
                   props.task?.status === 5 && 'bg-success-500',

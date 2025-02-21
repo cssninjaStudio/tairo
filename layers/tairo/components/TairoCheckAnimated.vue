@@ -35,7 +35,7 @@ const strokeWidth = computed(() => {
       props.color === 'success' && 'text-success-500',
       props.color === 'primary' && 'text-primary-500',
       props.color === 'warning' && 'text-warning-500',
-      props.color === 'danger' && 'text-danger-500',
+      props.color === 'danger' && 'text-destructive-500',
       props.size === 'xs' && 'size-8',
       props.size === 'sm' && 'size-10',
       props.size === 'md' && 'size-12',

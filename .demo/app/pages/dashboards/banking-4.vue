@@ -134,7 +134,7 @@ function setAccount(account: any) {
           class="p-3"
         >
           <div class="flex items-center">
-            <div class="text-danger-500 relative">
+            <div class="text-destructive-500 relative">
               <BaseProgressCircle
                 :max="100"
                 :model-value="34"

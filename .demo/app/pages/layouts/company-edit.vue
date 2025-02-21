@@ -331,7 +331,7 @@ const onSubmit = handleSubmit(
                   </BaseInputFileHeadless>
                   <div
                     v-if="fileError"
-                    class="text-danger-600 inline-block font-sans text-[.8rem]"
+                    class="text-destructive-600 inline-block font-sans text-[.8rem]"
                   >
                     {{ fileError }}
                   </div>

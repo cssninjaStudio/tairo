@@ -301,7 +301,7 @@ function useAreaExpenses() {
                     >
                       <Icon
                         name="lucide:arrow-right"
-                        class="text-danger-500 size-4 rotate-45"
+                        class="text-destructive-500 size-4 rotate-45"
                       />
                     </div>
                     <div
@@ -353,7 +353,7 @@ function useAreaExpenses() {
                   >
                     <span>Expenses</span>
                   </div>
-                  <div class="text-danger-500 font-sans text-sm font-semibold">
+                  <div class="text-destructive-500 font-sans text-sm font-semibold">
                     <span>- {{ formatPrice(1509.27) }}</span>
                   </div>
                 </div>

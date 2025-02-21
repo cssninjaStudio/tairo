@@ -414,7 +414,7 @@ const archive = [
                     role="button"
                   >
                     <div class="mb-2">
-                      <Icon name="solar:camera-linear" class="text-danger-500 size-5" />
+                      <Icon name="solar:camera-linear" class="text-destructive-500 size-5" />
                     </div>
                     <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-300">
                       Retrieve the date and place of an uploaded image

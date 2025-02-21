@@ -874,7 +874,7 @@ function useBarOrders() {
             >
               <span>Abandonned</span>
             </BaseHeading>
-            <Icon name="ph:timer-duotone" class="text-danger-500 size-7" />
+            <Icon name="ph:timer-duotone" class="text-destructive-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">

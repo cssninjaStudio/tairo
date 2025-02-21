@@ -364,7 +364,7 @@ function useBarSalesProfit() {
               </BaseHeading>
             </div>
             <div
-              class="text-danger-500 flex items-center gap-1 font-sans text-sm"
+              class="text-destructive-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>-2.7%</span>
               <Icon name="lucide:trending-down" class="size-5" />

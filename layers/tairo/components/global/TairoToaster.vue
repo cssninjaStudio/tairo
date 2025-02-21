@@ -25,7 +25,7 @@ const wrapperClasses = computed(() => {
     case 'success':
       return 'dark:border-success-800 border-success-200'
     case 'danger':
-      return 'dark:border-danger-800 border-danger-200'
+      return 'dark:border-destructive-800 border-destructive-200'
     case 'warning':
       return 'dark:border-warning-800 border-warning-200'
     case 'info':
@@ -42,7 +42,7 @@ const progressClasses = computed(() => {
     case 'success':
       return 'bg-success-200 dark:bg-success-900'
     case 'danger':
-      return 'bg-danger-200 dark:bg-danger-900'
+      return 'bg-destructive-200 dark:bg-destructive-900'
     case 'warning':
       return 'bg-warning-200 dark:bg-warning-900'
     case 'info':
@@ -59,7 +59,7 @@ const iconBgClasses = computed(() => {
     case 'success':
       return 'bg-success-50 dark:bg-success-700'
     case 'danger':
-      return 'bg-danger-50 dark:bg-danger-700'
+      return 'bg-destructive-50 dark:bg-destructive-700'
     case 'warning':
       return 'bg-warning-50 dark:bg-warning-700'
     case 'info':
@@ -76,7 +76,7 @@ const iconClasses = computed(() => {
     case 'success':
       return 'text-success-400 dark:text-success-50'
     case 'danger':
-      return 'text-danger-400 dark:text-danger-50'
+      return 'text-destructive-400 dark:text-destructive-50'
     case 'warning':
       return 'text-warning-400 dark:text-warning-50'
     case 'info':

@@ -167,7 +167,7 @@ function openCardPanel(id: number, cards: any) {
                       card.cardInfo.status === 'disabled'
                         && 'bg-muted-300 dark:bg-muted-700',
                       card.cardInfo.status === 'expired' && 'bg-warning-500',
-                      card.cardInfo.status === 'locked' && 'bg-danger-500',
+                      card.cardInfo.status === 'locked' && 'bg-destructive-500',
                     ]"
                   />
                   <span>{{ card.cardInfo.status }}</span>

@@ -154,7 +154,7 @@ const { data, pending, error, refresh } = await useFetch(
                     <Icon
                       v-else-if="item.tasks.status === 2"
                       name="ph:x-circle-duotone"
-                      class="text-danger-500 size-7"
+                      class="text-destructive-500 size-7"
                     />
                   </div>
                 </div>

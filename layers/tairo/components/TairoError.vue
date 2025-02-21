@@ -129,7 +129,7 @@ const showStackTrace = ref(true)
             </BaseIconBox>
             <div>
               <h4
-                class="text-danger-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
+                class="text-destructive-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
               >
                 {{ props.error.message }}
               </h4>

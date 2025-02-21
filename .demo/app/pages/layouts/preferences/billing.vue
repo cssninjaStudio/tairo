@@ -268,7 +268,7 @@ const transactions = [
                     :class="[
                       transaction.status === 'Complete' && 'bg-success-500',
                       transaction.status === 'Pending' && 'bg-warning-500',
-                      transaction.status === 'Canceled' && 'bg-danger-500',
+                      transaction.status === 'Canceled' && 'bg-destructive-500',
                     ]"
                   />
                   <BaseText size="sm" class="text-muted-500 dark:text-muted-400">
@@ -284,7 +284,7 @@ const transactions = [
                     :class="[
                       transaction.status === 'Complete' && 'bg-success-500',
                       transaction.status === 'Pending' && 'bg-warning-500',
-                      transaction.status === 'Canceled' && 'bg-danger-500',
+                      transaction.status === 'Canceled' && 'bg-destructive-500',
                     ]"
                   />
                   <BaseText size="sm" class="text-muted-500 dark:text-muted-400">

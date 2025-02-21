@@ -123,7 +123,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -143,7 +143,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -165,7 +165,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -183,7 +183,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -201,7 +201,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -221,7 +221,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -242,7 +242,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -264,7 +264,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"

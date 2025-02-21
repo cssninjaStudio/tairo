@@ -35,7 +35,7 @@ const tooltip = computed(() => {
         ? 'bg-muted-100 dark:bg-muted-800/60 text-muted-500 cursor-help no-underline'
         : data?.path
           ? 'nui-mark dark:decoration-primary-100/60 decoration-dotted underline-offset-4'
-          : 'bg-danger-100 dark:bg-danger-800/60 text-danger-500 cursor-help no-underline',
+          : 'bg-destructive-100 dark:bg-destructive-800/60 text-destructive-500 cursor-help no-underline',
     ]"
     :data-nui-tooltip="tooltip"
   >

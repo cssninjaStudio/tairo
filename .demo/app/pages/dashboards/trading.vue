@@ -314,7 +314,7 @@ function useStockPrice() {
                     class="text-muted-800 dark:text-white"
                   >
                     <span>-{{ formatPrice(12.37) }}</span>
-                    <span class="text-danger-500 ps-2 text-sm font-semibold">(-0.7%)</span>
+                    <span class="text-destructive-500 ps-2 text-sm font-semibold">(-0.7%)</span>
                   </BaseHeading>
                 </div>
               </BaseCard>
@@ -511,11 +511,11 @@ function useStockPrice() {
                       class="text-muted-800 dark:text-white"
                     >
                       <span>-{{ formatPrice(12.37) }}</span>
-                      <span class="text-danger-500 ps-2 text-xs font-semibold">(-0.7%)</span>
+                      <span class="text-destructive-500 ps-2 text-xs font-semibold">(-0.7%)</span>
                     </BaseHeading>
                     <Icon
                       name="lucide:trending-down"
-                      class="text-danger-500 size-4"
+                      class="text-destructive-500 size-4"
                     />
                   </div>
                 </div>
