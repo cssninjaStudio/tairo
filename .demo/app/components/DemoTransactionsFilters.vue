@@ -342,25 +342,26 @@ const paymentMethods = ref([''])
                   >
 
                   <!-- Grid -->
-                  <div class="flex flex-wrap items-center gap-2">
-                    <div
+                  <CheckboxGroupRoot v-model="selectedKeyWords" class="flex flex-wrap items-center gap-2">
+                    <CheckboxRoot
                       v-for="keyword in defaultKeywords"
                       :key="keyword"
+                      :value="keyword"
                       class="flex items-center justify-center"
                     >
-                      <BaseCheckboxHeadless
-                        v-model="selectedKeyWords"
-                        :value="keyword"
+                      <CheckboxIndicator
+                        force-mount
+                        class="group"
                       >
                         <button
                           type="button"
-                          class="text-muted-500 dark:text-muted-200 dark:bg-muted-900 border-muted-200 dark:border-muted-800 peer-checked:bg-primary-500/10 peer-checked:border-primary-500 peer-checked:text-primary-500 inline-flex items-center justify-center rounded-full border-2 bg-white px-4 py-1.5 font-sans text-xs transition-colors duration-300"
+                          class="text-muted-500 dark:text-muted-200 dark:bg-muted-900 border-muted-200 dark:border-muted-800 group-data-[state=checked]:bg-primary-500/10 group-data-[state=checked]:border-primary-500 group-data-[state=checked]:text-primary-500 inline-flex items-center justify-center rounded-full border-2 bg-white px-4 py-1.5 font-sans text-xs transition-colors duration-300"
                         >
                           {{ keyword }}
                         </button>
-                      </BaseCheckboxHeadless>
-                    </div>
-                  </div>
+                      </CheckboxIndicator>
+                    </CheckboxRoot>
+                  </CheckboxGroupRoot>
                 </div>
               </div>
             </div>

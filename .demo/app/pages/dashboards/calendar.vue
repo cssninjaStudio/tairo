@@ -855,92 +855,21 @@ const selectedEventFeatures = computed({
                   </BaseAutocomplete>
                 </template>
               </BaseField>
-              <div class=" grid grid-cols-4 gap-2 pt-4">
+
+              <CheckboxGroupRoot v-model="selectedEventFeatures" as="div" class="grid grid-cols-4 gap-2 pt-4">
                 <div data-nui-tooltip="Record">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="record"
-                    name="features"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
-                    >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:monitor-play-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                  <TairoCheckboxCardIcon value="record" icon="ph:monitor-play-duotone" />
                 </div>
                 <div data-nui-tooltip="Document included">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="drive"
-                    name="features"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
-                    >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:note-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                  <TairoCheckboxCardIcon value="drive" icon="ph:note-duotone" />
                 </div>
                 <div data-nui-tooltip="External Users">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="external"
-                    name="features"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
-                    >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:lock-open-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                  <TairoCheckboxCardIcon value="external" icon="ph:lock-open-duotone" />
                 </div>
                 <div data-nui-tooltip="Comment allowed">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="conversation"
-                    name="features"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
-                    >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:chats-circle-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                  <TairoCheckboxCardIcon value="conversation" icon="ph:chats-circle-duotone" />
                 </div>
-              </div>
+              </CheckboxGroupRoot>
             </div>
           </div>
           <div
