@@ -144,8 +144,7 @@ onKeyStroke('Escape', close)
             <div>
               <BaseButton
                 rounded="md"
-                color="primary"
-                shadow="hover"
+                variant="primary"
               >
                 Get Started
               </BaseButton>

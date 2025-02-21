@@ -22,7 +22,7 @@ definePageMeta({
       <div class="mt-3 flex justify-center">
         <BaseButton
           rounded="md"
-          color="primary"
+          variant="primary"
           class="w-40"
         >
           Create Token

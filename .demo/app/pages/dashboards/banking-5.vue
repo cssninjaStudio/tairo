@@ -48,7 +48,7 @@ definePageMeta({
                 <BaseButton
                   to="/layouts/send"
                   rounded="md"
-                  color="primary"
+                  variant="primary"
                   class="w-full sm:w-auto"
                 >
                   Transfer Money

@@ -53,7 +53,7 @@ const amount = ref<string>()
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-32"
                 @click="nextStep()"
               >
@@ -61,7 +61,7 @@ const amount = ref<string>()
               </BaseButton>
               <BaseButton
                 rounded="md"
-                color="muted"
+                variant="muted"
                 class="w-32"
                 @click="showFaq = !showFaq"
               >
@@ -198,7 +198,7 @@ const amount = ref<string>()
           <div class="mt-10">
             <BaseButton
               rounded="md"
-              color="muted"
+              variant="muted"
               class="w-32"
               @click="showFaq = !showFaq"
             >
@@ -302,7 +302,7 @@ const amount = ref<string>()
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
-                color="muted"
+                variant="muted"
                 class="w-32"
                 @click="prevStep()"
               >
@@ -310,7 +310,7 @@ const amount = ref<string>()
               </BaseButton>
               <BaseButton
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-32"
                 @click="nextStep()"
               >
@@ -415,7 +415,7 @@ const amount = ref<string>()
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
-                color="muted"
+                variant="muted"
                 class="w-32"
                 @click="prevStep()"
               >
@@ -423,7 +423,7 @@ const amount = ref<string>()
               </BaseButton>
               <BaseButton
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-32"
                 @click="nextStep()"
               >
@@ -462,7 +462,7 @@ const amount = ref<string>()
           <div class="flex justify-center">
             <BaseButton
               to="/dashboards"
-              color="primary"
+              variant="primary"
               rounded="md"
               class="w-48"
             >

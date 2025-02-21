@@ -481,10 +481,10 @@ function useAreaExpenses() {
                   </div>
                 </div>
                 <div class="mt-6 flex items-center gap-2">
-                  <BaseButton color="default" class="w-full">
+                  <BaseButton class="w-full">
                     <span>Settings</span>
                   </BaseButton>
-                  <BaseButton color="primary" class="w-full">
+                  <BaseButton variant="primary" class="w-full">
                     <span>Create</span>
                   </BaseButton>
                 </div>

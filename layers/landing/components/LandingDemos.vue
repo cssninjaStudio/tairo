@@ -244,8 +244,7 @@ const filteredDemos = computed(() => {
           <div v-if="props.cta" class="mt-24 flex items-center justify-center">
             <BaseButton
               rounded="lg"
-              color="primary"
-              variant="outline"
+              variant="primary"
               to="/demos"
             >
               View All {{ demoPages.length }} Demos

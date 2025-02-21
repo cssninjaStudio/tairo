@@ -239,7 +239,7 @@ const workspaces = [
                   <BaseButton
                     rounded="md"
                     size="sm"
-                    color="muted"
+                    variant="muted"
                   >
                     Remove
                   </BaseButton>

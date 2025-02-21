@@ -158,7 +158,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   <BaseButton
                     rounded="full"
                     size="icon-sm"
-                    muted
+                    variant="muted"
                     data-nui-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
                   >

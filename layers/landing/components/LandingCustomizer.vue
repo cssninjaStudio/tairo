@@ -148,8 +148,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-12! w-full"
                   rounded="lg"
-                  color="primary"
-                  variant="pastel"
+                  variant="primary"
                 >
                   <Icon name="lucide:bell" class="size-4" />
                   <span>Follow Belen</span>
@@ -237,7 +236,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-11! w-full"
                   rounded="full"
-                  color="primary"
+                  variant="primary"
                 >
                   <Icon name="lucide:bell" class="size-4" />
                   <span>Follow</span>
@@ -314,7 +313,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-11! w-full"
                   rounded="sm"
-                  color="primary"
+                  variant="primary"
                 >
                   <Icon name="lucide:check" class="size-4" />
                   <span>Hire Now</span>
@@ -387,8 +386,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-11! w-full"
                   rounded="none"
-                  color="primary"
-                  variant="outline"
+                  variant="primary"
                 >
                   <span>Send Invitation</span>
                 </BaseButton>

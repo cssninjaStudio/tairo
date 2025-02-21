@@ -298,7 +298,7 @@ function statusColor(itemStatus: string) {
                 </td>
                 <td class="p-4 text-end">
                   <BaseButton
-                    color="muted"
+                    variant="muted"
                     rounded="md"
                     size="sm"
                   >

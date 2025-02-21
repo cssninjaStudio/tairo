@@ -494,9 +494,8 @@ const itemSubtotal = computed(() =>
             </div>
             <div>
               <BaseButton
-                variant="pastel"
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-full"
               >
                 Edit Customer
@@ -573,7 +572,7 @@ const itemSubtotal = computed(() =>
           <div>
             <BaseButton
               rounded="md"
-              color="primary"
+              variant="primary"
               size="lg"
               class="w-full"
             >

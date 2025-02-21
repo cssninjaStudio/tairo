@@ -265,16 +265,14 @@ const daySpentProgress = computed(() => {
                   Disable
                 </BaseButton>
                 <BaseButton
-                  variant="pastel"
-                  color="muted"
+                  variant="muted"
                   rounded="md"
                   size="sm"
                 >
                   Replace
                 </BaseButton>
                 <BaseButton
-                  variant="pastel"
-                  color="muted"
+                  variant="muted"
                   rounded="md"
                   size="sm"
                 >

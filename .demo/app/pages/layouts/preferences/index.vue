@@ -66,7 +66,7 @@ const form = reactive({
               <BaseButton
                 rounded="md"
                 size="sm"
-                color="primary"
+                variant="primary"
               >
                 Update
               </BaseButton>
@@ -223,7 +223,7 @@ const form = reactive({
         <BaseButton
           size="lg"
           rounded="md"
-          color="primary"
+          variant="primary"
           class="w-full md:w-48"
         >
           Update Profile

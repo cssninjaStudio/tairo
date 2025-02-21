@@ -23,7 +23,6 @@ const isRules = computed(() => {
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:building" class="size-4" />
@@ -31,7 +30,6 @@ const isRules = computed(() => {
         </BaseButton>
         <BaseButton
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:link" class="size-4" />

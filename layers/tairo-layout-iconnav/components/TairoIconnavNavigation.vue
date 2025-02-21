@@ -118,7 +118,7 @@ const router = useRouter()
         <!-- Button -->
         <div class="w-4/5 md:w-1/4">
           <slot name="toolbar">
-            <BaseButton to="#" color="primary">
+            <BaseButton to="#" variant="primary">
               Get Started
             </BaseButton>
           </slot>

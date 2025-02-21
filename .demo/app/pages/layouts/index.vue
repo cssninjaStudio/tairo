@@ -63,7 +63,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
         <BaseButton class="w-full sm:w-32">
           Manage
         </BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32">
+        <BaseButton variant="primary" class="w-full sm:w-32">
           <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>

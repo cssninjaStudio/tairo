@@ -298,7 +298,7 @@ const onSubmit = handleSubmit(async (_values) => {
           :loading="isSubmitting"
           type="submit"
           rounded="lg"
-          color="primary"
+          variant="primary"
           class="h-11! w-full"
         >
           Create Account

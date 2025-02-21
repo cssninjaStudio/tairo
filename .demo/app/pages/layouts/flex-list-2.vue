@@ -81,7 +81,7 @@ function statusColor(itemStatus: string) {
           Manage
         </BaseButton>
         <BaseButton
-          color="primary"
+          variant="primary"
           rounded="full"
           class="w-full sm:w-32"
         >
@@ -187,7 +187,7 @@ function statusColor(itemStatus: string) {
                   />
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButton color="muted">
+                  <BaseButton variant="muted">
                     <span>View</span>
                   </BaseButton>
                 </DemoFlexTableCell>

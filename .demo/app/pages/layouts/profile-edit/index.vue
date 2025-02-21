@@ -305,7 +305,7 @@ const onSubmit = handleSubmit(
           </BaseButton>
           <BaseButton
             type="submit"
-            color="primary"
+            variant="primary"
             class="w-24"
             :disabled="isSubmitting"
             :loading="isSubmitting"

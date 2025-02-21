@@ -72,7 +72,6 @@ const timeCategoryTo = ref('')
       <MenuButton as="template">
         <BaseButton
           rounded="md"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:filter" class="size-4" />

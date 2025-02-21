@@ -83,7 +83,7 @@ const metaKey = useMetaKey()
         <BaseThemeToggle aria-label="Toggle darkmode" />
         <BaseButton
           rounded="lg"
-          color="primary"
+          variant="primary"
           to="https://go.cssninja.io/buy-tairo"
           class="ltablet:flex! hidden! lg:flex!"
         >

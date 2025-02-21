@@ -170,7 +170,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <BaseButton
                       rounded="full"
                       size="icon-sm"
-                      muted
+                      variant="muted"
                       data-nui-tooltip="Save recipe"
                       class="hidden sm:inline-flex"
                     >

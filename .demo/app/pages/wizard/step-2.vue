@@ -71,7 +71,7 @@ watch(inputFile, (value) => {
               <BaseButton
                 size="icon-sm"
                 rounded="full"
-                tooltip="Remove image"
+                data-nui-tooltip="Remove image"
                 @click="remove(files.item(0)!)"
               >
                 <Icon name="lucide:x" class="size-4" />

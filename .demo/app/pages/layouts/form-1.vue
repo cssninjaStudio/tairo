@@ -709,7 +709,7 @@ const onSubmit = handleSubmit(
             >
               <BaseButton
                 type="submit"
-                color="primary"
+                variant="primary"
                 class="h-12! w-full sm:w-40"
               >
                 Create Company

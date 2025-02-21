@@ -250,7 +250,7 @@ const archive = [
       </div>
       <div class="flex h-16 shrink-0 items-center gap-2 px-4">
         <BaseButton
-          color="dark"
+          variant="dark"
           size="md"
           class="w-full"
         >

@@ -99,7 +99,6 @@ function statusColor(itemStatus: string) {
         <BaseButton
           to="/layouts/payments/recipients"
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:arrow-left" class="size-4" />
@@ -108,7 +107,6 @@ function statusColor(itemStatus: string) {
         <BaseButton
           to="/layouts/contacts/create"
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:plus" class="size-4" />
@@ -177,9 +175,8 @@ function statusColor(itemStatus: string) {
             </div>
             <div>
               <BaseButton
-                variant="pastel"
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-full"
               >
                 Edit Contact

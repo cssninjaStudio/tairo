@@ -452,7 +452,7 @@ const selectedEventFeatures = computed({
               <template #header-right-button="{ moveNext }">
                 <BaseButton
                   rounded="full"
-                  small
+                  size="icon-sm"
                   @click="moveNext"
                   @keydown.space.enter="moveNext"
                 >
@@ -715,7 +715,7 @@ const selectedEventFeatures = computed({
               <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
                 <BaseButton
                   rounded="lg"
-                  size="sm"
+                  size="icon-sm"
                   :variant="settings.hourHeight === 480 ? 'muted' : 'default'"
                   @click="() => updateHeight(480)"
                 >
@@ -723,7 +723,7 @@ const selectedEventFeatures = computed({
                 </BaseButton>
                 <BaseButton
                   rounded="lg"
-                  size="sm"
+                  size="icon-sm"
                   :variant="settings.hourHeight === 160 ? 'muted' : 'default'"
                   @click="() => updateHeight()"
                 >

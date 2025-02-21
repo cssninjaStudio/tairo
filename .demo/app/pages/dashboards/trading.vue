@@ -180,7 +180,7 @@ function useStockPrice() {
     },
   }
 
-  const series = ref(selectedBank.value.series)
+  const series = ref(selectedBank.value!.series)
 
   return {
     type,
@@ -215,31 +215,31 @@ function useStockPrice() {
       </div>
       <div class="flex gap-2 sm:justify-end">
         <BaseButton
-          :color="activePeriod === 'hour' ? 'primary' : 'default'"
+          :variant="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
         >
           Hour
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'day' ? 'primary' : 'default'"
+          :variant="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
         >
           Day
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'week' ? 'primary' : 'default'"
+          :variant="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
         >
           Week
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'month' ? 'primary' : 'default'"
+          :variant="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
         >
           Month
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'year' ? 'primary' : 'default'"
+          :variant="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
         >
           Year
@@ -364,8 +364,8 @@ function useStockPrice() {
                 >
                   <span class="flex w-full items-center gap-3 text-start">
                     <img
-                      :src="selectedBank.logo"
-                      :alt="selectedBank.name"
+                      :src="selectedBank?.logo"
+                      :alt="selectedBank?.name"
                       class="size-6 shrink-0"
                     >
                     <div>
@@ -373,7 +373,7 @@ function useStockPrice() {
                         size="sm"
                         class="text-muted-800 dark:text-muted-200 block capitalize"
                       >
-                        {{ selectedBank.name }}
+                        {{ selectedBank?.name }}
                       </BaseText>
                     </div>
                     <Icon

@@ -88,7 +88,6 @@ definePageMeta({
             <div class="ltablet:ms-auto lg:ms-auto">
               <BaseButton
                 rounded="md"
-                color="default"
                 size="sm"
               >
                 <Icon name="lucide:link" class="size-4" />
@@ -121,7 +120,6 @@ definePageMeta({
             <div class="ltablet:ms-auto lg:ms-auto">
               <BaseButton
                 rounded="md"
-                color="default"
                 size="sm"
               >
                 <Icon name="lucide:link" class="size-4" />
@@ -157,7 +155,6 @@ definePageMeta({
             <div class="ltablet:ms-auto lg:ms-auto">
               <BaseButton
                 rounded="md"
-                color="default"
                 size="sm"
               >
                 <Icon name="lucide:link" class="size-4" />
@@ -212,7 +209,6 @@ definePageMeta({
             <div class="ltablet:ms-auto lg:ms-auto">
               <BaseButton
                 rounded="md"
-                color="default"
                 size="sm"
               >
                 <Icon name="lucide:link" class="size-4" />
@@ -245,7 +241,6 @@ definePageMeta({
             <div class="ltablet:ms-auto lg:ms-auto">
               <BaseButton
                 rounded="md"
-                color="default"
                 size="sm"
               >
                 <Icon name="lucide:link" class="size-4" />
@@ -278,7 +273,6 @@ definePageMeta({
             <div class="ltablet:ms-auto lg:ms-auto">
               <BaseButton
                 rounded="md"
-                color="default"
                 size="sm"
               >
                 <Icon name="lucide:link" class="size-4" />
@@ -311,7 +305,6 @@ definePageMeta({
             <div class="ltablet:ms-auto lg:ms-auto">
               <BaseButton
                 rounded="md"
-                color="default"
                 size="sm"
               >
                 <Icon name="lucide:link" class="size-4" />

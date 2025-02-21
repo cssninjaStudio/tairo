@@ -677,7 +677,7 @@ async function submitMessage() {
           <div class="flex h-20 items-center justify-center pe-2">
             <BaseButton
               rounded="full"
-              color="primary"
+              variant="primary"
               class="w-full"
             >
               <Icon name="lucide:plus" class="size-4" />
@@ -1031,7 +1031,7 @@ async function submitMessage() {
                 <div>
                   <BaseButton
                     type="submit"
-                    color="primary"
+                    variant="primary"
                     rounded="lg"
                   >
                     <span>Send</span>

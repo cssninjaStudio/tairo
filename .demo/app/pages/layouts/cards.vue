@@ -85,7 +85,7 @@ function openCardPanel(id: number, cards: any) {
           <BaseButton
             to="/layouts/card/new"
             rounded="md"
-            color="default"
+            variant="default"
             size="sm"
           >
             <Icon name="lucide:plus" class="size-4" />

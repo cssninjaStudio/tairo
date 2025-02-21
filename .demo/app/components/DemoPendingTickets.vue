@@ -81,7 +81,7 @@ const tickets = [
         </BaseParagraph>
       </div>
       <div class="w-full sm:ms-auto sm:w-auto">
-        <BaseButton color="default" class="w-full sm:w-auto">
+        <BaseButton class="w-full sm:w-auto">
           <span>Manage</span>
         </BaseButton>
       </div>

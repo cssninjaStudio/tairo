@@ -428,9 +428,8 @@ function useBarSalesProfit() {
                 <span>Revenue</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 Details

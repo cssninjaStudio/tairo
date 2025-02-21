@@ -43,7 +43,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           <BaseButton class="w-24" to="/layouts/profile">
             Cancel
           </BaseButton>
-          <BaseButton color="primary" class="w-24">
+          <BaseButton variant="primary" class="w-24">
             Save
           </BaseButton>
         </div>

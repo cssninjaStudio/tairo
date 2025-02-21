@@ -286,7 +286,7 @@ function useBarProfit() {
         <BaseButton>
           <span>View Reports</span>
         </BaseButton>
-        <BaseButton color="primary">
+        <BaseButton variant="primary">
           <span>Manage Store</span>
         </BaseButton>
       </div>

@@ -48,7 +48,7 @@ const { y } = useNuiWindowScroll()
               :disabled="props.disabled"
               :loading="props.loading"
               :rounded="props.rounded"
-              color="primary"
+              variant="primary"
               class="w-full"
             >
               <span>Save</span>

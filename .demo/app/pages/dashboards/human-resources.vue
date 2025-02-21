@@ -155,21 +155,21 @@ const items = [
             <div class="flex gap-2 sm:justify-end">
               <BaseButton
                 rounded="lg"
-                :color="activeSetting === 'all' ? 'primary' : 'default'"
+                :variant="activeSetting === 'all' ? 'primary' : 'default'"
                 @click="activeSetting = 'all'"
               >
                 All
               </BaseButton>
               <BaseButton
                 rounded="lg"
-                :color="activeSetting === 'candidates' ? 'primary' : 'default'"
+                :variant="activeSetting === 'candidates' ? 'primary' : 'default'"
                 @click="activeSetting = 'candidates'"
               >
                 Candidates
               </BaseButton>
               <BaseButton
                 rounded="lg"
-                :color="activeSetting === 'companies' ? 'primary' : 'default'"
+                :variant="activeSetting === 'companies' ? 'primary' : 'default'"
                 @click="activeSetting = 'companies'"
               >
                 Companies
@@ -312,7 +312,6 @@ const items = [
                       <BaseButton
                         href="/"
                         rounded="lg"
-                        color="default"
                         class="w-full"
                       >
                         <span>View Profile</span>
@@ -350,7 +349,6 @@ const items = [
                       <BaseButton
                         href="/"
                         rounded="lg"
-                        color="default"
                         class="w-full"
                       >
                         <span>View Profile</span>
@@ -388,7 +386,6 @@ const items = [
                       <BaseButton
                         href="/"
                         rounded="lg"
-                        color="default"
                         class="w-full"
                       >
                         <span>View Profile</span>

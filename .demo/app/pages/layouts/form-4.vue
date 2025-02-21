@@ -480,7 +480,7 @@ const people = ref([
             <BaseButton
               type="submit"
               rounded="lg"
-              color="primary"
+              variant="primary"
               class="h-12! w-full"
             >
               Create

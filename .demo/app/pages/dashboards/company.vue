@@ -500,9 +500,8 @@ function toggleAllVisibleSelection() {
                 <span>Pending tickets</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 View all

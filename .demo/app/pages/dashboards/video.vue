@@ -452,7 +452,7 @@ const videos = [
         <div
           class="xs:mt-2 flex items-center justify-center gap-2 md:justify-start"
         >
-          <BaseButton small rounded="full">
+          <BaseButton size="sm" rounded="full">
             <Icon name="lucide:video" class="size-4" />
             <span>Upload</span>
           </BaseButton>
@@ -547,7 +547,7 @@ const videos = [
 
     <!-- Load more -->
     <div class="my-16 flex items-center justify-center">
-      <BaseButton rounded="full" color="default">
+      <BaseButton rounded="full">
         <Icon name="ph:dots-nine-bold" class="size-4" />
         <span>Load more</span>
       </BaseButton>

@@ -164,7 +164,7 @@ function useAreaBtcPrice() {
     const series = []
     let x = new Date('11 Nov 2022').getTime()
     while (i < count) {
-      series.push([x, values[s][i]])
+      series.push([x, values[s]?.[i]])
       x += 86400000
       i++
     }
@@ -316,31 +316,31 @@ function useRadialPopularity() {
       </div>
       <div class="flex gap-2 sm:justify-end">
         <BaseButton
-          :color="activePeriod === 'hour' ? 'primary' : 'default'"
+          :variant="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
         >
           Hour
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'day' ? 'primary' : 'default'"
+          :variant="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
         >
           Day
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'week' ? 'primary' : 'default'"
+          :variant="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
         >
           Week
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'month' ? 'primary' : 'default'"
+          :variant="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
         >
           Month
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'year' ? 'primary' : 'default'"
+          :variant="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
         >
           Year
@@ -443,9 +443,8 @@ function useRadialPopularity() {
                     <span>BTC Evolution</span>
                   </BaseHeading>
                   <BaseButton
-                    color="primary"
+                    variant="primary"
                     size="sm"
-                    variant="pastel"
                     rounded="md"
                   >
                     Buy BTC
@@ -468,9 +467,8 @@ function useRadialPopularity() {
                     <span>BTC Popularity</span>
                   </BaseHeading>
                   <BaseButton
-                    color="primary"
+                    variant="primary"
                     size="sm"
-                    variant="pastel"
                     rounded="md"
                   >
                     Buy BT
@@ -533,10 +531,10 @@ function useRadialPopularity() {
                 </BaseParagraph>
               </div>
               <div class="mt-6 flex items-center gap-2">
-                <BaseButton color="default" class="w-full">
+                <BaseButton class="w-full">
                   <span>Compare</span>
                 </BaseButton>
-                <BaseButton color="primary" class="w-full">
+                <BaseButton variant="primary" class="w-full">
                   <span>Buy BTC</span>
                 </BaseButton>
               </div>
@@ -557,9 +555,8 @@ function useRadialPopularity() {
                   <span>My Team</span>
                 </BaseHeading>
                 <BaseButton
-                  color="primary"
+                  variant="primary"
                   size="sm"
-                  variant="pastel"
                   rounded="md"
                 >
                   View all
@@ -583,9 +580,8 @@ function useRadialPopularity() {
                   <span>Popular Coins</span>
                 </BaseHeading>
                 <BaseButton
-                  color="primary"
+                  variant="primary"
                   size="sm"
-                  variant="pastel"
                   rounded="md"
                 >
                   View all

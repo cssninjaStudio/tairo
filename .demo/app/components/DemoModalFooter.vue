@@ -95,8 +95,7 @@ const isModalBodyOpen = ref(false)
             Decline
           </BaseButton>
           <BaseButton
-            color="primary"
-            variant="solid"
+            variant="primary"
             @click="isModalStartOpen = false"
           >
             Accept
@@ -159,8 +158,7 @@ const isModalBodyOpen = ref(false)
             Decline
           </BaseButton>
           <BaseButton
-            color="primary"
-            variant="solid"
+            variant="primary"
             @click="isModalEndOpen = false"
           >
             Accept
@@ -223,8 +221,7 @@ const isModalBodyOpen = ref(false)
             Decline
           </BaseButton>
           <BaseButton
-            color="primary"
-            variant="solid"
+            variant="primary"
             @click="isModalCenterOpen = false"
           >
             Accept
@@ -291,8 +288,7 @@ const isModalBodyOpen = ref(false)
       <div class="p-4 md:p-6">
         <div class="flex gap-x-2">
           <BaseButton
-            color="primary"
-            variant="solid"
+            variant="primary"
             @click="isModalBetweenOpen = false"
           >
             Accept

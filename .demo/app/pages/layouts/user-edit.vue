@@ -1132,7 +1132,7 @@ const onSubmit = handleSubmit(
                     <BaseButton
                       to="/layouts/profile"
                       type="button"
-                      color="muted"
+                      variant="muted"
                       class="w-full sm:w-40"
                       rounded="md"
                       size="lg"
@@ -1141,7 +1141,7 @@ const onSubmit = handleSubmit(
                     </BaseButton>
                     <BaseButton
                       type="submit"
-                      color="primary"
+                      variant="primary"
                       class="w-full sm:w-40"
                       rounded="md"
                       size="lg"

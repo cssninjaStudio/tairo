@@ -65,7 +65,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
           Manage
         </BaseButton>
         <BaseButton
-          color="primary"
+          variant="primary"
           class="w-full sm:w-32"
           rounded="lg"
         >

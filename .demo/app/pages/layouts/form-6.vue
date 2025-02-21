@@ -270,7 +270,7 @@ const colorCode = ref('color_code_1')
             <Icon name="lucide:arrow-left" class="size-3" />
             <span>Cancel</span>
           </BaseButton>
-          <BaseButton type="submit" color="primary">
+          <BaseButton type="submit" variant="primary">
             <Icon name="lucide:check" class="size-3" />
             <span>Save</span>
           </BaseButton>

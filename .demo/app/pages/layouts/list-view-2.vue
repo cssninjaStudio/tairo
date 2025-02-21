@@ -224,7 +224,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                   <BaseButton class="w-full sm:w-28">
                     More Info
                   </BaseButton>
-                  <BaseButton color="primary" class="w-full sm:w-28">
+                  <BaseButton variant="primary" class="w-full sm:w-28">
                     <span>Book Now</span>
                   </BaseButton>
                 </div>

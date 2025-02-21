@@ -99,7 +99,7 @@ const showStackTrace = ref(false)
           <span>{{ props.error?.statusCode }}</span>
         </div>
         <BaseButton
-          color="primary"
+          variant="primary"
           class="h-12! w-48 items-center gap-2"
           rounded="lg"
           @click="handleError"
@@ -110,7 +110,6 @@ const showStackTrace = ref(false)
         <div class="mt-6 flex items-center justify-center">
           <BaseSwitchBall
             v-model="showStackTrace"
-            color="danger"
             :label="`${showStackTrace ? 'Hide' : 'Show'} Stacktrace (dev)`"
           />
         </div>

@@ -240,7 +240,7 @@ function focusField(n: any) {
                     type="button"
                     rounded="lg"
                     class="h-12! w-48"
-                    color="primary"
+                    variant="primary"
                     :loading="loading"
                     @click="goToStep(2)"
                   >
@@ -350,7 +350,7 @@ function focusField(n: any) {
               type="button"
               rounded="lg"
               class="h-12! w-48"
-              color="primary"
+              variant="primary"
               :loading="loading"
               @click="goToStep(3)"
             >
@@ -445,7 +445,7 @@ function focusField(n: any) {
                   to="/dashboards"
                   rounded="lg"
                   class="h-12!"
-                  :color="validatePin ? 'primary' : 'default'"
+                  :variant="validatePin ? 'primary' : 'default'"
                   :disabled="!validatePin"
                 >
                   Take me to Dashboard

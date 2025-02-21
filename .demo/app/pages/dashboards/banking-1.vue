@@ -653,7 +653,7 @@ const amount = ref<number>(0)
                     type="submit"
                     rounded="sm"
                     size="sm"
-                    color="primary"
+                    variant="primary"
                     class="w-full"
                   >
                     Send Money

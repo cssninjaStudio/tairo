@@ -70,7 +70,7 @@ const showStackTrace = ref(true)
           </BaseButton>
           <DevOnly>
             <BaseButton
-              color="muted"
+              variant="muted"
               rounded="lg"
               class="mx-auto h-12! w-full max-w-[160px]"
               @click="retry"

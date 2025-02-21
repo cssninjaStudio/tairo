@@ -24,7 +24,6 @@ const isRecipients = computed(() => {
         <BaseButton
           to="/layouts/send"
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:send" class="size-4" />
@@ -33,7 +32,6 @@ const isRecipients = computed(() => {
         <BaseButton
           to="/layouts/receive"
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:mail" class="size-4" />

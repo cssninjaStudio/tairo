@@ -240,7 +240,7 @@ onBeforeMount(checkPreviousSteps)
           </BaseButton>
           <BaseButton
             type="submit"
-            color="primary"
+            variant="primary"
             size="lg"
             class="w-full"
             :loading="loading"
@@ -274,7 +274,7 @@ onBeforeMount(checkPreviousSteps)
         <div class="flex justify-center">
           <BaseButton
             to="/dashboards"
-            color="primary"
+            variant="primary"
             rounded="md"
             class="w-48"
           >

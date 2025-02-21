@@ -79,7 +79,7 @@ function statusColor(itemStatus: string) {
         <BaseButton class="w-full sm:w-32">
           Manage
         </BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32">
+        <BaseButton variant="primary" class="w-full sm:w-32">
           <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
@@ -181,7 +181,7 @@ function statusColor(itemStatus: string) {
                   />
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButton color="muted">
+                  <BaseButton variant="muted">
                     <span>View</span>
                   </BaseButton>
                 </DemoFlexTableCell>

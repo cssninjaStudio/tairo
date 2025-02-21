@@ -764,7 +764,7 @@ function useBarOrders() {
         <BaseButton>
           <span>View Reports</span>
         </BaseButton>
-        <BaseButton color="primary">
+        <BaseButton variant="primary">
           <span>Manage Store</span>
         </BaseButton>
       </div>
@@ -904,9 +904,8 @@ function useBarOrders() {
               <span>Revenue Overview</span>
             </BaseHeading>
             <BaseButton
-              color="primary"
+              variant="primary"
               size="sm"
-              variant="pastel"
               rounded="md"
             >
               Details

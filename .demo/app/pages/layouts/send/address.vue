@@ -177,7 +177,7 @@ onBeforeMount(checkPreviousSteps)
         </BaseButton>
         <BaseButton
           type="submit"
-          color="primary"
+          variant="primary"
           size="lg"
           class="w-full"
         >

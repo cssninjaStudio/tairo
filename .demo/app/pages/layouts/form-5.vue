@@ -219,7 +219,7 @@ function handleClipboard() {
                       </BaseText>
                     </div>
                     <BaseButton
-                      color="primary"
+                      variant="primary"
                       rounded="lg"
                       class="h-12! w-full"
                       @click="generatePassphrase()"
@@ -329,7 +329,7 @@ function handleClipboard() {
                       </BaseText>
                     </div>
                     <BaseButton
-                      color="primary"
+                      variant="primary"
                       rounded="lg"
                       class="h-12! w-full"
                       :disabled="!hasChars"

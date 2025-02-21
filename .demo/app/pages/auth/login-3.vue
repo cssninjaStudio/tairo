@@ -230,7 +230,7 @@ const onSubmit = handleSubmit(async (values) => {
                   :disabled="isSubmitting"
                   :loading="isSubmitting"
                   type="submit"
-                  color="primary"
+                  variant="primary"
                   class="h-11! w-full"
                 >
                   Sign in

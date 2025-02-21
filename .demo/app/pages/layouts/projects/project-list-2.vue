@@ -55,7 +55,7 @@ const { data, pending, error, refresh } = await useFetch(
       </template>
       <template #right>
         <BaseButton
-          color="primary"
+          variant="primary"
           class="w-full sm:w-32"
           rounded="lg"
         >

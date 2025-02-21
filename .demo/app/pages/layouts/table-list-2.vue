@@ -156,7 +156,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                   </span>
                 </TairoTableCell>
                 <TairoTableCell spaced>
-                  <BaseButton muted>
+                  <BaseButton variant="muted">
                     Manage
                   </BaseButton>
                 </TairoTableCell>

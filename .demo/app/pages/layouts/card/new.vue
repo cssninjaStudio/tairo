@@ -493,7 +493,7 @@ const onSubmit = handleSubmit(
                     </div>
                     <BaseButton
                       type="submit"
-                      color="primary"
+                      variant="primary"
                       size="lg"
                       rounded="md"
                       class="w-full"
@@ -544,7 +544,7 @@ const onSubmit = handleSubmit(
             <div class="flex justify-center">
               <BaseButton
                 to="/layouts/cards"
-                color="primary"
+                variant="primary"
                 rounded="md"
                 class="w-48"
               >

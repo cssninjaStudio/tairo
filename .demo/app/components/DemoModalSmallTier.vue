@@ -41,7 +41,7 @@ const isModalMdOpen = ref(false)
         >
           Small dialog
         </h3>
-        <BaseButton class="icon-md" @click="closeModal = false">
+        <BaseButton class="icon-md" @click="closeModal">
           <Icon name="lucide:x" class="size-4" />
         </BaseButton>
       </div>
@@ -79,8 +79,7 @@ const isModalMdOpen = ref(false)
             Decline
           </BaseButton>
           <BaseButton
-            color="primary"
-            variant="solid"
+            variant="primary"
             @click="closeModal"
           >
             Accept
@@ -142,8 +141,7 @@ const isModalMdOpen = ref(false)
             Decline
           </BaseButton>
           <BaseButton
-            color="primary"
-            variant="solid"
+            variant="primary"
             @click="isModalMdOpen = false"
           >
             Accept

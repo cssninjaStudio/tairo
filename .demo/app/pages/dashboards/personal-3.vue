@@ -161,7 +161,7 @@ const candidates = [
         </div>
         <div>
           <BaseButton
-            color="primary"
+            variant="primary"
             rounded="lg"
             class="h-11 w-full"
           >
@@ -337,9 +337,8 @@ const candidates = [
             <span>Trending skills</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -363,9 +362,8 @@ const candidates = [
             <span>Interviews</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             Reports

@@ -207,7 +207,7 @@ function toggleAllVisibleSelection() {
                     </div>
                   </TairoTableCell>
                   <TairoTableCell spaced>
-                    <BaseButton muted>
+                    <BaseButton variant="muted">
                       Manage
                     </BaseButton>
                   </TairoTableCell>

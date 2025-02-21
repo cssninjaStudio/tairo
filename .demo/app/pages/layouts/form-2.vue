@@ -759,7 +759,7 @@ const currentRatingText = computed(() => {
                 </BaseButton>
                 <BaseButton
                   type="submit"
-                  color="primary"
+                  variant="primary"
                   class="h-12! w-full sm:w-40"
                 >
                   Submit

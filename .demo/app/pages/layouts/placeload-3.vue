@@ -30,7 +30,7 @@ const input = ref('')
           Manage
         </BaseButton>
         <BaseButton
-          color="primary"
+          variant="primary"
           class="w-full sm:w-32"
           disabled
         >

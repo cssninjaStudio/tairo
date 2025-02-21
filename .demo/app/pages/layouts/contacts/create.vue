@@ -1010,7 +1010,7 @@ const onSubmit = handleSubmit(
                     <BaseButton
                       to="/layouts/payments/recipients"
                       type="button"
-                      color="muted"
+                      variant="muted"
                       class="w-full sm:w-44"
                       size="lg"
                       rounded="md"
@@ -1019,7 +1019,7 @@ const onSubmit = handleSubmit(
                     </BaseButton>
                     <BaseButton
                       type="submit"
-                      color="primary"
+                      variant="primary"
                       class="w-full sm:w-44"
                       size="lg"
                       rounded="md"

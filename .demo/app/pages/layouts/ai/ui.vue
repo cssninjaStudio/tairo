@@ -180,7 +180,7 @@ function closeUpgrade() {
                 rounded="md"
                 size="sm"
                 class="w-full font-medium"
-                color="dark"
+                variant="dark"
                 @click="clearMessages"
               >
                 <Icon
@@ -635,9 +635,9 @@ function closeUpgrade() {
 
                           <div class="flex items-center gap-2">
                             <BaseButton
-                              size="sm"
+                              size="icon-sm"
                               rounded="md"
-                              color="dark"
+                              variant="dark"
                               :loading="loading"
                               @click="addMessage"
                             >

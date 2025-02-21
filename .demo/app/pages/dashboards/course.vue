@@ -195,7 +195,7 @@ const students = [
         <BaseButton>
           <span>Settings</span>
         </BaseButton>
-        <BaseButton color="primary">
+        <BaseButton variant="primary">
           <span>Schedule</span>
         </BaseButton>
       </div>
@@ -286,7 +286,7 @@ const students = [
           </div>
           <div class="mt-4">
             <BaseButton
-              color="primary"
+              variant="primary"
               rounded="lg"
               class="w-full"
             >

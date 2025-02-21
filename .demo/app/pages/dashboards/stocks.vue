@@ -607,9 +607,8 @@ function useBarProfit() {
               <span>Trending Stocks</span>
             </BaseHeading>
             <BaseButton
-              color="primary"
+              variant="primary"
               size="sm"
-              variant="pastel"
               rounded="md"
             >
               View all

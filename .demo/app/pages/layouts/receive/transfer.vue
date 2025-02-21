@@ -129,7 +129,7 @@ function setAccount(account: any) {
 
               <div class="flex items-center justify-center">
                 <BaseButton
-                  color="primary"
+                  variant="primary"
                   rounded="md"
                   class="w-32"
                 >
@@ -802,7 +802,7 @@ function setAccount(account: any) {
       <BaseButton
         v-if="request.method !== 'wire'"
         type="submit"
-        color="primary"
+        variant="primary"
         size="lg"
         class="w-full"
       >

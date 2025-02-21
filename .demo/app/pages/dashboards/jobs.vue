@@ -266,7 +266,7 @@ const jobs = [
         <div class="ptablet:col-span-12 w-full px-4 py-2 sm:w-auto">
           <BaseButton
             rounded="lg"
-            color="primary"
+            variant="primary"
             class="ptablet:w-full w-full sm:w-32"
           >
             Search
@@ -310,7 +310,7 @@ const jobs = [
               />
               <BaseButton
                 rounded="lg"
-                color="primary"
+                variant="primary"
                 class="w-full"
               >
                 Create alert
@@ -630,14 +630,14 @@ const jobs = [
                     <div class="flex gap-2">
                       <BaseButton
                         rounded="lg"
-                        color="primary"
+                        variant="primary"
                         class="w-24"
                       >
                         Apply
                       </BaseButton>
                       <BaseButton
                         rounded="lg"
-                        color="default"
+                        variant="default"
                         class="w-24"
                       >
                         Details

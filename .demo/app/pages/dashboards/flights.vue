@@ -218,7 +218,7 @@ const results = [
               >
                 <span>69 results</span>
               </BaseHeading>
-              <BaseButton muted>
+              <BaseButton variant="muted">
                 Clear
               </BaseButton>
             </div>
@@ -489,7 +489,7 @@ const results = [
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">
-            <BaseButton class="w-full" color="primary">
+            <BaseButton class="w-full" variant="primary">
               <span>Add to Favorites</span>
             </BaseButton>
             <div class="mt-6">

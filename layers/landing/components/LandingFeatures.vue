@@ -72,7 +72,7 @@
         <BaseButton
           to="https://go.cssninja.io/buy-tairo"
           rounded="lg"
-          color="primary"
+          variant="primary"
         >
           Get Tairo Dashboard System
         </BaseButton>

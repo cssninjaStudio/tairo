@@ -480,7 +480,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
             <BaseButton
               to="/dashboards"
               rounded="lg"
-              color="primary"
+              variant="primary"
               class="w-48"
             >
               <span>View Project</span>

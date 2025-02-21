@@ -217,7 +217,7 @@ const matches = [
             <!-- Action -->
             <div>
               <BaseButton
-                color="primary"
+                variant="primary"
                 rounded="lg"
                 class="h-12! w-full"
               >
@@ -265,8 +265,7 @@ const matches = [
                   <div class="mt-2">
                     <BaseButton
                       size="sm"
-                      color="light"
-                      variant="outline"
+                      variant="link"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>

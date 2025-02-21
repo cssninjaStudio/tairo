@@ -1148,7 +1148,6 @@ const activeTab = ref('tab-1')
                     <div class="flex gap-2">
                       <BaseButton
                         rounded="lg"
-                        color="default"
                         class="w-28"
                       >
                         Details

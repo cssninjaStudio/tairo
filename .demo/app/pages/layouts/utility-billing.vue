@@ -127,7 +127,7 @@ const billingCycles = ref('monthly')
       <div
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
-        <BaseButton type="submit" color="primary">
+        <BaseButton type="submit" variant="primary">
           <span>Save for</span>
           <span class="font-semibold">${{ selectedPlan?.price.monthly }}</span>
           <span>/month</span>
@@ -589,7 +589,7 @@ const billingCycles = ref('monthly')
     <TairoFormSave>
       <BaseButton
         type="submit"
-        color="primary"
+        variant="primary"
         class="w-full"
       >
         <span>Save for</span>

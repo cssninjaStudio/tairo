@@ -171,7 +171,7 @@ const pricingMode = ref('free')
                     type="button"
                     rounded="lg"
                     class="h-12! w-48"
-                    color="primary"
+                    variant="primary"
                   >
                     Confirm
                   </BaseButton>

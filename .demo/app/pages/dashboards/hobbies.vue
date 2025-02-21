@@ -98,7 +98,7 @@ const popular = [
       <div
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
-        <BaseButton color="primary" class="w-32">
+        <BaseButton variant="primary" class="w-32">
           <span>View All</span>
         </BaseButton>
       </div>
@@ -390,6 +390,7 @@ const popular = [
                 <div class="ms-auto flex items-center">
                   <BaseButton
                     rounded="lg"
+                    size="icon-md"
                     variant="muted"
                     class="scale-75"
                   >
@@ -470,7 +471,8 @@ const popular = [
                 <div class="ms-auto flex items-center">
                   <BaseButton
                     rounded="lg"
-                    muted
+                    size="icon-md"
+                    variant="muted"
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />
@@ -504,7 +506,8 @@ const popular = [
                 <div class="ms-auto flex items-center">
                   <BaseButton
                     rounded="lg"
-                    muted
+                    size="icon-md"
+                    variant="muted"
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />
@@ -538,7 +541,8 @@ const popular = [
                 <div class="ms-auto flex items-center">
                   <BaseButton
                     rounded="lg"
-                    muted
+                    size="icon-md"
+                    variant="muted"
                     class="scale-75"
                   >
                     <Icon name="lucide:arrow-right" class="size-5" />

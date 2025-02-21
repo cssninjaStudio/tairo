@@ -70,7 +70,7 @@ const integrations = [
               Dismiss
             </BaseButton>
             <BaseButton
-              color="primary"
+              variant="primary"
               rounded="md"
             >
               View Tutorial

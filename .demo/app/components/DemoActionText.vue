@@ -43,7 +43,7 @@ const props = withDefaults(
     <BaseButton
       :to="props.to"
       :rounded="props.rounded"
-      color="primary"
+      vairant="primary"
       class="w-full"
     >
       {{ props.label }}

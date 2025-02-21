@@ -66,7 +66,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
         </BaseButton>
         <BaseButton
           rounded="lg"
-          color="primary"
+          variant="primary"
           class="w-full sm:w-28"
         >
           <Icon name="lucide:plus" class="size-4" />
