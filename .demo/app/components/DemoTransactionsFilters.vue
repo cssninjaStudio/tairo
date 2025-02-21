@@ -68,10 +68,10 @@ const timeCategory = ref('all')
 const timeCategoryFrom = ref('')
 const timeCategoryTo = ref('')
 const keywords = ref('')
-const selectedKeyWords = ref([''])
-const status = ref([''])
-const accounts = ref([''])
-const paymentMethods = ref([''])
+const selectedKeyWords = ref<string[]>([])
+const status = ref<string[]>([])
+const accounts = ref<string[]>([])
+const paymentMethods = ref<string[]>([])
 </script>
 
 <template>
@@ -392,41 +392,25 @@ const paymentMethods = ref([''])
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="status" class="flex flex-col gap-4">
                     <!-- Status -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Processing"
-                        value="Processing"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="In Progress"
-                        value="In Progress"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Complete"
-                        value="Complete"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Cancelled"
-                        value="Cancelled"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Processing"
+                      value="Processing"
+                    />
+                    <BaseCheckbox
+                      label="In Progress"
+                      value="In Progress"
+                    />
+                    <BaseCheckbox
+                      label="Complete"
+                      value="Complete"
+                    />
+                    <BaseCheckbox
+                      label="Cancelled"
+                      value="Cancelled"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -450,25 +434,17 @@ const paymentMethods = ref([''])
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="accounts" class="flex flex-col gap-4">
                     <!-- Account -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="accounts"
-                        color="primary"
-                        label="Account **** 4565 6494"
-                        value="45656494"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="accounts"
-                        color="primary"
-                        label="Account **** 8346 4209"
-                        value="83464209"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Account **** 4565 6494"
+                      value="45656494"
+                    />
+                    <BaseCheckbox
+                      label="Account **** 8346 4209"
+                      value="83464209"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -494,33 +470,21 @@ const paymentMethods = ref([''])
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="paymentMethods" class="flex flex-col gap-4">
                     <!-- Payment method -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="paymentMethods"
-                        color="primary"
-                        label="Credit Card"
-                        value="credit-card"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="paymentMethods"
-                        color="primary"
-                        label="Transfer"
-                        value="transfer"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="paymentMethods"
-                        color="primary"
-                        label="Cheque"
-                        value="cheque"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Credit Card"
+                      value="credit-card"
+                    />
+                    <BaseCheckbox
+                      label="Transfer"
+                      value="transfer"
+                    />
+                    <BaseCheckbox
+                      label="Cheque"
+                      value="cheque"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>

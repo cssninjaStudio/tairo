@@ -183,7 +183,6 @@ const form = reactive({
             <div class="relative mt-2 flex items-center">
               <BaseCheckbox
                 v-model="form.showProfile"
-                color="primary"
                 label="Show this on my profile "
               />
             </div>

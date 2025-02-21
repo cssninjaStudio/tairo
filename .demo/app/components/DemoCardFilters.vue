@@ -53,9 +53,9 @@ const months = [
 ]
 
 const activeFilterTab = ref('filter-1')
-const cardTypes = ref([''])
-const cardholders = ref([''])
-const status = ref([''])
+const cardTypes = ref<string[]>([])
+const cardholders = ref<string[]>([])
+const status = ref<string[]>([])
 const spentStart = ref<number>()
 const spentEnd = ref<number>()
 const timeCategory = ref('all')
@@ -188,7 +188,7 @@ const timeCategoryTo = ref('')
                       type="button"
                       class="text-medium text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                       @click="
-                        status = ['Physical', 'Physical debit', 'Virtual']
+                        cardTypes = ['Physical', 'Physical debit', 'Virtual']
                       "
                     >
                       Select All
@@ -197,33 +197,21 @@ const timeCategoryTo = ref('')
                   <hr
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="cardTypes" class="flex flex-col gap-4">
                     <!-- types -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardTypes"
-                        color="primary"
-                        label="Physical"
-                        value="Physical"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardTypes"
-                        color="primary"
-                        label="Physical debit"
-                        value="Physical debit"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardTypes"
-                        color="primary"
-                        label="Virtual"
-                        value="Virtual"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Physical"
+                      value="Physical"
+                    />
+                    <BaseCheckbox
+                      label="Physical debit"
+                      value="Physical debit"
+                    />
+                    <BaseCheckbox
+                      label="Virtual"
+                      value="Virtual"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -239,7 +227,7 @@ const timeCategoryTo = ref('')
                       type="button"
                       class="text-medium text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                       @click="
-                        status = [
+                        cardholders = [
                           'Kendra Wilson (You)',
                           'Kaleb Wilson',
                           'Amber Wilson',
@@ -255,49 +243,29 @@ const timeCategoryTo = ref('')
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="cardholders" class="flex flex-col gap-4">
                     <!-- Cardholders -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Kendra Wilson (You)"
-                        value="Kendra Wilson (You)"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Kaleb Wilson"
-                        value="Kaleb Wilson"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Amber Wilson"
-                        value="Amber Wilson"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Jennifer Wilson"
-                        value="Jennifer Wilson"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="John Baxter"
-                        value="John Baxter"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Kendra Wilson (You)"
+                      value="Kendra Wilson (You)"
+                    />
+                    <BaseCheckbox
+                      label="Kaleb Wilson"
+                      value="Kaleb Wilson"
+                    />
+                    <BaseCheckbox
+                      label="Amber Wilson"
+                      value="Amber Wilson"
+                    />
+                    <BaseCheckbox
+                      label="Jennifer Wilson"
+                      value="Jennifer Wilson"
+                    />
+                    <BaseCheckbox
+                      label="John Baxter"
+                      value="John Baxter"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -321,33 +289,21 @@ const timeCategoryTo = ref('')
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="status" class="flex flex-col gap-4">
                     <!-- Status -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Active"
-                        value="active"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Disabled"
-                        value="disabled"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Locked"
-                        value="locked"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Active"
+                      value="active"
+                    />
+                    <BaseCheckbox
+                      label="Disabled"
+                      value="disabled"
+                    />
+                    <BaseCheckbox
+                      label="Locked"
+                      value="locked"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>

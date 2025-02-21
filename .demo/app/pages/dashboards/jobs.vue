@@ -334,14 +334,11 @@ const jobs = [
                 </BaseHeading>
               </div>
               <!-- Checkboxes -->
-              <div class="flex flex-col gap-4 ps-2">
+              <BaseCheckboxGroup v-model="jobTypes" class="flex flex-col gap-4 ps-2">
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobTypes"
                     value="job-types-1"
                     label="Full time jobs"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -354,11 +351,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobTypes"
                     value="job-types-2"
                     label="Part time jobs"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -371,11 +365,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobTypes"
                     value="job-types-3"
                     label="Remote jobs"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -388,11 +379,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobTypes"
                     value="job-types-4"
                     label="Internships"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -403,7 +391,7 @@ const jobs = [
                     17
                   </BaseTag>
                 </div>
-              </div>
+              </BaseCheckboxGroup>
             </div>
             <!-- Filter group -->
             <div class="relative">
@@ -420,14 +408,11 @@ const jobs = [
                 </BaseHeading>
               </div>
               <!-- Checkboxes -->
-              <div class="flex flex-col gap-4 ps-2">
+              <BaseCheckboxGroup v-model="jobSeniority" class="flex flex-col gap-4 ps-2">
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="seniority-level-1"
                     label="Student level"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -440,11 +425,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="seniority-level-2"
                     label="Entry level"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -457,11 +439,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="seniority-level-3"
                     label="Mid level"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -474,11 +453,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="seniority-level-4"
                     label="Senior level"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -491,11 +467,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="seniority-level-5"
                     label="Director level"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -506,7 +479,7 @@ const jobs = [
                     11
                   </BaseTag>
                 </div>
-              </div>
+              </BaseCheckboxGroup>
             </div>
             <!-- Filter group -->
             <div class="relative">
@@ -523,14 +496,11 @@ const jobs = [
                 </BaseHeading>
               </div>
               <!-- Checkboxes -->
-              <div class="flex flex-col gap-4 ps-2">
+              <BaseCheckboxGroup v-model="jobSalary" class="flex flex-col gap-4 ps-2">
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="salary-range-1"
                     label="10k ~ 20k"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -543,11 +513,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="salary-range-2"
                     label="20k ~ 40k"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -560,11 +527,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="salary-range-3"
                     label="40k ~ 75k"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -577,11 +541,8 @@ const jobs = [
                 </div>
                 <div class="flex items-center justify-between">
                   <BaseCheckbox
-                    v-model="jobSeniority"
                     value="salary-range-4"
                     label="75k+"
-                    rounded="sm"
-                    color="primary"
                   />
                   <BaseTag
                     color="default"
@@ -592,7 +553,7 @@ const jobs = [
                     58
                   </BaseTag>
                 </div>
-              </div>
+              </BaseCheckboxGroup>
             </div>
           </div>
         </div>

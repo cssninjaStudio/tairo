@@ -972,7 +972,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.general"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="General notifications"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -986,7 +986,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.team"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="Team notifications"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -1000,7 +1000,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.reminders"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="Auto reminders"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -1014,7 +1014,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.modifications"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="Modifications"
                     :model-value="field.value"
                     :error="errorMessage"

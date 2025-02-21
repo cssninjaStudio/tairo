@@ -354,12 +354,8 @@ const termsApproval = ref(false)
         <div class="my-4 flex items-center px-8">
           <BaseCheckbox
             v-model="termsApproval"
-            color="primary"
-            rounded="full"
+            variant="primary"
             label="I agree to the Terms Of Service"
-            :classes="{
-              label: 'relative top-0.5 text-xs',
-            }"
           />
         </div>
         <div class="flex flex-col px-8 pt-4">

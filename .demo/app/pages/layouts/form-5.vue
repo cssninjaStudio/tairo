@@ -259,9 +259,9 @@ function handleClipboard() {
                     >Character types</label>
                     <div class="grid gap-6 pb-4 sm:grid-cols-2">
                       <div class="flex items-center gap-3">
-                        <BaseCheckboxAnimated
+                        <TairoCheckboxAnimated
                           v-model="charsLower"
-                          color="success"
+                          variant="success"
                         />
                         <BaseText
                           class="text-muted-500 dark:text"
@@ -271,9 +271,9 @@ function handleClipboard() {
                         </BaseText>
                       </div>
                       <div class="flex items-center gap-3">
-                        <BaseCheckboxAnimated
+                        <TairoCheckboxAnimated
                           v-model="charsUpper"
-                          color="success"
+                          variant="success"
                         />
                         <BaseText
                           class="text-muted-500 dark:text"
@@ -283,9 +283,9 @@ function handleClipboard() {
                         </BaseText>
                       </div>
                       <div class="flex items-center gap-3">
-                        <BaseCheckboxAnimated
+                        <TairoCheckboxAnimated
                           v-model="charsNumeric"
-                          color="success"
+                          variant="success"
                         />
                         <BaseText
                           class="text-muted-500 dark:text"
@@ -295,9 +295,9 @@ function handleClipboard() {
                         </BaseText>
                       </div>
                       <div class="flex items-center gap-3">
-                        <BaseCheckboxAnimated
+                        <TairoCheckboxAnimated
                           v-model="charsSymbols"
-                          color="success"
+                          variant="success"
                         />
                         <BaseText
                           class="text-muted-500 dark:text"

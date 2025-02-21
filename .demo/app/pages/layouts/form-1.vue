@@ -823,8 +823,6 @@ const onSubmit = handleSubmit(
                 >
                   <BaseCheckbox
                     label="This record is private"
-                    rounded="sm"
-                    color="primary"
                     :model-value="field.value"
                     :error="errorMessage"
                     :disabled="isSubmitting"

@@ -103,8 +103,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.publication.new"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Newly added"
                   :classes="{
                     label: 'text-xs',
@@ -117,8 +116,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.publication.updated"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Recently updated"
                   :classes="{
                     label: 'text-xs',
@@ -131,8 +129,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.publication.upvoted"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Upvoted"
                   :classes="{
                     label: 'text-xs',
@@ -157,8 +154,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.engineering"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Engineering"
                   :classes="{
                     label: 'text-xs',
@@ -171,8 +167,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.software"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Software"
                   :classes="{
                     label: 'text-xs',
@@ -185,8 +180,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.business"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Business"
                   :classes="{
                     label: 'text-xs',
@@ -199,8 +193,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.management"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Management"
                   :classes="{
                     label: 'text-xs',
@@ -213,8 +206,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.topics.hr"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Human Resources"
                   :classes="{
                     label: 'text-xs',
@@ -239,8 +231,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.type.members"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Members"
                   :classes="{
                     label: 'text-xs',
@@ -253,8 +244,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.type.projects"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Projects"
                   :classes="{
                     label: 'text-xs',
@@ -267,8 +257,7 @@ const filteredResults = computed(() => {
               <li class="flex items-center justify-between">
                 <BaseCheckbox
                   v-model="filters.type.files"
-                  color="primary"
-                  rounded="full"
+                  variant="primary"
                   label="Files"
                   :classes="{
                     label: 'text-xs',

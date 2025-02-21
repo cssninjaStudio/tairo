@@ -64,8 +64,7 @@ const commentArea = ref('')
             </div>
             <BaseTag
               rounded="full"
-              variant="pastel"
-              color="muted"
+              variant="muted"
               class="m-0 -ms-1 inline-flex h-6 scale-90 items-center gap-1 py-0 text-xs font-semibold"
             >
               <span
@@ -170,13 +169,8 @@ const commentArea = ref('')
                   <BaseCheckbox
                     v-model="item.done"
                     class="shrink-0"
-                    color="primary"
+                    variant="primary"
                     :label="item.text"
-                    :classes="{
-                      wrapper: 'items-start! max-w-[240px]',
-                      label:
-                        'text-[0.85rem] text-muted-500 dark:text-muted-300 leading-snug',
-                    }"
                   />
                 </div>
               </div>

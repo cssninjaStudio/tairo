@@ -243,9 +243,8 @@ const onSubmit = handleSubmit(async (values) => {
                   <BaseCheckbox
                     :model-value="field.value"
                     :disabled="isSubmitting"
-                    rounded="lg"
                     label="Trust for 60 days"
-                    color="primary"
+                    variant="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
