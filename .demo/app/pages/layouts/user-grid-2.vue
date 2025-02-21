@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(18)
@@ -154,9 +164,9 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div v-if="!pending && data?.data.length !== 0" class="mt-4">
           <BasePagination
-            :total-items="data?.total ?? 0"
-            :item-per-page="perPage"
-            :current-page="page"
+            v-model:page="page"
+            :total="data?.total ?? 0"
+            :items-per-page="perPage"
             rounded="lg"
           />
         </div>

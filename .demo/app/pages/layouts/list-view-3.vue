@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -159,11 +169,9 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
             </TransitionGroup>
             <div class="mt-6">
               <BasePagination
+                :page="1"
                 :total="100"
-                :item-per-page="10"
-                :total-items="100"
-                :current="1"
-                :limit="10"
+                :items-per-page="10"
                 rounded="full"
               />
             </div>
