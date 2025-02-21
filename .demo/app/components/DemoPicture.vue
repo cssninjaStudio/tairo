@@ -48,7 +48,7 @@ const props = withDefaults(
       v-if="props.loading"
       class="dark absolute inset-x-0 bottom-8 flex items-center justify-center px-6"
     >
-      <BaseProgress size="xs" inderterminate />
+      <BaseProgress size="xs" />
     </div>
   </div>
 </template>

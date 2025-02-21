@@ -245,7 +245,7 @@ function toggleAllVisibleSelection() {
                     <div class="flex items-center">
                       <div class="relative">
                         <BaseProgressCircle
-                          :value="item.completed"
+                          :model-value="item.completed"
                           :thickness="1"
                           :size="50"
                           class="text-success-500"

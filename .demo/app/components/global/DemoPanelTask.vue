@@ -126,9 +126,9 @@ const commentArea = ref('')
                   {{ props.task?.completion }}% complete
                 </BaseText>
                 <BaseProgress
-                  :value="props.task?.completion"
+                  :model-value="props.task?.completion"
                   size="xs"
-                  :color="props.task?.status === 5 ? 'success' : 'primary'"
+                  :variant="props.task?.status === 5 ? 'primary' : 'default'"
                 />
               </div>
             </div>

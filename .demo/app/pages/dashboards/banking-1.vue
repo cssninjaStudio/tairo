@@ -531,7 +531,7 @@ const amount = ref<number>(0)
                 </div>
               </div>
               <div>
-                <BaseProgress size="xs" :value="60" />
+                <BaseProgress size="xs" :model-value="60" />
                 <div class="mt-2">
                   <p
                     class="text-muted-500 dark:text-muted-400 font-sans text-xs leading-tight"

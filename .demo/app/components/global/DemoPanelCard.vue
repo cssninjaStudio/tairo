@@ -81,7 +81,7 @@ const daySpentProgress = computed(() => {
           </div>
           <!-- Progress -->
           <BaseProgress
-            :value="daySpentProgress"
+            :model-value="daySpentProgress"
             size="xs"
             class="my-2"
           />

@@ -68,10 +68,10 @@ function setAccount(account: any) {
             <div class="text-primary-500 relative">
               <BaseProgressCircle
                 :max="100"
-                :value="75"
+                :model-value="75"
                 :size="82"
                 :thickness="1"
-                color="primary"
+                variant="primary"
               />
               <Icon
                 name="lucide:sparkles"
@@ -102,10 +102,10 @@ function setAccount(account: any) {
             <div class="text-success-500 relative">
               <BaseProgressCircle
                 :max="100"
-                :value="75"
+                :modelvalue="75"
                 :size="82"
                 :thickness="1"
-                color="success"
+                variant="primary"
               />
               <Icon
                 name="lucide:trending-up"
@@ -137,10 +137,10 @@ function setAccount(account: any) {
             <div class="text-danger-500 relative">
               <BaseProgressCircle
                 :max="100"
-                :value="34"
+                :model-value="34"
                 :size="82"
                 :thickness="1"
-                color="danger"
+                variant="primary"
               />
               <Icon
                 name="lucide:trending-down"
@@ -171,10 +171,10 @@ function setAccount(account: any) {
             <div class="text-warning-500 relative">
               <BaseProgressCircle
                 :max="100"
-                :value="82"
+                :model-value="82"
                 :size="82"
                 :thickness="1"
-                color="warning"
+                variant="primary"
               />
               <Icon
                 name="lucide:dollar-sign"

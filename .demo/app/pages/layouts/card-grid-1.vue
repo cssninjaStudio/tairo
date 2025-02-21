@@ -165,8 +165,8 @@ const { data, pending, error, refresh } = await useFetch(
                     </div>
                     <BaseProgress
                       size="xs"
-                      color="primary"
-                      :value="item.completed"
+                      variant="primary"
+                      :model-value="item.completed"
                     />
                   </div>
                   <div class="mt-4 w-full sm:mt-0 sm:w-auto">

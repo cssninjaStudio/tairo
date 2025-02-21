@@ -775,9 +775,9 @@ const colorCode = ref('color_code_1')
                           class="ms-auto w-32 px-4 transition-opacity duration-300 opacity-100"
                         >
                           <BaseProgress
-                            :value="0"
+                            :model-value="0"
                             size="xs"
-                            color="success"
+                            variant="success"
                           />
                         </div>
                         <div class="flex gap-2">

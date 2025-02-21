@@ -296,7 +296,7 @@ watchEffect(() => {
                       <div class="absolute top-1/2 w-full -translate-y-1/2">
                         <BaseProgress
                           size="xs"
-                          :value="getRoleLevel(member)"
+                          :model-value="getRoleLevel(member)"
                           :max="3"
                         />
                       </div>
