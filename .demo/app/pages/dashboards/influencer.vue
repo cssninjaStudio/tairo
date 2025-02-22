@@ -373,70 +373,35 @@ const activeTab = ref('tab-1')
           <div
             class="ltablet:justify-start flex justify-center gap-4 lg:justify-start"
           >
-            <TairoPopover size="sm">
+            <div
+              class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
+            >
               <div
-                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
+                class="bg-destructive-500/20 flex size-8 items-center justify-center rounded-full"
               >
-                <div
-                  class="bg-destructive-500/20 flex size-8 items-center justify-center rounded-full"
-                >
-                  <Icon name="ri:fire-fill" class="text-destructive-500 size-5" />
-                </div>
+                <Icon name="ri:fire-fill" class="text-destructive-500 size-5" />
               </div>
+            </div>
 
-              <template #content>
-                <TairoPopoverContentHelp
-                  title="On Fire"
-                  subtitle="You are on rampage"
-                  text="You have been on fire for the last 7 days. Keep up the good
-                    work!"
-                  icon="ri:fire-fill"
-                  icon-color="danger"
-                />
-              </template>
-            </TairoPopover>
-            <TairoPopover size="sm">
+            <div
+              class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
+            >
               <div
-                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
+                class="bg-success-500/20 flex size-8 items-center justify-center rounded-full"
               >
-                <div
-                  class="bg-success-500/20 flex size-8 items-center justify-center rounded-full"
-                >
-                  <Icon name="ri:medal-fill" class="text-success-500 size-5" />
-                </div>
+                <Icon name="ri:medal-fill" class="text-success-500 size-5" />
               </div>
+            </div>
 
-              <template #content>
-                <TairoPopoverContentHelp
-                  title="Veteran"
-                  subtitle="Way to go soldier"
-                  text="You posted more than 250 posts. You are now a post veteran!"
-                  icon="ri:medal-fill"
-                  icon-color="success"
-                />
-              </template>
-            </TairoPopover>
-            <TairoPopover size="sm">
+            <div
+              class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
+            >
               <div
-                class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
+                class="bg-warning-500/20 flex size-8 items-center justify-center rounded-full"
               >
-                <div
-                  class="bg-warning-500/20 flex size-8 items-center justify-center rounded-full"
-                >
-                  <Icon name="ri:trophy-fill" class="text-warning-500 size-5" />
-                </div>
+                <Icon name="ri:trophy-fill" class="text-warning-500 size-5" />
               </div>
-
-              <template #content>
-                <TairoPopoverContentHelp
-                  title="Champion"
-                  subtitle="Hail to the king"
-                  text="You have more than 100k followers. You are a champion!"
-                  icon="ri:trophy-fill"
-                  icon-color="warning"
-                />
-              </template>
-            </TairoPopover>
+            </div>
           </div>
         </div>
       </div>
