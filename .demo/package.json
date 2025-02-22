@@ -57,7 +57,6 @@
     "@types/geojson": "^7946.0.15",
     "@types/mapbox-gl": "3.4.1",
     "@vee-validate/zod": "^4.15.0",
-    "@vueform/slider": "2.1.10",
     "@vueuse/core": "^12.4.0",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",

@@ -152,7 +152,6 @@ export default defineNuxtConfig({
         '@headlessui-float/vue',
         'scule',
         'klona',
-        '@vueform/slider',
         'v-calendar',
         // AddonApexcharts
         'vue3-apexcharts',
