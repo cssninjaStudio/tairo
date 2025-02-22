@@ -581,7 +581,7 @@ const menu = [
   <TairoCollapseLayout>
     <TairoCollapseSidebar>
       <TairoCollapseSidebarHeader v-slot="{ isCollapsed }">
-        <NuxtLink to="/">
+        <NuxtLink to="/" class="flex items-center" :class="isCollapsed ? 'w-full justify-center!' : ''">
           <TairoLogo v-if="isCollapsed" class="size-8 text-primary-heavy dark:text-primary-light mx-auto" />
           <TairoLogoText v-else class="h-7 text-primary-heavy dark:text-primary-light mx-3" />
         </NuxtLink>

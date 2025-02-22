@@ -1,5 +1,154 @@
 <script setup lang="ts">
 const isSwitcherOpen = useState('switcher-open', () => false)
+
+const menu = [
+  {
+    label: 'Dashboards',
+    icon: 'solar:box-minimalistic-linear',
+    children: [
+      {
+        label: 'Personal v1',
+        to: '/dashboards',
+      },
+      {
+        label: 'Personal v2',
+        to: '/dashboards/personal-2',
+      },
+      {
+        label: 'Personal v3',
+        to: '/dashboards/personal-3',
+      },
+    ],
+  },
+  {
+    label: 'Banking',
+    icon: 'solar:buildings-linear',
+    children: [
+      {
+        label: 'Account balance',
+        to: '/dashboards/balance',
+      },
+      {
+        label: 'Account overview',
+        to: '/dashboards/banking-1',
+      },
+      {
+        label: 'Account expenses',
+        to: '/dashboards/banking-2',
+      },
+      {
+        label: 'Account aggregator',
+        to: '/dashboards/banking-5',
+      },
+    ],
+  },
+  {
+    label: 'Lifestyle',
+    icon: 'solar:confetti-minimalistic-linear',
+    children: [
+      {
+        label: 'Influencer',
+        to: '/dashboards/influencer',
+      },
+      {
+        label: 'Hobbies',
+        to: '/dashboards/hobbies',
+      },
+      {
+        label: 'Health',
+        to: '/dashboards/health',
+      },
+      {
+        label: 'Writer',
+        to: '/dashboards/writer',
+      },
+      {
+        label: 'Video log',
+        to: '/dashboards/video',
+      },
+      {
+        label: 'Soccer',
+        to: '/dashboards/soccer',
+      },
+    ],
+  },
+  {
+    label: 'Widgets',
+    icon: 'solar:widget-add-linear',
+    children: [
+      {
+        label: 'UI widgets',
+        to: '/dashboards/widgets',
+      },
+      {
+        label: 'Creative widgets',
+        to: '/dashboards/widgets/creative',
+      },
+      {
+        label: 'List widgets',
+        to: '/dashboards/widgets/list',
+      },
+    ],
+  },
+  {
+    label: 'Projects',
+    icon: 'solar:suitcase-linear',
+    children: [
+      {
+        label: 'Projects v1',
+        to: '/layouts/projects',
+      },
+      {
+        label: 'Projects v2',
+        to: '/layouts/projects/project-list-2',
+      },
+      {
+        label: 'Projects v3',
+        to: '/layouts/projects/project-list-3',
+      },
+    ],
+  },
+  {
+    label: 'Multistep wizard',
+    icon: 'solar:bolt-linear',
+    to: '/wizard',
+  },
+]
+
+const people = [
+  {
+    name: 'Joshua M.',
+    avatar: '/img/avatars/15.svg',
+  },
+  {
+    name: 'Chris G.',
+    avatar: '/img/avatars/3.svg',
+    count: 5,
+  },
+  {
+    name: 'Hermann M.',
+    avatar: '/img/avatars/16.svg',
+  },
+  {
+    name: 'Helen C.',
+    avatar: '/img/avatars/25.svg',
+  },
+]
+
+const companies = [
+  {
+    name: 'Okano LLC',
+    logo: '/img/icons/logos/okano.svg',
+  },
+  {
+    name: 'Nitro LLC',
+    logo: '/img/icons/logos/nitro.svg',
+  },
+  {
+    name: 'Flashlite LLC',
+    logo: '/img/icons/logos/flashlite.svg',
+  },
+]
 </script>
 
 <template>
@@ -14,74 +163,26 @@ const isSwitcherOpen = useState('switcher-open', () => false)
         </div>
       </TairoSidenavSidebarHeader>
       <TairoSidenavLinks class="p-4 grow">
-        <TairoSidenavCollapsible>
-          <template #trigger>
-            <TairoSidenavCollapsibleTrigger icon="solar:sidebar-minimalistic-linear" label="Dashboards" />
-          </template>
-          <TairoSidenavCollapsibleLink to="/" label="Personal V1" />
-          <TairoSidenavCollapsibleLink to="/" label="Personal V2" />
-          <TairoSidenavCollapsibleLink to="/" label="Personal V3" />
-        </TairoSidenavCollapsible>
-        <TairoSidenavCollapsible>
-          <template #trigger>
-            <TairoSidenavCollapsibleTrigger
-              icon="solar:widget-linear"
-              label="Widgets"
+        <template v-for="item in menu" :key="item.label">
+          <TairoSidenavLink
+            v-if="!item.children"
+            :to="item.to"
+            :icon="item.icon"
+            :label="item.label"
+            :count="item.count"
+          />
+          <TairoSidenavCollapsible v-else>
+            <template #trigger>
+              <TairoSidenavCollapsibleTrigger :icon="item.icon" :label="item.label" />
+            </template>
+            <TairoSidenavCollapsibleLink
+              v-for="child in item.children"
+              :key="child.label"
+              :to="child.to"
+              :label="child.label"
             />
-          </template>
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v1"
-          />
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v2"
-          />
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v3"
-          />
-        </TairoSidenavCollapsible>
-        <TairoSidenavCollapsible>
-          <template #trigger>
-            <TairoSidenavCollapsibleTrigger
-              icon="solar:widget-4-linear"
-              label="Applications"
-            />
-          </template>
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v1"
-          />
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v2"
-          />
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v3"
-          />
-        </TairoSidenavCollapsible>
-        <TairoSidenavCollapsible>
-          <template #trigger>
-            <TairoSidenavCollapsibleTrigger
-              icon="solar:widget-3-linear"
-              label="Widgets"
-            />
-          </template>
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v1"
-          />
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v2"
-          />
-          <TairoSidenavCollapsibleLink
-            to="/"
-            label="Widgets v3"
-          />
-        </TairoSidenavCollapsible>
+          </TairoSidenavCollapsible>
+        </template>
         <TairoSidenavSidebarDivider />
         <TairoSidenavLink to="/" icon="solar:bolt-linear" label="Daily perks" count="3" />
         <TairoSidenavLink icon="solar:palette-round-linear" label="Customize" @click="isSwitcherOpen = true" />
@@ -89,40 +190,23 @@ const isSwitcherOpen = useState('switcher-open', () => false)
         <BaseHeading size="xs" weight="medium" class="uppercase mt-2 mb-3">
           Recently viewed
         </BaseHeading>
-        <TairoSidenavLink to="/">
-          <BaseAvatar size="xxs" src="/img/avatars/15.svg" />
-          <span class="relative">Joshua M.</span>
-        </TairoSidenavLink>
-        <TairoSidenavLink to="/">
-          <BaseAvatar size="xxs" src="/img/avatars/3.svg" />
-          <span class="relative">Chris G.</span>
-          <span class="ms-auto bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset">
-            5
+        <TairoSidenavLink v-for="person in people" :key="person.name" to="/">
+          <BaseAvatar size="xxs" :src="person.avatar" />
+          <span class="relative">{{ person.name }}</span>
+          <span v-if="person.count" class="ms-auto bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset">
+            {{ person.count }}
           </span>
-        </TairoSidenavLink>
-        <TairoSidenavLink to="/">
-          <BaseAvatar size="xxs" src="/img/avatars/16.svg" />
-          <span class="relative">Hermann M.</span>
-        </TairoSidenavLink>
-        <TairoSidenavLink to="/">
-          <BaseAvatar size="xxs" src="/img/avatars/25.svg" />
-          <span class="relative">Helen C.</span>
         </TairoSidenavLink>
         <TairoSidenavSidebarDivider />
         <BaseHeading size="xs" weight="medium" class="uppercase mt-2 mb-3">
           Companies
         </BaseHeading>
-        <TairoSidenavLink to="/">
-          <BaseAvatar size="xxs" src="/img/icons/logos/okano.svg" />
-          <span class="relative">Okano LLC</span>
-        </TairoSidenavLink>
-        <TairoSidenavLink to="/">
-          <BaseAvatar size="xxs" src="/img/icons/logos/nitro.svg" />
-          <span class="relative">Nitro LLC</span>
-        </TairoSidenavLink>
-        <TairoSidenavLink to="/">
-          <BaseAvatar size="xxs" src="/img/icons/logos/flashlite.svg" />
-          <span class="relative">Flashlite LLC</span>
+        <TairoSidenavLink v-for="company in companies" :key="company.name" to="/">
+          <BaseAvatar size="xxs" :src="company.logo" />
+          <span class="relative">{{ company.name }}</span>
+          <span v-if="company.count" class="ms-auto bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset">
+            {{ company.count }}
+          </span>
         </TairoSidenavLink>
       </TairoSidenavLinks>
       <TairoSidenavLinks class="p-4 shrink-0">
