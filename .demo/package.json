@@ -102,7 +102,6 @@
     "vue-component-meta": "2.2.0",
     "vue-router": "^4.5.0",
     "vue3-apexcharts": "1.8.0",
-    "vue3-carousel": "0.13.0",
     "vue3-popper": "1.5.0",
     "vue3-smooth-dnd": "0.0.6",
     "zod": "^3.24.1"

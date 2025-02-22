@@ -154,9 +154,6 @@ export default defineNuxtConfig({
         'klona',
         '@vueform/slider',
         'v-calendar',
-        // AddonCarouselIcon
-        // AddonCarouselTeam
-        'vue3-carousel',
         // AddonApexcharts
         'vue3-apexcharts',
         // AddonInputPhone
