@@ -16,6 +16,21 @@ const isSwitcherOpen = useState('switcher-open', () => false)
           <TairoTopnavWorkspace />
         </div>
         <div class="flex items-center gap-3">
+          <button
+            type="button"
+            class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
+            @click="
+              () => {
+                const isOpen = useState('switcher-open', () => false)
+                isOpen.value = true
+              }
+            "
+          >
+            <Icon
+              name="solar:palette-round-linear"
+              class="text-muted-400 size-5"
+            />
+          </button>
           <div
             role="button"
             class="cursor-pointer h-8 w-36 hidden md:flex items-center justify-between bg-white dark:bg-muted-900 text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:ring-muted-300 dark:hover:ring-muted-700 gap-2 ps-3 pe-1 py-1 rounded-md ring-1 ring-muted-200 dark:ring-muted-800 transition-colors duration-300"
