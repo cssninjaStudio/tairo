@@ -93,7 +93,7 @@ const total = computed(() => {
           </BaseParagraph>
           <div class="relative flex w-full items-center gap-4">
             <BaseProgress
-              :value="(item.amount / total) * 100"
+              :model-value="(item.amount / total) * 100"
               :max="100"
               size="xs"
             />

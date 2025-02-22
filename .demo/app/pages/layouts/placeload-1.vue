@@ -18,13 +18,10 @@ const fake = ref('')
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="fake"
           icon="lucide:search"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
           disabled
         />
       </template>
@@ -33,7 +30,7 @@ const fake = ref('')
           Manage
         </BaseButton>
         <BaseButton
-          color="primary"
+          variant="primary"
           class="w-full sm:w-32"
           disabled
         >

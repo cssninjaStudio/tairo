@@ -100,8 +100,6 @@ function useGaugePersonal() {
             class="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-start"
           >
             <BaseIconBox
-              color="success"
-              variant="pastel"
               size="md"
               rounded="none"
               mask="blob"
@@ -205,8 +203,7 @@ function useGaugePersonal() {
                   $15,674
                 </BaseHeading>
                 <BaseTag
-                  color="primary"
-                  variant="pastel"
+                  variant="primary"
                   rounded="lg"
                   class="text-center"
                 >

@@ -151,7 +151,7 @@ const metaKey = ref('Ctrl')
                   <BaseButton to="/documentation">
                     Back to Hub
                   </BaseButton>
-                  <BaseButton color="none" to="/">
+                  <BaseButton variant="ghost" to="/">
                     Back to Home
                   </BaseButton>
                 </div>

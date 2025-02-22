@@ -22,6 +22,7 @@ const VALIDATION_TEXT = {
   EMAIL_REQUIRED: 'Email address can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
   ADDRESS_REQUIRED: 'Please enter an address',
+  DESCRIPTION_REQUIRED: 'Please write at least 40 characters',
   CITY_REQUIRED: 'Please enter a city',
   STATE_REQUIRED: 'Please enter a state',
   ZIPCODE_REQUIRED: 'Please enter a zipcode',
@@ -49,7 +50,7 @@ const zodSchema = z.object({
     location: z.string(),
     url: z.string().optional(),
     calendar: z.string().optional(),
-    description: z.string().min(40, VALIDATION_TEXT.FIRSTNAME_REQUIRED),
+    description: z.string().min(40, VALIDATION_TEXT.DESCRIPTION_REQUIRED),
     colorCode: z.string(),
     notifications: z.object({
       general: z.boolean(),
@@ -242,6 +243,7 @@ const colorCode = ref('color_code_1')
     action=""
     method="POST"
     class="mx-auto w-full max-w-3xl"
+    novalidate
     @submit.prevent="onSubmit"
   >
     <BaseCard>
@@ -268,7 +270,7 @@ const colorCode = ref('color_code_1')
             <Icon name="lucide:arrow-left" class="size-3" />
             <span>Cancel</span>
           </BaseButton>
-          <BaseButton type="submit" color="primary">
+          <BaseButton type="submit" variant="primary">
             <Icon name="lucide:check" class="size-3" />
             <span>Save</span>
           </BaseButton>
@@ -276,24 +278,31 @@ const colorCode = ref('color_code_1')
       </div>
       <div class="px-10 py-5">
         <div class="grid grid-cols-12 gap-4">
-          <div class="col-span-12">
-            <Field
-              v-slot="{ field, errorMessage, handleChange, handleBlur }"
-              name="meeting.title"
+          <Field
+            v-slot="{ field, errorMessage, handleChange, handleBlur }"
+            name="meeting.title"
+          >
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
+              label="What is this meeting about?"
+              :state="errorMessage ? 'error' : 'idle'"
+              :error="errorMessage"
+              :disabled="isSubmitting"
+              class="col-span-12"
+              required
             >
-              <BaseInput
-                label="What is this meeting about?"
+              <TairoInput
+                :ref="inputRef"
+                v-bind="inputAttrs"
                 placeholder="Ex: Project review with the design team"
                 icon="lucide:slack"
                 :model-value="field.value"
-                :error="errorMessage"
-                :disabled="isSubmitting"
                 type="text"
                 @update:model-value="handleChange"
                 @blur="handleBlur"
               />
-            </Field>
-          </div>
+            </BaseField>
+          </Field>
           <div class="relative z-10 col-span-12 sm:col-span-6">
             <DatePicker
               v-model.range="dates"
@@ -310,18 +319,26 @@ const colorCode = ref('color_code_1')
                       v-slot="{ field, errorMessage, handleChange, handleBlur }"
                       name="meeting.startDate"
                     >
-                      <BaseInput
+                      <BaseField
+                        v-slot="{ inputAttrs, inputRef }"
                         label="Start date"
-                        icon="ph:calendar-blank-duotone"
-                        :value="inputValue.start"
-                        :model-value="field.value"
+                        :state="errorMessage ? 'error' : 'idle'"
                         :error="errorMessage"
                         :disabled="isSubmitting"
-                        type="text"
-                        v-on="inputEvents.start"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
-                      />
+                        required
+                      >
+                        <TairoInput
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
+                          icon="ph:calendar-blank-duotone"
+                          :value="inputValue.start"
+                          :model-value="field.value"
+                          type="text"
+                          v-on="inputEvents.start"
+                          @update:model-value="handleChange"
+                          @blur="handleBlur"
+                        />
+                      </BaseField>
                     </Field>
                   </div>
                   <div class="relative grow">
@@ -329,18 +346,26 @@ const colorCode = ref('color_code_1')
                       v-slot="{ field, errorMessage, handleChange, handleBlur }"
                       name="meeting.endDate"
                     >
-                      <BaseInput
+                      <BaseField
+                        v-slot="{ inputAttrs, inputRef }"
                         label="End date"
-                        icon="ph:calendar-blank-duotone"
-                        :value="inputValue.end"
-                        :model-value="field.value"
+                        :state="errorMessage ? 'error' : 'idle'"
                         :error="errorMessage"
                         :disabled="isSubmitting"
-                        type="text"
-                        v-on="inputEvents.end"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
-                      />
+                        required
+                      >
+                        <TairoInput
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
+                          icon="ph:calendar-blank-duotone"
+                          :value="inputValue.end"
+                          :model-value="field.value"
+                          type="text"
+                          v-on="inputEvents.end"
+                          @update:model-value="handleChange"
+                          @blur="handleBlur"
+                        />
+                      </BaseField>
                     </Field>
                   </div>
                 </div>
@@ -363,18 +388,26 @@ const colorCode = ref('color_code_1')
                       v-slot="{ field, errorMessage, handleChange, handleBlur }"
                       name="meeting.startTime"
                     >
-                      <BaseInput
+                      <BaseField
+                        v-slot="{ inputAttrs, inputRef }"
                         label="Start time"
-                        icon="ph:calendar-blank-duotone"
-                        :value="inputValue.start"
-                        :model-value="field.value"
+                        :state="errorMessage ? 'error' : 'idle'"
                         :error="errorMessage"
                         :disabled="isSubmitting"
-                        type="text"
-                        v-on="inputEvents.start"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
-                      />
+                        required
+                      >
+                        <TairoInput
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
+                          icon="ph:calendar-blank-duotone"
+                          :value="inputValue.start"
+                          :model-value="field.value"
+                          type="text"
+                          v-on="inputEvents.start"
+                          @update:model-value="handleChange"
+                          @blur="handleBlur"
+                        />
+                      </BaseField>
                     </Field>
                   </div>
                   <div class="relative grow">
@@ -382,18 +415,26 @@ const colorCode = ref('color_code_1')
                       v-slot="{ field, errorMessage, handleChange, handleBlur }"
                       name="meeting.endTime"
                     >
-                      <BaseInput
+                      <BaseField
+                        v-slot="{ inputAttrs, inputRef }"
                         label="End time"
-                        icon="ph:calendar-blank-duotone"
-                        :value="inputValue.end"
-                        :model-value="field.value"
+                        :state="errorMessage ? 'error' : 'idle'"
                         :error="errorMessage"
                         :disabled="isSubmitting"
-                        type="text"
-                        v-on="inputEvents.end"
-                        @update:model-value="handleChange"
-                        @blur="handleBlur"
-                      />
+                        required
+                      >
+                        <TairoInput
+                          :ref="inputRef"
+                          v-bind="inputAttrs"
+                          icon="ph:calendar-blank-duotone"
+                          :value="inputValue.end"
+                          :model-value="field.value"
+                          type="text"
+                          v-on="inputEvents.end"
+                          @update:model-value="handleChange"
+                          @blur="handleBlur"
+                        />
+                      </BaseField>
                     </Field>
                   </div>
                 </div>
@@ -402,50 +443,35 @@ const colorCode = ref('color_code_1')
           </div>
           <div class="relative z-0 col-span-12">
             <div class="my-4">
-              <label class="nui-label pb-4 text-[0.825rem]">Meeting frequency</label>
-              <BaseRadioGroup class="flex items-center gap-6">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.frequency"
+              <Field
+                v-slot="{ field, errorMessage, handleChange }"
+                name="meeting.frequency"
+              >
+                <BaseField
+                  label="Meeting frequency"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
                 >
-                  <BaseRadio
-                    id="frequency-1"
-                    name="unique_frequency"
-                    label="All day"
-                    value="day"
-                    color="primary"
-                    :classes="{
-                      label: 'relative top-0.5 text-xs',
-                    }"
+                  <BaseRadioGroup
                     :model-value="field.value"
-                    :error="errorMessage"
                     :disabled="isSubmitting"
+                    class="flex items-center gap-6"
                     @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.frequency"
-                >
-                  <BaseRadio
-                    id="frequency-2"
-                    name="weekly_frequency"
-                    label="Repeat every week"
-                    value="week"
-                    color="primary"
-                    :classes="{
-                      label: 'relative top-0.5 text-xs',
-                    }"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-              </BaseRadioGroup>
+                  >
+                    <BaseRadio
+                      label="All day"
+                      value="day"
+                      variant="primary"
+                    />
+                    <BaseRadio
+                      label="Repeat every week"
+                      value="week"
+                      variant="primary"
+                    />
+                  </BaseRadioGroup>
+                </BaseField>
+              </Field>
             </div>
           </div>
         </div>
@@ -519,16 +545,23 @@ const colorCode = ref('color_code_1')
                 v-slot="{ field, errorMessage, handleChange, handleBlur }"
                 name="meeting.location"
               >
-                <BaseInput
-                  type="text"
-                  placeholder="Ex: meeting room A"
-                  icon="lucide:map-pin"
-                  :model-value="field.value"
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  :state="errorMessage ? 'error' : 'idle'"
                   :error="errorMessage"
                   :disabled="isSubmitting"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
+                >
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    type="text"
+                    placeholder="Ex: meeting room A"
+                    icon="lucide:map-pin"
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
               </Field>
             </div>
           </div>
@@ -541,16 +574,23 @@ const colorCode = ref('color_code_1')
                 v-slot="{ field, errorMessage, handleChange, handleBlur }"
                 name="meeting.url"
               >
-                <BaseInput
-                  type="text"
-                  placeholder="https://zoom.us/m/123456789"
-                  icon="lucide:video"
-                  :model-value="field.value"
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  :state="errorMessage ? 'error' : 'idle'"
                   :error="errorMessage"
                   :disabled="isSubmitting"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
+                >
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    type="text"
+                    placeholder="https://zoom.us/m/123456789"
+                    icon="lucide:video"
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
               </Field>
             </div>
           </div>
@@ -563,23 +603,30 @@ const colorCode = ref('color_code_1')
                 v-slot="{ field, errorMessage, handleChange, handleBlur }"
                 name="meeting.calendar"
               >
-                <BaseSelect
-                  :model-value="field.value"
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  :state="errorMessage ? 'error' : 'idle'"
                   :error="errorMessage"
                   :disabled="isSubmitting"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
                 >
-                  <TairoSelectItem
-                    v-for="item in calendars"
-                    :key="item.id"
-                    :value="item.id"
-                    :text-value="item.name"
-                    :icon="item.icon"
-                    :name="item.name"
-                    :text="item.text"
-                  />
-                </BaseSelect>
+                  <BaseSelect
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  >
+                    <TairoSelectItem
+                      v-for="item in calendars"
+                      :key="item.id"
+                      :value="item.id"
+                      :text-value="item.name"
+                      :icon="item.icon"
+                      :name="item.name"
+                      :text="item.text"
+                    />
+                  </BaseSelect>
+                </BaseField>
               </Field>
             </div>
           </div>
@@ -587,21 +634,32 @@ const colorCode = ref('color_code_1')
             <div
               class="col-span-12 flex flex-col justify-start pt-2 sm:col-span-3"
             >
-              <label class="nui-label text-[0.825rem]">Description</label>
+              <label class="nui-label text-[0.825rem]">
+                Description<span class="select-none text-destructive-base dark:text-destructive-light">
+                  <Icon name="lucide:asterisk" class="size-3 inline-block align-text-top" />
+                </span>
+              </label>
             </div>
             <div class="col-span-12 sm:col-span-9">
               <Field
                 v-slot="{ field, errorMessage, handleChange, handleBlur }"
                 name="meeting.description"
               >
-                <BaseTextarea
-                  placeholder="Write some additional details about the meeting..."
-                  :model-value="field.value"
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
                   :error="errorMessage"
                   :disabled="isSubmitting"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
+                >
+                  <BaseTextarea
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    placeholder="Write some additional details about the meeting..."
+                    :aria-invalid="errorMessage ? 'true' : undefined"
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
               </Field>
             </div>
           </div>
@@ -661,7 +719,7 @@ const colorCode = ref('color_code_1')
                     <div class="p-5 text-center">
                       <Icon
                         name="mdi-light:cloud-upload"
-                        class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 size-10 transition-colors duration-300"
+                        class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mx-auto mb-2 size-10 transition-colors duration-300"
                       />
                       <h4 class="text-muted-400 font-sans text-sm">
                         Drop files to upload
@@ -717,9 +775,9 @@ const colorCode = ref('color_code_1')
                           class="ms-auto w-32 px-4 transition-opacity duration-300 opacity-100"
                         >
                           <BaseProgress
-                            :value="0"
+                            :model-value="0"
                             size="xs"
-                            color="success"
+                            variant="success"
                           />
                         </div>
                         <div class="flex gap-2">
@@ -769,121 +827,24 @@ const colorCode = ref('color_code_1')
               <label class="nui-label text-[0.825rem]">Color code</label>
             </div>
             <div class="col-span-12 sm:col-span-9">
-              <div class="flex items-center gap-3">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
+              <Field
+                v-slot="{ field, handleChange }"
+                name="meeting.colorCode"
+              >
+                <RadioGroupRoot
+                  :disabled="isSubmitting"
+                  :model-value="field.value"
+                  class="flex items-center gap-3"
+                  @update:model-value="handleChange"
                 >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_1"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-primary-500 peer-checked:bg-primary-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_2"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-info-500 peer-checked:bg-info-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_3"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-success-500 peer-checked:bg-success-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_4"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="border-danger-500 peer-checked:bg-danger-500 size-4 rounded-full border-2 transition-colors duration-300"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_5"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="size-4 rounded-full border-2 border-lime-500 transition-colors duration-300 peer-checked:bg-lime-500"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.colorCode"
-                >
-                  <BaseRadioHeadless
-                    name="color_code"
-                    value="color_code_6"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <div
-                      class="size-4 rounded-full border-2 border-pink-500 transition-colors duration-300 peer-checked:bg-pink-500"
-                    />
-                  </BaseRadioHeadless>
-                </Field>
-              </div>
+                  <RadioGroupItem value="color_code_1" class="border-primary-500 data-[state=checked]:bg-primary-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_2" class="border-info-500 data-[state=checked]:bg-info-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_3" class="border-success-500 data-[state=checked]:bg-success-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_4" class="border-destructive-500 data-[state=checked]:bg-destructive-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                  <RadioGroupItem value="color_code_5" class="size-4 rounded-full border-2 border-lime-500 transition-colors duration-300 data-[state=checked]:bg-lime-500" />
+                  <RadioGroupItem value="color_code_6" class="size-4 rounded-full border-2 border-pink-500 transition-colors duration-300 data-[state=checked]:bg-pink-500" />
+                </RadioGroupRoot>
+              </Field>
             </div>
           </div>
           <div class="col-span-12 grid grid-cols-12">
@@ -899,7 +860,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.general"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="General notifications"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -913,7 +874,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.team"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="Team notifications"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -927,7 +888,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.reminders"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="Auto reminders"
                     :model-value="field.value"
                     :error="errorMessage"
@@ -941,7 +902,7 @@ const colorCode = ref('color_code_1')
                   name="meeting.notifications.modifications"
                 >
                   <BaseCheckbox
-                    color="primary"
+                    variant="primary"
                     label="Modifications"
                     :model-value="field.value"
                     :error="errorMessage"

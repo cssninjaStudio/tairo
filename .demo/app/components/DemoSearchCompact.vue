@@ -13,30 +13,39 @@ const search = ref('')
 
 <template>
   <div class="w-full">
-    <div class="relative flex w-full items-center gap-2">
-      <BaseInput
-        v-model="search"
-        icon="lucide:search"
-        placeholder="Search"
-        :rounded="props.rounded"
-        :classes="{
-          wrapper: 'w-full',
-          input:
-            'pe-24 bg-muted-100! dark:bg-muted-700! focus:bg-white! dark:focus:bg-muted-900!',
-        }"
-      />
-      <button
-        type="button"
-        class="bg-primary-500 absolute end-1 top-1 inline-flex h-8 items-center justify-center px-4 font-sans text-sm text-white"
+    <BaseField>
+      <div
+        class="focus-within:nui-focus flex *:rounded-none *:border-e-0  *:last:border-e"
         :class="[
-          props.rounded === 'sm' ? 'rounded' : '',
-          props.rounded === 'md' ? 'rounded-md' : '',
-          props.rounded === 'lg' ? 'rounded-lg' : '',
+          props.rounded === 'sm' ? 'rounded-sm *:first:rounded-s-sm  *:last:rounded-e-sm' : '',
+          props.rounded === 'md' ? 'rounded-md *:first:rounded-s-md  *:last:rounded-e-md' : '',
+          props.rounded === 'lg' ? 'rounded-lg *:first:rounded-s-lg  *:last:rounded-e-lg' : '',
         ]"
       >
-        <span>Go</span>
-      </button>
-    </div>
+        <div class="ps-3 border text-input-default-text/60 bg-input-default-bg border-input-default-border flex items-center justify-center">
+          <Icon name="lucide:search" class="size-4" />
+        </div>
+        <BaseInput
+          v-model="search"
+          placeholder="Search"
+          rounded="none"
+          class="ring-0! border-s-0"
+        />
+        <div class="pe-1 border border-s-0 text-input-default-text/60 bg-input-default-bg border-input-default-border flex items-center justify-center">
+          <button
+            type="button"
+            class="bg-primary-500 inline-flex h-8 items-center justify-center px-4 font-sans text-sm text-white"
+            :class="[
+              props.rounded === 'sm' ? 'rounded-sm' : '',
+              props.rounded === 'md' ? 'rounded-md' : '',
+              props.rounded === 'lg' ? 'rounded-lg' : '',
+            ]"
+          >
+            <span>Go</span>
+          </button>
+        </div>
+      </div>
+    </BaseField>
     <div class="mt-2 flex flex-wrap gap-2">
       <span
         class="text-muted-500 dark:text-muted-400 bg-muted-200 dark:bg-muted-700/40 inline-flex h-6 items-center justify-center rounded-full px-3 font-sans text-xs font-medium"

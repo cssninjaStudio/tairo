@@ -61,16 +61,15 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
       :rounded="props.rounded"
     >
       <template #tab-1>
-        <div class="mb-2 space-y-6">
+        <BaseCheckboxGroup v-model="tasks" class="mb-2 space-y-6">
           <label
             v-for="task in todos"
             :key="task.id"
             class="text-muted-300 flex cursor-pointer items-center gap-3"
           >
-            <BaseCheckboxAnimated
-              v-model="tasks"
+            <TairoCheckboxAnimated
               :value="`Option ${task.id}`"
-              color="success"
+              variant="success"
             />
             <div>
               <BaseHeading
@@ -89,29 +88,27 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
               </BaseParagraph>
             </div>
           </label>
-        </div>
+        </BaseCheckboxGroup>
       </template>
       <template #tab-2>
-        <div class="mb-2 space-y-6">
+        <BaseCheckboxGroup v-model="tasks" class="mb-2 space-y-6">
           <label
             v-for="task in todos"
             :key="task.id"
             class="text-muted-300 flex cursor-pointer items-center gap-3"
           >
-            <BaseCheckboxAnimated
-              v-model="tasks"
+            <TairoCheckboxAnimated
               :value="`Option ${task.id}`"
-              :classes="{
-                label: [
-                  props.color === 'success' && 'text-success-500',
-                  props.color === 'info' && 'text-info-500',
-                  props.color === 'warning' && 'text-warning-500',
-                  props.color === 'danger' && 'text-danger-500',
-                  props.color === 'primary' && 'text-primary-500',
-                  props.color === 'lime' && 'text-lime-500',
-                  props.color === 'sky' && 'text-sky-500',
-                ].join(''),
-              }"
+              variant="custom"
+              :class="[
+                props.color === 'success' && 'text-success-500',
+                props.color === 'info' && 'text-info-500',
+                props.color === 'warning' && 'text-warning-500',
+                props.color === 'danger' && 'text-destructive-500',
+                props.color === 'primary' && 'text-primary-500',
+                props.color === 'lime' && 'text-lime-500',
+                props.color === 'sky' && 'text-sky-500',
+              ]"
             />
             <div>
               <BaseHeading
@@ -130,7 +127,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
               </BaseParagraph>
             </div>
           </label>
-        </div>
+        </BaseCheckboxGroup>
       </template>
     </DemoTabbedContent>
   </div>

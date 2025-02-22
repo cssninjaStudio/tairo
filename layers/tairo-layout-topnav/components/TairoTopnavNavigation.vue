@@ -58,7 +58,7 @@ const { menuItems, isMobileOpen } = useTopnav()
             </BaseButton>
           </div>
           <slot name="toolbar">
-            <BaseButton to="#" color="primary">
+            <BaseButton to="#" variant="primary">
               Get Started
             </BaseButton>
           </slot>

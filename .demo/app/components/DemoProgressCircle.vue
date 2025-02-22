@@ -20,7 +20,7 @@ const props = withDefaults(
   <div class="flex flex-col items-center">
     <div class="relative">
       <BaseProgressCircle
-        :value="props.value"
+        :model-value="props.value"
         :size="140"
         :max="100"
         :thickness="1"

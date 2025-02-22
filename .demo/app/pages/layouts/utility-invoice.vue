@@ -272,9 +272,6 @@ const totalData = computed(() => {
                           <BaseInputNumber
                             v-model="item.quantity"
                             :min="0"
-                            :classes="{
-                              wrapper: 'w-32',
-                            }"
                           />
                         </div>
                       </td>

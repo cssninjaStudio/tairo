@@ -55,7 +55,7 @@ definePageMeta({
                 <BaseButton class="w-full">
                   Skip
                 </BaseButton>
-                <BaseButton color="primary" class="w-full">
+                <BaseButton variant="primary" class="w-full">
                   Upgrade
                 </BaseButton>
               </div>

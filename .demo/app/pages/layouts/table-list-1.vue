@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { BaseCheckboxGroup } from '#components'
+
 definePageMeta({
   title: 'Table List',
   preview: {
@@ -13,7 +15,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -61,13 +73,10 @@ function toggleAllVisibleSelection() {
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #right>
@@ -123,13 +132,7 @@ function toggleAllVisibleSelection() {
                 >
                   <div class="flex items-center">
                     <BaseCheckbox
-                      :model-value="isAllVisibleSelected"
-                      :indeterminate="
-                        selected.length > 0 && !isAllVisibleSelected
-                      "
-                      name="table-1-main"
-                      rounded="sm"
-                      color="primary"
+                      :model-value="selected.length > 0 && !isAllVisibleSelected ? 'indeterminate' : isAllVisibleSelected"
                       @click="toggleAllVisibleSelection"
                     />
                   </div>
@@ -169,124 +172,116 @@ function toggleAllVisibleSelection() {
                 </TairoTableCell>
               </TairoTableRow>
 
-              <TairoTableRow v-for="item in data?.data" :key="item.id">
-                <TairoTableCell spaced>
-                  <div class="flex items-center">
-                    <BaseCheckbox
-                      v-model="selected"
-                      :value="item.id"
-                      :name="`item-checkbox-${item.id}`"
-                      rounded="sm"
-                      color="primary"
-                    />
-                  </div>
-                </TairoTableCell>
-                <TairoTableCell spaced>
-                  <div class="flex items-center">
-                    <BaseAvatar
-                      :src="item.picture"
-                      :text="item.initials"
-                      :class="getRandomColor()"
-                    />
-                    <div class="ms-3 leading-none">
-                      <h4 class="font-sans text-sm font-medium">
-                        {{ item.username }}
-                      </h4>
-                      <p class="text-muted-400 font-sans text-xs">
-                        {{ item.position }}
-                      </p>
+              <BaseCheckboxGroup v-model="selected" as-child>
+                <TairoTableRow v-for="item in data?.data" :key="item.id">
+                  <TairoTableCell spaced>
+                    <div class="flex items-center">
+                      <BaseCheckbox :value="item.id" />
                     </div>
-                  </div>
-                </TairoTableCell>
-                <TairoTableCell light spaced>
-                  {{ item.location }}
-                </TairoTableCell>
-                <TairoTableCell spaced class="capitalize">
-                  <BaseTag
-                    v-if="item.status === 'available'"
-                    color="success"
-                    variant="pastel"
-                    rounded="full"
-                    size="sm"
-                    class="font-medium"
-                  >
-                    {{ item.status }}
-                  </BaseTag>
-                  <BaseTag
-                    v-else-if="item.status === 'new'"
-                    color="info"
-                    variant="pastel"
-                    rounded="full"
-                    size="sm"
-                    class="font-medium"
-                  >
-                    {{ item.status }}
-                  </BaseTag>
-                  <BaseTag
-                    v-else-if="item.status === 'busy'"
-                    color="warning"
-                    variant="pastel"
-                    rounded="full"
-                    size="sm"
-                    class="font-medium"
-                  >
-                    {{ item.status }}
-                  </BaseTag>
-                  <BaseTag
-                    v-else-if="item.status === 'offline'"
-                    color="muted"
-                    variant="pastel"
-                    rounded="full"
-                    size="sm"
-                    class="font-medium"
-                  >
-                    {{ item.status }}
-                  </BaseTag>
-                </TairoTableCell>
-                <TairoTableCell spaced>
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <BaseProgressCircle
-                        :value="item.completed"
-                        :thickness="1"
-                        :size="50"
-                        class="text-success-500"
+                  </TairoTableCell>
+                  <TairoTableCell spaced>
+                    <div class="flex items-center">
+                      <BaseAvatar
+                        :src="item.picture"
+                        :text="item.initials"
+                        :class="getRandomColor()"
                       />
-                      <span
-                        class="absolute start-1/2 top-1/2 z-10 ms-0.5 -translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold rtl:me-0.5 rtl:ms-0 rtl:translate-x-1/2"
-                      >
-                        {{ item.completed }}%
+                      <div class="ms-3 leading-none">
+                        <h4 class="font-sans text-sm font-medium">
+                          {{ item.username }}
+                        </h4>
+                        <p class="text-muted-400 font-sans text-xs">
+                          {{ item.position }}
+                        </p>
+                      </div>
+                    </div>
+                  </TairoTableCell>
+                  <TairoTableCell light spaced>
+                    {{ item.location }}
+                  </TairoTableCell>
+                  <TairoTableCell spaced class="capitalize">
+                    <BaseTag
+                      v-if="item.status === 'available'"
+                      variant="primary"
+                      rounded="full"
+                      size="sm"
+                      class="font-medium"
+                    >
+                      {{ item.status }}
+                    </BaseTag>
+                    <BaseTag
+                      v-else-if="item.status === 'new'"
+                      variant="primary"
+                      rounded="full"
+                      size="sm"
+                      class="font-medium"
+                    >
+                      {{ item.status }}
+                    </BaseTag>
+                    <BaseTag
+                      v-else-if="item.status === 'busy'"
+                      variant="dark"
+                      rounded="full"
+                      size="sm"
+                      class="font-medium"
+                    >
+                      {{ item.status }}
+                    </BaseTag>
+                    <BaseTag
+                      v-else-if="item.status === 'offline'"
+                      variant="muted"
+                      rounded="full"
+                      size="sm"
+                      class="font-medium"
+                    >
+                      {{ item.status }}
+                    </BaseTag>
+                  </TairoTableCell>
+                  <TairoTableCell spaced>
+                    <div class="flex items-center">
+                      <div class="relative">
+                        <BaseProgressCircle
+                          :model-value="item.completed"
+                          :thickness="1"
+                          :size="50"
+                          class="text-success-500"
+                        />
+                        <span
+                          class="absolute start-1/2 top-1/2 z-10 ms-0.5 -translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold rtl:me-0.5 rtl:ms-0 rtl:translate-x-1/2"
+                        >
+                          {{ item.completed }}%
+                        </span>
+                      </div>
+                      <span class="text-muted-400 font-sans text-xs">
+                        Tasks completed
                       </span>
                     </div>
-                    <span class="text-muted-400 font-sans text-xs">
-                      Tasks completed
-                    </span>
-                  </div>
-                </TairoTableCell>
-                <TairoTableCell spaced>
-                  <div class="flex justify-end">
-                    <BaseDropdown
-                      label="Dropdown"
-                      placement="bottom-end"
-                      rounded="md"
-                    >
-                      <BaseDropdownItem
-                        to="#"
-                        title="User"
-                        text="View details"
+                  </TairoTableCell>
+                  <TairoTableCell spaced>
+                    <div class="flex justify-end">
+                      <BaseDropdown
+                        label="Dropdown"
+                        placement="bottom-end"
                         rounded="md"
-                      />
-                    </BaseDropdown>
-                  </div>
-                </TairoTableCell>
-              </TairoTableRow>
+                      >
+                        <BaseDropdownItem
+                          to="#"
+                          title="User"
+                          text="View details"
+                          rounded="md"
+                        />
+                      </BaseDropdown>
+                    </div>
+                  </TairoTableCell>
+                </TairoTableRow>
+              </BaseCheckboxGroup>
             </TairoTable>
           </div>
           <div class="mt-6">
             <BasePagination
-              :total-items="data?.total ?? 0"
-              :item-per-page="perPage"
-              :current-page="page"
+              v-model:page="page"
+              :total="data?.total ?? 0"
+              :items-per-page="perPage"
               rounded="lg"
             />
           </div>

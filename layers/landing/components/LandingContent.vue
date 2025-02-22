@@ -188,9 +188,8 @@
         </div>
         <div class="my-2 flex justify-center gap-2">
           <BaseButton
-            color="primary"
+            variant="primary"
             rounded="lg"
-            shadow="hover"
             class="h-11! w-48"
             to="https://go.cssninja.io/buy-tairo"
           >

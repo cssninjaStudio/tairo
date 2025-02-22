@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -43,14 +53,11 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
   <div>
     <TairoContentWrapperTabbed :labels="['All', 'Saved']" rounded="lg">
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="lg"
           placeholder="Filter recipes..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>
@@ -163,7 +170,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <BaseButton
                       rounded="full"
                       size="icon-sm"
-                      muted
+                      variant="muted"
                       data-nui-tooltip="Save recipe"
                       class="hidden sm:inline-flex"
                     >
@@ -175,11 +182,9 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
             </TransitionGroup>
             <div class="mt-6">
               <BasePagination
+                :page="1"
                 :total="100"
-                :item-per-page="10"
-                :total-items="100"
-                :current="1"
-                :limit="10"
+                :items-per-page="10"
                 rounded="lg"
               />
             </div>

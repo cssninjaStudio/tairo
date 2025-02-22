@@ -206,7 +206,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <BaseProgressCircle
                         :size="68"
                         :thickness="1.5"
-                        :value="item.level"
+                        :model-value="item.level"
                         class="text-primary-500 absolute -start-2.5 -top-2.5"
                       />
                     </div>
@@ -257,7 +257,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       <BaseProgressCircle
                         :size="68"
                         :thickness="1.5"
-                        :value="item.level"
+                        :model-value="item.level"
                         class="text-primary-500 absolute -start-2.5 -top-2.5"
                       />
                     </div>
@@ -392,7 +392,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     <BaseProgressCircle
                       :size="68"
                       :thickness="1.5"
-                      :value="item.level"
+                      :model-value="item.level"
                       class="text-primary-500 absolute -start-2.5 -top-2.5"
                     />
                   </div>

@@ -195,7 +195,7 @@ const students = [
         <BaseButton>
           <span>Settings</span>
         </BaseButton>
-        <BaseButton color="primary">
+        <BaseButton variant="primary">
           <span>Schedule</span>
         </BaseButton>
       </div>
@@ -210,7 +210,7 @@ const students = [
       >
         <BaseCard rounded="lg" class="flex h-full flex-col p-6">
           <div class="mb-6">
-            <BaseTag color="primary">
+            <BaseTag variant="primary">
               <span>{{ course.category }}</span>
             </BaseTag>
           </div>
@@ -286,7 +286,7 @@ const students = [
           </div>
           <div class="mt-4">
             <BaseButton
-              color="primary"
+              variant="primary"
               rounded="lg"
               class="w-full"
             >
@@ -404,9 +404,8 @@ const students = [
                 class="w-full sm:w-16"
               >
                 <BaseTag
-                  :color="student.status === 'Online' ? 'success' : 'muted'"
+                  :variant="student.status === 'Online' ? 'primary' : 'muted'"
                   rounded="full"
-                  variant="pastel"
                   size="sm"
                 >
                   {{ student.status }}

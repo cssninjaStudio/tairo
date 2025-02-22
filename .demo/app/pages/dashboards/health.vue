@@ -499,7 +499,7 @@ function useGaugePersonal() {
             <BaseIconBox
               size="md"
               class="bg-primary-500/10"
-              color="none"
+              variant="none"
             >
               <Icon name="ph:drop-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
@@ -535,7 +535,7 @@ function useGaugePersonal() {
             <BaseIconBox
               size="md"
               class="bg-primary-500/10"
-              color="none"
+              variant="none"
             >
               <Icon
                 name="ph:heartbeat-duotone"
@@ -574,7 +574,7 @@ function useGaugePersonal() {
             <BaseIconBox
               size="md"
               class="bg-primary-500/10"
-              color="none"
+              variant="none"
             >
               <Icon
                 name="ph:drop-half-bottom-duotone"
@@ -613,7 +613,7 @@ function useGaugePersonal() {
             <BaseIconBox
               size="md"
               class="bg-primary-500/10"
-              color="none"
+              variant="none"
             >
               <Icon name="ph:gauge-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>

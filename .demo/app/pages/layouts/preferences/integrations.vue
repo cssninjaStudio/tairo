@@ -70,7 +70,7 @@ const integrations = [
               Dismiss
             </BaseButton>
             <BaseButton
-              color="primary"
+              variant="primary"
               rounded="md"
             >
               View Tutorial
@@ -99,14 +99,12 @@ const integrations = [
         </BaseParagraph>
       </div>
 
-      <div class="mt-4 sm:mt-0">
-        <BaseInput
-          icon="lucide:search"
-          rounded="md"
-          placeholder="Search integrations..."
-          contrast="default-contrast"
-        />
-      </div>
+      <TairoInput
+        icon="lucide:search"
+        rounded="md"
+        placeholder="Search integrations..."
+        class="mt-4 sm:mt-0"
+      />
     </div>
 
     <div class="mt-8 flow-root">

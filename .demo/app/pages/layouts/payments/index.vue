@@ -115,7 +115,6 @@ const scheduled = computed(() => {
               </div>
               <div class="flex items-center gap-2">
                 <BaseButton
-                  color="default"
                   rounded="md"
                   size="sm"
                 >
@@ -187,7 +186,7 @@ const scheduled = computed(() => {
               </div>
               <div class="flex items-center gap-2">
                 <BaseButton
-                  color="muted"
+                  variant="muted"
                   rounded="md"
                   size="sm"
                 >

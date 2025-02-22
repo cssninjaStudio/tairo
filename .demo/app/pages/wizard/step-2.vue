@@ -71,7 +71,7 @@ watch(inputFile, (value) => {
               <BaseButton
                 size="icon-sm"
                 rounded="full"
-                tooltip="Remove image"
+                data-nui-tooltip="Remove image"
                 @click="remove(files.item(0)!)"
               >
                 <Icon name="lucide:x" class="size-4" />
@@ -90,7 +90,7 @@ watch(inputFile, (value) => {
             </div>
           </div>
         </BaseInputFileHeadless>
-        <BaseInputHelpText v-if="errors.fields.avatar" color="danger">
+        <BaseInputHelpText v-if="errors.fields.avatar">
           {{ errors.fields.avatar }}
         </BaseInputHelpText>
       </div>
@@ -104,23 +104,22 @@ watch(inputFile, (value) => {
         </p>
       </div>
       <div class="mx-auto flex w-full max-w-sm flex-col gap-3">
-        <BaseInput
-          v-model="project.name"
-          :error="errors.fields.name"
-          rounded="lg"
-          placeholder="Project name"
-          :classes="{
-            input: 'h-12 text-base text-center',
-          }"
-        />
-        <BaseTextarea
-          v-model="project.description"
-          :error="errors.fields.description"
-          rounded="lg"
-          placeholder="Describe your project..."
-          autogrow
-          class="max-h-52"
-        />
+        <BaseField :error="errors.fields.name">
+          <BaseInput
+            v-model="project.name"
+            rounded="lg"
+            placeholder="Project name"
+          />
+        </BaseField>
+        <BaseField :error="errors.fields.description">
+          <BaseTextarea
+            v-model="project.description"
+            rounded="lg"
+            placeholder="Describe your project..."
+            autogrow
+            class="max-h-52"
+          />
+        </BaseField>
       </div>
     </div>
   </div>

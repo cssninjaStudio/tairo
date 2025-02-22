@@ -30,9 +30,8 @@ definePageMeta({
             <span>Members</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -57,9 +56,8 @@ definePageMeta({
             <span>Members</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -91,9 +89,8 @@ definePageMeta({
             <span>My Tasks</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -118,9 +115,8 @@ definePageMeta({
             <span>My Tasks</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -152,9 +148,8 @@ definePageMeta({
             <span>Latest comments</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -179,9 +174,8 @@ definePageMeta({
             <span>Topics</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -206,9 +200,8 @@ definePageMeta({
             <span>Topics</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -233,9 +226,8 @@ definePageMeta({
             <span>Timeline</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -260,9 +252,8 @@ definePageMeta({
             <span>Timeline</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all
@@ -287,9 +278,8 @@ definePageMeta({
             <span>Timeline</span>
           </BaseHeading>
           <BaseButton
-            color="primary"
+            variant="primary"
             size="sm"
-            variant="pastel"
             rounded="md"
           >
             View all

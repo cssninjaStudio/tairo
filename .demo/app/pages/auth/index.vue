@@ -165,40 +165,47 @@ const onSubmit = handleSubmit(async (values) => {
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="email"
                 >
-                  <BaseInput
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Email address"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="email"
-                    label="Email address"
-                    placeholder="Email address"
-                    autocomplete="email"
-                    :classes="{
-                      input: 'h-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <BaseInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      autocomplete="email"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
 
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="password"
                 >
-                  <BaseInput
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Password"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="password"
-                    label="Password"
-                    placeholder="Password"
-                    autocomplete="current-password"
-                    :classes="{
-                      input: 'h-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <BaseInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      type="password"
+                      autocomplete="current-password"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
               </div>
 
@@ -210,9 +217,8 @@ const onSubmit = handleSubmit(async (values) => {
                   <BaseCheckbox
                     :model-value="field.value"
                     :disabled="isSubmitting"
-                    rounded="sm"
                     label="Trust for 60 days"
-                    color="primary"
+                    variant="primary"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -235,7 +241,7 @@ const onSubmit = handleSubmit(async (values) => {
                     :disabled="isSubmitting"
                     :loading="isSubmitting"
                     type="submit"
-                    color="primary"
+                    variant="primary"
                     class="h-11! w-full"
                   >
                     Sign in

@@ -678,14 +678,12 @@ async function submitMessage() {
           <div
             class="flex h-16 w-full items-center justify-between px-4 sm:px-8"
           >
-            <div class="flex items-center gap-2">
-              <BaseInput
-                v-model="search"
-                rounded="lg"
-                icon="lucide:search"
-                placeholder="Search"
-              />
-            </div>
+            <TairoInput
+              v-model="search"
+              rounded="lg"
+              placeholder="Search"
+              icon="lucide:search"
+            />
 
             <TairoSidebarTools
               class="relative -end-4 z-20 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
@@ -904,9 +902,7 @@ async function submitMessage() {
                 v-model.trim="message"
                 :disabled="messageLoading"
                 rounded="full"
-                :classes="{
-                  input: 'h-12 ps-6 pe-24',
-                }"
+                class="h-10 ps-6 pe-24"
                 placeholder="Write a message..."
               />
               <div class="absolute end-2 top-0 flex h-10 items-center gap-1">

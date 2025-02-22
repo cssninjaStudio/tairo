@@ -88,29 +88,29 @@ const tools: Tool[] = [
   <div>
     <DemoWizardStepTitle />
 
-    <div class="mx-auto grid max-w-4xl gap-4 px-4 sm:grid-cols-3">
+    <CheckboxGroupRoot v-model="project.tools" as="div" class="mx-auto grid max-w-4xl gap-4 px-4 sm:grid-cols-3">
       <!-- Tools -->
-      <div
+      <CheckboxRoot
         v-for="tool in tools"
         :key="tool.name"
-        class="relative"
+        v-model="project.tools"
+        :value="tool"
       >
-        <BaseCheckboxHeadless
-          v-model="project.tools"
-          :value="tool"
-          :name="tool.name"
+        <CheckboxIndicator
+          force-mount
+          class="group"
         >
           <BaseCard
             rounded="lg"
-            class="peer-checked:border-primary-500 peer-checked:shadow-muted-300/30 dark:peer-checked:shadow-muted-900/30 p-4 peer-checked:shadow-xl"
+            class="group-data-[state=checked]:border-primary-500 group-data-[state=checked]:shadow-muted-300/30 dark:group-data-[state=checked]:shadow-muted-900/30 p-4 group-data-[state=checked]:shadow-xl"
           >
-            <div class="flex items-center gap-3">
+            <div class="flex items-center justify-start gap-3">
               <img
                 :src="tool.logo"
                 class="size-8"
                 alt=""
               >
-              <div>
+              <div class="grow">
                 <div
                   class="text-muted-800 dark:text-muted-100 text-sm font-medium"
                 >
@@ -122,8 +122,8 @@ const tools: Tool[] = [
               </div>
             </div>
           </BaseCard>
-        </BaseCheckboxHeadless>
-      </div>
-    </div>
+        </CheckboxIndicator>
+      </CheckboxRoot>
+    </CheckboxGroupRoot>
   </div>
 </template>

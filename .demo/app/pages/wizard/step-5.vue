@@ -147,16 +147,11 @@ watchEffect(() => {
             You are the project owner
           </p>
           <div class="relative w-full max-w-sm">
-            <BaseInput
+            <TairoInput
               v-model="search"
               icon="lucide:search"
               rounded="lg"
               placeholder="ex: Clarissa, Kendra, ..."
-              :classes="{
-                wrapper: 'w-full relative z-10',
-                input: 'h-12 text-base ps-12!',
-                icon: 'h-12 w-12',
-              }"
             />
             <div
               class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-900/30 absolute start-0 top-14 z-20 w-full rounded-xl border bg-white p-4 shadow-xl transition-all duration-300"
@@ -301,7 +296,7 @@ watchEffect(() => {
                       <div class="absolute top-1/2 w-full -translate-y-1/2">
                         <BaseProgress
                           size="xs"
-                          :value="getRoleLevel(member)"
+                          :model-value="getRoleLevel(member)"
                           :max="3"
                         />
                       </div>

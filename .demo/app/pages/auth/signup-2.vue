@@ -154,60 +154,76 @@ const onSubmit = handleSubmit(async (_values) => {
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="email"
                 >
-                  <BaseInput
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Email address"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="email"
-                    label="Email address"
-                    placeholder="ex: maya@cssninja.io"
-                    autocomplete="email"
-                    :classes="{
-                      input: 'h-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <BaseInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      type="email"
+                      placeholder="ex: maya@cssninja.io"
+                      autocomplete="email"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
 
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="password"
                 >
-                  <AddonInputPassword
-                    ref="passwordRef"
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs }"
+                    label="Password"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    :user-inputs="[values.email ?? '']"
-                    label="Password"
-                    placeholder="••••••••••"
-                    autocomplete="new-password"
-                    :classes="{
-                      input: 'h-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <AddonInputPassword
+                      ref="passwordRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :user-inputs="[values.email ?? '']"
+                      placeholder="••••••••••"
+                      autocomplete="new-password"
+                      class="rounded-s-none ring-0!"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
 
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
                   name="confirmPassword"
                 >
-                  <BaseInput
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Confirm Password"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    type="password"
-                    label="Confirm Password"
-                    placeholder="••••••••••"
-                    :classes="{
-                      input: 'h-12',
-                    }"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    required
+                  >
+                    <BaseInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      type="password"
+                      placeholder="••••••••••"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
                 </Field>
               </div>
               <div class="mb-6">
@@ -220,19 +236,18 @@ const onSubmit = handleSubmit(async (_values) => {
                       :model-value="field.value"
                       :disabled="isSubmitting"
                       :error="errorMessage"
-                      rounded="sm"
-                      color="primary"
+                      variant="primary"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
                       <span>
-                        <span>I accept the</span>
+                        <span>
+                          I accept the
+                        </span>
                         <a
                           href="#"
                           class="text-primary-500 hover:underline focus:underline"
-                        >
-                          Terms of Service
-                        </a>
+                        >Terms of Service</a>
                       </span>
                     </BaseCheckbox>
                   </Field>
@@ -243,7 +258,7 @@ const onSubmit = handleSubmit(async (_values) => {
                   :disabled="isSubmitting"
                   :loading="isSubmitting"
                   type="submit"
-                  color="primary"
+                  variant="primary"
                   class="h-12! w-full"
                 >
                   Sign Up

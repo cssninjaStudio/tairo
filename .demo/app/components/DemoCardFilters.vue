@@ -53,9 +53,9 @@ const months = [
 ]
 
 const activeFilterTab = ref('filter-1')
-const cardTypes = ref([''])
-const cardholders = ref([''])
-const status = ref([''])
+const cardTypes = ref<string[]>([])
+const cardholders = ref<string[]>([])
+const status = ref<string[]>([])
 const spentStart = ref<number>()
 const spentEnd = ref<number>()
 const timeCategory = ref('all')
@@ -72,7 +72,6 @@ const timeCategoryTo = ref('')
       <MenuButton as="template">
         <BaseButton
           rounded="md"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:filter" class="size-4" />
@@ -188,7 +187,7 @@ const timeCategoryTo = ref('')
                       type="button"
                       class="text-medium text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                       @click="
-                        status = ['Physical', 'Physical debit', 'Virtual']
+                        cardTypes = ['Physical', 'Physical debit', 'Virtual']
                       "
                     >
                       Select All
@@ -197,33 +196,21 @@ const timeCategoryTo = ref('')
                   <hr
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="cardTypes" class="flex flex-col gap-4">
                     <!-- types -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardTypes"
-                        color="primary"
-                        label="Physical"
-                        value="Physical"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardTypes"
-                        color="primary"
-                        label="Physical debit"
-                        value="Physical debit"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardTypes"
-                        color="primary"
-                        label="Virtual"
-                        value="Virtual"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Physical"
+                      value="Physical"
+                    />
+                    <BaseCheckbox
+                      label="Physical debit"
+                      value="Physical debit"
+                    />
+                    <BaseCheckbox
+                      label="Virtual"
+                      value="Virtual"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -239,7 +226,7 @@ const timeCategoryTo = ref('')
                       type="button"
                       class="text-medium text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                       @click="
-                        status = [
+                        cardholders = [
                           'Kendra Wilson (You)',
                           'Kaleb Wilson',
                           'Amber Wilson',
@@ -255,49 +242,29 @@ const timeCategoryTo = ref('')
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="cardholders" class="flex flex-col gap-4">
                     <!-- Cardholders -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Kendra Wilson (You)"
-                        value="Kendra Wilson (You)"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Kaleb Wilson"
-                        value="Kaleb Wilson"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Amber Wilson"
-                        value="Amber Wilson"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="Jennifer Wilson"
-                        value="Jennifer Wilson"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="cardholders"
-                        color="primary"
-                        label="John Baxter"
-                        value="John Baxter"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Kendra Wilson (You)"
+                      value="Kendra Wilson (You)"
+                    />
+                    <BaseCheckbox
+                      label="Kaleb Wilson"
+                      value="Kaleb Wilson"
+                    />
+                    <BaseCheckbox
+                      label="Amber Wilson"
+                      value="Amber Wilson"
+                    />
+                    <BaseCheckbox
+                      label="Jennifer Wilson"
+                      value="Jennifer Wilson"
+                    />
+                    <BaseCheckbox
+                      label="John Baxter"
+                      value="John Baxter"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -321,33 +288,21 @@ const timeCategoryTo = ref('')
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="status" class="flex flex-col gap-4">
                     <!-- Status -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Active"
-                        value="active"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Disabled"
-                        value="disabled"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Locked"
-                        value="locked"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Active"
+                      value="active"
+                    />
+                    <BaseCheckbox
+                      label="Disabled"
+                      value="disabled"
+                    />
+                    <BaseCheckbox
+                      label="Locked"
+                      value="locked"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -366,24 +321,24 @@ const timeCategoryTo = ref('')
 
                   <div class="space-y-4">
                     <!-- Account -->
-                    <div>
-                      <BaseInput
+                    <BaseField v-slot="{ inputAttrs, inputRef }" label="At least">
+                      <BaseInputNumber
+                        :ref="inputRef"
                         v-model="spentStart"
-                        type="number"
-                        icon="lucide:chevron-right"
-                        label="At least"
+                        v-bind="inputAttrs"
                         placeholder=""
+                        :min="0"
                       />
-                    </div>
-                    <div>
-                      <BaseInput
+                    </BaseField>
+                    <BaseField v-slot="{ inputAttrs, inputRef }" label="No more than...">
+                      <BaseInputNumber
+                        :ref="inputRef"
                         v-model="spentEnd"
-                        type="number"
-                        icon="lucide:chevron-left"
-                        label="No more than..."
+                        v-bind="inputAttrs"
                         placeholder=""
+                        :min="0"
                       />
-                    </div>
+                    </BaseField>
                   </div>
                 </div>
               </div>
@@ -453,26 +408,21 @@ const timeCategoryTo = ref('')
                             <Icon name="lucide:arrow-right" class="size-4" />
                           </button>
                         </div>
-                        <div class="grid grid-cols-3 gap-1">
-                          <div
+                        <RadioGroupRoot v-model="timeCategoryFrom" class="grid grid-cols-3 gap-1">
+                          <RadioGroupItem
                             v-for="month in months"
                             :key="month.id"
+                            :value="month.id"
                             class="flex items-center justify-center"
                           >
-                            <BaseRadioHeadless
-                              v-model="timeCategoryFrom"
-                              name="radio_date_from"
-                              :value="month.id"
+                            <RadioGroupIndicator
+                              force-mount
+                              class="text-muted-500 dark:text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 data-[state=checked]:text-primary-500 data-[state=checked]:bg-primary-500/10 hover:bg-muted-100 dark:hover:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200 cursor-pointer"
                             >
-                              <button
-                                type="button"
-                                class="text-muted-500 dark:text-muted-400 group-hover/nui-radio-headless:text-muted-600 dark:group-hover/nui-radio-headless:text-muted-200 peer-checked:text-primary-500 peer-checked:bg-primary-500/10 group-hover/nui-radio-headless:bg-muted-100 dark:group-hover/nui-radio-headless:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200"
-                              >
-                                {{ month.label }}
-                              </button>
-                            </BaseRadioHeadless>
-                          </div>
-                        </div>
+                              {{ month.label }}
+                            </RadioGroupIndicator>
+                          </RadioGroupItem>
+                        </RadioGroupRoot>
                       </div>
                     </div>
                     <!-- Calendar group -->
@@ -500,26 +450,21 @@ const timeCategoryTo = ref('')
                             <Icon name="lucide:arrow-right" class="size-4" />
                           </button>
                         </div>
-                        <div class="grid grid-cols-3 gap-1">
-                          <div
+                        <RadioGroupRoot v-model="timeCategoryTo" class="grid grid-cols-3 gap-1">
+                          <RadioGroupItem
                             v-for="month in months"
                             :key="month.id"
+                            :value="month.id"
                             class="flex items-center justify-center"
                           >
-                            <BaseRadioHeadless
-                              v-model="timeCategoryTo"
-                              name="radio_date_to"
-                              :value="month.id"
+                            <RadioGroupIndicator
+                              force-mount
+                              class="text-muted-500 dark:text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 data-[state=checked]:text-primary-500 data-[state=checked]:bg-primary-500/10 hover:bg-muted-100 dark:hover:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200 cursor-pointer"
                             >
-                              <button
-                                type="button"
-                                class="text-muted-500 dark:text-muted-400 group-hover/nui-radio-headless:text-muted-600 dark:group-hover/nui-radio-headless:text-muted-200 peer-checked:text-primary-500 peer-checked:bg-primary-500/10 group-hover/nui-radio-headless:bg-muted-100 dark:group-hover/nui-radio-headless:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200"
-                              >
-                                {{ month.label }}
-                              </button>
-                            </BaseRadioHeadless>
-                          </div>
-                        </div>
+                              {{ month.label }}
+                            </RadioGroupIndicator>
+                          </RadioGroupItem>
+                        </RadioGroupRoot>
                       </div>
                     </div>
                   </div>

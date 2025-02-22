@@ -29,10 +29,15 @@ const props = withDefaults(defineProps<{
    */
   show?: boolean
   /**
+   * The icon to show before the input.
+   */
+  icon?: string
+  /**
    * Whether the input has been touched or not, this is used to show the feedback.
    */
   touched?: boolean
   disabled?: boolean
+  error?: string
 }>(), {
   modelValue: '',
   userInputs: () => [],
@@ -136,23 +141,6 @@ onNuxtReady(async () => {
     checkPassword(vmodel.value)
   }
 })
-
-// styles
-const buttonBorder = computed(() => {
-  switch (props.rounded) {
-    case 'sm':
-      return '[&_.nui-text-button]:rounded-s'
-    case 'md':
-      return '[&_.nui-text-button]:rounded-s-md'
-    case 'lg':
-      return '[&_.nui-text-button]:rounded-s-xl'
-    case 'full':
-      return '[&_.nui-text-button]:rounded-s-full'
-    case 'none':
-    default:
-      return ''
-  }
-})
 </script>
 
 <template>
@@ -203,57 +191,71 @@ const buttonBorder = computed(() => {
         </ul>
       </slot>
     </div>
-    <BaseInput
-      ref="inputRef"
-      :model-value="vmodel"
-      :type="showPassword ? 'text' : 'password'"
-      :disabled="props.disabled"
-      :rounded="props.rounded"
-      v-bind="$attrs"
-      :classes="{ input: `pe-12!` }"
-      @update:model-value="
-        (value) => {
-          handleInput(String(value))
-        }
-      "
+    <div
+      class="focus-within:nui-focus rounded-md flex *:rounded-none *:border-e-0 *:first:rounded-s-md *:last:border-e *:last:rounded-e-md"
+      :class="[
+        props.error ? 'ring-destructive-base!' : '',
+      ]"
     >
-      <template #action>
-        <slot
-          name="action"
-          v-bind="{
-            touched: isTouched,
-            validation,
-            showPassword,
-            toggleVisibility,
-          }"
+      <div
+        v-if="props.icon"
+        class="ps-3 border text-input-default-text/60 bg-input-default-bg flex items-center justify-center"
+        :class="[
+          props.error ? 'border-destructive-base' : 'border-input-default-border',
+        ]"
+      >
+        <Icon :name="props.icon" class="size-4" />
+      </div>
+      <BaseInput
+        ref="inputRef"
+        :model-value="vmodel"
+        :type="showPassword ? 'text' : 'password'"
+        :disabled="props.disabled"
+        :rounded="props.rounded"
+        v-bind="$attrs"
+        @update:model-value="
+          (value) => {
+            handleInput(String(value))
+          }
+        "
+      />
+      <slot
+        name="action"
+        v-bind="{
+          touched: isTouched,
+          validation,
+          showPassword,
+          toggleVisibility,
+        }"
+      >
+        <button
+          class="leading-0 peer-focus-within:text-primary-500 focus-visible:nui-focus text-input-default-text/60 bg-input-default-bg border border-s-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed outline-none"
+          :class="[
+            props.error ? 'border-destructive-base' : 'border-input-default-border',
+          ]"
+          type="button"
+          tabindex="0"
+          :disabled="props.disabled"
+          :data-nui-tooltip="props.disabled ? '' : `${
+            showPassword ? 'Hide' : 'Show'
+          } password`"
+          @click.prevent="() => toggleVisibility()"
         >
-          <button
-            class="leading-0 text-muted-400 peer-focus-within:text-primary-500 focus-visible:nui-focus absolute right-0 top-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed"
-            :class="buttonBorder"
-            type="button"
-            tabindex="0"
-            :disabled="props.disabled"
-            :data-nui-tooltip="props.disabled ? '' : `${
-              showPassword ? 'Hide' : 'Show'
-            } password`"
-            @click.prevent="() => toggleVisibility()"
+          <div
+            class="relative flex size-full items-center justify-center"
           >
-            <div
-              class="relative flex size-full items-center justify-center"
-            >
-              <Icon
-                :name="
-                  showPassword
-                    ? 'mdi:eye-outline'
-                    : 'mdi:eye-off-outline'
-                "
-                class="size-5"
-              />
-            </div>
-          </button>
-        </slot>
-      </template>
-    </BaseInput>
+            <Icon
+              :name="
+                showPassword
+                  ? 'mdi:eye-outline'
+                  : 'mdi:eye-off-outline'
+              "
+              class="size-4"
+            />
+          </div>
+        </button>
+      </slot>
+    </div>
 
     <slot
       v-bind="{
@@ -271,7 +273,7 @@ const buttonBorder = computed(() => {
               :class="
                 !isTouched
                   ? 'bg-muted-200 dark:bg-muted-700'
-                  : (validation?.score ?? 0) >= x ? 'bg-success-500' : 'bg-danger-500'"
+                  : (validation?.score ?? 0) >= x ? 'bg-success-500' : 'bg-destructive-500'"
             />
           </div>
         </template>

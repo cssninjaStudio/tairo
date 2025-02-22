@@ -265,9 +265,8 @@ function useBarTeamEfficiency() {
                 <span>Current Projects</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 View all
@@ -288,9 +287,8 @@ function useBarTeamEfficiency() {
                 <span>Completion</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 Reports
@@ -311,9 +309,8 @@ function useBarTeamEfficiency() {
                 <span>Team Efficiency</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 Reports
@@ -341,9 +338,8 @@ function useBarTeamEfficiency() {
                 <span>My Team</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 View all
@@ -365,9 +361,8 @@ function useBarTeamEfficiency() {
                 <span>Todo Today</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 View all
@@ -411,7 +406,7 @@ function useBarTeamEfficiency() {
               </BaseParagraph>
               <template #action>
                 <BaseButton
-                  color="primary"
+                  variant="primary"
                   rounded="sm"
                   class="w-full"
                 >

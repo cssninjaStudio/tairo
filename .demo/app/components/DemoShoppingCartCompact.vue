@@ -45,7 +45,7 @@ const products = [
         Shopping cart
       </BaseHeading>
       <BaseTag
-        color="primary"
+        variant="primary"
         size="sm"
         rounded="full"
       >
@@ -85,7 +85,7 @@ const products = [
     </div>
     <div class="mt-4">
       <BaseButton
-        color="primary"
+        variant="primary"
         :rounded="props.rounded"
         class="h-12! w-full"
       >

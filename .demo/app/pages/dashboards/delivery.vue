@@ -233,8 +233,7 @@ const total = computed(() => {
                   <div class="mt-2">
                     <BaseButton
                       size="sm"
-                      color="light"
-                      variant="outline"
+                      variant="light"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
@@ -380,7 +379,7 @@ const total = computed(() => {
             </div>
             <!-- Load more -->
             <div class="my-16 flex items-center justify-center">
-              <BaseButton rounded="full" color="default">
+              <BaseButton rounded="full">
                 <Icon name="ph:dots-nine-bold" class="size-4" />
                 <span>Load more</span>
               </BaseButton>
@@ -525,7 +524,7 @@ const total = computed(() => {
             </ul>
             <div class="mt-4 flex justify-between text-xs font-bold">
               <BaseButton
-                color="none"
+                variant="ghost"
                 rounded="lg"
                 class="text-muted-800 group h-14! w-full gap-3! bg-yellow-400 hover:shadow-xl! hover:shadow-yellow-400/20!"
               >

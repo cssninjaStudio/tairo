@@ -49,24 +49,21 @@ onBeforeMount(checkPreviousSteps)
     </div>
 
     <div class="w-full max-w-md">
-      <div class="w-full space-y-4">
+      <RadioGroupRoot v-model="request.method" class="w-full space-y-4">
         <!-- Radio groups -->
-        <BaseRadioHeadless
-          v-model="request.method"
-          v-focus="request.method === null || request.method === 'bank_transfer'"
+        <RadioGroupItem
           value="bank_transfer"
-          name="payment_method"
-          class="focus-visible:nui-focus appearance-none! rounded-lg opacity-100!"
+          class="focus-visible:nui-focus rounded-lg relative group w-full"
         >
           <div
-            class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
+            class="bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
           >
-            <div
-              class="size-3 rounded-full bg-current transition-colors duration-300"
+            <RadioGroupIndicator
+              class="size-3 starting:scale-0 transition-discrete rounded-full bg-primary-500 transition-all duration-300"
             />
           </div>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 peer-checked:shadow-muted-400/10 dark:peer-checked:shadow-muted-800/10 group-focus-visible:tw-accessibility-static group flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 peer-checked:shadow-xl"
+            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 group-focus-visible:tw-accessibility-static flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
           >
             <div
               class="border-muted-200 flex size-5 items-center justify-center rounded-full border"
@@ -91,23 +88,20 @@ onBeforeMount(checkPreviousSteps)
               </BaseText>
             </div>
           </div>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="request.method"
-          v-focus="request.method === 'payment_link'"
+        </RadioGroupItem>
+        <RadioGroupItem
           value="payment_link"
-          name="payment_method"
-          class="focus-visible:nui-focus appearance-none! rounded-lg opacity-100!"
+          class="focus-visible:nui-focus rounded-lg relative group w-full"
         >
           <div
-            class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
+            class="bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
           >
-            <div
-              class="size-3 rounded-full bg-current transition-colors duration-300"
+            <RadioGroupIndicator
+              class="size-3 starting:scale-0 transition-discrete rounded-full bg-primary-500 transition-all duration-300"
             />
           </div>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 peer-checked:shadow-muted-400/10 dark:peer-checked:shadow-muted-800/10 group-focus-visible:tw-accessibility-static group flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 peer-checked:shadow-xl"
+            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 group-focus-visible:tw-accessibility-static flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
           >
             <div
               class="border-muted-200 flex size-5 items-center justify-center rounded-full border"
@@ -132,23 +126,20 @@ onBeforeMount(checkPreviousSteps)
               </BaseText>
             </div>
           </div>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="request.method"
-          v-focus="request.method === 'wire'"
+        </RadioGroupItem>
+        <RadioGroupItem
           value="wire"
-          name="payment_method"
-          class="focus-visible:nui-focus appearance-none! rounded-lg opacity-100!"
+          class="focus-visible:nui-focus rounded-lg relative group w-full"
         >
           <div
-            class="peer-checked:child:scale-1 peer-not-checked:child:scale-0 bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 peer-checked:text-primary-500 absolute start-6 top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
+            class="bg-muted-100 text-muted-100 dark:bg-muted-900 dark:text-muted-900 absolute start-[1.35rem] top-1/2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full"
           >
-            <div
-              class="size-3 rounded-full bg-current transition-colors duration-300"
+            <RadioGroupIndicator
+              class="size-3 starting:scale-0 transition-discrete rounded-full bg-primary-500 transition-all duration-300"
             />
           </div>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 peer-checked:shadow-muted-400/10 dark:peer-checked:shadow-muted-800/10 group-focus-visible:tw-accessibility-static group flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 peer-checked:shadow-xl"
+            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 group-focus-visible:tw-accessibility-static flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
           >
             <div
               class="border-muted-200 flex size-5 items-center justify-center rounded-full border"
@@ -173,11 +164,11 @@ onBeforeMount(checkPreviousSteps)
               </BaseText>
             </div>
           </div>
-        </BaseRadioHeadless>
-        <BaseInputHelpText v-if="errors.fields.method" color="danger">
+        </RadioGroupItem>
+        <div v-if="errors.fields.method" class="font-sans text-xs font-medium leading-none text-destructive-base dark:text-destructive-light">
           {{ errors.fields.method }}
-        </BaseInputHelpText>
-      </div>
+        </div>
+      </RadioGroupRoot>
 
       <div class="mt-4 flex gap-4">
         <BaseButton
@@ -191,7 +182,7 @@ onBeforeMount(checkPreviousSteps)
         </BaseButton>
         <BaseButton
           type="submit"
-          color="primary"
+          variant="primary"
           size="lg"
           class="w-full"
         >

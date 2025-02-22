@@ -52,13 +52,13 @@ const active = computed(() => {
 function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'complete':
-      return 'default'
-    case 'in progress':
-      return 'success'
-    case 'sent':
-      return 'info'
-    case 'opened':
       return 'primary'
+    case 'in progress':
+      return 'dark'
+    case 'sent':
+      return 'default'
+    case 'opened':
+      return 'muted'
     default:
       break
   }
@@ -169,9 +169,8 @@ function statusColor(itemStatus: string) {
                 </td>
                 <td class="p-4">
                   <BaseTag
-                    :variant="item.status === 'complete' ? 'solid' : 'pastel'"
                     rounded="full"
-                    :color="index > 6 ? 'muted' : statusColor(item.status)"
+                    :variant="index > 6 ? 'muted' : statusColor(item.status)"
                     size="sm"
                   >
                     {{ item.status }}
@@ -288,9 +287,8 @@ function statusColor(itemStatus: string) {
                 </td>
                 <td class="p-4">
                   <BaseTag
-                    :variant="item.status === 'complete' ? 'solid' : 'pastel'"
                     rounded="full"
-                    :color="index > 6 ? 'muted' : statusColor(item.status)"
+                    :variant="index > 6 ? 'muted' : statusColor(item.status)"
                     size="sm"
                   >
                     {{ item.status }}
@@ -298,7 +296,7 @@ function statusColor(itemStatus: string) {
                 </td>
                 <td class="p-4 text-end">
                   <BaseButton
-                    color="muted"
+                    variant="muted"
                     rounded="md"
                     size="sm"
                   >

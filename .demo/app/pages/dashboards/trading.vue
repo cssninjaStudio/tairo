@@ -180,7 +180,7 @@ function useStockPrice() {
     },
   }
 
-  const series = ref(selectedBank.value.series)
+  const series = ref(selectedBank.value!.series)
 
   return {
     type,
@@ -215,31 +215,31 @@ function useStockPrice() {
       </div>
       <div class="flex gap-2 sm:justify-end">
         <BaseButton
-          :color="activePeriod === 'hour' ? 'primary' : 'default'"
+          :variant="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
         >
           Hour
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'day' ? 'primary' : 'default'"
+          :variant="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
         >
           Day
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'week' ? 'primary' : 'default'"
+          :variant="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
         >
           Week
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'month' ? 'primary' : 'default'"
+          :variant="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
         >
           Month
         </BaseButton>
         <BaseButton
-          :color="activePeriod === 'year' ? 'primary' : 'default'"
+          :variant="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
         >
           Year
@@ -314,7 +314,7 @@ function useStockPrice() {
                     class="text-muted-800 dark:text-white"
                   >
                     <span>-{{ formatPrice(12.37) }}</span>
-                    <span class="text-danger-500 ps-2 text-sm font-semibold">(-0.7%)</span>
+                    <span class="text-destructive-500 ps-2 text-sm font-semibold">(-0.7%)</span>
                   </BaseHeading>
                 </div>
               </BaseCard>
@@ -364,8 +364,8 @@ function useStockPrice() {
                 >
                   <span class="flex w-full items-center gap-3 text-start">
                     <img
-                      :src="selectedBank.logo"
-                      :alt="selectedBank.name"
+                      :src="selectedBank?.logo"
+                      :alt="selectedBank?.name"
                       class="size-6 shrink-0"
                     >
                     <div>
@@ -373,7 +373,7 @@ function useStockPrice() {
                         size="sm"
                         class="text-muted-800 dark:text-muted-200 block capitalize"
                       >
-                        {{ selectedBank.name }}
+                        {{ selectedBank?.name }}
                       </BaseText>
                     </div>
                     <Icon
@@ -511,11 +511,11 @@ function useStockPrice() {
                       class="text-muted-800 dark:text-white"
                     >
                       <span>-{{ formatPrice(12.37) }}</span>
-                      <span class="text-danger-500 ps-2 text-xs font-semibold">(-0.7%)</span>
+                      <span class="text-destructive-500 ps-2 text-xs font-semibold">(-0.7%)</span>
                     </BaseHeading>
                     <Icon
                       name="lucide:trending-down"
-                      class="text-danger-500 size-4"
+                      class="text-destructive-500 size-4"
                     />
                   </div>
                 </div>
@@ -782,6 +782,8 @@ function useStockPrice() {
                     <BaseInputNumber
                       v-model="orderShares"
                       placeholder="0.00"
+                      :min="0"
+                      :step="0.01"
                     />
                   </div>
                 </div>
@@ -836,7 +838,7 @@ function useStockPrice() {
                 <div>
                   <BaseButton
                     rounded="md"
-                    color="primary"
+                    variant="primary"
                     class="w-full"
                   >
                     Buy Shares

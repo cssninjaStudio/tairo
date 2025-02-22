@@ -51,8 +51,7 @@ const activePosts = ref('recent')
                   <div class="mt-2">
                     <BaseButton
                       size="sm"
-                      color="light"
-                      variant="outline"
+                      variant="ghost"
                       class="w-full sm:w-auto"
                     >
                       <Icon name="lucide:plus" class="size-4" />
@@ -138,9 +137,8 @@ const activePosts = ref('recent')
                         <span>Popular authors</span>
                       </BaseHeading>
                       <BaseButton
-                        color="primary"
+                        variant="primary"
                         size="sm"
-                        variant="pastel"
                         rounded="md"
                       >
                         View all
@@ -166,9 +164,8 @@ const activePosts = ref('recent')
                       <span>Latest comments</span>
                     </BaseHeading>
                     <BaseButton
-                      color="primary"
+                      variant="primary"
                       size="sm"
-                      variant="pastel"
                       rounded="md"
                     >
                       View all
@@ -197,15 +194,15 @@ const activePosts = ref('recent')
             </BaseHeading>
             <div class="flex scale-90 gap-2 sm:justify-end">
               <BaseButton
-                small
-                :color="activePosts === 'recent' ? 'primary' : 'default'"
+                size="sm"
+                :variant="activePosts === 'recent' ? 'primary' : 'default'"
                 @click="activePosts = 'recent'"
               >
                 Recent
               </BaseButton>
               <BaseButton
-                small
-                :color="activePosts === 'popular' ? 'primary' : 'default'"
+                size="sm"
+                :variant="activePosts === 'popular' ? 'primary' : 'default'"
                 @click="activePosts = 'popular'"
               >
                 Popular

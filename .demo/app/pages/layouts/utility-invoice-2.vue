@@ -235,21 +235,21 @@ const itemSubtotal = computed(() =>
                         <BaseInput v-model="itemHours" placeholder="0" />
                       </td>
                       <td class="px-2 py-4">
-                        <BaseInput
+                        <TairoInput
                           v-model="hourRate"
                           icon="lucide:dollar-sign"
                           placeholder="0.00"
                         />
                       </td>
                       <td class="px-2 py-4">
-                        <BaseInput
+                        <TairoInput
                           v-model="taxRate"
                           icon="lucide:percent"
                           placeholder="0"
                         />
                       </td>
                       <td class="px-2 py-4">
-                        <BaseInput
+                        <TairoInput
                           v-model="itemSubtotal"
                           icon="lucide:dollar-sign"
                           placeholder="0.00"
@@ -494,9 +494,8 @@ const itemSubtotal = computed(() =>
             </div>
             <div>
               <BaseButton
-                variant="pastel"
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-full"
               >
                 Edit Customer
@@ -535,8 +534,6 @@ const itemSubtotal = computed(() =>
               </BaseHeading>
               <BaseTag
                 rounded="full"
-                variant="pastel"
-                color="danger"
               >
                 Due on Apr 11, 2024
               </BaseTag>
@@ -549,7 +546,7 @@ const itemSubtotal = computed(() =>
                 Attach PDF in mail
               </BaseText>
               <div>
-                <BaseSwitchBall v-model="pdfAttachment" color="primary" />
+                <BaseSwitchBall v-model="pdfAttachment" variant="primary" />
               </div>
             </div>
           </BaseCard>
@@ -573,7 +570,7 @@ const itemSubtotal = computed(() =>
           <div>
             <BaseButton
               rounded="md"
-              color="primary"
+              variant="primary"
               size="lg"
               class="w-full"
             >

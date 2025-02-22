@@ -84,7 +84,7 @@ const users = [
         <BaseParagraph
           size="sm"
           weight="semibold"
-          :class="user.progress > 0 ? 'text-success-500' : 'text-danger-500'"
+          :class="user.progress > 0 ? 'text-success-500' : 'text-destructive-500'"
         >
           <span>{{ user.progress }}%</span>
         </BaseParagraph>

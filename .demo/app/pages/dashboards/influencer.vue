@@ -378,9 +378,9 @@ const activeTab = ref('tab-1')
                 class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
               >
                 <div
-                  class="bg-danger-500/20 flex size-8 items-center justify-center rounded-full"
+                  class="bg-destructive-500/20 flex size-8 items-center justify-center rounded-full"
                 >
-                  <Icon name="ri:fire-fill" class="text-danger-500 size-5" />
+                  <Icon name="ri:fire-fill" class="text-destructive-500 size-5" />
                 </div>
               </div>
 
@@ -534,7 +534,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-pink-500/20 text-pink-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ri:instagram-fill" class="size-6" />
                     </BaseIconBox>
@@ -553,7 +553,7 @@ const activeTab = ref('tab-1')
                   </div>
                   <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="text-danger-500 flex items-center font-semibold"
+                      class="text-destructive-500 flex items-center font-semibold"
                     >
                       <Icon name="lucide:arrow-down-right" class="size-4" />
                       <span>-4.5%</span>
@@ -577,7 +577,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:users-four-duotone" class="size-6" />
                     </BaseIconBox>
@@ -620,7 +620,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:users-three-duotone" class="size-6" />
                     </BaseIconBox>
@@ -663,7 +663,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-pink-500/20 text-pink-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:heart-duotone" class="size-6" />
                     </BaseIconBox>
@@ -708,7 +708,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:chat-circle-duotone" class="size-6" />
                     </BaseIconBox>
@@ -753,7 +753,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-lime-500/20 text-lime-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:user-duotone" class="size-6" />
                     </BaseIconBox>
@@ -829,7 +829,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-sky-500/20 text-sky-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="fa6-brands:tiktok" class="size-6" />
                     </BaseIconBox>
@@ -872,7 +872,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-primary-500/20 text-primary-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:users-four-duotone" class="size-6" />
                     </BaseIconBox>
@@ -915,7 +915,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-emerald-500/20 text-emerald-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:users-three-duotone" class="size-6" />
                     </BaseIconBox>
@@ -958,7 +958,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-pink-500/20 text-pink-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:heart-duotone" class="size-6" />
                     </BaseIconBox>
@@ -1003,7 +1003,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-yellow-500/20 text-yellow-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:chat-circle-duotone" class="size-6" />
                     </BaseIconBox>
@@ -1048,7 +1048,7 @@ const activeTab = ref('tab-1')
                     <BaseIconBox
                       size="md"
                       class="bg-lime-500/20 text-lime-500"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:user-duotone" class="size-6" />
                     </BaseIconBox>
@@ -1148,7 +1148,6 @@ const activeTab = ref('tab-1')
                     <div class="flex gap-2">
                       <BaseButton
                         rounded="lg"
-                        color="default"
                         class="w-28"
                       >
                         Details

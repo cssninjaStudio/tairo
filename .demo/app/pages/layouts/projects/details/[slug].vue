@@ -416,8 +416,8 @@ function openTaskPanel(id: number, tasks: any) {
                       </div>
                       <BaseProgress
                         size="xs"
-                        color="primary"
-                        :value="data?.project.completed"
+                        variant="primary"
+                        :model-value="data?.project.completed"
                       />
                     </div>
                   </BaseCard>
@@ -646,9 +646,9 @@ function openTaskPanel(id: number, tasks: any) {
                       :data-nui-tooltip="item.assignee.tooltip"
                     />
                     <BaseProgress
-                      :value="item.completion"
+                      :model-value="item.completion"
                       size="xs"
-                      :color="item.status === 5 ? 'success' : 'primary'"
+                      :variant="item.status === 5 ? 'primary' : 'default'"
                     />
                   </div>
                   <div class="text-muted-400 flex items-center gap-4">

@@ -120,9 +120,8 @@ function useGaugePersonal() {
         <div class="flex items-center justify-center">
           <BaseButton
             rounded="lg"
-            color="primary"
+            variant="primary"
             to="https://go.cssninja.io/buy-tairo"
-            shadow="hover"
             class="h-12! w-44"
           >
             Buy Tairo Now

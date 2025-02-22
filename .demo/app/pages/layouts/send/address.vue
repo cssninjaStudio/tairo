@@ -40,13 +40,13 @@ onBeforeMount(checkPreviousSteps)
         weight="medium"
         class="md:3xl! text-muted-800 dark:text-white"
       >
-        {{ steps[currentStepId].meta.title }}
+        {{ steps[currentStepId]?.meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStepId].meta.subtitle }}
+        {{ steps[currentStepId]?.meta.subtitle }}
       </BaseParagraph>
     </div>
 
@@ -54,57 +54,95 @@ onBeforeMount(checkPreviousSteps)
       <form class="mb-4">
         <!-- Grid -->
         <div class="grid gap-4 md:grid-cols-2">
-          <div class="relative col-span-2">
+          <BaseField
+            v-slot="{ inputAttrs, inputRef }"
+            label="Address line 1"
+            :state="errors.fields?.['recipient.address.lineOne'] ? 'error' : 'idle'"
+            :error="errors.fields?.['recipient.address.lineOne']"
+            class="col-span-2"
+            required
+          >
             <BaseInput
+              :ref="inputRef"
+              v-bind="inputAttrs"
               v-model="request.recipient.address.lineOne"
               v-focus
-              :error="errors.fields?.['recipient.address.lineOne']"
-              label="Address line 1"
               placeholder="Ex: 29, Santa Monica Railroad"
               autocomplete="address-line1"
             />
-          </div>
-          <div class="relative col-span-2">
+          </BaseField>
+          <BaseField
+            v-slot="{ inputAttrs, inputRef }"
+            label="Address line 2"
+            :state="errors.fields?.['recipient.address.lineTwo'] ? 'error' : 'idle'"
+            :error="errors.fields?.['recipient.address.lineTwo']"
+            class="col-span-2"
+          >
             <BaseInput
+              :ref="inputRef"
+              v-bind="inputAttrs"
               v-model="request.recipient.address.lineTwo"
-              :error="errors.fields?.['recipient.address.lineTwo']"
-              label="Address line 2"
               placeholder="Ex: Block D4, Suite G23"
               autocomplete="address-line2"
             />
-          </div>
-          <div class="relative">
+          </BaseField>
+          <BaseField
+            v-slot="{ inputAttrs, inputRef }"
+            label="City"
+            :state="errors.fields?.['recipient.address.city'] ? 'error' : 'idle'"
+            :error="errors.fields?.['recipient.address.city']"
+            required
+          >
             <BaseInput
+              :ref="inputRef"
+              v-bind="inputAttrs"
               v-model="request.recipient.address.city"
-              :error="errors.fields?.['recipient.address.city']"
               label="City"
               placeholder="Ex: Los Angeles"
               autocomplete="address-level2"
             />
-          </div>
-          <div class="relative">
+          </BaseField>
+          <BaseField
+            v-slot="{ inputAttrs, inputRef }"
+            label="Postal code"
+            :state="errors.fields?.['recipient.address.postalCode'] ? 'error' : 'idle'"
+            :error="errors.fields?.['recipient.address.postalCode']"
+            required
+          >
             <BaseInput
+              :ref="inputRef"
+              v-bind="inputAttrs"
               v-model="request.recipient.address.postalCode"
-              :error="errors.fields?.['recipient.address.postalCode']"
-              label="Postal code"
               placeholder="Ex: 923728"
               autocomplete="postal-code"
             />
-          </div>
-          <div class="relative">
+          </BaseField>
+          <BaseField
+            v-slot="{ inputAttrs, inputRef }"
+            label="State"
+            :state="errors.fields?.['recipient.address.state'] ? 'error' : 'idle'"
+            :error="errors.fields?.['recipient.address.state']"
+          >
             <BaseInput
+              :ref="inputRef"
+              v-bind="inputAttrs"
               v-model="request.recipient.address.state"
-              :error="errors.fields?.['recipient.address.state']"
               label="State"
               placeholder="Ex: California"
               autocomplete="address-level1"
             />
-          </div>
-          <div class="relative">
+          </BaseField>
+          <BaseField
+            v-slot="{ inputAttrs, inputRef }"
+            label="Country"
+            :state="errors.fields?.['recipient.address.country'] ? 'error' : 'idle'"
+            :error="errors.fields?.['recipient.address.country']"
+          >
             <BaseSelect
+              :ref="inputRef"
+              v-bind="inputAttrs"
               v-model="request.recipient.address.country"
               :error="errors.fields?.['recipient.address.country']"
-              label="Country"
               autocomplete="country"
             >
               <BaseSelectItem value="United States">
@@ -123,7 +161,7 @@ onBeforeMount(checkPreviousSteps)
                 Germany
               </BaseSelectItem>
             </BaseSelect>
-          </div>
+          </BaseField>
         </div>
       </form>
 
@@ -139,7 +177,7 @@ onBeforeMount(checkPreviousSteps)
         </BaseButton>
         <BaseButton
           type="submit"
-          color="primary"
+          variant="primary"
           size="lg"
           class="w-full"
         >

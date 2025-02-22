@@ -53,7 +53,7 @@ const amount = ref<string>()
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-32"
                 @click="nextStep()"
               >
@@ -61,7 +61,7 @@ const amount = ref<string>()
               </BaseButton>
               <BaseButton
                 rounded="md"
-                color="muted"
+                variant="muted"
                 class="w-32"
                 @click="showFaq = !showFaq"
               >
@@ -198,7 +198,7 @@ const amount = ref<string>()
           <div class="mt-10">
             <BaseButton
               rounded="md"
-              color="muted"
+              variant="muted"
               class="w-32"
               @click="showFaq = !showFaq"
             >
@@ -231,19 +231,25 @@ const amount = ref<string>()
             </BaseParagraph>
             <!-- Form -->
             <form class="space-y-4 pb-6">
-              <!-- Field -->
-              <BaseInput
-                v-model="fullName"
-                icon="lucide:user"
-                label="Full Name"
-                placeholder="Your complete name"
-                class="w-full"
-              />
-              <!-- Field group -->
+              <BaseField v-slot="{ inputAttrs, inputRef }" label="Full Name">
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  v-model="fullName"
+                  icon="lucide:user"
+                  placeholder="Your complete name"
+                  class="w-full"
+                />
+              </BaseField>
               <div class="grid gap-4 md:grid-cols-2">
                 <!-- Field -->
-                <div class="relative">
-                  <BaseSelect v-model="amount" label="Requested amount" placeholder="Select a range">
+                <BaseField v-slot="{ inputAttrs, inputRef }" label="Requested amount">
+                  <BaseSelect
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    v-model="amount"
+                    placeholder="Select a range"
+                  >
                     <BaseSelectItem value="5k-20k">
                       From $5k to $20k
                     </BaseSelectItem>
@@ -263,10 +269,15 @@ const amount = ref<string>()
                       Starting from $1M
                     </BaseSelectItem>
                   </BaseSelect>
-                </div>
+                </BaseField>
                 <!-- Field -->
-                <div class="relative">
-                  <BaseSelect v-model="duration" label="Requested duration" placeholder="Select a duration">
+                <BaseField v-slot="{ inputAttrs, inputRef }" label="Requested duration">
+                  <BaseSelect
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    v-model="duration"
+                    placeholder="Select a duration"
+                  >
                     <BaseSelectItem value="5">
                       5 years
                     </BaseSelectItem>
@@ -283,7 +294,7 @@ const amount = ref<string>()
                       25 years
                     </BaseSelectItem>
                   </BaseSelect>
-                </div>
+                </BaseField>
               </div>
             </form>
 
@@ -291,7 +302,7 @@ const amount = ref<string>()
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
-                color="muted"
+                variant="muted"
                 class="w-32"
                 @click="prevStep()"
               >
@@ -299,7 +310,7 @@ const amount = ref<string>()
               </BaseButton>
               <BaseButton
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-32"
                 @click="nextStep()"
               >
@@ -404,7 +415,7 @@ const amount = ref<string>()
             <div class="flex gap-2">
               <BaseButton
                 rounded="md"
-                color="muted"
+                variant="muted"
                 class="w-32"
                 @click="prevStep()"
               >
@@ -412,7 +423,7 @@ const amount = ref<string>()
               </BaseButton>
               <BaseButton
                 rounded="md"
-                color="primary"
+                variant="primary"
                 class="w-32"
                 @click="nextStep()"
               >
@@ -451,7 +462,7 @@ const amount = ref<string>()
           <div class="flex justify-center">
             <BaseButton
               to="/dashboards"
-              color="primary"
+              variant="primary"
               rounded="md"
               class="w-48"
             >

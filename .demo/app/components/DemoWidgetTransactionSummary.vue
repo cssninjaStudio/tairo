@@ -29,13 +29,13 @@ const { data, pending } = await useFetch('/api/transactions', {
 function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'complete':
-      return 'success'
+      return 'dark'
     case 'in progress':
       return 'primary'
     case 'processing':
-      return 'info'
+      return 'default'
     case 'cancelled':
-      return 'warning'
+      return 'muted'
     default:
       break
   }
@@ -128,9 +128,8 @@ function statusColor(itemStatus: string) {
             </td>
             <td class="px-4 py-2">
               <BaseTag
-                variant="pastel"
                 rounded="full"
-                :color="statusColor(item.status)"
+                :variant="statusColor(item.status)"
                 size="sm"
               >
                 {{ item.status }}

@@ -36,7 +36,7 @@ definePageMeta({
           Cancel
         </BaseButton>
         <BaseButton
-          color="primary"
+          variant="primary"
           rounded="lg"
           class="h-11 w-full"
         >

@@ -285,7 +285,6 @@ const amount = ref<number>(0)
             </div>
             <div class="ms-auto">
               <BaseDropdown
-                
                 label="Dropdown"
                 placement="bottom-end"
                 size="md"
@@ -363,7 +362,7 @@ const amount = ref<number>(0)
                 class="bg-success-500/10 text-success-500"
                 size="md"
                 rounded="full"
-                color="none"
+                variant="none"
               >
                 <Icon name="ph:pizza-duotone" class="size-5" />
               </BaseIconBox>
@@ -395,7 +394,7 @@ const amount = ref<number>(0)
                 class="bg-orange-500/10 text-orange-500"
                 size="md"
                 rounded="full"
-                color="none"
+                variant="none"
               >
                 <Icon name="ph:storefront-duotone" class="size-5" />
               </BaseIconBox>
@@ -427,7 +426,7 @@ const amount = ref<number>(0)
                 class="bg-indigo-500/10 text-indigo-500"
                 size="md"
                 rounded="full"
-                color="none"
+                variant="none"
               >
                 <Icon name="ph:shopping-cart-duotone" class="size-5" />
               </BaseIconBox>
@@ -532,7 +531,7 @@ const amount = ref<number>(0)
                 </div>
               </div>
               <div>
-                <BaseProgress size="xs" :value="60" />
+                <BaseProgress size="xs" :model-value="60" />
                 <div class="mt-2">
                   <p
                     class="text-muted-500 dark:text-muted-400 font-sans text-xs leading-tight"
@@ -637,7 +636,6 @@ const amount = ref<number>(0)
                     </BaseSelect>
                     <BaseInputNumber
                       v-model="amount"
-                      :classes="{ wrapper: 'grow' }"
                       placeholder="0.00"
                       rounded="sm"
                       label="Amount"
@@ -655,7 +653,7 @@ const amount = ref<number>(0)
                     type="submit"
                     rounded="sm"
                     size="sm"
-                    color="primary"
+                    variant="primary"
                     class="w-full"
                   >
                     Send Money

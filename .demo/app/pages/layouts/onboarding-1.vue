@@ -16,9 +16,9 @@ const loading = ref(false)
 const twoFaMode = ref('email_address')
 const currentStep = ref(1)
 const codeLength = ref(4)
-const input = ref<Array<number | undefined>>([])
+const input = ref<string[]>([])
 const inputElements = useTemplateRef<HTMLInputElement[]>('inputElements')
-const correctPin = ref('1234')
+const correctPin = '1234'
 const onlyCheckOnLastFieldInput = ref(true)
 
 const email = ref('')
@@ -26,7 +26,7 @@ const tel = ref('')
 const code = ref('')
 
 const validatePin = computed(() => {
-  return input.value.join('') === correctPin.value
+  return input.value?.join('') === correctPin
 })
 
 function goToStep(n: number) {
@@ -44,83 +44,6 @@ function goToStep(n: number) {
     }
     clearTimeout(timer)
   }, 1000)
-}
-
-function paste(event: ClipboardEvent) {
-  const pasted = event.clipboardData
-    ?.getData('text')
-    ?.replace(/\D/g, '') // only get numbers
-    ?.substring(0, codeLength.value) // don't get more than the PIN codeLength
-
-  // if after all that sanitazation the string is not empty
-  if (pasted) {
-    // split the pasted string into an array and load it
-    input.value = pasted.split('').map(Number)
-    // check if the PIN is correct
-    return validatePin.value
-  }
-}
-function type(event: KeyboardEvent, index: number) {
-  if (event.code === 'ArrowRight') {
-    event.stopPropagation()
-    event.preventDefault()
-    nextTick(() => {
-      focusField(Math.min(codeLength.value, index + 1))
-    })
-    return
-  }
-
-  if (event.code === 'ArrowLeft') {
-    event.stopPropagation()
-    event.preventDefault()
-    nextTick(() => {
-      focusField(Math.max(0, index - 1))
-    })
-    return
-  }
-
-  if (event.code === 'Backspace') {
-    event.stopPropagation()
-    event.preventDefault()
-    input.value[index - 1] = undefined
-    nextTick(() => {
-      focusField(Math.max(0, index - 1))
-    })
-    return
-  }
-
-  if (event.code === 'a' && event.ctrlKey) {
-    event.stopPropagation()
-    event.preventDefault()
-    return
-  }
-
-  // only allow numbers
-  const key = event.key.replace(/\D/g, '')
-  if (key !== '') {
-    input.value[index - 1] = Number(key)
-  }
-  // check if the PIN is correct
-  if (
-    (onlyCheckOnLastFieldInput.value && index === codeLength.value)
-    || !onlyCheckOnLastFieldInput.value
-  ) {
-    event.stopPropagation()
-    event.preventDefault()
-    return
-  }
-  // go to the next field
-  // must happen on nextTick cause the field can be disabled.
-  nextTick(() => {
-    focusField(Math.min(codeLength.value, index + 1))
-  })
-}
-
-function focusField(n: any) {
-  if (!n || n > codeLength.value) {
-    n = 1
-  }
-  inputElements.value?.[n].focus()
 }
 </script>
 
@@ -164,134 +87,83 @@ function focusField(n: any) {
           <div class="w-full">
             <div class="mx-auto w-full">
               <div class="w-full">
-                <div class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
-                  <BaseRadioHeadless
-                    v-model="twoFaMode"
-                    name="radio_custom"
-                    value="email_address"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                <BaseRadioGroup v-model="twoFaMode" class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
+                  <TairoRadioCard value="email_address">
+                    <img
+                      src="/img/illustrations/onboarding/2fa-web.svg"
+                      alt="2 factor authentication with email"
+                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/2fa-web.svg"
-                          alt="2 factor authentication with email"
-                          class="mx-auto max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          With Email
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          We will send you a confirmation code to your email
-                          address
-                        </BaseParagraph>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                  <BaseRadioHeadless
-                    v-model="twoFaMode"
-                    name="radio_custom"
-                    value="phone_number"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/2fa-sms.svg"
-                          alt="2 factor authentication with SMS"
-                          class="mx-auto max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          With SMS
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          We will send you an SMS with the code on your mobile
-                          phone
-                        </BaseParagraph>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                  <BaseRadioHeadless
-                    v-model="twoFaMode"
-                    name="radio_custom"
-                    value="app_id"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="peer-checked:border-primary-500! relative border-2 p-8 opacity-60 grayscale peer-checked:opacity-100 peer-checked:grayscale-0 peer-checked:[&_.child]:opacity-100!"
+                      With Email
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
                     >
-                      <div class="flex flex-col text-center">
-                        <img
-                          src="/img/illustrations/onboarding/2fa-app.svg"
-                          alt="2 factor authentication with app"
-                          class="mx-auto max-w-[160px]"
-                        >
-                        <BaseHeading
-                          size="md"
-                          weight="medium"
-                        >
-                          With an App
-                        </BaseHeading>
-                        <BaseParagraph
-                          size="xs"
-                          lead="snug"
-                          class="text-muted-500 dark:text-muted-400"
-                        >
-                          We will send you the code on your
-                          <NuxtLink
-                            to="https://authy.com/"
-                            class="text-primary-500 underline-offset-4 hover:underline"
-                          >
-                            Authy
-                          </NuxtLink>
-                          authenticator app
-                        </BaseParagraph>
-                      </div>
-                      <div class="child absolute end-2 top-3 opacity-0">
-                        <Icon
-                          name="ph:check-circle-duotone"
-                          class="text-primary-500 size-7"
-                        />
-                      </div>
-                    </BaseCard>
-                  </BaseRadioHeadless>
-                </div>
+                      We will send you a confirmation code to your email
+                      address
+                    </BaseParagraph>
+                  </TairoRadioCard>
+                  <TairoRadioCard value="phone_number">
+                    <img
+                      src="/img/illustrations/onboarding/2fa-sms.svg"
+                      alt="2 factor authentication with SMS"
+                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                    >
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
+                    >
+                      With SMS
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
+                    >
+                      We will send you an SMS with the code on your mobile
+                      phone
+                    </BaseParagraph>
+                  </TairoRadioCard>
+                  <TairoRadioCard value="app_id">
+                    <img
+                      src="/img/illustrations/onboarding/2fa-app.svg"
+                      alt="2 factor authentication with app"
+                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                    >
+                    <BaseHeading
+                      size="md"
+                      weight="medium"
+                    >
+                      With an App
+                    </BaseHeading>
+                    <BaseParagraph
+                      size="xs"
+                      lead="snug"
+                      class="text-muted-500 dark:text-muted-400"
+                    >
+                      We will send you the code on your
+                      <NuxtLink
+                        to="https://authy.com/"
+                        class="text-primary-500 underline-offset-4 hover:underline"
+                      >
+                        Authy
+                      </NuxtLink>
+                      authenticator app
+                    </BaseParagraph>
+                  </TairoRadioCard>
+                </BaseRadioGroup>
                 <div class="mx-auto flex flex-col items-center">
                   <BaseButton
                     type="button"
                     rounded="lg"
                     class="h-12! w-48"
-                    color="primary"
+                    variant="primary"
                     :loading="loading"
                     @click="goToStep(2)"
                   >
@@ -315,8 +187,7 @@ function focusField(n: any) {
             class="pointer-events-none flex w-full items-center justify-center pt-8"
           >
             <BaseIconBox
-              color="primary"
-              variant="pastel"
+              variant="primary"
               size="lg"
               rounded="full"
               class="mx-auto"
@@ -353,29 +224,21 @@ function focusField(n: any) {
           </div>
 
           <div class="mx-auto w-full max-w-sm py-6">
-            <BaseInput
+            <TairoInput
               v-if="twoFaMode === 'email_address'"
               v-model="email"
               icon="ph:envelope-duotone"
               rounded="lg"
+              type="email"
               placeholder="Ex: johndoe@gmail.com"
-              :classes="{
-                wrapper: 'w-full',
-                input: 'h-12! ps-12!',
-                icon: 'h-12! w-12!',
-              }"
             />
-            <BaseInput
+            <TairoInput
               v-else-if="twoFaMode === 'phone_number'"
               v-model="tel"
               icon="ph:device-mobile-speaker-duotone"
               rounded="lg"
+              type="tel"
               placeholder="Ex: +15554815659"
-              :classes="{
-                wrapper: 'w-full',
-                input: 'h-12! ps-12!',
-                icon: 'h-12! w-12!',
-              }"
             />
             <div v-else-if="twoFaMode === 'app_id'" class="space-y-4">
               <div class="flex items-center gap-2">
@@ -396,16 +259,11 @@ function focusField(n: any) {
                   </BaseText>
                 </div>
               </div>
-              <BaseInput
+              <TairoInput
                 v-model="code"
                 icon="ph:fingerprint-duotone"
                 rounded="lg"
                 placeholder="Ex: efcdwdeg16jei85"
-                :classes="{
-                  wrapper: 'w-full',
-                  input: 'h-12! ps-12!',
-                  icon: 'h-12! w-12!',
-                }"
               />
             </div>
           </div>
@@ -414,7 +272,7 @@ function focusField(n: any) {
               type="button"
               rounded="lg"
               class="h-12! w-48"
-              color="primary"
+              variant="primary"
               :loading="loading"
               @click="goToStep(3)"
             >
@@ -440,8 +298,7 @@ function focusField(n: any) {
                 <TairoCheckAnimated v-if="validatePin" size="sm" />
                 <BaseIconBox
                   v-else
-                  color="primary"
-                  variant="pastel"
+                  variant="primary"
                   size="lg"
                   rounded="full"
                   class="mx-auto"
@@ -478,38 +335,27 @@ function focusField(n: any) {
             <div
               class="text-muted-800 dark:text-muted-100 mx-auto flex h-60 w-72 flex-col rounded-sm text-center"
             >
-              <div
+              <PinInputRoot
+                v-model="input"
+                type="number"
+                otp
                 class="flex w-full justify-center gap-3"
-                :class="validatePin && 'pointer-events-none'"
+                :disabled="validatePin"
+                placeholder="0"
               >
-                <input
-                  v-for="i in codeLength"
-                  :key="`pin${i}`"
-                  :ref="
-                    (el) => {
-                      if (inputElements) {
-                        inputElements[i] = el as HTMLInputElement
-                      }
-                    }
-                  "
-                  v-focus="i === 1"
-                  type="text"
-                  :name="`pin${i}`"
-                  maxlength="1"
-                  class="dark:bg-muted-800 unselectable focus-visible:nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
-                  :value="input[i - 1] !== undefined ? input[i - 1] : '-'"
-                  placeholder="0"
-                  :disabled="input.length < i - 1 || validatePin"
-                  @paste.prevent="(event) => paste(event)"
-                  @keydown="(event) => type(event, i)"
-                >
-              </div>
+                <PinInputInput
+                  v-for="(i, idx) in codeLength"
+                  :key="i"
+                  :index="idx"
+                  class="dark:bg-muted-800 focus-visible:nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
+                />
+              </PinInputRoot>
               <div class="mt-10">
                 <BaseButton
                   to="/dashboards"
                   rounded="lg"
                   class="h-12!"
-                  :color="validatePin ? 'primary' : 'default'"
+                  :variant="validatePin ? 'primary' : 'default'"
                   :disabled="!validatePin"
                 >
                   Take me to Dashboard

@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -64,14 +74,11 @@ function difficultyLabel(itemDifficulty: number) {
       rounded="lg"
     >
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           rounded="lg"
           icon="lucide:search"
           placeholder="Filter courses..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>
@@ -201,7 +208,7 @@ function difficultyLabel(itemDifficulty: number) {
                   </div>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButton color="muted">
+                  <BaseButton variant="muted">
                     <span>View</span>
                   </BaseButton>
                 </DemoFlexTableCell>
@@ -211,9 +218,9 @@ function difficultyLabel(itemDifficulty: number) {
 
           <div v-if="!pending && data?.data.length !== 0" class="pt-6">
             <BasePagination
-              :total-items="data?.total ?? 0"
-              :item-per-page="perPage"
-              :current-page="page"
+              v-model:page="page"
+              :total="data?.total ?? 0"
+              :items-per-page="perPage"
               rounded="full"
             />
           </div>

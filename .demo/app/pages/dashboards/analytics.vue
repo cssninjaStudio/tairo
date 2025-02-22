@@ -305,7 +305,7 @@ function useBarSalesProfit() {
                 size="xs"
                 class="bg-success-100 text-success-500 dark:bg-success-500/20 dark:text-success-400 dark:border-success-500 dark:border-2"
                 rounded="full"
-                color="none"
+                variant="none"
               >
                 <Icon name="ph:sketch-logo-duotone" class="size-5" />
               </BaseIconBox>
@@ -347,7 +347,7 @@ function useBarSalesProfit() {
                 size="xs"
                 class="bg-yellow-100 text-yellow-500 dark:border-2 dark:border-yellow-500 dark:bg-yellow-500/20 dark:text-yellow-400"
                 rounded="full"
-                color="none"
+                variant="none"
               >
                 <Icon name="ph:rocket-duotone" class="size-5" />
               </BaseIconBox>
@@ -364,7 +364,7 @@ function useBarSalesProfit() {
               </BaseHeading>
             </div>
             <div
-              class="text-danger-500 flex items-center gap-1 font-sans text-sm"
+              class="text-destructive-500 flex items-center gap-1 font-sans text-sm"
             >
               <span>-2.7%</span>
               <Icon name="lucide:trending-down" class="size-5" />
@@ -389,7 +389,7 @@ function useBarSalesProfit() {
                 size="xs"
                 class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
                 rounded="full"
-                color="none"
+                variant="none"
               >
                 <Icon name="ph:megaphone-simple-duotone" class="size-5" />
               </BaseIconBox>
@@ -428,9 +428,8 @@ function useBarSalesProfit() {
                 <span>Revenue</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 Details

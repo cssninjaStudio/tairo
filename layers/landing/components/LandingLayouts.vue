@@ -116,7 +116,6 @@ const activeLayout = ref('sidebar')
             v-for="(layout, index) in layouts"
             v-show="activeLayout === layout.name"
             :key="index"
-            color="default-contrast"
             rounded="lg"
             class="relative flex flex-col overflow-hidden rounded-xl text-start"
           >

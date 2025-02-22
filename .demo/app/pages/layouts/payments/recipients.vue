@@ -68,14 +68,13 @@ const companies = computed(() => {
           <h3 class="font-heading text-muted-800 dark:text-muted-200 text-xl">
             Contacts
           </h3>
-          <div class="ms-auto">
-            <BaseInput
-              v-model="filter"
-              icon="lucide:search"
-              rounded="lg"
-              placeholder="Search contacts..."
-            />
-          </div>
+          <TairoInput
+            v-model="filter"
+            icon="lucide:search"
+            rounded="lg"
+            placeholder="Search contacts..."
+            class="ms-auto"
+          />
         </div>
 
         <div class="py-6">

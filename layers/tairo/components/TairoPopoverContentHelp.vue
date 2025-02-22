@@ -50,11 +50,9 @@ const props = withDefaults(
       <div class="flex w-full">
         <BaseIconBox
           size="xs"
-          variant="pastel"
           rounded="none"
           mask="blob"
           class="dark:text-white"
-          :color="props.iconColor"
         >
           <Icon :name="props.icon" class="size-5" />
         </BaseIconBox>

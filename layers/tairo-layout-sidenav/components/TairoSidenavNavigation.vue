@@ -53,9 +53,8 @@ const isSearchOpen = useState('search-open', () => false)
     <div class="relative flex w-full flex-1 flex-col overflow-hidden">
       <div class="flex min-h-0 grow flex-col gap-y-2 py-2">
         <div class="flex w-full flex-col px-4">
-          <BaseInput
+          <TairoInput
             icon="lucide:search"
-            contrast="default-contrast"
             size="sm"
             rounded="md"
             placeholder="Search"
@@ -71,21 +70,19 @@ const isSearchOpen = useState('search-open', () => false)
                 <BaseKbd
                   size="xs"
                   rounded="md"
-                  color="default"
                 >
                   Ctrl
                 </BaseKbd>
                 <BaseKbd
                   size="xs"
                   rounded="md"
-                  color="default"
                   class="px-2!"
                 >
                   K
                 </BaseKbd>
               </div>
             </template>
-          </BaseInput>
+          </TairoInput>
         </div>
         <div class="nui-slimscroll flex flex-1 flex-col gap-y-2 overflow-y-auto px-4">
           <!-- Menu -->

@@ -87,22 +87,16 @@ function setAccount(account: any) {
 
       <div class="w-full max-w-md">
         <!-- Amount input -->
-        <div class="relative">
-          <BaseInput
+        <BaseField :error="errors.fields.amount">
+          <TairoInput
             v-model="request.amount"
             v-focus
-            :error="errors.fields.amount"
             type="number"
             rounded="none"
             icon="lucide:dollar-sign"
             placeholder="0.00"
-            :classes="{
-              input:
-                'ps-14! py-2! h-14! text-4xl! leading-5! border-t-0! border-l-0!  border-r-0! border-b-2! focus:border-primary-500! dark:bg-muted-900! dark:focus:border-primary-500!',
-              icon: 'h-14! w-14!',
-            }"
           />
-        </div>
+        </BaseField>
 
         <!-- Transfer from -->
         <div class="pt-6">
@@ -135,7 +129,7 @@ function setAccount(account: any) {
 
               <div class="flex items-center justify-center">
                 <BaseButton
-                  color="primary"
+                  variant="primary"
                   rounded="md"
                   class="w-32"
                 >
@@ -163,7 +157,7 @@ function setAccount(account: any) {
                 size="xl"
                 rounded="lg"
                 class="h-auto! w-full p-4!"
-                :class="[errors.fields.account ? 'border-danger-500!' : '']"
+                :class="[errors.fields.account ? 'border-destructive-500!' : '']"
               >
                 <span class="flex w-full items-center gap-3 text-start">
                   <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
@@ -212,7 +206,7 @@ function setAccount(account: any) {
             </BaseDropdownItem>
           </BaseDropdown>
 
-          <BaseInputHelpText v-if="errors.fields.account" color="danger">
+          <BaseInputHelpText v-if="errors.fields.account">
             {{ errors.fields.account }}
           </BaseInputHelpText>
         </div>
@@ -241,22 +235,16 @@ function setAccount(account: any) {
 
       <div class="w-full max-w-md">
         <!-- Amount input -->
-        <div class="relative">
-          <BaseInput
+        <BaseField :error="errors.fields.amount">
+          <TairoInput
             v-model="request.amount"
             v-focus
-            :error="errors.fields.amount"
             type="number"
             rounded="none"
             icon="lucide:dollar-sign"
             placeholder="0.00"
-            :classes="{
-              input:
-                'ps-14! py-2! h-14! text-4xl! leading-5! border-t-0! border-l-0!  border-r-0! border-b-2! focus:border-primary-500! dark:bg-muted-900! dark:focus:border-primary-500!',
-              icon: 'h-14! w-14!',
-            }"
           />
-        </div>
+        </BaseField>
 
         <!-- Send to -->
         <div class="pt-6">
@@ -269,18 +257,13 @@ function setAccount(account: any) {
             Send to:
           </BaseHeading>
 
-          <div class="relative">
-            <BaseInput
+          <BaseField :error="errors.fields.email">
+            <TairoInput
               v-model="request.email"
-              :error="errors.fields.email"
               icon="lucide:mail"
               placeholder="Ex: johndoe@gmail.com"
-              :classes="{
-                input: 'ps-12! py-2! h-12!',
-                icon: 'h-12! w-12!',
-              }"
             />
-          </div>
+          </BaseField>
         </div>
 
         <!-- Transfer account -->
@@ -300,7 +283,7 @@ function setAccount(account: any) {
                 size="xl"
                 rounded="lg"
                 class="h-auto! w-full p-4!"
-                :class="[errors.fields.account ? 'border-danger-500!' : '']"
+                :class="[errors.fields.account ? 'border-destructive-500!' : '']"
               >
                 <span class="flex w-full items-center gap-3 text-start">
                   <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
@@ -348,7 +331,7 @@ function setAccount(account: any) {
               </template>
             </BaseDropdownItem>
           </BaseDropdown>
-          <BaseInputHelpText v-if="errors.fields.account" color="danger">
+          <BaseInputHelpText v-if="errors.fields.account">
             {{ errors.fields.account }}
           </BaseInputHelpText>
         </div>
@@ -393,7 +376,7 @@ function setAccount(account: any) {
               size="xl"
               rounded="lg"
               class="h-auto! w-full p-4!"
-              :class="[errors.fields.account ? 'border-danger-500!' : '']"
+              :class="[errors.fields.account ? 'border-destructive-500!' : '']"
             >
               <span class="flex w-full items-center gap-3 text-start">
                 <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
@@ -441,7 +424,7 @@ function setAccount(account: any) {
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
-        <BaseInputHelpText v-if="errors.fields.account" color="danger">
+        <BaseInputHelpText v-if="errors.fields.account">
           {{ errors.fields.account }}
         </BaseInputHelpText>
 
@@ -819,7 +802,7 @@ function setAccount(account: any) {
       <BaseButton
         v-if="request.method !== 'wire'"
         type="submit"
-        color="primary"
+        variant="primary"
         size="lg"
         class="w-full"
       >

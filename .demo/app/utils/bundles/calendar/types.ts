@@ -50,6 +50,7 @@ export interface CalendarEvent {
     conversation?: boolean
   }
   participants: {
+    id: number
     photo: string
     name: string
   }[]

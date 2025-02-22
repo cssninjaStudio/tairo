@@ -281,7 +281,7 @@ const onSubmit = handleSubmit(
       <form
         method="POST"
         action=""
-        class=""
+        novalidate
         @submit.prevent="onSubmit"
       >
         <div class="space-y-8">
@@ -349,7 +349,7 @@ const onSubmit = handleSubmit(
                   </BaseInputFileHeadless>
                   <div
                     v-if="fileError"
-                    class="text-danger-600 inline-block font-sans text-[.8rem]"
+                    class="text-destructive-600 inline-block font-sans text-[.8rem]"
                   >
                     {{ fileError }}
                   </div>
@@ -375,17 +375,25 @@ const onSubmit = handleSubmit(
                           }"
                           name="contact.firstName"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="First Name"
-                            icon="ph:user-duotone"
-                            placeholder="Ex: John"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:user-duotone"
+                              placeholder="Ex: John"
+                              :model-value="field.value"
+                              type="text"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div
@@ -401,17 +409,25 @@ const onSubmit = handleSubmit(
                           }"
                           name="contact.lastName"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Last Name"
-                            icon="ph:user-duotone"
-                            placeholder="Ex: Doe"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:user-duotone"
+                              placeholder="Ex: Doe"
+                              :model-value="field.value"
+                              type="text"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div
@@ -427,17 +443,25 @@ const onSubmit = handleSubmit(
                           }"
                           name="contact.companyName"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Company Name"
-                            icon="ph:buildings-duotone"
-                            placeholder="Ex: Acme Inc."
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:buildings-duotone"
+                              placeholder="Ex: Acme Inc."
+                              :model-value="field.value"
+                              type="text"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
@@ -450,17 +474,25 @@ const onSubmit = handleSubmit(
                           }"
                           name="contact.title"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Title / Category"
-                            icon="ph:suitcase-duotone"
-                            placeholder="Ex: Freelance / Software company"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:suitcase-duotone"
+                              placeholder="Ex: Freelance / Software company"
+                              :model-value="field.value"
+                              type="text"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
@@ -473,17 +505,25 @@ const onSubmit = handleSubmit(
                           }"
                           name="contact.email"
                         >
-                          <BaseInput
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Contact Email"
-                            icon="ph:envelope-duotone"
-                            placeholder="Ex: hello@acme.co"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="email"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="ph:envelope-duotone"
+                              placeholder="Ex: hello@acme.co"
+                              :model-value="field.value"
+                              type="email"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
@@ -496,17 +536,25 @@ const onSubmit = handleSubmit(
                           }"
                           name="contact.phone"
                         >
-                          <BaseInput
-                            icon="lucide:phone"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Phone Number"
-                            placeholder="Ex: +1 555 123 4567"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            type="text"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
-                          />
+                            required
+                          >
+                            <TairoInput
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              icon="lucide:phone"
+                              placeholder="Ex: +1 555 123 4567"
+                              :model-value="field.value"
+                              type="tel"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            />
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
@@ -519,317 +567,109 @@ const onSubmit = handleSubmit(
                           }"
                           name="contact.status"
                         >
-                          <BaseSelect
-                            rounded="md"
+                          <BaseField
+                            v-slot="{ inputAttrs, inputRef }"
                             label="Status"
-                            :model-value="field.value"
+                            :state="errorMessage ? 'error' : 'idle'"
                             :error="errorMessage"
                             :disabled="isSubmitting"
-                            @update:model-value="handleChange"
-                            @blur="handleBlur"
+                            required
                           >
-                            <BaseSelectItem value="active">
-                              Active
-                            </BaseSelectItem>
-                            <BaseSelectItem value="inactive">
-                              Inactive
-                            </BaseSelectItem>
-                          </BaseSelect>
+                            <BaseSelect
+                              :ref="inputRef"
+                              v-bind="inputAttrs"
+                              rounded="md"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
+                              @blur="handleBlur"
+                            >
+                              <BaseSelectItem value="active">
+                                Active
+                              </BaseSelectItem>
+                              <BaseSelectItem value="inactive">
+                                Inactive
+                              </BaseSelectItem>
+                            </BaseSelect>
+                          </BaseField>
                         </Field>
                       </div>
                       <div class="col-span-12">
-                        <div class="">
-                          <label class="nui-label pb-2 text-[0.825rem]">Contact type</label>
-                          <div class="grid gap-4 sm:grid-cols-2">
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="contact.type"
+                        <Field
+                          v-slot="{
+                            field,
+                            errorMessage,
+                            handleChange,
+                          }"
+                          name="contact.type"
+                        >
+                          <BaseField
+                            label="Contact type"
+                            :state="errorMessage ? 'error' : 'idle'"
+                            :error="errorMessage"
+                            :disabled="isSubmitting"
+                          >
+                            <BaseRadioGroup
+                              class="grid gap-4 sm:grid-cols-2 *:py-6"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
                             >
-                              <BaseRadioHeadless
+                              <TairoRadioCard
                                 value="person"
-                                :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
-                                @update:model-value="handleChange"
-                                @blur="handleBlur"
-                              >
-                                <BaseCard
-                                  rounded="md"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                  color="none"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:user-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Person
-                                      </BaseHeading>
-
-                                      <BaseText
-                                        size="xs"
-                                        class="text-muted-400"
-                                      >
-                                        Personal contact
-                                      </BaseText>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="contact.type"
-                            >
-                              <BaseRadioHeadless
+                                icon="ph:user-duotone"
+                                label="Person"
+                                subtitle="Personal contact"
+                              />
+                              <TairoRadioCard
                                 value="company"
-                                :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
-                                @update:model-value="handleChange"
-                                @blur="handleBlur"
-                              >
-                                <BaseCard
-                                  rounded="md"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                  color="none"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:buildings-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Company
-                                      </BaseHeading>
-
-                                      <BaseText
-                                        size="xs"
-                                        class="text-muted-400"
-                                      >
-                                        Enterprise contact
-                                      </BaseText>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-                          </div>
-                        </div>
+                                icon="ph:buildings-duotone"
+                                label="Company"
+                                subtitle="Enterprise contact"
+                              />
+                            </BaseRadioGroup>
+                          </BaseField>
+                        </Field>
                       </div>
                       <div
-                        v-if="values.contact?.type === 'person'"
+                        v-show="values.contact?.type === 'person'"
                         class="col-span-12"
                       >
-                        <div class="">
-                          <label class="nui-label pb-2 text-[0.825rem]">Gender</label>
-                          <div class="grid gap-4 sm:grid-cols-3">
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="contact.gender"
+                        <Field
+                          v-slot="{
+                            field,
+                            errorMessage,
+                            handleChange,
+                          }"
+                          name="contact.gender"
+                        >
+                          <BaseField
+                            label="Gender"
+                            :state="errorMessage ? 'error' : 'idle'"
+                            :error="errorMessage"
+                            :disabled="isSubmitting"
+                          >
+                            <BaseRadioGroup
+                              class="grid gap-4 sm:grid-cols-3"
+                              :model-value="field.value"
+                              @update:model-value="handleChange"
                             >
-                              <BaseRadioHeadless
+                              <TairoRadioCard
                                 value="male"
-                                :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
-                                @update:model-value="handleChange"
-                                @blur="handleBlur"
-                              >
-                                <BaseCard
-                                  rounded="md"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                  color="none"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:gender-male-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Male
-                                      </BaseHeading>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="contact.gender"
-                            >
-                              <BaseRadioHeadless
+                                icon="ph:gender-male-duotone"
+                                label="Male"
+                              />
+                              <TairoRadioCard
                                 value="female"
-                                :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
-                                @update:model-value="handleChange"
-                                @blur="handleBlur"
-                              >
-                                <BaseCard
-                                  rounded="md"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                  color="none"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:gender-female-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Female
-                                      </BaseHeading>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-
-                            <Field
-                              v-slot="{
-                                field,
-                                errorMessage,
-                                handleChange,
-                                handleBlur,
-                              }"
-                              name="contact.gender"
-                            >
-                              <BaseRadioHeadless
+                                icon="ph:gender-female-duotone"
+                                label="Female"
+                              />
+                              <TairoRadioCard
                                 value="other"
-                                :model-value="field.value"
-                                :error="errorMessage"
-                                :disabled="isSubmitting"
-                                @update:model-value="handleChange"
-                                @blur="handleBlur"
-                              >
-                                <BaseCard
-                                  rounded="md"
-                                  class="text-muted-400 nui-card-muted peer-checked:nui-card-primary peer-checked:[&_.child]:text-primary-500! relative border px-2 py-6"
-                                  color="none"
-                                >
-                                  <div
-                                    class="flex w-full flex-col items-center gap-2 text-center"
-                                  >
-                                    <Icon
-                                      name="ph:gender-neuter-duotone"
-                                      class="child mx-auto size-6"
-                                    />
-
-                                    <div>
-                                      <BaseHeading
-                                        as="h4"
-                                        size="sm"
-                                        weight="medium"
-                                        lead="none"
-                                      >
-                                        Other
-                                      </BaseHeading>
-                                    </div>
-
-                                    <div
-                                      class="child text-muted-300 absolute end-2 top-2 ms-auto"
-                                    >
-                                      <div
-                                        class="size-2 rounded-full bg-current"
-                                      />
-                                    </div>
-                                  </div>
-                                </BaseCard>
-                              </BaseRadioHeadless>
-                            </Field>
-                          </div>
-                        </div>
+                                icon="ph:gender-neuter-duotone"
+                                label="Other"
+                              />
+                            </BaseRadioGroup>
+                          </BaseField>
+                        </Field>
                       </div>
                     </div>
                   </TairoFormGroup>
@@ -840,140 +680,161 @@ const onSubmit = handleSubmit(
                     sublabel="Add the address of your contact"
                   >
                     <div class="grid grid-cols-12 gap-4">
-                      <div class="col-span-12">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.address"
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.address"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Address / Street"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="col-span-12"
+                          required
                         >
-                          <BaseInput
-                            label="Address / Street"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:map-pin-duotone"
                             placeholder="Ex: App 12 suite G4 Santa Barbara"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="col-span-12 sm:col-span-4">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.city"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.city"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="City"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="col-span-12 sm:col-span-4"
+                          required
                         >
-                          <BaseInput
-                            label="City"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:buildings-duotone"
                             placeholder="Ex: Los Angeles"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="col-span-12 sm:col-span-4">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.state"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.state"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="State / Province"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="col-span-12 sm:col-span-4"
+                          required
                         >
-                          <BaseInput
-                            label="State/Province"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:globe-duotone"
                             placeholder="Ex: CA"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="col-span-12 sm:col-span-4">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.zipcode"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.zipcode"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Zip Code"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="col-span-12 sm:col-span-4"
+                          required
                         >
                           <BaseInput
-                            type="text"
-                            label="Zip Code"
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:paper-plane-tilt-duotone"
                             placeholder="Ex: 912656"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
+                            type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="col-span-12">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.country"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.country"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Country"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="col-span-12"
+                          required
                         >
                           <BaseSelect
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             rounded="md"
-                            label="Country"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
-                            <BaseSelectItem value="United States">
-                              United States
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Canada">
-                              Canada
-                            </BaseSelectItem>
-                            <BaseSelectItem value="France">
-                              France
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Germany">
-                              Germany
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Spain">
-                              Spain
-                            </BaseSelectItem>
-                            <BaseSelectItem value="China">
-                              China
-                            </BaseSelectItem>
-                            <BaseSelectItem value="Japan">
-                              Japan
+                            <BaseSelectItem
+                              v-for="value in ['United States', 'Canada', 'France', 'Germany', 'Spain', 'China', 'Japan']"
+                              :key="value"
+                              :value
+                            >
+                              {{ value }}
                             </BaseSelectItem>
                           </BaseSelect>
-                        </Field>
-                      </div>
+                        </BaseField>
+                      </Field>
                     </div>
                   </TairoFormGroup>
 
@@ -983,114 +844,148 @@ const onSubmit = handleSubmit(
                     sublabel="Add your contact's financial details"
                   >
                     <div class="grid grid-cols-12 gap-4">
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.accountNumber"
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.accountNumber"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Account Number"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
-                          <BaseInput
-                            label="Account Number"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:bank-duotone"
                             placeholder="Ex: 4134 1213 3298 4273"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="number"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.iban"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.iban"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="IBAN"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
-                          <BaseInput
-                            label="IBAN"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:arrows-left-right-duotone"
                             placeholder="Ex: USX35B"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.routingNumber"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.routingNumber"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Routing Number"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
                           <BaseInput
-                            label="Routing Number"
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:compass-duotone"
                             placeholder="Ex: 2873213"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             type="number"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.taxId"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.taxId"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Tax ID"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          required
                         >
-                          <BaseInput
-                            label="Tax ID"
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             icon="ph:note-duotone"
                             placeholder="Ex: TX-DHDZ526"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
-                            type="text"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           />
-                        </Field>
-                      </div>
-                      <div class="col-span-12">
-                        <Field
-                          v-slot="{
-                            field,
-                            errorMessage,
-                            handleChange,
-                            handleBlur,
-                          }"
-                          name="contact.paymentMethod"
+                        </BaseField>
+                      </Field>
+                      <Field
+                        v-slot="{
+                          field,
+                          errorMessage,
+                          handleChange,
+                          handleBlur,
+                        }"
+                        name="contact.paymentMethod"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Payment Method"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="col-span-12"
+                          required
                         >
                           <BaseSelect
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
                             rounded="md"
-                            label="Payment Method"
                             :model-value="field.value"
-                            :error="errorMessage"
-                            :disabled="isSubmitting"
                             @update:model-value="handleChange"
                             @blur="handleBlur"
                           >
@@ -1104,8 +999,8 @@ const onSubmit = handleSubmit(
                               Custom
                             </BaseSelectItem>
                           </BaseSelect>
-                        </Field>
-                      </div>
+                        </BaseField>
+                      </Field>
                     </div>
                   </TairoFormGroup>
 
@@ -1115,7 +1010,7 @@ const onSubmit = handleSubmit(
                     <BaseButton
                       to="/layouts/payments/recipients"
                       type="button"
-                      color="muted"
+                      variant="muted"
                       class="w-full sm:w-44"
                       size="lg"
                       rounded="md"
@@ -1124,7 +1019,7 @@ const onSubmit = handleSubmit(
                     </BaseButton>
                     <BaseButton
                       type="submit"
-                      color="primary"
+                      variant="primary"
                       class="w-full sm:w-44"
                       size="lg"
                       rounded="md"

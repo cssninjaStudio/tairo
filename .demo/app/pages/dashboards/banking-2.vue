@@ -301,7 +301,7 @@ function useAreaExpenses() {
                     >
                       <Icon
                         name="lucide:arrow-right"
-                        class="text-danger-500 size-4 rotate-45"
+                        class="text-destructive-500 size-4 rotate-45"
                       />
                     </div>
                     <div
@@ -353,7 +353,7 @@ function useAreaExpenses() {
                   >
                     <span>Expenses</span>
                   </div>
-                  <div class="text-danger-500 font-sans text-sm font-semibold">
+                  <div class="text-destructive-500 font-sans text-sm font-semibold">
                     <span>- {{ formatPrice(1509.27) }}</span>
                   </div>
                 </div>
@@ -389,7 +389,7 @@ function useAreaExpenses() {
                       class="bg-success-500/10 text-success-500"
                       size="md"
                       rounded="full"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:pizza-duotone" class="size-5" />
                     </BaseIconBox>
@@ -421,7 +421,7 @@ function useAreaExpenses() {
                       class="bg-orange-500/10 text-orange-500"
                       size="md"
                       rounded="full"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:storefront-duotone" class="size-5" />
                     </BaseIconBox>
@@ -453,7 +453,7 @@ function useAreaExpenses() {
                       class="bg-indigo-500/10 text-indigo-500"
                       size="md"
                       rounded="full"
-                      color="none"
+                      variant="none"
                     >
                       <Icon name="ph:shopping-cart-duotone" class="size-5" />
                     </BaseIconBox>
@@ -481,10 +481,10 @@ function useAreaExpenses() {
                   </div>
                 </div>
                 <div class="mt-6 flex items-center gap-2">
-                  <BaseButton color="default" class="w-full">
+                  <BaseButton class="w-full">
                     <span>Settings</span>
                   </BaseButton>
-                  <BaseButton color="primary" class="w-full">
+                  <BaseButton variant="primary" class="w-full">
                     <span>Create</span>
                   </BaseButton>
                 </div>

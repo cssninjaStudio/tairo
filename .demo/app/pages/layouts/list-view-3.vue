@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -47,14 +57,11 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
       reverse
     >
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="full"
           placeholder="Filter jobs..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>
@@ -151,7 +158,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   <BaseButton
                     rounded="full"
                     size="icon-sm"
-                    muted
+                    variant="muted"
                     data-nui-tooltip="Add to Bookmarks"
                     class="hidden sm:inline-flex"
                   >
@@ -162,11 +169,9 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
             </TransitionGroup>
             <div class="mt-6">
               <BasePagination
+                :page="1"
                 :total="100"
-                :item-per-page="10"
-                :total-items="100"
-                :current="1"
-                :limit="10"
+                :items-per-page="10"
                 rounded="full"
               />
             </div>

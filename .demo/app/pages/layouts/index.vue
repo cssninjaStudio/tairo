@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -43,20 +53,17 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #right>
         <BaseButton class="w-full sm:w-32">
           Manage
         </BaseButton>
-        <BaseButton color="primary" class="w-full sm:w-32">
+        <BaseButton variant="primary" class="w-full sm:w-32">
           <Icon name="lucide:plus" class="size-4" />
           <span>Add User</span>
         </BaseButton>
@@ -131,8 +138,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                 >
                   <BaseTag
                     size="sm"
-                    color="primary"
-                    variant="pastel"
+                    variant="primary"
                     rounded="full"
                   >
                     {{ item.role }}
@@ -216,9 +222,9 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
 
           <div>
             <BasePagination
-              :total-items="data?.total ?? 0"
-              :item-per-page="perPage"
-              :current-page="page"
+              v-model:page="page"
+              :total="data?.total ?? 0"
+              :items-per-page="perPage"
               rounded="full"
             />
           </div>

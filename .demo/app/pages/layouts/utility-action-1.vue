@@ -82,7 +82,7 @@ definePageMeta({
               <BaseButton class="w-full">
                 Decline
               </BaseButton>
-              <BaseButton color="primary" class="w-full">
+              <BaseButton variant="primary" class="w-full">
                 Accept
               </BaseButton>
             </div>

@@ -39,7 +39,7 @@ const {
             v-if="currentStepId < totalSteps - 1"
             type="submit"
             rounded="lg"
-            color="primary"
+            variant="primary"
             class="w-full"
           >
             <span>Continue</span>
@@ -48,7 +48,7 @@ const {
             v-else
             type="submit"
             rounded="lg"
-            color="primary"
+            variant="primary"
             class="w-full"
             :loading="loading"
             :disabled="loading"

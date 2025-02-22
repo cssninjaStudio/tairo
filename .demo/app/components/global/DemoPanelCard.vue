@@ -81,7 +81,7 @@ const daySpentProgress = computed(() => {
           </div>
           <!-- Progress -->
           <BaseProgress
-            :value="daySpentProgress"
+            :model-value="daySpentProgress"
             size="xs"
             class="my-2"
           />
@@ -265,16 +265,14 @@ const daySpentProgress = computed(() => {
                   Disable
                 </BaseButton>
                 <BaseButton
-                  variant="pastel"
-                  color="muted"
+                  variant="muted"
                   rounded="md"
                   size="sm"
                 >
                   Replace
                 </BaseButton>
                 <BaseButton
-                  variant="pastel"
-                  color="muted"
+                  variant="muted"
                   rounded="md"
                   size="sm"
                 >

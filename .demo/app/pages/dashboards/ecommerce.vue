@@ -764,7 +764,7 @@ function useBarOrders() {
         <BaseButton>
           <span>View Reports</span>
         </BaseButton>
-        <BaseButton color="primary">
+        <BaseButton variant="primary">
           <span>Manage Store</span>
         </BaseButton>
       </div>
@@ -874,7 +874,7 @@ function useBarOrders() {
             >
               <span>Abandonned</span>
             </BaseHeading>
-            <Icon name="ph:timer-duotone" class="text-danger-500 size-7" />
+            <Icon name="ph:timer-duotone" class="text-destructive-500 size-7" />
           </div>
           <div class="flex items-center justify-between gap-6 pt-4">
             <div class="grow">
@@ -904,9 +904,8 @@ function useBarOrders() {
               <span>Revenue Overview</span>
             </BaseHeading>
             <BaseButton
-              color="primary"
+              variant="primary"
               size="sm"
-              variant="pastel"
               rounded="md"
             >
               Details

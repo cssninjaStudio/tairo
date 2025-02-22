@@ -123,40 +123,42 @@ const metaKey = useMetaKey()
       @close="isOpen = false"
     >
       <BaseFocusLoop next-keys="ArrowDown" prev-keys="ArrowUp">
-        <div class="px-2 pb-2">
-          <BaseInput
-            v-model="search"
-            v-focus
-            type="search"
-            rounded="lg"
-            icon="lucide:search"
-            placeholder="Ex: button or analytics..."
-            color-focus
-            :classes="{
-              label: 'w-full',
-            }"
-          >
-            <template #label>
-              <span class="flex w-full justify-between">
-                <BaseText weight="medium" size="sm">Search</BaseText>
-                <BaseText
-                  v-if="hasResult"
-                  size="xs"
-                  class="block opacity-60"
-                >
-                  navigate with <kbd>↑</kbd> and <kbd>↓</kbd>
-                </BaseText>
-                <BaseText
-                  v-else-if="!search"
-                  size="xs"
-                  class="block opacity-60"
-                >
-                  press <kbd>{{ metaKey }}</kbd> + <kbd>k</kbd> to open
-                </BaseText>
-              </span>
-            </template>
-          </BaseInput>
-        </div>
+        <BaseField class="px-2 pb-2">
+          <template #label>
+            <BaseText weight="medium" size="sm">
+              Search
+            </BaseText>
+          </template>
+          <template #hint>
+            <BaseText
+              v-if="hasResult"
+              size="xs"
+              class="opacity-60 ms-auto"
+            >
+              navigate with <kbd>↑</kbd> and <kbd>↓</kbd>
+            </BaseText>
+            <BaseText
+              v-else-if="!search"
+              size="xs"
+              class="opacity-60"
+            >
+              press <kbd>{{ metaKey }}</kbd> + <kbd>k</kbd> to open
+            </BaseText>
+          </template>
+
+          <template #default="{ inputAttrs, inputRef }">
+            <TairoInput
+              :ref="inputRef"
+              v-bind="inputAttrs"
+              v-model="search"
+              v-focus
+              type="search"
+              rounded="lg"
+              icon="lucide:search"
+              placeholder="Ex: button or analytics..."
+            />
+          </template>
+        </BaseField>
 
         <div v-if="contentDocsResults?.length">
           <div class="px-3 pt-2">

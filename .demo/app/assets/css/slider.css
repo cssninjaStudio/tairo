@@ -1,5 +1,4 @@
-@reference 'tailwindcss/theme';
-@reference '@shuriken-ui/tailwind/theme.css';
+@reference '~/assets/tailwind.css';
 
 .slider-target,
 .slider-target * {
@@ -402,13 +401,13 @@
 
 .slider-danger .slider-connect,
 .slider-danger .slider-tooltip {
-  background: var(--color-danger-500);
-  border-color: var(--color-danger-500);
+  background: var(--color-destructive-500);
+  border-color: var(--color-destructive-500);
 }
 
 .slider-danger .slider-handle:focus {
   box-shadow:
-    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, var(--color-danger-500)),
+    0 0 0 var(--slider-handle-ring-width, 2px) var(--slider-handle-ring-color, var(--color-destructive-500)),
     var(--slider-handle-shadow, 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32));
   outline: none;
 }

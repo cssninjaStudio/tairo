@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -43,13 +53,10 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
   <div>
     <TairoContentWrapperTabbed :labels="['Active', 'Inactive']">
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           placeholder="Filter properties..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #tab-1>
@@ -217,7 +224,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                   <BaseButton class="w-full sm:w-28">
                     More Info
                   </BaseButton>
-                  <BaseButton color="primary" class="w-full sm:w-28">
+                  <BaseButton variant="primary" class="w-full sm:w-28">
                     <span>Book Now</span>
                   </BaseButton>
                 </div>
@@ -225,11 +232,9 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
             </TransitionGroup>
             <div class="mt-6">
               <BasePagination
+                :page="1"
                 :total="100"
-                :item-per-page="10"
-                :total-items="100"
-                :current="1"
-                :limit="10"
+                :items-per-page="10"
                 rounded="full"
               />
             </div>

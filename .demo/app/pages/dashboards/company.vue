@@ -338,13 +338,9 @@ function toggleAllVisibleSelection() {
               <TairoTableHeading uppercase class="px-4 py-6">
                 <div class="flex items-center">
                   <BaseCheckbox
-                    :model-value="isAllVisibleSelected"
-                    :indeterminate="
-                      selected.length > 0 && !isAllVisibleSelected
-                    "
+                    :model-value="selected.length > 0 && !isAllVisibleSelected ? 'indeterminate' : isAllVisibleSelected"
                     name="table-1-main"
                     rounded="sm"
-                    color="primary"
                     @click="toggleAllVisibleSelection"
                   />
                 </div>
@@ -366,73 +362,63 @@ function toggleAllVisibleSelection() {
               </TairoTableHeading>
             </template>
 
-            <TairoTableRow v-for="member in team" :key="member.id">
-              <TairoTableCell class="p-4">
-                <div class="flex items-center">
-                  <BaseCheckbox
-                    v-model="selected"
-                    :value="member.id"
-                    :name="member.id"
-                    rounded="sm"
-                    color="primary"
-                  />
-                </div>
-              </TairoTableCell>
-              <TairoTableCell>
-                <div class="flex items-center">
-                  <BaseAvatar :src="member.src" size="sm" />
-                  <div class="ms-3 leading-none">
-                    <h4 class="font-heading text-sm font-semibold">
-                      {{ member.name }}
-                    </h4>
-                    <p class="text-muted-400 font-sans text-xs">
-                      {{ member.role }}
-                    </p>
+            <BaseCheckboxGroup v-model="selected" as-child>
+              <TairoTableRow v-for="member in team" :key="member.id">
+                <TairoTableCell class="p-4">
+                  <div class="flex items-center">
+                    <BaseCheckbox :value="member.id" />
                   </div>
-                </div>
-              </TairoTableCell>
-              <TairoTableCell light>
-                {{ member.expertise }}
-              </TairoTableCell>
-              <TairoTableCell>${{ member.rate }}/hour</TairoTableCell>
-              <TairoTableCell>
-                <BaseTag
-                  v-if="member.status === 'Available'"
-                  color="success"
-                  variant="pastel"
-                  rounded="full"
-                  class="font-medium"
-                >
-                  {{ member.status }}
-                </BaseTag>
-                <BaseTag
-                  v-else-if="member.status === 'New'"
-                  color="info"
-                  variant="pastel"
-                  rounded="full"
-                  class="font-medium"
-                >
-                  {{ member.status }}
-                </BaseTag>
-                <BaseTag
-                  v-else-if="member.status === 'Hired'"
-                  color="warning"
-                  variant="pastel"
-                  rounded="full"
-                  class="font-medium"
-                >
-                  {{ member.status }}
-                </BaseTag>
-              </TairoTableCell>
-              <TairoTableCell>
-                <a
-                  href="#"
-                  class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                >
-                  View
-                </a>
-              </TairoTableCell>
-            </TairoTableRow>
+                </TairoTableCell>
+                <TairoTableCell>
+                  <div class="flex items-center">
+                    <BaseAvatar :src="member.src" size="sm" />
+                    <div class="ms-3 leading-none">
+                      <h4 class="font-heading text-sm font-semibold">
+                        {{ member.name }}
+                      </h4>
+                      <p class="text-muted-400 font-sans text-xs">
+                        {{ member.role }}
+                      </p>
+                    </div>
+                  </div>
+                </TairoTableCell>
+                <TairoTableCell light>
+                  {{ member.expertise }}
+                </TairoTableCell>
+                <TairoTableCell>${{ member.rate }}/hour</TairoTableCell>
+                <TairoTableCell>
+                  <BaseTag
+                    v-if="member.status === 'Available'"
+                    rounded="full"
+                    class="font-medium"
+                  >
+                    {{ member.status }}
+                  </BaseTag>
+                  <BaseTag
+                    v-else-if="member.status === 'New'"
+                    rounded="full"
+                    class="font-medium"
+                  >
+                    {{ member.status }}
+                  </BaseTag>
+                  <BaseTag
+                    v-else-if="member.status === 'Hired'"
+                    rounded="full"
+                    class="font-medium"
+                  >
+                    {{ member.status }}
+                  </BaseTag>
+                </TairoTableCell>
+                <TairoTableCell>
+                  <a
+                    href="#"
+                    class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
+                  >
+                    View
+                  </a>
+                </TairoTableCell>
+              </TairoTableRow>
+            </BaseCheckboxGroup>
           </TairoTable>
         </div>
         <!-- Widget -->
@@ -514,9 +500,8 @@ function toggleAllVisibleSelection() {
                 <span>Pending tickets</span>
               </BaseHeading>
               <BaseButton
-                color="primary"
+                variant="primary"
                 size="sm"
-                variant="pastel"
                 rounded="md"
               >
                 View all

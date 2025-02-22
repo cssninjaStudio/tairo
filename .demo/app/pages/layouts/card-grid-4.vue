@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(12)
@@ -43,14 +53,11 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="lg"
           placeholder="Filter posts..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #right>
@@ -59,7 +66,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
         </BaseButton>
         <BaseButton
           rounded="lg"
-          color="primary"
+          variant="primary"
           class="w-full sm:w-28"
         >
           <Icon name="lucide:plus" class="size-4" />
@@ -112,8 +119,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                   >
                   <BaseTag
                     rounded="full"
-                    color="primary"
-                    variant="pastel"
+                    variant="primary"
                     size="sm"
                     class="absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                   >
@@ -163,9 +169,9 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
           </div>
           <div class="mt-6">
             <BasePagination
-              :total-items="data?.total ?? 0"
-              :item-per-page="perPage"
-              :current-page="page"
+              v-model:page="page"
+              :total="data?.total ?? 0"
+              :items-per-page="perPage"
               rounded="lg"
             />
           </div>

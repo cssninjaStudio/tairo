@@ -218,7 +218,7 @@ const results = [
               >
                 <span>69 results</span>
               </BaseHeading>
-              <BaseButton muted>
+              <BaseButton variant="muted">
                 Clear
               </BaseButton>
             </div>
@@ -489,7 +489,7 @@ const results = [
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-6">
-            <BaseButton class="w-full" color="primary">
+            <BaseButton class="w-full" variant="primary">
               <span>Add to Favorites</span>
             </BaseButton>
             <div class="mt-6">
@@ -500,36 +500,24 @@ const results = [
                   >
                     Stops
                   </h5>
-                  <div class="flex flex-col gap-4">
+                  <BaseCheckboxGroup v-model="stops" class="flex flex-col gap-4">
                     <BaseCheckbox
-                      v-model="stops"
                       value="stops-1"
                       label="All flights"
-                      rounded="sm"
-                      color="primary"
                     />
                     <BaseCheckbox
-                      v-model="stops"
                       value="stops-2"
                       label="No stops"
-                      rounded="sm"
-                      color="primary"
                     />
                     <BaseCheckbox
-                      v-model="stops"
                       value="stops-3"
                       label="One stop"
-                      rounded="sm"
-                      color="primary"
                     />
                     <BaseCheckbox
-                      v-model="stops"
                       value="stops-4"
                       label="Two stops"
-                      rounded="sm"
-                      color="primary"
                     />
-                  </div>
+                  </BaseCheckboxGroup>
                 </div>
                 <div>
                   <h5
@@ -537,36 +525,24 @@ const results = [
                   >
                     Luggage
                   </h5>
-                  <div class="flex flex-col gap-4">
+                  <BaseCheckboxGroup v-model="luggage" class="flex flex-col gap-4">
                     <BaseCheckbox
-                      v-model="luggage"
                       value="luggage-1"
                       label="All options"
-                      rounded="sm"
-                      color="primary"
                     />
                     <BaseCheckbox
-                      v-model="luggage"
                       value="luggage-2"
                       label="One cabin luggage"
-                      rounded="sm"
-                      color="primary"
                     />
                     <BaseCheckbox
-                      v-model="luggage"
                       value="luggage-3"
                       label="Two cabin luggage"
-                      rounded="sm"
-                      color="primary"
                     />
                     <BaseCheckbox
-                      v-model="luggage"
                       value="luggage-4"
                       label="No luggage"
-                      rounded="sm"
-                      color="primary"
                     />
-                  </div>
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>

@@ -66,7 +66,7 @@ const form = reactive({
               <BaseButton
                 rounded="md"
                 size="sm"
-                color="primary"
+                variant="primary"
               >
                 Update
               </BaseButton>
@@ -84,7 +84,6 @@ const form = reactive({
                 placeholder="First Name"
                 rounded="md"
                 size="lg"
-                contrast="default-contrast"
               />
 
               <BaseInput
@@ -93,7 +92,6 @@ const form = reactive({
                 placeholder="Last Name"
                 rounded="md"
                 size="lg"
-                contrast="default-contrast"
               />
             </div>
           </div>
@@ -108,7 +106,6 @@ const form = reactive({
               placeholder="Email Address"
               rounded="md"
               size="lg"
-              contrast="default-contrast"
             />
           </div>
         </div>
@@ -120,7 +117,6 @@ const form = reactive({
               v-model="form.bio"
               rounded="md"
               placeholder="Short bio..."
-              contrast="default-contrast"
             />
           </div>
         </div>
@@ -137,24 +133,17 @@ const form = reactive({
             </BaseParagraph>
           </div>
           <div class="mt-2 sm:col-span-2 sm:mt-0">
-            <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
-              <BaseButton
-                size="lg"
-                color="muted"
-              >
-                <span class="text-sm font-medium">https://tairo.io/users/</span>
-              </BaseButton>
+            <div class="flex items-center focus-within:nui-focus rounded-md  *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
+              <div class="border h-12 px-4 flex items-center justify-center rounded-md bg-input-muted-bg border-input-muted-border">
+                <span class="text-sm font-medium text-input-muted-text/60">https://tairo.io/users/</span>
+              </div>
               <BaseInput
                 v-model="form.username"
                 type="text"
                 placeholder="Username"
                 rounded="md"
                 size="lg"
-                contrast="default-contrast"
-                addon="https://tairo.io/users/"
-                :classes="{
-                  wrapper: 'grow',
-                }"
+                class="ring-0!"
               />
             </div>
           </div>
@@ -163,24 +152,17 @@ const form = reactive({
         <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-5">
           <label class="text-muted-900 dark:text-muted-100 block font-sans text-sm font-medium sm:mt-px sm:pt-2"> Website </label>
           <div class="mt-2 sm:col-span-2 sm:mt-0">
-            <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
-              <BaseButton
-                size="lg"
-                color="muted"
-              >
-                <span class="text-sm font-medium">https://</span>
-              </BaseButton>
+            <div class="flex items-center focus-within:nui-focus rounded-md  *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
+              <div class="border h-12 px-4 flex items-center justify-center rounded-md bg-input-muted-bg border-input-muted-border">
+                <span class="text-sm font-medium text-input-muted-text/60">https://</span>
+              </div>
               <BaseInput
                 v-model="form.website"
                 type="text"
                 placeholder="Username"
                 rounded="md"
                 size="lg"
-                contrast="default-contrast"
-                addon="https://"
-                :classes="{
-                  wrapper: 'grow',
-                }"
+                class="ring-0!"
               />
             </div>
           </div>
@@ -195,13 +177,11 @@ const form = reactive({
               placeholder="Job Title"
               rounded="md"
               size="lg"
-              contrast="default-contrast"
             />
 
             <div class="relative mt-2 flex items-center">
               <BaseCheckbox
                 v-model="form.showProfile"
-                color="primary"
                 label="Show this on my profile "
               />
             </div>
@@ -213,7 +193,6 @@ const form = reactive({
           <div class="mt-2 sm:col-span-2 sm:mt-0">
             <BaseSelect
               v-model="form.country"
-              contrast="default-contrast"
               size="lg"
               rounded="md"
               placeholder="Select a country"
@@ -242,7 +221,7 @@ const form = reactive({
         <BaseButton
           size="lg"
           rounded="md"
-          color="primary"
+          variant="primary"
           class="w-full md:w-48"
         >
           Update Profile

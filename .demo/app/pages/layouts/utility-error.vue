@@ -99,7 +99,7 @@ const showStackTrace = ref(false)
           <span>{{ props.error?.statusCode }}</span>
         </div>
         <BaseButton
-          color="primary"
+          variant="primary"
           class="h-12! w-48 items-center gap-2"
           rounded="lg"
           @click="handleError"
@@ -110,7 +110,6 @@ const showStackTrace = ref(false)
         <div class="mt-6 flex items-center justify-center">
           <BaseSwitchBall
             v-model="showStackTrace"
-            color="danger"
             :label="`${showStackTrace ? 'Hide' : 'Show'} Stacktrace (dev)`"
           />
         </div>
@@ -129,15 +128,12 @@ const showStackTrace = ref(false)
         >
           <BaseTag
             v-if="props.error.statusCode"
-            color="danger"
             size="sm"
           >
             {{ props.error.statusCode }}
           </BaseTag>
           <BaseTag
             v-if="props.error.url"
-            color="danger"
-            variant="outline"
             size="sm"
           >
             {{ props.error.url }}
@@ -153,7 +149,6 @@ const showStackTrace = ref(false)
         </div>
         <div class="mb-4 flex items-center gap-2">
           <BaseIconBox
-            color="danger"
             rounded="full"
             size="md"
           >
@@ -161,7 +156,7 @@ const showStackTrace = ref(false)
           </BaseIconBox>
           <div>
             <h4
-              class="text-danger-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
+              class="text-destructive-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
             >
               {{ props.error.message }}
             </h4>

@@ -35,7 +35,7 @@ export function useTailwindColors() {
   const success = useCssVarWithRGB('--color-success-500')
   const info = useCssVarWithRGB('--color-info-500')
   const warning = useCssVarWithRGB('--color-warning-500')
-  const danger = useCssVarWithRGB('--color-danger-500')
+  const danger = useCssVarWithRGB('--color-destructive-500')
   const yellow = useCssVarWithRGB('--color-yellow-400')
   const title = useCssVarWithRGB('--color-muted-600')
   const subtitle = useCssVarWithRGB('--color-muted-400')

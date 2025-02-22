@@ -38,28 +38,25 @@ onBeforeMount(checkPreviousSteps)
         weight="medium"
         class="md:3xl! text-muted-800 dark:text-white"
       >
-        {{ steps[currentStepId].meta.title }}
+        {{ steps[currentStepId]?.meta.title }}
       </BaseHeading>
       <BaseParagraph
         size="sm"
         class="text-muted-500 dark:text-muted-400 max-w-sm"
       >
-        {{ steps[currentStepId].meta.subtitle }}
+        {{ steps[currentStepId]?.meta.subtitle }}
       </BaseParagraph>
     </div>
 
     <div class="relative max-w-md space-y-3">
-      <BaseInput
-        v-model="request.recipient.name"
-        v-focus
-        :error="errors.fields?.['recipient.name']"
-        icon="ph:user-duotone"
-        placeholder="Ex: John Doe"
-        :classes="{
-          input: 'p-4! ps-12! h-12!',
-          icon: 'h-12! w-12!',
-        }"
-      />
+      <BaseField :error="errors.fields?.['recipient.name']">
+        <TairoInput
+          v-model="request.recipient.name"
+          v-focus
+          icon="ph:user-duotone"
+          placeholder="Ex: John Doe"
+        />
+      </BaseField>
 
       <div class="flex gap-2">
         <BaseButton
@@ -73,7 +70,7 @@ onBeforeMount(checkPreviousSteps)
         </BaseButton>
         <BaseButton
           type="submit"
-          color="primary"
+          variant="primary"
           size="lg"
           class="w-full"
         >

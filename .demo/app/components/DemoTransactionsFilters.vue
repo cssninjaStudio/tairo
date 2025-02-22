@@ -68,10 +68,10 @@ const timeCategory = ref('all')
 const timeCategoryFrom = ref('')
 const timeCategoryTo = ref('')
 const keywords = ref('')
-const selectedKeyWords = ref([''])
-const status = ref([''])
-const accounts = ref([''])
-const paymentMethods = ref([''])
+const selectedKeyWords = ref<string[]>([])
+const status = ref<string[]>([])
+const accounts = ref<string[]>([])
+const paymentMethods = ref<string[]>([])
 </script>
 
 <template>
@@ -251,26 +251,21 @@ const paymentMethods = ref([''])
                             <Icon name="lucide:arrow-right" class="size-4" />
                           </button>
                         </div>
-                        <div class="grid grid-cols-3 gap-1">
-                          <div
+                        <RadioGroupRoot v-model="timeCategoryFrom" class="grid grid-cols-3 gap-1">
+                          <RadioGroupItem
                             v-for="month in months"
                             :key="month.id"
+                            :value="month.id"
                             class="flex items-center justify-center"
                           >
-                            <BaseRadioHeadless
-                              v-model="timeCategoryFrom"
-                              name="radio_date_from"
-                              :value="month.id"
+                            <RadioGroupIndicator
+                              force-mount
+                              class="text-muted-500 dark:text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 data-[state=checked]:text-primary-500 data-[state=checked]:bg-primary-500/10 hover:bg-muted-100 dark:hover:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200 cursor-pointer"
                             >
-                              <button
-                                type="button"
-                                class="text-muted-500 dark:text-muted-400 group-hover/nui-radio-headless:text-muted-600 dark:group-hover/nui-radio-headless:text-muted-200 peer-checked:text-primary-500 peer-checked:bg-primary-500/10 group-hover/nui-radio-headless:bg-muted-100 dark:group-hover/nui-radio-headless:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200"
-                              >
-                                {{ month.label }}
-                              </button>
-                            </BaseRadioHeadless>
-                          </div>
-                        </div>
+                              {{ month.label }}
+                            </RadioGroupIndicator>
+                          </RadioGroupItem>
+                        </RadioGroupRoot>
                       </div>
                     </div>
                     <!-- Calendar group -->
@@ -298,26 +293,21 @@ const paymentMethods = ref([''])
                             <Icon name="lucide:arrow-right" class="size-4" />
                           </button>
                         </div>
-                        <div class="grid grid-cols-3 gap-1">
-                          <div
+                        <RadioGroupRoot v-model="timeCategoryTo" class="grid grid-cols-3 gap-1">
+                          <RadioGroupItem
                             v-for="month in months"
                             :key="month.id"
+                            :value="month.id"
                             class="flex items-center justify-center"
                           >
-                            <BaseRadioHeadless
-                              v-model="timeCategoryTo"
-                              name="radio_date_to"
-                              :value="month.id"
+                            <RadioGroupIndicator
+                              force-mount
+                              class="text-muted-500 dark:text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 data-[state=checked]:text-primary-500 data-[state=checked]:bg-primary-500/10 hover:bg-muted-100 dark:hover:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200 cursor-pointer"
                             >
-                              <button
-                                type="button"
-                                class="text-muted-500 dark:text-muted-400 group-hover/nui-radio-headless:text-muted-600 dark:group-hover/nui-radio-headless:text-muted-200 peer-checked:text-primary-500 peer-checked:bg-primary-500/10 group-hover/nui-radio-headless:bg-muted-100 dark:group-hover/nui-radio-headless:bg-muted-800 flex size-8 items-center justify-center rounded-full font-sans text-xs transition-colors duration-200"
-                              >
-                                {{ month.label }}
-                              </button>
-                            </BaseRadioHeadless>
-                          </div>
-                        </div>
+                              {{ month.label }}
+                            </RadioGroupIndicator>
+                          </RadioGroupItem>
+                        </RadioGroupRoot>
                       </div>
                     </div>
                   </div>
@@ -328,38 +318,40 @@ const paymentMethods = ref([''])
             <div v-else-if="activeFilterTab === 'filter-2'">
               <div class="flex flex-col">
                 <div class="px-3">
-                  <div class="relative">
-                    <BaseInput
+                  <BaseField label="Search for specific keywords">
+                    <TairoInput
                       v-model="keywords"
-                      label="Search for specific keywords"
-                      icon="lucide:search"
                       placeholder="Your keywords..."
+                      rounded="md"
+                      icon="lucide:search"
+                      class="outline-none ring-0! border-s-0"
                     />
-                  </div>
+                  </BaseField>
                   <hr
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
                   <!-- Grid -->
-                  <div class="flex flex-wrap items-center gap-2">
-                    <div
+                  <CheckboxGroupRoot v-model="selectedKeyWords" class="flex flex-wrap items-center gap-2">
+                    <CheckboxRoot
                       v-for="keyword in defaultKeywords"
                       :key="keyword"
+                      :value="keyword"
                       class="flex items-center justify-center"
                     >
-                      <BaseCheckboxHeadless
-                        v-model="selectedKeyWords"
-                        :value="keyword"
+                      <CheckboxIndicator
+                        force-mount
+                        class="group"
                       >
                         <button
                           type="button"
-                          class="text-muted-500 dark:text-muted-200 dark:bg-muted-900 border-muted-200 dark:border-muted-800 peer-checked:bg-primary-500/10 peer-checked:border-primary-500 peer-checked:text-primary-500 inline-flex items-center justify-center rounded-full border-2 bg-white px-4 py-1.5 font-sans text-xs transition-colors duration-300"
+                          class="text-muted-500 dark:text-muted-200 dark:bg-muted-900 border-muted-200 dark:border-muted-800 group-data-[state=checked]:bg-primary-500/10 group-data-[state=checked]:border-primary-500 group-data-[state=checked]:text-primary-500 inline-flex items-center justify-center rounded-full border-2 bg-white px-4 py-1.5 font-sans text-xs transition-colors duration-300"
                         >
                           {{ keyword }}
                         </button>
-                      </BaseCheckboxHeadless>
-                    </div>
-                  </div>
+                      </CheckboxIndicator>
+                    </CheckboxRoot>
+                  </CheckboxGroupRoot>
                 </div>
               </div>
             </div>
@@ -390,41 +382,25 @@ const paymentMethods = ref([''])
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="status" class="flex flex-col gap-4">
                     <!-- Status -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Processing"
-                        value="Processing"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="In Progress"
-                        value="In Progress"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Complete"
-                        value="Complete"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="status"
-                        color="primary"
-                        label="Cancelled"
-                        value="Cancelled"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Processing"
+                      value="Processing"
+                    />
+                    <BaseCheckbox
+                      label="In Progress"
+                      value="In Progress"
+                    />
+                    <BaseCheckbox
+                      label="Complete"
+                      value="Complete"
+                    />
+                    <BaseCheckbox
+                      label="Cancelled"
+                      value="Cancelled"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -448,25 +424,17 @@ const paymentMethods = ref([''])
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="accounts" class="flex flex-col gap-4">
                     <!-- Account -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="accounts"
-                        color="primary"
-                        label="Account **** 4565 6494"
-                        value="45656494"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="accounts"
-                        color="primary"
-                        label="Account **** 8346 4209"
-                        value="83464209"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Account **** 4565 6494"
+                      value="45656494"
+                    />
+                    <BaseCheckbox
+                      label="Account **** 8346 4209"
+                      value="83464209"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>
@@ -492,33 +460,21 @@ const paymentMethods = ref([''])
                     class="border-muted-200 dark:border-muted-700 mb-4 mt-6 border-t"
                   >
 
-                  <div class="space-y-4">
+                  <BaseCheckboxGroup v-model="paymentMethods" class="flex flex-col gap-4">
                     <!-- Payment method -->
-                    <div>
-                      <BaseCheckbox
-                        v-model="paymentMethods"
-                        color="primary"
-                        label="Credit Card"
-                        value="credit-card"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="paymentMethods"
-                        color="primary"
-                        label="Transfer"
-                        value="transfer"
-                      />
-                    </div>
-                    <div>
-                      <BaseCheckbox
-                        v-model="paymentMethods"
-                        color="primary"
-                        label="Cheque"
-                        value="cheque"
-                      />
-                    </div>
-                  </div>
+                    <BaseCheckbox
+                      label="Credit Card"
+                      value="credit-card"
+                    />
+                    <BaseCheckbox
+                      label="Transfer"
+                      value="transfer"
+                    />
+                    <BaseCheckbox
+                      label="Cheque"
+                      value="cheque"
+                    />
+                  </BaseCheckboxGroup>
                 </div>
               </div>
             </div>

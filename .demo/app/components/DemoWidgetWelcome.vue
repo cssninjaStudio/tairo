@@ -26,11 +26,10 @@
         visit. Would you like to fund it?
       </BaseParagraph>
       <BaseButton
-        color="primary"
+        variant="primary"
         rounded="md"
         size="lg"
         class="w-full"
-        shadow="hover"
       >
         Fund my Account
       </BaseButton>

@@ -127,7 +127,7 @@ const billingCycles = ref('monthly')
       <div
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
-        <BaseButton type="submit" color="primary">
+        <BaseButton type="submit" variant="primary">
           <span>Save for</span>
           <span class="font-semibold">${{ selectedPlan?.price.monthly }}</span>
           <span>/month</span>
@@ -138,136 +138,112 @@ const billingCycles = ref('monthly')
     <div
       class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-2 xl:gap-8"
     >
-      <div class="grid grid-cols-2 gap-2 xl:gap-6">
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+      <BaseRadioGroup v-model="customRadio" class="grid grid-cols-2 gap-2 xl:gap-6">
+        <TairoRadioCard
           value="starter"
+          class="data-[state=checked]:ring-success-500! data-[state=checked]:border-success-500!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 peer-checked:border-success-500! peer-checked:text-success-500 group relative p-6 text-center peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-success-500 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Starter
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              A basic plan made for quickstarts
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-success-500" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Starter
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            A basic plan made for quickstarts
+          </BaseText>
+        </TairoRadioCard>
+        <TairoRadioCard
           value="freelancer"
+          class="data-[state=checked]:ring-yellow-400! data-[state=checked]:border-yellow-400!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 group relative p-6 text-center peer-checked:border-yellow-400! peer-checked:text-yellow-400 peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-yellow-400 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Freelancer
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              A plan for heavy working freelancers
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-yellow-400" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Freelancer
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            A plan for heavy working freelancers
+          </BaseText>
+        </TairoRadioCard>
+        <TairoRadioCard
           value="business"
+          class="data-[state=checked]:ring-indigo-500! data-[state=checked]:border-indigo-500!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 group relative p-6 text-center peer-checked:border-indigo-500! peer-checked:text-indigo-500 peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-indigo-500 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Business
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              An affordable medium business plan
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-        <BaseRadioHeadless
-          v-model="customRadio"
-          name="radio_custom"
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-indigo-500" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Business
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            An affordable medium business plan
+          </BaseText>
+        </TairoRadioCard>
+        <TairoRadioCard
           value="enterprise"
+          class="data-[state=checked]:ring-primary-500! data-[state=checked]:border-primary-500!"
         >
-          <BaseCard
-            rounded="sm"
-            class="text-muted-400/50 peer-checked:border-primary-500! peer-checked:text-primary-500 group relative p-6 text-center peer-checked:[&_.child]:opacity-100!"
-          >
-            <div
-              class="child border-muted-200 dark:border-muted-700 dark:bg-muted-800 absolute end-3 top-3 flex size-7 items-center justify-center rounded-full border bg-white opacity-0"
-            >
+          <template #indicator>
+            <div class="flex size-7 items-center justify-center rounded-full border bg-white text-primary-500 group-data-[state=unchecked]:opacity-0">
               <Icon name="lucide:check" class="size-3 text-current" />
             </div>
-            <TairoLogo class="mx-auto mb-2 size-9" />
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-800 dark:text-white"
-            >
-              Enterprise
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              lead="tight"
-              class="text-muted-400"
-            >
-              A corporate and full fledged company plan
-            </BaseText>
-          </BaseCard>
-        </BaseRadioHeadless>
-      </div>
+          </template>
+          <TairoLogo class="mx-auto mb-2 size-9 group-data-[state=checked]:text-primary-500" />
+          <BaseHeading
+            as="h4"
+            size="sm"
+            weight="medium"
+            class="text-muted-800 dark:text-white"
+          >
+            Enterprise
+          </BaseHeading>
+          <BaseText
+            size="xs"
+            lead="tight"
+            class="text-muted-400"
+          >
+            A corporate and full fledged company plan
+          </BaseText>
+        </TairoRadioCard>
+      </BaseRadioGroup>
       <div>
         <BaseCard rounded="sm" class="flex h-full flex-col p-8">
           <div class="flex gap-12">
@@ -436,21 +412,21 @@ const billingCycles = ref('monthly')
                 :model-value="false"
                 label="Invoicing"
                 sublabel="Send new invoices to my inbox"
-                color="primary"
+                variant="primary"
               />
               <BaseSwitchBall
                 id="billing-ball-2"
                 :model-value="true"
                 label="Warnings"
                 sublabel="Warn me before the end of the billing period"
-                color="primary"
+                variant="primary"
               />
               <BaseSwitchBall
                 id="billing-ball-3"
                 :model-value="true"
                 label="Reports"
                 sublabel="Send monthly reports to my inbox"
-                color="primary"
+                variant="primary"
               />
             </div>
           </BaseCard>
@@ -473,27 +449,18 @@ const billingCycles = ref('monthly')
             </div>
             <BaseRadioGroup v-model="billingCycles" class="flex items-center gap-6">
               <BaseRadio
-                id="demo-cycle-1"
-                name="monthly_billing"
                 label="Monthly"
                 value="monthly"
-                color="primary"
               />
 
               <BaseRadio
-                id="demo-cycle-2"
-                name="semestral_billing"
                 label="Semestral"
                 value="semestral"
-                color="primary"
               />
 
               <BaseRadio
-                id="demo-cycle-3"
-                name="yearly_billing"
                 label="Yearly"
                 value="yearly"
-                color="primary"
               />
             </BaseRadioGroup>
           </BaseCard>
@@ -520,105 +487,97 @@ const billingCycles = ref('monthly')
           <div class="mt-5">
             <form>
               <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-12">
-                  <BaseInput
-                    v-model="cardInfo.name"
-                    label="Name on card"
-                    placeholder="ex: John Doe"
-                  />
-                </div>
-                <div class="col-span-12">
-                  <BaseInput
-                    v-model="cardInfo.number"
-                    label="Card number"
-                    placeholder="ex: 4242 4242 4242 4242"
-                  />
-                </div>
+                <BaseInput
+                  v-model="cardInfo.name"
+                  label="Name on card"
+                  placeholder="ex: John Doe"
+                  class="col-span-12"
+                />
+                <BaseInput
+                  v-model="cardInfo.number"
+                  label="Card number"
+                  placeholder="ex: 4242 4242 4242 4242"
+                  class="col-span-12"
+                />
                 <div class="col-span-12">
                   <div class="grid gap-4 sm:grid-cols-3">
-                    <div>
-                      <BaseSelect
-                        v-model="cardInfo.expiryMonth"
-                        label="Exp. month"
-                        placeholder="Month"
-                      >
-                        <BaseSelectItem value="01">
-                          01
-                        </BaseSelectItem>
-                        <BaseSelectItem value="02">
-                          02
-                        </BaseSelectItem>
-                        <BaseSelectItem value="03">
-                          03
-                        </BaseSelectItem>
-                        <BaseSelectItem value="04">
-                          04
-                        </BaseSelectItem>
-                        <BaseSelectItem value="05">
-                          05
-                        </BaseSelectItem>
-                        <BaseSelectItem value="06">
-                          06
-                        </BaseSelectItem>
-                        <BaseSelectItem value="07">
-                          07
-                        </BaseSelectItem>
-                        <BaseSelectItem value="08">
-                          08
-                        </BaseSelectItem>
-                        <BaseSelectItem value="09">
-                          09
-                        </BaseSelectItem>
-                        <BaseSelectItem value="10">
-                          10
-                        </BaseSelectItem>
-                        <BaseSelectItem value="11">
-                          11
-                        </BaseSelectItem>
-                        <BaseSelectItem value="12">
-                          12
-                        </BaseSelectItem>
-                      </BaseSelect>
-                    </div>
-                    <div>
-                      <BaseSelect
-                        v-model="cardInfo.expiryYear"
-                        label="Exp. month"
-                        placeholder="Year"
-                      >
-                        <BaseSelectItem value="23">
-                          23
-                        </BaseSelectItem>
-                        <BaseSelectItem value="24">
-                          24
-                        </BaseSelectItem>
-                        <BaseSelectItem value="25">
-                          25
-                        </BaseSelectItem>
-                        <BaseSelectItem value="26">
-                          26
-                        </BaseSelectItem>
-                        <BaseSelectItem value="27">
-                          27
-                        </BaseSelectItem>
-                        <BaseSelectItem value="28">
-                          28
-                        </BaseSelectItem>
-                        <BaseSelectItem value="29">
-                          29
-                        </BaseSelectItem>
-                        <BaseSelectItem value="30">
-                          30
-                        </BaseSelectItem>
-                      </BaseSelect>
-                    </div>
-                    <div>
-                      <BaseInput
-                        v-model="cardInfo.cvc"
-                        label="CVC"
-                        placeholder="ex: 239"
-                      />
-                    </div>
+                    <BaseSelect
+                      v-model="cardInfo.expiryMonth"
+                      label="Exp. month"
+                      placeholder="Month"
+                    >
+                      <BaseSelectItem value="01">
+                        01
+                      </BaseSelectItem>
+                      <BaseSelectItem value="02">
+                        02
+                      </BaseSelectItem>
+                      <BaseSelectItem value="03">
+                        03
+                      </BaseSelectItem>
+                      <BaseSelectItem value="04">
+                        04
+                      </BaseSelectItem>
+                      <BaseSelectItem value="05">
+                        05
+                      </BaseSelectItem>
+                      <BaseSelectItem value="06">
+                        06
+                      </BaseSelectItem>
+                      <BaseSelectItem value="07">
+                        07
+                      </BaseSelectItem>
+                      <BaseSelectItem value="08">
+                        08
+                      </BaseSelectItem>
+                      <BaseSelectItem value="09">
+                        09
+                      </BaseSelectItem>
+                      <BaseSelectItem value="10">
+                        10
+                      </BaseSelectItem>
+                      <BaseSelectItem value="11">
+                        11
+                      </BaseSelectItem>
+                      <BaseSelectItem value="12">
+                        12
+                      </BaseSelectItem>
+                    </BaseSelect>
+                    <BaseSelect
+                      v-model="cardInfo.expiryYear"
+                      label="Exp. month"
+                      placeholder="Year"
+                    >
+                      <BaseSelectItem value="23">
+                        23
+                      </BaseSelectItem>
+                      <BaseSelectItem value="24">
+                        24
+                      </BaseSelectItem>
+                      <BaseSelectItem value="25">
+                        25
+                      </BaseSelectItem>
+                      <BaseSelectItem value="26">
+                        26
+                      </BaseSelectItem>
+                      <BaseSelectItem value="27">
+                        27
+                      </BaseSelectItem>
+                      <BaseSelectItem value="28">
+                        28
+                      </BaseSelectItem>
+                      <BaseSelectItem value="29">
+                        29
+                      </BaseSelectItem>
+                      <BaseSelectItem value="30">
+                        30
+                      </BaseSelectItem>
+                    </BaseSelect>
+                    <BaseInput
+                      v-model="cardInfo.cvc"
+                      label="CVC"
+                      placeholder="ex: 239"
+                    />
                   </div>
                 </div>
               </div>
@@ -630,7 +589,7 @@ const billingCycles = ref('monthly')
     <TairoFormSave>
       <BaseButton
         type="submit"
-        color="primary"
+        variant="primary"
         class="w-full"
       >
         <span>Save for</span>

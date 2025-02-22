@@ -7,7 +7,7 @@ const app = useAppConfig()
  * @see https://nuxt.com/docs/getting-started/seo-meta
  */
 useHead({
-  title: () => route.meta?.title ?? '',
+  title: () => route?.meta?.title ?? '',
   titleTemplate: (titleChunk) => {
     return titleChunk
       ? `${titleChunk} - ${app.tairo?.title}`
@@ -29,7 +29,7 @@ useHead({
     {
       name: 'description',
       content: () =>
-        route.meta.description
+        route?.meta?.description
         ?? 'The most advanced Nuxt and Tailwind CSS dashboard template',
     },
     {
@@ -55,15 +55,15 @@ useHead({
     {
       name: 'og:image',
       content: `https://media.cssninja.io/embed/marketplace/product/wide.png?headline=${encodeURIComponent(
-        route.meta.description
-        || (route.meta.preview
-          ? `${route.meta.preview?.title} - ${route.meta.preview?.description}`
+        route?.meta?.description
+        || (route?.meta?.preview
+          ? `${route.meta?.preview?.title} - ${route.meta?.preview?.description}`
           : 'Nuxt & Tailwind CSS dashboard system'),
       )}&url=${encodeURIComponent(
         'https://media.cssninja.io/content/products/logos/tairo-text-white.svg',
       )}&previewUrl=${encodeURIComponent(
         `https://tairo.cssninja.io${
-          route.meta.preview?.src || '/img/screens/documentation-hub.png'
+          route.meta?.preview?.src || '/img/screens/documentation-hub.png'
         }`,
       )}`,
     },
@@ -83,12 +83,6 @@ useHead({
       @see .demo/components/DemoAppLayoutSwitcher.vue
     -->
     <DemoAppLayoutSwitcher />
-
-    <!--
-      Vue Axe Popup
-      @see .demo/plugins/vue-axe.client.ts
-    -->
-    <VueAxePopup />
 
     <NuxtLayout>
       <NuxtLoadingIndicator color="var(--color-primary-500)" />

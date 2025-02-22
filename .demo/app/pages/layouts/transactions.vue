@@ -14,7 +14,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(20)
@@ -42,13 +52,13 @@ const { data, pending, error, refresh } = await useFetch('/api/transactions', {
 function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'complete':
-      return 'success'
-    case 'in progress':
       return 'primary'
+    case 'in progress':
+      return 'dark'
     case 'processing':
-      return 'info'
+      return 'default'
     case 'cancelled':
-      return 'warning'
+      return 'muted'
     default:
       break
   }
@@ -59,14 +69,12 @@ function statusColor(itemStatus: string) {
   <div class="w-full pb-24">
     <!-- Header -->
     <div class="flex items-center justify-between py-6">
-      <div>
-        <BaseInput
-          v-model="filter"
-          icon="lucide:search"
-          rounded="lg"
-          placeholder="Search transactions..."
-        />
-      </div>
+      <TairoInput
+        v-model="filter"
+        icon="lucide:search"
+        rounded="lg"
+        placeholder="Search transactions..."
+      />
       <div class="flex items-center gap-2">
         <span class="text-muted-400 font-sans text-sm">
           0-{{ perPage }} of {{ data?.total }}
@@ -189,9 +197,8 @@ function statusColor(itemStatus: string) {
             </td>
             <td class="p-4">
               <BaseTag
-                :variant="index > 6 ? 'solid' : 'pastel'"
                 rounded="full"
-                :color="index > 6 ? 'default' : statusColor(item.status)"
+                :variant="index > 6 ? 'default' : statusColor(item.status)"
                 size="sm"
               >
                 {{ item.status }}
@@ -235,9 +242,9 @@ function statusColor(itemStatus: string) {
 
       <div class="mt-6">
         <BasePagination
-          :total-items="data?.total ?? 0"
-          :item-per-page="perPage"
-          :current-page="page"
+          v-model:page="page"
+          :total="data?.total ?? 0"
+          :items-per-page="perPage"
           rounded="md"
         />
       </div>

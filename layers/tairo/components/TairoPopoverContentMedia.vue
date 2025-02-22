@@ -52,8 +52,7 @@ const props = defineProps<{
           <div class="flex w-full rounded-lg p-2">
             <BaseIconBox
               size="xs"
-              variant="pastel"
-              color="primary"
+              variant="primary"
               rounded="none"
               mask="blob"
             >

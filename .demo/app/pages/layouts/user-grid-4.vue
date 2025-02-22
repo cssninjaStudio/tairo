@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(18)
@@ -46,14 +56,11 @@ const { data, pending, error, refresh } = await useFetch(
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="lg"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #right>
@@ -61,7 +68,7 @@ const { data, pending, error, refresh } = await useFetch(
           Manage
         </BaseButton>
         <BaseButton
-          color="primary"
+          variant="primary"
           class="w-full sm:w-32"
           rounded="lg"
         >
@@ -147,7 +154,7 @@ const { data, pending, error, refresh } = await useFetch(
                     <Icon
                       v-else-if="item.tasks.status === 2"
                       name="ph:x-circle-duotone"
-                      class="text-danger-500 size-7"
+                      class="text-destructive-500 size-7"
                     />
                   </div>
                 </div>
@@ -211,9 +218,9 @@ const { data, pending, error, refresh } = await useFetch(
         </div>
         <div v-if="!pending && data?.data.length !== 0" class="mt-4">
           <BasePagination
-            :total-items="data?.total ?? 0"
-            :item-per-page="perPage"
-            :current-page="page"
+            v-model:page="page"
+            :total="data?.total ?? 0"
+            :items-per-page="perPage"
             rounded="lg"
           />
         </div>

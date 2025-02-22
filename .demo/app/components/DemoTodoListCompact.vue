@@ -54,15 +54,14 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
 </script>
 
 <template>
-  <div class="mb-2 space-y-6">
+  <BaseCheckboxGroup v-model="tasks" class="mb-2 space-y-6">
     <label
       v-for="task in todos"
       :key="task.id"
       class="text-muted-300 flex cursor-pointer items-center gap-3"
     >
-      <BaseCheckboxAnimated
-        v-model="tasks"
-        :color="props.color"
+      <TairoCheckboxAnimated
+        :variant="props.color"
         :value="`Option ${task.id}`"
       />
       <div>
@@ -82,5 +81,5 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
         </BaseParagraph>
       </div>
     </label>
-  </div>
+  </BaseCheckboxGroup>
 </template>

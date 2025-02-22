@@ -130,7 +130,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                     v-if="project.type === undefined"
                     size="sm"
                     class="bg-primary-500/10 text-primary-600"
-                    color="none"
+                    variant="none"
                   >
                     <Icon name="ph:briefcase-duotone" class="size-5" />
                   </BaseIconBox>
@@ -138,7 +138,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                     v-else-if="project.type === 'design'"
                     size="sm"
                     class="bg-orange-500/10 text-orange-600"
-                    color="none"
+                    variant="none"
                   >
                     <Icon name="ph:bounding-box-duotone" class="size-5" />
                   </BaseIconBox>
@@ -146,7 +146,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                     v-else-if="project.type === 'development'"
                     size="sm"
                     class="bg-emerald-500/10 text-emerald-600"
-                    color="none"
+                    variant="none"
                   >
                     <Icon name="ph:bounding-box-duotone" class="size-5" />
                   </BaseIconBox>
@@ -154,7 +154,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                     v-else-if="project.type === 'marketing'"
                     size="sm"
                     class="bg-yellow-500/10 text-yellow-500"
-                    color="none"
+                    variant="none"
                   >
                     <Icon name="ph:bounding-box-duotone" class="size-5" />
                   </BaseIconBox>
@@ -480,7 +480,7 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
             <BaseButton
               to="/dashboards"
               rounded="lg"
-              color="primary"
+              variant="primary"
               class="w-48"
             >
               <span>View Project</span>

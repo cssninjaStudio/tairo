@@ -40,7 +40,6 @@ const currentMember = ref()
         <BaseButton
           to="/layouts/invite"
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:user" class="size-4" />
@@ -48,7 +47,6 @@ const currentMember = ref()
         </BaseButton>
         <BaseButton
           rounded="full"
-          color="default"
           size="sm"
         >
           <Icon name="lucide:edit-3" class="size-4" />

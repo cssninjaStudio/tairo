@@ -66,10 +66,10 @@ const props = withDefaults(
     <div class="mt-4">
       <BaseButton
         class="w-full"
-        color="primary"
-        icon="lucide:shopping-cart"
+        variant="primary"
         :rounded="props.rounded"
       >
+        <Icon name="lucide:shopping-cart" class="size-4" />
         <span>Add to Cart</span>
       </BaseButton>
     </div>

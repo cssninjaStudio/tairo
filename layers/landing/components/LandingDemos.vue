@@ -196,14 +196,13 @@ const filteredDemos = computed(() => {
             <li class="pb-4">
               <BaseSwitchThin
                 v-model="onlyNew"
-                color="primary"
+                variant="primary"
                 label="Only new"
               />
             </li>
             <li class="capitalize">
               <BaseRadio
                 value=""
-                color="primary"
                 label="All"
               />
             </li>
@@ -214,7 +213,6 @@ const filteredDemos = computed(() => {
             >
               <BaseRadio
                 :value="category"
-                color="primary"
                 :label="category"
               />
             </li>
@@ -246,8 +244,7 @@ const filteredDemos = computed(() => {
           <div v-if="props.cta" class="mt-24 flex items-center justify-center">
             <BaseButton
               rounded="lg"
-              color="primary"
-              variant="outline"
+              variant="primary"
               to="/demos"
             >
               View All {{ demoPages.length }} Demos

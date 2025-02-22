@@ -52,14 +52,12 @@ function openCardPanel(id: number, cards: any) {
   <div class="w-full pb-24">
     <!-- Header -->
     <div class="flex items-center justify-between py-6">
-      <div>
-        <BaseInput
-          v-model="filter"
-          icon="lucide:search"
-          rounded="lg"
-          placeholder="Search cards..."
-        />
-      </div>
+      <TairoInput
+        v-model="filter"
+        icon="lucide:search"
+        rounded="lg"
+        placeholder="Search cards..."
+      />
       <div class="flex items-center gap-2">
         <span class="text-muted-400 font-sans text-sm">
           0-{{ data?.data.length }} of {{ data?.total }}
@@ -87,7 +85,7 @@ function openCardPanel(id: number, cards: any) {
           <BaseButton
             to="/layouts/card/new"
             rounded="md"
-            color="default"
+            variant="default"
             size="sm"
           >
             <Icon name="lucide:plus" class="size-4" />
@@ -169,7 +167,7 @@ function openCardPanel(id: number, cards: any) {
                       card.cardInfo.status === 'disabled'
                         && 'bg-muted-300 dark:bg-muted-700',
                       card.cardInfo.status === 'expired' && 'bg-warning-500',
-                      card.cardInfo.status === 'locked' && 'bg-danger-500',
+                      card.cardInfo.status === 'locked' && 'bg-destructive-500',
                     ]"
                   />
                   <span>{{ card.cardInfo.status }}</span>

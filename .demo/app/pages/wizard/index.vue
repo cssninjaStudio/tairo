@@ -71,7 +71,7 @@ function onSelectType(type: ProjectType) {
           <div class="mb-5 flex flex-col items-center">
             <BaseButton
               :to="getNextStep()?.to"
-              color="primary"
+              variant="primary"
               rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('design')"
@@ -123,7 +123,7 @@ function onSelectType(type: ProjectType) {
           <div class="mb-5 flex flex-col items-center">
             <BaseButton
               :to="getNextStep()?.to"
-              color="primary"
+              variant="primary"
               rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('development')"
@@ -174,7 +174,7 @@ function onSelectType(type: ProjectType) {
           <div class="mb-5 flex flex-col items-center">
             <BaseButton
               :to="getNextStep()?.to"
-              color="primary"
+              variant="primary"
               rounded="lg"
               class="w-36"
               @click.prevent="() => onSelectType('marketing')"

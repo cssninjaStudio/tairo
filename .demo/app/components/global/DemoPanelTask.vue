@@ -64,8 +64,7 @@ const commentArea = ref('')
             </div>
             <BaseTag
               rounded="full"
-              variant="pastel"
-              color="muted"
+              variant="muted"
               class="m-0 -ms-1 inline-flex h-6 scale-90 items-center gap-1 py-0 text-xs font-semibold"
             >
               <span
@@ -73,7 +72,7 @@ const commentArea = ref('')
                 :class="[
                   props.task?.status === 0 && 'bg-info-500',
                   props.task?.status === 1 && 'bg-primary-500',
-                  props.task?.status === 2 && 'bg-danger-500',
+                  props.task?.status === 2 && 'bg-destructive-500',
                   props.task?.status === 3 && 'bg-warning-500',
                   props.task?.status === 4 && 'bg-yellow-400',
                   props.task?.status === 5 && 'bg-success-500',
@@ -127,9 +126,9 @@ const commentArea = ref('')
                   {{ props.task?.completion }}% complete
                 </BaseText>
                 <BaseProgress
-                  :value="props.task?.completion"
+                  :model-value="props.task?.completion"
                   size="xs"
-                  :color="props.task?.status === 5 ? 'success' : 'primary'"
+                  :variant="props.task?.status === 5 ? 'primary' : 'default'"
                 />
               </div>
             </div>
@@ -170,13 +169,8 @@ const commentArea = ref('')
                   <BaseCheckbox
                     v-model="item.done"
                     class="shrink-0"
-                    color="primary"
+                    variant="primary"
                     :label="item.text"
-                    :classes="{
-                      wrapper: 'items-start! max-w-[240px]',
-                      label:
-                        'text-[0.85rem] text-muted-500 dark:text-muted-300 leading-snug',
-                    }"
                   />
                 </div>
               </div>
@@ -330,7 +324,7 @@ const commentArea = ref('')
                   </BaseHeading>
                 </div>
                 <div class="flex items-center gap-2">
-                  <BaseButton color="primary" @click="emits('message', { from: 'maya', comment: toValue(commentArea) })">
+                  <BaseButton variant="primary" @click="emits('message', { from: 'maya', comment: toValue(commentArea) })">
                     Publish
                   </BaseButton>
                 </div>

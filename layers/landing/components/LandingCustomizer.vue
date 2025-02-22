@@ -96,8 +96,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="lg"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                 >
                   Member
                 </BaseTag>
@@ -148,8 +147,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-12! w-full"
                   rounded="lg"
-                  color="primary"
-                  variant="pastel"
+                  variant="primary"
                 >
                   <Icon name="lucide:bell" class="size-4" />
                   <span>Follow Belen</span>
@@ -174,8 +172,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="full"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                   class="relative z-10"
                 >
                   Member
@@ -237,7 +234,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-11! w-full"
                   rounded="full"
-                  color="primary"
+                  variant="primary"
                 >
                   <Icon name="lucide:bell" class="size-4" />
                   <span>Follow</span>
@@ -258,8 +255,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="sm"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                 >
                   Member
                 </BaseTag>
@@ -314,7 +310,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-11! w-full"
                   rounded="sm"
-                  color="primary"
+                  variant="primary"
                 >
                   <Icon name="lucide:check" class="size-4" />
                   <span>Hire Now</span>
@@ -329,8 +325,7 @@ watch(selectedStyle, (value) => {
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
                   rounded="none"
-                  color="primary"
-                  shadow="flat"
+                  variant="primary"
                 >
                   Member
                 </BaseTag>
@@ -387,8 +382,7 @@ watch(selectedStyle, (value) => {
                 <BaseButton
                   class="h-11! w-full"
                   rounded="none"
-                  color="primary"
-                  variant="outline"
+                  variant="primary"
                 >
                   <span>Send Invitation</span>
                 </BaseButton>

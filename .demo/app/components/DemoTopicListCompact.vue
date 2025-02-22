@@ -50,7 +50,7 @@ const topics = [
       <BaseIconBox
         :rounded="props.rounded"
         size="sm"
-        color="none"
+        variant="none"
         :class="getRandomColor()"
       >
         <Icon :name="topic.icon" class="size-5" />

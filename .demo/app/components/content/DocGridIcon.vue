@@ -36,7 +36,7 @@ const iconColor = computed(() => {
     case 'warning':
       return 'bg-warning-500/10 text-warning-500'
     case 'danger':
-      return 'bg-danger-500/10 text-danger-500'
+      return 'bg-destructive-500/10 text-destructive-500'
     case 'yellow':
       return 'bg-yellow-500/10 text-yellow-500'
     case 'orange':
@@ -62,9 +62,8 @@ const iconColor = computed(() => {
       size="md"
       rounded="none"
       mask="blob"
-      color="none"
+      variant="none"
       :class="iconColor"
-      variant="pastel"
     >
       <Icon :name="props.name" class="size-6" />
     </BaseIconBox>

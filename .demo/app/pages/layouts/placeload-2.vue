@@ -12,7 +12,7 @@ definePageMeta({
 })
 const fake = ref('')
 const fakePerPage = ref<string>()
-const fakeAll = ref(true)
+const fakeAll = ref(false)
 const fakeItems = ref([])
 </script>
 
@@ -20,13 +20,10 @@ const fakeItems = ref([])
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="fake"
           icon="lucide:search"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
           disabled
         />
       </template>
@@ -34,10 +31,6 @@ const fakeItems = ref([])
         <BaseSelect
           v-model="fakePerPage"
           placeholder="Items per page"
-          label=""
-          :classes="{
-            wrapper: 'w-full sm:w-40',
-          }"
           disabled
         >
           <BaseSelectItem :value="10">
@@ -64,11 +57,7 @@ const fakeItems = ref([])
                 class="p-4"
               >
                 <div class="flex items-center">
-                  <BaseCheckbox
-                    v-model="fakeAll"
-                    rounded="full"
-                    color="primary"
-                  />
+                  <BaseCheckbox v-model="fakeAll" />
                 </div>
               </TairoTableHeading>
               <TairoTableHeading uppercase spaced>
@@ -91,42 +80,39 @@ const fakeItems = ref([])
               </TairoTableHeading>
             </template>
 
-            <TairoTableRow v-for="index in 10" :key="index">
-              <TairoTableCell spaced>
-                <div class="flex items-center">
-                  <BaseCheckbox
-                    v-model="fakeItems"
-                    :value="`placeload-item-checkbox-${index}`"
-                    rounded="full"
-                    color="primary"
-                  />
-                </div>
-              </TairoTableCell>
-              <TairoTableCell light spaced>
-                <BasePlaceload class="size-[46px] shrink-0 rounded-xl" />
-              </TairoTableCell>
-              <TairoTableCell spaced>
-                <BasePlaceload class="h-3 w-24 rounded-lg" />
-              </TairoTableCell>
-              <TairoTableCell light spaced>
-                <BasePlaceload class="h-3 w-12 rounded-lg" />
-              </TairoTableCell>
-              <TairoTableCell light spaced>
-                <BasePlaceload class="h-3 w-12 rounded-lg" />
-              </TairoTableCell>
-              <TairoTableCell spaced>
-                <div class="flex items-center gap-2">
-                  <BasePlaceload class="size-8 shrink-0 rounded-full" />
-                  <div class="space-y-1">
-                    <BasePlaceload class="h-2 w-[70px] rounded-lg" />
-                    <BasePlaceload class="h-2 w-[50px] rounded-lg" />
+            <BaseCheckboxGroup v-model="fakeItems" as-child>
+              <TairoTableRow v-for="index in 10" :key="index">
+                <TairoTableCell spaced>
+                  <div class="flex items-center">
+                    <BaseCheckbox :value="index" />
                   </div>
-                </div>
-              </TairoTableCell>
-              <TairoTableCell spaced>
-                <BasePlaceload class="h-8 w-16 rounded-lg" />
-              </TairoTableCell>
-            </TairoTableRow>
+                </TairoTableCell>
+                <TairoTableCell light spaced>
+                  <BasePlaceload class="size-[46px] shrink-0 rounded-xl" />
+                </TairoTableCell>
+                <TairoTableCell spaced>
+                  <BasePlaceload class="h-3 w-24 rounded-lg" />
+                </TairoTableCell>
+                <TairoTableCell light spaced>
+                  <BasePlaceload class="h-3 w-12 rounded-lg" />
+                </TairoTableCell>
+                <TairoTableCell light spaced>
+                  <BasePlaceload class="h-3 w-12 rounded-lg" />
+                </TairoTableCell>
+                <TairoTableCell spaced>
+                  <div class="flex items-center gap-2">
+                    <BasePlaceload class="size-8 shrink-0 rounded-full" />
+                    <div class="space-y-1">
+                      <BasePlaceload class="h-2 w-[70px] rounded-lg" />
+                      <BasePlaceload class="h-2 w-[50px] rounded-lg" />
+                    </div>
+                  </div>
+                </TairoTableCell>
+                <TairoTableCell spaced>
+                  <BasePlaceload class="h-8 w-16 rounded-lg" />
+                </TairoTableCell>
+              </TairoTableRow>
+            </BaseCheckboxGroup>
           </TairoTable>
         </div>
       </div>

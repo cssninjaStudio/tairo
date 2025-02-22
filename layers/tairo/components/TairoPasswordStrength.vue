@@ -82,7 +82,7 @@ const checks = computed(() => [
             <Icon
               v-else
               name="ion:close-circle-outline"
-              class="text-danger-400 dark:text-danger-500 size-4"
+              class="text-destructive-400 dark:text-destructive-500 size-4"
             />
           </span>
         </li>
@@ -93,7 +93,7 @@ const checks = computed(() => [
         <div class="w-1/5 px-1">
           <div
             class="h-2 rounded-xl transition-colors"
-            :class="check.valid ? 'bg-success-500' : 'bg-danger-500'"
+            :class="check.valid ? 'bg-success-500' : 'bg-destructive-500'"
             :data-nui-tooltip="check.label.replace('Contains', '')"
           />
         </div>

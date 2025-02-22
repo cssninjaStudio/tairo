@@ -23,8 +23,7 @@ const format = ref('quickbooks')
         class="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-start"
       >
         <BaseIconBox
-          color="primary"
-          variant="pastel"
+          variant="primary"
           size="md"
           rounded="none"
           mask="blob"

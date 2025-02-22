@@ -44,6 +44,49 @@ definePageMeta({
   },
 })
 
+const users = [
+  {
+    id: 16,
+    photo: '/img/avatars/16.svg',
+    name: 'Hermann Mayer',
+  },
+  {
+    id: 10,
+    photo: '/img/avatars/10.svg',
+    name: 'Kendra Wilson',
+  },
+  {
+    id: 5,
+    photo: '/img/avatars/5.svg',
+    name: 'Clarissa Miller',
+  },
+  {
+    id: 8,
+    photo: '/img/avatars/8.svg',
+    name: 'Eddy Bricks',
+  },
+  {
+    id: 3,
+    photo: '/img/avatars/3.svg',
+    name: 'Clark Smith',
+  },
+  {
+    id: 19,
+    name: 'Clarissa Perez',
+    photo: '/img/avatars/19.svg',
+  },
+  {
+    id: 22,
+    name: 'Benedict Kessler',
+    photo: '/img/avatars/22.svg',
+  },
+  {
+    id: 2,
+    name: 'Maya Rosselini',
+    photo: '/img/avatars/2.svg',
+  },
+]
+
 const scrollCalendarRef = useTemplateRef<HTMLElement>('scrollCalendarRef')
 const showSettings = ref(false)
 const settings = reactive<CalendarSettings>({
@@ -409,7 +452,7 @@ const selectedEventFeatures = computed({
               <template #header-right-button="{ moveNext }">
                 <BaseButton
                   rounded="full"
-                  small
+                  size="icon-sm"
                   @click="moveNext"
                   @keydown.space.enter="moveNext"
                 >
@@ -591,82 +634,104 @@ const selectedEventFeatures = computed({
           v-if="showSettings"
           class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4"
         >
-          <div class="grid grid-cols-2 gap-x-2">
-            <BaseInputNumber
-              v-model="settings.hourOpen"
-              :min="0"
-              :max="settings.hourClose - 1"
+          <div class="grid grid-cols-2 gap-x-2 gap-y-4">
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
               label="Open from"
-              size="sm"
-            />
-            <BaseInputNumber
-              v-model="settings.hourClose"
-              :min="settings.hourOpen + 1"
-              :max="24"
-              label="Close at"
-              size="sm"
-            />
-            <BaseInputNumber
-              v-model="settings.hourPrecision"
-              :min="5"
-              :step="5"
-              :max="30"
-              label="Precision"
-              size="sm"
-              :classes="{ wrapper: 'col-span-2' }"
-            />
-          </div>
-          <div class="grid grid-cols-3 items-end gap-x-2 gap-y-4">
-            <BaseSelect
-              v-model="settings.weekStartsOn"
-              label="Week starts on"
-              size="sm"
-              :classes="{
-                wrapper: 'col-span-2',
-              }"
             >
-              <BaseSelectItem :value="0">
-                Sunday
-              </BaseSelectItem>
-              <BaseSelectItem :value="1">
-                Monday
-              </BaseSelectItem>
-              <BaseSelectItem :value="2">
-                Tuesday
-              </BaseSelectItem>
-              <BaseSelectItem :value="3">
-                Wednesday
-              </BaseSelectItem>
-              <BaseSelectItem :value="4">
-                Thursday
-              </BaseSelectItem>
-              <BaseSelectItem :value="5">
-                Friday
-              </BaseSelectItem>
-              <BaseSelectItem :value="6">
-                Saturday
-              </BaseSelectItem>
-            </BaseSelect>
-            <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
-              <BaseButton
-                rounded="lg"
+              <BaseInputNumber
+                :ref="inputRef"
+                v-bind="inputAttrs"
+                v-model="settings.hourOpen"
+                :min="0"
+                :max="settings.hourClose - 1"
                 size="sm"
-                :color="settings.hourHeight === 480 ? 'muted' : 'default'"
-                @click="() => updateHeight(480)"
-              >
-                <Icon name="carbon:maximize" />
-              </BaseButton>
-              <BaseButton
-                rounded="lg"
+              />
+            </BaseField>
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
+              label="Close at"
+            >
+              <BaseInputNumber
+                :ref="inputRef"
+                v-bind="inputAttrs"
+                v-model="settings.hourClose"
+                :min="settings.hourOpen + 1"
+                :max="24"
                 size="sm"
-                :color="settings.hourHeight === 160 ? 'muted' : 'default'"
-                @click="() => updateHeight()"
-              >
-                <Icon name="carbon:minimize" />
-              </BaseButton>
-            </div>
+              />
+            </BaseField>
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
+              label="Precision"
+              class="col-span-2"
+            >
+              <BaseInputNumber
+                :ref="inputRef"
+                v-bind="inputAttrs"
+                v-model="settings.hourPrecision"
+                :min="5"
+                :step="5"
+                :max="30"
+                size="sm"
+              />
+            </BaseField>
           </div>
-
+          <BaseField
+            v-slot="{ inputAttrs, inputRef }"
+            label="Week starts on"
+            class="mt-4"
+          >
+            <div class="grid grid-cols-3 items-end gap-x-2 gap-y-4">
+              <BaseSelect
+                :ref="inputRef"
+                v-bind="inputAttrs"
+                v-model="settings.weekStartsOn"
+                size="sm"
+                class="col-span-2"
+              >
+                <BaseSelectItem :value="0">
+                  Sunday
+                </BaseSelectItem>
+                <BaseSelectItem :value="1">
+                  Monday
+                </BaseSelectItem>
+                <BaseSelectItem :value="2">
+                  Tuesday
+                </BaseSelectItem>
+                <BaseSelectItem :value="3">
+                  Wednesday
+                </BaseSelectItem>
+                <BaseSelectItem :value="4">
+                  Thursday
+                </BaseSelectItem>
+                <BaseSelectItem :value="5">
+                  Friday
+                </BaseSelectItem>
+                <BaseSelectItem :value="6">
+                  Saturday
+                </BaseSelectItem>
+              </BaseSelect>
+              <div class="flex items-center *:first:border-e-0 *:first:rounded-e-none *:last:rounded-s-none">
+                <BaseButton
+                  rounded="lg"
+                  size="icon-sm"
+                  :variant="settings.hourHeight === 480 ? 'muted' : 'default'"
+                  @click="() => updateHeight(480)"
+                >
+                  <Icon name="carbon:maximize" class="size-4" />
+                </BaseButton>
+                <BaseButton
+                  rounded="lg"
+                  size="icon-sm"
+                  :variant="settings.hourHeight === 160 ? 'muted' : 'default'"
+                  @click="() => updateHeight()"
+                >
+                  <Icon name="carbon:minimize" class="size-4" />
+                </BaseButton>
+              </div>
+            </div>
+          </BaseField>
           <div class="mt-4">
             <BaseSwitchThin
               v-model="settings.hideWeekends"
@@ -721,172 +786,90 @@ const selectedEventFeatures = computed({
             </BaseHeading>
 
             <div class="flex flex-col gap-2">
-              <BaseInput
-                v-model.trim="selectedEvent.title"
-                v-focus
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
                 label="Title"
-              />
+              >
+                <BaseInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  v-model.trim="selectedEvent.title"
+                  v-focus
+                />
+              </BaseField>
 
-              <BaseSelect
-                v-model="selectedEvent.category"
-                :items="Object.entries(categoryTheme).map(([key, item]) => ({
-                  value: key,
-                  textValue: item.name,
-                }))"
-              />
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="Category"
+              >
+                <BaseSelect
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  v-model="selectedEvent.category"
+                  :items="Object.entries(categoryTheme).map(([key, item]) => ({
+                    value: key,
+                    textValue: item.name,
+                  }))"
+                />
+              </BaseField>
 
-              <BaseAutocomplete
-                v-model="selectedEvent.participants"
-                :items="[
-                  {
-                    photo: '/img/avatars/16.svg',
-                    name: 'Hermann Mayer',
-                  },
-                  {
-                    photo: '/img/avatars/10.svg',
-                    name: 'Kendra Wilson',
-                  },
-                  {
-                    photo: '/img/avatars/5.svg',
-                    name: 'Clarissa Miller',
-                  },
-                  {
-                    photo: '/img/avatars/8.svg',
-                    name: 'Eddy Bricks',
-                  },
-                  {
-                    photo: '/img/avatars/3.svg',
-                    name: 'Clark Smith',
-                  },
-                  {
-                    name: 'Clarissa Perez',
-                    photo: '/img/avatars/19.svg',
-                  },
-                  {
-                    name: 'Benedict Kessler',
-                    photo: '/img/avatars/22.svg',
-                  },
-                  {
-                    name: 'Maya Rosselini',
-                    photo: '/img/avatars/2.svg',
-                  },
-                ]"
-                :properties="{
-                  label: 'name',
-                  media: 'photo',
-                }"
-                :display-value="(item: any) => item?.name || ''"
-                dropdown
-                multiple
-                :filter-items="
-                  (query?: string, items?: any[]) => {
-                    if (!query || !items) {
-                      return items ?? []
-                    }
-
-                    // search by name or text
-                    return items.filter((item) => {
-                      const nameMatches = item?.name
-                        ?.toLowerCase()
-                        .includes(query.toLowerCase())
-                      const textMatches = item?.text
-                        ?.toLowerCase()
-                        .includes(query.toLowerCase())
-                      return nameMatches || textMatches
-                    })
-                  }
-                "
-                icon="ph:users-three"
-                placeholder="Search..."
+              <BaseField
                 label="Assignee"
-                clearable
-              />
-              <div class="relative z-[5] grid grid-cols-4 gap-2 pt-4">
-                <div data-nui-tooltip="Record">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="record"
-                    name="features"
+              >
+                <template #hint>
+                  <BaseAvatarGroup
+                    size="xxs"
+                    :avatars="selectedEvent.participants.map((item) => ({
+                      src: item.photo,
+                      alt: item.name,
+                    }))"
+                  />
+                </template>
+                <template #default="{ inputAttrs, inputRef }">
+                  <BaseAutocomplete
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    v-model="selectedEvent.participants"
+                    multiple
+                    icon="ph:users-three"
+                    placeholder="Search..."
+                    clearable
                   >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
+                    <BaseAutocompleteItem
+                      v-for="item in users"
+                      :key="item.id"
+                      :value="item"
+                      :text-value="item.name"
                     >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:monitor-play-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                      <span class="flex gap-2">
+                        <BaseAvatar
+                          :src="item.photo"
+                          :alt="item.name"
+                          size="xxs"
+                        />
+                        <span class="text-sm font-medium">
+                          {{ item.name }}
+                        </span>
+                      </span>
+                    </BaseAutocompleteItem>
+                  </BaseAutocomplete>
+                </template>
+              </BaseField>
+
+              <CheckboxGroupRoot v-model="selectedEventFeatures" as="div" class="grid grid-cols-4 gap-2 pt-4">
+                <div data-nui-tooltip="Record">
+                  <TairoCheckboxCardIcon value="record" icon="ph:monitor-play-duotone" />
                 </div>
                 <div data-nui-tooltip="Document included">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="drive"
-                    name="features"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
-                    >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:note-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                  <TairoCheckboxCardIcon value="drive" icon="ph:note-duotone" />
                 </div>
                 <div data-nui-tooltip="External Users">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="external"
-                    name="features"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
-                    >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:lock-open-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                  <TairoCheckboxCardIcon value="external" icon="ph:lock-open-duotone" />
                 </div>
                 <div data-nui-tooltip="Comment allowed">
-                  <BaseCheckboxHeadless
-                    v-model="selectedEventFeatures"
-                    value="conversation"
-                    name="features"
-                  >
-                    <BaseCard
-                      rounded="lg"
-                      class="text-muted-300 peer-checked:border-primary-500 peer-checked:text-primary-500 p-4"
-                    >
-                      <div class="flex flex-col items-center gap-1">
-                        <Icon name="ph:chats-circle-duotone" class="size-5" />
-                        <!-- <div
-                          class="text-muted-800 dark:text-muted-100 text-xs font-medium"
-                        >
-                          Record
-                        </div> -->
-                      </div>
-                    </BaseCard>
-                  </BaseCheckboxHeadless>
+                  <TairoCheckboxCardIcon value="conversation" icon="ph:chats-circle-duotone" />
                 </div>
-              </div>
+              </CheckboxGroupRoot>
             </div>
           </div>
           <div

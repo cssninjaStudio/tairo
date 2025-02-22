@@ -248,8 +248,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                     >
                       <BaseTag
                         rounded="full"
-                        variant="pastel"
-                        color="muted"
+                        variant="muted"
                         class="m-0 -ms-1 inline-flex h-6 scale-90 items-center py-0 text-xs font-semibold"
                       >
                         Task #{{ task.id }}

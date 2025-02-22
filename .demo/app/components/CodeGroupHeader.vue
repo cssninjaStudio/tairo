@@ -65,12 +65,12 @@ const { copy, copied, isSupported } = useClipboard({
         <Icon
           v-if="!copied"
           name="lucide:copy"
-          class="h-4 w-4"
+          class="size-4"
         />
         <Icon
           v-else
           name="lucide:check"
-          class="h-4 w-4 text-success-500"
+          class="size-4 text-success-500"
         />
       </BaseButton>
     </div>

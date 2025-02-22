@@ -62,7 +62,6 @@ onBeforeMount(checkPreviousSteps)
                 rounded="none"
                 mask="blob"
                 :text="request?.firstName[0]"
-                color="primary"
               />
               <div>
                 <BaseHeading
@@ -123,7 +122,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -143,7 +142,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -165,7 +164,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -183,7 +182,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -201,7 +200,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -221,7 +220,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -242,7 +241,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -264,7 +263,7 @@ onBeforeMount(checkPreviousSteps)
                     <Icon
                       v-else
                       name="lucide:x"
-                      class="text-danger-500 relative top-1 size-4 shrink-0"
+                      class="text-destructive-500 relative top-1 size-4 shrink-0"
                     />
                     <BaseParagraph
                       size="sm"
@@ -292,7 +291,7 @@ onBeforeMount(checkPreviousSteps)
           </BaseButton>
           <BaseButton
             type="submit"
-            color="primary"
+            variant="primary"
             size="lg"
             class="w-full"
             :loading="loading"
@@ -326,7 +325,7 @@ onBeforeMount(checkPreviousSteps)
         <div class="flex justify-center">
           <BaseButton
             to="/layouts/members"
-            color="primary"
+            variant="primary"
             rounded="md"
             class="w-48"
           >

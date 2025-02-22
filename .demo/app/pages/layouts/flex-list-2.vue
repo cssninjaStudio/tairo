@@ -13,7 +13,17 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
-const page = computed(() => Number.parseInt((route.query.page as string) ?? '1'))
+const page = computed({
+  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  set: (value) => {
+    router.push({
+      query: {
+        ...route.query,
+        page: value,
+      },
+    })
+  },
+})
 
 const filter = ref('')
 const perPage = ref(10)
@@ -44,11 +54,11 @@ const { data, pending, error, refresh } = await useFetch(
 function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'online':
-      return 'success'
+      return 'primary'
     case 'working':
-      return 'info'
+      return 'dark'
     case 'suspended':
-      return 'warning'
+      return 'muted'
     default:
       break
   }
@@ -59,14 +69,11 @@ function statusColor(itemStatus: string) {
   <div>
     <TairoContentWrapper>
       <template #left>
-        <BaseInput
+        <TairoInput
           v-model="filter"
           icon="lucide:search"
           rounded="full"
           placeholder="Filter users..."
-          :classes="{
-            wrapper: 'w-full sm:w-auto',
-          }"
         />
       </template>
       <template #right>
@@ -74,7 +81,7 @@ function statusColor(itemStatus: string) {
           Manage
         </BaseButton>
         <BaseButton
-          color="primary"
+          variant="primary"
           rounded="full"
           class="w-full sm:w-32"
         >
@@ -158,9 +165,8 @@ function statusColor(itemStatus: string) {
                   class="w-full sm:w-16"
                 >
                   <BaseTag
-                    :color="statusColor(item.status)"
+                    :variant="statusColor(item.status)"
                     rounded="full"
-                    variant="pastel"
                     size="sm"
                     class="capitalize"
                   >
@@ -180,7 +186,7 @@ function statusColor(itemStatus: string) {
                   />
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButton color="muted">
+                  <BaseButton variant="muted">
                     <span>View</span>
                   </BaseButton>
                 </DemoFlexTableCell>
@@ -190,9 +196,9 @@ function statusColor(itemStatus: string) {
         </div>
         <div v-if="!pending && data?.data.length !== 0" class="mt-4">
           <BasePagination
-            :total-items="data?.total ?? 0"
-            :item-per-page="perPage"
-            :current-page="page"
+            v-model:page="page"
+            :total="data?.total ?? 0"
+            :items-per-page="perPage"
             rounded="full"
           />
         </div>

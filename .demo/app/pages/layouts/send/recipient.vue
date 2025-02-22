@@ -52,36 +52,38 @@ onBeforeMount(checkPreviousSteps)
       <div class="mb-4">
         <!-- Grid -->
         <div class="grid gap-4 md:grid-cols-2">
-          <div class="group relative col-span-2">
-            <BaseInput
+          <BaseField
+            label="Recipient Name"
+            :error="errors.fields?.['recipient.name']"
+            class="col-span-2"
+          >
+            <TairoInput
               :model-value="request.recipient.name"
-              :error="errors.fields?.['recipient.name']"
-              label="Recipient Name"
               icon="ph:user-duotone"
               placeholder="Ex: John Doe"
               readonly
-              :classes="{
-                input: 'bg-muted-100 dark:bg-muted-900!',
-              }"
             />
-          </div>
-          <div class="relative">
+          </BaseField>
+          <BaseField
+            label="Routing Number"
+            :error="errors.fields.routingNumber"
+            required
+          >
             <BaseInput
               v-model="request.routingNumber"
               v-focus
-              :error="errors.fields.routingNumber"
-              label="Routing Number"
               placeholder="Ex: 183402022"
             />
-          </div>
-          <div class="relative">
+          </BaseField>
+          <BaseField
+            label="Prefix"
+            :error="errors.fields.prefix"
+          >
             <BaseInput
               v-model="request.prefix"
-              :error="errors.fields.prefix"
-              label="Prefix (optional)"
               placeholder="Ex: XCQ23"
             />
-          </div>
+          </BaseField>
         </div>
       </div>
 
@@ -97,7 +99,7 @@ onBeforeMount(checkPreviousSteps)
         </BaseButton>
         <BaseButton
           type="submit"
-          color="primary"
+          variant="primary"
           size="lg"
           class="w-full"
         >
