@@ -56,42 +56,26 @@ const props = defineProps<{
         class="border-muted-200 dark:border-muted-700 mt-1 flex items-center justify-between border-t pt-2"
       >
         <div class="flex flex-wrap gap-2">
-          <span
-            v-if="props.event.features?.record"
-            class="text-muted-400"
-            data-nui-tooltip="Recorded"
-          >
-            <Icon name="ph:monitor-play-duotone" class="size-4" />
-          </span>
-          <span
-            v-if="props.event.features?.drive"
-            class="text-muted-400"
-            data-nui-tooltip="Document joined"
-          >
-            <Icon name="ph:note-duotone" class="size-4" />
-          </span>
-          <span
-            v-if="props.event.features?.external"
-            class="text-muted-400"
-            data-nui-tooltip="External Users"
-          >
-            <Icon name="ph:lock-open-duotone" class="size-4" />
-          </span>
-          <span
-            v-if="props.event.features?.conversation"
-            class="text-muted-400"
-            data-nui-tooltip="Has comments"
-          >
+          <BaseTooltip v-if="props.event.features?.record" content="Recorded">
+            <Icon name="ph:monitor-play-duotone" class="size-4 text-muted-400" />
+          </BaseTooltip>
+          <BaseTooltip v-if="props.event.features?.drive" content="Document joined">
+            <Icon name="ph:note-duotone" class="size-4 text-muted-400" />
+          </BaseTooltip>
+          <BaseTooltip v-if="props.event.features?.external" content="External Users">
+            <Icon name="ph:lock-open-duotone" class="size-4 text-muted-400" />
+          </BaseTooltip>
+          <BaseTooltip v-if="props.event.features?.conversation" content="Has comments">
             <Icon name="ph:chats-circle-duotone" class="size-4" />
-          </span>
+          </BaseTooltip>
         </div>
         <div>
-          <div
-            class="size-2 rounded-full"
-            :class="[categoryTheme[props.event.category].color]"
-            :data-nui-tooltip="categoryTheme[props.event.category].name"
-            data-nui-tooltip-position="start"
-          />
+          <BaseTooltip :content="categoryTheme[props.event.category].name">
+            <div
+              class="size-2 rounded-full"
+              :class="[categoryTheme[props.event.category].color]"
+            />
+          </BaseTooltip>
         </div>
       </div>
     </div>

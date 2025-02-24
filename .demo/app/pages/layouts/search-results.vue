@@ -359,33 +359,33 @@ const filteredResults = computed(() => {
                   </BaseText>
                 </div>
                 <div class="ms-auto">
-                  <BaseButton
-                    v-if="result.type === 'people'"
-                    :to="result.url"
-                    rounded="full"
-                    size="icon-sm"
-                    data-nui-tooltip="View profile"
-                  >
-                    <Icon name="lucide:arrow-right" />
-                  </BaseButton>
-                  <BaseButton
-                    v-else-if="result.type === 'project'"
-                    :to="result.url"
-                    rounded="full"
-                    size="icon-sm"
-                    data-nui-tooltip="View project"
-                  >
-                    <Icon name="lucide:arrow-right" />
-                  </BaseButton>
-                  <BaseButton
-                    v-else-if="result.type === 'file'"
-                    :to="result.url"
-                    rounded="full"
-                    size="icon-sm"
-                    data-nui-tooltip="Download file"
-                  >
-                    <Icon name="lucide:arrow-down" />
-                  </BaseButton>
+                  <BaseTooltip v-if="result.type === 'people'" content="View profile">
+                    <BaseButton
+                      :to="result.url"
+                      rounded="full"
+                      size="icon-sm"
+                    >
+                      <Icon name="lucide:arrow-right" />
+                    </BaseButton>
+                  </BaseTooltip>
+                  <BaseTooltip v-else-if="result.type === 'project'" content="View project">
+                    <BaseButton
+                      :to="result.url"
+                      rounded="full"
+                      size="icon-sm"
+                    >
+                      <Icon name="lucide:arrow-right" />
+                    </BaseButton>
+                  </BaseTooltip>
+                  <BaseTooltip v-else-if="result.type === 'file'" content="Download file">
+                    <BaseButton
+                      :to="result.url"
+                      rounded="full"
+                      size="icon-sm"
+                    >
+                      <Icon name="lucide:arrow-down" />
+                    </BaseButton>
+                  </BaseTooltip>
                 </div>
               </div>
             </BaseCard>

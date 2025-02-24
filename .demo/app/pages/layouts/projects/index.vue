@@ -110,12 +110,13 @@ const { data, pending, error, refresh } = await useFetch(
                     class="group-hover:border-primary-500! p-5"
                   >
                     <div class="mb-6 flex gap-2">
-                      <BaseAvatar
-                        :src="item.customer.logo"
-                        size="sm"
-                        :data-nui-tooltip="item.name"
-                        class="bg-muted-100 dark:bg-muted-700"
-                      />
+                      <BaseTooltip :content="item.name">
+                        <BaseAvatar
+                          :src="item.customer.logo"
+                          size="sm"
+                          class="bg-muted-100 dark:bg-muted-700"
+                        />
+                      </BaseTooltip>
                       <div>
                         <BaseHeading
                           tag="h5"
@@ -132,14 +133,17 @@ const { data, pending, error, refresh } = await useFetch(
                     </div>
                     <div class="flex items-center justify-between">
                       <div class="flex items-center gap-2">
-                        <BaseAvatar
+                        <BaseTooltip
                           v-for="stack in item.stacks"
                           :key="stack.name"
-                          :src="stack.icon"
-                          size="xxs"
-                          :data-nui-tooltip="stack.name"
-                          class="bg-muted-100 dark:bg-muted-700"
-                        />
+                          :content="stack.name"
+                        >
+                          <BaseAvatar
+                            :src="stack.icon"
+                            size="xxs"
+                            class="bg-muted-100 dark:bg-muted-700"
+                          />
+                        </BaseTooltip>
                       </div>
                       <div class="text-muted-400 flex items-center gap-4">
                         <div class="flex items-center gap-1 text-sm">
@@ -219,12 +223,13 @@ const { data, pending, error, refresh } = await useFetch(
                         >
                       </div>
                       <div class="mb-6 flex gap-2">
-                        <BaseAvatar
-                          :src="item.customer.logo"
-                          size="sm"
-                          :data-nui-tooltip="item.name"
-                          class="bg-muted-100 dark:bg-muted-700"
-                        />
+                        <BaseTooltip :content="item.name">
+                          <BaseAvatar
+                            :src="item.customer.logo"
+                            size="sm"
+                            class="bg-muted-100 dark:bg-muted-700"
+                          />
+                        </BaseTooltip>
                         <div>
                           <BaseHeading
                             tag="h5"
@@ -242,14 +247,17 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                       <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                          <BaseAvatar
+                          <BaseTooltip
                             v-for="stack in item.stacks"
                             :key="stack.name"
-                            :src="stack.icon"
-                            size="xxs"
-                            :data-nui-tooltip="stack.name"
-                            class="bg-muted-100 dark:bg-muted-700"
-                          />
+                            :content="stack.name"
+                          >
+                            <BaseAvatar
+                              :src="stack.icon"
+                              size="xxs"
+                              class="bg-muted-100 dark:bg-muted-700"
+                            />
+                          </BaseTooltip>
                         </div>
                         <div class="text-muted-400 flex items-center gap-4">
                           <div class="flex items-center gap-1 text-sm">

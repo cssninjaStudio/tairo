@@ -48,14 +48,14 @@ const commentArea = ref('')
         <div>
           <div class="mb-4 flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <BaseButton
-                rounded="full"
-                data-nui-tooltip="Edit task"
-                data-nui-tooltip-position="end"
-                size="icon-sm"
-              >
-                <Icon name="lucide:edit-3" />
-              </BaseButton>
+              <BaseTooltip content="Edit task">
+                <BaseButton
+                  rounded="full"
+                  size="icon-sm"
+                >
+                  <Icon name="lucide:edit-3" />
+                </BaseButton>
+              </BaseTooltip>
               <h4
                 class="text-muted-400 font-sans text-xs font-semibold uppercase"
               >
@@ -229,13 +229,14 @@ const commentArea = ref('')
                     </BaseParagraph>
                   </div>
                   <div class="ms-auto">
-                    <BaseButton
-                      rounded="full"
-                      data-nui-tooltip="Download file"
-                      size="icon-sm"
-                    >
-                      <Icon name="lucide:arrow-down" />
-                    </BaseButton>
+                    <BaseTooltip content="Download file">
+                      <BaseButton
+                        rounded="full"
+                        size="icon-sm"
+                      >
+                        <Icon name="lucide:arrow-down" />
+                      </BaseButton>
+                    </BaseTooltip>
                   </div>
                 </div>
               </div>

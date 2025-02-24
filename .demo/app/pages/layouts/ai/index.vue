@@ -101,28 +101,20 @@ const archive = [
             <Icon name="lucide:x" class="size-5" />
           </button>
         </div>
-        <div
-          class="hidden lg:block"
-          data-nui-tooltip="Close Sidebar"
-          data-nui-tooltip-position="end"
-        >
+        <BaseTooltip content="Close Sidebar">
           <button
             type="button"
-            class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300"
+            class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 hidden lg:flex size-10 items-center justify-center transition-colors duration-300"
             @click="isOpen = false"
           >
             <Icon name="solar:siderbar-linear" class="size-5" />
           </button>
-        </div>
-        <div
-          class="ms-auto"
-          data-nui-tooltip="New Chat"
-          data-nui-tooltip-position="down"
-        >
-          <button type="button" class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300">
+        </BaseTooltip>
+        <BaseTooltip content="New Chat">
+          <button type="button" class="nui-mask nui-mask-blob hover:bg-muted-200 dark:hover:bg-muted-800 flex size-10 ms-auto items-center justify-center transition-colors duration-300">
             <Icon name="lucide:plus" class="size-5" />
           </button>
-        </div>
+        </BaseTooltip>
       </div>
       <div class="nui-slimscroll grow overflow-y-auto px-4 py-3">
         <div>
@@ -335,7 +327,7 @@ const archive = [
                         </template>
                       </BaseDropdownItem>
                     </BaseDropdown>
-                    <div data-nui-tooltip="Open Sidebar" data-nui-tooltip-position="down">
+                    <BaseTooltip content="Open Sidebar">
                       <button
                         v-if="!isOpen"
                         type="button"
@@ -344,7 +336,7 @@ const archive = [
                       >
                         <Icon name="solar:siderbar-linear" class="size-5" />
                       </button>
-                    </div>
+                    </BaseTooltip>
                   </div>
                   <div class="flex items-center gap-2">
                     <div class="scale-90">
@@ -436,13 +428,14 @@ const archive = [
                     placeholder="Message Tairo GPT..."
                     class="placeholder:text-muted-300 dark:placeholder:text-muted-700 focus-visible:nui-focus bg-muted-100 dark:bg-muted-950 relative h-14 min-h-14 w-full rounded-full px-16 leading-[3.5rem]"
                   />
-                  <button
-                    type="button"
-                    class="absolute bottom-0 start-0 flex size-14 items-center justify-center"
-                    data-nui-tooltip="Attach a file"
-                  >
-                    <Icon name="solar:paperclip-linear" class="text-muted-500 size-6" />
-                  </button>
+                  <BaseTooltip content="Attach a file">
+                    <button
+                      type="button"
+                      class="absolute bottom-0 start-0 flex size-14 items-center justify-center"
+                    >
+                      <Icon name="solar:paperclip-linear" class="text-muted-500 size-6" />
+                    </button>
+                  </BaseTooltip>
                   <button
                     type="button"
                     class="absolute bottom-0 end-0 flex size-14 items-center justify-center"

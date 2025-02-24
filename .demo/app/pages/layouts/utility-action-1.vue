@@ -56,22 +56,25 @@ definePageMeta({
               </BaseParagraph>
             </BaseCard>
             <div class="mt-6 flex items-center justify-center gap-3">
-              <BaseAvatar
-                src="/img/avatars/25.svg"
-                size="xs"
-                data-nui-tooltip="Melany L."
-              />
-              <BaseAvatar
-                size="xs"
-                text="OD"
-                data-nui-tooltip="Oliver D."
-                :class="getRandomColor()"
-              />
-              <BaseAvatar
-                src="/img/avatars/16.svg"
-                size="xs"
-                data-nui-tooltip="Hermann M."
-              />
+              <BaseTooltip content="Melany L.">
+                <BaseAvatar
+                  src="/img/avatars/25.svg"
+                  size="xs"
+                />
+              </BaseTooltip>
+              <BaseTooltip content="Oliver D.">
+                <BaseAvatar
+                  size="xs"
+                  text="OD"
+                  :class="getRandomColor()"
+                />
+              </BaseTooltip>
+              <BaseTooltip content="Hermann M.">
+                <BaseAvatar
+                  src="/img/avatars/16.svg"
+                  size="xs"
+                />
+              </BaseTooltip>
             </div>
             <div class="mt-2 text-center">
               <BaseText size="xs" class="text-muted-400">

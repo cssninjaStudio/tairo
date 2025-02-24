@@ -180,17 +180,20 @@ function onDrop(column: ColumnContent, dropResult: any) {
       </div>
       <div class="flex items-center gap-2">
         <BaseAvatarGroup :avatars="data?.project.team" size="xs" />
-        <BaseButton
-          :to="`/layouts/projects/details/${slug}`"
-          size="icon-md"
-          rounded="lg"
-          data-nui-tooltip="Project details"
-        >
-          <Icon name="lucide:layout-template" class="size-4" />
-        </BaseButton>
-        <BaseButton rounded="full" data-nui-tooltip="New task">
-          <Icon name="lucide:plus" class="size-4" />
-        </BaseButton>
+        <BaseTooltip content="Project details">
+          <BaseButton
+            :to="`/layouts/projects/details/${slug}`"
+            size="icon-md"
+            rounded="lg"
+          >
+            <Icon name="lucide:layout-template" class="size-4" />
+          </BaseButton>
+        </BaseTooltip>
+        <BaseTooltip content="Project details">
+          <BaseButton rounded="full">
+            <Icon name="lucide:plus" class="size-4" />
+          </BaseButton>
+        </BaseTooltip>
       </div>
     </div>
     <div class="flex h-[calc(100vh_-_133px)] grow space-x-6 overflow-auto pt-2">
@@ -284,33 +287,30 @@ function onDrop(column: ColumnContent, dropResult: any) {
                       </BaseText>
                     </div>
                     <div class="text-muted-400 flex items-center gap-3">
-                      <div
+                      <BaseTooltip
                         v-if="task.checklist.length > 0"
-                        :data-nui-tooltip="`${task.checklist.length} subtask${
+                        :content="`${task.checklist.length} subtask${
                           task.checklist.length > 1 ? 's' : ''
                         } in checklist`"
-                        data-nui-tooltip-position="start"
                       >
                         <Icon name="lucide:check-circle" class="size-4" />
-                      </div>
-                      <div
+                      </BaseTooltip>
+                      <BaseTooltip
                         v-if="task.files.length > 0"
-                        :data-nui-tooltip="`${task.files.length} file${
+                        :content="`${task.files.length} file${
                           task.files.length > 1 ? 's' : ''
                         } uploaded`"
-                        data-nui-tooltip-position="start"
                       >
                         <Icon name="lucide:file" class="size-4" />
-                      </div>
-                      <div
+                      </BaseTooltip>
+                      <BaseTooltip
                         v-if="task.comments.length > 0"
-                        :data-nui-tooltip="`${task.comments.length} comment${
+                        :content="`${task.comments.length} comment${
                           task.comments.length > 1 ? 's' : ''
                         }`"
-                        data-nui-tooltip-position="start"
                       >
                         <Icon name="lucide:message-circle" class="size-4" />
-                      </div>
+                      </BaseTooltip>
                     </div>
                   </div>
                 </div>

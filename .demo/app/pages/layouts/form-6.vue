@@ -509,22 +509,18 @@ const colorCode = ref('color_code_1')
             </div>
             <div class="col-span-12 sm:col-span-9">
               <div class="flex items-center gap-3">
-                <BaseAvatar
-                  src="/img/avatars/24.svg"
-                  data-nui-tooltip="Anna B."
-                />
-                <BaseAvatar
-                  src="/img/avatars/10.svg"
-                  data-nui-tooltip="Kendra W."
-                />
-                <BaseAvatar
-                  src="/img/avatars/8.svg"
-                  data-nui-tooltip="John H."
-                />
-                <BaseAvatar
-                  src="/img/avatars/25.svg"
-                  data-nui-tooltip="Melany L."
-                />
+                <BaseTooltip
+                  v-for="participant in [
+                    { name: 'Anna B.', avatar: '/img/avatars/24.svg' },
+                    { name: 'Kendra W.', avatar: '/img/avatars/10.svg' },
+                    { name: 'John H.', avatar: '/img/avatars/8.svg' },
+                    { name: 'Melany L.', avatar: '/img/avatars/25.svg' },
+                  ]"
+                  :key="participant.name"
+                  :content="participant.name"
+                >
+                  <BaseAvatar :src="participant.avatar" />
+                </BaseTooltip>
                 <div class="ms-auto">
                   <button
                     type="button"

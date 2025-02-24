@@ -193,10 +193,9 @@ function openTaskPanel(id: number, tasks: any) {
                       </BaseParagraph>
                       <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                          <BaseAvatar
-                            :src="data?.project.owner.avatar"
-                            :data-nui-tooltip="`${data?.project.owner.name} owns this project`"
-                          />
+                          <BaseTooltip :content="`${data?.project.owner.name} owns this project`">
+                            <BaseAvatar :src="data?.project.owner.avatar" />
+                          </BaseTooltip>
                           <div>
                             <BaseHeading
                               tag="h3"
@@ -355,13 +354,14 @@ function openTaskPanel(id: number, tasks: any) {
                             </BaseParagraph>
                           </div>
                           <div class="ms-auto">
-                            <BaseButton
-                              rounded="full"
-                              data-nui-tooltip="Download file"
-                              size="icon-sm"
-                            >
-                              <Icon name="lucide:arrow-down" />
-                            </BaseButton>
+                            <BaseTooltip content="Download file">
+                              <BaseButton
+                                rounded="full"
+                                size="icon-sm"
+                              >
+                                <Icon name="lucide:arrow-down" />
+                              </BaseButton>
+                            </BaseTooltip>
                           </div>
                         </div>
                       </div>
@@ -380,12 +380,13 @@ function openTaskPanel(id: number, tasks: any) {
                     </h4>
 
                     <div class="mb-4 flex items-center gap-2">
-                      <BaseAvatar
-                        :src="data?.project.customer.logo"
-                        size="md"
-                        :data-nui-tooltip="data?.project.customer.name"
-                        class="bg-muted-100 dark:bg-muted-700"
-                      />
+                      <BaseTooltip :content="data?.project.customer.name">
+                        <BaseAvatar
+                          :src="data?.project.customer.logo"
+                          size="md"
+                          class="bg-muted-100 dark:bg-muted-700"
+                        />
+                      </BaseTooltip>
                       <div>
                         <BaseHeading
                           tag="h5"
@@ -434,12 +435,13 @@ function openTaskPanel(id: number, tasks: any) {
                         :key="tool.name"
                         class="flex items-center gap-2"
                       >
-                        <BaseAvatar
-                          :src="tool.icon"
-                          size="xs"
-                          :data-nui-tooltip="tool.name"
-                          class="bg-muted-100 dark:bg-muted-700"
-                        />
+                        <BaseTooltip :content="tool.name">
+                          <BaseAvatar
+                            :src="tool.icon"
+                            size="xs"
+                            class="bg-muted-100 dark:bg-muted-700"
+                          />
+                        </BaseTooltip>
                         <div>
                           <BaseHeading
                             tag="h5"
@@ -470,12 +472,13 @@ function openTaskPanel(id: number, tasks: any) {
                         :key="stack.name"
                         class="flex items-center gap-2"
                       >
-                        <BaseAvatar
-                          :src="stack.icon"
-                          size="xs"
-                          :data-nui-tooltip="stack.name"
-                          class="bg-muted-100 dark:bg-muted-700"
-                        />
+                        <BaseTooltip :content="stack.name">
+                          <BaseAvatar
+                            :src="stack.icon"
+                            size="xs"
+                            class="bg-muted-100 dark:bg-muted-700"
+                          />
+                        </BaseTooltip>
                         <div>
                           <BaseHeading
                             tag="h5"
@@ -640,11 +643,12 @@ function openTaskPanel(id: number, tasks: any) {
                   class="bg-muted-50 dark:bg-muted-700/50 mt-auto flex items-center justify-between rounded-b-lg px-5 py-3"
                 >
                   <div class="flex max-w-[180px] grow items-center gap-2">
-                    <BaseAvatar
-                      size="xxs"
-                      :src="item.assignee.src"
-                      :data-nui-tooltip="item.assignee.tooltip"
-                    />
+                    <BaseTooltip :content="item.assignee.tooltip">
+                      <BaseAvatar
+                        size="xxs"
+                        :src="item.assignee.src"
+                      />
+                    </BaseTooltip>
                     <BaseProgress
                       :model-value="item.completion"
                       size="xs"

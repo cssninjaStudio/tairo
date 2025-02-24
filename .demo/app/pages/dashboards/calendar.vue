@@ -525,17 +525,7 @@ const selectedEventFeatures = computed({
                   <!-- day events -->
                   <template v-for="event in attributes" :key="event.key">
                     <div
-                      class="pointer-events-none absolute end-4 start-4 z-50 rounded-md outline-2 outline-offset-2"
-                      :class="{
-                        'outline-dashed':
-                          event.customData.id === 'new'
-                          && event.customData.id === selectedEventId,
-                        'outline':
-                          event.customData.id !== 'new'
-                          && event.customData.id === selectedEventId,
-                        [categoryTheme[event.customData.category].outline]:
-                          event.customData.id === selectedEventId,
-                      }"
+                      class="pointer-events-none absolute end-4 start-4 z-50 rounded-md"
                       :style="{
                         top: `${dateToTop(
                           settings,
@@ -558,7 +548,6 @@ const selectedEventFeatures = computed({
                       tabindex="0"
                       class="bg-muted-50 dark:bg-muted-800 border-muted-200 dark:border-muted-700 absolute end-4 start-4 z-10 cursor-pointer overflow-hidden rounded-t-md border border-b-0 text-xs"
                       :class="{
-                        'opacity-50': isPast(endOfDay(day.date)),
                         'pointer-events-none': isDragging,
                       }"
                       :style="{
@@ -582,7 +571,7 @@ const selectedEventFeatures = computed({
                       />
                     </div>
                     <div
-                      class="dark:border-muted-800 dark:bg-muted-700/50 dark:hover:bg-muted-700/80 absolute bottom-0 end-4 left-0 start-4 h-[4px] cursor-n-resize rounded-b-md border border-t-0 bg-slate-50 hover:bg-slate-200"
+                      class="border-muted-200 dark:border-muted-800 dark:bg-muted-700/50 dark:hover:bg-muted-700/80 absolute bottom-0 end-4 start-4 h-[4px] cursor-n-resize rounded-b-md border border-t-0 bg-slate-50 hover:bg-slate-200"
                       :style="{
                         top: `${
                           dateToTop(
@@ -857,18 +846,18 @@ const selectedEventFeatures = computed({
               </BaseField>
 
               <CheckboxGroupRoot v-model="selectedEventFeatures" as="div" class="grid grid-cols-4 gap-2 pt-4">
-                <div data-nui-tooltip="Record">
+                <BaseTooltip disable-closing-trigger content="Record">
                   <TairoCheckboxCardIcon value="record" icon="ph:monitor-play-duotone" />
-                </div>
-                <div data-nui-tooltip="Document included">
+                </BaseTooltip>
+                <BaseTooltip disable-closing-trigger content="Document included">
                   <TairoCheckboxCardIcon value="drive" icon="ph:note-duotone" />
-                </div>
-                <div data-nui-tooltip="External Users">
+                </BaseTooltip>
+                <BaseTooltip disable-closing-trigger content="External Users">
                   <TairoCheckboxCardIcon value="external" icon="ph:lock-open-duotone" />
-                </div>
-                <div data-nui-tooltip="Comment allowed">
+                </BaseTooltip>
+                <BaseTooltip disable-closing-trigger content="Comment allowed">
                   <TairoCheckboxCardIcon value="conversation" icon="ph:chats-circle-duotone" />
-                </div>
+                </BaseTooltip>
               </CheckboxGroupRoot>
             </div>
           </div>

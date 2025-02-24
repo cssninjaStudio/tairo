@@ -1060,9 +1060,9 @@ const activeTab = ref('tab-1')
           >
             <BaseCard rounded="lg" class="flex h-full flex-col p-6">
               <div class="flex size-full flex-col gap-4">
-                <div :data-nui-tooltip="company.name">
+                <BaseTooltip :content="company.name">
                   <Icon :name="company.logo" class="size-8 shrink-0" />
-                </div>
+                </BaseTooltip>
                 <div class="flex h-full flex-col">
                   <BaseHeading
                     as="h4"

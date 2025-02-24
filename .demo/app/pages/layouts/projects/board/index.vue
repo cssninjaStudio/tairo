@@ -155,14 +155,15 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
               class="group-hover:border-primary-500! p-5"
             >
               <div class="mb-6 flex gap-2">
-                <BaseAvatar
-                  :src="item.customer.logo"
-                  size="sm"
-                  rounded="none"
-                  mask="blob"
-                  :data-nui-tooltip="item.customer.name"
-                  class="bg-muted-100 dark:bg-muted-700"
-                />
+                <BaseTooltip :content="item.customer.name">
+                  <BaseAvatar
+                    :src="item.customer.logo"
+                    size="sm"
+                    rounded="none"
+                    mask="blob"
+                    class="bg-muted-100 dark:bg-muted-700"
+                  />
+                </BaseTooltip>
                 <div>
                   <BaseHeading
                     tag="h5"
@@ -179,16 +180,19 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                  <BaseAvatar
+                  <BaseTooltip
                     v-for="stack in item.stacks"
                     :key="stack.name"
-                    :src="stack.icon"
-                    size="xxs"
-                    rounded="none"
-                    mask="blob"
-                    :data-nui-tooltip="stack.name"
-                    class="bg-muted-100 dark:bg-muted-700"
-                  />
+                    :content="stack.name"
+                  >
+                    <BaseAvatar
+                      :src="stack.icon"
+                      size="xxs"
+                      rounded="none"
+                      mask="blob"
+                      class="bg-muted-100 dark:bg-muted-700"
+                    />
+                  </BaseTooltip>
                 </div>
                 <div class="text-muted-400 flex items-center gap-4">
                   <div class="flex items-center gap-1 text-sm">

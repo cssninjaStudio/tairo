@@ -155,12 +155,12 @@ const daySpentProgress = computed(() => {
                     >
                       Posted
                     </BaseParagraph>
-                    <span data-nui-tooltip="Settled transactions">
+                    <BaseTooltip content="Settled transactions">
                       <Icon
                         name="lucide:help-circle"
                         class="text-muted-400 size-3"
                       />
-                    </span>
+                    </BaseTooltip>
                   </div>
                   <BaseText
                     size="sm"
@@ -180,14 +180,12 @@ const daySpentProgress = computed(() => {
                     >
                       Pending
                     </BaseParagraph>
-                    <span
-                      data-nui-tooltip="Unsettled transactions or temporary holds"
-                    >
+                    <BaseTooltip content="Unsettled transactions or temporary holds">
                       <Icon
                         name="lucide:help-circle"
                         class="text-muted-400 size-3"
                       />
-                    </span>
+                    </BaseTooltip>
                   </div>
                   <BaseText
                     size="sm"
@@ -207,14 +205,12 @@ const daySpentProgress = computed(() => {
                     >
                       Unavailable
                     </BaseParagraph>
-                    <span
-                      data-nui-tooltip="Unavailable funds due to spend on other cards. Reach out for assistance."
-                    >
+                    <BaseTooltip content="Unavailable funds due to spend on other cards. Reach out for assistance.">
                       <Icon
                         name="lucide:help-circle"
                         class="text-muted-400 size-3"
                       />
-                    </span>
+                    </BaseTooltip>
                   </div>
                   <BaseText
                     size="sm"
@@ -354,13 +350,14 @@ const daySpentProgress = computed(() => {
                     Account
                   </BaseParagraph>
 
-                  <NuxtLink
-                    to="#"
-                    class="text-muted-600 focus-visible:nui-focus dark:text-muted-300 font-sans text-sm font-medium underline-offset-4 hover:underline"
-                    data-nui-tooltip="View Account"
-                  >
-                    Checking {{ card.account }}
-                  </NuxtLink>
+                  <BaseTooltip content="View Account">
+                    <NuxtLink
+                      to="#"
+                      class="text-muted-600 focus-visible:nui-focus dark:text-muted-300 font-sans text-sm font-medium underline-offset-4 hover:underline"
+                    >
+                      Checking {{ card.account }}
+                    </NuxtLink>
+                  </BaseTooltip>
                 </div>
                 <!-- item -->
                 <div class="flex items-center justify-between">

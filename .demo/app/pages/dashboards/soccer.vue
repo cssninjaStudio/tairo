@@ -334,20 +334,19 @@ const matches = [
                     <tbody>
                       <tr v-for="match in matches" :key="match.id">
                         <td class="py-4 align-middle">
-                          <div
-                            class="text-muted-500 dark:text-muted-400 flex items-center gap-2 font-sans text-sm"
-                            :data-nui-tooltip="capitalize(match.status)"
-                          >
-                            <div
-                              class="size-2 rounded-full"
-                              :class="
-                                match.status === 'live'
-                                  ? 'bg-rose-500'
-                                  : 'bg-muted-300 dark:bg-muted-600'
-                              "
-                            />
-                            <span>{{ match.time }}</span>
-                          </div>
+                          <BaseTooltip :content="capitalize(match.status)">
+                            <div class="text-muted-500 dark:text-muted-400 flex items-center gap-2 font-sans text-sm">
+                              <div
+                                class="size-2 rounded-full"
+                                :class="
+                                  match.status === 'live'
+                                    ? 'bg-rose-500'
+                                    : 'bg-muted-300 dark:bg-muted-600'
+                                "
+                              />
+                              <span>{{ match.time }}</span>
+                            </div>
+                          </BaseTooltip>
                         </td>
                         <td class="xs:px-8 py-4">
                           <div class="flex items-center justify-center gap-4">
