@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { FocusTrap } from '@headlessui/vue'
-
 const props = withDefaults(
   defineProps<{
     account?: any
@@ -98,7 +96,7 @@ function useDemoAreaBalance() {
   <div
     class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border-l bg-white"
   >
-    <FocusTrap>
+    <FocusScope trapped loop>
       <div
         class="border-muted-200 dark:border-muted-700 flex h-20 w-full items-center justify-between border-b px-6"
       >
@@ -233,6 +231,6 @@ function useDemoAreaBalance() {
           <AddonApexcharts v-bind="demoAreaBalance" />
         </div>
       </div>
-    </FocusTrap>
+    </FocusScope>
   </div>
 </template>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { FocusTrap } from '@headlessui/vue'
-
 defineOptions({
   inheritAttrs: false,
 })
@@ -225,7 +223,7 @@ onBeforeUnmount(() => {
           @click="unzoom"
           @keydown.enter="() => unzoom()"
         >
-          <FocusTrap class="flex size-full items-center justify-center">
+          <FocusScope trapped class="flex size-full items-center justify-center">
             <img
               class="focus-visible:nui-focus block max-h-full max-w-full object-contain dark:hidden"
               :src="props.zoomSrc || props.src"
@@ -239,7 +237,7 @@ onBeforeUnmount(() => {
               v-bind="$attrs"
               tabindex="0"
             >
-          </FocusTrap>
+          </FocusScope>
         </a>
       </Transition>
     </Teleport>
