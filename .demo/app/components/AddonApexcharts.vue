@@ -28,22 +28,31 @@ const { stop } = useIntersectionObserver(target, ([entry]) => {
 
 <template>
   <div ref="target">
-    <BasePlaceload
+    <div
       v-if="!isLoaded && !targetIsVisible"
-      class="m-4 w-[calc(100%-32px)]"
+      class="m-4 w-[calc(100%-32px)] flex items-center justify-center"
       :style="{ height: `${height - 32}px` }"
-    />
+    >
+      <div class="flex items-center justify-center">
+        <Icon
+          name="nui-icon:spiner"
+          class="text-2xl size-8 text-current"
+        />
+      </div>
+    </div>
     <ClientOnly>
       <LazyApexCharts
         v-if="targetIsVisible"
         v-show="isLoaded"
         v-bind="props"
       />
-      <BasePlaceload
+      <div
         v-else
-        class="m-4 w-[calc(100%-32px)]"
+        class="m-4 w-[calc(100%-32px)] text-center"
         :style="{ height: `${height - 32}px` }"
-      />
+      >
+        Failed to load chart...
+      </div>
     </ClientOnly>
   </div>
 </template>

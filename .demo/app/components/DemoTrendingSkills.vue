@@ -24,6 +24,12 @@ const skills = [
     count: 82,
     icon: 'logos:tailwindcss-icon',
   },
+  {
+    id: 5,
+    name: 'Angular',
+    count: 41,
+    icon: 'logos:angular-icon',
+  },
 ]
 </script>
 
@@ -43,14 +49,14 @@ const skills = [
         <BaseHeading
           as="h4"
           size="sm"
-          weight="light"
+          weight="medium"
           lead="tight"
-          class="text-muted-800 dark:text-white"
+          class="text-muted-900 dark:text-white"
         >
           <span>{{ skill.name }}</span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400">
+          <span class="text-muted-600 dark:text-muted-400">
             Used by {{ skill.count }} candidates
           </span>
         </BaseParagraph>

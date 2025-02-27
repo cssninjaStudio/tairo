@@ -14,9 +14,6 @@
   @apply relative -top-3.5 text-muted-600 dark:text-muted-100;
 }
 
-.vc-pane-container .vc-pane-layout .vc-weeks {
-  @apply mt-2;
-}
 .vc-pane-container .vc-pane-layout .vc-weeks .vc-weekday {
   @apply font-normal text-sm text-muted-500 dark:text-muted-400/70;
 }
@@ -26,10 +23,14 @@
 }
 
 .vc-arrow:hover {
-  @apply hover:bg-muted-100 dark:bg-muted-700 transition-colors duration-300;
+  @apply hover:bg-muted-100 dark:hover:bg-muted-800 transition-colors duration-300;
 }
 
-.vc-pane-container .vc-pane-layout .vc-weeks .vc-weeknumber .vc-weeknumber-content {
+.vc-pane-container
+  .vc-pane-layout
+  .vc-weeks
+  .vc-weeknumber
+  .vc-weeknumber-content {
   @apply font-normal text-xs not-italic text-muted-500 dark:text-muted-400/70;
 }
 
@@ -58,14 +59,12 @@
   @apply -top-2 flex items-center justify-center rounded-xl !text-muted-400 dark:hover:bg-muted-700/40 dark:hover:text-muted-100;
 }
 
-/*
-@todo: nui-focus is unfound
 .vc-container button,
 .vc-container [role='button'],
 .vc-popover-content button,
 .vc-popover-content [role='button'] {
-  @apply nui-focus;
-} */
+  @apply focus-visible:nui-focus;
+}
 
 .vc-pane-container .vc-arrows-container .vc-arrow svg {
   @apply relative -top-0.5 h-5 w-5;
@@ -85,13 +84,16 @@
 }
 
 .vc-container {
-  @apply bg-white dark:bg-muted-800 border-muted-200 dark:border-muted-700;
+  @apply bg-white dark:bg-muted-950 border-muted-200 dark:border-muted-800;
 }
 
 .vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container {
   @apply p-3;
 }
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header {
   @apply mb-3;
 }
 
@@ -103,30 +105,71 @@
   @apply bg-muted-100 dark:bg-muted-800/60;
 }
 
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header .vc-nav-title:active,
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header .vc-nav-arrow:active,
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header .vc-nav-title:focus,
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header .vc-nav-arrow:focus {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-title:active,
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-arrow:active,
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-title:focus,
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-arrow:focus {
   @apply !border-transparent;
 }
 
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header .vc-nav-arrow:hover {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-arrow:hover {
   @apply bg-muted-100 dark:bg-muted-800/60;
 }
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header .vc-nav-arrow {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-arrow {
   @apply relative top-1 rounded-xl w-6 h-6 shrink-0 flex items-center justify-center text-white;
 }
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-header .vc-nav-arrow svg {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-header
+  .vc-nav-arrow
+  svg {
   @apply relative -top-0.5 h-5 w-5 text-muted-500 dark:text-muted-200;
 }
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-items .vc-nav-item {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-items
+  .vc-nav-item {
   @apply text-muted-500 dark:text-muted-400 font-sans font-normal text-xs rounded-lg !leading-none capitalize py-2;
 }
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-items .vc-nav-item.is-active {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-items
+  .vc-nav-item.is-active {
   @apply !bg-primary-500/10 !border-primary-500 text-primary-500;
 }
 
-.vc-popover-content-wrapper .vc-nav-popover-container .vc-nav-container .vc-nav-items .vc-nav-item.is-disabled {
+.vc-popover-content-wrapper
+  .vc-nav-popover-container
+  .vc-nav-container
+  .vc-nav-items
+  .vc-nav-item.is-disabled {
   @apply dark:text-muted-300;
 }
 
@@ -139,7 +182,7 @@
 }
 
 .vc-popover-content {
-  @apply bg-white dark:bg-muted-700 border-muted-200 dark:border-muted-700;
+  @apply !bg-white dark:!bg-muted-700 !border-muted-200 dark:!border-muted-700;
 }
 
 .vc-time-content .vc-time-date > span {
@@ -198,12 +241,7 @@
 }
 
 .vc-time-select-group .vc-base-select select {
-  @apply text-muted-500 dark:text-muted-200 bg-muted-100 dark:bg-muted-700;
-
-  /**
-  @todo: nui-focus is unfound
-  @apply nui-focus;
-  */
+  @apply text-muted-500 dark:text-muted-200 bg-muted-100 dark:bg-muted-700 nui-focus;
 }
 
 .vc-time-select-group .vc-base-icon {
