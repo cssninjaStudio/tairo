@@ -45,19 +45,19 @@ function statusColor(itemStatus: string) {
 <template>
   <BaseCard
     rounded="md"
-    class="p-4 md:px-8 md:py-7 xl:px-10"
+    class="p-4 md:p-6"
   >
-    <div class="items-center justify-between sm:flex">
+    <div class="items-center justify-between flex mt-2">
       <BaseHeading
         as="h4"
-        size="sm"
+        size="xs"
         weight="medium"
         lead="none"
-        class="text-muted-400 uppercase"
+        class="text-muted-700 dark:text-muted-100 uppercase"
       >
         Recent Transactions
       </BaseHeading>
-      <DemoLinkArrow to="#" />
+      <DemoLinkArrow to="#" class="me-4" />
     </div>
     <div v-if="!pending && data?.data.length === 0">
       <BasePlaceholderPage
@@ -65,7 +65,7 @@ function statusColor(itemStatus: string) {
         subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
       />
     </div>
-    <div v-else class="mt-7 overflow-x-auto">
+    <div v-else class="mt-7 overflow-x-auto pb-2">
       <table class="w-full whitespace-nowrap">
         <thead>
           <tr>
@@ -83,8 +83,9 @@ function statusColor(itemStatus: string) {
             v-for="item in data?.data.slice(0, 8)"
             :key="item.id"
             tabindex="0"
+            class="hover:bg-muted-50 dark:hover:bg-muted-700"
           >
-            <td class="xs:pe-6 py-2">
+            <td class="xs:pe-6 ps-2 py-2">
               <BaseText
                 size="sm"
                 weight="medium"
@@ -137,29 +138,14 @@ function statusColor(itemStatus: string) {
             </td>
             <td class="px-4 py-2">
               <div class="text-muted-400 flex items-center gap-2">
-                <Icon
-                  v-if="item.method === 'credit card'"
-                  name="ph:credit-card-duotone"
-                  class="size-5"
-                />
-                <Icon
-                  v-else-if="item.method === 'cheque'"
-                  name="ph:pen-nib-duotone"
-                  class="size-5"
-                />
-                <Icon
-                  v-else-if="item.method === 'transfer'"
-                  name="ph:arrows-left-right-duotone"
-                  class="size-5"
-                />
-                <BaseText
+                <BaseTag
                   size="sm"
                   weight="medium"
                   lead="none"
                   class="text-muted-400"
                 >
                   {{ item.method }}
-                </BaseText>
+                </BaseTag>
               </div>
             </td>
           </tr>

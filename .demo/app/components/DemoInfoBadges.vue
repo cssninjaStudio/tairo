@@ -17,7 +17,7 @@ const props = withDefaults(
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col h-full">
     <div class="relative mb-4">
       <img
         class="mx-auto size-48 rounded-full"
@@ -35,19 +35,22 @@ const props = withDefaults(
         :alt="props.title"
       >
     </div>
-    <div class="text-center">
-      <BaseHeading
-        as="h3"
-        size="md"
-        weight="medium"
-        lead="tight"
-        class="text-muted-800 mb-1 dark:text-white"
-      >
-        <span>{{ props.title }}</span>
-      </BaseHeading>
-      <BaseParagraph size="xs">
-        <span class="text-muted-400">{{ props.text }}</span>
-      </BaseParagraph>
+    <div class="text-center mt-auto">
+      <slot>
+        <BaseHeading
+          v-if="props.title"
+          as="h3"
+          size="md"
+          weight="medium"
+          lead="tight"
+          class="text-muted-800 mb-1 dark:text-white"
+        >
+          <span>{{ props.title }}</span>
+        </BaseHeading>
+        <BaseParagraph v-if="props.text" size="xs">
+          <span class="text-muted-400">{{ props.text }}</span>
+        </BaseParagraph>
+      </slot>
     </div>
   </div>
 </template>

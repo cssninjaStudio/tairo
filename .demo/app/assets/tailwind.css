@@ -11,4 +11,11 @@
 
   --animate-spin-slow: spin 3s linear infinite;
   --animate-spin-fast: spin 0.65s linear infinite;
+
+  --color-chart-base: var(--color-primary-600);
+  --color-chart-gradient: var(--color-white);
+}
+
+.dark {
+  --color-chart-gradient: var(--color-muted-950);
 }

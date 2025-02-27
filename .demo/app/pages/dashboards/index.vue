@@ -16,9 +16,8 @@ const radialBarTeam = reactive(useRadialBarTeam())
 const barProfit = reactive(useBarProfit())
 
 function useAreaCustomers() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'area'
-  const height = 258
+  const height = 310
 
   const options = {
     chart: {
@@ -26,14 +25,14 @@ function useAreaCustomers() {
         show: false,
       },
     },
-    colors: [primary.value, info.value, success.value],
+    colors: ['var(--color-chart-base)', 'var(--color-indigo-600)', 'var(--color-indigo-600)'],
     title: {
       show: false,
       text: undefined,
       align: 'left',
     },
     legend: {
-      show: true,
+      show: false,
       position: 'top',
     },
     dataLabels: {
@@ -42,6 +41,17 @@ function useAreaCustomers() {
     stroke: {
       width: [2, 2, 2],
       curve: 'smooth',
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.1,
+      },
     },
     xaxis: {
       type: 'datetime',
@@ -65,15 +75,11 @@ function useAreaCustomers() {
   const series = shallowRef([
     {
       name: 'Returning',
-      data: [31, 40, 28, 51, 42, 109, 100],
+      data: [31, 40, 28, 51, 42, 176, 100],
     },
     {
       name: 'Newcomers',
-      data: [11, 32, 45, 32, 34, 52, 41],
-    },
-    {
-      name: 'Abandonned',
-      data: [78, 53, 36, 10, 14, 5, 2],
+      data: [11, 32, 45, 32, 31, 121, 41],
     },
   ])
 
@@ -86,7 +92,6 @@ function useAreaCustomers() {
 }
 
 function useRadialBarTeam() {
-  const { primary } = useTailwindColors()
   const type = 'radialBar'
   const height = 455
 
@@ -102,15 +107,14 @@ function useRadialBarTeam() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         startAngle: -90,
         endAngle: 90,
         track: {
-          background: '#e7e7e7',
           strokeWidth: '97%',
-          margin: 5, // margin is in pixels
+          margin: 0, // margin is in pixels
           dropShadow: {
             enabled: false,
             top: 2,
@@ -140,17 +144,6 @@ function useRadialBarTeam() {
         top: 80,
       },
     },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        shadeIntensity: 0.1,
-        inverseColors: false,
-        opacityFrom: 1,
-        opacityTo: 1,
-        stops: [0, 50, 53, 91],
-      },
-    },
     labels: ['Average Results'],
   }
 
@@ -164,29 +157,120 @@ function useRadialBarTeam() {
   }
 }
 
+// function useBarProfit() {
+//   const { primary } = useTailwindColors()
+//   const type = 'bar'
+//   const height = 255
+
+//   const options = {
+//     chart: {
+//       toolbar: {
+//         show: false,
+//       },
+//     },
+//     plotOptions: {
+//       bar: {
+//         dataLabels: {
+//           position: 'top', // top, center, bottom
+//         },
+//       },
+//     },
+//     dataLabels: {
+//       enabled: true,
+//       formatter(val: string) {
+//         return `${val}%`
+//       },
+//       offsetY: -20,
+//       style: {
+//         fontSize: '12px',
+//         colors: ['#304758'],
+//       },
+//     },
+//     xaxis: {
+//       categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
+//       position: 'top',
+//       axisBorder: {
+//         show: false,
+//       },
+//       axisTicks: {
+//         show: false,
+//       },
+//       crosshairs: {
+//         fill: {
+//           type: 'gradient',
+//           gradient: {
+//             colorFrom: '#D8E3F0',
+//             colorTo: '#BED1E6',
+//             stops: [0, 100],
+//             opacityFrom: 0.4,
+//             opacityTo: 0.5,
+//           },
+//         },
+//       },
+//       tooltip: {
+//         enabled: true,
+//       },
+//     },
+//     yaxis: {
+//       axisBorder: {
+//         show: false,
+//       },
+//       axisTicks: {
+//         show: false,
+//       },
+//       labels: {
+//         show: false,
+//         formatter(val: string) {
+//           return `${val}%`
+//         },
+//       },
+//     },
+//     colors: [primary.value],
+//     title: {
+//       text: undefined,
+//       align: 'left',
+//     },
+//   }
+
+//   const series = shallowRef([
+//     {
+//       name: 'Ratio',
+//       data: [2.3, 3.1, 4.0, 10.1, 4.0],
+//     },
+//   ])
+
+//   return {
+//     type,
+//     height,
+//     options,
+//     series,
+//   }
+// }
 function useBarProfit() {
-  const { primary } = useTailwindColors()
   const type = 'bar'
-  const height = 255
+  const height = 280
 
   const options = {
     chart: {
       toolbar: {
         show: false,
       },
+      sparkline: {
+        enabled: true,
+      },
     },
     plotOptions: {
       bar: {
+        borderRadius: 4,
+        columnWidth: '80%',
         dataLabels: {
           position: 'top', // top, center, bottom
         },
       },
     },
     dataLabels: {
-      enabled: true,
-      formatter(val: string) {
-        return `${val}%`
-      },
+      enabled: false,
+      formatter: asPercent,
       offsetY: -20,
       style: {
         fontSize: '12px',
@@ -194,7 +278,20 @@ function useBarProfit() {
       },
     },
     xaxis: {
-      categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      categories: [
+        'Jan 2024',
+        'Feb 2024',
+        'Mar 2024',
+        'Apr 2024',
+        'May 2024',
+        'Jun 2024',
+        'Jul 2024',
+        'Aug 2024',
+        'Sep 2024',
+        'Oct 2024',
+        'Nov 2024',
+        'Dec 2024',
+      ],
       position: 'top',
       axisBorder: {
         show: false,
@@ -227,22 +324,20 @@ function useBarProfit() {
       },
       labels: {
         show: false,
-        formatter(val: string) {
-          return `${val}%`
-        },
+        formatter: asDollar,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     title: {
-      text: undefined,
+      text: '',
       align: 'left',
     },
   }
 
   const series = shallowRef([
     {
-      name: 'Ratio',
-      data: [2.3, 3.1, 4.0, 10.1, 4.0],
+      name: 'Expenses',
+      data: [200.31, 309.12, 427.89, 438.82, 354.62, 339.29, 257.38, 231.21, 218.29, 231.21, 259.29, 279.21],
     },
   ])
 
@@ -256,25 +351,25 @@ function useBarProfit() {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
+        class="lg:landscape:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
-        <BaseAvatar src="/img/avatars/2.svg" size="lg" />
+        <BaseAvatar src="/img/avatars/10.svg" size="lg" />
         <div>
           <BaseHeading
             as="h2"
             size="xl"
-            weight="light"
+            weight="medium"
             lead="tight"
             class="text-muted-800 dark:text-white"
           >
-            <span>Welcome back, Maya</span>
+            <span>Welcome back, Kendra</span>
           </BaseHeading>
           <BaseParagraph>
-            <span class="text-muted-500">
+            <span class="text-muted-600 dark:text-muted-400">
               Happy to see you again on your dashboard.
             </span>
           </BaseParagraph>
@@ -292,10 +387,28 @@ function useBarProfit() {
       </div>
     </div>
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
-      <!-- Quick stats -->
-      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+    <div class="grid grid-cols-12 gap-4">
+      <!-- Area Chart card -->
+      <div class="lg:landscape:col-span-6 col-span-12 2xl:landscape:col-span-5">
         <BaseCard class="p-6">
+          <!-- Title -->
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="semibold"
+              lead="tight"
+              class="text-muted-800 dark:text-white"
+            >
+              <span>New / returning customers</span>
+            </BaseHeading>
+          </div>
+          <AddonApexcharts v-bind="areaCustomers" class="-ms-4" />
+        </BaseCard>
+      </div>
+      <!-- Quick stats -->
+      <div class="lg:landscape:col-span-6 col-span-12 2xl:landscape:col-span-4">
+        <BaseCard rounded="md" class="p-6 h-full flex flex-col">
           <div class="mb-6">
             <BaseHeading
               as="h3"
@@ -307,13 +420,21 @@ function useBarProfit() {
               <span>Your Quick Stats</span>
             </BaseHeading>
           </div>
-          <div class="grid gap-4 md:grid-cols-2">
+          <div class="grid gap-4 grid-cols-2 mt-auto">
+            <div class="col-span-2">
+              <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
+                We've selected some of your most important stats to keep you updated. You can always view more in the
+                <BaseLink to="/dashboards" class="text-primary-600 dark:text-primary-400">
+                  reports section.
+                </BaseLink>
+              </BaseParagraph>
+            </div>
             <!-- Grid item -->
             <div
-              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
+              class="ring-muted-900/5 dark:ring-muted-800 ring-1 flex flex-col items-center text-center shadow-sm gap-2 rounded-md p-4"
             >
               <BaseIconBox
-                size="md"
+                size="sm"
                 class="bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2"
                 rounded="full"
                 variant="none"
@@ -339,10 +460,10 @@ function useBarProfit() {
             </div>
             <!-- Grid item -->
             <div
-              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
+              class="ring-muted-900/5 dark:ring-muted-800 ring-1 flex flex-col items-center text-center shadow-sm gap-2 rounded-md p-4"
             >
               <BaseIconBox
-                size="md"
+                size="sm"
                 class="bg-amber-100 text-amber-500 dark:border-2 dark:border-amber-500 dark:bg-amber-500/20 dark:text-amber-400"
                 rounded="full"
                 variant="none"
@@ -368,10 +489,10 @@ function useBarProfit() {
             </div>
             <!-- Grid item -->
             <div
-              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
+              class="ring-muted-900/5 dark:ring-muted-800 ring-1 flex flex-col items-center text-center shadow-sm gap-2 rounded-md p-4"
             >
               <BaseIconBox
-                size="md"
+                size="sm"
                 class="bg-green-100 text-green-500 dark:border-2 dark:border-green-500 dark:bg-green-500/20 dark:text-green-400"
                 rounded="full"
                 variant="none"
@@ -397,10 +518,10 @@ function useBarProfit() {
             </div>
             <!-- Grid item -->
             <div
-              class="bg-muted-100/80 dark:bg-muted-700 flex items-center gap-2 rounded-md px-5 py-10"
+              class="ring-muted-900/5 dark:ring-muted-800 ring-1 flex flex-col items-center text-center shadow-sm gap-2 rounded-md p-4"
             >
               <BaseIconBox
-                size="md"
+                size="sm"
                 class="bg-indigo-100 text-indigo-500 dark:border-2 dark:border-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-400"
                 rounded="full"
                 variant="none"
@@ -427,30 +548,45 @@ function useBarProfit() {
           </div>
         </BaseCard>
       </div>
-      <!-- Area Chart card -->
-      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
-        <BaseCard class="p-6">
-          <!-- Title -->
-          <div class="mb-6">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="semibold"
-              lead="tight"
-              class="text-muted-800 dark:text-white"
-            >
-              <span>Customers</span>
-            </BaseHeading>
-          </div>
-          <AddonApexcharts v-bind="areaCustomers" class="-ms-4" />
+      <!-- Grid item -->
+      <div class="lg:landscape:col-span-6 col-span-12 2xl:landscape:col-span-3">
+        <BaseCard rounded="md" class="p-6 h-full">
+          <DemoInfoBadges
+            class="h-full"
+            image="/img/illustrations/widgets/1.svg"
+            badge-small="/img/illustrations/widgets/3.svg"
+            badge-medium="/img/illustrations/widgets/2.svg"
+          >
+            <div class="text-start">
+              <BaseHeading
+                as="h3"
+                size="md"
+                weight="medium"
+                lead="tight"
+                class="text-muted-800 mb-1 dark:text-white"
+              >
+                <span>You've unlocked 2 new Achievements</span>
+              </BaseHeading>
+              <BaseParagraph size="sm">
+                <span class="text-muted-600 dark:text-muted-400">Congrats, your efforts have been rewarded. Keep up like this!</span>
+              </BaseParagraph>
+              <div class="mt-4">
+                <BaseButton rounded="md" class="w-full">
+                  <span>View Achievements</span>
+                </BaseButton>
+              </div>
+            </div>
+          </DemoInfoBadges>
         </BaseCard>
       </div>
       <!-- CTA card -->
       <div
-        class="ptablet:col-span-6 ltablet:col-span-4 col-span-12 lg:col-span-4"
+        class="lg:portrait:col-span-6 lg:landscape:col-span-6 col-span-12 2xl:landscape:col-span-3"
       >
         <BaseCard
-          class="from-primary-600 to-primary-700 relative flex h-full items-center justify-center bg-gradient-to-br p-6"
+          variant="none"
+          rounded="md"
+          class="from-primary-900 to-primary-800 relative flex h-full items-center justify-center bg-gradient-to-br p-6"
         >
           <div class="relative z-20 flex flex-col gap-3 py-10 text-center">
             <BaseHeading
@@ -460,7 +596,7 @@ function useBarProfit() {
               lead="tight"
               class="text-white"
             >
-              <span>Hey Maya, you're doing great.</span>
+              <span>You're doing great!</span>
             </BaseHeading>
             <BaseParagraph size="md" class="mx-auto max-w-[280px]">
               <span class="text-white/80">
@@ -468,7 +604,7 @@ function useBarProfit() {
               </span>
             </BaseParagraph>
             <NuxtLink
-              class="font-sans text-white underline-offset-4 hover:underline"
+              class="font-sans text-sm text-white underline-offset-4 hover:underline"
               to="#"
             >
               Learn More
@@ -479,16 +615,16 @@ function useBarProfit() {
           >
             <Icon
               name="ph:crown-duotone"
-              class="text-primary-900/50 size-14"
+              class="text-primary-600/50 size-14"
             />
           </div>
         </BaseCard>
       </div>
       <!-- Radial Bar card -->
       <div
-        class="ptablet:col-span-6 ltablet:col-span-4 col-span-12 lg:col-span-4"
+        class="lg:portrait:col-span-6 lg:landscape:col-span-5 col-span-12 2xl:landscape:col-span-4"
       >
-        <BaseCard class="relative p-6">
+        <BaseCard rounded="md" class="relative flex flex-col h-full p-6">
           <div class="mb-6">
             <BaseHeading
               as="h3"
@@ -506,16 +642,21 @@ function useBarProfit() {
             <BaseAvatar src="/img/avatars/4.svg" />
             <BaseAvatar
               text="H"
-              class="bg-yellow-100 text-yellow-500 dark:bg-yellow-500 dark:text-white"
+              :classes="{
+                root: 'bg-yellow-400/10 dark:bg-yellow-400/20',
+                fallback: 'text-yellow-600',
+              }"
             />
             <BaseAvatar src="/img/avatars/3.svg" />
           </div>
-          <AddonApexcharts v-bind="radialBarTeam" />
+          <div class="mt-auto">
+            <AddonApexcharts v-bind="radialBarTeam" />
+          </div>
         </BaseCard>
       </div>
       <!-- Bar chart card -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <BaseCard class="relative p-6">
+      <div class="lg:landscape:col-span-7 col-span-12 2xl:landscape:col-span-5">
+        <BaseCard rounded="md" class="flex flex-col h-full p-6">
           <div class="mb-6">
             <BaseHeading
               as="h3"
@@ -524,11 +665,17 @@ function useBarProfit() {
               lead="tight"
               class="text-muted-800 dark:text-white"
             >
-              <span>Profit Evolution</span>
+              <span>Global expense report</span>
             </BaseHeading>
           </div>
-          <AddonApexcharts v-bind="barProfit" />
+          <div class="mt-auto">
+            <AddonApexcharts v-bind="barProfit" />
+          </div>
         </BaseCard>
+      </div>
+      <div class="col-span-12 md:col-span-12">
+        <!-- Transactions widget -->
+        <DemoWidgetTransactionSummary />
       </div>
     </div>
   </div>
