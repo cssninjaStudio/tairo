@@ -25,8 +25,8 @@ const projects = [
     updated: '30m ago',
     members: [
       {
-        tooltip: 'Maya (You)',
-        src: '/img/avatars/2.svg',
+        tooltip: 'Kendra (You)',
+        src: '/img/avatars/10.svg',
       },
       {
         tooltip: 'John Rowner',
@@ -71,8 +71,8 @@ const projects = [
     updated: '30m ago',
     members: [
       {
-        tooltip: 'Maya (You)',
-        src: '/img/avatars/2.svg',
+        tooltip: 'Kendra (You)',
+        src: '/img/avatars/10.svg',
       },
       {
         tooltip: 'Maggie Pitts',
@@ -80,16 +80,55 @@ const projects = [
       },
     ],
   },
+  {
+    id: 4,
+    name: 'Crypto Dashboard',
+    image: '/img/icons/logos/nitro.svg',
+    badge: '/img/stacks/reactjs.svg',
+    updated: '57m ago',
+    members: [
+      {
+        tooltip: 'Robert Mapa',
+        src: '/img/avatars/7.svg',
+      },
+      {
+        tooltip: 'Chris Welling',
+        src: '/img/avatars/8.svg',
+      },
+      {
+        tooltip: 'Alan Mariovski',
+        src: '/img/avatars/11.svg',
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Sales Management Dashboard',
+    image: '/img/icons/logos/okano.svg',
+    badge: '/img/stacks/angular.svg',
+    updated: '4h ago',
+    members: [
+      {
+        tooltip: 'Clarke Smith',
+        src: '/img/avatars/3.svg',
+      },
+      {
+        tooltip: 'Clarissa Gheller',
+        src: '/img/avatars/5.svg',
+      },
+    ],
+  },
 ]
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="space-y-2">
     <!-- Projects -->
-    <div
+    <a
       v-for="project in projects"
       :key="project.id"
-      class="flex items-center gap-4"
+      class="flex items-center gap-4 hover:bg-muted-100 dark:hover:bg-muted-900 py-2 px-3 rounded-md"
+      href="#"
     >
       <BaseAvatar
         :src="project.image"
@@ -99,24 +138,24 @@ const projects = [
       <div>
         <BaseHeading
           as="h4"
-          size="md"
-          weight="light"
+          size="sm"
+          weight="medium"
           lead="tight"
           class="text-muted-800 dark:text-white"
         >
           <span>{{ project.name }}</span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400">Last updated {{ project.updated }}</span>
+          <span class="text-muted-600 dark:text-muted-400">Last updated {{ project.updated }}</span>
         </BaseParagraph>
       </div>
       <div class="ms-auto hidden md:block">
         <BaseAvatarGroup
           :avatars="project.members"
-          size="sm"
+          size="xs"
           :limit="3"
         />
       </div>
-    </div>
+    </a>
   </div>
 </template>

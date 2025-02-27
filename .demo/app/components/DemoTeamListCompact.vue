@@ -13,14 +13,6 @@ const members = [
     role: 'UI/UX designer',
   },
   {
-    id: 1,
-    firstName: 'Sara',
-    lastName: 'Connor',
-    image: undefined,
-    text: 'SC',
-    role: 'Frontend developer',
-  },
-  {
     id: 2,
     firstName: 'Tara',
     lastName: 'Svenson',
@@ -36,6 +28,22 @@ const members = [
     text: 'NL',
     role: 'UI/UX designer',
   },
+  {
+    id: 4,
+    firstName: 'Melany',
+    lastName: 'Wright',
+    image: '/img/avatars/25.svg',
+    text: 'MW',
+    role: 'Software architect',
+  },
+  {
+    id: 5,
+    firstName: 'Joshua',
+    lastName: 'Stevens',
+    image: '/img/avatars/14.svg',
+    text: 'JS',
+    role: 'Product manager',
+  },
 ]
 </script>
 
@@ -49,20 +57,21 @@ const members = [
       <BaseAvatar
         :src="member.image"
         :text="member.text"
+        size="xs"
         class="bg-primary-100 dark:bg-primary-500/20 text-primary-500 shrink-0"
       />
       <div>
         <BaseHeading
           as="h4"
           size="sm"
-          weight="light"
+          weight="medium"
           lead="tight"
-          class="text-muted-800 dark:text-white"
+          class="text-muted-900 dark:text-white"
         >
           <span>{{ member.firstName }} {{ member.lastName.slice(0, 1) }}.</span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400">
+          <span class="text-muted-600 dark:text-muted-400">
             {{ member.role }}
           </span>
         </BaseParagraph>
@@ -74,14 +83,15 @@ const members = [
           size="icon-md"
           class="scale-75"
         >
-          <Icon name="ph:phone-duotone" class="size-5" />
+          <Icon name="solar:phone-rounded-linear" class="size-6" />
         </BaseButton>
         <BaseButton
+          variant="muted"
           rounded="lg"
-          muted
+          size="icon-md"
           class="scale-75"
         >
-          <Icon name="ph:video-camera-duotone" class="size-5" />
+          <Icon name="solar:videocamera-record-linear" class="size-6" />
         </BaseButton>
       </div>
     </div>

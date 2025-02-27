@@ -15,9 +15,8 @@ const areaTaskCompletion = reactive(useAreaTaskCompletion())
 const barTeamEfficiency = reactive(useBarTeamEfficiency())
 
 function useAreaTaskCompletion() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'area'
-  const height = 295
+  const height = 380
 
   const options = {
     chart: {
@@ -25,8 +24,9 @@ function useAreaTaskCompletion() {
         show: false,
       },
     },
-    colors: [success.value, info.value, primary.value],
+    colors: ['var(--color-chart-base)', 'var(--color-indigo-600)', 'var(--color-amber-600)'],
     legend: {
+      show: false,
       position: 'top',
     },
     dataLabels: {
@@ -39,18 +39,29 @@ function useAreaTaskCompletion() {
     xaxis: {
       type: 'datetime',
       categories: [
-        '2020-09-19T00:00:00.000Z',
-        '2020-09-20T01:30:00.000Z',
-        '2020-09-21T02:30:00.000Z',
-        '2020-09-22T03:30:00.000Z',
-        '2020-09-23T04:30:00.000Z',
-        '2020-09-24T05:30:00.000Z',
-        '2020-09-25T06:30:00.000Z',
+        '2024-09-19T00:00:00.000Z',
+        '2024-09-20T01:30:00.000Z',
+        '2024-09-21T02:30:00.000Z',
+        '2024-09-22T03:30:00.000Z',
+        '2024-09-23T04:30:00.000Z',
+        '2024-09-24T05:30:00.000Z',
+        '2024-09-25T06:30:00.000Z',
       ],
     },
     tooltip: {
       x: {
         format: 'dd/MM/yy HH:mm',
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.1,
       },
     },
   }
@@ -79,9 +90,8 @@ function useAreaTaskCompletion() {
 }
 
 function useBarTeamEfficiency() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'bar'
-  const height = 250
+  const height = 380
 
   const options = {
     chart: {
@@ -89,8 +99,9 @@ function useBarTeamEfficiency() {
         show: false,
       },
     },
-    colors: [success.value, info.value, primary.value],
+    colors: ['var(--color-chart-base)', 'var(--color-indigo-400)', 'var(--color-indigo-500)'],
     legend: {
+      show: false,
       position: 'top',
     },
     plotOptions: {
@@ -165,19 +176,19 @@ function useBarTeamEfficiency() {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Grid column -->
       <div class="col-span-12">
         <!-- Header -->
-        <BaseCard class="p-5">
+        <BaseCard rounded="md" class="p-4 md:p-6">
           <div class="flex flex-col items-center md:flex-row">
             <div
-              class="ltablet:flex-row ltablet:items-center flex flex-col items-center gap-4 text-center md:items-start md:text-left lg:flex-row lg:items-center"
+              class="lg:landscape:flex-row lg:landscape:items-center flex flex-col items-center gap-4 text-center md:items-start md:text-start xl:landscape::flex-row xl:landscape::items-center"
             >
               <BaseAvatar
-                src="/img/avatars/2.svg"
+                src="/img/avatars/10.svg"
                 size="xl"
                 badge-src="/img/icons/flags/united-states-of-america.svg"
               />
@@ -185,20 +196,20 @@ function useBarTeamEfficiency() {
                 <BaseHeading
                   as="h2"
                   size="xl"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
-                  <span>Welcome back, Maya</span>
+                  <span>Welcome back, Kendra</span>
                 </BaseHeading>
                 <BaseParagraph>
-                  <span class="text-muted-400">It's nice to see you again</span>
+                  <span class="text-muted-600 dark:text-muted-400">It's nice to see you again</span>
                 </BaseParagraph>
               </div>
             </div>
 
             <div
-              class="ltablet:flex-row ltablet:items-center ms-auto flex flex-col gap-6 text-center md:text-left lg:flex-row lg:items-center"
+              class="w-full md:w-auto lg:landscape:flex-row lg:landscape:items-center md:ms-auto flex flex-col gap-6 text-center md:text-start xl:landscape:flex-row xl:landscape:items-center"
             >
               <div class="flex-1">
                 <BaseHeading
@@ -206,7 +217,7 @@ function useBarTeamEfficiency() {
                   size="3xl"
                   weight="semibold"
                   lead="tight"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>
                     31
@@ -214,17 +225,19 @@ function useBarTeamEfficiency() {
                   </span>
                 </BaseHeading>
                 <BaseParagraph>
-                  <span class="text-muted-400 text-sm">
+                  <span class="text-muted-600 dark:text-muted-400 text-sm">
                     Are currently pending
                   </span>
                 </BaseParagraph>
               </div>
               <BaseCard
-                class="from-primary-600 to-primary-700 shadow-primary-500/20 relative flex flex-1 items-center justify-center bg-gradient-to-br p-5 shadow-xl"
+                variant="none"
+                rounded="md"
+                class="from-primary-900 to-primary-800 shadow-primary-500/20 relative flex flex-1 items-center justify-center bg-gradient-to-br p-8 md:p-5 shadow-xl"
               >
                 <div class="relative z-20 flex flex-col gap-3">
                   <BaseParagraph size="sm">
-                    <span class="text-white/80">
+                    <span class="text-primary-50">
                       Start using our team and project management tools
                     </span>
                   </BaseParagraph>
@@ -240,7 +253,7 @@ function useBarTeamEfficiency() {
                 >
                   <Icon
                     name="ph:crown-duotone"
-                    class="text-primary-900/50 size-10"
+                    class="text-primary-400/50 size-10"
                   />
                 </div>
               </BaseCard>
@@ -249,55 +262,50 @@ function useBarTeamEfficiency() {
         </BaseCard>
       </div>
       <!-- Grid column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="lg:landscape:col-span-8 col-span-12 xl:landscape:col-span-8">
         <!-- Inner grid -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <!-- Project list widget -->
-          <BaseCard class="p-6">
+          <BaseCard rounded="md" class="p-4 md:p-6">
             <div class="mb-8 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
                 weight="semibold"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
-                <span>Current Projects</span>
+                <span>Current projects</span>
               </BaseHeading>
-              <BaseButton
-                variant="primary"
+              <BaseText
                 size="sm"
-                rounded="md"
               >
-                View all
-              </BaseButton>
+                <BaseLink to="#" class="not-hover:text-muted-400">
+                  View all
+                </BaseLink>
+              </BaseText>
             </div>
-            <DemoProjectListCompact />
+            <div class="pb-2">
+              <DemoProjectListCompact />
+            </div>
           </BaseCard>
           <!-- Chart -->
-          <BaseCard class="p-6">
+          <BaseCard rounded="md" class="p-4 md:p-6">
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
                 weight="semibold"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
-                <span>Completion</span>
+                <span>Task completion</span>
               </BaseHeading>
-              <BaseButton
-                variant="primary"
-                size="sm"
-                rounded="md"
-              >
-                Reports
-              </BaseButton>
             </div>
             <AddonApexcharts v-bind="areaTaskCompletion" />
           </BaseCard>
           <!-- Chart -->
-          <BaseCard class="p-6">
+          <BaseCard rounded="md" class="p-4 md:p-6">
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
@@ -308,24 +316,25 @@ function useBarTeamEfficiency() {
               >
                 <span>Team Efficiency</span>
               </BaseHeading>
-              <BaseButton
-                variant="primary"
-                size="sm"
-                rounded="md"
-              >
-                Reports
-              </BaseButton>
             </div>
             <AddonApexcharts v-bind="barTeamEfficiency" />
           </BaseCard>
         </div>
       </div>
       <!-- Grid column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="lg:landscape:col-span-4 col-span-12 xl:landscape:col-span-4">
         <!-- Inner grid -->
-        <div class="ptablet:grid-cols-2 grid gap-6 lg:flex lg:flex-col">
+        <div class="ptablet:grid-cols-2 grid gap-4 lg:flex lg:flex-col">
           <!-- Widget -->
-          <BaseCard class="p-6">
+          <DemoActionText
+            title="Upgrade to Pro"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid censes in Latino fore? Nam ante Aristippus, et ille melius."
+            label="Upgrade Now"
+            to="#"
+            rounded="md"
+          />
+          <!-- Widget -->
+          <BaseCard class="p-4 md:p-6">
             <!-- Title -->
             <div class="mb-8 flex items-center justify-between">
               <BaseHeading
@@ -333,17 +342,17 @@ function useBarTeamEfficiency() {
                 size="md"
                 weight="semibold"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>My Team</span>
               </BaseHeading>
-              <BaseButton
-                variant="primary"
+              <BaseText
                 size="sm"
-                rounded="md"
               >
-                View all
-              </BaseButton>
+                <BaseLink to="#" class="not-hover:text-muted-400">
+                  View all
+                </BaseLink>
+              </BaseText>
             </div>
             <DemoTeamListCompact actions />
           </BaseCard>
@@ -356,64 +365,56 @@ function useBarTeamEfficiency() {
                 size="md"
                 weight="semibold"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
-                <span>Todo Today</span>
+                <span>Todo today</span>
               </BaseHeading>
-              <BaseButton
-                variant="primary"
+              <BaseText
                 size="sm"
-                rounded="md"
               >
-                View all
-              </BaseButton>
+                <BaseLink to="#" class="not-hover:text-muted-400">
+                  View all
+                </BaseLink>
+              </BaseText>
             </div>
             <DemoTodoListCompact />
           </BaseCard>
-          <!-- Widget -->
-          <BaseCard class="p-6">
-            <DemoPlaceholderCompact>
-              <template #image>
-                <img
-                  src="/img/illustrations/placeholders/flat/chart-guy.svg"
-                  class="block w-full dark:hidden"
-                  width="225"
-                  height="150"
-                  alt="Placeholder illustration"
-                >
-                <img
-                  src="/img/illustrations/placeholders/flat/chart-guy-dark.svg"
-                  class="hidden w-full dark:block"
-                  width="225"
-                  height="150"
-                  alt="Placeholder illustration"
-                >
-              </template>
+          <!-- CTA card -->
+          <BaseCard
+            variant="none"
+            rounded="md"
+            class="from-primary-900 to-primary-800 relative flex h-full items-center justify-center bg-gradient-to-br p-6"
+          >
+            <div class="relative z-20 flex flex-col gap-3 py-10 text-center">
               <BaseHeading
                 as="h4"
                 size="lg"
-                weight="light"
+                weight="semibold"
                 lead="tight"
-                class="text-muted-800 mb-1 dark:text-white"
+                class="text-white"
               >
-                <span>Pro Freatures</span>
+                <span>You're doing great!</span>
               </BaseHeading>
-              <BaseParagraph size="sm">
-                <span class="text-muted-400">
-                  Unlock more features and business tools by subscribing to a
-                  premium plan
+              <BaseParagraph size="md" class="mx-auto max-w-[280px]">
+                <span class="text-white/80">
+                  Start using our team and project management tools
                 </span>
               </BaseParagraph>
-              <template #action>
-                <BaseButton
-                  variant="primary"
-                  rounded="sm"
-                  class="w-full"
-                >
-                  <span>Upgrade to Pro</span>
-                </BaseButton>
-              </template>
-            </DemoPlaceholderCompact>
+              <NuxtLink
+                class="font-sans text-sm text-white underline-offset-4 hover:underline"
+                to="#"
+              >
+                Learn More
+              </NuxtLink>
+            </div>
+            <div
+              class="absolute bottom-4 end-4 z-10 flex size-14 items-center justify-center"
+            >
+              <Icon
+                name="ph:crown-duotone"
+                class="text-primary-600/50 size-14"
+              />
+            </div>
           </BaseCard>
         </div>
       </div>

@@ -15,7 +15,7 @@ const props = withDefaults(
 
 <template>
   <div
-    class="bg-muted-200 dark:bg-muted-800 p-6"
+    class="bg-muted-200 dark:bg-muted-800 p-4 md:p-6"
     :class="[
       props.rounded === 'sm' ? 'rounded-md' : '',
       props.rounded === 'md' ? 'rounded-lg' : '',
@@ -27,13 +27,13 @@ const props = withDefaults(
       <BaseHeading
         as="h3"
         size="md"
-        weight="light"
+        weight="medium"
         lead="tight"
-        class="text-muted-800 mb-2 dark:text-white"
+        class="text-muted-900 mb-2 dark:text-white"
       >
         <span>{{ props.title }}</span>
       </BaseHeading>
-      <BaseParagraph size="xs">
+      <BaseParagraph size="sm">
         <span class="text-muted-500">
           {{ props.text }}
         </span>
