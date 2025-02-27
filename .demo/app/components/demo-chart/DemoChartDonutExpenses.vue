@@ -2,7 +2,6 @@
 const demoDonut = reactive(useDemoDonut())
 
 function useDemoDonut() {
-  const { primary, info, success, warning, danger } = useTailwindColors()
   const height = 290
   const type = 'donut'
 
@@ -11,13 +10,7 @@ function useDemoDonut() {
       text: '',
     },
     labels: ['Bills', 'Health', 'Education', 'Food', 'Other'],
-    colors: [
-      primary.value,
-      success.value,
-      info.value,
-      danger.value,
-      warning.value,
-    ],
+    colors: ['var(--color-chart-base)', 'var(--color-violet-600)', 'var(--color-violet-700)', 'var(--color-violet-800)', 'var(--color-violet-900)'],
     responsive: [
       {
         breakpoint: 480,

@@ -156,7 +156,7 @@ function useAreaExpenses() {
     ]
     let i = 0
     const series = []
-    let x = new Date('11 Nov 2020').getTime()
+    let x = new Date('11 Nov 2024').getTime()
     while (i < count) {
       series.push([x, values[s][i]])
       x += 86400000
@@ -175,29 +175,30 @@ function useAreaExpenses() {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative px-4 md:px-6 lg:px-8 pb-20">
     <div class="flex flex-col gap-6">
       <BaseCard
-        class="ltablet:flex-row flex flex-col gap-y-10 overflow-hidden p-6 sm:p-10 lg:flex-row"
+        rounded="md"
+        class="lg:landscape:flex-row flex flex-col gap-y-10 overflow-hidden p-4 sm:p-6 md:p-10 xl:landscape:flex-row"
       >
-        <div class="ltablet:w-3/5 w-full lg:w-3/5">
+        <div class="lg:landscape:w-3/5 w-full xl:landscape:w-3/5">
           <div class="mb-12 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
-              weight="semibold"
+              weight="medium"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-900 dark:text-white"
             >
               <span>My Cards</span>
             </BaseHeading>
             <div />
           </div>
           <div
-            class="ltablet:pe-12 flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 lg:pe-12"
+            class="lg:landscape:pe-12 flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 xl:landscape:pe-12"
           >
             <div>
-              <BaseButton size="icon-md" rounded="sm">
+              <BaseButton size="icon-md" rounded="md">
                 <Icon name="lucide:plus" class="size-4" />
               </BaseButton>
             </div>
@@ -217,29 +218,29 @@ function useAreaExpenses() {
           </div>
           <div class="mt-4 flex justify-center text-center">
             <p
-              class="ltablet:mx-0 text-muted-400 mx-auto max-w-xs text-center font-sans text-xs lg:mx-0"
+              class="lg:landscape:mx-0 text-muted-400 mx-auto max-w-xs text-center font-sans text-xs xl:landscape:mx-0"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Peccata
               paria minime esse deterritum.
             </p>
           </div>
         </div>
-        <div class="ltablet:w-2/5 w-full lg:w-2/5">
+        <div class="lg:landscape:w-2/5 w-full xl:landscape:w-2/5">
           <div
-            class="ltablet:ps-12 ltablet:border-l border-muted-200 dark:border-muted-700 flex h-full flex-col lg:border-l lg:ps-12"
+            class="lg:landscape:ps-12 lg:landscape:border-l border-muted-200 dark:border-muted-700 flex h-full flex-col xl:landscape:border-s xl:landscape:ps-12"
           >
             <div class="mb-4 flex items-center justify-between">
               <BaseHeading
                 as="h4"
                 size="md"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>Balance</span>
               </BaseHeading>
               <div
-                class="ltablet:max-w-[230px] hidden max-w-[260px] grow sm:block"
+                class="lg:landscape:max-w-[230px] hidden max-w-[260px] grow sm:block"
               >
                 <BaseSelect v-model="selectedBank">
                   <TairoSelectItem
@@ -254,11 +255,11 @@ function useAreaExpenses() {
               </div>
             </div>
             <div
-              class="ptablet:flex ptablet:items-end ptablet:justify-between ptablet:mt-10 mt-auto"
+              class="lg:portrait:flex lg:landscape:items-end lg:portrait:justify-between lg:portrait:mt-10 mt-auto"
             >
-              <div class="ptablet:mb-0 mb-6 leading-relaxed">
+              <div class="lg:portrait:mb-0 mb-6 leading-relaxed">
                 <span
-                  class="text-muted-800 dark:text-muted-100 block font-sans text-3xl font-semibold"
+                  class="text-muted-900 dark:text-muted-100 block font-sans text-3xl font-semibold"
                 >
                   {{ formatPrice(6341.14) }}
                 </span>
@@ -317,10 +318,12 @@ function useAreaExpenses() {
         </div>
       </BaseCard>
       <BaseCard
-        class="ltablet:flex-row bg-muted-200! dark:bg-muted-800! flex flex-col gap-y-10 p-6 sm:p-10 lg:flex-row"
+        rounded="md"
+        variant="muted"
+        class="lg:landscape:flex-row flex flex-col gap-y-10 p-4 sm:p-6 md:p-10 xl:landscape:flex-row"
       >
         <div
-          class="ltablet:w-3/5 ltablet:border-r border-muted-300 dark:border-muted-700 w-full lg:w-3/5 lg:border-r"
+          class="lg:landscape:w-3/5 lg:landscape:border-r border-muted-200 dark:border-muted-800 w-full xl:landscape:w-3/5 xl:landscape:border-e"
         >
           <div class="flex size-full flex-col gap-16 sm:flex-row">
             <!-- Monthly Summary -->
@@ -335,7 +338,7 @@ function useAreaExpenses() {
                 <span>Monthly Summary</span>
               </BaseHeading>
               <div
-                class="border-muted-300 divide-muted-300 dark:border-muted-700 dark:divide-muted-700 flex flex-col divide-y rounded-lg border"
+                class="border-muted-300 divide-muted-300 dark:border-muted-800 dark:divide-muted-800 flex flex-col divide-y rounded-lg border"
               >
                 <div class="p-4">
                   <div
@@ -360,23 +363,23 @@ function useAreaExpenses() {
               </div>
             </div>
             <!-- Chart -->
-            <div class="ltablet:pe-12 flex h-full grow flex-col lg:pe-12">
+            <div class="lg:landscape:pe-12 flex h-full grow flex-col xl:landscape:pe-12">
               <div class="mt-auto">
                 <AddonApexcharts v-bind="areaExpenses" />
               </div>
             </div>
           </div>
         </div>
-        <div class="ltablet:w-2/5 w-full lg:w-2/5">
-          <div class="ltablet:ps-12 h-full lg:ps-12">
+        <div class="lg:landscape:w-2/5 w-full xl:landscape:w-2/5">
+          <div class="lg:landscape:ps-12 h-full xl:landscape:ps-12">
             <div class="flex size-full flex-col">
               <div class="mb-6 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="semibold"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 mb-6 dark:text-white"
+                  class="text-muted-900 mb-6 dark:text-white"
                 >
                   <span>Transactions</span>
                 </BaseHeading>
@@ -391,7 +394,7 @@ function useAreaExpenses() {
                       rounded="full"
                       variant="none"
                     >
-                      <Icon name="ph:pizza-duotone" class="size-5" />
+                      <Icon name="solar:chef-hat-bold-duotone" class="size-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -399,17 +402,17 @@ function useAreaExpenses() {
                         size="sm"
                         weight="medium"
                         lead="tight"
-                        class="text-muted-800 dark:text-white"
+                        class="text-muted-900 dark:text-white"
                       >
                         <span>Food delivery</span>
                       </BaseHeading>
-                      <BaseParagraph size="xs" class="text-muted-400">
+                      <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                         <span>Oct 23, 2022 - 8:46pm</span>
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto">
                       <span
-                        class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
+                        class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
                       >
                         - {{ formatPrice(41.49) }}
                       </span>
@@ -423,7 +426,7 @@ function useAreaExpenses() {
                       rounded="full"
                       variant="none"
                     >
-                      <Icon name="ph:storefront-duotone" class="size-5" />
+                      <Icon name="solar:shop-bold-duotone" class="size-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -431,17 +434,17 @@ function useAreaExpenses() {
                         size="sm"
                         weight="medium"
                         lead="tight"
-                        class="text-muted-800 dark:text-white"
+                        class="text-muted-900 dark:text-white"
                       >
                         <span>Market Earnings</span>
                       </BaseHeading>
-                      <BaseParagraph size="xs" class="text-muted-400">
+                      <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                         <span>Oct 18, 2022 - 9:11am</span>
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto">
                       <span
-                        class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
+                        class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
                       >
                         + {{ formatPrice(263.39) }}
                       </span>
@@ -455,7 +458,7 @@ function useAreaExpenses() {
                       rounded="full"
                       variant="none"
                     >
-                      <Icon name="ph:shopping-cart-duotone" class="size-5" />
+                      <Icon name="solar:bag-smile-bold-duotone" class="size-5" />
                     </BaseIconBox>
                     <div>
                       <BaseHeading
@@ -463,17 +466,17 @@ function useAreaExpenses() {
                         size="sm"
                         weight="medium"
                         lead="tight"
-                        class="text-muted-800 dark:text-white"
+                        class="text-muted-900 dark:text-white"
                       >
                         <span>Online order</span>
                       </BaseHeading>
-                      <BaseParagraph size="xs" class="text-muted-400">
+                      <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                         <span>Oct 16, 2022 - 2:13pm</span>
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto">
                       <span
-                        class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
+                        class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
                       >
                         - {{ formatPrice(92.17) }}
                       </span>

@@ -25,7 +25,9 @@ const forward = useForwardProps(reactiveOmit(props, ['media', 'icon', 'name', 't
       </BaseAvatar>
       <span class="flex flex-col items-start gap-1">
         <span class="text-xs font-semibold leading-none">{{ props.name }}</span>
-        <span><SelectItemText>{{ props.text }}</SelectItemText></span>
+        <span class="font-sans text-xs text-muted-500 dark:text-muted-400">
+          <SelectItemText>{{ props.text }}</SelectItemText>
+        </span>
       </span>
     </span>
   </BaseSelectItem>

@@ -2,7 +2,6 @@
 const demoAreaBalance = reactive(useDemoAreaBalance())
 
 function useDemoAreaBalance() {
-  const { primary } = useTailwindColors()
   const type = 'area'
   const height = 250
 
@@ -22,7 +21,7 @@ function useDemoAreaBalance() {
       width: [2, 2, 2],
       curve: 'smooth',
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     legend: {
       show: false,
       position: 'top',
@@ -65,6 +64,17 @@ function useDemoAreaBalance() {
       },
       y: {
         formatter: (val: number) => `$${val}`,
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.75,
       },
     },
   }

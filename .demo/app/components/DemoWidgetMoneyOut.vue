@@ -47,25 +47,25 @@ const total = computed(() => {
 <template>
   <BaseCard
     rounded="md"
-    class="h-full px-10 py-16"
+    class="h-full p-10"
   >
     <div class="flex h-full flex-col justify-between gap-7">
       <BaseHeading
         as="h4"
-        size="sm"
+        size="xs"
         weight="medium"
         lead="none"
-        class="text-muted-400 uppercase"
+        class="text-muted-700 dark:text-muted-100 uppercase"
       >
         Money out last 30 days
       </BaseHeading>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3 mt-4">
         <BaseText weight="light" size="3xl">
           -
         </BaseText>
         <span
-          class="text-muted-800 font-sans text-4xl font-medium dark:text-white"
+          class="text-muted-900 font-sans text-3xl font-medium dark:text-white"
         >
           ${{ total.toFixed(2) }}
         </span>
@@ -95,6 +95,7 @@ const total = computed(() => {
             <BaseProgress
               :model-value="(item.amount / total) * 100"
               :max="100"
+              variant="primary"
               size="xs"
             />
             <BaseText

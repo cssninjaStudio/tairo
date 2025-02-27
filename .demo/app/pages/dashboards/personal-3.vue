@@ -123,10 +123,6 @@ const candidates = [
 
 // Datepicker
 const date = ref(new Date())
-
-function close() {
-  console.log('Datepicker closed')
-}
 </script>
 
 <template>
@@ -323,23 +319,7 @@ function close() {
       <!-- Grid item -->
       <div>
         <BaseCard class="p-4" rounded="lg">
-          <!-- <Calendar
-            :attributes="[
-              {
-                key: 'today',
-                highlight: true,
-                order: 0,
-                dates: [new Date()],
-              },
-            ]"
-            title-position="left"
-            expanded
-            borderless
-            transparent
-            trim-weeks
-            class="max-w-full rounded-xl"
-          /> -->
-          <AddonDatepicker v-model="date" locale="fr" label="Date de début" @close="close" />
+          <AddonDatepicker v-model="date" locale="en" label="Start date" />
         </BaseCard>
       </div>
       <!-- Grid item -->

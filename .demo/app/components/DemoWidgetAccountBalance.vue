@@ -7,16 +7,16 @@
     <div class="flex flex-col gap-4 px-8 pt-8 text-center">
       <BaseHeading
         as="h4"
-        size="sm"
+        size="xs"
         weight="medium"
         lead="none"
-        class="text-muted-400 uppercase"
+        class="text-muted-700 dark:text-muted-100 uppercase"
       >
         Account Balance
       </BaseHeading>
       <p>
         <span
-          class="text-muted-800 font-sans text-4xl font-medium before:text-xl before:content-['$'] dark:text-white"
+          class="text-muted-900 font-sans text-4xl font-medium before:text-xl before:content-['$'] dark:text-white"
         >
           9,543.12
         </span>
@@ -26,7 +26,7 @@
           name="lucide:arrow-up"
           class="iconify text-success-500 size-4"
         />
-        <span class="text-muted-400 font-sans text-sm">
+        <span class="text-muted-600 dark:text-muted-400 font-sans text-sm">
           $149.32 Today, Sep 25
         </span>
       </div>

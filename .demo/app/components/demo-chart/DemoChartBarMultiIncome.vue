@@ -2,7 +2,6 @@
 const demoBarMulti = reactive(useDemoBarMulti())
 
 function useDemoBarMulti() {
-  const { primary, info, success, warning } = useTailwindColors()
   const type = 'bar'
   const height = 280
 
@@ -19,7 +18,7 @@ function useDemoBarMulti() {
         endingShape: 'rounded',
       },
     },
-    colors: [primary.value, success.value, info.value, warning.value],
+    colors: ['var(--color-chart-base)', 'var(--color-violet-200)', 'var(--color-violet-800)'],
     dataLabels: {
       enabled: false,
     },

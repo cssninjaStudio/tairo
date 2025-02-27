@@ -15,7 +15,7 @@ const props = withDefaults(
 
 <template>
   <div
-    class="bg-muted-200 dark:bg-muted-800 p-4 md:p-6"
+    class="bg-muted-200 dark:bg-muted-950/60 p-4 md:p-6"
     :class="[
       props.rounded === 'sm' ? 'rounded-md' : '',
       props.rounded === 'md' ? 'rounded-lg' : '',

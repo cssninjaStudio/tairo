@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { BaseParagraph } from '#components'
+
 definePageMeta({
   title: 'Overview',
   preview: {
@@ -14,9 +16,8 @@ definePageMeta({
 const incomeHistory = reactive(useIncomeHistory())
 
 function useIncomeHistory() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'area'
-  const height = 315
+  const height = 380
 
   const options = {
     chart: {
@@ -25,12 +26,13 @@ function useIncomeHistory() {
         show: false,
       },
     },
-    colors: [primary.value, success.value, info.value],
+    colors: ['var(--color-chart-base)', 'var(--color-indigo-600)', 'var(--color-amber-600)'],
     title: {
       text: '',
       align: 'left',
     },
     legend: {
+      show: false,
       position: 'top',
     },
     dataLabels: {
@@ -63,6 +65,17 @@ function useIncomeHistory() {
         formatter(val: number) {
           return `$${val}`
         },
+      },
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.1,
       },
     },
   }
@@ -109,585 +122,637 @@ const amount = ref<number>(0)
 </script>
 
 <template>
-  <!-- Grid -->
-  <div class="grid gap-4 md:grid-cols-12">
-    <!-- Grid column -->
-    <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-      <!-- Inner column -->
-      <div class="flex flex-col gap-4">
-        <BaseCard class="flex flex-col py-6">
-          <div class="mb-6 flex items-center justify-between px-6">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="semibold"
-              lead="tight"
-              class="text-muted-800 dark:text-white"
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <!-- Grid -->
+    <div class="grid gap-4 md:grid-cols-12">
+      <!-- Grid column -->
+      <div class="lg:landscape:col-span-4 col-span-12 xl:landscape:col-span-4">
+        <!-- Inner column -->
+        <div class="flex flex-col gap-4">
+          <BaseCard rounded="md" class="flex flex-col py-4 md:py-6">
+            <div class="mb-6 flex items-center justify-between px-4 md:px-6">
+              <BaseHeading
+                as="h3"
+                size="md"
+                weight="medium"
+                lead="tight"
+                class="text-muted-900 dark:text-white"
+              >
+                <span>My Cards</span>
+              </BaseHeading>
+              <BaseButton rounded="full" size="icon-sm">
+                <Icon name="lucide:plus" class="size-3" />
+              </BaseButton>
+            </div>
+            <div class="mb-8 flex items-center gap-4 px-6">
+              <DemoCreditCardSmall class="text-primary-600" />
+              <div>
+                <BaseParagraph size="xs" weight="medium">
+                  <span class="text-muted-600 dark:text-muted-400">Card Balance</span>
+                </BaseParagraph>
+                <BaseHeading
+                  as="h4"
+                  size="lg"
+                  weight="semibold"
+                  lead="tight"
+                  class="text-muted-900 dark:text-white"
+                >
+                  <span>$2,834.31</span>
+                </BaseHeading>
+              </div>
+              <div class="ms-auto">
+                <BaseDropdown
+                  label="Actions"
+                  placement="bottom-end"
+                  size="md"
+                  class="z-20"
+                >
+                  <template #button>
+                    <BaseButton
+                      rounded="full"
+                      size="icon-sm"
+                      class="shrink-0 text-muted-500 dark:text-muted-400"
+                    >
+                      <Icon name="lucide:more-horizontal" class="size-3" />
+                    </BaseButton>
+                  </template>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Invest"
+                    text="Buys more stocks"
+                  >
+                    <template #start>
+                      <Icon name="solar:wad-of-money-linear" class="me-2 block size-5" />
+                    </template>
+                  </BaseDropdownItem>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Benchmark"
+                    text="Compare other sources"
+                  >
+                    <template #start>
+                      <Icon
+                        name="solar:mirror-left-linear"
+                        class="me-2 block size-5"
+                      />
+                    </template>
+                  </BaseDropdownItem>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Trade"
+                    text="View opportunities"
+                  >
+                    <template #start>
+                      <Icon name="solar:filters-linear" class="me-2 block size-5" />
+                    </template>
+                  </BaseDropdownItem>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Wallet"
+                    text="Manage your wallet"
+                  >
+                    <template #start>
+                      <Icon name="solar:wallet-2-linear" class="me-2 block size-5" />
+                    </template>
+                  </BaseDropdownItem>
+                </BaseDropdown>
+              </div>
+            </div>
+            <div
+              class="border-muted-200 dark:border-muted-700 mb-8 space-y-5 border-b-2 border-dashed px-6 pb-6"
             >
-              <span>My Cards</span>
-            </BaseHeading>
-            <BaseButton rounded="full" size="icon-sm">
-              <Icon name="lucide:plus" class="size-3" />
-            </BaseButton>
-          </div>
-          <div class="mb-8 flex items-center gap-4 px-6">
-            <DemoCreditCardSmall class="text-primary-500" />
-            <div>
-              <BaseParagraph size="sm" weight="medium">
-                <span class="text-muted-400">Card Balance</span>
-              </BaseParagraph>
-              <BaseHeading
-                as="h4"
-                size="xl"
-                weight="semibold"
-                lead="tight"
-                class="text-muted-800 dark:text-white"
-              >
-                <span>$2,834.31</span>
-              </BaseHeading>
-            </div>
-            <div class="ms-auto">
-              <BaseDropdown
-                label="Dropdown"
-                placement="bottom-end"
-                size="md"
-                class="z-20"
-              >
-                <BaseDropdownItem
-                  to="#"
-                  title="Invest"
-                  text="Buys more stocks"
-                >
-                  <template #start>
-                    <Icon name="ph:coin-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Benchmark"
-                  text="Compare other sources"
-                >
-                  <template #start>
-                    <Icon
-                      name="ph:cell-signal-medium-duotone"
-                      class="me-2 block size-5"
-                    />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Trade"
-                  text="View opportunities"
-                >
-                  <template #start>
-                    <Icon name="ph:bank-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownSeparator />
-                <BaseDropdownItem
-                  to="#"
-                  title="Wallet"
-                  text="Manage your wallet"
-                >
-                  <template #start>
-                    <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-              </BaseDropdown>
-            </div>
-          </div>
-          <div
-            class="border-muted-200 dark:border-muted-700 mb-8 space-y-5 border-b-2 border-dashed px-6 pb-6"
-          >
-            <div class="flex items-center justify-between">
-              <BaseHeading
-                as="h5"
-                size="sm"
-                weight="medium"
-                lead="tight"
-                class="text-muted-800 dark:text-white"
-              >
-                <span>Information</span>
-              </BaseHeading>
-              <NuxtLink
-                to="#"
-                class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
-              >
-                Edit
-              </NuxtLink>
-            </div>
-            <div class="flex items-center justify-between">
-              <BaseHeading
-                as="h5"
-                size="sm"
-                weight="medium"
-                lead="tight"
-                class="text-muted-800 dark:text-white"
-              >
-                <span>Status</span>
-              </BaseHeading>
-              <div class="flex items-center gap-1">
-                <span class="block size-2 rounded-full bg-emerald-500" />
-                <p class="text-muted-400 font-sans text-sm">
-                  Active
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center justify-between">
-              <BaseHeading
-                as="h5"
-                size="sm"
-                weight="medium"
-                lead="tight"
-                class="text-muted-800 dark:text-white"
-              >
-                <span>Expires in</span>
-              </BaseHeading>
-              <div class="flex items-center gap-1">
-                <p class="text-muted-400 font-sans text-sm">
-                  125 days
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center justify-between">
-              <BaseHeading
-                as="h5"
-                size="sm"
-                weight="medium"
-                lead="tight"
-                class="text-muted-800 dark:text-white"
-              >
-                <span>Type</span>
-              </BaseHeading>
-              <div class="flex items-center gap-1">
-                <Icon name="cib:visa" class="text-muted-400 size-10" />
-                <p class="text-muted-400 font-sans text-xs">
-                  Credit Card
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="mb-2 flex items-center gap-4 px-6">
-            <DemoCreditCardSmall class="text-success-500" />
-            <div>
-              <BaseParagraph size="sm" weight="medium">
-                <span class="text-muted-400">Card Balance</span>
-              </BaseParagraph>
-              <BaseHeading
-                as="h4"
-                size="xl"
-                weight="semibold"
-                lead="tight"
-                class="text-muted-800 dark:text-white"
-              >
-                <span>$2,834.31</span>
-              </BaseHeading>
-            </div>
-            <div class="ms-auto">
-              <BaseDropdown
-                label="Dropdown"
-                placement="bottom-end"
-                size="md"
-                class="z-20"
-              >
-                <BaseDropdownItem
-                  to="#"
-                  title="Invest"
-                  text="Buys more stocks"
-                >
-                  <template #start>
-                    <Icon name="ph:coin-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Benchmark"
-                  text="Compare other sources"
-                >
-                  <template #start>
-                    <Icon
-                      name="ph:cell-signal-medium-duotone"
-                      class="me-2 block size-5"
-                    />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Trade"
-                  text="View opportunities"
-                >
-                  <template #start>
-                    <Icon name="ph:bank-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownSeparator />
-                <BaseDropdownItem
-                  to="#"
-                  title="Wallet"
-                  text="Manage your wallet"
-                >
-                  <template #start>
-                    <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-              </BaseDropdown>
-            </div>
-          </div>
-        </BaseCard>
-        <!-- Widget -->
-        <BaseCard class="flex h-full flex-col p-6">
-          <div class="mb-4 flex items-center justify-between">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="semibold"
-              lead="tight"
-              class="text-muted-800 dark:text-white"
-            >
-              <span>Transactions</span>
-            </BaseHeading>
-            <div>
-              <NuxtLink
-                to="#"
-                class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
-              >
-                View All
-              </NuxtLink>
-            </div>
-          </div>
-          <div class="space-y-4">
-            <!-- Item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                class="bg-success-500/10 text-success-500"
-                size="md"
-                rounded="full"
-                variant="none"
-              >
-                <Icon name="ph:pizza-duotone" class="size-5" />
-              </BaseIconBox>
-              <div>
+              <div class="flex items-center justify-between">
                 <BaseHeading
-                  as="h4"
+                  as="h5"
                   size="sm"
                   weight="medium"
                   lead="tight"
                   class="text-muted-800 dark:text-white"
                 >
-                  <span>Food delivery</span>
+                  <span>Information</span>
                 </BaseHeading>
-                <BaseParagraph size="xs" class="text-muted-400">
-                  <span>Oct 23, 2022 - 8:46pm</span>
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto">
-                <span
-                  class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
+                <NuxtLink
+                  to="#"
+                  class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                 >
-                  - $41.49
-                </span>
+                  Edit
+                </NuxtLink>
               </div>
-            </div>
-            <!-- Item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                class="bg-orange-500/10 text-orange-500"
-                size="md"
-                rounded="full"
-                variant="none"
-              >
-                <Icon name="ph:storefront-duotone" class="size-5" />
-              </BaseIconBox>
-              <div>
+              <div class="flex items-center justify-between">
                 <BaseHeading
-                  as="h4"
+                  as="h5"
                   size="sm"
                   weight="medium"
                   lead="tight"
                   class="text-muted-800 dark:text-white"
                 >
-                  <span>Market Earnings</span>
+                  <span>Status</span>
                 </BaseHeading>
-                <BaseParagraph size="xs" class="text-muted-400">
-                  <span>Oct 18, 2022 - 9:11am</span>
-                </BaseParagraph>
+                <div class="flex items-center gap-1">
+                  <span class="block size-2 rounded-full bg-emerald-500" />
+                  <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
+                    Active
+                  </BaseParagraph>
+                </div>
               </div>
-              <div class="ms-auto">
-                <span
-                  class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
-                >
-                  + $263.39
-                </span>
-              </div>
-            </div>
-            <!-- Item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                class="bg-indigo-500/10 text-indigo-500"
-                size="md"
-                rounded="full"
-                variant="none"
-              >
-                <Icon name="ph:shopping-cart-duotone" class="size-5" />
-              </BaseIconBox>
-              <div>
+              <div class="flex items-center justify-between">
                 <BaseHeading
-                  as="h4"
+                  as="h5"
                   size="sm"
                   weight="medium"
                   lead="tight"
                   class="text-muted-800 dark:text-white"
                 >
-                  <span>Online order</span>
+                  <span>Expires in</span>
                 </BaseHeading>
-                <BaseParagraph size="xs" class="text-muted-400">
-                  <span>Oct 16, 2022 - 2:13pm</span>
-                </BaseParagraph>
+                <div class="flex items-center gap-1">
+                  <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
+                    125 days
+                  </BaseParagraph>
+                </div>
               </div>
-              <div class="ms-auto">
-                <span
-                  class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
+              <div class="flex items-center justify-between">
+                <BaseHeading
+                  as="h5"
+                  size="sm"
+                  weight="medium"
+                  lead="tight"
+                  class="text-muted-800 dark:text-white"
                 >
-                  - $92.00
-                </span>
+                  <span>Type</span>
+                </BaseHeading>
+                <div class="flex items-center gap-1">
+                  <Icon name="cib:visa" class="text-muted-400 size-10" />
+                  <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
+                    Credit Card
+                  </BaseParagraph>
+                </div>
               </div>
             </div>
-          </div>
-        </BaseCard>
-      </div>
-    </div>
-    <!-- Grid column -->
-    <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-      <!-- Sub grid -->
-      <div class="grid gap-4 md:grid-cols-12">
-        <!-- Sub column -->
-        <div
-          class="ltablet:col-span-6 col-span-12 flex flex-col gap-4 lg:col-span-6"
-        >
+            <div class="mb-2 flex items-center gap-4 px-6">
+              <DemoCreditCardSmall class="text-success-600" />
+              <div>
+                <BaseParagraph size="xs" weight="medium">
+                  <span class="text-muted-600 dark:text-muted-400">Card Balance</span>
+                </BaseParagraph>
+                <BaseHeading
+                  as="h4"
+                  size="lg"
+                  weight="semibold"
+                  lead="tight"
+                  class="text-muted-800 dark:text-white"
+                >
+                  <span>$2,834.31</span>
+                </BaseHeading>
+              </div>
+              <div class="ms-auto">
+                <BaseDropdown
+                  label="Actions"
+                  placement="bottom-end"
+                  size="md"
+                  class="z-20"
+                >
+                  <template #button>
+                    <BaseButton
+                      rounded="full"
+                      size="icon-sm"
+                      class="shrink-0 text-muted-500 dark:text-muted-400"
+                    >
+                      <Icon name="lucide:more-horizontal" class="size-3" />
+                    </BaseButton>
+                  </template>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Invest"
+                    text="Buys more stocks"
+                  >
+                    <template #start>
+                      <Icon name="solar:wad-of-money-linear" class="me-2 block size-5" />
+                    </template>
+                  </BaseDropdownItem>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Benchmark"
+                    text="Compare other sources"
+                  >
+                    <template #start>
+                      <Icon
+                        name="solar:mirror-left-linear"
+                        class="me-2 block size-5"
+                      />
+                    </template>
+                  </BaseDropdownItem>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Trade"
+                    text="View opportunities"
+                  >
+                    <template #start>
+                      <Icon name="solar:filters-linear" class="me-2 block size-5" />
+                    </template>
+                  </BaseDropdownItem>
+                  <BaseDropdownItem
+                    to="#"
+                    title="Wallet"
+                    text="Manage your wallet"
+                  >
+                    <template #start>
+                      <Icon name="solar:wallet-2-linear" class="me-2 block size-5" />
+                    </template>
+                  </BaseDropdownItem>
+                </BaseDropdown>
+              </div>
+            </div>
+          </BaseCard>
           <!-- Widget -->
+          <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
+            <div class="mb-8 flex items-center justify-between">
+              <BaseHeading
+                as="h3"
+                size="md"
+                weight="medium"
+                lead="tight"
+                class="text-muted-900 dark:text-white"
+              >
+                <span>Transactions</span>
+              </BaseHeading>
+              <div>
+                <NuxtLink
+                  to="#"
+                  class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
+                >
+                  View All
+                </NuxtLink>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <!-- Item -->
+              <div class="flex items-center gap-2">
+                <BaseIconBox
+                  class="bg-success-500/10 text-success-500"
+                  size="sm"
+                  rounded="full"
+                  variant="none"
+                >
+                  <Icon name="solar:chef-hat-bold-duotone" class="size-5" />
+                </BaseIconBox>
+                <div>
+                  <BaseHeading
+                    as="h4"
+                    size="sm"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
+                  >
+                    <span>Food delivery</span>
+                  </BaseHeading>
+                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
+                    <span>Oct 23, 2022 - 8:46pm</span>
+                  </BaseParagraph>
+                </div>
+                <div class="ms-auto">
+                  <span
+                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
+                  >
+                    - $41.49
+                  </span>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="flex items-center gap-2">
+                <BaseIconBox
+                  class="bg-orange-500/10 text-orange-500"
+                  size="sm"
+                  rounded="full"
+                  variant="none"
+                >
+                  <Icon name="solar:shop-bold-duotone" class="size-5" />
+                </BaseIconBox>
+                <div>
+                  <BaseHeading
+                    as="h4"
+                    size="sm"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
+                  >
+                    <span>Market Earnings</span>
+                  </BaseHeading>
+                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
+                    <span>Oct 18, 2022 - 9:11am</span>
+                  </BaseParagraph>
+                </div>
+                <div class="ms-auto">
+                  <span
+                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
+                  >
+                    + $263.39
+                  </span>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="flex items-center gap-2">
+                <BaseIconBox
+                  class="bg-indigo-500/10 text-indigo-500"
+                  size="sm"
+                  rounded="full"
+                  variant="none"
+                >
+                  <Icon name="solar:bag-smile-bold-duotone" class="size-5" />
+                </BaseIconBox>
+                <div>
+                  <BaseHeading
+                    as="h4"
+                    size="sm"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
+                  >
+                    <span>Online order</span>
+                  </BaseHeading>
+                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
+                    <span>Oct 16, 2022 - 2:13pm</span>
+                  </BaseParagraph>
+                </div>
+                <div class="ms-auto">
+                  <span
+                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
+                  >
+                    - $92.00
+                  </span>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="flex items-center gap-2">
+                <BaseIconBox
+                  class="bg-yellow-400/10 text-yellow-500"
+                  size="sm"
+                  rounded="full"
+                  variant="none"
+                >
+                  <Icon name="solar:screencast-2-bold-duotone" class="size-5" />
+                </BaseIconBox>
+                <div>
+                  <BaseHeading
+                    as="h4"
+                    size="sm"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
+                  >
+                    <span>Netflix subscription</span>
+                  </BaseHeading>
+                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
+                    <span>Oct 5, 2022 - 8:22pm</span>
+                  </BaseParagraph>
+                </div>
+                <div class="ms-auto">
+                  <span
+                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
+                  >
+                    - $18.00
+                  </span>
+                </div>
+              </div>
+            </div>
+          </BaseCard>
+        </div>
+      </div>
+      <!-- Grid column -->
+      <div class="lg:landscape:col-span-8 col-span-12 xl:landscape:col-span-8">
+        <!-- Sub grid -->
+        <div class="grid gap-4 md:grid-cols-12">
+          <!-- Sub column -->
+          <div
+            class="ltablet:col-span-6 col-span-12 flex flex-col gap-4 lg:col-span-6"
+          >
+            <!-- Widget -->
+            <form
+              method="POST"
+              action=""
+              class="relative"
+              @submit.prevent
+            >
+              <BaseCard rounded="md" class="flex flex-col p-4 md:p-6">
+                <div class="mb-4 flex items-center justify-between">
+                  <BaseHeading
+                    as="h3"
+                    size="md"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
+                  >
+                    <span>Quick Transfer</span>
+                  </BaseHeading>
+                </div>
+                <div>
+                  <BaseSelect v-model="selectedBankTransfert">
+                    <TairoSelectItem
+                      v-for="item in banks"
+                      :key="item.id"
+                      :value="item"
+                      :media="item.media"
+                      :name="item.name"
+                      :text="item.text"
+                    />
+                  </BaseSelect>
+                  <div class="mt-2">
+                    <p
+                      class="text-muted-600 dark:text-muted-400 font-sans text-xs leading-tight"
+                    >
+                      Select one of your bank accounts to transfer some funds. The
+                      transfer cannot exceed 20% of your balance.
+                    </p>
+                    <div class="mt-4 flex justify-end">
+                      <BaseButton
+                        type="submit"
+                        class="w-full"
+                        rounded="md"
+                      >
+                        Confirm and send
+                      </BaseButton>
+                    </div>
+                  </div>
+                </div>
+              </BaseCard>
+            </form>
+            <!-- Widget -->
+            <div class="relative">
+              <BaseCard rounded="md" class="flex flex-col p-4 md:p-6">
+                <div class="mb-4 flex items-center justify-between">
+                  <BaseHeading
+                    as="h3"
+                    size="md"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
+                  >
+                    <span>Overall Progress</span>
+                  </BaseHeading>
+                  <div>
+                    <BaseText size="sm" class="text-muted-400">
+                      Lvl. 3
+                    </BaseText>
+                  </div>
+                </div>
+                <div>
+                  <BaseProgress size="xs" variant="primary" :model-value="60" />
+                  <div class="mt-2">
+                    <p
+                      class="text-muted-600 dark:text-muted-400 font-sans text-xs leading-tight"
+                    >
+                      This is your Tairo customer level. Reach out higher levels
+                      to unlock achievements, special gifts, and more.
+                    </p>
+                    <div class="mt-2 flex justify-end">
+                      <NuxtLink
+                        to="#"
+                        class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
+                      >
+                        View details
+                      </NuxtLink>
+                    </div>
+                  </div>
+                </div>
+              </BaseCard>
+            </div>
+          </div>
+          <!-- Sub column -->
           <form
             method="POST"
             action=""
-            class="relative"
+            class="ltablet:col-span-6 col-span-12 lg:col-span-6"
             @submit.prevent
           >
-            <BaseCard class="flex flex-col p-6">
-              <div class="mb-4 flex items-center justify-between">
-                <BaseHeading
-                  as="h3"
-                  size="md"
-                  weight="semibold"
-                  lead="tight"
-                  class="text-muted-800 dark:text-white"
-                >
-                  <span>Quick Transfer</span>
-                </BaseHeading>
-              </div>
-              <div>
-                <BaseSelect v-model="selectedBankTransfert">
-                  <TairoSelectItem
-                    v-for="item in banks"
-                    :key="item.id"
-                    :value="item"
-                    :media="item.media"
-                    :name="item.name"
-                    :text="item.text"
-                  />
-                </BaseSelect>
-                <div class="mt-2">
-                  <p
-                    class="text-muted-500 dark:text-muted-400 font-sans text-xs leading-tight"
+            <!-- Widget -->
+            <div class="relative h-full">
+              <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
+                <div class="mb-4 flex items-center justify-between">
+                  <BaseHeading
+                    as="h3"
+                    size="md"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
                   >
-                    Select one of your bank accounts to transfer some funds. The
-                    transfer cannot exceed 20% of your balance.
-                  </p>
-                  <div class="mt-2 flex justify-end">
-                    <button
-                      type="submit"
-                      class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
-                    >
-                      Confirm and send
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </BaseCard>
-          </form>
-          <!-- Widget -->
-          <div class="relative">
-            <BaseCard class="flex flex-col p-6">
-              <div class="mb-4 flex items-center justify-between">
-                <BaseHeading
-                  as="h3"
-                  size="md"
-                  weight="semibold"
-                  lead="tight"
-                  class="text-muted-800 dark:text-white"
-                >
-                  <span>Overall Progress</span>
-                </BaseHeading>
-                <div>
-                  <span class="text-muted-400 font-sans text-sm">Lvl. 3</span>
-                </div>
-              </div>
-              <div>
-                <BaseProgress size="xs" :model-value="60" />
-                <div class="mt-2">
-                  <p
-                    class="text-muted-500 dark:text-muted-400 font-sans text-xs leading-tight"
-                  >
-                    This is your Tairo customer level. Reach out higher levels
-                    to unlock achievements, special gifts, and more.
-                  </p>
-                  <div class="mt-2 flex justify-end">
+                    <span>Send money to</span>
+                  </BaseHeading>
+                  <div>
                     <NuxtLink
                       to="#"
-                      class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
+                      class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
                     >
-                      Details
+                      See All
                     </NuxtLink>
                   </div>
                 </div>
-              </div>
-            </BaseCard>
-          </div>
-        </div>
-        <!-- Sub column -->
-        <form
-          method="POST"
-          action=""
-          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
-          @submit.prevent
-        >
-          <!-- Widget -->
-          <div class="relative h-full">
-            <BaseCard class="flex h-full flex-col p-6">
-              <div class="mb-4 flex items-center justify-between">
-                <BaseHeading
-                  as="h3"
-                  size="md"
-                  weight="semibold"
-                  lead="tight"
-                  class="text-muted-800 dark:text-white"
-                >
-                  <span>Send Money To</span>
-                </BaseHeading>
                 <div>
-                  <NuxtLink
-                    to="#"
-                    class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
-                  >
-                    See All
-                  </NuxtLink>
-                </div>
-              </div>
-              <div>
-                <div class="mb-4 flex gap-3">
-                  <BaseAvatar src="/img/avatars/16.svg" size="xs" />
-                  <BaseAvatar
-                    text="LT"
-                    size="xs"
-                    class="bg-yellow-400/20 text-yellow-400"
-                  />
-                  <BaseAvatar src="/img/avatars/3.svg" size="xs" />
-                  <BaseAvatar
-                    text="KC"
-                    size="xs"
-                    class="bg-indigo-400/20 text-indigo-400"
-                  />
-                </div>
-                <NuxtLink
-                  to="#"
-                  class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
-                >
-                  See all contacts
-                </NuxtLink>
-              </div>
-              <div class="mt-auto">
-                <div class="space-y-3">
-                  <div>
-                    <BaseSelect v-model="selectedBankSendTo">
-                      <TairoSelectItem
-                        v-for="item in banks"
-                        :key="item.id"
-                        :value="item"
-                        :media="item.media"
-                        :name="item.name"
-                        :text="item.text"
-                      />
-                    </BaseSelect>
-                  </div>
-                  <div class="flex w-full gap-2">
-                    <BaseSelect
-                      v-model="selectedCurrency"
-                      rounded="sm"
-                      label="Currency"
-                      class="w-16"
-                    >
-                      <BaseSelectItem value="usd">
-                        $
-                      </BaseSelectItem>
-                      <BaseSelectItem value="gbp">
-                        £
-                      </BaseSelectItem>
-                      <BaseSelectItem value="eur">
-                        €
-                      </BaseSelectItem>
-                    </BaseSelect>
-                    <BaseInputNumber
-                      v-model="amount"
-                      placeholder="0.00"
-                      rounded="sm"
-                      label="Amount"
-                      :min="0"
+                  <div class="mb-4 flex gap-3">
+                    <BaseAvatar src="/img/avatars/16.svg" size="xs" />
+                    <BaseAvatar
+                      text="LT"
+                      size="xs"
+                      class="bg-yellow-400/20 text-yellow-400"
+                    />
+                    <BaseAvatar src="/img/avatars/3.svg" size="xs" />
+                    <BaseAvatar
+                      text="KC"
+                      size="xs"
+                      class="bg-indigo-400/20 text-indigo-400"
                     />
                   </div>
-                </div>
-                <p
-                  class="text-muted-500 dark:text-muted-400 my-3 font-sans text-xs leading-tight"
-                >
-                  Funds will reach destination tomorrow.
-                </p>
-                <div>
-                  <BaseButton
-                    type="submit"
-                    rounded="sm"
-                    size="sm"
-                    variant="primary"
-                    class="w-full"
-                  >
-                    Send Money
-                  </BaseButton>
-                </div>
-              </div>
-            </BaseCard>
-          </div>
-        </form>
-        <!-- Sub column -->
-        <div class="col-span-12">
-          <div class="relative h-full">
-            <BaseCard class="flex h-full flex-col p-6">
-              <div class="mb-4 flex items-center justify-between">
-                <BaseHeading
-                  as="h3"
-                  size="md"
-                  weight="semibold"
-                  lead="tight"
-                  class="text-muted-800 dark:text-white"
-                >
-                  <span>History</span>
-                </BaseHeading>
-                <div>
                   <NuxtLink
                     to="#"
-                    class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
+                    class="text-muted-500 dark:text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
                   >
-                    View Reports
+                    See all contacts
                   </NuxtLink>
                 </div>
-              </div>
-              <AddonApexcharts v-bind="incomeHistory" />
-            </BaseCard>
+                <div class="mt-auto">
+                  <div class="space-y-3">
+                    <div>
+                      <BaseSelect v-model="selectedBankSendTo">
+                        <TairoSelectItem
+                          v-for="item in banks"
+                          :key="item.id"
+                          :value="item"
+                          :media="item.media"
+                          :name="item.name"
+                          :text="item.text"
+                        />
+                      </BaseSelect>
+                    </div>
+                    <div class="flex flex-col 2xl:flex-row w-full gap-2">
+                      <BaseSelect
+                        v-model="selectedCurrency"
+                        rounded="sm"
+                        label="Currency"
+                        class="w-16"
+                      >
+                        <BaseSelectItem value="usd">
+                          $
+                        </BaseSelectItem>
+                        <BaseSelectItem value="gbp">
+                          £
+                        </BaseSelectItem>
+                        <BaseSelectItem value="eur">
+                          €
+                        </BaseSelectItem>
+                      </BaseSelect>
+                      <BaseInputNumber
+                        v-model="amount"
+                        placeholder="0.00"
+                        rounded="sm"
+                        label="Amount"
+                        :min="0"
+                      />
+                    </div>
+                  </div>
+                  <p
+                    class="text-muted-500 dark:text-muted-400 my-3 font-sans text-xs leading-tight"
+                  >
+                    Funds will reach destination tomorrow.
+                  </p>
+                  <div>
+                    <BaseButton
+                      type="submit"
+                      rounded="md"
+                      variant="primary"
+                      class="w-full"
+                    >
+                      Send Money
+                    </BaseButton>
+                  </div>
+                </div>
+              </BaseCard>
+            </div>
+          </form>
+          <!-- Sub column -->
+          <div class="col-span-12">
+            <div class="relative h-full">
+              <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
+                <div class="mb-4 flex items-center justify-between">
+                  <BaseHeading
+                    as="h3"
+                    size="md"
+                    weight="medium"
+                    lead="tight"
+                    class="text-muted-900 dark:text-white"
+                  >
+                    <span>History</span>
+                  </BaseHeading>
+                  <div>
+                    <NuxtLink
+                      to="#"
+                      class="text-muted-400 hover:text-primary-500 font-sans text-sm underline-offset-4 transition-colors duration-300 hover:underline"
+                    >
+                      View reports
+                    </NuxtLink>
+                  </div>
+                </div>
+                <AddonApexcharts v-bind="incomeHistory" />
+              </BaseCard>
+            </div>
           </div>
         </div>
       </div>

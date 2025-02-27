@@ -8,11 +8,11 @@
           as="h3"
           weight="medium"
           size="xl"
-          class="text-muted-800 dark:text-muted-100"
+          class="text-muted-900 dark:text-muted-100"
         >
           New Features
         </BaseHeading>
-        <BaseParagraph class="text-muted-500 dark:text-muted-400">
+        <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
           Some nice features we've just released
         </BaseParagraph>
       </div>
@@ -20,7 +20,7 @@
         <slot name="actions" />
       </div>
     </div>
-    <div class="ltablet:grid-cols-2 grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <div class="ltablet:grid-cols-2 grid grid-cols-1 gap-4 lg:grid-cols-2">
       <div class="relative">
         <BaseCard
           rounded="md"
