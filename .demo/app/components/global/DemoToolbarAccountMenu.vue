@@ -4,38 +4,23 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
 <template>
   <div class="group relative z-20 inline-flex items-center justify-center text-end">
-    <Menu
-      v-slot="{ close }"
-      as="div"
-      class="relative z-20 size-9 text-left"
-    >
-      <MenuButton as="template">
-        <button
-          type="button"
-          class="group-hover:ring-primary-500 dark:ring-offset-muted-900 inline-flex size-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4"
+    <DropdownMenuRoot>
+      <DropdownMenuTrigger class="group-hover:ring-primary-500 dark:ring-offset-muted-900 inline-flex size-9 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4">
+        <div
+          class="relative inline-flex size-9 items-center justify-center rounded-full"
         >
-          <div
-            class="relative inline-flex size-9 items-center justify-center rounded-full"
+          <img
+            src="/img/avatars/2.svg"
+            class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
+            alt=""
           >
-            <img
-              src="/img/avatars/2.svg"
-              class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
-              alt=""
-            >
-          </div>
-        </button>
-      </MenuButton>
-
-      <Transition
-        enter-active-class="transition duration-100 ease-out"
-        enter-from-class="transform scale-95 opacity-0"
-        enter-to-class="transform scale-100 opacity-100"
-        leave-active-class="transition duration-75 ease-in"
-        leave-from-class="transform scale-100 opacity-100"
-        leave-to-class="transform scale-95 opacity-0"
-      >
-        <MenuItems
-          class="divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute end-0 mt-2 w-64 origin-top-right divide-y rounded-md border bg-white shadow-lg focus:outline-none"
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuPortal>
+        <DropdownMenuContent
+          align="end"
+          side="bottom"
+          class="divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute end-0 mt-2 w-64 origin-top-right divide-y rounded-md border bg-white shadow-lg focus:outline-none origin-top-right starting:scale-95 starting:opacity-0 transition-all duration-100"
         >
           <div class="p-6 text-center">
             <div
@@ -56,33 +41,48 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
               <p class="text-muted-400 mb-4 font-sans text-xs">
                 maya@tairo.io
               </p>
-              <BaseButton
-                to="/layouts/profile-edit"
-                rounded="lg"
-                class="w-full"
-                @click.passive="close"
-              >
-                Manage Account
-              </BaseButton>
+              <DropdownMenuItem as-child>
+                <BaseButton
+                  to="/layouts/profile-edit"
+                  rounded="lg"
+                  class="w-full"
+                >
+                  Manage Account
+                </BaseButton>
+              </DropdownMenuItem>
             </div>
           </div>
           <div class="px-6 py-1.5">
-            <MenuItem v-slot="{ active }" as="div">
+            <DropdownMenuItem
+              v-for="user in [
+                {
+                  avatar: '/img/avatars/3.svg',
+                  name: 'Mike Miller',
+                  email: 'mike@tairo.io',
+                },
+                {
+                  avatar: '/img/avatars/9.svg',
+                  name: 'Claire Baker',
+                  email: 'claire@tairo.io',
+                },
+                {
+                  avatar: '/img/avatars/14.svg',
+                  name: 'Alan Baxter',
+                  email: 'alan@tairo.io',
+                },
+              ]"
+              :key="user.email"
+              as="div"
+            >
               <NuxtLink
                 to="#"
-                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
-                :class="[
-                  active
-                    ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
-                    : 'text-muted-500',
-                ]"
-                @click.passive="close"
+                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300 in-data-highlighted:bg-muted-100 in-data-highlighted:dark:bg-muted-700 in-data-highlighted:text-primary-500 text-muted-500"
               >
                 <div
                   class="relative inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
-                    src="/img/avatars/3.svg"
+                    :src="user.avatar"
                     class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                     alt=""
                   >
@@ -91,91 +91,28 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
                   <h6
                     class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
                   >
-                    Mike Miller
+                    {{ user.name }}
                   </h6>
                   <p class="text-muted-400 font-sans text-xs">
-                    mike@tairo.io
+                    {{ user.email }}
                   </p>
                 </div>
               </NuxtLink>
-            </MenuItem>
-            <MenuItem v-slot="{ active }" as="div">
-              <NuxtLink
-                to="#"
-                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
-                :class="[
-                  active
-                    ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
-                    : 'text-muted-500',
-                ]"
-                @click.passive="close"
-              >
-                <div
-                  class="relative inline-flex size-9 items-center justify-center rounded-full"
-                >
-                  <img
-                    src="/img/avatars/9.svg"
-                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
-                    alt=""
-                  >
-                </div>
-                <div class="ms-2">
-                  <h6
-                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
-                  >
-                    Claire Baker
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    claire@tairo.io
-                  </p>
-                </div>
-              </NuxtLink>
-            </MenuItem>
-            <MenuItem v-slot="{ active }" as="div">
-              <NuxtLink
-                to="#"
-                class="group flex w-full items-center rounded-md p-2 text-sm transition-colors duration-300"
-                :class="[
-                  active
-                    ? 'bg-muted-100 dark:bg-muted-700 text-primary-500'
-                    : 'text-muted-500',
-                ]"
-                @click.passive="close"
-              >
-                <div
-                  class="relative inline-flex size-9 items-center justify-center rounded-full"
-                >
-                  <img
-                    src="/img/avatars/14.svg"
-                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
-                    alt=""
-                  >
-                </div>
-                <div class="ms-2">
-                  <h6
-                    class="font-heading text-muted-800 text-xs font-medium leading-none dark:text-white"
-                  >
-                    Alan Baxter
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    alan@tairo.io
-                  </p>
-                </div>
-              </NuxtLink>
-            </MenuItem>
+            </DropdownMenuItem>
           </div>
 
           <div class="p-6">
-            <BaseButton
-              rounded="lg"
-              class="w-full"
-              @click.passive="close"
-            >
-              Logout
-            </BaseButton>
+            <DropdownMenuItem as-child>
+              <BaseButton
+                rounded="lg"
+                class="w-full"
+              >
+                Logout
+              </BaseButton>
+            </DropdownMenuItem>
           </div>
-        </MenuItems>
-      </Transition>
-    </Menu>
+        </DropdownMenuContent>
+      </DropdownMenuPortal>
+    </DropdownMenuRoot>
   </div>
 </template>
