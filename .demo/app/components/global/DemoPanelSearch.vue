@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions, TransitionRoot } from '@headlessui/vue'
-
 const { close } = usePanels()
 onKeyStroke('Escape', close)
 
@@ -37,17 +35,6 @@ const people = [
   },
 ]
 const selectedPerson = ref('')
-const query = ref('')
-
-const filteredPeople = computed(() =>
-  query.value === ''
-    ? people
-    : people.filter((person) => {
-        return person.name.toLowerCase().includes(query.value.toLowerCase())
-      }),
-)
-
-const comboInput = ref(null)
 </script>
 
 <template>
@@ -70,78 +57,40 @@ const comboInput = ref(null)
         </button>
       </div>
 
-      <div class="relative h-[calc(100dvh_-_64px)] w-full px-10">
-        <Combobox
+      <div class="h-[calc(100dvh_-_64px)] w-full px-10 z-10">
+        <BaseAutocomplete
           v-model="selectedPerson"
-          class="relative z-10 mt-5"
-          as="div"
+          size="lg"
+          placeholder="Search people..."
+          by="name"
+          :bindings="{ portal: { disabled: true } }"
         >
-          <div class="group relative">
-            <ComboboxInput
-              ref="comboInput"
-              class="border-muted-300 text-muted-600 focus:border-primary-500 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-800 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-600 dark:focus:shadow-muted-800/50 h-12 w-full rounded-lg border bg-white py-3 pe-4 ps-10 font-sans text-sm leading-5 outline-none! transition duration-300 focus:shadow-lg"
-              :display-value="(person: any) => person.name"
-              placeholder="Search..."
-              @change="query = $event.target.value"
-            />
+          <BaseAutocompleteItem v-for="person in people" :key="person.id" :value="person.name">
             <div
-              class="text-muted-400 group-focus-within:text-primary-500 absolute start-0 top-0 flex size-12 items-center justify-center transition-colors duration-300"
+              class="flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300"
             >
-              <Icon name="feather:search" class="size-5" />
-            </div>
-          </div>
-
-          <TransitionRoot
-            leave="transition ease-in duration-100"
-            leave-from="opacity-100"
-            leave-to="opacity-0"
-            @after-leave="query = ''"
-          >
-            <ComboboxOptions
-              as="div"
-              class="nui-slimscroll divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute mt-1 max-h-60 w-full divide-y overflow-auto rounded-lg border bg-white py-1 text-base shadow-lg outline-none sm:text-sm"
-            >
-              <!-- Placeholder -->
               <div
-                v-if="filteredPeople.length === 0 && query !== ''"
-                class="text-muted-700 relative cursor-default select-none px-4 py-2"
+                class="inline-flex size-9 items-center justify-center rounded-full"
               >
-                Nothing found.
-              </div>
-              <ComboboxOption
-                v-for="person in filteredPeople"
-                :key="person.id"
-                class="p-2"
-                as="div"
-                :value="person"
-              >
-                <div
-                  class="hover:bg-muted-100 dark:hover:bg-muted-700 flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300"
+                <img
+                  :src="person.avatar"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
+                  alt=""
                 >
-                  <div
-                    class="relative inline-flex size-9 items-center justify-center rounded-full"
-                  >
-                    <img
-                      :src="person.avatar"
-                      class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
-                      alt=""
-                    >
-                  </div>
-                  <div class="ms-3">
-                    <h6
-                      class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
-                    >
-                      {{ person.name }}
-                    </h6>
-                    <p class="text-muted-400 font-sans text-xs">
-                      {{ person.role }}
-                    </p>
-                  </div>
-                </div>
-              </ComboboxOption>
-            </ComboboxOptions>
-          </TransitionRoot>
-        </Combobox>
+              </div>
+              <div class="ms-3">
+                <h6
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                >
+                  {{ person.name }}
+                </h6>
+                <p class="text-muted-400 font-sans text-xs">
+                  {{ person.role }}
+                </p>
+              </div>
+            </div>
+          </BaseAutocompleteItem>
+        </BaseAutocomplete>
 
         <!-- Suggestions -->
         <div class="py-6">
@@ -155,7 +104,7 @@ const comboInput = ref(null)
             <li>
               <NuxtLink to="#" class="flex items-center">
                 <div
-                  class="relative inline-flex size-9 items-center justify-center rounded-full"
+                  class="inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/3.svg"
@@ -179,7 +128,7 @@ const comboInput = ref(null)
             <li>
               <NuxtLink to="#" class="flex items-center">
                 <div
-                  class="relative inline-flex size-9 items-center justify-center rounded-full"
+                  class="inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/18.svg"
@@ -203,7 +152,7 @@ const comboInput = ref(null)
             <li>
               <NuxtLink to="#" class="flex items-center">
                 <div
-                  class="relative inline-flex size-9 items-center justify-center rounded-full"
+                  class="inline-flex size-9 items-center justify-center rounded-full"
                 >
                   <img
                     src="/img/avatars/11.svg"
@@ -238,7 +187,7 @@ const comboInput = ref(null)
             <li>
               <NuxtLink to="#" class="flex items-center">
                 <div
-                  class="dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
+                  class="dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
                 >
                   <Icon name="feather:chrome" class="" />
                 </div>
@@ -258,7 +207,7 @@ const comboInput = ref(null)
             <li>
               <NuxtLink to="#" class="flex items-center">
                 <div
-                  class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full"
+                  class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full"
                 >
                   <Icon name="feather:tv" class="" />
                 </div>
@@ -278,7 +227,7 @@ const comboInput = ref(null)
             <li>
               <NuxtLink to="#" class="flex items-center">
                 <div
-                  class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 relative inline-flex size-10 items-center justify-center rounded-full"
+                  class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full"
                 >
                   <Icon name="feather:twitter" class="" />
                 </div>
