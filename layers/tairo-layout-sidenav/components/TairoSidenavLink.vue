@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const { to, icon, label, count } = defineProps<{
-  to: string
-  icon: string
-  label: string
-  count: string | number
+  to?: string
+  icon?: string
+  label?: string
+  count?: string | number
 }>()
 
 const route = useRoute()
@@ -18,6 +18,7 @@ const route = useRoute()
   >
     <slot>
       <Icon
+        v-if="icon"
         :name="icon"
         class="relative size-5 shrink-0"
         :class="to === route.fullPath ? 'text-muted-900 dark:text-white' : 'text-muted-400 dark:text-muted-500 group-hover:text-muted-700 dark:group-hover:text-muted-200'"

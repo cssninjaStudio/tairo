@@ -143,6 +143,7 @@ const companies = [
   {
     name: 'Nitro LLC',
     logo: '/img/icons/logos/nitro.svg',
+    count: '9+',
   },
   {
     name: 'Flashlite LLC',
@@ -169,9 +170,11 @@ const companies = [
             :to="item.to"
             :icon="item.icon"
             :label="item.label"
-            :count="item.count"
           />
-          <TairoSidenavCollapsible v-else>
+          <TairoSidenavCollapsible
+            v-else
+            :open="item.children.some((child) => child.to === $route.path) || undefined"
+          >
             <template #trigger>
               <TairoSidenavCollapsibleTrigger :icon="item.icon" :label="item.label" />
             </template>
