@@ -42,7 +42,6 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    'nuxt-swiper',
     '@nuxt/content',
     'nuxt-component-meta',
   ],
