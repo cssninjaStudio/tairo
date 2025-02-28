@@ -1,5 +1,5 @@
 {
-  "name": "@cssninja/tairo-layout-topnav",
+  "name": "@cssninja/tairo-layout-topnav-dev",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -8,8 +8,10 @@
     "prepare": "nuxt prepare",
     "clean": "rimraf .nuxt .output node_modules"
   },
+  "dependencies": {
+    "@vueuse/core": "^12.4.0"
+  },
   "devDependencies": {
-    "nuxt": "^3.15.2",
-    "vue-router": "^4.5.0"
+    "nuxt": "^3.15.2"
   }
 }

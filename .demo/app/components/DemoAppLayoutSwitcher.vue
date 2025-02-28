@@ -1,13 +1,6 @@
 <script setup lang="ts">
-/**
- * Here we use the useLayoutSwitcher() composable to load available layouts.
- * We also load colors from Tailwind and Shuriken UI.
- * We use the switchColorShades() function to dynamically change the colors.
- */
 import { mutedPresets, primaryPresets, switchColorShades } from '~/utils/bundles/colors-switcher'
 
-const { layouts, activeLayoutName } = useLayoutSwitcher()
-const route = useRoute()
 const isSwitcherOpen = useState('switcher-open', () => false)
 const currentPrimary = ref('violet')
 const currentMuted = ref('slate')
@@ -15,17 +8,8 @@ const currentMuted = ref('slate')
 // Close the modal when the primary or muted color changes
 watch([currentPrimary, currentMuted], closeModal)
 
-// We can only change layout dynamically on the default layout
-const canChangeLayout = computed(
-  () => !route.meta.layout || route.meta.layout === 'default',
-)
-
 function closeModal() {
   isSwitcherOpen.value = false
-}
-function switchLayout(layout: string) {
-  activeLayoutName.value = layout
-  closeModal()
 }
 function switchPrimary(color: (typeof primaryPresets)[number]) {
   currentPrimary.value = color.name
@@ -40,7 +24,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
 <template>
   <TairoModal
     :open="isSwitcherOpen"
-    :size="canChangeLayout ? '2xl' : 'sm'"
+    size="sm"
     @close="isSwitcherOpen = false"
   >
     <template #header>
@@ -64,86 +48,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
     >
       <div class="grid grid-cols-12 gap-6">
         <div
-          v-if="canChangeLayout"
-          class="col-span-12 flex flex-col gap-4 sm:col-span-7"
-        >
-          <div>
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              class="text-muted-900 dark:text-white"
-            >
-              Layout selection
-            </BaseHeading>
-            <BaseParagraph size="sm" class="text-muted-400">
-              Select the layout you want to use for your application
-            </BaseParagraph>
-          </div>
-          <div
-            class="bg-muted-100 dark:bg-muted-700/40 nui-slimscroll grid max-h-[380px] grid-cols-1 gap-4 overflow-y-auto rounded-xl p-4 sm:grid-cols-2"
-          >
-            <BaseCard
-              v-for="layout in layouts"
-              :key="layout.name"
-              role="button"
-              rounded="lg"
-              class="p-2"
-              :class="activeLayoutName === layout.name && 'border-primary-500!'"
-              @click="switchLayout(layout.name)"
-            >
-              <div
-                class="bg-muted-50 dark:bg-muted-700/70 flex items-center justify-center rounded-lg py-6 sm:py-3"
-              >
-                <img
-                  :src="`/img/illustrations/switcher/layout-${layout.name}-default.svg`"
-                  class="mx-auto block max-w-[110px] transition-opacity duration-200 dark:hidden"
-                  :class="
-                    activeLayoutName === layout.name
-                      ? 'opacity-100'
-                      : 'opacity-60'
-                  "
-                  :alt="`${layout.name} layout`"
-                >
-                <img
-                  :src="`/img/illustrations/switcher/layout-${layout.name}-default-dark.svg`"
-                  class="mx-auto hidden max-w-[110px] transition-opacity duration-200 dark:block"
-                  :class="
-                    activeLayoutName === layout.name
-                      ? 'opacity-100'
-                      : 'opacity-60'
-                  "
-                  :alt="`${layout.name} layout`"
-                >
-              </div>
-              <div class="flex items-center justify-between py-2">
-                <BaseText
-                  size="xs"
-                  class="capitalize"
-                  :class="
-                    activeLayoutName === layout.name
-                      ? 'text-muted-600 dark:text-muted-100'
-                      : 'text-muted-400 dark:text-muted-500'
-                  "
-                >
-                  {{ layout.name }} Layout
-                </BaseText>
-                <Icon
-                  name="ph:check-circle-duotone"
-                  class="text-success-500 size-5 transition-opacity duration-200"
-                  :class="
-                    activeLayoutName === layout.name
-                      ? 'opacity-100'
-                      : 'opacity-0'
-                  "
-                />
-              </div>
-            </BaseCard>
-          </div>
-        </div>
-        <div
-          class="col-span-12 flex flex-col gap-4"
-          :class="[canChangeLayout ? 'sm:col-span-5' : '']"
+          class="col-span-12 flex flex-col gap-4 sm:col-span-"
         >
           <div>
             <BaseHeading
