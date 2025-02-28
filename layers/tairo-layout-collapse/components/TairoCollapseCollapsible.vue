@@ -1,13 +1,20 @@
+<script lang="ts">
+import type { CollapsibleRootEmits, CollapsibleRootProps } from 'reka-ui'
+import { useForwardPropsEmits } from 'reka-ui'
+
+export interface TairoCollapseCollapsibleProps extends CollapsibleRootProps {}
+export interface TairoCollapseCollapsibleEmits extends CollapsibleRootEmits {}
+</script>
+
 <script setup lang="ts">
-const props = defineProps<{
-  icon?: string
-  label?: string
-  children?: any
-}>()
+const props = defineProps<TairoCollapseCollapsibleProps>()
+const emits = defineEmits<TairoCollapseCollapsibleEmits>()
+
+const forward = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <CollapsibleRoot class="group w-full ">
+  <CollapsibleRoot v-bind="forward" class="group w-full ">
     <slot name="trigger" />
     <CollapsibleContent class="flex w-full flex-col overflow-hidden ps-4 transition-all">
       <slot />

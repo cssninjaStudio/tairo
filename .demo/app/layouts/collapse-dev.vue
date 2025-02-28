@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { it } from 'date-fns/locale'
-
 const isSwitcherOpen = useState('switcher-open', () => false)
 
 const menu = [
@@ -595,7 +593,10 @@ const menu = [
             :icon="item.icon"
             :label="item.label"
           />
-          <TairoCollapseCollapsible v-else>
+          <TairoCollapseCollapsible
+            v-else
+            :open="item.children.some((child) => child.to === $route.path) || undefined"
+          >
             <template #trigger>
               <TairoCollapseCollapsibleTrigger
                 :icon="item.icon"
@@ -610,111 +611,6 @@ const menu = [
             />
           </TairoCollapseCollapsible>
         </template>
-        <!-- <TairoCollapseCollapsible>
-          <template #trigger>
-            <TairoCollapseCollapsibleTrigger
-              icon="solar:widget-linear"
-              label="Widgets"
-            />
-          </template>
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v1"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v2"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v3"
-          />
-        </TairoCollapseCollapsible>
-        <TairoCollapseCollapsible>
-          <template #trigger>
-            <TairoCollapseCollapsibleTrigger
-              icon="solar:widget-4-linear"
-              label="Applications"
-            />
-          </template>
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v1"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v2"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v3"
-          />
-        </TairoCollapseCollapsible>
-        <TairoCollapseCollapsible>
-          <template #trigger>
-            <TairoCollapseCollapsibleTrigger
-              icon="solar:sidebar-minimalistic-linear"
-              label="Dashboards"
-            />
-          </template>
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Personal v1"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Personal v2"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Personal v3"
-          />
-        </TairoCollapseCollapsible>
-        <TairoCollapseCollapsible>
-          <template #trigger>
-            <TairoCollapseCollapsibleTrigger
-              icon="solar:widget-linear"
-              label="Widgets"
-            />
-          </template>
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v1"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v2"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v3"
-          />
-        </TairoCollapseCollapsible>
-        <TairoCollapseCollapsible>
-          <template #trigger>
-            <TairoCollapseCollapsibleTrigger
-              icon="solar:widget-4-linear"
-              label="Applications"
-            />
-          </template>
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v1"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v2"
-          />
-          <TairoCollapseCollapsibleLink
-            to="/"
-            label="Widgets v3"
-          />
-        </TairoCollapseCollapsible>
-        <TairoCollapseLink
-          to="/"
-          icon="solar:calendar-linear"
-          label="Schedule"
-        /> -->
       </TairoCollapseSidebarLinks>
       <TairoCollapseSidebarLinks class="px-4 py-2 space-y-1 shrink-0">
         <TairoCollapseLink
