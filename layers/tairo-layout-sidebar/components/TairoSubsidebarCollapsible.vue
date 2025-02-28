@@ -1,13 +1,28 @@
-<script setup lang="ts">
-const props = defineProps<{
+<script lang="ts">
+import type { CollapsibleRootEmits, CollapsibleRootProps } from 'reka-ui'
+import { reactiveOmit } from '@vueuse/core'
+import { useForwardPropsEmits } from 'reka-ui'
+
+export interface TairoSubsidebarCollapsibleProps extends CollapsibleRootProps {
   icon?: string
   label?: string
-  children?: any
-}>()
+  children?: {
+    to: string
+    label: string
+  }[]
+}
+export interface TairoSubsidebarCollapsibleEmits extends CollapsibleRootEmits {}
+</script>
+
+<script setup lang="ts">
+const props = defineProps<TairoSubsidebarCollapsibleProps>()
+const emits = defineEmits<TairoSubsidebarCollapsibleEmits>()
+
+const forward = useForwardPropsEmits(reactiveOmit(props, ['icon', 'label', 'children']), emits)
 </script>
 
 <template>
-  <CollapsibleRoot class="group w-full">
+  <CollapsibleRoot v-bind="forward" class="group w-full">
     <slot name="trigger">
       <TairoSubsidebarCollapsibleTrigger
         :icon="props.icon"
