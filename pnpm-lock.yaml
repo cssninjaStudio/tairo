@@ -196,9 +196,6 @@ importers:
       '@vee-validate/zod':
         specifier: ^4.15.0
         version: 4.15.0(vue@3.5.13(typescript@5.7.3))(zod@3.24.1)
-      '@vueform/slider':
-        specifier: 2.1.10
-        version: 2.1.10
       '@vueuse/core':
         specifier: ^12.4.0
         version: 12.4.0(typescript@5.7.3)
@@ -331,9 +328,6 @@ importers:
       vue3-apexcharts:
         specifier: 1.8.0
         version: 1.8.0(apexcharts@4.3.0)(vue@3.5.13(typescript@5.7.3))
-      vue3-carousel:
-        specifier: 0.13.0
-        version: 0.13.0(vue@3.5.13(typescript@5.7.3))
       vue3-popper:
         specifier: 1.5.0
         version: 1.5.0(vue@3.5.13(typescript@5.7.3))
@@ -2337,9 +2331,6 @@ packages:
 
   '@vue/shared@3.5.13':
     resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
-
-  '@vueform/slider@2.1.10':
-    resolution: {integrity: sha512-L2G3Ju51Yq6yWF2wzYYsicUUaH56kL1QKGVtimUVHT1K1ADcRT94xVyIeJpS0klliVEeF6iMZFbdXtHq8AsDHw==}
 
   '@vueuse/core@10.11.1':
     resolution: {integrity: sha512-guoy26JQktXPcz+0n3GukWIy/JDNKti9v6VEMu6kV2sYBsWuGiTU8OWdg+ADfUbHg3/3DlqySDe7JmdHrktiww==}
@@ -6667,11 +6658,6 @@ packages:
       apexcharts: '>=4.0.0'
       vue: '>=3.0.0'
 
-  vue3-carousel@0.13.0:
-    resolution: {integrity: sha512-vio91KI4mVMlCDbVhGzW9nIyYqxu0moqroPR/OrJeaCvAK3SJYxqvH36a4/t1oEJYJsTgh+IuNiNi6c+7DVKZg==}
-    peerDependencies:
-      vue: ^3.5.0
-
   vue3-popper@1.5.0:
     resolution: {integrity: sha512-xaEnx90YBnlSg5G2yWqm2DHWHg+DB99UVRp4VsyTF0QLXyHrqSuE1Xo5+sG0AQq/lBcrGMlk5NU5xE2MDLKViw==}
     engines: {node: '>=12'}
@@ -9160,8 +9146,6 @@ snapshots:
       vue: 3.5.13(typescript@5.7.3)
 
   '@vue/shared@3.5.13': {}
-
-  '@vueform/slider@2.1.10': {}
 
   '@vueuse/core@10.11.1(vue@3.5.13(typescript@5.7.3))':
     dependencies:
@@ -14460,10 +14444,6 @@ snapshots:
   vue3-apexcharts@1.8.0(apexcharts@4.3.0)(vue@3.5.13(typescript@5.7.3)):
     dependencies:
       apexcharts: 4.3.0
-      vue: 3.5.13(typescript@5.7.3)
-
-  vue3-carousel@0.13.0(vue@3.5.13(typescript@5.7.3)):
-    dependencies:
       vue: 3.5.13(typescript@5.7.3)
 
   vue3-popper@1.5.0(vue@3.5.13(typescript@5.7.3)):

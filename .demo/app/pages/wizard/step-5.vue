@@ -223,76 +223,80 @@ watchEffect(() => {
                   </div>
                   <div class="ms-auto">
                     <div class="relative flex w-48 justify-between">
-                      <div
-                        role="button"
-                        class="relative z-10 shrink-0"
-                        data-nui-tooltip="Reader"
-                        tabindex="0"
-                        @keydown.space.prevent="setTeammateRole(idx, 'reader')"
-                        @click="setTeammateRole(idx, 'reader')"
-                      >
+                      <BaseTooltip content="Reader">
                         <div
-                          class="size-3 rounded-full"
-                          :class="[
-                            getRoleLevel(member) >= 0
-                              ? 'bg-primary-500'
-                              : 'bg-muted-300 dark:bg-muted-700',
-                          ]"
-                        />
-                      </div>
-                      <div
-                        role="button"
-                        class="relative z-10 shrink-0"
-                        data-nui-tooltip="Collaborator"
-                        tabindex="0"
-                        @keydown.space.prevent="
-                          setTeammateRole(idx, 'collaborator')
-                        "
-                        @click="setTeammateRole(idx, 'collaborator')"
-                      >
+                          role="button"
+                          class="relative z-10 shrink-0"
+                          tabindex="0"
+                          @keydown.space.prevent="setTeammateRole(idx, 'reader')"
+                          @click="setTeammateRole(idx, 'reader')"
+                        >
+                          <div
+                            class="size-3 rounded-full"
+                            :class="[
+                              getRoleLevel(member) >= 0
+                                ? 'bg-primary-500'
+                                : 'bg-muted-300 dark:bg-muted-700',
+                            ]"
+                          />
+                        </div>
+                      </BaseTooltip>
+                      <BaseTooltip content="Collaborator">
                         <div
-                          class="size-3 rounded-full"
-                          :class="[
-                            getRoleLevel(member) >= 1
-                              ? 'bg-primary-500'
-                              : 'bg-muted-300 dark:bg-muted-700',
-                          ]"
-                        />
-                      </div>
-                      <div
-                        role="button"
-                        class="relative z-10 shrink-0"
-                        data-nui-tooltip="Manager"
-                        tabindex="0"
-                        @keydown.space.prevent="setTeammateRole(idx, 'manager')"
-                        @click="setTeammateRole(idx, 'manager')"
-                      >
+                          role="button"
+                          class="relative z-10 shrink-0"
+                          tabindex="0"
+                          @keydown.space.prevent="
+                            setTeammateRole(idx, 'collaborator')
+                          "
+                          @click="setTeammateRole(idx, 'collaborator')"
+                        >
+                          <div
+                            class="size-3 rounded-full"
+                            :class="[
+                              getRoleLevel(member) >= 1
+                                ? 'bg-primary-500'
+                                : 'bg-muted-300 dark:bg-muted-700',
+                            ]"
+                          />
+                        </div>
+                      </BaseTooltip>
+                      <BaseTooltip content="Manager">
                         <div
-                          class="size-3 rounded-full"
-                          :class="[
-                            getRoleLevel(member) >= 2
-                              ? 'bg-primary-500'
-                              : 'bg-muted-300 dark:bg-muted-700',
-                          ]"
-                        />
-                      </div>
-                      <div
-                        role="button"
-                        class="relative z-10 shrink-0"
-                        data-nui-tooltip="Owner"
-                        tabindex="0"
-                        @keydown.space.prevent="setTeammateRole(idx, 'owner')"
-                        @click="setTeammateRole(idx, 'owner')"
-                      >
+                          role="button"
+                          class="relative z-10 shrink-0"
+                          tabindex="0"
+                          @keydown.space.prevent="setTeammateRole(idx, 'manager')"
+                          @click="setTeammateRole(idx, 'manager')"
+                        >
+                          <div
+                            class="size-3 rounded-full"
+                            :class="[
+                              getRoleLevel(member) >= 2
+                                ? 'bg-primary-500'
+                                : 'bg-muted-300 dark:bg-muted-700',
+                            ]"
+                          />
+                        </div>
+                      </BaseTooltip>
+                      <BaseTooltip content="Owner">
                         <div
-                          class="size-3 rounded-full"
-                          :class="[
-                            getRoleLevel(member) >= 3
-                              ? 'bg-primary-500'
-                              : 'bg-muted-300 dark:bg-muted-700',
-                          ]"
-                        />
-                      </div>
+                          role="button"
+                          class="relative z-10 shrink-0"
+                          tabindex="0"
+                          @keydown.space.prevent="setTeammateRole(idx, 'owner')"
+                          @click="setTeammateRole(idx, 'owner')"
+                        >
+                          <div
+                            class="size-3 rounded-full"
+                            :class="[
+                              getRoleLevel(member) >= 3
+                                ? 'bg-primary-500'
+                                : 'bg-muted-300 dark:bg-muted-700',
+                            ]"
+                          />
+                        </div>
+                      </BaseTooltip>
                       <div class="absolute top-1/2 w-full -translate-y-1/2">
                         <BaseProgress
                           size="xs"

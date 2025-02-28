@@ -2,7 +2,7 @@ export async function useDocumentationRoutes() {
   const { data } = await useAsyncData('doc-nav', () => {
     return queryCollection('docs')
       .select('path', 'title', 'description', 'components', 'icon')
-      .find()
+      .all()
   })
 
   const docRoutes = computed(() => {

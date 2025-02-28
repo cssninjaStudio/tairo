@@ -161,51 +161,52 @@ function difficultyLabel(itemDifficulty: number) {
                   :hide-label="index > 0"
                   class="w-full sm:w-36"
                 >
-                  <div
-                    class="flex w-full justify-end gap-1 sm:justify-center"
-                    :data-nui-tooltip="difficultyLabel(item.difficulty)"
-                  >
-                    <span
-                      class="block size-2 rounded-full"
-                      :class="
-                        item.difficulty >= 1
-                          ? 'bg-primary-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    />
-                    <span
-                      class="block size-2 rounded-full"
-                      :class="
-                        item.difficulty >= 2
-                          ? 'bg-primary-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    />
-                    <span
-                      class="block size-2 rounded-full"
-                      :class="
-                        item.difficulty >= 3
-                          ? 'bg-primary-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    />
-                    <span
-                      class="block size-2 rounded-full"
-                      :class="
-                        item.difficulty >= 4
-                          ? 'bg-primary-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    />
-                    <span
-                      class="block size-2 rounded-full"
-                      :class="
-                        item.difficulty === 5
-                          ? 'bg-primary-500'
-                          : 'bg-muted-200 dark:bg-muted-700'
-                      "
-                    />
-                  </div>
+                  <BaseTooltip :content="difficultyLabel(item.difficulty)">
+                    <div
+                      class="flex w-full justify-end gap-1 sm:justify-center"
+                    >
+                      <span
+                        class="block size-2 rounded-full"
+                        :class="
+                          item.difficulty >= 1
+                            ? 'bg-primary-500'
+                            : 'bg-muted-200 dark:bg-muted-700'
+                        "
+                      />
+                      <span
+                        class="block size-2 rounded-full"
+                        :class="
+                          item.difficulty >= 2
+                            ? 'bg-primary-500'
+                            : 'bg-muted-200 dark:bg-muted-700'
+                        "
+                      />
+                      <span
+                        class="block size-2 rounded-full"
+                        :class="
+                          item.difficulty >= 3
+                            ? 'bg-primary-500'
+                            : 'bg-muted-200 dark:bg-muted-700'
+                        "
+                      />
+                      <span
+                        class="block size-2 rounded-full"
+                        :class="
+                          item.difficulty >= 4
+                            ? 'bg-primary-500'
+                            : 'bg-muted-200 dark:bg-muted-700'
+                        "
+                      />
+                      <span
+                        class="block size-2 rounded-full"
+                        :class="
+                          item.difficulty === 5
+                            ? 'bg-primary-500'
+                            : 'bg-muted-200 dark:bg-muted-700'
+                        "
+                      />
+                    </div>
+                  </BaseTooltip>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
                   <BaseButton variant="muted">

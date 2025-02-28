@@ -698,21 +698,21 @@ const mergedTree = [
                   class="inline-block size-2 rounded-xs"
                   :class="child?.item?.color"
                 />
-                <span
-                  role="button"
-                  tabindex="0"
-                  :data-nui-tooltip="child?.item?.tooltip"
-                  data-nui-tooltip-position="right"
-                  :class="[
-                    child?.children ? 'cursor-pointer' : 'cursor-default',
-                    child?.item?.tooltip
-                      ? 'cursor-help pe-2'
-                      : 'cursor-default',
-                  ]"
-                  @click="toggle"
-                >
-                  {{ child?.item?.name }}
-                </span>
+                <BaseTooltip :content="child?.item?.tooltip">
+                  <span
+                    role="button"
+                    tabindex="0"
+                    :class="[
+                      child?.children ? 'cursor-pointer' : 'cursor-default',
+                      child?.item?.tooltip
+                        ? 'cursor-help pe-2'
+                        : 'cursor-default',
+                    ]"
+                    @click="toggle"
+                  >
+                    {{ child?.item?.name }}
+                  </span>
+                </BaseTooltip>
               </span>
             </template>
           </BaseTreeSelect>
@@ -750,21 +750,21 @@ const mergedTree = [
                   class="inline-block size-2 rounded-xs"
                   :class="child?.item?.color"
                 />
-                <span
-                  role="button"
-                  tabindex="0"
-                  :data-nui-tooltip="child?.item?.tooltip"
-                  data-nui-tooltip-position="right"
-                  :class="[
-                    child?.children ? 'cursor-pointer' : 'cursor-default',
-                    child?.item?.tooltip
-                      ? 'cursor-help pe-2'
-                      : 'cursor-default',
-                  ]"
-                  @click="toggle"
-                >
-                  {{ child?.item?.name }}
-                </span>
+                <BaseTooltip :content="child?.item?.tooltip">
+                  <span
+                    role="button"
+                    tabindex="0"
+                    :class="[
+                      child?.children ? 'cursor-pointer' : 'cursor-default',
+                      child?.item?.tooltip
+                        ? 'cursor-help pe-2'
+                        : 'cursor-default',
+                    ]"
+                    @click="toggle"
+                  >
+                    {{ child?.item?.name }}
+                  </span>
+                </BaseTooltip>
               </span>
             </template>
           </BaseTreeSelect>

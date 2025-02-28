@@ -344,48 +344,55 @@ const billingCycles = ref('monthly')
               <div
                 class="xs:flex-wrap ptablet:flex-wrap flex items-center gap-2"
               >
-                <BaseAvatar
-                  src="/img/avatars/2.svg"
-                  size="sm"
-                  data-nui-tooltip="Maya R."
-                />
-                <BaseAvatar
-                  src="/img/avatars/10.svg"
-                  size="sm"
-                  data-nui-tooltip="Kendra W."
-                />
-                <BaseAvatar
-                  size="sm"
-                  text="OD"
-                  data-nui-tooltip="Oliver D."
-                  :class="getRandomColor()"
-                />
-                <BaseAvatar
-                  src="/img/avatars/16.svg"
-                  size="sm"
-                  data-nui-tooltip="Hermann M."
-                />
-                <BaseAvatar
-                  size="sm"
-                  text="MC"
-                  data-nui-tooltip="Matteus C."
-                  :class="getRandomColor()"
-                />
-                <BaseAvatar
-                  size="sm"
-                  text="GM"
-                  data-nui-tooltip="Gorav M."
-                  :class="getRandomColor()"
-                />
+                <BaseTooltip content="Maya R.">
+                  <BaseAvatar
+                    src="/img/avatars/2.svg"
+                    size="sm"
+                  />
+                </BaseTooltip>
+                <BaseTooltip content="Kendra W.">
+                  <BaseAvatar
+                    src="/img/avatars/10.svg"
+                    size="sm"
+                  />
+                </BaseTooltip>
+                <BaseTooltip content="Oliver D.">
+                  <BaseAvatar
+                    size="sm"
+                    text="OD"
+                    :class="getRandomColor()"
+                  />
+                </BaseTooltip>
+                <BaseTooltip content="Hermann M.">
+                  <BaseAvatar
+                    src="/img/avatars/16.svg"
+                    size="sm"
+                  />
+                </BaseTooltip>
+                <BaseTooltip content="Matteus C.">
+                  <BaseAvatar
+                    size="sm"
+                    text="MC"
+                    :class="getRandomColor()"
+                  />
+                </BaseTooltip>
+                <BaseTooltip content="Gorav M.">
+                  <BaseAvatar
+                    size="sm"
+                    text="GM"
+                    :class="getRandomColor()"
+                  />
+                </BaseTooltip>
               </div>
               <div>
-                <button
-                  type="button"
-                  class="border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 text-muted-400 dark:text-muted-600 hover:text-primary-500 dark:hover:text-primary-500 size-10 rounded-full border-2 border-dashed transition-all duration-300 hover:border-solid"
-                  data-nui-tooltip="Manage plan seats"
-                >
-                  <Icon name="lucide:edit-3" class="size-4" />
-                </button>
+                <BaseTooltip content="Manage plan seats">
+                  <button
+                    type="button"
+                    class="border-muted-200 dark:border-muted-700 hover:border-primary-500 dark:hover:border-primary-500 text-muted-400 dark:text-muted-600 hover:text-primary-500 dark:hover:text-primary-500 size-10 rounded-full border-2 border-dashed transition-all duration-300 hover:border-solid"
+                  >
+                    <Icon name="lucide:edit-3" class="size-4" />
+                  </button>
+                </BaseTooltip>
               </div>
             </div>
           </BaseCard>

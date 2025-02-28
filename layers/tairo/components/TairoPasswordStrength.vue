@@ -91,11 +91,12 @@ const checks = computed(() => [
     <div class="-mx-1 flex">
       <template v-for="check of checks" :key="check.label">
         <div class="w-1/5 px-1">
-          <div
-            class="h-2 rounded-xl transition-colors"
-            :class="check.valid ? 'bg-success-500' : 'bg-destructive-500'"
-            :data-nui-tooltip="check.label.replace('Contains', '')"
-          />
+          <BaseTooltip :content="check.label">
+            <div
+              class="h-2 rounded-xl transition-colors"
+              :class="check.valid ? 'bg-success-500' : 'bg-destructive-500'"
+            />
+          </BaseTooltip>
         </div>
       </template>
     </div>

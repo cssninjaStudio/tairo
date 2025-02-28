@@ -55,12 +55,13 @@ const tickets = [
       class="flex flex-col gap-4 sm:flex-row"
       :class="index > 0 ? 'pt-6' : ''"
     >
-      <BaseAvatar
-        size="lg"
-        :src="ticket.user.src"
-        :text="ticket.user.name"
-        :data-nui-tooltip="ticket.user.name"
-      />
+      <BaseTooltip :content="ticket.user.name">
+        <BaseAvatar
+          size="lg"
+          :src="ticket.user.src"
+          :text="ticket.user.name"
+        />
+      </BaseTooltip>
       <div class="max-w-md">
         <BaseHeading
           as="h3"

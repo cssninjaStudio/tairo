@@ -99,13 +99,14 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 <div
                   class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
                 >
-                  <BaseAvatar
-                    :src="item.icon"
-                    :badge-src="item.author.avatar"
-                    :data-nui-tooltip="`by ${item.author.name}`"
-                    size="lg"
-                    class="bg-muted-100 dark:bg-muted-700/70"
-                  />
+                  <BaseTooltip :content="`by ${item.author.name}`">
+                    <BaseAvatar
+                      :src="item.icon"
+                      :badge-src="item.author.avatar"
+                      size="lg"
+                      class="bg-muted-100 dark:bg-muted-700/70"
+                    />
+                  </BaseTooltip>
                   <div class="w-full sm:w-auto">
                     <BaseHeading
                       tag="h3"
@@ -167,15 +168,16 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     >
                       <span>Cook</span>
                     </BaseButton>
-                    <BaseButton
-                      rounded="full"
-                      size="icon-sm"
-                      variant="muted"
-                      data-nui-tooltip="Save recipe"
-                      class="hidden sm:inline-flex"
-                    >
-                      <Icon name="ph:heart-duotone" class="size-4" />
-                    </BaseButton>
+                    <BaseTooltip content="Save recipe">
+                      <BaseButton
+                        rounded="full"
+                        size="icon-sm"
+                        variant="muted"
+                        class="hidden sm:inline-flex"
+                      >
+                        <Icon name="ph:heart-duotone" class="size-4" />
+                      </BaseButton>
+                    </BaseTooltip>
                   </div>
                 </div>
               </BaseCard>

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Slider from '@vueform/slider'
 import { generatePassphrase as _generatePassphrase } from '~/utils/bundles/diceware'
-import '~/assets/css/slider.css'
 
 definePageMeta({
   title: 'Password',
@@ -21,10 +19,10 @@ const password = ref('')
 
 // passphrase
 
-const phraseStrength = ref(4)
+const phraseStrength = ref([4])
 
 function generatePassphrase() {
-  const words = _generatePassphrase(phraseStrength.value)
+  const words = _generatePassphrase(phraseStrength.value[0])
   password.value = words.join(' ')
 }
 
@@ -41,7 +39,7 @@ const chars = ref({
   symbols: '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~',
 })
 
-const charsLength = ref(24)
+const charsLength = ref([24])
 
 const charsLower = ref(true)
 const charsUpper = ref(true)
@@ -77,7 +75,7 @@ function generatePassword() {
 
   password.value = shuffleArray(dict.join('').split(''))
     .join('')
-    .substring(0, charsLength.value)
+    .substring(0, charsLength.value[0])
 }
 
 function shuffleArray(array: any[]) {
@@ -161,25 +159,18 @@ function handleClipboard() {
             <hr
               class="border-muted-200 dark:border-muted-700 my-5 h-px border bg-transparent"
             >
-            <BaseAccordion
-              :open-items="[0]"
-              :items="[{
-                title: 'Memorable niceware passwords',
-                content: 'passphrase',
-              }, {
-                title: 'Password Generator',
-                content: 'password',
-              }]"
-              exclusive
-            >
-              <template #accordion-item-content="{ item }">
-                <div v-if="item.content === 'passphrase'">
+            <BaseAccordion type="single" collapsible>
+              <BaseAccordionItem
+                value="passphrase"
+                title="Memorable niceware passwords"
+              >
+                <div>
                   <div class="mb-2">
                     <label
                       class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
                     >Passphrase strength</label>
                     <BaseInputNumber
-                      v-model="phraseStrength"
+                      v-model="phraseStrength[0]"
                       placeholder="Bits"
                       rounded="lg"
                       :min="1"
@@ -187,13 +178,11 @@ function handleClipboard() {
                       :step="1"
                     />
                     <div class="w-full py-5">
-                      <Slider
+                      <BaseSlider
                         v-model="phraseStrength"
-                        class="rounded-tooltip"
                         :min="1"
                         :max="8"
                         :step="1"
-                        :tooltips="false"
                       />
                     </div>
                   </div>
@@ -229,13 +218,18 @@ function handleClipboard() {
                     </BaseButton>
                   </div>
                 </div>
-                <div v-else-if="item.content === 'password'">
+              </BaseAccordionItem>
+              <BaseAccordionItem
+                value="password"
+                title="Memorable niceware passwords"
+              >
+                <div>
                   <div class="mb-2">
                     <label
                       class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
                     >Password length</label>
                     <BaseInputNumber
-                      v-model="charsLength"
+                      v-model="charsLength[0]"
                       placeholder="Length"
                       rounded="lg"
                       :min="1"
@@ -243,13 +237,11 @@ function handleClipboard() {
                       :step="1"
                     />
                     <div class="w-full py-5">
-                      <Slider
+                      <BaseSlider
                         v-model="charsLength"
-                        class="rounded-tooltip"
                         :min="1"
                         :max="42"
                         :step="1"
-                        :tooltips="false"
                       />
                     </div>
                   </div>
@@ -340,7 +332,7 @@ function handleClipboard() {
                     </BaseButton>
                   </div>
                 </div>
-              </template>
+              </BaseAccordionItem>
             </BaseAccordion>
           </div>
         </div>

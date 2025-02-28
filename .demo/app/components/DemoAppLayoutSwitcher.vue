@@ -202,20 +202,24 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                   Pick a shade
                 </BaseText>
                 <div class="ml-auto flex items-center justify-end gap-2">
-                  <button
+                  <BaseTooltip
                     v-for="color in mutedPresets"
                     :key="color.name"
-                    type="button"
-                    class="block size-6 rounded-full"
-                    :class="[
-                      color.class,
-                      currentMuted === color.name
-                        ? 'ring-primary-500 ring-1'
-                        : 'ring-0',
-                    ]"
-                    :data-nui-tooltip="color.label"
-                    @click="() => switchMuted(color)"
-                  />
+                    :content="color.label"
+                    :bindings="{ portal: { disabled: true } }"
+                  >
+                    <button
+                      type="button"
+                      class="block size-6 rounded-full"
+                      :class="[
+                        color.class,
+                        currentMuted === color.name
+                          ? 'ring-primary-500 ring-1'
+                          : 'ring-0',
+                      ]"
+                      @click="() => switchMuted(color)"
+                    />
+                  </BaseTooltip>
                 </div>
               </div>
             </div>

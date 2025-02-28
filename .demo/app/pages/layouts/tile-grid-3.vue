@@ -112,13 +112,14 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               class="p-3"
             >
               <div class="flex w-full items-center gap-2">
-                <BaseAvatar
-                  :src="item.icon"
-                  :badge-src="item.author.avatar"
-                  :data-nui-tooltip="`by ${item.author.name}`"
-                  size="md"
-                  class="bg-muted-100 dark:bg-muted-700/70"
-                />
+                <BaseTooltip :content="`by ${item.author.name}`">
+                  <BaseAvatar
+                    :src="item.icon"
+                    :badge-src="item.author.avatar"
+                    size="md"
+                    class="bg-muted-100 dark:bg-muted-700/70"
+                  />
+                </BaseTooltip>
                 <div>
                   <BaseHeading
                     tag="h3"

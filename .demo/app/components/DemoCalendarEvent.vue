@@ -61,42 +61,26 @@ const emits = defineEmits<{
         class="border-muted-200 dark:border-muted-700 mt-1 flex items-center justify-between border-t pt-2"
       >
         <div class="flex flex-wrap gap-2">
-          <span
-            v-if="props.event.customData.features?.record"
-            class="text-muted-400"
-            data-nui-tooltip="Recorded"
-          >
-            <Icon name="ph:monitor-play-duotone" class="size-4" />
-          </span>
-          <span
-            v-if="props.event.customData.features?.drive"
-            class="text-muted-400"
-            data-nui-tooltip="Document joined"
-          >
-            <Icon name="ph:note-duotone" class="size-4" />
-          </span>
-          <span
-            v-if="props.event.customData.features?.external"
-            class="text-muted-400"
-            data-nui-tooltip="External Users"
-          >
-            <Icon name="ph:lock-open-duotone" class="size-4" />
-          </span>
-          <span
-            v-if="props.event.customData.features?.conversation"
-            class="text-muted-400"
-            data-nui-tooltip="Has comments"
-          >
+          <BaseTooltip v-if="props.event.customData.features?.record" content="Recorded" :bindings="{ portal: { disabled: true } }">
+            <Icon name="ph:monitor-play-duotone" class="size-4 text-muted-400" />
+          </BaseTooltip>
+          <BaseTooltip v-if="props.event.customData.features?.drive" content="Document joined" :bindings="{ portal: { disabled: true } }">
+            <Icon name="ph:note-duotone" class="size-4 text-muted-400" />
+          </BaseTooltip>
+          <BaseTooltip v-if="props.event.customData.features?.external" content="External Users" :bindings="{ portal: { disabled: true } }">
+            <Icon name="ph:lock-open-duotone" class="size-4 text-muted-400" />
+          </BaseTooltip>
+          <BaseTooltip v-if="props.event.customData.features?.conversation" content="Has comments" :bindings="{ portal: { disabled: true } }">
             <Icon name="ph:chats-circle-duotone" class="size-4" />
-          </span>
+          </BaseTooltip>
         </div>
         <div>
-          <div
-            class="size-2 rounded-full"
-            :class="[categoryTheme[props.event.customData.category].color]"
-            :data-nui-tooltip="categoryTheme[props.event.customData.category].name"
-            data-nui-tooltip-position="start"
-          />
+          <BaseTooltip :content="categoryTheme[props.event.customData.category].name" :bindings="{ portal: { disabled: true } }">
+            <div
+              class="size-2 rounded-full"
+              :class="[categoryTheme[props.event.customData.category].color]"
+            />
+          </BaseTooltip>
         </div>
       </div>
     </div>

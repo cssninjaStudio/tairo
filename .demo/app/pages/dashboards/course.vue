@@ -346,9 +346,11 @@ const students = [
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
-                <BaseButton size="icon-sm" data-nui-tooltip="Download file">
-                  <Icon name="lucide:arrow-down" class="size-4" />
-                </BaseButton>
+                <BaseTooltip content="Download file">
+                  <BaseButton size="icon-sm">
+                    <Icon name="lucide:arrow-down" class="size-4" />
+                  </BaseButton>
+                </BaseTooltip>
               </div>
             </div>
           </BaseCard>

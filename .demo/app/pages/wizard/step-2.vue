@@ -68,14 +68,15 @@ watch(inputFile, (value) => {
               v-if="files?.length && files.item(0)"
               class="absolute bottom-0 end-0 z-20"
             >
-              <BaseButton
-                size="icon-sm"
-                rounded="full"
-                data-nui-tooltip="Remove image"
-                @click="remove(files.item(0)!)"
-              >
-                <Icon name="lucide:x" class="size-4" />
-              </BaseButton>
+              <BaseTooltip content="Remove image">
+                <BaseButton
+                  size="icon-sm"
+                  rounded="full"
+                  @click="remove(files.item(0)!)"
+                >
+                  <Icon name="lucide:x" class="size-4" />
+                </BaseButton>
+              </BaseTooltip>
             </div>
             <div v-else class="absolute bottom-0 end-0 z-20">
               <div class="relative" tooltip="Upload image">

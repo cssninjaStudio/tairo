@@ -102,7 +102,7 @@ function setAccount(account: any) {
             <div class="text-success-500 relative">
               <BaseProgressCircle
                 :max="100"
-                :modelvalue="75"
+                :model-value="75"
                 :size="82"
                 :thickness="1"
                 variant="primary"
@@ -232,7 +232,7 @@ function setAccount(account: any) {
                   <Icon name="lucide:plus" class="size-4" />
                 </BaseButton>
               </div>
-              <RadioGroupItem
+              <BaseTooltip
                 v-for="person in [
                   { name: 'John Baxter', avatar: '/img/avatars/8.svg' },
                   { name: 'Amber Wilson', avatar: '/img/avatars/24.svg' },
@@ -240,17 +240,20 @@ function setAccount(account: any) {
                   { name: 'Jennifer Wilson', avatar: '/img/avatars/12.svg' },
                 ]"
                 :key="person.name"
-                :value="person.name"
-                :data-nui-tooltip="person.name"
-                class="rounded-full outline-none focus-visible:nui-focus"
+                :content="person.name"
               >
-                <RadioGroupIndicator
-                  force-mount
-                  class="border-muted-200 data-[state=checked]:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
+                <RadioGroupItem
+                  :value="person.name"
+                  class="rounded-full outline-none focus-visible:nui-focus"
                 >
-                  <BaseAvatar :src="person.avatar" :alt="person.name" size="sm" />
-                </RadioGroupIndicator>
-              </RadioGroupItem>
+                  <RadioGroupIndicator
+                    force-mount
+                    class="border-muted-200 data-[state=checked]:border-primary-500 dark:border-muted-700 flex size-12 items-center justify-center rounded-full border-2"
+                  >
+                    <BaseAvatar :src="person.avatar" :alt="person.name" size="sm" />
+                  </RadioGroupIndicator>
+                </RadioGroupItem>
+              </BaseTooltip>
             </RadioGroupRoot>
           </div>
           <div class="mt-6 space-y-4">

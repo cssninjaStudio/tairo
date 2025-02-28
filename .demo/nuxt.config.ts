@@ -152,11 +152,7 @@ export default defineNuxtConfig({
         '@headlessui-float/vue',
         'scule',
         'klona',
-        '@vueform/slider',
         'v-calendar',
-        // AddonCarouselIcon
-        // AddonCarouselTeam
-        'vue3-carousel',
         // AddonApexcharts
         'vue3-apexcharts',
         // AddonInputPhone

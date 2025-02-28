@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItems } from '@headlessui/vue'
-
 const months = [
   {
     id: 'january',
@@ -76,11 +74,8 @@ const paymentMethods = ref<string[]>([])
 
 <template>
   <div class="group relative hidden md:block">
-    <Menu
-      as="div"
-      class=""
-    >
-      <MenuButton as="template">
+    <DropdownMenuRoot>
+      <DropdownMenuTrigger as-child>
         <BaseButton
           rounded="md"
           size="sm"
@@ -88,18 +83,14 @@ const paymentMethods = ref<string[]>([])
           <Icon name="lucide:filter" class="size-4" />
           <span>Add Filter</span>
         </BaseButton>
-      </MenuButton>
+      </DropdownMenuTrigger>
 
-      <Transition
-        enter-active-class="transition duration-100 ease-out"
-        enter-from-class="transform scale-95 opacity-0"
-        enter-to-class="transform scale-100 opacity-100"
-        leave-active-class="transition duration-75 ease-in"
-        leave-from-class="transform scale-100 opacity-100"
-        leave-to-class="transform scale-95 opacity-0"
-      >
-        <MenuItems
-          class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 shadow-muted-400/20 dark:shadow-muted-800/20 absolute start-0 top-11 grid w-[660px] grid-cols-12 overflow-hidden rounded-lg border bg-white shadow-xl"
+      <DropdownMenuPortal>
+        <DropdownMenuContent
+          align="start"
+          side="bottom"
+          :side-offset="5"
+          class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 shadow-muted-400/20 dark:shadow-muted-800/20 grid w-[660px] grid-cols-12 overflow-hidden rounded-lg border bg-white shadow-xl origin-top-left starting:scale-95 starting:opacity-0 transition-all duration-100"
         >
           <div class="bg-muted-50 dark:bg-muted-900 col-span-4 space-y-2 p-6">
             <!-- Menu item -->
@@ -479,8 +470,8 @@ const paymentMethods = ref<string[]>([])
               </div>
             </div>
           </div>
-        </MenuItems>
-      </Transition>
-    </Menu>
+        </DropdownMenuContent>
+      </DropdownMenuPortal>
+    </DropdownMenuRoot>
   </div>
 </template>
