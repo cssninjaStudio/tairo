@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { Calendar, DatePicker } from 'v-calendar'
-
-import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
+import { type Duration, format, isSameDay, sub } from 'date-fns'
 
 definePageMeta({
   title: 'Flights',
@@ -36,13 +33,13 @@ const results = [
     price: 374,
     departure: {
       time: '10:30 am',
-      date: 'Feb 12, 2023',
+      date: 'Feb 12, 2025',
       city: 'Paris',
       airport: 'ORLY',
     },
     arrival: {
       time: '6:58 pm',
-      date: 'Feb 12, 2023',
+      date: 'Feb 12, 2025',
       city: 'New York',
       airport: 'JFK',
     },
@@ -54,13 +51,13 @@ const results = [
     price: 347,
     departure: {
       time: '9:30 am',
-      date: 'Feb 14, 2023',
+      date: 'Feb 14, 2025',
       city: 'Paris',
       airport: 'ORLY',
     },
     arrival: {
       time: '5:24 pm',
-      date: 'Feb 14, 2023',
+      date: 'Feb 14, 2025',
       city: 'New York',
       airport: 'JFK',
     },
@@ -72,13 +69,13 @@ const results = [
     price: 319,
     departure: {
       time: '11:30 am',
-      date: 'Feb 14, 2023',
+      date: 'Feb 14, 2025',
       city: 'Paris',
       airport: 'ORLY',
     },
     arrival: {
       time: '7:24 pm',
-      date: 'Feb 14, 2023',
+      date: 'Feb 14, 2025',
       city: 'New York',
       airport: 'JFK',
     },
@@ -90,13 +87,13 @@ const results = [
     price: 328,
     departure: {
       time: '12:30 am',
-      date: 'Feb 15, 2023',
+      date: 'Feb 15, 2025',
       city: 'Paris',
       airport: 'ORLY',
     },
     arrival: {
       time: '8:42 pm',
-      date: 'Feb 15, 2023',
+      date: 'Feb 15, 2025',
       city: 'New York',
       airport: 'JFK',
     },
@@ -108,28 +105,47 @@ const results = [
     price: 297,
     departure: {
       time: '2:30 pm',
-      date: 'Feb 15, 2023',
+      date: 'Feb 15, 2025',
       city: 'Paris',
       airport: 'CDG',
     },
     arrival: {
       time: '11:24 pm',
-      date: 'Feb 15, 2023',
+      date: 'Feb 15, 2025',
       city: 'New York',
       airport: 'JFK',
     },
   },
 ]
+
+// Daterange picker
+const ranges = [
+  { label: 'Last 7 days', duration: { days: 7 } },
+  { label: 'Last 14 days', duration: { days: 14 } },
+  { label: 'Last 30 days', duration: { days: 30 } },
+  { label: 'Last 3 months', duration: { months: 3 } },
+  { label: 'Last 6 months', duration: { months: 6 } },
+  { label: 'Last year', duration: { years: 1 } },
+]
+const selected = ref({ start: sub(new Date(), { days: 14 }), end: new Date() })
+
+function isRangeSelected(duration: Duration) {
+  return isSameDay(selected.value.start, sub(new Date(), duration)) && isSameDay(selected.value.end, new Date())
+}
+
+function selectRange(duration: Duration) {
+  selected.value = { start: sub(new Date(), duration), end: new Date() }
+}
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
       <div class="ltablet:col-span-8 col-span-12 lg:col-span-9">
         <!-- Inner column -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <!-- Header -->
           <div
             class="bg-primary-800 flex flex-col items-stretch rounded-lg p-8 sm:flex-row"
@@ -152,94 +168,79 @@ const results = [
                     </BaseParagraph>
                   </div>
                 </div>
-                <DatePicker
-                  v-model.range="dates"
-                  :masks="masks"
-                  :min-date="new Date()"
-                  mode="dateTime"
-                  hide-time-header
-                  trim-weeks
-                >
-                  <template #default="{ inputValue, inputEvents }">
-                    <div class="flex w-full flex-col gap-4 sm:flex-row">
-                      <div class="relative grow">
-                        <div class="relative">
-                          <input
-                            class="text-muted-100 placeholder:text-muted-100/30 focus-visible:nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
-                            placeholder="Start date"
-                            :value="inputValue.start"
-                            v-on="inputEvents.start"
-                          >
-                          <div
-                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
-                          >
-                            <Icon name="lucide:map-pin" class="size-5" />
-                          </div>
-                        </div>
+                <BaseDropdown>
+                  <template #button="{ open }">
+                    <BaseButton rounded="md" class="w-68">
+                      <Icon name="solar:calendar-linear" class="size-5 scale-95 me-1" />
+                      <span>{{ format(selected.start, 'd MMM, yyy') }} - {{ format(selected.end, 'd MMM, yyy') }}</span>
+                      <Icon name="lucide:chevron-down" class="size-4 transition-transform duration-300" :class="open ? 'rotate-180' : ''" />
+                    </BaseButton>
+                  </template>
+                  <template #default="{ close }">
+                    <div class="flex items-center">
+                      <div class="hidden sm:flex flex-col gap-1 py-4 px-2 shrink-0 sm:border-e border-muted-200 dark:border-muted-800">
+                        <button
+                          v-for="(range, index) in ranges"
+                          :key="index"
+                          type="button"
+                          class="text-start font-sans text-sm whitespace-nowrap rounded-md py-1 px-4"
+                          :class="[isRangeSelected(range.duration) ? 'bg-muted-100 text-muted-900' : 'hover:bg-muted-50 text-muted-600']"
+                          truncate
+                          @click="selectRange(range.duration)"
+                        >
+                          {{ range.label }}
+                        </button>
                       </div>
-                      <div class="relative grow">
-                        <div class="relative">
-                          <input
-                            class="text-muted-100 placeholder:text-muted-100/30 focus-visible:nui-focus peer inline-flex h-10 w-full items-center rounded-lg border-2 border-white/40 bg-transparent ps-10 font-sans text-sm leading-tight transition-all duration-300 focus-visible:border-white/80"
-                            placeholder="End date"
-                            :value="inputValue.end"
-                            v-on="inputEvents.end"
-                          >
-                          <div
-                            class="text-muted-100/40 peer-focus-visible:text-muted-100/80 absolute start-0 top-0 flex size-10 items-center justify-center transition-colors duration-300"
-                          >
-                            <Icon name="lucide:flag" class="size-5" />
-                          </div>
-                        </div>
-                      </div>
+
+                      <AddonDatepicker v-model="selected" locale="en" @close="close" />
                     </div>
                   </template>
-                </DatePicker>
+                </BaseDropdown>
               </div>
             </div>
-            <div class="xs:min-h-[190px] relative w-full sm:w-2/5">
+            <div class="xs:min-h-[190px] relative w-full hidden sm:block sm:w-2/5">
               <img
-                class="xs:mx-auto absolute bottom-0 w-full max-w-[260px] sm:end-0"
-                src="/img/illustrations/dashboards/travel-cases.svg"
-                alt="Travel cases"
+                class="xs:mx-auto absolute -bottom-12 w-full max-w-[380px] sm:end-0"
+                src="/img/illustrations/dashboards/travel-plane.svg"
+                alt="Travel plane"
               >
             </div>
           </div>
 
           <!-- Results -->
-          <div class="flex w-full flex-col gap-6">
+          <div class="flex w-full flex-col gap-4">
             <!-- Header -->
             <div class="flex w-full items-center justify-between">
               <BaseHeading
                 as="h3"
                 weight="medium"
-                size="md"
-                class="text-muted-500 dark:text-muted-400"
+                size="sm"
+                class="text-muted-600 dark:text-muted-400"
               >
-                <span>69 results</span>
+                <span>Showing 69 results</span>
               </BaseHeading>
-              <BaseButton variant="muted">
-                Clear
+              <BaseButton variant="default" rounded="md">
+                Change destination
               </BaseButton>
             </div>
             <!-- Best options -->
-            <div class="grid gap-6 sm:grid-cols-3">
+            <div class="grid gap-4 sm:grid-cols-3">
               <!-- Item -->
-              <BaseCard class="p-6">
+              <BaseCard rounded="md" class="p-4 md:p-6">
                 <div class="flex w-full items-center gap-3">
                   <span
-                    class="text-muted-800 dark:text-muted-100 block font-sans text-3xl font-semibold"
+                    class="text-muted-900 dark:text-muted-100 block font-sans text-3xl font-semibold"
                   >
                     $290
                   </span>
                   <div>
                     <span
-                      class="text-muted-400 block font-sans text-[0.65rem] font-medium uppercase leading-snug"
+                      class="text-muted-600 dark:text-muted-400 block font-sans text-[0.65rem] font-medium uppercase leading-snug"
                     >
                       Cheapest
                     </span>
                     <span
-                      class="text-muted-500 dark:text-muted-100 block font-sans text-sm leading-none"
+                      class="text-muted-900 dark:text-muted-100 block font-sans text-xs leading-none"
                     >
                       7h32min
                     </span>
@@ -248,7 +249,9 @@ const results = [
               </BaseCard>
               <!-- Item -->
               <BaseCard
-                class="bg-primary-600! dark:bg-primary-600! border-primary-600! p-6"
+                variant="none"
+                rounded="md"
+                class="bg-primary-600 dark:bg-primary-600 p-4 md:p-6"
               >
                 <div class="flex w-full items-center gap-3">
                   <span
@@ -263,7 +266,7 @@ const results = [
                       Best
                     </span>
                     <span
-                      class="text-muted-100 block font-sans text-sm leading-none"
+                      class="text-muted-100 block font-sans text-xs leading-none"
                     >
                       7h11min
                     </span>
@@ -271,21 +274,24 @@ const results = [
                 </div>
               </BaseCard>
               <!-- Item -->
-              <BaseCard class="p-6">
+              <BaseCard
+                rounded="md"
+                class="p-4 md:p-6"
+              >
                 <div class="flex w-full items-center gap-3">
                   <span
-                    class="text-muted-800 dark:text-muted-100 block font-sans text-3xl font-semibold"
+                    class="text-muted-900 dark:text-muted-100 block font-sans text-3xl font-semibold"
                   >
                     $549
                   </span>
                   <div>
                     <span
-                      class="text-muted-400 block font-sans text-[0.65rem] font-medium uppercase leading-snug"
+                      class="text-muted-600 dark:text-muted-400 block font-sans text-[0.65rem] font-medium uppercase leading-snug"
                     >
                       Fastest
                     </span>
                     <span
-                      class="text-muted-500 dark:text-muted-100 block font-sans text-sm leading-none"
+                      class="text-muted-900 dark:text-muted-100 block font-sans text-xs leading-none"
                     >
                       5h36min
                     </span>
@@ -299,7 +305,8 @@ const results = [
               <BaseCard
                 v-for="(result, index) in results"
                 :key="index"
-                class="p-5"
+                rounded="md"
+                class="p-4"
               >
                 <div
                   class="flex w-full flex-col items-center justify-between gap-2 sm:flex-row"
@@ -310,12 +317,13 @@ const results = [
                     <BaseTooltip :content="result.company">
                       <BaseAvatar
                         :src="result.logo"
+                        size="xs"
                         alt="Company logo"
                       />
                     </BaseTooltip>
                     <div>
                       <span
-                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
+                        class="text-muted-600 dark:text-muted-400 block font-sans text-xs"
                       >
                         {{ result.departure.time }}
                       </span>
@@ -326,7 +334,7 @@ const results = [
                         {{ result.departure.airport }}
                       </span>
                       <span
-                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
+                        class="text-muted-600 dark:text-muted-400 block font-sans text-xs"
                       >
                         {{ result.departure.date }}
                       </span>
@@ -430,7 +438,7 @@ const results = [
                   >
                     <div>
                       <span
-                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
+                        class="text-muted-600 dark:text-muted-400 block font-sans text-xs"
                       >
                         {{ result.arrival.time }}
                       </span>
@@ -440,14 +448,14 @@ const results = [
                         {{ result.arrival.city }} {{ result.arrival.airport }}
                       </span>
                       <span
-                        class="text-muted-500 dark:text-muted-400 block font-sans text-sm"
+                        class="text-muted-600 dark:text-muted-400 block font-sans text-xs"
                       >
                         {{ result.arrival.date }}
                       </span>
                     </div>
                     <div>
                       <span
-                        class="text-muted-800 dark:text-muted-100 block font-sans text-xl font-semibold"
+                        class="text-muted-900 dark:text-muted-100 block font-sans text-xl font-semibold"
                       >
                         {{ formatPrice(result.price) }}
                       </span>
@@ -461,35 +469,58 @@ const results = [
       </div>
       <!-- Column -->
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-3">
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <!-- Widget -->
-          <BaseCard class="p-6">
-            <div class="flex w-full items-center justify-between">
-              <DemoSearchCompact />
+          <BaseCard rounded="md" class="p-4 md:p-6">
+            <div class="flex flex-col items-center w-full gap-4">
+              <BaseAvatar
+                src="/img/avatars/10.svg"
+                size="lg"
+              />
+              <div class="text-center">
+                <BaseHeading
+                  as="h4"
+                  weight="medium"
+                  size="md"
+                  class="text-muted-900 dark:text-muted-100"
+                >
+                  Kendra Wilson
+                </BaseHeading>
+                <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
+                  Traveller since 2019
+                </BaseParagraph>
+                <div class="pt-4 pb-2 flex items-center justify-center w-full divide-x divide-muted-200 dark:divide-muted-800">
+                  <div class="flex flex-col gap-1 flex-1 px-4 2xl:px-6">
+                    <BaseText size="xs" weight="medium" class="uppercase text-muted-600 dark:text-muted-400">
+                      Trips
+                    </BaseText>
+                    <BaseText size="md" weight="semibold" class="text-muted-900 dark:text-muted-100">
+                      29
+                    </BaseText>
+                  </div>
+                  <div class="flex flex-col gap-1 flex-1 px-4 2xl:px-6">
+                    <BaseText size="xs" weight="medium" class="uppercase text-muted-600 dark:text-muted-400">
+                      Flights
+                    </BaseText>
+                    <BaseText size="md" weight="semibold" class="text-muted-900 dark:text-muted-100">
+                      73
+                    </BaseText>
+                  </div>
+                  <div class="flex flex-col gap-1 flex-1 px-4 2xl:px-6">
+                    <BaseText size="xs" weight="medium" class="uppercase text-muted-600 dark:text-muted-400">
+                      Miles
+                    </BaseText>
+                    <BaseText size="md" weight="semibold" class="text-muted-900 dark:text-muted-100">
+                      65.3k
+                    </BaseText>
+                  </div>
+                </div>
+              </div>
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard class="p-2">
-            <Calendar
-              :attributes="[
-                {
-                  key: 'today',
-                  highlight: true,
-                  order: 0,
-                  dates: [new Date()],
-                },
-              ]"
-              title-position="left"
-              expanded
-              borderless
-              transparent
-              trim-weeks
-              class="max-w-full rounded-md"
-            />
-          </BaseCard>
-          <!-- Widget -->
-          <BaseCard class="p-6">
-            <BaseButton class="w-full" variant="primary">
+          <BaseCard rounded="md" class="p-4 md:p-6">
+            <BaseButton class="w-full" rounded="md" variant="primary">
               <span>Add to Favorites</span>
             </BaseButton>
             <div class="mt-6">

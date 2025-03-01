@@ -187,15 +187,15 @@ const jobs = [
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Search bar -->
     <div class="relative">
       <BaseCard
         rounded="lg"
-        class="ptablet:py-6 ptablet:px-4 ptablet:grid ptablet:grid-cols-12 ltablet:divide-x divide-muted-200 dark:divide-muted-700 mb-10 flex w-full flex-col items-center py-2 sm:flex-row sm:py-0 lg:divide-x"
+        class="md:portrait:py-6 md:portrait:px-4 md:portrait:grid md:portrait:grid-cols-12 lg:landscape:divide-x divide-muted-200 dark:divide-muted-800 mb-10 flex w-full flex-col items-center py-2 sm:flex-row sm:py-0 2xl:landscape:divide-x"
       >
         <div
-          class="ptablet:ps-4 ptablet:col-span-6 w-full py-2 pe-4 ps-4 sm:w-auto sm:grow sm:ps-2"
+          class="md:portrait:ps-4 md:portrait:col-span-6 w-full py-2 pe-4 ps-4 sm:w-auto sm:grow sm:ps-2"
         >
           <TairoInput
             v-model.trim="search"
@@ -204,7 +204,7 @@ const jobs = [
             icon="lucide:search"
           />
         </div>
-        <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
+        <div class="md:portrait:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
           <TairoInput
             v-model.trim="location"
             rounded="lg"
@@ -212,7 +212,7 @@ const jobs = [
             icon="lucide:map-pin"
           />
         </div>
-        <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
+        <div class="md:portrait:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
           <BaseSelect
             v-model="selectedType"
             rounded="lg"
@@ -238,7 +238,7 @@ const jobs = [
             </BaseSelectItem>
           </BaseSelect>
         </div>
-        <div class="ptablet:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
+        <div class="md:portrait:col-span-6 w-full flex-1 px-4 py-2 sm:w-auto">
           <BaseSelect
             v-model="selectedRange"
             rounded="lg"
@@ -263,11 +263,11 @@ const jobs = [
             </BaseSelectItem>
           </BaseSelect>
         </div>
-        <div class="ptablet:col-span-12 w-full px-4 py-2 sm:w-auto">
+        <div class="md:portrait:col-span-12 w-full px-4 py-2 sm:w-auto">
           <BaseButton
             rounded="lg"
             variant="primary"
-            class="ptablet:w-full w-full sm:w-32"
+            class="md:portrait:w-full w-full sm:w-32"
           >
             Search
           </BaseButton>
@@ -275,26 +275,26 @@ const jobs = [
       </BaseCard>
     </div>
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
       <div
-        class="ptablet:col-span-4 ltablet:col-span-4 col-span-12 lg:col-span-3"
+        class="md:portrait:col-span-4 lg:landscape:col-span-4 col-span-12 2xl:landscape:col-span-3"
       >
         <div class="w-full">
-          <div class="bg-muted-200 dark:bg-muted-800 mb-12 rounded-xl p-6">
+          <div class="bg-muted-200 dark:bg-muted-950/60 mb-12 rounded-xl p-6">
             <!-- Title -->
             <div class="mb-6">
               <BaseHeading
                 as="h3"
                 size="md"
-                weight="light"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 mb-2 dark:text-white"
+                class="text-muted-900 mb-2 dark:text-white"
               >
                 <span>Create job alert</span>
               </BaseHeading>
               <BaseParagraph size="xs">
-                <span class="text-muted-500">
+                <span class="text-muted-500 dark:text-muted-400">
                   Create a job alert matching the following keywords and get
                   notified as soon as a new offer matching your criteria is
                   posted.
@@ -326,9 +326,9 @@ const jobs = [
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 mb-2 dark:text-white"
+                  class="text-muted-900 mb-2 dark:text-white"
                 >
                   <span>Job type</span>
                 </BaseHeading>
@@ -396,9 +396,9 @@ const jobs = [
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 mb-2 dark:text-white"
+                  class="text-muted-900 mb-2 dark:text-white"
                 >
                   <span>Seniority</span>
                 </BaseHeading>
@@ -479,9 +479,9 @@ const jobs = [
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 mb-2 dark:text-white"
+                  class="text-muted-900 mb-2 dark:text-white"
                 >
                   <span>Salary range</span>
                 </BaseHeading>
@@ -547,18 +547,18 @@ const jobs = [
       </div>
       <!-- Column -->
       <div
-        class="ptablet:col-span-8 ltablet:col-span-8 col-span-12 lg:col-span-9"
+        class="md:portrait:col-span-8 lg:landscape:col-span-8 col-span-12 2xl:landscape:col-span-9"
       >
         <!-- Title -->
         <div class="mb-6 mt-12 sm:mt-0">
           <BaseHeading
             as="h3"
             size="lg"
-            weight="light"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
-            <span>Showing 46 Jobs</span>
+            <span>Showing 46 jobs</span>
           </BaseHeading>
           <BaseParagraph size="sm">
             <span class="text-muted-500">
@@ -567,7 +567,7 @@ const jobs = [
           </BaseParagraph>
         </div>
         <!-- Inner jobs grid -->
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div class="grid grid-cols-1 gap-4 2xl:grid-cols-2">
           <div
             v-for="(job, index) in jobs"
             :key="index"
@@ -576,7 +576,7 @@ const jobs = [
             <BaseCard rounded="lg" class="p-6">
               <div class="flex w-full flex-col gap-4 sm:flex-row">
                 <BaseTooltip :content="job.company">
-                  <Icon :name="job.logo" class="size-10 shrink-0" />
+                  <Icon :name="job.logo" class="size-8 shrink-0" />
                 </BaseTooltip>
                 <div>
                   <BaseHeading
@@ -584,7 +584,7 @@ const jobs = [
                     size="md"
                     weight="semibold"
                     lead="tight"
-                    class="after:text-muted-800 mb-4 dark:text-white"
+                    class="after:text-muted-900 mb-4 dark:text-white"
                   >
                     <span>{{ job.title }}</span>
                   </BaseHeading>
@@ -616,15 +616,17 @@ const jobs = [
                     <div class="flex gap-2">
                       <BaseButton
                         rounded="lg"
+                        size="sm"
                         variant="primary"
-                        class="w-24"
+                        class="w-20"
                       >
                         Apply
                       </BaseButton>
                       <BaseButton
                         rounded="lg"
+                        size="sm"
                         variant="default"
-                        class="w-24"
+                        class="w-20"
                       >
                         Details
                       </BaseButton>

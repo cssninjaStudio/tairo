@@ -2,9 +2,8 @@
 const areaSubscriptions = reactive(useAreaSubscriptions())
 
 function useAreaSubscriptions() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'area'
-  const height = 180
+  const height = 240
 
   const options = {
     chart: {
@@ -15,7 +14,7 @@ function useAreaSubscriptions() {
         enabled: true,
       },
     },
-    colors: [primary.value, success.value, info.value],
+    colors: ['var(--chart-color-base)', 'var(--color-indigo-500)', 'var(--color-primary-400)'],
     grid: {
       show: false,
       padding: {
@@ -62,6 +61,17 @@ function useAreaSubscriptions() {
         format: 'dd/MM/yy HH:mm',
       },
     },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.75,
+      },
+    },
   }
 
   const series = shallowRef([
@@ -86,21 +96,21 @@ function useAreaSubscriptions() {
 <template>
   <div class="flex h-full flex-col">
     <div
-      class="border-muted-200 dark:border-muted-700 mb-6 border-b p-6 text-center"
+      class="border-muted-300 dark:border-muted-800 mb-6 border-b p-6 text-center"
     >
       <div
-        class="divide-muted-200 dark:divide-muted-700 flex w-full items-center divide-x"
+        class="divide-muted-200 dark:divide-muted-800 flex w-full items-center divide-x"
       >
         <!-- Item -->
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+              class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               314
             </h4>
             <p
-              class="font-sansfont-semibold text-muted-400 text-[0.65rem] uppercase"
+              class="font-sans font-semibold text-muted-400 text-[0.65rem] uppercase"
             >
               New
             </p>
@@ -110,12 +120,12 @@ function useAreaSubscriptions() {
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+              class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               611
             </h4>
             <p
-              class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
+              class="font-sans font-semibold text-muted-400 text-[0.65rem] uppercase"
             >
               Renewals
             </p>
@@ -125,12 +135,12 @@ function useAreaSubscriptions() {
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+              class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               49
             </h4>
             <p
-              class="font-sansfont-semibold text-muted-400 text-[0.65rem] uppercase"
+              class="font-sans font-semibold text-muted-400 text-[0.65rem] uppercase"
             >
               Resigns
             </p>

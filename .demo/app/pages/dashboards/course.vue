@@ -167,24 +167,24 @@ const students = [
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
         class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
-        <BaseAvatar src="/img/avatars/2.svg" size="lg" />
+        <BaseAvatar src="/img/avatars/10.svg" size="lg" />
         <div>
           <BaseHeading
             as="h2"
-            size="2xl"
-            weight="light"
+            size="xl"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             <span>Week 6 classes</span>
           </BaseHeading>
-          <BaseParagraph>
+          <BaseParagraph size="sm">
             <span class="text-muted-500">Classes from January 6 to 10</span>
           </BaseParagraph>
         </div>
@@ -192,10 +192,10 @@ const students = [
       <div
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
-        <BaseButton>
+        <BaseButton rounded="md">
           <span>Settings</span>
         </BaseButton>
-        <BaseButton variant="primary">
+        <BaseButton rounded="md" variant="primary">
           <span>Schedule</span>
         </BaseButton>
       </div>
@@ -208,7 +208,7 @@ const students = [
         :key="index"
         class="ltablet:col-span-4 relative col-span-12 sm:col-span-6 lg:col-span-4"
       >
-        <BaseCard rounded="lg" class="flex h-full flex-col p-6">
+        <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
           <div class="mb-6">
             <BaseTag variant="primary">
               <span>{{ course.category }}</span>
@@ -237,7 +237,7 @@ const students = [
               size="sm"
             />
             <div>
-              <BaseButton>
+              <BaseButton size="sm" rounded="md">
                 <span>Discussion</span>
               </BaseButton>
             </div>
@@ -253,12 +253,12 @@ const students = [
               <span>Week {{ course.week }} lecture recording</span>
             </BaseHeading>
             <div class="flex gap-6">
-              <div class="text-muted-400 flex items-center gap-1">
-                <Icon name="ph:timer-duotone" class="size-5" />
+              <div class="text-muted-500 dark:text-muted-400 flex items-center gap-1">
+                <Icon name="solar:watch-square-minimalistic-linear" class="size-5" />
                 <span class="font-sans text-sm">{{ course.duration }} min</span>
               </div>
-              <div class="text-muted-400 flex items-center gap-1">
-                <Icon name="ph:chat-circle-dots-duotone" class="size-5" />
+              <div class="text-muted-500 dark:text-muted-400 flex items-center gap-1">
+                <Icon name="solar:chat-square-call-linear" class="size-5" />
                 <span class="font-sans text-sm">
                   {{ course.comments }} comments
                 </span>
@@ -276,8 +276,8 @@ const students = [
               <span>Week {{ course.week }} examination</span>
             </BaseHeading>
             <div class="flex gap-6">
-              <div class="text-muted-400 flex items-center gap-1">
-                <Icon name="ph:calendar-check-duotone" class="size-5" />
+              <div class="text-muted-500 dark:text-muted-400 flex items-center gap-1">
+                <Icon name="solar:calendar-linear" class="size-5" />
                 <span class="font-sans text-sm">
                   {{ course.date }} — {{ course.time }}
                 </span>
@@ -287,7 +287,7 @@ const students = [
           <div class="mt-4">
             <BaseButton
               variant="primary"
-              rounded="lg"
+              rounded="md"
               class="w-full"
             >
               <span>Class Details</span>
@@ -304,9 +304,9 @@ const students = [
           <BaseHeading
             as="h2"
             size="lg"
-            weight="light"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             <span>Week 6 files</span>
           </BaseHeading>
@@ -320,7 +320,7 @@ const students = [
           <BaseCard
             v-for="(file, fileIndex) in files"
             :key="fileIndex"
-            rounded="lg"
+            rounded="md"
             class="p-4"
           >
             <div class="flex w-full items-center gap-3">
@@ -331,16 +331,16 @@ const students = [
               >
               <div>
                 <BaseHeading
-                  as="h2"
+                  as="h4"
                   size="md"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
                   class="text-muted-800 dark:text-white"
                 >
                   <span>{{ file.name }}</span>
                 </BaseHeading>
                 <BaseParagraph size="xs">
-                  <span class="text-muted-400">
+                  <span class="text-muted-500 dark:text-muted-400">
                     {{ file.size }} · uploaded {{ file.uploaded }}
                   </span>
                 </BaseParagraph>
@@ -362,9 +362,9 @@ const students = [
           <BaseHeading
             as="h2"
             size="lg"
-            weight="light"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             <span>Students</span>
           </BaseHeading>
@@ -376,7 +376,7 @@ const students = [
           <DemoFlexTableRow
             v-for="(student, studentIndex) in students"
             :key="studentIndex"
-            rounded="lg"
+            rounded="md"
             spaced
           >
             <template #start>
@@ -425,7 +425,9 @@ const students = [
                 </span>
               </DemoFlexTableCell>
               <DemoFlexTableCell label="action" hide-label>
-                <BaseButton>Chat</BaseButton>
+                <BaseButton size="sm" rounded="md">
+                  Chat
+                </BaseButton>
               </DemoFlexTableCell>
             </template>
           </DemoFlexTableRow>

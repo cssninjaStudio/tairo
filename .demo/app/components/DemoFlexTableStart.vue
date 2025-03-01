@@ -44,7 +44,7 @@ const props = withDefaults(
       :badge-src="props.badge"
       :text="props.initials"
       class="bg-primary-500/20 text-primary-500"
-      size="md"
+      size="sm"
     />
     <BaseIconBox
       v-else-if="props.icon && !props.avatar && !props.picture"

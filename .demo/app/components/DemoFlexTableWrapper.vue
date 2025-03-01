@@ -6,7 +6,7 @@ const props = defineProps<{
 
 <template>
   <div class="relative w-full">
-    <div v-if="props.head" class="mb-4 flex items-center">
+    <div v-if="props.head" class="mb-2 flex items-center">
       <div
         v-for="(item, index) in props.head"
         :key="index"
@@ -18,7 +18,7 @@ const props = defineProps<{
           size="sm"
           weight="semibold"
           lead="none"
-          class="text-muted-500 dark:text-muted-400 text-[0.65rem] uppercase"
+          class="text-muted-600 dark:text-muted-400 text-[0.6rem] uppercase"
         >
           <span>
             {{ item }}

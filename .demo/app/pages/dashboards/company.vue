@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { Calendar } from 'v-calendar'
-
-import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
-
 definePageMeta({
   title: 'Company',
   preview: {
@@ -20,7 +15,6 @@ const gaugePersonal = reactive(useGaugePersonal())
 const barSalesProfit = reactive(useBarSalesProfit())
 
 function useGaugePersonal() {
-  const { primary } = useTailwindColors()
   const type = 'radialBar'
   const height = 220
 
@@ -36,15 +30,14 @@ function useGaugePersonal() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         startAngle: -90,
         endAngle: 90,
         track: {
-          background: '#e7e7e7',
           strokeWidth: '97%',
-          margin: 5, // margin is in pixels
+          margin: 0, // margin is in pixels
           dropShadow: {
             enabled: false,
             top: 2,
@@ -69,17 +62,6 @@ function useGaugePersonal() {
         },
       },
     },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        shadeIntensity: 0.1,
-        inverseColors: false,
-        opacityFrom: 1,
-        opacityTo: 1,
-        stops: [0, 50, 53, 91],
-      },
-    },
     labels: ['Average Results'],
   }
 
@@ -94,7 +76,6 @@ function useGaugePersonal() {
 }
 
 function useBarSalesProfit() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'bar'
   const height = 250
 
@@ -104,7 +85,7 @@ function useBarSalesProfit() {
         show: false,
       },
     },
-    colors: [primary.value, info.value, success.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-400)', 'var(--color-indigo-500)'],
     legend: {
       position: 'top',
     },
@@ -215,6 +196,33 @@ const team = shallowRef([
     rate: 69,
     status: 'New',
   },
+  {
+    id: '4',
+    src: '/img/avatars/15.svg',
+    name: 'Linda Fox',
+    role: 'Frontend developer',
+    expertise: 'Development',
+    rate: 56,
+    status: 'Hired',
+  },
+  {
+    id: '5',
+    src: '/img/avatars/16.svg',
+    name: 'Derek Stone',
+    role: 'Backend developer',
+    expertise: 'Development',
+    rate: 52,
+    status: 'Available',
+  },
+  {
+    id: '6',
+    src: '/img/avatars/17.svg',
+    name: 'Sara Smith',
+    role: 'Marketing manager',
+    expertise: 'Marketing',
+    rate: 47,
+    status: 'New',
+  },
 ])
 
 const selected = ref<string[]>([])
@@ -231,111 +239,114 @@ function toggleAllVisibleSelection() {
     selected.value = team.value?.map(item => item.id) ?? []
   }
 }
+
+// Datepicker
+const date = ref(new Date())
 </script>
 
 <template>
-  <div class="relative overflow-hidden">
-    <div class="flex flex-col gap-6">
+  <div class="relative overflow-hidden px-4 md:px-6 lg:px-8 pb-20">
+    <div class="flex flex-col gap-4">
       <!-- Header -->
-      <BaseCard class="p-6">
+      <BaseCard rounded="md" class="p-4 md:p-6">
         <div
-          class="xs:divide-y divide-muted-200 dark:divide-muted-700 flex w-full flex-col items-center sm:flex-row sm:divide-x"
+          class="divide-muted-200 dark:divide-muted-800 flex flex-wrap sm:flex-nowrap w-full items-center sm:divide-x"
         >
           <!-- Item -->
-          <div class="flex-1">
+          <div class="w-1/2 sm:w-auto sm:flex-1">
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
-                name="ph:users-duotone"
-                class="text-primary-500 mx-auto size-8"
+                name="solar:users-group-rounded-bold-duotone"
+                class="text-primary-500 mx-auto size-8 mb-1"
               />
               <h4
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+                class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 162
               </h4>
-              <p class="text-muted-400 font-sans text-sm">
-                New Users
+              <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
+                New users
               </p>
             </div>
           </div>
           <!-- Item -->
-          <div class="flex-1">
+          <div class="w-1/2 sm:w-auto sm:flex-1">
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
-                name="ph:coins-duotone"
-                class="text-primary-500 mx-auto size-8"
+                name="solar:card-send-bold-duotone"
+                class="text-primary-500 mx-auto size-8 mb-1"
               />
               <h4
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+                class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 $8,579
               </h4>
-              <p class="text-muted-400 font-sans text-sm">
-                Daily Income
+              <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
+                Daily income
               </p>
             </div>
           </div>
           <!-- Item -->
-          <div class="flex-1">
+          <div class="w-1/2 sm:w-auto sm:flex-1">
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
-                name="ph:briefcase-duotone"
-                class="text-primary-500 mx-auto size-8"
+                name="solar:case-bold-duotone"
+                class="text-primary-500 mx-auto size-8 mb-1"
               />
               <h4
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+                class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 192
               </h4>
-              <p class="text-muted-400 font-sans text-sm">
-                Completed Projects
+              <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
+                Completed projects
               </p>
             </div>
           </div>
           <!-- Item -->
-          <div class="flex-1">
+          <div class="w-1/2 sm:w-auto sm:flex-1">
             <div class="flex flex-col p-4 text-center sm:py-0">
               <Icon
-                name="ph:ticket-duotone"
-                class="text-primary-500 mx-auto size-8"
+                name="solar:ticker-star-bold-duotone"
+                class="text-primary-500 mx-auto size-8 mb-1"
               />
               <h4
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+                class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
               >
                 32
               </h4>
-              <p class="text-muted-400 font-sans text-sm">
-                Active Tickets
+              <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
+                Active tickets
               </p>
             </div>
           </div>
         </div>
       </BaseCard>
       <!-- Grid -->
-      <div class="grid grid-cols-12 gap-6">
+      <div class="grid grid-cols-12 gap-4">
         <!-- Widget -->
-        <div class="ptablet:col-span-6 col-span-12 sm:col-span-4">
-          <BaseCard class="h-full p-6">
+        <div class="lg:portrait:col-span-6 col-span-12 sm:landscape:col-span-4">
+          <BaseCard rounded="md" class="h-full p-4 md:p-6">
             <DemoCompanyOverview />
           </BaseCard>
         </div>
         <!-- Widget -->
-        <div class="ptablet:col-span-6 col-span-12 sm:col-span-4">
-          <BaseCard class="relative h-full">
+        <div class="lg:portrait:col-span-6 col-span-12 sm:landscape:col-span-4">
+          <BaseCard rounded="md" class="relative h-full">
             <DemoChartAreaStats />
           </BaseCard>
         </div>
         <!-- Widget -->
-        <div class="ptablet:col-span-12 col-span-12 sm:col-span-4">
-          <BaseCard class="relative h-full">
+        <div class="lg:portrait:col-span-12 col-span-12 sm:landscape:col-span-4">
+          <BaseCard rounded="md" class="relative h-full">
             <DemoChartBarSocialChannels />
           </BaseCard>
         </div>
         <!-- Widget -->
         <div class="col-span-12">
-          <TairoTable rounded="sm">
+          <TairoTable rounded="md">
             <template #header>
-              <TairoTableHeading uppercase class="px-4 py-6">
+              <TairoTableHeading uppercase class="p-4">
                 <div class="flex items-center">
                   <BaseCheckbox
                     :model-value="selected.length > 0 && !isAllVisibleSelected ? 'indeterminate' : isAllVisibleSelected"
@@ -345,19 +356,19 @@ function toggleAllVisibleSelection() {
                   />
                 </div>
               </TairoTableHeading>
-              <TairoTableHeading uppercase>
+              <TairoTableHeading uppercase class="p-4">
                 Collaborator
               </TairoTableHeading>
-              <TairoTableHeading uppercase>
+              <TairoTableHeading uppercase class="p-4">
                 Expertise
               </TairoTableHeading>
-              <TairoTableHeading uppercase>
+              <TairoTableHeading uppercase class="p-4">
                 Rate
               </TairoTableHeading>
-              <TairoTableHeading uppercase>
+              <TairoTableHeading uppercase class="p-4">
                 Status
               </TairoTableHeading>
-              <TairoTableHeading uppercase class="px-4 py-6">
+              <TairoTableHeading uppercase class="p-4">
                 <span class="sr-only">View</span>
               </TairoTableHeading>
             </template>
@@ -369,35 +380,37 @@ function toggleAllVisibleSelection() {
                     <BaseCheckbox :value="member.id" />
                   </div>
                 </TairoTableCell>
-                <TairoTableCell>
+                <TairoTableCell class="p-4">
                   <div class="flex items-center">
-                    <BaseAvatar :src="member.src" size="sm" />
+                    <BaseAvatar :src="member.src" size="xs" />
                     <div class="ms-3 leading-none">
                       <h4 class="font-heading text-sm font-semibold">
                         {{ member.name }}
                       </h4>
-                      <p class="text-muted-400 font-sans text-xs">
+                      <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                         {{ member.role }}
                       </p>
                     </div>
                   </div>
                 </TairoTableCell>
-                <TairoTableCell light>
+                <TairoTableCell light class="p-4">
                   {{ member.expertise }}
                 </TairoTableCell>
                 <TairoTableCell>${{ member.rate }}/hour</TairoTableCell>
-                <TairoTableCell>
+                <TairoTableCell class="p-4">
                   <BaseTag
                     v-if="member.status === 'Available'"
                     rounded="full"
-                    class="font-medium"
+                    variant="none"
+                    class="font-medium bg-green-500/10 text-green-500"
                   >
                     {{ member.status }}
                   </BaseTag>
                   <BaseTag
                     v-else-if="member.status === 'New'"
                     rounded="full"
-                    class="font-medium"
+                    variant="none"
+                    class="font-medium bg-blue-500/10 text-blue-500"
                   >
                     {{ member.status }}
                   </BaseTag>
@@ -409,28 +422,25 @@ function toggleAllVisibleSelection() {
                     {{ member.status }}
                   </BaseTag>
                 </TairoTableCell>
-                <TairoTableCell>
-                  <a
-                    href="#"
-                    class="text-violet-500 transition-opacity duration-300 hover:opacity-75 dark:text-violet-400"
-                  >
+                <TairoTableCell class="flex justify-end p-4">
+                  <BaseButton size="sm" rounded="md">
                     View
-                  </a>
+                  </BaseButton>
                 </TairoTableCell>
               </TairoTableRow>
             </BaseCheckboxGroup>
           </TairoTable>
         </div>
         <!-- Widget -->
-        <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
-          <BaseCard class="flex h-full flex-col p-6">
+        <div class="lg:portrait:col-span-12 col-span-12 sm:landscape:col-span-3">
+          <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>Personal Score</span>
               </BaseHeading>
@@ -440,7 +450,7 @@ function toggleAllVisibleSelection() {
             </div>
             <div class="mt-auto text-center">
               <BaseParagraph size="sm">
-                <span class="text-muted-400">
+                <span class="text-muted-500 dark:text-muted-400">
                   Your score has been calculated based on the latest metrics
                 </span>
               </BaseParagraph>
@@ -448,15 +458,15 @@ function toggleAllVisibleSelection() {
           </BaseCard>
         </div>
         <!-- Chart -->
-        <div class="ptablet:col-span-6 col-span-12 sm:col-span-6">
-          <BaseCard class="relative p-6">
+        <div class="lg:portrait:col-span-12 col-span-12 sm:landscape:col-span-5 2xl:landscape:col-span-6">
+          <BaseCard rounded="md" class="relative p-4 md:p-6">
             <div class="mb-6">
               <BaseHeading
                 as="h3"
                 size="md"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>Profit</span>
               </BaseHeading>
@@ -465,47 +475,26 @@ function toggleAllVisibleSelection() {
           </BaseCard>
         </div>
         <!-- Widget -->
-        <div class="ptablet:hidden col-span-12 sm:col-span-3">
+        <div class="lg:portrait:col-span-12 col-span-12 sm:landscape:col-span-4 2xl:landscape:col-span-3">
           <BaseCard class="flex h-full flex-col p-2">
-            <Calendar
-              :attributes="[
-                {
-                  key: 'today',
-                  highlight: true,
-                  order: 0,
-                  dates: [new Date()],
-                },
-              ]"
-              title-position="left"
-              expanded
-              borderless
-              transparent
-              trim-weeks
-              class="max-w-full rounded-md"
-            />
+            <AddonDatepicker v-model="date" locale="en" label="Start date" />
           </BaseCard>
         </div>
         <!-- Widget -->
         <div class="col-span-12">
-          <BaseCard class="p-6">
+          <BaseCard rounded="md" class="p-4 md:p-6">
             <!-- Title -->
-            <div class="mb-10 flex items-center justify-between">
+            <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>Pending tickets</span>
               </BaseHeading>
-              <BaseButton
-                variant="primary"
-                size="sm"
-                rounded="md"
-              >
-                View all
-              </BaseButton>
+              <DemoLinkArrow to="#" label="View all" class="me-1" />
             </div>
             <DemoPendingTickets />
           </BaseCard>

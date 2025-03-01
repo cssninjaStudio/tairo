@@ -92,7 +92,7 @@ const menu = [
         children: [
           {
             label: 'Flight booking',
-            to: '/dashboards',
+            to: '/dashboards/flights',
           },
           {
             label: 'Company overview',
