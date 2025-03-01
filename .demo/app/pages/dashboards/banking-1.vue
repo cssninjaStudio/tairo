@@ -385,7 +385,7 @@ const amount = ref<number>(0)
                 </NuxtLink>
               </div>
             </div>
-            <div class="space-y-4">
+            <div class="space-y-6">
               <!-- Item -->
               <div class="flex items-center gap-2">
                 <BaseIconBox

@@ -29,13 +29,13 @@ const { data, status } = await useFetch('/api/transactions', {
 function statusColor(itemStatus: string) {
   switch (itemStatus) {
     case 'complete':
-      return 'success'
+      return 'dark'
     case 'in progress':
       return 'primary'
     case 'processing':
-      return 'info'
+      return 'default'
     case 'cancelled':
-      return 'warning'
+      return 'muted'
     default:
       break
   }
@@ -45,15 +45,15 @@ function statusColor(itemStatus: string) {
 <template>
   <BaseCard
     rounded="md"
-    class="p-4 md:px-8 md:py-7 xl:px-10"
+    class="p-4 md:p-6"
   >
     <div class="items-center justify-between sm:flex">
       <BaseHeading
         as="h4"
-        size="sm"
+        size="xs"
         weight="medium"
         lead="none"
-        class="text-muted-400 uppercase"
+        class="text-muted-700 dark:text-muted-100 uppercase"
       >
         Recent Transactions
       </BaseHeading>
@@ -116,11 +116,10 @@ function statusColor(itemStatus: string) {
                 }}
               </BaseText>
             </td>
-            <td class="px-4 py-2">
+            <td class="px-4 py-2 text-end">
               <BaseTag
-                variant="pastel"
+                :variant="statusColor(item.status)"
                 rounded="full"
-                :color="statusColor(item.status)"
                 size="sm"
               >
                 {{ item.status }}

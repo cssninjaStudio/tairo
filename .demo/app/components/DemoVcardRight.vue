@@ -19,19 +19,19 @@ const props = defineProps<{
           class="text-muted-800 dark:text-white"
           :class="props.centered && 'text-center'"
         >
-          <span>Maya R.</span>
+          <span>Kendra W.</span>
         </BaseHeading>
         <BaseParagraph v-if="!props.centered" lead="none">
           <span class="text-primary-500 text-xs">Tairo HQ</span>
         </BaseParagraph>
         <BaseParagraph lead="none" :class="props.centered && 'text-center'">
-          <span class="text-muted-400 text-xs">UI/UX designer</span>
+          <span class="text-muted-600 dark:text-muted-400 text-xs">UI/UX designer</span>
         </BaseParagraph>
       </div>
       <div class="flex-1 shrink-0">
         <div class="mx-auto" :class="props.centered ? 'w-16' : 'w-12'">
           <BaseAvatar
-            src="/img/avatars/2.svg"
+            src="/img/avatars/10.svg"
             :size="props.centered ? 'lg' : 'md'"
           />
         </div>
@@ -43,14 +43,14 @@ const props = defineProps<{
         :class="props.centered && 'justify-center'"
       >
         <Icon name="ph:map-pin-duotone" class="text-primary-500 size-4" />
-        <span class="text-muted-400 text-xs">Los Angeles, CA</span>
+        <span class="text-muted-600 dark:text-muted-400 text-xs">Los Angeles, CA</span>
       </div>
       <div
         class="flex items-end gap-2"
         :class="props.centered && 'justify-center'"
       >
         <Icon name="ph:phone-duotone" class="text-primary-500 size-4" />
-        <span class="text-muted-400 text-xs">+1 444-751-5156</span>
+        <span class="text-muted-600 dark:text-muted-400 text-xs">+1 444-751-5156</span>
       </div>
     </div>
     <div
@@ -62,7 +62,7 @@ const props = defineProps<{
       >
         maya@tairo.io
       </a>
-      <Icon name="ph:envelope-duotone" class="text-muted-400 size-4" />
+      <Icon name="solar:letter-unread-linear" class="text-muted-400 size-5" />
     </div>
   </div>
 </template>

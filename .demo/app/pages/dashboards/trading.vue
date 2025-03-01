@@ -107,8 +107,6 @@ function setAccount(account: any) {
 const areaBtcPrice = reactive(useStockPrice())
 
 function useStockPrice() {
-  const { primary } = useTailwindColors()
-
   const type = 'area'
   const height = 390
 
@@ -128,7 +126,7 @@ function useStockPrice() {
       width: [2, 2, 2],
       curve: 'smooth',
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     legend: {
       show: false,
       position: 'top',
@@ -178,6 +176,17 @@ function useStockPrice() {
         formatter: (val: number) => `$${val}`,
       },
     },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.75,
+      },
+    },
   }
 
   const series = ref(selectedBank.value!.series)
@@ -192,7 +201,7 @@ function useStockPrice() {
 </script>
 
 <template>
-  <div class="pb-20">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div
       class="mb-6 flex flex-col justify-between gap-y-4 sm:flex-row sm:items-center"
@@ -204,7 +213,7 @@ function useStockPrice() {
         <BaseHeading
           size="4xl"
           weight="medium"
-          class="text-muted-800 dark:text-white"
+          class="text-muted-900 dark:text-white"
         >
           <span
             class="after:text-success-500 after:relative after:-end-2 after:-top-3 after:text-sm after:content-['+3.4%']"
@@ -215,30 +224,40 @@ function useStockPrice() {
       </div>
       <div class="flex gap-2 sm:justify-end">
         <BaseButton
+          rounded="md"
+          size="sm"
           :variant="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
         >
           Hour
         </BaseButton>
         <BaseButton
+          rounded="md"
+          size="sm"
           :variant="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
         >
           Day
         </BaseButton>
         <BaseButton
+          rounded="md"
+          size="sm"
           :variant="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
         >
           Week
         </BaseButton>
         <BaseButton
+          rounded="md"
+          size="sm"
           :variant="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
         >
           Month
         </BaseButton>
         <BaseButton
+          rounded="md"
+          size="sm"
           :variant="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
         >
@@ -278,7 +297,7 @@ function useStockPrice() {
                     as="h5"
                     size="md"
                     weight="medium"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>+{{ formatPrice(53.14) }}</span>
                     <span class="text-success-500 ps-2 text-sm font-semibold">(+1.2%)</span>
@@ -311,7 +330,7 @@ function useStockPrice() {
                     as="h5"
                     size="md"
                     weight="medium"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>-{{ formatPrice(12.37) }}</span>
                     <span class="text-destructive-500 ps-2 text-sm font-semibold">(-0.7%)</span>
@@ -344,7 +363,7 @@ function useStockPrice() {
                     as="h5"
                     size="md"
                     weight="medium"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>-{{ formatPrice(23.19) }}</span>
                     <span class="text-success-500 ps-2 text-sm font-semibold">(+1.9%)</span>
@@ -371,7 +390,7 @@ function useStockPrice() {
                     <div>
                       <BaseText
                         size="sm"
-                        class="text-muted-800 dark:text-muted-200 block capitalize"
+                        class="text-muted-900 dark:text-muted-200 block capitalize"
                       >
                         {{ selectedBank?.name }}
                       </BaseText>
@@ -410,7 +429,7 @@ function useStockPrice() {
                           >
                           <span class="block">
                             <span
-                              class="font-heading text-muted-800 dark:text-muted-200 block text-sm capitalize"
+                              class="font-heading text-muted-900 dark:text-muted-200 block text-sm capitalize"
                             >
                               {{ bank.name }}
                             </span>
@@ -428,25 +447,25 @@ function useStockPrice() {
           <div>
             <BaseCard
               rounded="md"
-              class="p-8"
+              class="p-4 md:p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="semibold"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>Trending Stocks</span>
                 </BaseHeading>
                 <DemoLinkArrow to="#" label="View all" />
               </div>
               <div
-                class="divide-muted-200 dark:divide-muted-800 mb-2 space-y-4 divide-y"
+                class="divide-muted-200 dark:divide-muted-800 mb-2 divide-y"
               >
                 <!-- List item -->
-                <div class="flex items-center gap-2 pt-4">
+                <div class="flex items-center gap-2 py-4 last:pb-0">
                   <div class="shrink-0">
                     <img
                       src="/img/logos/companies/chase-full.svg"
@@ -461,7 +480,7 @@ function useStockPrice() {
                       size="sm"
                       weight="medium"
                       lead="snug"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Chase Bank</span>
                     </BaseHeading>
@@ -471,7 +490,7 @@ function useStockPrice() {
                       as="h5"
                       size="md"
                       weight="medium"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>+{{ formatPrice(53.14) }}</span>
                       <span class="text-success-500 ps-2 text-xs font-semibold">(+1.2%)</span>
@@ -483,7 +502,7 @@ function useStockPrice() {
                   </div>
                 </div>
                 <!-- List item -->
-                <div class="flex items-center gap-2 pt-4">
+                <div class="flex items-center gap-2 py-4 last:pb-0">
                   <div class="shrink-0">
                     <img
                       src="/img/logos/companies/eurasian-full.svg"
@@ -498,7 +517,7 @@ function useStockPrice() {
                       size="sm"
                       weight="medium"
                       lead="snug"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Eurasian Bank</span>
                     </BaseHeading>
@@ -508,7 +527,7 @@ function useStockPrice() {
                       as="h5"
                       size="md"
                       weight="medium"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>-{{ formatPrice(12.37) }}</span>
                       <span class="text-destructive-500 ps-2 text-xs font-semibold">(-0.7%)</span>
@@ -520,7 +539,7 @@ function useStockPrice() {
                   </div>
                 </div>
                 <!-- List item -->
-                <div class="flex items-center gap-2 pt-4">
+                <div class="flex items-center gap-2 py-4 last:pb-0">
                   <div class="shrink-0">
                     <img
                       src="/img/logos/companies/bank-of-america-full.svg"
@@ -535,7 +554,7 @@ function useStockPrice() {
                       size="sm"
                       weight="medium"
                       lead="snug"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Bank of America</span>
                     </BaseHeading>
@@ -545,7 +564,7 @@ function useStockPrice() {
                       as="h5"
                       size="md"
                       weight="medium"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>+{{ formatPrice(23.19) }}</span>
                       <span class="text-success-500 ps-2 text-xs font-semibold">(+1.9%)</span>
@@ -557,7 +576,7 @@ function useStockPrice() {
                   </div>
                 </div>
                 <!-- List item -->
-                <div class="flex items-center gap-2 pt-4">
+                <div class="flex items-center gap-2 py-4 last:pb-0">
                   <div class="shrink-0">
                     <img
                       src="/img/logos/companies/td-full.svg"
@@ -572,7 +591,7 @@ function useStockPrice() {
                       size="sm"
                       weight="medium"
                       lead="snug"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>TD Bank</span>
                     </BaseHeading>
@@ -582,7 +601,7 @@ function useStockPrice() {
                       as="h5"
                       size="md"
                       weight="medium"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>+{{ formatPrice(39.71) }}</span>
                       <span class="text-success-500 ps-2 text-xs font-semibold">(+2.6%)</span>
@@ -594,7 +613,7 @@ function useStockPrice() {
                   </div>
                 </div>
                 <!-- List item -->
-                <div class="flex items-center gap-2 pt-4">
+                <div class="flex items-center gap-2 py-4 last:pb-0">
                   <div class="shrink-0">
                     <img
                       src="/img/logos/companies/kaspi-full.svg"
@@ -609,7 +628,7 @@ function useStockPrice() {
                       size="sm"
                       weight="medium"
                       lead="snug"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Kaspi Bank</span>
                     </BaseHeading>
@@ -619,7 +638,7 @@ function useStockPrice() {
                       as="h5"
                       size="md"
                       weight="medium"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>+{{ formatPrice(76.87) }}</span>
                       <span class="text-success-500 ps-2 text-xs font-semibold">(+5.8%)</span>
@@ -642,7 +661,7 @@ function useStockPrice() {
           <div class="relative">
             <BaseCard
               rounded="md"
-              class="p-6 md:p-8"
+              class="p-4 md:p-6"
             >
               <div class="mb-6 flex items-center gap-2">
                 <TairoLogo class="text-primary-500 size-9" />
@@ -650,9 +669,9 @@ function useStockPrice() {
                   <BaseHeading
                     as="h3"
                     size="md"
-                    weight="semibold"
+                    weight="medium"
                     lead="snug"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>Market Insights</span>
                   </BaseHeading>
@@ -669,14 +688,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     Open
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     {{ formatPrice(2394.64) }}
                   </BaseParagraph>
@@ -684,14 +703,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     High
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     {{ formatPrice(2789.12) }}
                   </BaseParagraph>
@@ -699,14 +718,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     Low
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     {{ formatPrice(2118.27) }}
                   </BaseParagraph>
@@ -714,14 +733,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     Close
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     {{ formatPrice(2091.14) }}
                   </BaseParagraph>
@@ -729,14 +748,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     % Change
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     6.92%
                   </BaseParagraph>
@@ -748,16 +767,16 @@ function useStockPrice() {
           <div class="relative">
             <BaseCard
               rounded="md"
-              class="p-6 md:p-8"
+              class="p-4 md:p-6"
             >
               <div class="mb-6 flex items-center gap-2">
                 <div>
                   <BaseHeading
                     as="h3"
                     size="md"
-                    weight="semibold"
+                    weight="medium"
                     lead="snug"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>Market Order</span>
                   </BaseHeading>
@@ -774,7 +793,7 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     Shares
                   </BaseParagraph>
@@ -790,14 +809,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     Market price
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     {{ formatPrice(689.17) }}
                   </BaseParagraph>
@@ -805,14 +824,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     Commissions
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     {{ formatPrice(0.0) }}
                   </BaseParagraph>
@@ -823,14 +842,14 @@ function useStockPrice() {
                 <div class="flex items-center justify-between">
                   <BaseParagraph
                     size="sm"
-                    class="text-muted-400"
+                    class="text-muted-600 text-muted-400"
                   >
                     Estimated cost
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
                     weight="semibold"
-                    class="text-muted-800 dark:text-muted-100"
+                    class="text-muted-900 dark:text-muted-100"
                   >
                     {{ formatPrice(0.0) }}
                   </BaseParagraph>
@@ -852,24 +871,21 @@ function useStockPrice() {
             rounded="md"
             class="relative flex flex-col gap-4 sm:flex-row"
           >
-            <div class="flex flex-col p-6 md:p-8">
+            <div class="flex flex-col p-6">
               <div
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 mb-4 flex size-14 items-center justify-center rounded-full border bg-white"
               >
                 <div
                   class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-10 items-center justify-center rounded-full border bg-white"
                 >
-                  <Icon
-                    name="ph:bank-duotone"
-                    class="text-primary-500 size-6"
-                  />
+                  <Icon name="solar:bag-smile-bold-duotone" class="text-primary-500 size-6" />
                 </div>
               </div>
               <BaseHeading
                 as="h3"
                 weight="medium"
                 size="lg"
-                class="text-muted-800 dark:text-muted-100 mb-2"
+                class="text-muted-900 dark:text-muted-100 mb-2"
               >
                 Try Quick Cash
               </BaseHeading>
@@ -877,8 +893,7 @@ function useStockPrice() {
                 size="sm"
                 class="text-muted-500 dark:text-muted-400 mb-4"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bork
-                Idem adhuc; Igitur neque stultorum quisquam beatus.
+                Quick Cash is a new feature that allows you to send money to your friends and family in a matter of seconds.
               </BaseParagraph>
               <div class="mb-1 mt-auto">
                 <DemoLinkArrow to="#" label="Learn more about it" />
