@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { Calendar } from 'v-calendar'
-
-import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
-
 definePageMeta({
   title: 'Stocks',
   preview: {
@@ -19,7 +14,6 @@ definePageMeta({
 const barProfit = reactive(useBarProfit())
 
 function useBarProfit() {
-  const { primary } = useTailwindColors()
   const type = 'bar'
   const height = 255
 
@@ -86,7 +80,7 @@ function useBarProfit() {
         },
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     title: {
       text: undefined,
       align: 'left',
@@ -107,13 +101,16 @@ function useBarProfit() {
     series,
   }
 }
+
+// Datepicker
+const date = ref(new Date())
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Investments -->
     <div
-      class="ltablet:overflow-visible flex justify-around gap-6 overflow-x-auto pb-8 lg:overflow-visible"
+      class="ltablet:overflow-visible flex justify-around gap-6 overflow-x-auto pb-6 lg:overflow-visible"
     >
       <!-- Item -->
       <NuxtLink to="#" class="group flex flex-1 flex-col text-center">
@@ -123,7 +120,7 @@ function useBarProfit() {
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
-            <Icon name="ph:lightning-duotone" class="size-6 text-yellow-400" />
+            <Icon name="solar:bolt-bold-duotone" class="size-7 text-yellow-400" />
           </div>
         </div>
         <BaseHeading
@@ -145,8 +142,8 @@ function useBarProfit() {
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
             <Icon
-              name="ph:buildings-duotone"
-              class="text-primary-500 size-6"
+              name="solar:buildings-bold-duotone"
+              class="text-primary-500 size-7"
             />
           </div>
         </div>
@@ -168,7 +165,7 @@ function useBarProfit() {
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
-            <Icon name="ph:leaf-duotone" class="text-success-500 size-6" />
+            <Icon name="solar:earth-bold-duotone" class="text-success-500 size-7" />
           </div>
         </div>
         <BaseHeading
@@ -189,7 +186,7 @@ function useBarProfit() {
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
-            <Icon name="ph:bank-duotone" class="size-6 text-indigo-500" />
+            <Icon name="solar:money-bag-bold-duotone" class="size-7 text-indigo-500" />
           </div>
         </div>
         <BaseHeading
@@ -210,7 +207,7 @@ function useBarProfit() {
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
-            <Icon name="ph:sketch-logo-duotone" class="size-6 text-lime-500" />
+            <Icon name="solar:heart-lock-bold-duotone" class="size-7 text-lime-500" />
           </div>
         </div>
         <BaseHeading
@@ -231,7 +228,7 @@ function useBarProfit() {
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
-            <Icon name="ph:atom-duotone" class="size-6 text-sky-500" />
+            <Icon name="solar:atom-bold-duotone" class="size-7 text-sky-500" />
           </div>
         </div>
         <BaseHeading
@@ -252,7 +249,7 @@ function useBarProfit() {
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
-            <Icon name="ph:monitor-duotone" class="size-6 text-orange-500" />
+            <Icon name="solar:home-wifi-angle-bold-duotone" class="size-7 text-orange-500" />
           </div>
         </div>
         <BaseHeading
@@ -273,7 +270,7 @@ function useBarProfit() {
           <div
             class="nui-mask nui-mask-hexed dark:bg-muted-800 flex size-16 scale-95 items-center justify-center bg-white"
           >
-            <Icon name="ph:pill-duotone" class="size-6 text-rose-500" />
+            <Icon name="solar:pill-bold-duotone" class="size-7 text-rose-500" />
           </div>
         </div>
         <BaseHeading
@@ -289,11 +286,11 @@ function useBarProfit() {
     </div>
     <!-- Tile grid -->
     <div
-      class="ltablet:grid-cols-3 mb-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+      class="ltablet:grid-cols-3 mb-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
     >
       <!-- Tile -->
       <div class="relative">
-        <BaseCard rounded="lg" class="p-6">
+        <BaseCard rounded="lg" class="p-4 md:p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="block size-2 rounded-full bg-emerald-500" />
@@ -302,17 +299,27 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              label="Dropdown"
+              label="Actions"
               placement="bottom-end"
+              size="md"
               class="z-20"
             >
+              <template #button>
+                <BaseButton
+                  rounded="full"
+                  size="icon-sm"
+                  class="shrink-0 text-muted-500 dark:text-muted-400"
+                >
+                  <Icon name="lucide:more-horizontal" class="size-3" />
+                </BaseButton>
+              </template>
               <BaseDropdownItem
                 to="#"
                 title="Invest"
                 text="Buys more stocks"
               >
                 <template #start>
-                  <Icon name="ph:coin-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:wad-of-money-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
@@ -322,7 +329,7 @@ function useBarProfit() {
               >
                 <template #start>
                   <Icon
-                    name="ph:cell-signal-medium-duotone"
+                    name="solar:mirror-left-linear"
                     class="me-2 block size-5"
                   />
                 </template>
@@ -333,17 +340,16 @@ function useBarProfit() {
                 text="View opportunities"
               >
                 <template #start>
-                  <Icon name="ph:bank-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:filters-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownSeparator />
               <BaseDropdownItem
                 to="#"
                 title="Wallet"
                 text="Manage your wallet"
               >
                 <template #start>
-                  <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:wallet-2-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
             </BaseDropdown>
@@ -356,7 +362,7 @@ function useBarProfit() {
           <div class="flex items-center gap-2">
             <BaseIconBox
               rounded="full"
-              size="sm"
+              size="xs"
               class="bg-red-500 text-white shadow-xl shadow-red-500/20 dark:shadow-red-800/20"
               variant="none"
             >
@@ -368,19 +374,15 @@ function useBarProfit() {
                 size="sm"
                 weight="semibold"
                 lead="snug"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>TSL</span>
               </BaseHeading>
               <BaseParagraph lead="none" size="sm">
-                <span class="text-muted-400">Tesla Motors</span>
+                <span class="text-muted-600 dark:text-muted-400">Tesla Motors</span>
               </BaseParagraph>
             </div>
             <div class="ms-auto flex items-center gap-1">
-              <Icon
-                name="ph:check-circle-duotone"
-                class="text-success-500 size-4"
-              />
               <span
                 class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
               >
@@ -392,7 +394,7 @@ function useBarProfit() {
       </div>
       <!-- Tile -->
       <div class="relative">
-        <BaseCard rounded="lg" class="p-6">
+        <BaseCard rounded="lg" class="p-4 md:p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="block size-2 rounded-full bg-emerald-500" />
@@ -401,17 +403,27 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              label="Dropdown"
+              label="Actions"
               placement="bottom-end"
+              size="md"
               class="z-20"
             >
+              <template #button>
+                <BaseButton
+                  rounded="full"
+                  size="icon-sm"
+                  class="shrink-0 text-muted-500 dark:text-muted-400"
+                >
+                  <Icon name="lucide:more-horizontal" class="size-3" />
+                </BaseButton>
+              </template>
               <BaseDropdownItem
                 to="#"
                 title="Invest"
                 text="Buys more stocks"
               >
                 <template #start>
-                  <Icon name="ph:coin-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:wad-of-money-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
@@ -421,7 +433,7 @@ function useBarProfit() {
               >
                 <template #start>
                   <Icon
-                    name="ph:cell-signal-medium-duotone"
+                    name="solar:mirror-left-linear"
                     class="me-2 block size-5"
                   />
                 </template>
@@ -432,17 +444,16 @@ function useBarProfit() {
                 text="View opportunities"
               >
                 <template #start>
-                  <Icon name="ph:bank-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:filters-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownSeparator />
               <BaseDropdownItem
                 to="#"
                 title="Wallet"
                 text="Manage your wallet"
               >
                 <template #start>
-                  <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:wallet-2-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
             </BaseDropdown>
@@ -455,7 +466,7 @@ function useBarProfit() {
           <div class="flex items-center gap-2">
             <BaseIconBox
               rounded="full"
-              size="sm"
+              size="xs"
               class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
               variant="none"
             >
@@ -467,19 +478,15 @@ function useBarProfit() {
                 size="sm"
                 weight="semibold"
                 lead="snug"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>FCB</span>
               </BaseHeading>
               <BaseParagraph lead="none" size="sm">
-                <span class="text-muted-400">Facebook Inc</span>
+                <span class="text-muted-600 dark:text-muted-400">Facebook Inc</span>
               </BaseParagraph>
             </div>
             <div class="ms-auto flex items-center gap-1">
-              <Icon
-                name="ph:check-circle-duotone"
-                class="text-success-500 size-4"
-              />
               <span
                 class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
               >
@@ -491,7 +498,7 @@ function useBarProfit() {
       </div>
       <!-- Tile -->
       <div class="relative">
-        <BaseCard rounded="lg" class="p-6">
+        <BaseCard rounded="lg" class="p-4 md:p-6">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span
@@ -502,17 +509,27 @@ function useBarProfit() {
               </span>
             </div>
             <BaseDropdown
-              label="Dropdown"
+              label="Actions"
               placement="bottom-end"
+              size="md"
               class="z-20"
             >
+              <template #button>
+                <BaseButton
+                  rounded="full"
+                  size="icon-sm"
+                  class="shrink-0 text-muted-500 dark:text-muted-400"
+                >
+                  <Icon name="lucide:more-horizontal" class="size-3" />
+                </BaseButton>
+              </template>
               <BaseDropdownItem
                 to="#"
                 title="Invest"
                 text="Buys more stocks"
               >
                 <template #start>
-                  <Icon name="ph:coin-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:wad-of-money-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
               <BaseDropdownItem
@@ -522,7 +539,7 @@ function useBarProfit() {
               >
                 <template #start>
                   <Icon
-                    name="ph:cell-signal-medium-duotone"
+                    name="solar:mirror-left-linear"
                     class="me-2 block size-5"
                   />
                 </template>
@@ -533,17 +550,16 @@ function useBarProfit() {
                 text="View opportunities"
               >
                 <template #start>
-                  <Icon name="ph:bank-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:filters-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
-              <BaseDropdownSeparator />
               <BaseDropdownItem
                 to="#"
                 title="Wallet"
                 text="Manage your wallet"
               >
                 <template #start>
-                  <Icon name="ph:wallet-duotone" class="me-2 block size-5" />
+                  <Icon name="solar:wallet-2-linear" class="me-2 block size-5" />
                 </template>
               </BaseDropdownItem>
             </BaseDropdown>
@@ -556,11 +572,11 @@ function useBarProfit() {
           <div class="flex items-center gap-2">
             <BaseIconBox
               rounded="full"
-              size="sm"
+              size="xs"
               class="bg-sky-500 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
               variant="none"
             >
-              <Icon name="fa6-brands:twitter" class="size-4" />
+              <Icon name="fa6-brands:x-twitter" class="size-4" />
             </BaseIconBox>
             <div>
               <BaseHeading
@@ -568,19 +584,15 @@ function useBarProfit() {
                 size="sm"
                 weight="semibold"
                 lead="snug"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>TWT</span>
               </BaseHeading>
               <BaseParagraph lead="none" size="sm">
-                <span class="text-muted-400">Twitter Inc</span>
+                <span class="text-muted-600 dark:text-muted-400">X Inc</span>
               </BaseParagraph>
             </div>
             <div class="ms-auto flex items-center gap-1">
-              <Icon
-                name="ph:check-circle-duotone"
-                class="text-success-500 size-4"
-              />
               <span
                 class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
               >
@@ -592,22 +604,21 @@ function useBarProfit() {
       </div>
     </div>
     <!-- Card grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Grid item -->
       <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
-        <BaseCard rounded="lg" class="p-6">
-          <div class="mb-6 flex items-center justify-between">
+        <BaseCard rounded="lg" class="p-4 md:p-6">
+          <div class="mb-8 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
-              weight="semibold"
+              weight="medium"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-900 dark:text-white"
             >
               <span>Trending Stocks</span>
             </BaseHeading>
             <BaseButton
-              variant="primary"
               size="sm"
               rounded="md"
             >
@@ -631,19 +642,15 @@ function useBarProfit() {
                   size="sm"
                   weight="medium"
                   lead="snug"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>LKN</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400">Linkedin Corp.</span>
+                  <span class="text-muted-600 dark:text-muted-400">Linkedin Corp.</span>
                 </BaseParagraph>
               </div>
               <div class="ms-auto flex items-center gap-1">
-                <Icon
-                  name="ph:check-circle-duotone"
-                  class="text-success-500 size-4"
-                />
                 <span
                   class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
                 >
@@ -656,7 +663,7 @@ function useBarProfit() {
               <BaseIconBox
                 rounded="full"
                 size="xs"
-                class="bg-muted-900 dark:bg-muted-100 dark:text-muted-800 text-white"
+                class="bg-muted-900 dark:bg-muted-100 dark:text-muted-900 text-white"
                 variant="none"
               >
                 <Icon name="fa6-brands:github" class="size-3" />
@@ -667,19 +674,15 @@ function useBarProfit() {
                   size="sm"
                   weight="medium"
                   lead="snug"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>GTB</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400">Github Inc.</span>
+                  <span class="text-muted-600 dark:text-muted-400">Github Inc.</span>
                 </BaseParagraph>
               </div>
               <div class="ms-auto flex items-center gap-1">
-                <Icon
-                  name="ph:check-circle-duotone"
-                  class="text-success-500 size-4"
-                />
                 <span
                   class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
                 >
@@ -703,19 +706,15 @@ function useBarProfit() {
                   size="sm"
                   weight="medium"
                   lead="snug"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>INV</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400">Invision Corp.</span>
+                  <span class="text-muted-600 dark:text-muted-400">Invision Corp.</span>
                 </BaseParagraph>
               </div>
               <div class="ms-auto flex items-center gap-1">
-                <Icon
-                  name="ph:check-circle-duotone"
-                  class="text-success-500 size-4"
-                />
                 <span
                   class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
                 >
@@ -739,19 +738,15 @@ function useBarProfit() {
                   size="sm"
                   weight="medium"
                   lead="snug"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>TLG</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400">Telegram Inc.</span>
+                  <span class="text-muted-600 dark:text-muted-400">Telegram Inc.</span>
                 </BaseParagraph>
               </div>
               <div class="ms-auto flex items-center gap-1">
-                <Icon
-                  name="ph:check-circle-duotone"
-                  class="text-success-500 size-4"
-                />
                 <span
                   class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
                 >
@@ -775,19 +770,15 @@ function useBarProfit() {
                   size="sm"
                   weight="medium"
                   lead="snug"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>KCK</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400">Kickstarter Inc.</span>
+                  <span class="text-muted-600 dark:text-muted-400">Kickstarter Inc.</span>
                 </BaseParagraph>
               </div>
               <div class="ms-auto flex items-center gap-1">
-                <Icon
-                  name="ph:check-circle-duotone"
-                  class="text-success-500 size-4"
-                />
                 <span
                   class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
                 >
@@ -811,19 +802,15 @@ function useBarProfit() {
                   size="sm"
                   weight="medium"
                   lead="snug"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>GGL</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-400">Google Corp.</span>
+                  <span class="text-muted-600 dark:text-muted-400">Google Corp.</span>
                 </BaseParagraph>
               </div>
               <div class="ms-auto flex items-center gap-1">
-                <Icon
-                  name="ph:check-circle-duotone"
-                  class="text-success-500 size-4"
-                />
                 <span
                   class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
                 >
@@ -836,40 +823,33 @@ function useBarProfit() {
       </div>
       <!-- Grid item -->
       <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
-        <BaseCard class="relative p-6" rounded="lg">
-          <div class="mb-6">
+        <BaseCard class="relative p-4 md:p-6 h-full flex flex-col" rounded="lg">
+          <div class="mb-6 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
-              weight="semibold"
+              weight="medium"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-900 dark:text-white"
             >
               <span>Profit Evolution</span>
             </BaseHeading>
+            <BaseButton
+              size="sm"
+              rounded="md"
+            >
+              View all
+            </BaseButton>
           </div>
-          <AddonApexcharts v-bind="barProfit" />
+          <div class="mt-auto">
+            <AddonApexcharts v-bind="barProfit" />
+          </div>
         </BaseCard>
       </div>
       <!-- Grid item -->
       <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
         <BaseCard class="p-4" rounded="lg">
-          <Calendar
-            :attributes="[
-              {
-                key: 'today',
-                highlight: true,
-                order: 0,
-                dates: [new Date()],
-              },
-            ]"
-            title-position="left"
-            expanded
-            borderless
-            transparent
-            trim-weeks
-            class="max-w-full rounded-xl"
-          />
+          <AddonDatepicker v-model="date" locale="en" label="Start date" />
         </BaseCard>
       </div>
     </div>

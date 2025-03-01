@@ -14,10 +14,10 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="pb-20 pt-6">
-    <div class="grid grid-cols-12 gap-6">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-12 gap-4">
       <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-        <div class="grid grid-cols-12 gap-6">
+        <div class="grid grid-cols-12 gap-4">
           <!-- Card column -->
           <div class="col-span-12 sm:col-span-6">
             <div class="mb-6 flex items-center justify-between">
@@ -32,7 +32,7 @@ definePageMeta({
             <div class="rounded-2xl py-2">
               <DemoCreditCardReal
                 status="active"
-                name="Maya Rosselini"
+                name="Kendra Wilson"
                 number="•••• •••• •••• 4479"
                 brand="mastercard"
                 :centered="false"
@@ -51,11 +51,11 @@ definePageMeta({
                   Incoming payments
                 </BaseHeading>
               </div>
-              <div class="flex grow gap-6">
+              <div class="flex grow gap-4">
                 <!-- Item -->
                 <NuxtLink
                   to="/layouts/payments"
-                  class="bg-muted-200 hover:bg-muted-50 dark:bg-muted-800 dark:hover:bg-muted-800/40 flex h-full flex-1 flex-col rounded-2xl p-6 transition-colors duration-200"
+                  class="bg-muted-200/60 hover:bg-muted-200/40 dark:bg-muted-950/60 dark:hover:bg-muted-950/40 flex h-full flex-1 flex-col rounded-2xl p-6 transition-colors duration-200"
                 >
                   <BaseIconBox
                     size="md"
@@ -68,13 +68,13 @@ definePageMeta({
                     <BaseHeading
                       weight="medium"
                       size="sm"
-                      class="text-mute-800 dark:text-muted-100 line-clamp-1"
+                      class="text-muted-900 dark:text-muted-100 line-clamp-1"
                     >
                       Campaign Monitor
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Incoming
                     </BaseParagraph>
@@ -93,7 +93,7 @@ definePageMeta({
                 <!-- Item -->
                 <NuxtLink
                   to="/layouts/payments"
-                  class="bg-muted-200 hover:bg-muted-50 dark:bg-muted-800 dark:hover:bg-muted-800/40 flex h-full flex-1 flex-col rounded-2xl p-6 transition-colors duration-200"
+                  class="bg-muted-200/60 hover:bg-muted-200/40 dark:bg-muted-950/60 dark:hover:bg-muted-950/40 flex h-full flex-1 flex-col rounded-2xl p-6 transition-colors duration-200"
                 >
                   <BaseIconBox
                     size="md"
@@ -106,13 +106,13 @@ definePageMeta({
                     <BaseHeading
                       weight="medium"
                       size="sm"
-                      class="text-mute-800 dark:text-muted-100 line-clamp-1"
+                      class="text-muted-900 dark:text-muted-100 line-clamp-1"
                     >
                       Asana
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Outgoing
                     </BaseParagraph>
@@ -137,7 +137,7 @@ definePageMeta({
               <div class="mb-6 flex items-center justify-between">
                 <BaseHeading
                   weight="medium"
-                  class="text-muted-800 dark:text-muted-100"
+                  class="text-muted-900 dark:text-muted-100"
                 >
                   Recent Activity
                 </BaseHeading>
@@ -150,21 +150,21 @@ definePageMeta({
                     class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 shrink-0 items-center justify-center rounded-xl border bg-white"
                   >
                     <Icon
-                      name="ph:credit-card-duotone"
-                      class="text-muted-800 dark:text-muted-100 size-5"
+                      name="solar:card-transfer-bold-duotone"
+                      class="text-muted-800 dark:text-muted-100 size-6"
                     />
                   </div>
                   <div class="w-2/5">
                     <BaseHeading
                       weight="medium"
                       size="sm"
-                      class="text-mute-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       Victoria's Corner
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Outgoing payment
                     </BaseParagraph>
@@ -174,7 +174,7 @@ definePageMeta({
                       size="sm"
                       weight="medium"
                       lead="none"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Jun 12, 2024
                     </BaseText>
@@ -184,7 +184,7 @@ definePageMeta({
                       size="sm"
                       weight="semibold"
                       lead="none"
-                      class="text-muted-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       - {{ asDollar(938.39) }}
                     </BaseText>
@@ -196,21 +196,21 @@ definePageMeta({
                     class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 shrink-0 items-center justify-center rounded-xl border bg-white"
                   >
                     <Icon
-                      name="ph:bank-duotone"
-                      class="text-muted-800 dark:text-muted-100 size-5"
+                      name="solar:buildings-bold-duotone"
+                      class="text-muted-800 dark:text-muted-100 size-6"
                     />
                   </div>
                   <div class="w-2/5">
                     <BaseHeading
                       weight="medium"
                       size="sm"
-                      class="text-mute-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       John Rowland
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Outgoing payment
                     </BaseParagraph>
@@ -220,7 +220,7 @@ definePageMeta({
                       size="sm"
                       weight="medium"
                       lead="none"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Jun 11, 2024
                     </BaseText>
@@ -230,7 +230,7 @@ definePageMeta({
                       size="sm"
                       weight="semibold"
                       lead="none"
-                      class="text-muted-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       - {{ asDollar(1234.15) }}
                     </BaseText>
@@ -242,21 +242,21 @@ definePageMeta({
                     class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 shrink-0 items-center justify-center rounded-xl border bg-white"
                   >
                     <Icon
-                      name="ph:credit-card-duotone"
-                      class="text-muted-800 dark:text-muted-100 size-5"
+                      name="solar:card-transfer-bold-duotone"
+                      class="text-muted-800 dark:text-muted-100 size-6"
                     />
                   </div>
                   <div class="w-2/5">
                     <BaseHeading
                       weight="medium"
                       size="sm"
-                      class="text-mute-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       Kali Burger
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Outgoing payment
                     </BaseParagraph>
@@ -266,7 +266,7 @@ definePageMeta({
                       size="sm"
                       weight="medium"
                       lead="none"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Jun 9, 2024
                     </BaseText>
@@ -276,7 +276,7 @@ definePageMeta({
                       size="sm"
                       weight="semibold"
                       lead="none"
-                      class="text-muted-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       - {{ asDollar(23.69) }}
                     </BaseText>
@@ -288,21 +288,21 @@ definePageMeta({
                     class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 shrink-0 items-center justify-center rounded-xl border bg-white"
                   >
                     <Icon
-                      name="ph:bank-duotone"
-                      class="text-muted-800 dark:text-muted-100 size-5"
+                      name="solar:buildings-bold-duotone"
+                      class="text-muted-800 dark:text-muted-100 size-6"
                     />
                   </div>
                   <div class="w-2/5">
                     <BaseHeading
                       weight="medium"
                       size="sm"
-                      class="text-mute-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       Railway Inc
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Ingoing payment
                     </BaseParagraph>
@@ -312,7 +312,7 @@ definePageMeta({
                       size="sm"
                       weight="medium"
                       lead="none"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Jun 8, 2024
                     </BaseText>
@@ -322,7 +322,7 @@ definePageMeta({
                       size="sm"
                       weight="semibold"
                       lead="none"
-                      class="text-muted-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       + {{ asDollar(2399.99) }}
                     </BaseText>
@@ -334,21 +334,21 @@ definePageMeta({
                     class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 shrink-0 items-center justify-center rounded-xl border bg-white"
                   >
                     <Icon
-                      name="ph:credit-card-duotone"
-                      class="text-muted-800 dark:text-muted-100 size-5"
+                      name="solar:card-transfer-bold-duotone"
+                      class="text-muted-800 dark:text-muted-100 size-6"
                     />
                   </div>
                   <div class="w-2/5">
                     <BaseHeading
                       weight="medium"
                       size="sm"
-                      class="text-mute-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       Mobihouse
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Outgoing payment
                     </BaseParagraph>
@@ -358,7 +358,7 @@ definePageMeta({
                       size="sm"
                       weight="medium"
                       lead="none"
-                      class="text-muted-400"
+                      class="text-muted-600 dark:text-muted-400"
                     >
                       Jun 6, 2024
                     </BaseText>
@@ -368,7 +368,7 @@ definePageMeta({
                       size="sm"
                       weight="semibold"
                       lead="none"
-                      class="text-muted-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       - {{ asDollar(49.99) }}
                     </BaseText>
@@ -380,11 +380,11 @@ definePageMeta({
         </div>
       </div>
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <div class="bg-muted-200 dark:bg-muted-800 rounded-xl p-6">
+        <div class="bg-muted-200/60 dark:bg-muted-950/60 rounded-xl p-6">
           <div>
             <BaseParagraph
               size="xs"
-              class="text-muted-400"
+              class="text-muted-600 dark:text-muted-400"
             >
               Spent today
             </BaseParagraph>
@@ -469,8 +469,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="guidance:atm"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:card-recive-linear"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -486,7 +486,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Withdrawal limit
                 </BaseParagraph>
@@ -506,8 +506,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="guidance:money"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:card-transfer-linear"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -523,7 +523,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Payment limit
                 </BaseParagraph>

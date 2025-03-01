@@ -14,18 +14,18 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="pb-20 pt-6">
-    <div class="grid grid-cols-12 gap-6">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Cards -->
       <div
         class="ptablet:col-span-5 ltablet:col-span-4 col-span-12 lg:col-span-4"
       >
-        <div class="bg-muted-50 dark:bg-muted-950 border-muted-200 dark:border-muted-800 ltablet:p-12 rounded-2xl border p-6 lg:p-12">
+        <BaseCard rounded="none" class="lg:landscape:p-6 rounded-2xl! border p-4 md:p-6 2xl:landscape:p-12">
           <!-- Header -->
           <div class="mb-6 flex items-center justify-between">
             <BaseHeading
               weight="medium"
-              class="text-muted-800 dark:text-muted-100"
+              class="text-muted-900 dark:text-muted-100"
             >
               Your cards
             </BaseHeading>
@@ -120,8 +120,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="guidance:atm"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:card-recive-linear"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -137,7 +137,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Withdrawal limit
                 </BaseParagraph>
@@ -157,8 +157,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="guidance:money"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:card-transfer-linear"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -174,7 +174,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Payment limit
                 </BaseParagraph>
@@ -186,14 +186,16 @@ definePageMeta({
               </div>
             </NuxtLink>
           </div>
-        </div>
+        </BaseCard>
       </div>
       <!-- Quick transactions -->
       <div
         class="ptablet:col-span-7 ltablet:col-span-8 col-span-12 lg:col-span-8"
       >
-        <div
-          class="ltablet:p-12 bg-muted-200 dark:bg-muted-950 rounded-2xl p-6 lg:p-12"
+        <BaseCard
+          variant="none"
+          rounded="none"
+          class="lg:landscape:p-6 rounded-2xl! bg-muted-200/60 dark:bg-muted-950/80 p-4 md:p-6 2xl:landscape:p-12"
         >
           <!-- Header ---->
           <div class="mb-6 flex items-center justify-between">
@@ -224,7 +226,7 @@ definePageMeta({
                 mask="blob"
                 class="dark:bg-muted-950 mx-auto mb-2 bg-white"
               >
-                <Icon name="ph:bank-duotone" class="size-5" />
+                <Icon name="solar:calculator-linear" class="size-6" />
               </BaseIconBox>
               <BaseText size="sm" class="line-clamp-1">
                 Manual
@@ -318,7 +320,7 @@ definePageMeta({
             >
               Recent Activity
             </BaseHeading>
-            <DemoLinkArrow to="/layouts" />
+            <DemoLinkArrow to="/layouts" label="View all" />
           </div>
           <div class="space-y-6">
             <!-- Item -->
@@ -327,8 +329,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="ph:credit-card-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:card-transfer-bold-duotone"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -341,7 +343,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Outgoing payment
                 </BaseParagraph>
@@ -363,8 +365,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="ph:bank-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:buildings-bold-duotone"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -377,7 +379,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Outgoing payment
                 </BaseParagraph>
@@ -399,8 +401,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="ph:credit-card-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:card-transfer-bold-duotone"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -413,7 +415,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Outgoing payment
                 </BaseParagraph>
@@ -435,8 +437,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="ph:bank-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:buildings-bold-duotone"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -449,7 +451,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Ingoing payment
                 </BaseParagraph>
@@ -471,8 +473,8 @@ definePageMeta({
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
               >
                 <Icon
-                  name="ph:credit-card-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-5"
+                  name="solar:card-transfer-bold-duotone"
+                  class="text-muted-800 dark:text-muted-100 size-6"
                 />
               </div>
               <div>
@@ -485,7 +487,7 @@ definePageMeta({
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Outgoing payment
                 </BaseParagraph>
@@ -502,7 +504,7 @@ definePageMeta({
               </div>
             </div>
           </div>
-        </div>
+        </BaseCard>
       </div>
     </div>
   </div>

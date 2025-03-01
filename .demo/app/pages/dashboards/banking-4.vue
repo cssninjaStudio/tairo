@@ -56,154 +56,181 @@ function setAccount(account: any) {
 </script>
 
 <template>
-  <div class="space-y-6 pb-20 pt-4">
-    <div class="grid grid-cols-12 gap-6">
+  <div class="space-y-4 px-4 md:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Tile -->
-      <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
+      <div class="col-span-12 sm:col-span-6 2xl:landscape:col-span-3">
         <BaseCard
           rounded="md"
-          class="p-3"
+          class="p-2"
         >
           <div class="flex items-center">
-            <div class="text-primary-500 relative">
+            <div class="text-orange-500 relative">
               <BaseProgressCircle
                 :max="100"
                 :model-value="75"
-                :size="82"
+                :size="75"
                 :thickness="1"
-                variant="primary"
+                variant="none"
+                class="text-orange-500 *:first:text-muted-200 *:dark:first:text-muted-900"
               />
               <Icon
-                name="lucide:sparkles"
+                name="solar:fire-minimalistic-bold-duotone"
                 class="absolute start-1/2 top-1/2 size-6 -translate-x-1/2 -translate-y-1/2"
               />
             </div>
             <div>
               <BaseParagraph
-                size="sm"
-                class="text-muted-400"
+                size="xs"
+                weight="medium"
+                class="uppercase text-muted-600 dark:text-muted-400"
               >
                 Weekly Profit
               </BaseParagraph>
-              <BaseHeading size="xl">
+              <BaseHeading size="xl" weight="medium" class="text-muted-900 dark:text-white">
                 $926.31
               </BaseHeading>
+            </div>
+            <div class="ms-auto me-2">
+              <BaseParagraph size="sm" weight="medium" class="text-orange-500">
+                +2.3%
+              </BaseParagraph>
             </div>
           </div>
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
+      <div class="col-span-12 sm:col-span-6 2xl:landscape:col-span-3">
         <BaseCard
           rounded="md"
-          class="p-3"
+          class="p-2"
         >
           <div class="flex items-center">
-            <div class="text-success-500 relative">
+            <div class="text-green-500 relative">
               <BaseProgressCircle
                 :max="100"
-                :model-value="75"
-                :size="82"
+                :model-value="48"
+                :size="75"
                 :thickness="1"
-                variant="primary"
+                variant="none"
+                class="text-green-500 *:first:text-muted-200 *:dark:first:text-muted-900"
               />
               <Icon
-                name="lucide:trending-up"
+                name="solar:crown-line-bold-duotone"
                 class="absolute start-1/2 top-1/2 size-6 -translate-x-1/2 -translate-y-1/2"
               />
             </div>
             <div>
               <BaseParagraph
-                size="sm"
-                class="text-muted-400"
+                size="xs"
+                weight="medium"
+                class="uppercase text-muted-600 dark:text-muted-400"
               >
                 Total Income
               </BaseParagraph>
-              <BaseHeading size="xl">
+              <BaseHeading size="xl" weight="medium" class="text-muted-900 dark:text-white">
                 $2,629.43
               </BaseHeading>
+            </div>
+            <div class="ms-auto me-2">
+              <BaseParagraph size="sm" weight="medium" class="text-green-500">
+                +1.7%
+              </BaseParagraph>
             </div>
           </div>
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
+      <div class="col-span-12 sm:col-span-6 2xl:landscape:col-span-3">
         <BaseCard
           rounded="md"
 
-          class="p-3"
+          class="p-2"
         >
           <div class="flex items-center">
             <div class="text-destructive-500 relative">
               <BaseProgressCircle
                 :max="100"
                 :model-value="34"
-                :size="82"
+                :size="75"
                 :thickness="1"
-                variant="primary"
+                variant="none"
+                class="text-destructive-500 *:first:text-muted-200 *:dark:first:text-muted-900"
               />
               <Icon
-                name="lucide:trending-down"
+                name="solar:card-recive-bold-duotone"
                 class="absolute start-1/2 top-1/2 size-6 -translate-x-1/2 -translate-y-1/2"
               />
             </div>
             <div>
               <BaseParagraph
-                size="sm"
-                class="text-muted-400"
+                size="xs"
+                weight="medium"
+                class="uppercase text-muted-600 dark:text-muted-400"
               >
                 Total Expenses
               </BaseParagraph>
-              <BaseHeading size="xl">
+              <BaseHeading size="xl" weight="medium" class="text-muted-900 dark:text-white">
                 $1,821.56
               </BaseHeading>
+            </div>
+            <div class="ms-auto me-2">
+              <BaseParagraph size="sm" weight="medium" class="text-destructive-500">
+                -2.1%
+              </BaseParagraph>
             </div>
           </div>
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="ltablet:col-span-3 col-span-12 sm:col-span-6 lg:col-span-3">
+      <div class="col-span-12 sm:col-span-6 2xl:landscape:col-span-3">
         <BaseCard
           rounded="md"
-          class="p-3"
+          class="p-2"
         >
           <div class="flex items-center">
-            <div class="text-warning-500 relative">
+            <div class="text-primary-500 relative">
               <BaseProgressCircle
                 :max="100"
                 :model-value="82"
-                :size="82"
+                :size="75"
                 :thickness="1"
                 variant="primary"
               />
               <Icon
-                name="lucide:dollar-sign"
+                name="solar:calculator-minimalistic-bold-duotone"
                 class="absolute start-1/2 top-1/2 size-6 -translate-x-1/2 -translate-y-1/2"
               />
             </div>
             <div>
               <BaseParagraph
-                size="sm"
-                class="text-muted-400"
+                size="xs"
+                weight="medium"
+                class="uppercase text-muted-600 dark:text-muted-400"
               >
                 Total Taxes
               </BaseParagraph>
-              <BaseHeading size="xl">
+              <BaseHeading size="xl" weight="medium" class="text-muted-900 dark:text-white">
                 $712.19
               </BaseHeading>
+            </div>
+            <div class="ms-auto me-2">
+              <BaseParagraph size="sm" weight="medium" class="text-primary-500">
+                +1.1%
+              </BaseParagraph>
             </div>
           </div>
         </BaseCard>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-6">
-      <div class="ltablet:col-span-8 col-span-12 space-y-6 lg:col-span-8">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="ltablet:col-span-8 col-span-12 space-y-4 lg:col-span-8">
         <!-- Account balance widget -->
         <DemoWidgetAccountBalance />
         <!-- Transactions widget -->
         <DemoWidgetTransactionCompact />
       </div>
-      <form action="" class="ltablet:col-span-4 col-span-12 space-y-6 lg:col-span-4">
+      <form action="" class="ltablet:col-span-4 col-span-12 space-y-4 lg:col-span-4">
         <BaseCard
           rounded="md"
           class="p-4 md:p-6"
@@ -340,7 +367,7 @@ function setAccount(account: any) {
                 type="submit"
                 rounded="md"
                 variant="primary"
-                class="h-12! w-full"
+                class="w-full"
               >
                 Send Money
               </BaseButton>
@@ -359,14 +386,14 @@ function setAccount(account: any) {
               <div
                 class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-10 items-center justify-center rounded-full border bg-white"
               >
-                <Icon name="ph:bank-duotone" class="text-primary-500 size-6" />
+                <Icon name="solar:bag-smile-bold-duotone" class="text-primary-500 size-6" />
               </div>
             </div>
             <BaseHeading
               as="h3"
               weight="medium"
               size="lg"
-              class="text-muted-800 dark:text-muted-100 mb-2"
+              class="text-muted-900 dark:text-muted-100 mb-2"
             >
               Try Quick Cash
             </BaseHeading>
@@ -374,8 +401,7 @@ function setAccount(account: any) {
               size="sm"
               class="text-muted-500 dark:text-muted-400 mb-4"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bork Idem
-              adhuc; Igitur neque stultorum quisquam beatus.
+              Quick Cash is a new feature that allows you to send money to your friends and family in a matter of seconds.
             </BaseParagraph>
             <div class="mb-1 mt-auto">
               <DemoLinkArrow to="#" label="Learn more about it" />
