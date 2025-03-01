@@ -274,15 +274,18 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto flex items-center gap-2">
-                      <BaseAvatar
+                      <BaseTooltip
                         v-for="user in item.related.people"
                         :key="user.name"
-                        :src="'src' in user ? user.src : undefined"
-                        :text="user.text"
-                        :class="getRandomColor()"
-                        :data-nui-tooltip="user.name"
-                        size="xs"
-                      />
+                        :content="user.name"
+                      >
+                        <BaseAvatar
+                          :src="'src' in user ? user.src : undefined"
+                          :text="user.text"
+                          :class="getRandomColor()"
+                          size="xs"
+                        />
+                      </BaseTooltip>
                     </div>
                   </div>
                 </div>
@@ -446,14 +449,15 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     </BaseParagraph>
                   </div>
                   <div class="ms-auto">
-                    <BaseButton
-                      to="#"
-                      size="icon-sm"
-                      rounded="full"
-                      data-nui-tooltip="View Profile"
-                    >
-                      <Icon name="lucide:arrow-right" class="size-4" />
-                    </BaseButton>
+                    <BaseTooltip content="View Profile">
+                      <BaseButton
+                        to="#"
+                        size="icon-sm"
+                        rounded="full"
+                      >
+                        <Icon name="lucide:arrow-right" class="size-4" />
+                      </BaseButton>
+                    </BaseTooltip>
                   </div>
                 </div>
               </div>

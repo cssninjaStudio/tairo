@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { FocusTrap } from '@headlessui/vue'
 
 const { close } = usePanels()
 onKeyStroke('Escape', close)
@@ -7,7 +6,7 @@ onKeyStroke('Escape', close)
 
 <template>
   <div class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border bg-white">
-    <FocusTrap>
+    <FocusScope trapped loop>
       <div class="flex h-16 w-full items-center justify-between px-10">
         <h2
           class="font-heading text-muted-700 text-lg font-semibold dark:text-white"
@@ -185,6 +184,6 @@ onKeyStroke('Escape', close)
           >
         </div>
       </div>
-    </FocusTrap>
+    </FocusScope>
   </div>
 </template>

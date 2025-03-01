@@ -728,42 +728,45 @@ async function submitMessage() {
             >
               <Icon name="ion:arrow-back-outline" class="size-4" />
             </NuxtLink>
-            <button
-              class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
-              :class="
-                selectedOption === 'chat'
-                  ? 'bg-primary-500/10 text-primary-500'
-                  : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
-              "
-              data-nui-tooltip="Messaging"
-              @click="selectedOption = 'chat'"
-            >
-              <Icon name="ion:chatbubble-outline" class="size-5" />
-            </button>
-            <button
-              class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
-              :class="
-                selectedOption === 'calendar'
-                  ? 'bg-primary-500/10 text-primary-500'
-                  : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
-              "
-              data-nui-tooltip="Calendar"
-              @click="selectedOption = 'calendar'"
-            >
-              <Icon name="ion:calendar-outline" class="size-5" />
-            </button>
-            <button
-              class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
-              :class="
-                selectedOption === 'settings'
-                  ? 'bg-primary-500/10 text-primary-500'
-                  : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
-              "
-              data-nui-tooltip="Preferences"
-              @click="selectedOption = 'settings'"
-            >
-              <Icon name="ion:options-outline" class="size-5" />
-            </button>
+            <BaseTooltip content="Messaging">
+              <button
+                class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
+                :class="
+                  selectedOption === 'chat'
+                    ? 'bg-primary-500/10 text-primary-500'
+                    : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
+                "
+                @click="selectedOption = 'chat'"
+              >
+                <Icon name="ion:chatbubble-outline" class="size-5" />
+              </button>
+            </BaseTooltip>
+            <BaseTooltip content="Calendar">
+              <button
+                class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
+                :class="
+                  selectedOption === 'calendar'
+                    ? 'bg-primary-500/10 text-primary-500'
+                    : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
+                "
+                @click="selectedOption = 'calendar'"
+              >
+                <Icon name="ion:calendar-outline" class="size-5" />
+              </button>
+            </BaseTooltip>
+            <BaseTooltip content="Preferences">
+              <button
+                class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
+                :class="
+                  selectedOption === 'settings'
+                    ? 'bg-primary-500/10 text-primary-500'
+                    : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
+                "
+                @click="selectedOption = 'settings'"
+              >
+                <Icon name="ion:options-outline" class="size-5" />
+              </button>
+            </BaseTooltip>
           </div>
         </div>
       </div>

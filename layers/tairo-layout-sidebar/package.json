@@ -1,5 +1,5 @@
 {
-  "name": "@cssninja/tairo-layout-sidebar",
+  "name": "@cssninja/tairo-layout-sidebar-dev",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -8,7 +8,11 @@
     "prepare": "nuxt prepare",
     "clean": "rimraf .nuxt .output node_modules"
   },
+  "dependencies": {
+    "@vueuse/core": "^12.4.0"
+  },
   "devDependencies": {
-    "nuxt": "^3.15.2"
+    "nuxt": "^3.15.2",
+    "reka-ui": "^2.0.2"
   }
 }

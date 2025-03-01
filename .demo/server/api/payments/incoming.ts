@@ -29,11 +29,7 @@ function filterDemoData(
   }
   const filterRe = new RegExp(filter, 'i')
   return data
-    .filter((item) => {
-      return [item.recipient.name, item.DemoToolbarLanguage].some(item =>
-        item.match(filterRe),
-      )
-    })
+    .filter(item => item.recipient.name.match(filterRe))
     .slice(offset, offset + perPage)
 }
 

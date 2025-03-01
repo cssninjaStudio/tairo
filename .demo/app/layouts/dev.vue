@@ -825,6 +825,7 @@ const menu = [
             <TairoSubsidebarCollapsible
               v-else
               :children="link.children"
+              :open="link.children.some((child) => child.to === $route.path) || undefined"
             >
               <template #trigger>
                 <TairoSubsidebarCollapsibleTrigger>

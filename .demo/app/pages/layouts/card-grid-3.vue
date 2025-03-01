@@ -115,31 +115,34 @@ const { data, pending, error, refresh } = await useFetch(
                 class="p-6"
               >
                 <div class="mb-3 flex items-center justify-center">
-                  <BaseAvatar
-                    :src="item.owner.avatar"
-                    :badge-src="item.image"
-                    rounded="lg"
-                    size="lg"
-                    :data-nui-tooltip="item.owner.name"
-                    class="bg-muted-500/20 text-muted-500"
-                  />
+                  <BaseTooltip :content="item.owner.name">
+                    <BaseAvatar
+                      :src="item.owner.avatar"
+                      :badge-src="item.image"
+                      rounded="lg"
+                      size="lg"
+                      class="bg-muted-500/20 text-muted-500"
+                    />
+                  </BaseTooltip>
                 </div>
                 <div class="my-4 flex flex-col items-center justify-between">
-                  <div class="text-center" :data-nui-tooltip="item.name">
-                    <h4
-                      class="text-muted-800 dark:text-muted-100 line-clamp-1 font-sans text-base font-medium"
-                    >
-                      {{ item.name }}
-                    </h4>
-                    <div
-                      class="text-muted-400 flex items-center justify-center gap-1"
-                    >
-                      <Icon name="ph:calendar-blank-duotone" class="size-4" />
-                      <p class="font-sans text-sm">
-                        {{ item.dueDate }}
-                      </p>
+                  <BaseTooltip :content="item.name">
+                    <div class="text-center">
+                      <h4
+                        class="text-muted-800 dark:text-muted-100 line-clamp-1 font-sans text-base font-medium"
+                      >
+                        {{ item.name }}
+                      </h4>
+                      <div
+                        class="text-muted-400 flex items-center justify-center gap-1"
+                      >
+                        <Icon name="ph:calendar-blank-duotone" class="size-4" />
+                        <p class="font-sans text-sm">
+                          {{ item.dueDate }}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </BaseTooltip>
                   <div class="my-4">
                     <BaseAvatarGroup
                       size="xs"

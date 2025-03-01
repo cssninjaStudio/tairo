@@ -57,14 +57,15 @@ const companies = computed(() => {
       <!-- Recipients -->
       <div class="w-full">
         <div class="mb-5 flex items-center gap-4">
-          <BaseButton
-            to="/layouts/contacts/create"
-            rounded="full"
-            size="icon-sm"
-            data-nui-tooltip="Add recipient"
-          >
-            <Icon name="lucide:plus" class="size-4" />
-          </BaseButton>
+          <BaseTooltip content="Add recipient">
+            <BaseButton
+              to="/layouts/contacts/create"
+              rounded="full"
+              size="icon-sm"
+            >
+              <Icon name="lucide:plus" class="size-4" />
+            </BaseButton>
+          </BaseTooltip>
           <h3 class="font-heading text-muted-800 dark:text-muted-200 text-xl">
             Contacts
           </h3>

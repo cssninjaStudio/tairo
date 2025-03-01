@@ -213,6 +213,7 @@ onNuxtReady(async () => {
         :disabled="props.disabled"
         :rounded="props.rounded"
         v-bind="$attrs"
+        class="ring-0!"
         @update:model-value="
           (value) => {
             handleInput(String(value))
@@ -228,32 +229,31 @@ onNuxtReady(async () => {
           toggleVisibility,
         }"
       >
-        <button
-          class="leading-0 peer-focus-within:text-primary-500 focus-visible:nui-focus text-input-default-text/60 bg-input-default-bg border border-s-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed outline-none"
-          :class="[
-            props.error ? 'border-destructive-base' : 'border-input-default-border',
-          ]"
-          type="button"
-          tabindex="0"
-          :disabled="props.disabled"
-          :data-nui-tooltip="props.disabled ? '' : `${
-            showPassword ? 'Hide' : 'Show'
-          } password`"
-          @click.prevent="() => toggleVisibility()"
-        >
-          <div
-            class="relative flex size-full items-center justify-center"
+        <BaseTooltip disable-closing-trigger :content="props.disabled ? '' : `${showPassword ? 'Hide' : 'Show'} password`">
+          <button
+            class="leading-0 peer-focus-within:text-primary-500 focus-visible:nui-focus text-input-default-text/60 bg-input-default-bg border border-s-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed outline-none"
+            :class="[
+              props.error ? 'border-destructive-base' : 'border-input-default-border',
+            ]"
+            type="button"
+            tabindex="0"
+            :disabled="props.disabled"
+            @click.prevent="() => toggleVisibility()"
           >
-            <Icon
-              :name="
-                showPassword
-                  ? 'mdi:eye-outline'
-                  : 'mdi:eye-off-outline'
-              "
-              class="size-4"
-            />
-          </div>
-        </button>
+            <div
+              class="relative flex size-full items-center justify-center"
+            >
+              <Icon
+                :name="
+                  showPassword
+                    ? 'mdi:eye-outline'
+                    : 'mdi:eye-off-outline'
+                "
+                class="size-4"
+              />
+            </div>
+          </button>
+        </BaseTooltip>
       </slot>
     </div>
 

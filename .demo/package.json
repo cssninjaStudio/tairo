@@ -57,7 +57,6 @@
     "@types/geojson": "^7946.0.15",
     "@types/mapbox-gl": "3.4.1",
     "@vee-validate/zod": "^4.15.0",
-    "@vueform/slider": "2.1.10",
     "@vueuse/core": "^12.4.0",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",
@@ -76,7 +75,6 @@
     "mapbox-gl": "3.9.3",
     "nuxt": "3.15.2",
     "nuxt-component-meta": "0.10.0",
-    "nuxt-swiper": "2.0.0",
     "parse5": "^7.2.1",
     "rehype-external-links": "3.0.0",
     "rehype-raw": "7.0.0",
@@ -102,7 +100,6 @@
     "vue-component-meta": "2.2.0",
     "vue-router": "^4.5.0",
     "vue3-apexcharts": "1.8.0",
-    "vue3-carousel": "0.13.0",
     "vue3-popper": "1.5.0",
     "vue3-smooth-dnd": "0.0.6",
     "zod": "^3.24.1"

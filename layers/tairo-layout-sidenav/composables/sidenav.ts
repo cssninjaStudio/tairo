@@ -1,138 +1,28 @@
-import type { RouteLocationRaw } from 'vue-router'
+import type { InjectionKey } from 'vue'
 
-export interface TairoSidenavResolvedConfig {
-  name: string
-  divider?: boolean
-  icon: {
-    name: string
-    class?: string
-  }
-  count?: number
-  children?: any[]
-  component?: {
-    name: string
-    props?: any
-  }
-  to?: RouteLocationRaw
-  click?: () => void | Promise<void>
-  activePath?: string
-  /**
-   * @default 'start'
-   */
-  position?: 'start' | 'end'
+interface LayoutSidenavContext {
+  isCollapsed: Ref<boolean>
+  isMobileOpen: Ref<boolean>
 }
 
-/**
- * Composable to manage navigation of the sidebar layout
- *
- * You can define sidebar items in your app.config.ts
- *
- * ```ts
- * export default defineAppConfig({
- *   tairo: {
- *     sidebar: {
- *       items: {
- *           name: 'Dashboards',
- *
- *           // You can define an active path to highlight the item
- *           activePath: '/dashboards',
- *
- *           // You can define an icon to display in the sidebar
- *           icon: { name: 'ph:sidebar-duotone', class: 'w-5 h-5' },
- *
- *           // Or use a component
- *           // It should be registered in the app as a global component (in components/global)
- *           component: { name: 'AppThemeToggle', props: {} },
- *
- *           // You can chose to display a subsidebar by defining a component name
- *           // It should be registered in the app as a global component
- *           subsidebar: { name: 'SidebarMenuDashboards', props: {} },
- *
- *           // Or you can define a route to navigate to
- *           to: '/dashboards',
- *
- *           // Or you can define a click handler (eg. to open a panel)
- *           click: () => {
- *             const { open } = usePanels()
- *             open('panel-name')
- *           },
- *         },
- *       ],
- *     },
- *   },
- * })
- * ```
- */
-export function useSidenav() {
-  const app = useAppConfig()
+const LayoutSidenavContextSymbol = Symbol('LayoutSidenavContext') as InjectionKey<LayoutSidenavContext>
 
-  const menuItems = computed(() => {
-    if (
-      (app.tairo?.sidenav?.navigation?.enabled as boolean) === false
-      || app.tairo?.sidenav?.navigation?.items?.length === 0
-    ) {
-      return []
-    }
-    return app.tairo?.sidenav?.navigation?.items?.map(
-      navigation =>
-        <TairoSidenavResolvedConfig>{
-          ...navigation,
-          position: navigation.position ?? 'start',
-        },
-    )
-  })
-
-  const isOpen = useState('sidenav-open', () => true)
-  const isMobileOpen = useState('sidenav-mobile-open', () => false)
-
-  const header = computed(() => {
-    return app.tairo?.sidenav?.navigation?.header
-  })
-
-  const center = computed(() => {
-    return app.tairo?.sidenav?.navigation?.center
-  })
-
-  const footer = computed(() => {
-    return app.tairo?.sidenav?.navigation?.footer
-  })
-
-  function toggle() {
-    // If no sidebar item is selected, open the first one
-    const { lg } = useTailwindBreakpoints()
-    if (lg.value) {
-      isOpen.value = !isOpen.value
-    }
-    else {
-      isMobileOpen.value = !isMobileOpen.value
-    }
-  }
-
-  if (import.meta.client) {
-    const route = useRoute()
-    const { lg } = useTailwindBreakpoints()
-    watch(lg, (isLg) => {
-      if (isLg) {
-        isMobileOpen.value = false
-      }
-    })
-    watch(
-      () => route.fullPath,
-      () => {
-        if (!lg.value) {
-          isMobileOpen.value = false
-        }
-      },
-    )
-  }
-
-  return {
-    toggle,
-    menuItems,
-    isOpen,
+export function createLayoutSidenavContext(): LayoutSidenavContext {
+  const isCollapsed = ref(false)
+  const isMobileOpen = ref(false)
+  const context = {
+    isCollapsed,
     isMobileOpen,
-    header,
-    center,
-    footer,
   }
+  provide(LayoutSidenavContextSymbol, context)
+  return context
+}
+
+
+export function useLayoutSidenavContext() {
+  const context = inject(LayoutSidenavContextSymbol)
+  if (!context) {
+    throw new Error('You need to create the context first using the createLayoutSidenavContext() function')
+  }
+  return context
 }

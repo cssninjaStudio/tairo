@@ -196,9 +196,6 @@ importers:
       '@vee-validate/zod':
         specifier: ^4.15.0
         version: 4.15.0(vue@3.5.13(typescript@5.7.3))(zod@3.24.1)
-      '@vueform/slider':
-        specifier: 2.1.10
-        version: 2.1.10
       '@vueuse/core':
         specifier: ^12.4.0
         version: 12.4.0(typescript@5.7.3)
@@ -331,9 +328,6 @@ importers:
       vue3-apexcharts:
         specifier: 1.8.0
         version: 1.8.0(apexcharts@4.3.0)(vue@3.5.13(typescript@5.7.3))
-      vue3-carousel:
-        specifier: 0.13.0
-        version: 0.13.0(vue@3.5.13(typescript@5.7.3))
       vue3-popper:
         specifier: 1.5.0
         version: 1.5.0(vue@3.5.13(typescript@5.7.3))
@@ -391,82 +385,49 @@ importers:
         version: 4.5.0(vue@3.5.13(typescript@5.7.3))
 
   layers/tairo-layout-collapse:
-    devDependencies:
-      '@nuxt/schema':
-        specifier: ^3.15.2
-        version: 3.15.2
-      nuxt:
-        specifier: ^3.15.2
-        version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
-      vue-router:
-        specifier: ^4.5.0
-        version: 4.5.0(vue@3.5.13(typescript@5.7.3))
-
-  layers/tairo-layout-collapse-dev:
     dependencies:
       '@vueuse/core':
         specifier: ^12.4.0
-        version: 12.4.0(typescript@5.7.3)
+        version: 12.7.0(typescript@5.7.3)
     devDependencies:
       nuxt:
         specifier: ^3.15.2
         version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
-
-  layers/tairo-layout-iconnav:
-    devDependencies:
-      nuxt:
-        specifier: ^3.15.2
-        version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
-      vue-router:
-        specifier: ^4.5.0
-        version: 4.5.0(vue@3.5.13(typescript@5.7.3))
+      reka-ui:
+        specifier: ^2.0.2
+        version: 2.0.2(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
 
   layers/tairo-layout-sidebar:
-    devDependencies:
-      nuxt:
-        specifier: ^3.15.2
-        version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
-
-  layers/tairo-layout-sidebar-dev:
     dependencies:
       '@vueuse/core':
         specifier: ^12.4.0
-        version: 12.4.0(typescript@5.7.3)
+        version: 12.7.0(typescript@5.7.3)
     devDependencies:
       nuxt:
         specifier: ^3.15.2
         version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
+      reka-ui:
+        specifier: ^2.0.2
+        version: 2.0.2(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
 
   layers/tairo-layout-sidenav:
-    devDependencies:
-      nuxt:
-        specifier: ^3.15.2
-        version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
-
-  layers/tairo-layout-sidenav-dev:
     dependencies:
       '@vueuse/core':
         specifier: ^12.4.0
-        version: 12.4.0(typescript@5.7.3)
+        version: 12.7.0(typescript@5.7.3)
     devDependencies:
       nuxt:
         specifier: ^3.15.2
         version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
+      reka-ui:
+        specifier: ^2.0.2
+        version: 2.0.2(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
 
   layers/tairo-layout-topnav:
-    devDependencies:
-      nuxt:
-        specifier: ^3.15.2
-        version: 3.15.2(@libsql/client@0.14.0)(@parcel/watcher@2.5.0)(@types/node@22.10.7)(better-sqlite3@11.8.1)(db0@0.2.1(@libsql/client@0.14.0)(better-sqlite3@11.8.1))(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.4)(rollup@4.31.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.9(@types/node@22.10.7)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
-      vue-router:
-        specifier: ^4.5.0
-        version: 4.5.0(vue@3.5.13(typescript@5.7.3))
-
-  layers/tairo-layout-topnav-dev:
     dependencies:
       '@vueuse/core':
         specifier: ^12.4.0
-        version: 12.4.0(typescript@5.7.3)
+        version: 12.7.0(typescript@5.7.3)
     devDependencies:
       nuxt:
         specifier: ^3.15.2
@@ -2337,9 +2298,6 @@ packages:
 
   '@vue/shared@3.5.13':
     resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
-
-  '@vueform/slider@2.1.10':
-    resolution: {integrity: sha512-L2G3Ju51Yq6yWF2wzYYsicUUaH56kL1QKGVtimUVHT1K1ADcRT94xVyIeJpS0klliVEeF6iMZFbdXtHq8AsDHw==}
 
   '@vueuse/core@10.11.1':
     resolution: {integrity: sha512-guoy26JQktXPcz+0n3GukWIy/JDNKti9v6VEMu6kV2sYBsWuGiTU8OWdg+ADfUbHg3/3DlqySDe7JmdHrktiww==}
@@ -5623,6 +5581,11 @@ packages:
     peerDependencies:
       vue: '>= 3.2.0'
 
+  reka-ui@2.0.2:
+    resolution: {integrity: sha512-pC2UF6Z+kJF96aJvIErhkSO4DJYIeq9pgvh3pntNqcZb3zFGMzw8h2uny+GnLX2CKiQV54kZNYXxecYIiPMGyg==}
+    peerDependencies:
+      vue: '>= 3.2.0'
+
   remark-emoji@5.0.1:
     resolution: {integrity: sha512-QCqTSvcZ65Ym+P+VyBKd4JfJfh7icMl7cIOGVmPMzWkDtdD8pQ0nQG7yxGolVIiMzSx90EZ7SwNiVpYpfTxn7w==}
     engines: {node: '>=18'}
@@ -6666,11 +6629,6 @@ packages:
     peerDependencies:
       apexcharts: '>=4.0.0'
       vue: '>=3.0.0'
-
-  vue3-carousel@0.13.0:
-    resolution: {integrity: sha512-vio91KI4mVMlCDbVhGzW9nIyYqxu0moqroPR/OrJeaCvAK3SJYxqvH36a4/t1oEJYJsTgh+IuNiNi6c+7DVKZg==}
-    peerDependencies:
-      vue: ^3.5.0
 
   vue3-popper@1.5.0:
     resolution: {integrity: sha512-xaEnx90YBnlSg5G2yWqm2DHWHg+DB99UVRp4VsyTF0QLXyHrqSuE1Xo5+sG0AQq/lBcrGMlk5NU5xE2MDLKViw==}
@@ -9160,8 +9118,6 @@ snapshots:
       vue: 3.5.13(typescript@5.7.3)
 
   '@vue/shared@3.5.13': {}
-
-  '@vueform/slider@2.1.10': {}
 
   '@vueuse/core@10.11.1(vue@3.5.13(typescript@5.7.3))':
     dependencies:
@@ -13201,6 +13157,23 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
+  reka-ui@2.0.2(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)):
+    dependencies:
+      '@floating-ui/dom': 1.6.13
+      '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.7.3))
+      '@internationalized/date': 3.7.0
+      '@internationalized/number': 3.6.0
+      '@tanstack/vue-virtual': 3.13.0(vue@3.5.13(typescript@5.7.3))
+      '@vueuse/core': 12.7.0(typescript@5.7.3)
+      '@vueuse/shared': 12.7.0(typescript@5.7.3)
+      aria-hidden: 1.2.4
+      defu: 6.1.4
+      ohash: 1.1.4
+      vue: 3.5.13(typescript@5.7.3)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+
   remark-emoji@5.0.1:
     dependencies:
       '@types/mdast': 4.0.4
@@ -14460,10 +14433,6 @@ snapshots:
   vue3-apexcharts@1.8.0(apexcharts@4.3.0)(vue@3.5.13(typescript@5.7.3)):
     dependencies:
       apexcharts: 4.3.0
-      vue: 3.5.13(typescript@5.7.3)
-
-  vue3-carousel@0.13.0(vue@3.5.13(typescript@5.7.3)):
-    dependencies:
       vue: 3.5.13(typescript@5.7.3)
 
   vue3-popper@1.5.0(vue@3.5.13(typescript@5.7.3)):

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { FocusTrap } from '@headlessui/vue'
-
 const props = withDefaults(
   defineProps<{
     account?: any
@@ -98,7 +96,7 @@ function useDemoAreaBalance() {
   <div
     class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border-l bg-white"
   >
-    <FocusTrap>
+    <FocusScope trapped loop>
       <div
         class="border-muted-200 dark:border-muted-700 flex h-20 w-full items-center justify-between border-b px-6"
       >
@@ -161,9 +159,9 @@ function useDemoAreaBalance() {
               <BaseParagraph size="sm" class="text-muted-700 dark:text-muted-400">
                 Routing number
               </BaseParagraph>
-              <BaseText data-nui-tooltip="The wire routing number">
+              <BaseTooltip content="The wire routing number">
                 <Icon name="lucide:help-circle" class="text-muted-400 size-3" />
-              </BaseText>
+              </BaseTooltip>
             </div>
             <BaseText
               size="sm"
@@ -180,9 +178,9 @@ function useDemoAreaBalance() {
               <BaseParagraph size="sm" class="text-muted-700 dark:text-muted-400">
                 Account number
               </BaseParagraph>
-              <BaseText data-nui-tooltip="Your full account number">
+              <BaseTooltip content="Your full account number">
                 <Icon name="lucide:help-circle" class="text-muted-400 size-3" />
-              </BaseText>
+              </BaseTooltip>
             </div>
             <BaseText
               size="sm"
@@ -199,9 +197,9 @@ function useDemoAreaBalance() {
               <BaseParagraph size="sm" class="text-muted-700 dark:text-muted-400">
                 IBAN
               </BaseParagraph>
-              <BaseText data-nui-tooltip="The international identifier">
+              <BaseTooltip content="The international identifier">
                 <Icon name="lucide:help-circle" class="text-muted-400 size-3" />
-              </BaseText>
+              </BaseTooltip>
             </div>
             <BaseText
               size="sm"
@@ -233,6 +231,6 @@ function useDemoAreaBalance() {
           <AddonApexcharts v-bind="demoAreaBalance" />
         </div>
       </div>
-    </FocusTrap>
+    </FocusScope>
   </div>
 </template>

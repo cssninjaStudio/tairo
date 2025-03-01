@@ -233,7 +233,7 @@ const total = computed(() => {
                   <div class="mt-2">
                     <BaseButton
                       size="sm"
-                      variant="light"
+                      variant="ghost"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
@@ -298,14 +298,15 @@ const total = computed(() => {
               </div>
 
               <div class="hidden items-center justify-center sm:flex">
-                <BaseButton
-                  size="icon-md"
-                  rounded="full"
-                  class="hover:border-yellow-500 hover:text-yellow-500"
-                  data-nui-tooltip="All categories"
-                >
-                  <Icon name="lucide:chevron-right" class="size-4" />
-                </BaseButton>
+                <BaseTooltip content="All categories">
+                  <BaseButton
+                    size="icon-md"
+                    rounded="full"
+                    class="hover:border-yellow-500 hover:text-yellow-500"
+                  >
+                    <Icon name="lucide:chevron-right" class="size-4" />
+                  </BaseButton>
+                </BaseTooltip>
               </div>
             </div>
             <!-- Meals -->

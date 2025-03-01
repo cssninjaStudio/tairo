@@ -101,15 +101,18 @@ const componentsWithoutPages = computed(() => {
       v-if="componentsWithoutPages.length"
       class="mb-24 flex w-full flex-wrap justify-start gap-2"
     >
-      <BaseTag
+      <BaseTooltip
         v-for="component of componentsWithoutPages"
         :key="component.name"
-        size="sm"
-        class="cursor-help opacity-60 transition-opacity duration-100 hover:opacity-100"
-        data-nui-tooltip="This component is not documented yet."
+        content="This component is not documented yet."
       >
-        <span class="font-mono text-xs">&lt;{{ component.name }}&gt;</span>
-      </BaseTag>
+        <BaseTag
+          size="sm"
+          class="cursor-help opacity-60 transition-opacity duration-100 hover:opacity-100"
+        >
+          <span class="font-mono text-xs">&lt;{{ component.name }}&gt;</span>
+        </BaseTag>
+      </BaseTooltip>
     </div>
   </div>
 </template>

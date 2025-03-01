@@ -1,3 +1,3 @@
 <template>
-  <BaseThemeToggle />
+  <div></div>
 </template>
