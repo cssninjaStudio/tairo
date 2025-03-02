@@ -2,176 +2,51 @@
 definePageMeta({
   pageTransition: false,
   layoutTransition: false,
+  layout: 'content-docs',
 })
 
 const route = useRoute()
-const router = useRouter()
 
-const contentPath = computed(() => {
-  const slug = route.params?.slug as string[]
-  if (!slug || slug.length === 0) {
-    return '/documentation'
+const { data } = await useAsyncData(
+  `page-data:${route.path}`,
+  () => queryCollection('docs').path(route.path).first(),
+  {
+    watch: [() => route.path],
+  },
+)
+
+// Page not found, set correct status code on SSR
+if (!data.value && import.meta.server) {
+  const event = useRequestEvent()
+  if (event) {
+    event.node.res.statusCode = 404
   }
-  return `/documentation/${slug.join('/')}`
+}
+
+useSeoMeta({
+  title: data.value?.title,
+  description: data.value?.description,
 })
-
-const [{ data, pending }, { data: tree }] = await Promise.all([
-  useAsyncData(
-    'page-data',
-    () =>
-      queryCollection('docs')
-        .where('path', '=', contentPath.value)
-        .first(),
-    {
-      watch: [contentPath],
-    },
-  ),
-  useAsyncData(
-    'page-tree',
-    () => {
-      const path = contentPath.value.split('/')
-      path.shift() // remove /documentation
-      path.pop() // remove current page
-
-      // build all parent paths
-      const paths = []
-
-      for (let i = 0; i < path.length; i++) {
-        const parentPath = `/${path.slice(0, i + 1).join('/')}`
-        paths.push(parentPath)
-        paths.push(`${parentPath}/_dir`)
-      }
-
-      paths.push(`${contentPath.value}/_dir`)
-
-      return queryCollection('docs')
-        .where('path', 'IN', paths)
-        // .without(['body'])
-        .all()
-    },
-    {
-      watch: [contentPath],
-    },
-  ),
-])
-
-// if (!data.value) {
-//   await navigateTo('/documentation')
-// }
-// else if (data.value.redirect) {
-//   await navigateTo(data.value?.redirect)
-// }
-
-watchEffect(() => {
-  const title = data.value?.title
-  if (pending.value)
-    return
-
-  // setting the title in the route meta will update the page title
-  route.meta.title = title || 'Page not found'
-})
-
-// useContentHead(data as any)
-
-const breadcrumb = computed(() => {
-  const items: any[] = []
-  const indexRoute = router.resolve('/')
-
-  if (indexRoute.meta.breadcrumb === false) {
-    // skip breadcrumb item
-  }
-  else if (indexRoute.meta.breadcrumb) {
-    const breadcrumbItem = indexRoute.meta.breadcrumb
-    items.push({
-      to: indexRoute.path,
-      ...breadcrumbItem,
-    })
-  }
-  else if (indexRoute.meta.title) {
-    items.push({
-      label: indexRoute.meta.title as string,
-      to: indexRoute.path,
-    })
-  }
-
-  for (const item of tree.value || []) {
-    if (items.find(i => i.to === item.path)) {
-      continue
-    }
-    items.push({
-      label: item.title,
-      to: item.path.endsWith('_dir')
-        ? item.path.replace('/_dir', '')
-        : item.path,
-    })
-  }
-
-  if (data.value?.title) {
-    items.push({
-      label: data.value?.title,
-    })
-  }
-  return items
-})
-
-const isSearchOpen = useState('search-open', () => false)
-const metaKey = ref('Ctrl')
-// const metaKey = useMetaKey()
 </script>
 
 <template>
   <div>
-    <div class="flex items-center justify-between">
-      <BaseBreadcrumb :items="breadcrumb" />
-      <button
-        type="button"
-        class="dark:bg-muted-800 border-muted-200 dark:border-muted-800 text-muted-400 dark:text-muted-500 hover:text-primary-500 dark:hover:text-primary-500 group mb-6 flex items-center gap-2 rounded-xl border bg-white py-1 pe-1 ps-3"
-        @click="isSearchOpen = true"
-      >
-        <Icon
-          name="lucide:search"
-          class="size-4 transition-colors duration-300"
-        />
-        <span
-          class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-hover:text-muted-600 dark:group-hover:text-muted-100 rounded-lg border bg-white px-2 py-0.5 shadow-sm transition-colors duration-300"
-        >
-          <kbd class="font-sans text-sm tracking-wide">{{ metaKey }} + k</kbd>
-        </span>
-      </button>
-    </div>
-
-    <div class="flex">
-      <div class="w-full lg:w-3/4">
-        <ContentRenderer v-if="data" :value="data">
-          <template #empty>
-            <DocComponentDemo>
-              <div>
-                <p>The page you are looking for does not exist.</p>
-                <div class="flex flex-row gap-6">
-                  <BaseButton to="/documentation">
-                    Back to Hub
-                  </BaseButton>
-                  <BaseButton variant="ghost" to="/">
-                    Back to Home
-                  </BaseButton>
-                </div>
-              </div>
-            </DocComponentDemo>
-          </template>
-        </ContentRenderer>
-      </div>
-      <div
-        v-if="!pending && data && data.toc !== false"
-        class="relative hidden lg:me-6 lg:block lg:w-1/4 xl:me-0"
-      >
-        <TairoToc :key="`toc-${data.path}`" class="fixed pb-20 pe-1 ps-20 pt-2">
-          <template #nav-end>
-            <div
-              class="dark:bg-muted-900 bg-muted-100 pointer-events-none fixed bottom-0 z-10 h-20 w-[212px] blur-xl"
-            />
-          </template>
-        </TairoToc>
-      </div>
-    </div>
+    <ContentRenderer v-if="data" :value="data">
+      <template #empty>
+        <DocComponentDemo>
+          <div>
+            <p>The page you are looking for does not exist.</p>
+            <div class="flex flex-row gap-6">
+              <BaseButton to="/documentation">
+                Back to Hub
+              </BaseButton>
+              <BaseButton variant="ghost" to="/">
+                Back to Home
+              </BaseButton>
+            </div>
+          </div>
+        </DocComponentDemo>
+      </template>
+    </ContentRenderer>
   </div>
 </template>

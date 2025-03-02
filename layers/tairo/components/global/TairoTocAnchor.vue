@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    label: string
+    label?: string
     id?: string
     level?: number | string
     prefix?: string
@@ -24,7 +24,7 @@ const props = withDefaults(
 
 const slug = computed(() =>
   props.label
-    .toLowerCase()
+    ?.toLowerCase()
     .replace(/\s+/g, '-')
     .replace(/[^\w-]+/g, ''),
 )
@@ -38,8 +38,7 @@ const anchor = computed(() => props.id || slug.value)
     :to="`#${anchor}`"
     :data-toc-level="props.level"
     :data-toc-label="props.label"
-    class="tairo-toc-anchor focus-visible:nui-focus group/toc relative"
-    :style="{ scrollMarginTop: '1.5rem' }"
+    class="tairo-toc-anchor focus-visible:nui-focus group/toc relative scroll-mt-20"
   >
     <span
       v-if="props.prefix || 'prefix' in $slots"

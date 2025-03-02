@@ -86,7 +86,7 @@ function focus(id: string) {
 
   if (el) {
     el?.focus({ preventScroll: true })
-    el?.scrollIntoView({ behavior: 'smooth' })
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
 
     // update hash without using router to avoid scroll handler
     window.history.pushState({}, '', `#${id}`)

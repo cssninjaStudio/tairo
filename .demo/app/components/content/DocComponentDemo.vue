@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { parseMarkdown } from '@nuxtjs/mdc/runtime'
+
 const props = withDefaults(
   defineProps<{
     tag?: string
@@ -38,11 +40,13 @@ const demoPending = ref(hasDemoInfo.value)
 const exampleComponent = shallowRef()
 const exampleSource = shallowRef()
 
-const exampleMarkdown = computed(() => {
+const { data: exampleMarkdown } = useAsyncData(async () => {
   if (!exampleSource.value) {
-    return ''
+    return null
   }
-  return `\`\`\`vue\n${exampleSource.value}\n\`\`\``
+  return await parseMarkdown(`\`\`\`vue\n${exampleSource.value}\n\`\`\``)
+}, {
+  watch: [exampleSource],
 })
 
 const hasDemoContent = computed(() =>
@@ -50,7 +54,6 @@ const hasDemoContent = computed(() =>
 )
 
 const forceDark = ref(false)
-const { md } = useTailwindBreakpoints()
 
 await loadDemo()
 watch(info, loadDemo)
@@ -98,7 +101,6 @@ async function loadDemo() {
         v-if="props.title"
         as="h3"
         size="xl"
-        anchor
         weight="medium"
         class="text-muted-800 dark:text-white"
       >
@@ -161,7 +163,7 @@ async function loadDemo() {
               </summary>
               <CodeGroup>
                 <code filename="<app>/app/components/MyComponent.vue" language="vue">
-                  <MDC
+                  <ContentRenderer
                     :value="exampleMarkdown"
                     class="doc-markdown"
                   />
