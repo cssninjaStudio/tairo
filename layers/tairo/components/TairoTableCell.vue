@@ -13,7 +13,7 @@ const props = withDefaults(
 
 <template>
   <td
-    class="font-alt whitespace-nowrap text-sm"
+    class="font-sans whitespace-nowrap text-sm"
     :class="[
       props.light
         ? 'text-muted-500 dark:text-white'

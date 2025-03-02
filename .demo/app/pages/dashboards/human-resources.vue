@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { Calendar } from 'v-calendar'
-
-import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
-
 definePageMeta({
   title: 'Human Resources',
   preview: {
@@ -34,33 +29,57 @@ const items = [
     status: 'pending',
   },
 ]
+
+const rookies = [
+  {
+    name: 'Clarissa Miller',
+    role: 'UI/UX designer',
+    avatar: '/img/avatars/5.svg',
+    stack: '/img/stacks/js.svg',
+  },
+  {
+    name: 'Joshua Stevens',
+    role: 'Fullstack developer',
+    avatar: '/img/avatars/16.svg',
+    stack: '/img/stacks/vuejs.svg',
+  },
+  {
+    name: 'Margot Reinier',
+    role: 'Web developer',
+    avatar: '/img/avatars/12.svg',
+    stack: '/img/stacks/reactjs.svg',
+  },
+]
+
+// Datepicker
+const date = ref(new Date())
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="lg:landscape:col-span-8 col-span-12 2xl:landscape:col-span-9">
         <!-- Column -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <!-- Header -->
-          <div class="bg-primary-700 rounded-xl px-6 py-12">
+          <div class="bg-primary-800 rounded-2xl px-6 py-12">
             <div class="flex w-full flex-col items-center gap-y-4 sm:flex-row">
-              <div class="flex flex-1 flex-col px-4">
+              <div class="flex flex-1 flex-col gap-y-2 px-4">
                 <BaseAvatar
-                  src="/img/avatars/2.svg"
+                  src="/img/avatars/10.svg"
                   size="lg"
                   class="border-primary-200/50 ring-primary-200/50 ring-offset-primary-600 mb-3 border ring-2 ring-offset-4"
                 />
                 <BaseHeading
                   as="h2"
-                  size="3xl"
-                  weight="bold"
+                  size="2xl"
+                  weight="semibold"
                   lead="none"
-                  class="ltablet:text-2xl! text-white"
+                  class="text-white"
                 >
-                  <span>Welcome back, Maya.</span>
+                  <span>Welcome back, Kendra.</span>
                 </BaseHeading>
               </div>
               <div class="flex h-full flex-1 flex-col px-4 sm:px-6">
@@ -102,7 +121,7 @@ const items = [
                     src="/img/avatars/5.svg"
                     class="nui-mask nui-mask-blob"
                   />
-                  <BaseButton size="icon-md">
+                  <BaseButton size="icon-md" rounded="lg">
                     <Icon name="lucide:plus" class="size-4" />
                   </BaseButton>
                 </div>
@@ -139,36 +158,39 @@ const items = [
           </div>
           <!-- Feed settings -->
           <div
-            class="flex flex-col items-center justify-between gap-6 sm:flex-row"
+            class="flex flex-col items-center justify-between gap-6 sm:flex-row mb-6"
           >
             <div>
               <BaseHeading
                 as="h3"
                 size="lg"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-muted-100 mb-1"
+                class="text-muted-900 dark:text-muted-100 mb-1"
               >
                 <span>Feed settings</span>
               </BaseHeading>
             </div>
             <div class="flex gap-2 sm:justify-end">
               <BaseButton
-                rounded="lg"
+                rounded="md"
+                size="sm"
                 :variant="activeSetting === 'all' ? 'primary' : 'default'"
                 @click="activeSetting = 'all'"
               >
                 All
               </BaseButton>
               <BaseButton
-                rounded="lg"
+                rounded="md"
+                size="sm"
                 :variant="activeSetting === 'candidates' ? 'primary' : 'default'"
                 @click="activeSetting = 'candidates'"
               >
                 Candidates
               </BaseButton>
               <BaseButton
-                rounded="lg"
+                rounded="md"
+                size="sm"
                 :variant="activeSetting === 'companies' ? 'primary' : 'default'"
                 @click="activeSetting = 'companies'"
               >
@@ -195,13 +217,12 @@ const items = [
                 <BaseParagraph size="xs" lead="tight">
                   <span class="text-muted-500 dark:text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Perge porro; Oratio me istius philosophi non offendit; Duo
-                    Reges: constructio interrete.
+                    Perge porro; Oratio me istius philosophi non offendit.
                   </span>
                 </BaseParagraph>
                 <NuxtLink
                   to="#"
-                  class="text-primary-500 font-sans text-xs underline underline-offset-4"
+                  class="text-primary-600 dark:text-primary-400 font-sans font-medium text-xs underline underline-offset-4"
                 >
                   <span>Learn More</span>
                 </NuxtLink>
@@ -250,9 +271,9 @@ const items = [
                       </BaseTag>
                     </DemoFlexTableCell>
                     <DemoFlexTableCell label="action" :hide-label="index > 0">
-                      <span class="text-primary-500 font-sans text-xs sm:pe-2">
+                      <a href="#" class="text-primary-500 font-sans font-medium hover:underline underline-offset-4 text-xs sm:pe-2">
                         Action
-                      </span>
+                      </a>
                     </DemoFlexTableCell>
                   </template>
                 </DemoFlexTableRow>
@@ -260,14 +281,14 @@ const items = [
             </div>
           </div>
           <!-- Rookies -->
-          <div class="mt-6 flex items-center justify-between gap-6 sm:mt-0">
+          <div class="mt-6 flex items-center justify-between gap-6 sm:mt-4">
             <div>
               <BaseHeading
                 as="h3"
                 size="lg"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-muted-100 mb-1"
+                class="text-muted-900 dark:text-muted-100 mb-1"
               >
                 <span>New rookies</span>
               </BaseHeading>
@@ -284,53 +305,17 @@ const items = [
           <!-- Grid -->
           <div class="grid gap-6 sm:grid-cols-3">
             <!-- Item -->
-            <div class="relative">
+            <div v-for="rookie in rookies" :key="rookie.name" class="relative">
               <BaseCard class="p-6" rounded="lg">
                 <div class="flex flex-col">
-                  <BaseAvatar
-                    size="xl"
-                    src="/img/avatars/5.svg"
-                    badge-src="/img/stacks/js.svg"
-                    alt="Avatar"
-                    class="mx-auto mb-4"
-                  />
-                  <div class="text-center">
-                    <BaseHeading
-                      as="h4"
-                      size="md"
-                      weight="medium"
-                      lead="tight"
-                      class="text-muted-800 dark:text-muted-100"
-                    >
-                      <span>Clarissa Miller</span>
-                    </BaseHeading>
-                    <BaseParagraph size="xs">
-                      <span class="text-muted-400">UI/UX designer</span>
-                    </BaseParagraph>
-                    <div class="mt-3">
-                      <BaseButton
-                        href="/"
-                        rounded="lg"
-                        class="w-full"
-                      >
-                        <span>View Profile</span>
-                      </BaseButton>
-                    </div>
+                  <div class="mx-auto mb-4 flex items-center justify-center">
+                    <BaseAvatar
+                      size="lg"
+                      :src="rookie.avatar"
+                      :badge-src="rookie.stack"
+                      :alt="rookie.name"
+                    />
                   </div>
-                </div>
-              </BaseCard>
-            </div>
-            <!-- Item -->
-            <div class="relative">
-              <BaseCard class="p-6" rounded="lg">
-                <div class="flex flex-col">
-                  <BaseAvatar
-                    size="xl"
-                    src="/img/avatars/16.svg"
-                    badge-src="/img/stacks/vuejs.svg"
-                    alt="Avatar"
-                    class="mx-auto mb-4"
-                  />
                   <div class="text-center">
                     <BaseHeading
                       as="h4"
@@ -339,51 +324,17 @@ const items = [
                       lead="tight"
                       class="text-muted-800 dark:text-muted-100"
                     >
-                      <span>Joshua Stevens</span>
+                      <span>
+                        {{ rookie.name }}
+                      </span>
                     </BaseHeading>
                     <BaseParagraph size="xs">
-                      <span class="text-muted-400">Fullstack developer</span>
+                      <span class="text-muted-400">
+                        {{ rookie.role }}
+                      </span>
                     </BaseParagraph>
                     <div class="mt-3">
                       <BaseButton
-                        href="/"
-                        rounded="lg"
-                        class="w-full"
-                      >
-                        <span>View Profile</span>
-                      </BaseButton>
-                    </div>
-                  </div>
-                </div>
-              </BaseCard>
-            </div>
-            <!-- Item -->
-            <div class="relative">
-              <BaseCard class="p-6" rounded="lg">
-                <div class="flex flex-col">
-                  <BaseAvatar
-                    size="xl"
-                    src="/img/avatars/12.svg"
-                    badge-src="/img/stacks/reactjs.svg"
-                    alt="Avatar"
-                    class="mx-auto mb-4"
-                  />
-                  <div class="text-center">
-                    <BaseHeading
-                      as="h4"
-                      size="md"
-                      weight="medium"
-                      lead="tight"
-                      class="text-muted-800 dark:text-muted-100"
-                    >
-                      <span>Margot Reinier</span>
-                    </BaseHeading>
-                    <BaseParagraph size="xs">
-                      <span class="text-muted-400">Web developer</span>
-                    </BaseParagraph>
-                    <div class="mt-3">
-                      <BaseButton
-                        href="/"
                         rounded="lg"
                         class="w-full"
                       >
@@ -398,51 +349,21 @@ const items = [
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <div class="flex flex-col gap-6">
+      <div class="lg:landscape:col-span-4 col-span-12 2xl:landscape:col-span-3">
+        <div class="flex flex-col gap-4">
           <!-- Widget -->
-          <BaseCard rounded="lg" class="p-6">
+          <BaseCard rounded="lg" class="p-4 md:p-6">
             <div class="flex w-full items-center justify-between">
               <DemoSearchCompact rounded="lg" />
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard rounded="lg" class="p-6">
-            <BaseTabSlider
-              v-slot="{ activeValue }"
-              size="sm"
-              model-value="team"
-              :tabs="[
-                { label: 'Team', value: 'team' },
-                { label: 'Tasks', value: 'tasks' },
-              ]"
-            >
-              <div v-if="activeValue === 'team'">
-                <DemoTeamListCompact actions />
-              </div>
-              <div v-else-if="activeValue === 'tasks'">
-                <DemoTodoListCompact />
-              </div>
-            </BaseTabSlider>
+          <BaseCard rounded="lg" class="p-4 md:p-6">
+            <DemoDaysSquare rounded="lg" />
           </BaseCard>
           <!-- Widget -->
           <BaseCard rounded="lg" class="p-4">
-            <Calendar
-              :attributes="[
-                {
-                  key: 'today',
-                  highlight: true,
-                  order: 0,
-                  dates: [new Date()],
-                },
-              ]"
-              title-position="left"
-              expanded
-              borderless
-              transparent
-              trim-weeks
-              class="max-w-full rounded-xl"
-            />
+            <AddonDatepicker v-model="date" locale="en" label="Start date" />
           </BaseCard>
         </div>
       </div>

@@ -12,11 +12,11 @@
       <BaseHeading
         size="md"
         weight="medium"
-        class="text-muted-800 dark:text-muted-100"
+        class="text-muted-900 dark:text-muted-100"
       >
         <span>Slicer Learning</span>
       </BaseHeading>
-      <BaseParagraph size="xs" class="text-muted-400 mb-2">
+      <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 mb-2">
         <span>Online courses</span>
       </BaseParagraph>
       <BaseParagraph
@@ -39,12 +39,12 @@
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+              class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               864
             </h4>
             <p
-              class="font-sansfont-semibold text-muted-400 text-[0.65rem] uppercase"
+              class="font-sans font-semibold text-muted-400 text-[0.65rem] uppercase"
             >
               Posts
             </p>
@@ -54,7 +54,7 @@
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+              class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               247
             </h4>
@@ -69,12 +69,12 @@
         <div class="flex-1">
           <div class="flex flex-col px-4 text-center">
             <h4
-              class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+              class="text-muted-900 dark:text-muted-100 font-sans text-xl font-semibold"
             >
               19k
             </h4>
             <p
-              class="font-sansfont-semibold text-muted-400 text-[0.65rem] uppercase"
+              class="font-sans font-semibold text-muted-400 text-[0.65rem] uppercase"
             >
               Followers
             </p>
