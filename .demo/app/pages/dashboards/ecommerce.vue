@@ -29,7 +29,6 @@ const gaugePersonal = reactive(useGaugePersonal())
 const barOrders = reactive(useBarOrders())
 
 function useSparkLineOne() {
-  const { primary } = useTailwindColors()
   const height = 60
   const type = 'line'
 
@@ -71,7 +70,7 @@ function useSparkLineOne() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
   } as const
 
   const series = shallowRef([
@@ -85,7 +84,6 @@ function useSparkLineOne() {
 }
 
 function useSparkLineTwo() {
-  const { success } = useTailwindColors()
   const type = 'line'
   const height = 60
 
@@ -130,7 +128,7 @@ function useSparkLineTwo() {
         formatter: asKDollar,
       },
     },
-    colors: [success.value],
+    colors: ['var(--color-success-500)'],
   } as const
 
   const series = shallowRef([
@@ -144,7 +142,6 @@ function useSparkLineTwo() {
 }
 
 function useSparkLineThree() {
-  const { info } = useTailwindColors()
   const height = 60
   const type = 'line'
 
@@ -180,7 +177,7 @@ function useSparkLineThree() {
         show: false,
       },
     },
-    colors: [info.value],
+    colors: ['var(--color-info-500)'],
     xaxis: {
       crosshairs: {
         width: 1,
@@ -205,7 +202,6 @@ function useSparkLineThree() {
 }
 
 function useSparkLineFour() {
-  const { danger } = useTailwindColors()
   const type = 'line'
   const height = 60
 
@@ -241,7 +237,7 @@ function useSparkLineFour() {
         show: false,
       },
     },
-    colors: [danger.value],
+    colors: ['var(--color-destructive-500)'],
     xaxis: {
       crosshairs: {
         width: 1,
@@ -266,9 +262,8 @@ function useSparkLineFour() {
 }
 
 function useAreaCustomers() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'area'
-  const height = 258
+  const height = 280
 
   const options = {
     chart: {
@@ -276,14 +271,14 @@ function useAreaCustomers() {
         show: false,
       },
     },
-    colors: [primary.value, info.value, success.value],
+    colors: ['var(--color-chart-base)', 'var(--color-indigo-500)', 'var(--color-primary-400)'],
     title: {
       show: false,
       text: undefined,
       align: 'left',
     },
     legend: {
-      show: true,
+      show: false,
       position: 'top',
     },
     dataLabels: {
@@ -292,6 +287,17 @@ function useAreaCustomers() {
     stroke: {
       width: [2, 2, 2],
       curve: 'smooth',
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.1,
+      },
     },
     xaxis: {
       type: 'datetime',
@@ -336,7 +342,6 @@ function useAreaCustomers() {
 }
 
 function useRadialSalesRevenue() {
-  const { primary } = useTailwindColors()
   const type = 'radialBar'
   const height = 155
 
@@ -346,7 +351,7 @@ function useRadialSalesRevenue() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         hollow: {
@@ -357,14 +362,14 @@ function useRadialSalesRevenue() {
           name: {
             show: false,
             fontSize: '12px',
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'Inter, sans-serif',
             fontWeight: 400,
             offsetY: 5,
           },
           value: {
             show: true,
             fontWeight: 600,
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'Inter, sans-serif',
             fontSize: '16px',
             offsetY: 5,
           },
@@ -385,24 +390,22 @@ function useRadialSalesRevenue() {
 }
 
 function useRadialSmallOne() {
-  const { primary } = useTailwindColors()
   const type = 'radialBar'
-  const height = 100
+  const height = 75
 
   const options = {
     chart: {
-      height: 100,
       type: 'radialBar',
       offsetY: -10,
       toolbar: {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         hollow: {
-          size: '35%',
+          size: '50%',
         },
         dataLabels: {
           show: false,
@@ -423,24 +426,22 @@ function useRadialSmallOne() {
 }
 
 function useRadialSmallTwo() {
-  const { success } = useTailwindColors()
   const type = 'radialBar'
-  const height = 100
+  const height = 75
 
   const options = {
     chart: {
-      height: 100,
       type: 'radialBar',
       offsetY: -10,
       toolbar: {
         show: false,
       },
     },
-    colors: [success.value],
+    colors: ['var(--color-success-500)'],
     plotOptions: {
       radialBar: {
         hollow: {
-          size: '35%',
+          size: '50%',
         },
         dataLabels: {
           show: false,
@@ -461,24 +462,22 @@ function useRadialSmallTwo() {
 }
 
 function useRadialSmallThree() {
-  const { danger } = useTailwindColors()
   const type = 'radialBar'
-  const height = 100
+  const height = 75
 
   const options = {
     chart: {
-      height: 100,
       type: 'radialBar',
       offsetY: -10,
       toolbar: {
         show: false,
       },
     },
-    colors: [danger.value],
+    colors: ['var(--color-destructive-500)'],
     plotOptions: {
       radialBar: {
         hollow: {
-          size: '35%',
+          size: '50%',
         },
         dataLabels: {
           show: false,
@@ -548,17 +547,6 @@ function useGaugePersonal() {
         },
       },
     },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        shadeIntensity: 0.1,
-        inverseColors: false,
-        opacityFrom: 1,
-        opacityTo: 1,
-        stops: [0, 50, 53, 91],
-      },
-    },
     labels: ['Average Results'],
   }
 
@@ -573,7 +561,6 @@ function useGaugePersonal() {
 }
 
 function useBarOrders() {
-  const { primary, success } = useTailwindColors()
   const type = 'bar'
   const height = 210
 
@@ -585,7 +572,7 @@ function useBarOrders() {
         show: false,
       },
     },
-    colors: [primary.value, success.value],
+    colors: ['var(--color-chart-base)', 'var(--color-indigo-500)'],
     dataLabels: {
       enabled: false,
     },
@@ -731,28 +718,31 @@ function useBarOrders() {
     options,
   }
 }
+
+// Datepicker
+const date = ref(new Date())
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20 overflow-hidden">
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
         class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
-        <BaseAvatar src="/img/avatars/2.svg" size="lg" />
+        <BaseAvatar src="/img/avatars/10.svg" size="lg" />
         <div>
           <BaseHeading
             as="h2"
             size="xl"
-            weight="light"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
-            <span>Welcome back, Maya</span>
+            <span>Welcome back, Kendra</span>
           </BaseHeading>
-          <BaseParagraph>
-            <span class="text-muted-500 dark:text-muted-400">
+          <BaseParagraph size="sm">
+            <span class="text-muted-600 dark:text-muted-400">
               Happy to see you again on your dashboard.
             </span>
           </BaseParagraph>
@@ -761,150 +751,158 @@ function useBarOrders() {
       <div
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
-        <BaseButton>
+        <BaseButton rounded="md">
           <span>View Reports</span>
         </BaseButton>
-        <BaseButton variant="primary">
+        <BaseButton rounded="md" variant="primary">
           <span>Manage Store</span>
         </BaseButton>
       </div>
     </div>
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Tile -->
-      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
-        <BaseCard class="p-6">
+      <div class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3">
+        <BaseCard rounded="md" class="p-4">
           <div class="flex items-center justify-between">
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              lead="tight"
-              class="text-muted-400 mb-1"
-            >
-              <span>Sales</span>
-            </BaseHeading>
-            <Icon
-              name="ph:shopping-cart-duotone"
-              class="text-primary-500 size-7"
-            />
-          </div>
-          <div class="flex items-center justify-between gap-6 pt-4">
-            <div class="grow">
-              <span
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+            <div>
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="medium"
+                lead="tight"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                <span>Sales</span>
+              </BaseHeading>
+              <BaseText
+                size="xl"
+                weight="semibold"
+                class="text-muted-900 dark:text-muted-100"
               >
                 641.4k
-              </span>
+              </BaseText>
             </div>
-            <div class="grow">
-              <AddonApexcharts v-bind="sparkLineOne" />
-            </div>
+            <Icon
+              name="solar:cart-large-2-bold-duotone"
+              class="text-primary-500 size-8"
+            />
+          </div>
+          <div class="pt-4">
+            <AddonApexcharts v-bind="sparkLineOne" />
           </div>
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
-        <BaseCard class="p-6">
+      <div class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3">
+        <BaseCard rounded="md" class="p-4">
           <div class="flex items-center justify-between">
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              lead="tight"
-              class="text-muted-400 mb-1"
-            >
-              <span>Income</span>
-            </BaseHeading>
-            <Icon name="ph:money-duotone" class="text-success-500 size-7" />
-          </div>
-          <div class="flex items-center justify-between gap-6 pt-4">
-            <div class="grow">
-              <span
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+            <div>
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="medium"
+                lead="tight"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                <span>Income</span>
+              </BaseHeading>
+              <BaseText
+                size="xl"
+                weight="semibold"
+                class="text-muted-900 dark:text-muted-100"
               >
                 $389.9k
-              </span>
+              </BaseText>
             </div>
-            <div class="grow">
-              <AddonApexcharts v-bind="sparkLineTwo" />
-            </div>
+            <Icon
+              name="solar:banknote-bold-duotone"
+              class="text-success-500 size-8"
+            />
+          </div>
+          <div class="pt-4">
+            <AddonApexcharts v-bind="sparkLineTwo" />
           </div>
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
-        <BaseCard class="p-6">
+      <div class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3">
+        <BaseCard rounded="md" class="p-4">
           <div class="flex items-center justify-between">
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              lead="tight"
-              class="text-muted-400 mb-1"
-            >
-              <span>Orders</span>
-            </BaseHeading>
-            <Icon name="ph:package-duotone" class="text-info-500 size-7" />
-          </div>
-          <div class="flex items-center justify-between gap-6 pt-4">
-            <div class="grow">
-              <span
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+            <div>
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="medium"
+                lead="tight"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                <span>Orders</span>
+              </BaseHeading>
+              <BaseText
+                size="xl"
+                weight="semibold"
+                class="text-muted-900 dark:text-muted-100"
               >
                 981
-              </span>
+              </BaseText>
             </div>
-            <div class="grow">
-              <AddonApexcharts v-bind="sparkLineThree" />
-            </div>
+            <Icon
+              name="solar:box-bold-duotone"
+              class="text-info-500 size-8"
+            />
+          </div>
+          <div class="pt-4">
+            <AddonApexcharts v-bind="sparkLineThree" />
           </div>
         </BaseCard>
       </div>
       <!-- Tile -->
-      <div class="ptablet:col-span-6 col-span-12 sm:col-span-3">
-        <BaseCard class="p-6">
+      <div class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3">
+        <BaseCard rounded="md" class="p-4">
           <div class="flex items-center justify-between">
-            <BaseHeading
-              as="h4"
-              size="sm"
-              weight="medium"
-              lead="tight"
-              class="text-muted-400 mb-1"
-            >
-              <span>Abandonned</span>
-            </BaseHeading>
-            <Icon name="ph:timer-duotone" class="text-destructive-500 size-7" />
-          </div>
-          <div class="flex items-center justify-between gap-6 pt-4">
-            <div class="grow">
-              <span
-                class="text-muted-800 dark:text-muted-100 font-sans text-xl font-semibold"
+            <div>
+              <BaseHeading
+                as="h4"
+                size="sm"
+                weight="medium"
+                lead="tight"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                <span>Abandonned</span>
+              </BaseHeading>
+              <BaseText
+                size="xl"
+                weight="semibold"
+                class="text-muted-900 dark:text-muted-100"
               >
                 43
-              </span>
+              </BaseText>
             </div>
-            <div class="grow">
-              <AddonApexcharts v-bind="sparkLineFour" />
-            </div>
+            <Icon
+              name="solar:cart-cross-bold-duotone"
+              class="text-destructive-500 size-8"
+            />
+          </div>
+          <div class="pt-4">
+            <AddonApexcharts v-bind="sparkLineFour" />
           </div>
         </BaseCard>
       </div>
       <!-- Chart -->
-      <div class="relative col-span-12 md:col-span-7">
-        <BaseCard class="p-6">
+      <div class="relative col-span-12 xl:landscape:col-span-6 2xl:landscape:col-span-7">
+        <BaseCard rounded="md" class="p-4 md:p-6 flex flex-col h-full">
           <div class="mb-2 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
-              weight="semibold"
+              weight="medium"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-900 dark:text-white"
             >
               <span>Revenue Overview</span>
             </BaseHeading>
             <BaseButton
-              variant="primary"
               size="sm"
               rounded="md"
             >
@@ -913,34 +911,36 @@ function useBarOrders() {
           </div>
           <div class="flex gap-8">
             <div>
-              <span class="text-muted-400 font-sans text-xs">This month</span>
-              <p class="text-primary-500 font-sans text-lg font-medium">
+              <span class="text-muted-600 dark:text-muted-400 font-sans text-xs">This month</span>
+              <p class="text-muted-900 dark:text-muted-100 font-sans text-lg font-medium">
                 $75,689
               </p>
             </div>
             <div>
-              <span class="text-muted-400 font-sans text-xs">Last month</span>
+              <span class="text-muted-600 dark:text-muted-400 font-sans text-xs">Last month</span>
               <p
-                class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"
+                class="text-muted-900 dark:text-muted-100 font-sans text-lg font-medium"
               >
                 $59,724
               </p>
             </div>
             <div>
-              <span class="text-muted-400 font-sans text-xs">Average</span>
+              <span class="text-muted-600 dark:text-muted-400 font-sans text-xs">Average</span>
               <p
-                class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"
+                class="text-muted-900 dark:text-muted-100 font-sans text-lg font-medium"
               >
                 $66,561
               </p>
             </div>
           </div>
-          <AddonApexcharts v-bind="areaCustomers" />
+          <div class="mt-auto">
+            <AddonApexcharts v-bind="areaCustomers" />
+          </div>
         </BaseCard>
       </div>
       <!-- Column -->
-      <div class="relative col-span-12 md:col-span-5">
-        <div class="flex h-full flex-col gap-6">
+      <div class="relative col-span-12 xl:landscape:col-span-6 2xl:landscape:col-span-5">
+        <div class="flex h-full flex-col gap-4">
           <!-- Chart -->
           <BaseCard class="flex-1 p-6">
             <div class="flex items-center justify-center">
@@ -948,23 +948,23 @@ function useBarOrders() {
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="semibold"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 mb-4 dark:text-white"
+                  class="text-muted-900 mb-4 dark:text-white"
                 >
                   <span>Sales Revenue</span>
                 </BaseHeading>
                 <BaseHeading
                   as="h4"
                   size="lg"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 mb-2 dark:text-white"
+                  class="text-muted-900 mb-2 dark:text-white"
                 >
                   <span>$8,641.26</span>
                 </BaseHeading>
                 <BaseParagraph size="xs">
-                  <span class="text-muted-400">
+                  <span class="text-muted-600 dark:text-muted-400">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Bonum integritas corporis.
                   </span>
@@ -976,20 +976,20 @@ function useBarOrders() {
             </div>
           </BaseCard>
           <!-- Charts -->
-          <BaseCard class="flex-1 p-6">
+          <BaseCard rounded="md" class="flex-1 p-6">
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>Additional Stats</span>
               </BaseHeading>
             </div>
-            <div class="flex justify-between gap-2">
-              <div class="flex flex-1 flex-col gap-2 text-center">
+            <div class="flex justify-between">
+              <div class="flex flex-col gap-2 text-center w-1/3">
                 <AddonApexcharts v-bind="radialSmallOne" />
                 <div class="-mt-6">
                   <BaseHeading
@@ -1002,11 +1002,11 @@ function useBarOrders() {
                     <span>278</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">New Deals</span>
+                    <span class="text-muted-600 dark:text-muted-400">New Deals</span>
                   </BaseParagraph>
                 </div>
               </div>
-              <div class="flex flex-1 flex-col gap-2 text-center">
+              <div class="flex flex-col gap-2 text-center w-1/3">
                 <AddonApexcharts v-bind="radialSmallTwo" />
                 <div class="-mt-6">
                   <BaseHeading
@@ -1019,11 +1019,11 @@ function useBarOrders() {
                     <span>1,519</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">Proposals</span>
+                    <span class="text-muted-600 dark:text-muted-400">Proposals</span>
                   </BaseParagraph>
                 </div>
               </div>
-              <div class="flex flex-1 flex-col gap-2 text-center">
+              <div class="flex flex-col gap-2 text-center w-1/3">
                 <AddonApexcharts v-bind="radialSmallThree" />
                 <div class="-mt-6">
                   <BaseHeading
@@ -1036,7 +1036,7 @@ function useBarOrders() {
                     <span>3,214</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">Closed deals</span>
+                    <span class="text-muted-600 dark:text-muted-400">Closed deals</span>
                   </BaseParagraph>
                 </div>
               </div>
@@ -1046,16 +1046,16 @@ function useBarOrders() {
       </div>
       <!-- Column -->
       <div
-        class="ltablet:col-span-4 relative col-span-12 md:col-span-6 lg:col-span-3"
+        class="lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
       >
-        <BaseCard class="flex flex-col p-6">
+        <BaseCard rounded="md" class="flex flex-col p-4 md:p-6">
           <div class="mb-6 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
-              weight="semibold"
+              weight="medium"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-900 dark:text-white"
             >
               <span>Personal Score</span>
             </BaseHeading>
@@ -1065,7 +1065,7 @@ function useBarOrders() {
           </div>
           <div class="mt-auto text-center">
             <BaseParagraph size="sm">
-              <span class="text-muted-400">
+              <span class="text-muted-500 dark:text-muted-400">
                 Your score has been calculated based on the latest metrics
               </span>
             </BaseParagraph>
@@ -1074,16 +1074,16 @@ function useBarOrders() {
       </div>
       <!-- Column -->
       <div
-        class="ltablet:col-span-4 relative col-span-12 md:col-span-6 lg:col-span-6"
+        class="lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-6"
       >
-        <BaseCard class="relative p-6">
+        <BaseCard rounded="md" class="relative p-4 md:p-6">
           <div class="mb-6">
             <BaseHeading
               as="h3"
               size="md"
-              weight="semibold"
+              weight="medium"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-900 dark:text-white"
             >
               <span>Orders Summary</span>
             </BaseHeading>
@@ -1093,26 +1093,11 @@ function useBarOrders() {
       </div>
       <!-- Column -->
       <div
-        class="ltablet:col-span-4 relative col-span-12 md:col-span-6 lg:col-span-3"
+        class="lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
       >
         <!-- Calendar -->
-        <BaseCard class="p-2">
-          <Calendar
-            :attributes="[
-              {
-                key: 'today',
-                highlight: true,
-                order: 0,
-                dates: [new Date()],
-              },
-            ]"
-            title-position="left"
-            expanded
-            borderless
-            transparent
-            trim-weeks
-            class="max-w-full rounded-md"
-          />
+        <BaseCard rounded="md" class="p-2">
+          <AddonDatepicker v-model="date" locale="en" label="Start date" />
         </BaseCard>
       </div>
     </div>

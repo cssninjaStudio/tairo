@@ -1,8 +1,8 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Influencer',
+  title: 'Content creator',
   preview: {
-    title: 'Influencer dashboard',
+    title: 'Content creator dashboard',
     description: 'For social media influencers',
     categories: ['dashboards'],
     src: '/img/screens/dashboards-influencer.png',
@@ -10,6 +10,159 @@ definePageMeta({
     order: 15,
   },
 })
+
+const instagramStats = [
+  {
+    label: 'Content Posts (30 days)',
+    action: 'posst published',
+    value: 119,
+    growth: -4.5,
+    growthText: 'less than usual',
+    icon: 'ri:instagram-fill',
+  },
+  {
+    label: 'Followers',
+    action: 'following you',
+    value: 14300,
+    growth: 9.2,
+    growthText: 'follower growth',
+    icon: 'solar:users-group-rounded-bold-duotone',
+  },
+  {
+    label: 'Following',
+    action: 'followed by you',
+    value: 224,
+    growth: 1.1,
+    growthText: 'more than usual',
+    icon: 'solar:user-speak-bold-duotone',
+  },
+  {
+    label: 'Likes (30 days)',
+    action: 'likes of your content',
+    value: 129700,
+    growth: 25.7,
+    growthText: 'engagement growth',
+    icon: 'solar:heart-pulse-2-bold-duotone',
+  },
+  {
+    label: 'Comments (30 days)',
+    action: 'comments published',
+    value: 5200,
+    growth: 11.3,
+    growthText: 'engagement growth',
+    icon: 'solar:chat-line-bold-duotone',
+  },
+  {
+    label: 'Profile views (30 days)',
+    action: 'views of profile',
+    value: 12700,
+    growth: 8.5,
+    growthText: 'engagement growth',
+    icon: 'solar:mention-square-bold-duotone',
+  },
+]
+
+const tiktokStats = [
+  {
+    label: 'Content Posts (30 days)',
+    action: 'posts published',
+    value: 248,
+    growth: 15.5,
+    growthText: 'more than usual',
+    icon: 'fa6-brands:tiktok',
+  },
+  {
+    label: 'Followers',
+    action: 'following you',
+    value: 5700,
+    growth: 17.2,
+    growthText: 'follower growth',
+    icon: 'ph:users-four-duotone',
+  },
+  {
+    label: 'Following',
+    action: 'followed by you',
+    value: 29,
+    growth: 0.3,
+    growthText: 'more than usual',
+    icon: 'ph:users-three-duotone',
+  },
+  {
+    label: 'Likes (30 days)',
+    action: 'likes of your content',
+    value: 80400,
+    growth: 65.7,
+    growthText: 'engagement growth',
+    icon: 'ph:heart-duotone',
+  },
+  {
+    label: 'Comments (30 days)',
+    action: 'comments published',
+    value: 22800,
+    growth: 49.3,
+    growthText: 'engagement growth',
+    icon: 'ph:chat-circle-duotone',
+  },
+  {
+    label: 'Profile views (30 days)',
+    action: 'views of profile',
+    value: 48300,
+    growth: 8.5,
+    growthText: 'engagement growth',
+    icon: 'ph:user-duotone',
+  },
+]
+
+const twitchStats = [
+  {
+    label: 'Content Posts (30 days)',
+    action: 'posts published',
+    value: 248,
+    growth: 15.5,
+    growthText: 'more than usual',
+    icon: 'fa6-brands:twitch',
+  },
+  {
+    label: 'Followers',
+    action: 'following you',
+    value: 5700,
+    growth: 17.2,
+    growthText: 'follower growth',
+    icon: 'solar:users-group-rounded-bold-duotone',
+  },
+  {
+    label: 'Following',
+    action: 'followed by you',
+    value: 29,
+    growth: 0.3,
+    growthText: 'more than usual',
+    icon: 'solar:user-speak-bold-duotone',
+  },
+  {
+    label: 'Likes (30 days)',
+    action: 'likes of your content',
+    value: 80400,
+    growth: 65.7,
+    growthText: 'engagement growth',
+    icon: 'solar:heart-pulse-2-bold-duotone',
+  },
+  {
+    label: 'Comments (30 days)',
+    action: 'comments published',
+    value: 22800,
+    growth: 49.3,
+    growthText: 'engagement growth',
+    icon: 'solar:chat-line-bold-duotone',
+  },
+  {
+    label: 'Profile views (30 days)',
+    action: 'views of profile',
+    value: 48300,
+    growth: 8.5,
+    growthText: 'engagement growth',
+    icon: 'solar:mention-square-bold-duotone',
+  },
+]
 
 const companies = [
   {
@@ -290,14 +443,10 @@ const activeTab = ref('tab-1')
 </script>
 
 <template>
-  <div>
-    <!-- Header bg -->
-    <div
-      class="ltablet:h-[410px] dark:bg-muted-800 absolute start-0 top-0 h-[620px] w-full bg-white lg:h-[410px]"
-    />
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div
-      class="ltablet:h-64 ltablet:flex-row relative flex h-[490px] w-full flex-col lg:h-64 lg:flex-row"
+      class="ltablet:flex-row relative flex w-full flex-col lg:flex-row p-6 lg:p-8 2xl:p-10 bg-muted-200/80 dark:bg-muted-950 rounded-2xl"
     >
       <div
         class="ltablet:flex-row relative z-10 flex w-full flex-col gap-6 lg:flex-row"
@@ -305,7 +454,7 @@ const activeTab = ref('tab-1')
         <BaseAvatar
           src="/img/avatars/5.svg"
           badge-src="/img/icons/flags/united-states-of-america.svg"
-          size="3xl"
+          size="2xl"
           alt="avatar"
           class="ltablet:mx-0 mx-auto lg:mx-0"
         />
@@ -416,13 +565,16 @@ const activeTab = ref('tab-1')
           <span>Add Account</span>
         </BaseButton>
       </div>
+    </div>
+    <!-- Dashboard content -->
+    <div class="w-full">
       <!-- Tabs -->
       <div
-        class="ltablet:bottom-[-70px] absolute bottom-[-48px] start-0 flex items-end gap-2 lg:bottom-[-70px]"
+        class="flex items-end gap-x-8 my-6"
       >
         <button
           type="button"
-          class="inline-flex items-center justify-center border-b-2 px-4 py-3 font-sans text-sm"
+          class="inline-flex items-center justify-center border-b-2 py-3 font-sans text-sm"
           :class="
             activeTab === 'tab-1'
               ? 'border-primary-500 text-muted-800 dark:text-muted-100'
@@ -434,7 +586,7 @@ const activeTab = ref('tab-1')
         </button>
         <button
           type="button"
-          class="inline-flex items-center justify-center border-b-2 px-4 py-3 font-sans text-sm"
+          class="inline-flex items-center justify-center border-b-2 py-3 font-sans text-sm"
           :class="
             activeTab === 'tab-2'
               ? 'border-primary-500 text-muted-800 dark:text-muted-100'
@@ -445,11 +597,8 @@ const activeTab = ref('tab-1')
           <span>Companies</span>
         </button>
       </div>
-    </div>
-    <!-- Dashboard content -->
-    <div class="w-full">
       <!-- Tab content -->
-      <div v-if="activeTab === 'tab-1'" class="mt-28">
+      <div v-if="activeTab === 'tab-1'" class="relative">
         <!-- Groups -->
         <div class="space-y-16">
           <!-- Group -->
@@ -464,286 +613,76 @@ const activeTab = ref('tab-1')
                   lead="tight"
                   class="mb-2"
                 >
-                  <span class="text-muted-800 dark:text-muted-100">
+                  <span class="text-muted-900 dark:text-muted-100">
                     Instagram stats
                   </span>
                 </BaseHeading>
                 <BaseParagraph
                   size="sm"
-                  class="text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 max-w-sm"
                 >
-                  <span>Lorem ipsum sit dolor amet is a dummy text</span>
+                  <span>
+                    The following stats are based on the last 30 days of your
+                    Instagram account
+                  </span>
                 </BaseParagraph>
               </div>
               <div class="shrink-0">
-                <Icon
-                  name="logos:instagram"
-                  class="w-24 text-3xl dark:invert"
-                />
+                <BaseButton rounded="md">
+                  Manage
+                </BaseButton>
               </div>
             </div>
             <!-- Grid -->
-            <div class="grid grid-cols-12 gap-6">
+            <div class="grid grid-cols-12 gap-4">
               <!-- Grid item -->
               <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
+                v-for="stat in instagramStats"
+                :key="stat.label"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-3"
               >
-                <BaseCard class="p-6">
+                <BaseCard rounded="md" class="p-4">
                   <div class="flex items-center justify-between">
                     <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
+                      size="xs"
+                      weight="medium"
+                      class="text-muted-600 dark:text-muted-400"
                     >
-                      <span>Content Posts (30 days)</span>
+                      <span>{{ stat.label }}</span>
                     </BaseParagraph>
                     <BaseIconBox
-                      size="md"
-                      class="bg-pink-500/20 text-pink-500"
+                      size="sm"
+                      class="bg-muted-200 dark:bg-muted-800 text-muted-500 dark:text-muted-100"
                       variant="none"
+                      rounded="none"
+                      mask="blob"
                     >
-                      <Icon name="ri:instagram-fill" class="size-6" />
+                      <Icon :name="stat.icon" class="size-5" />
                     </BaseIconBox>
                   </div>
-                  <div class="pb-6 pt-4">
+                  <div class="pb-4 pt-2">
                     <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-semibold leading-none"
                     >
-                      119
+                      {{ stat.value }}
                       <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
+                        class="text-muted-500 dark:text-muted-400 text-xs font-medium"
                       >
-                        posts published
+                        {{ stat.action }}
                       </small>
                     </span>
                   </div>
                   <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="text-destructive-500 flex items-center font-semibold"
+                      class="text-sm flex items-center font-semibold"
+                      :class="stat.growth < 0 ? 'text-destructive-500' : 'text-success-500'"
                     >
-                      <Icon name="lucide:arrow-down-right" class="size-4" />
-                      <span>-4.5%</span>
+                      <Icon v-if="stat.growth < 0" name="lucide:arrow-down-right" class="size-4" />
+                      <Icon v-else name="lucide:arrow-up-right" class="size-4" />
+                      <span>{{ stat.growth > 0 ? '+' : '' }}{{ stat.growth }}%</span>
                     </div>
-                    <span class="text-muted-400 text-sm">less than usual</span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Followers</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-primary-500/20 text-primary-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:users-four-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      14.3k
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        following you
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+9.2%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">follower growth</span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Following</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-emerald-500/20 text-emerald-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:users-three-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      224
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        followed by you
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+1.1%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">more than usual</span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Likes (30 days)</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-pink-500/20 text-pink-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:heart-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      129.7k
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        likes of your content
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+25.7%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">
-                      engagement growth
-                    </span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Comments (30 days)</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-yellow-500/20 text-yellow-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:chat-circle-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      5.2k
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        comments published
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+11.3%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">
-                      engagement growth
-                    </span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Profile views (30 days)</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-lime-500/20 text-lime-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:user-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      12.7k
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        views of profile
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+8.5%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">
-                      engagement growth
+                    <span class="text-muted-400 text-xs">
+                      {{ stat.growthText }}
                     </span>
                   </div>
                 </BaseCard>
@@ -762,283 +701,164 @@ const activeTab = ref('tab-1')
                   lead="tight"
                   class="mb-2"
                 >
-                  <span class="text-muted-800 dark:text-muted-100">
+                  <span class="text-muted-900 dark:text-muted-100">
                     Tik Tok stats
                   </span>
                 </BaseHeading>
                 <BaseParagraph
                   size="sm"
-                  class="text-muted-500 dark:text-muted-400"
+                  class="text-muted-500 dark:text-muted-400 max-w-sm"
                 >
-                  <span>Lorem ipsum sit dolor amet is a dummy text</span>
+                  <span>
+                    The following stats are based on the last 30 days of your
+                    Tik Tok account
+                  </span>
                 </BaseParagraph>
               </div>
               <div class="shrink-0">
-                <Icon name="logos:tiktok" class="w-24 text-3xl dark:invert" />
+                <BaseButton rounded="md">
+                  Manage
+                </BaseButton>
               </div>
             </div>
             <!-- Grid -->
-            <div class="grid grid-cols-12 gap-6">
+            <div class="grid grid-cols-12 gap-4">
               <!-- Grid item -->
               <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
+                v-for="stat in tiktokStats"
+                :key="stat.label"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-3"
               >
-                <BaseCard class="p-6">
+                <BaseCard rounded="md" class="p-4">
                   <div class="flex items-center justify-between">
                     <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
+                      size="xs"
+                      weight="medium"
+                      class="text-muted-600 dark:text-muted-400"
                     >
-                      <span>Content Posts (30 days)</span>
+                      <span>{{ stat.label }}</span>
                     </BaseParagraph>
                     <BaseIconBox
-                      size="md"
-                      class="bg-sky-500/20 text-sky-500"
+                      size="sm"
+                      class="bg-muted-200 dark:bg-muted-800 text-muted-500 dark:text-muted-100"
                       variant="none"
+                      rounded="none"
+                      mask="blob"
                     >
-                      <Icon name="fa6-brands:tiktok" class="size-6" />
+                      <Icon :name="stat.icon" class="size-5" />
                     </BaseIconBox>
                   </div>
-                  <div class="pb-6 pt-4">
+                  <div class="pb-4 pt-2">
                     <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-semibold leading-none"
                     >
-                      248
+                      {{ stat.value }}
                       <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
+                        class="text-muted-500 dark:text-muted-400 text-xs font-medium"
                       >
-                        posts published
+                        {{ stat.action }}
                       </small>
                     </span>
                   </div>
                   <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="text-success-500 flex items-center font-semibold"
+                      class="text-sm flex items-center font-semibold"
+                      :class="stat.growth < 0 ? 'text-destructive-500' : 'text-success-500'"
                     >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+15.5%</span>
+                      <Icon v-if="stat.growth < 0" name="lucide:arrow-down-right" class="size-4" />
+                      <Icon v-else name="lucide:arrow-up-right" class="size-4" />
+                      <span>{{ stat.growth > 0 ? '+' : '' }}{{ stat.growth }}%</span>
                     </div>
-                    <span class="text-muted-400 text-sm">more than usual</span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Followers</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-primary-500/20 text-primary-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:users-four-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      5.7k
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        following you
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+17.2%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">follower growth</span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Following</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-emerald-500/20 text-emerald-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:users-three-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      29
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        followed by you
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+0.3%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">more than usual</span>
-                  </div>
-                </BaseCard>
-              </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Likes (30 days)</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-pink-500/20 text-pink-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:heart-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      80.4k
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        likes of your content
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+65.7%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">
-                      engagement growth
+                    <span class="text-muted-400 text-xs">
+                      {{ stat.growthText }}
                     </span>
                   </div>
                 </BaseCard>
               </div>
-              <!-- Grid item -->
-              <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
-              >
-                <BaseCard class="p-6">
-                  <div class="flex items-center justify-between">
-                    <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      <span>Comments (30 days)</span>
-                    </BaseParagraph>
-                    <BaseIconBox
-                      size="md"
-                      class="bg-yellow-500/20 text-yellow-500"
-                      variant="none"
-                    >
-                      <Icon name="ph:chat-circle-duotone" class="size-6" />
-                    </BaseIconBox>
-                  </div>
-                  <div class="pb-6 pt-4">
-                    <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
-                    >
-                      22.8k
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
-                      >
-                        comments published
-                      </small>
-                    </span>
-                  </div>
-                  <div class="mb-2 flex items-center gap-2 font-sans">
-                    <div
-                      class="text-success-500 flex items-center font-semibold"
-                    >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+49.3%</span>
-                    </div>
-                    <span class="text-muted-400 text-sm">
-                      engagement growth
-                    </span>
-                  </div>
-                </BaseCard>
+            </div>
+          </div>
+          <!-- Group -->
+          <div>
+            <!-- Title -->
+            <div class="mb-6 flex w-full items-center justify-between">
+              <div class="hidden sm:block">
+                <BaseHeading
+                  as="h3"
+                  size="lg"
+                  weight="medium"
+                  lead="tight"
+                  class="mb-2"
+                >
+                  <span class="text-muted-900 dark:text-muted-100">
+                    Twitch stats
+                  </span>
+                </BaseHeading>
+                <BaseParagraph
+                  size="sm"
+                  class="text-muted-500 dark:text-muted-400 max-w-sm"
+                >
+                  <span>
+                    The following stats are based on the last 30 days of your
+                    Twitch account
+                  </span>
+                </BaseParagraph>
               </div>
+              <div class="shrink-0">
+                <BaseButton rounded="md">
+                  Manage
+                </BaseButton>
+              </div>
+            </div>
+            <!-- Grid -->
+            <div class="grid grid-cols-12 gap-4">
               <!-- Grid item -->
               <div
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-4"
+                v-for="stat in twitchStats"
+                :key="stat.label"
+                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-3"
               >
-                <BaseCard class="p-6">
+                <BaseCard rounded="md" class="p-4">
                   <div class="flex items-center justify-between">
                     <BaseParagraph
-                      size="md"
-                      class="text-muted-500 dark:text-muted-400"
+                      size="xs"
+                      weight="medium"
+                      class="text-muted-600 dark:text-muted-400"
                     >
-                      <span>Profile views (30 days)</span>
+                      <span>{{ stat.label }}</span>
                     </BaseParagraph>
                     <BaseIconBox
-                      size="md"
-                      class="bg-lime-500/20 text-lime-500"
+                      size="sm"
+                      class="bg-muted-200 dark:bg-muted-800 text-muted-500 dark:text-muted-100"
                       variant="none"
+                      rounded="none"
+                      mask="blob"
                     >
-                      <Icon name="ph:user-duotone" class="size-6" />
+                      <Icon :name="stat.icon" class="size-5" />
                     </BaseIconBox>
                   </div>
-                  <div class="pb-6 pt-4">
+                  <div class="pb-4 pt-2">
                     <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-4xl font-semibold leading-none"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-semibold leading-none"
                     >
-                      48.3k
+                      {{ stat.value }}
                       <small
-                        class="text-muted-500 dark:text-muted-400 text-sm font-medium"
+                        class="text-muted-500 dark:text-muted-400 text-xs font-medium"
                       >
-                        views of profile
+                        {{ stat.action }}
                       </small>
                     </span>
                   </div>
                   <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
-                      class="text-success-500 flex items-center font-semibold"
+                      class="text-sm flex items-center font-semibold"
+                      :class="stat.growth < 0 ? 'text-destructive-500' : 'text-success-500'"
                     >
-                      <Icon name="lucide:arrow-up-right" class="size-4" />
-                      <span>+34.2%</span>
+                      <Icon v-if="stat.growth < 0" name="lucide:arrow-down-right" class="size-4" />
+                      <Icon v-else name="lucide:arrow-up-right" class="size-4" />
+                      <span>{{ stat.growth > 0 ? '+' : '' }}{{ stat.growth }}%</span>
                     </div>
-                    <span class="text-muted-400 text-sm">
-                      engagement growth
+                    <span class="text-muted-400 text-xs">
+                      {{ stat.growthText }}
                     </span>
                   </div>
                 </BaseCard>

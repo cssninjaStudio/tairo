@@ -14,6 +14,8 @@
 
   --color-chart-base: var(--color-primary-600);
   --color-chart-gradient: var(--color-white);
+  --color-chart-title: var(--color-muted-600);
+  --color-chart-subtitle: var(--color-muted-900);
 
   --color-primary-50: var(--color-violet-50);
   --color-primary-100: var(--color-violet-100);
@@ -30,4 +32,6 @@
 
 .dark {
   --color-chart-gradient: var(--color-muted-950);
+  --color-chart-title: var(--color-muted-400);
+  --color-chart-subtitle: var(--color-white);
 }
