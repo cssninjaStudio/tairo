@@ -27,7 +27,7 @@ const selectedTab = computed(() => tabs.value.find((_: any, index: any) => index
 </script>
 
 <template>
-  <div class="py-6">
+  <div class="py-6 not-prose">
     <div class="relative group/code w-full bg-white dark:bg-muted-950 rounded-lg overflow-hidden border !border-muted-300 dark:!border-muted-800">
       <div
         class="flex flex-col"
