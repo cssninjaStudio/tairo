@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { Calendar } from 'v-calendar'
-
-import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
-
 definePageMeta({
   title: 'Hobbies',
   preview: {
@@ -69,10 +64,13 @@ const popular = [
     icon: 'map:waterskiing',
   },
 ]
+
+// Datepicker
+const date = ref(new Date())
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
@@ -82,14 +80,14 @@ const popular = [
           <BaseHeading
             as="h2"
             size="xl"
-            weight="light"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             <span>Explore Hobbies</span>
           </BaseHeading>
-          <BaseParagraph>
-            <span class="text-muted-500">
+          <BaseParagraph size="sm">
+            <span class="text-muted-600 dark:text-muted-400">
               Explore some of the best activities nearby in your region
             </span>
           </BaseParagraph>
@@ -98,8 +96,8 @@ const popular = [
       <div
         class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
       >
-        <BaseButton variant="primary" class="w-32">
-          <span>View All</span>
+        <BaseButton rounded="lg">
+          <span>Explore</span>
         </BaseButton>
       </div>
     </div>
@@ -282,14 +280,14 @@ const popular = [
               <BaseHeading
                 as="h2"
                 size="lg"
-                weight="light"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
-                <span>Trending Now</span>
+                <span>Trending now</span>
               </BaseHeading>
               <BaseParagraph size="sm">
-                <span class="text-muted-500">
+                <span class="text-muted-600 dark:text-muted-500">
                   Chek out the latest activities
                 </span>
               </BaseParagraph>
@@ -344,14 +342,14 @@ const popular = [
               <BaseHeading
                 as="h2"
                 size="lg"
-                weight="light"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
-                <span>Popular ativities</span>
+                <span>Popular activities</span>
               </BaseHeading>
               <BaseParagraph size="sm">
-                <span class="text-muted-500">
+                <span class="text-muted-600 dark:text-muted-500">
                   Chek out the latest activities
                 </span>
               </BaseParagraph>
@@ -404,7 +402,7 @@ const popular = [
       </div>
       <!-- Column -->
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <!-- Widget -->
           <BaseCard class="p-6" rounded="lg">
             <div class="flex w-full items-center justify-between">
@@ -413,32 +411,17 @@ const popular = [
           </BaseCard>
           <!-- Widget -->
           <BaseCard rounded="lg" class="p-4">
-            <Calendar
-              :attributes="[
-                {
-                  key: 'today',
-                  highlight: true,
-                  order: 0,
-                  dates: [new Date()],
-                },
-              ]"
-              title-position="left"
-              expanded
-              borderless
-              transparent
-              trim-weeks
-              class="max-w-full rounded-xl"
-            />
+            <AddonDatepicker v-model="date" locale="en" label="Start date" />
           </BaseCard>
           <!-- Widget -->
-          <BaseCard class="p-6" rounded="lg">
+          <BaseCard class="p-4 md:p-6" rounded="lg">
             <div class="mb-6">
               <BaseHeading
                 as="h3"
                 size="md"
-                weight="semibold"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>Locations</span>
               </BaseHeading>
@@ -460,12 +443,12 @@ const popular = [
                     size="sm"
                     weight="medium"
                     lead="tight"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>Mt Wilbur</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">Oregon · Lvl 3</span>
+                    <span class="text-muted-600 dark:text-muted-400">Oregon · Lvl 3</span>
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
@@ -495,12 +478,12 @@ const popular = [
                     size="sm"
                     weight="medium"
                     lead="tight"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>Devil's Lair</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">Alabama · Lvl 7</span>
+                    <span class="text-muted-600 dark:text-muted-400">Alabama · Lvl 7</span>
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">
@@ -530,12 +513,12 @@ const popular = [
                     size="sm"
                     weight="medium"
                     lead="tight"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>Dragon's Den</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">Missouri · Lvl 4</span>
+                    <span class="text-muted-600 dark:text-muted-400">Missouri · Lvl 4</span>
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto flex items-center">

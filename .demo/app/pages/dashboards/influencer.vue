@@ -64,10 +64,10 @@ const instagramStats = [
 
 const tiktokStats = [
   {
-    label: 'Content Posts (30 days)',
-    action: 'posts published',
-    value: 248,
-    growth: 15.5,
+    label: 'Shorts (30 days)',
+    action: 'shorts published',
+    value: 75,
+    growth: 11.5,
     growthText: 'more than usual',
     icon: 'fa6-brands:tiktok',
   },
@@ -115,16 +115,16 @@ const tiktokStats = [
 
 const twitchStats = [
   {
-    label: 'Content Posts (30 days)',
-    action: 'posts published',
-    value: 248,
-    growth: 15.5,
+    label: 'Stream (30 days)',
+    action: 'hours streamed',
+    value: 398,
+    growth: 26.9,
     growthText: 'more than usual',
     icon: 'fa6-brands:twitch',
   },
   {
-    label: 'Followers',
-    action: 'following you',
+    label: 'Subscribers',
+    action: 'subscribed',
     value: 5700,
     growth: 17.2,
     growthText: 'follower growth',
@@ -446,34 +446,35 @@ const activeTab = ref('tab-1')
   <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div
-      class="ltablet:flex-row relative flex w-full flex-col lg:flex-row p-6 lg:p-8 2xl:p-10 bg-muted-200/80 dark:bg-muted-950 rounded-2xl"
+      class="relative flex w-full flex-col lg:flex-row p-6 lg:p-8 2xl:p-10 bg-muted-200/80 dark:bg-muted-950 rounded-2xl"
     >
       <div
-        class="ltablet:flex-row relative z-10 flex w-full flex-col gap-6 lg:flex-row"
+        class="relative z-10 flex w-full flex-col gap-6 lg:flex-row"
       >
-        <BaseAvatar
-          src="/img/avatars/5.svg"
-          badge-src="/img/icons/flags/united-states-of-america.svg"
-          size="2xl"
-          alt="avatar"
-          class="ltablet:mx-0 mx-auto lg:mx-0"
-        />
+        <div class="lg:landscape:mx-0 mx-auto xl:landscape:mx-0">
+          <BaseAvatar
+            src="/img/avatars/5.svg"
+            badge-src="/img/icons/flags/united-states-of-america.svg"
+            size="2xl"
+            alt="avatar"
+          />
+        </div>
         <div class="ltablet:text-left text-center lg:text-left">
           <BaseHeading
             as="h2"
             size="xl"
             weight="semibold"
-            class="ltablet:justify-start flex items-center justify-center gap-2 lg:justify-start"
+            class="flex items-center justify-center gap-2 lg:justify-start"
           >
             <span class="text-muted-800 dark:text-white">Sweet_Mango12</span>
             <Icon name="uiw:star-on" class="size-4 text-yellow-400" />
           </BaseHeading>
-          <span class="text-muted-400 mb-4 block font-sans text-base">
+          <span class="text-muted-600 dark:text-muted-400 mb-4 block font-sans text-base">
             Clarissa Miller
           </span>
           <div class="mb-6 flex items-center gap-x-6">
             <div
-              class="ltablet:flex-row ltablet:flex-auto flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
+              class="flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
             >
               <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 1512
@@ -485,7 +486,7 @@ const activeTab = ref('tab-1')
               </span>
             </div>
             <div
-              class="ltablet:flex-row ltablet:flex-auto flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
+              class="flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
             >
               <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 38.3K
@@ -497,7 +498,7 @@ const activeTab = ref('tab-1')
               </span>
             </div>
             <div
-              class="ltablet:flex-row ltablet:flex-auto flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
+              class="flex flex-1 flex-col gap-x-2 font-sans lg:flex-auto lg:flex-row"
             >
               <span class="text-muted-800 dark:text-muted-100 font-semibold">
                 329
@@ -510,7 +511,7 @@ const activeTab = ref('tab-1')
             </div>
           </div>
           <BaseProse
-            class="ltablet:mx-0 prose-sm mx-auto mb-6 max-w-xl lg:mx-0"
+            class="prose-sm mx-auto mb-6 max-w-xl lg:mx-0"
           >
             <p class="line-clamp-3">
               Artist, musician, songwriter, influencer, these are the many names
@@ -520,7 +521,7 @@ const activeTab = ref('tab-1')
             </p>
           </BaseProse>
           <div
-            class="ltablet:justify-start flex justify-center gap-4 lg:justify-start"
+            class="flex justify-center gap-4 lg:justify-start"
           >
             <div
               class="dark:bg-muted-700 shadow-muted-300/40 dark:shadow-muted-900/20 flex size-10 items-center justify-center rounded-full bg-white shadow-xl"
@@ -574,11 +575,11 @@ const activeTab = ref('tab-1')
       >
         <button
           type="button"
-          class="inline-flex items-center justify-center border-b-2 py-3 font-sans text-sm"
+          class="cursor-pointer inline-flex items-center justify-center border-b-2 py-3 font-sans text-sm"
           :class="
             activeTab === 'tab-1'
               ? 'border-primary-500 text-muted-800 dark:text-muted-100'
-              : 'border-transparent text-muted-400'
+              : 'border-transparent text-muted-400 hover:text-muted-600 dark:hover:text-muted-100'
           "
           @click="activeTab = 'tab-1'"
         >
@@ -586,11 +587,11 @@ const activeTab = ref('tab-1')
         </button>
         <button
           type="button"
-          class="inline-flex items-center justify-center border-b-2 py-3 font-sans text-sm"
+          class="cursor-pointer inline-flex items-center justify-center border-b-2 py-3 font-sans text-sm"
           :class="
             activeTab === 'tab-2'
               ? 'border-primary-500 text-muted-800 dark:text-muted-100'
-              : 'border-transparent text-muted-400'
+              : 'border-transparent text-muted-400 hover:text-muted-600 dark:hover:text-muted-100'
           "
           @click="activeTab = 'tab-2'"
         >
@@ -604,8 +605,8 @@ const activeTab = ref('tab-1')
           <!-- Group -->
           <div>
             <!-- Title -->
-            <div class="mb-6 flex w-full items-center justify-between">
-              <div class="hidden sm:block">
+            <div class="mb-6 flex flex-col md:flex-row w-full md:items-center md:justify-between gap-y-4">
+              <div>
                 <BaseHeading
                   as="h3"
                   size="lg"
@@ -639,7 +640,7 @@ const activeTab = ref('tab-1')
               <div
                 v-for="stat in instagramStats"
                 :key="stat.label"
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-3"
+                class="lg:landscape:col-span-4 col-span-12 sm:col-span-6 2xl:landscape:col-span-3"
               >
                 <BaseCard rounded="md" class="p-4">
                   <div class="flex items-center justify-between">
@@ -662,15 +663,15 @@ const activeTab = ref('tab-1')
                   </div>
                   <div class="pb-4 pt-2">
                     <span
-                      class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-semibold leading-none"
+                      class="text-muted-800 dark:text-muted-100 font-sans text-xl xl:text-2xl font-semibold leading-none"
                     >
                       {{ stat.value }}
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-xs font-medium"
-                      >
-                        {{ stat.action }}
-                      </small>
                     </span>
+                    <small
+                      class="block text-muted-500 dark:text-muted-400 text-xs font-medium"
+                    >
+                      {{ stat.action }}
+                    </small>
                   </div>
                   <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
@@ -692,8 +693,8 @@ const activeTab = ref('tab-1')
           <!-- Group -->
           <div>
             <!-- Title -->
-            <div class="mb-6 flex w-full items-center justify-between">
-              <div class="hidden sm:block">
+            <div class="mb-6 flex flex-col md:flex-row w-full md:items-center md:justify-between gap-y-4">
+              <div>
                 <BaseHeading
                   as="h3"
                   size="lg"
@@ -727,7 +728,7 @@ const activeTab = ref('tab-1')
               <div
                 v-for="stat in tiktokStats"
                 :key="stat.label"
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-3"
+                class="lg:landscape:col-span-4 col-span-12 sm:col-span-6 2xl:landscape:col-span-3"
               >
                 <BaseCard rounded="md" class="p-4">
                   <div class="flex items-center justify-between">
@@ -753,12 +754,12 @@ const activeTab = ref('tab-1')
                       class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-semibold leading-none"
                     >
                       {{ stat.value }}
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-xs font-medium"
-                      >
-                        {{ stat.action }}
-                      </small>
                     </span>
+                    <small
+                      class="block text-muted-500 dark:text-muted-400 text-xs font-medium"
+                    >
+                      {{ stat.action }}
+                    </small>
                   </div>
                   <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
@@ -780,8 +781,8 @@ const activeTab = ref('tab-1')
           <!-- Group -->
           <div>
             <!-- Title -->
-            <div class="mb-6 flex w-full items-center justify-between">
-              <div class="hidden sm:block">
+            <div class="mb-6 flex flex-col md:flex-row w-full md:items-center md:justify-between gap-y-4">
+              <div>
                 <BaseHeading
                   as="h3"
                   size="lg"
@@ -815,7 +816,7 @@ const activeTab = ref('tab-1')
               <div
                 v-for="stat in twitchStats"
                 :key="stat.label"
-                class="ltablet:col-span-4 col-span-12 sm:col-span-6 lg:col-span-3"
+                class="lg:landscape:col-span-4 col-span-12 sm:col-span-6 2xl:landscape:col-span-3"
               >
                 <BaseCard rounded="md" class="p-4">
                   <div class="flex items-center justify-between">
@@ -841,12 +842,12 @@ const activeTab = ref('tab-1')
                       class="text-muted-800 dark:text-muted-100 font-sans text-2xl font-semibold leading-none"
                     >
                       {{ stat.value }}
-                      <small
-                        class="text-muted-500 dark:text-muted-400 text-xs font-medium"
-                      >
-                        {{ stat.action }}
-                      </small>
                     </span>
+                    <small
+                      class="block text-muted-500 dark:text-muted-400 text-xs font-medium"
+                    >
+                      {{ stat.action }}
+                    </small>
                   </div>
                   <div class="mb-2 flex items-center gap-2 font-sans">
                     <div
@@ -868,18 +869,47 @@ const activeTab = ref('tab-1')
         </div>
       </div>
       <!-- Tab content -->
-      <div v-else-if="activeTab === 'tab-2'" class="mt-28">
+      <div v-else-if="activeTab === 'tab-2'" class="relative">
+        <!-- Title -->
+        <div class="mb-6 flex flex-col md:flex-row w-full md:items-center md:justify-between gap-y-4">
+          <div>
+            <BaseHeading
+              as="h3"
+              size="lg"
+              weight="medium"
+              lead="tight"
+              class="mb-2"
+            >
+              <span class="text-muted-900 dark:text-muted-100">
+                Collaborations
+              </span>
+            </BaseHeading>
+            <BaseParagraph
+              size="sm"
+              class="text-muted-500 dark:text-muted-400 max-w-sm"
+            >
+              <span>
+                These are the companies you are currently collaborating with or have collaborated with in the past.
+              </span>
+            </BaseParagraph>
+          </div>
+          <div class="shrink-0">
+            <BaseButton rounded="md">
+              Manage
+            </BaseButton>
+          </div>
+        </div>
         <!-- Inner company grid -->
         <div
-          class="ltablet:grid-cols-3 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          class="ltablet:grid-cols-3 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           <div
             v-for="(company, index) in companies"
             :key="index"
             class="relative h-full"
           >
-            <BaseCard rounded="lg" class="flex h-full flex-col p-6">
-              <div class="flex size-full flex-col gap-4">
+            <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
+              <div class="flex size-full gap-4">
                 <BaseTooltip :content="company.name">
                   <Icon :name="company.logo" class="size-8 shrink-0" />
                 </BaseTooltip>
@@ -900,45 +930,45 @@ const activeTab = ref('tab-1')
                       {{ company.description }}
                     </span>
                   </BaseParagraph>
-                  <div
-                    class="divide-muted-200 dark:divide-muted-700 mt-auto flex items-center justify-center divide-x py-4"
+                </div>
+              </div>
+              <div
+                class="divide-muted-200 dark:divide-muted-700 mt-auto flex items-center justify-center divide-x py-4"
+              >
+                <div
+                  v-for="(stat, statIndex) in company.stats"
+                  :key="statIndex"
+                  class="my-4 flex-1 px-4 text-center font-sans"
+                >
+                  <span
+                    class="text-muted-800 dark:text-muted-100 block font-semibold"
                   >
-                    <div
-                      v-for="(stat, statIndex) in company.stats"
-                      :key="statIndex"
-                      class="my-4 flex-1 px-4 text-center font-sans"
-                    >
-                      <span
-                        class="text-muted-800 dark:text-muted-100 block font-semibold"
-                      >
-                        {{
-                          stat.label === 'Income'
-                            ? `$${stat.value}k`
-                            : stat.value
-                        }}
-                      </span>
-                      <span class="text-muted-400 block text-xs">
-                        {{ stat.label }}
-                      </span>
-                    </div>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <BaseAvatarGroup
-                        :avatars="company.followers"
-                        :limit="3"
-                        size="xs"
-                      />
-                    </div>
-                    <div class="flex gap-2">
-                      <BaseButton
-                        rounded="lg"
-                        class="w-28"
-                      >
-                        Details
-                      </BaseButton>
-                    </div>
-                  </div>
+                    {{
+                      stat.label === 'Income'
+                        ? `$${stat.value}k`
+                        : stat.value
+                    }}
+                  </span>
+                  <span class="text-muted-400 block text-xs">
+                    {{ stat.label }}
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <BaseAvatarGroup
+                    :avatars="company.followers"
+                    :limit="3"
+                    size="xs"
+                  />
+                </div>
+                <div class="flex gap-2">
+                  <BaseButton
+                    rounded="md"
+                    size="sm"
+                  >
+                    Details
+                  </BaseButton>
                 </div>
               </div>
             </BaseCard>
