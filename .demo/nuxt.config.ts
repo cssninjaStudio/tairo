@@ -155,8 +155,6 @@ export default defineNuxtConfig({
     // It's also useful to track them usage.
     optimizeDeps: {
       include: [
-        '@headlessui/vue',
-        '@headlessui-float/vue',
         'scule',
         'klona',
         'v-calendar',

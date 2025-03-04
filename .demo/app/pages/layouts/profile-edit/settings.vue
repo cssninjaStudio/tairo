@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { type InputMask } from 'imask'
+import type { InputMask } from 'imask'
 import { toTypedSchema } from '@vee-validate/zod'
 import IMask from 'imask'
 import { Field, useForm } from 'vee-validate'

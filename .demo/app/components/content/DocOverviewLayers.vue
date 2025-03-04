@@ -104,12 +104,6 @@ const layerTree = [
             children: [
               {
                 item: {
-                  name: 'TairoModal.vue',
-                  icon: 'vscode-icons:file-type-vue',
-                },
-              },
-              {
-                item: {
                   name: 'TairoError.vue',
                   icon: 'vscode-icons:file-type-vue',
                 },
@@ -458,14 +452,6 @@ const mergedTree = [
           name: 'BaseInput.vue',
           tooltip: 'from your app layer',
           icon: 'vscode-icons:file-type-vue',
-        },
-      },
-      {
-        item: {
-          name: 'TairoModal.vue',
-          icon: 'vscode-icons:file-type-vue',
-          color: 'bg-amber-500',
-          tooltip: 'from tairo layer',
         },
       },
       {
