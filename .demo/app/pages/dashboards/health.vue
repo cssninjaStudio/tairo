@@ -394,7 +394,7 @@ function useGaugePersonal() {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative px-4 md:px-6 lg:px-8 pb-20">
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Header -->

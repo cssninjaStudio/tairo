@@ -767,7 +767,7 @@ const menu = [
               portal: { to: '#teleports' },
             }"
           >
-            <TairoSidebarTrigger value="subsidebar-3">
+            <TairoSidebarTrigger value="subsidebar-3" to="/dashboards/messaging">
               <Icon name="solar:chat-round-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>

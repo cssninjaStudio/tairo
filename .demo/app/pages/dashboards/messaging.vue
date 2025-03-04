@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Messaging',
-  layout: 'empty',
+  //layout: 'empty',
   preview: {
     title: 'Messaging app',
     description: 'For chat and messaging apps',

@@ -18,7 +18,7 @@ function handleClick(menuId?: string) {
 </script>
 
 <template>
-  <a
+  <NuxtLink
     role="button"
     tabindex="0"
     class="flex h-14 w-full items-center justify-center duration-300 cursor-pointer rounded-lg outline-none"
@@ -36,5 +36,5 @@ function handleClick(menuId?: string) {
         <Icon :name="props.icon" class="size-5" />
       </slot>
     </div>
-  </a>
+  </NuxtLink>
 </template>
