@@ -736,7 +736,7 @@ const menu = [
 </script>
 
 <template>
-  <TairoSidebarLayout v-model="sidebarId" :class="sidebarId === 'subsidebar-3' ? '[--subsidebar-width:4.5rem]' : ''">
+  <TairoSidebarLayout v-model="sidebarId" :class="sidebarId === 'subsidebar-3' ? '[--sidebar-subsidebar-width:4.5rem]' : ''">
     <TairoSidebarLayoutNav>
       <TairoSidebar>
         <NuxtLink to="/" class="flex items-center justify-center size-14 shrink-0">
@@ -812,31 +812,31 @@ const menu = [
         </TairoSidebarLinks>
       </TairoSidebar>
 
-      <TairoSubsidebar v-for="item in menu" :key="item.label" :value="item.label">
-        <TairoSubsidebarHeader>
+      <TairoSidebarSubsidebar v-for="item in menu" :key="item.label" :value="item.label">
+        <TairoSidebarSubsidebarHeader>
           {{ item.label }}
-        </TairoSubsidebarHeader>
-        <TairoSubsidebarContent>
+        </TairoSidebarSubsidebarHeader>
+        <TairoSidebarSubsidebarContent>
           <template v-for="link in item.links" :key="link.label">
-            <TairoSubsidebarLink v-if="!link.children" :to="link.to">
+            <TairoSidebarSubsidebarLink v-if="!link.children" :to="link.to">
               <Icon :name="link.icon" class="size-4 text-muted-500 dark:text-muted-400" />
               <span>{{ link.label }}</span>
-            </TairoSubsidebarLink>
-            <TairoSubsidebarCollapsible
+            </TairoSidebarSubsidebarLink>
+            <TairoSidebarSubsidebarCollapsible
               v-else
               :children="link.children"
               :open="link.children.some((child) => child.to === $route.path) || undefined"
             >
               <template #trigger>
-                <TairoSubsidebarCollapsibleTrigger>
+                <TairoSidebarSubsidebarCollapsibleTrigger>
                   <Icon :name="link.icon" class="size-4 text-muted-500 dark:text-muted-400" />
                   <span>{{ link.label }}</span>
-                </TairoSubsidebarCollapsibleTrigger>
+                </TairoSidebarSubsidebarCollapsibleTrigger>
               </template>
-            </TairoSubsidebarCollapsible>
+            </TairoSidebarSubsidebarCollapsible>
           </template>
 
-          <!-- <TairoSubsidebarCollapsible
+          <!-- <TairoSidebarSubsidebarCollapsible
             icon="solar:card-linear"
             label="Payments"
             :children="[
@@ -854,11 +854,11 @@ const menu = [
               },
             ]"
           /> -->
-        </TairoSubsidebarContent>
-      </TairoSubsidebar>
+        </TairoSidebarSubsidebarContent>
+      </TairoSidebarSubsidebar>
 
-      <!-- <TairoSubsidebar value="subsidebar-2">
-        <TairoSubsidebarHeader>
+      <!-- <TairoSidebarSubsidebar value="subsidebar-2">
+        <TairoSidebarSubsidebarHeader>
           <span>Subsidebar 2</span>
 
           <BaseDropdown
@@ -877,14 +877,14 @@ const menu = [
               test
             </BaseDropdownItem>
           </BaseDropdown>
-        </TairoSubsidebarHeader>
+        </TairoSidebarSubsidebarHeader>
         <BaseMessage variant="info" class="mx-4 my-2">
           Hello, World!
         </BaseMessage>
-      </TairoSubsidebar> -->
+      </TairoSidebarSubsidebar> -->
 
-      <TairoSubsidebar value="subsidebar-3">
-        <TairoSubsidebarContent class="px-1!">
+      <TairoSidebarSubsidebar value="subsidebar-3">
+        <TairoSidebarSubsidebarContent class="px-1!">
           <NuxtLink
             v-for="i in 26"
             :key="i"
@@ -897,8 +897,8 @@ const menu = [
               :src="`/img/avatars/${i}.svg`"
             />
           </NuxtLink>
-        </TairoSubsidebarContent>
-      </TairoSubsidebar>
+        </TairoSidebarSubsidebarContent>
+      </TairoSidebarSubsidebar>
     </TairoSidebarLayoutNav>
 
     <TairoSidebarLayoutContent class="min-h-screen">

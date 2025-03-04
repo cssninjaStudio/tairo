@@ -11,7 +11,7 @@ const options = reactive({
 </script>
 
 <template>
-  <BaseFocusLoop
+  <FocusScope
     class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4"
   >
     <BaseCheckbox
@@ -61,5 +61,5 @@ const options = reactive({
       rounded="full"
       color="danger"
     />
-  </BaseFocusLoop>
+  </FocusScope>
 </template>

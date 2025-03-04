@@ -9,7 +9,7 @@ const values = reactive({
 </script>
 
 <template>
-  <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
+  <FocusScope class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseSwitchThin
       v-model="values.primary"
       label="Primary"
@@ -39,5 +39,5 @@ const values = reactive({
       label="Danger"
       color="danger"
     />
-  </BaseFocusLoop>
+  </FocusScope>
 </template>

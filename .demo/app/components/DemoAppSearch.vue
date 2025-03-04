@@ -122,7 +122,7 @@ const metaKey = useMetaKey()
       size="md"
       @close="isOpen = false"
     >
-      <BaseFocusLoop next-keys="ArrowDown" prev-keys="ArrowUp">
+      <FocusScope trapped loop>
         <BaseField class="px-2 pb-2">
           <template #label>
             <BaseText weight="medium" size="sm">
@@ -212,7 +212,7 @@ const metaKey = useMetaKey()
             </li>
           </ul>
         </div>
-      </BaseFocusLoop>
+      </FocusScope>
       <div class="flex flex-col items-center py-3 text-center">
         <div class="scale-[0.8]">
           <BaseText

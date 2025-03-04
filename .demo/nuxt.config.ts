@@ -14,13 +14,6 @@ export default defineNuxtConfig({
 
   extends: [
     /**
-     * App layers: these are the layers that contains specific features
-     * - landing: contains landing pages
-     * - documentation: contains all /documentation pages
-     */
-    '../layers/landing',
-
-    /**
      * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
@@ -34,14 +27,11 @@ export default defineNuxtConfig({
      * This would allows you to create an empty git repository
      * with only your source code and no demo.
      */
-    '../layers/tairo-layout-sidebar',
-    '../layers/tairo-layout-collapse',
-    '../layers/tairo-layout-sidenav',
-    '../layers/tairo-layout-topnav',
     '../layers/tairo',
   ],
 
   modules: [
+    '@nuxt/image',
     '@nuxt/content',
     'nuxt-component-meta',
   ],
@@ -68,15 +58,39 @@ export default defineNuxtConfig({
     metaSources: ['@shuriken-ui/nuxt-component-meta'],
     exclude: [
       (component: any) => {
-        const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
-        const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-        const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
+        return true
 
-        const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
+        // const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+        // const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+        // const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
 
-        return isBlacklisted || isExcluded
+        // const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
+
+        // return isBlacklisted || isExcluded
       },
     ],
+  },
+
+  experimental: {
+    viewTransition: true,
+    defaults: {
+      nuxtLink: {
+        prefetchOn: {
+          visibility: false,
+          interaction: true,
+        },
+      },
+    },
+  },
+  $development: {
+    experimental: {
+      appManifest: false,
+      defaults: {
+        nuxtLink: {
+          prefetch: false,
+        },
+      },
+    },
   },
 
   css: [
@@ -92,11 +106,6 @@ export default defineNuxtConfig({
      */
     '~/assets/tailwind.css',
   ],
-
-  experimental: {
-    // Use the new View Transitions API
-    viewTransition: true,
-  },
 
   typescript: {
     tsConfig: {

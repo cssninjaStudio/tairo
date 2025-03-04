@@ -1,7 +1,6 @@
 @import 'tailwindcss';
-@import '@shuriken-ui/tailwind';
-
-@variant dark (&:where(.dark, .dark *));
+@import '@shuriken-ui/nuxt';
+@import '#cssninja-studio/tairo';
 
 @theme {
   --font-sans: 'Inter Variable', sans-serif;

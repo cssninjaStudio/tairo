@@ -1,5 +1,5 @@
 <template>
-  <BaseFocusLoop class="flex flex-wrap items-end gap-2">
+  <FocusScope class="flex flex-wrap items-end gap-2">
     <BaseButton>Button</BaseButton>
 
     <BaseButton color="primary">
@@ -25,5 +25,5 @@
     <BaseButton color="muted">
       Button
     </BaseButton>
-  </BaseFocusLoop>
+  </FocusScope>
 </template>

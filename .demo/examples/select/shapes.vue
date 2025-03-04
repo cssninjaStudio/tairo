@@ -9,7 +9,7 @@ const options = reactive({
 </script>
 
 <template>
-  <BaseFocusLoop class="grid gap-6 md:max-w-4xl md:grid-cols-3">
+  <FocusScope class="grid gap-6 md:max-w-4xl md:grid-cols-3">
     <BaseSelect
       v-model="options.first"
       rounded="none"
@@ -139,5 +139,5 @@ const options = reactive({
         Cyclops
       </BaseSelectItem>
     </BaseSelect>
-  </BaseFocusLoop>
+  </FocusScope>
 </template>
