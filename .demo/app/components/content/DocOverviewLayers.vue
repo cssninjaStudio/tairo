@@ -133,12 +133,6 @@ const layerTree = [
                   icon: 'vscode-icons:file-type-typescript',
                 },
               },
-              {
-                item: {
-                  name: 'toaster.ts',
-                  icon: 'vscode-icons:file-type-typescript',
-                },
-              },
             ],
           },
           {
@@ -562,14 +556,6 @@ const mergedTree = [
       {
         item: {
           name: 'panels.ts',
-          tooltip: 'from tairo layer',
-          icon: 'vscode-icons:file-type-typescript',
-          color: 'bg-amber-500',
-        },
-      },
-      {
-        item: {
-          name: 'toaster.ts',
           tooltip: 'from tairo layer',
           icon: 'vscode-icons:file-type-typescript',
           color: 'bg-amber-500',

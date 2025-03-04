@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import '@shuriken-ui/nuxt';
-@import '#cssninja-studio/tairo';
+@import '#cssninja/tairo';
 
 @theme {
   --font-sans: Inter Variable, sans-serif;

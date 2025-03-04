@@ -9,7 +9,6 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "peerDependencies": {
-    "@cssninja/nuxt-toaster": "^0.3.12",
     "@shuriken-ui/nuxt": "4.0.0-alpha.33",
     "tailwindcss": "^4.0.8"
   },

@@ -6,9 +6,8 @@ export default defineNuxtConfig({
   },
   modules: [
     '@shuriken-ui/nuxt',
-    '@cssninja/nuxt-toaster',
   ],
   alias: {
-    '#cssninja-studio/tairo': fileURLToPath(new URL('./assets/tairo.css', import.meta.url)),
+    '#cssninja/tairo': fileURLToPath(new URL('./assets/tairo.css', import.meta.url)),
   },
 })

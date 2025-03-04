@@ -50,7 +50,7 @@ const {
 })
 
 const router = useRouter()
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(async (values) => {
@@ -70,13 +70,11 @@ const onSubmit = handleSubmit(async (values) => {
       setTimeout(resolve, 4000)
     })
 
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Success',
-      message: `Welcome back!`,
-      color: 'success',
+      description: `Welcome back!`,
       icon: 'ph:user-circle-fill',
-      closable: true,
+      progress: true,
     })
   }
   catch (error: any) {
