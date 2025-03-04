@@ -285,9 +285,14 @@ function convertToCssProperty(style: string) {
   }
 
   for (let i = 0, n = upperChars.length; i < n; i++) {
+    const char = upperChars[i]
+    if (!char) {
+      continue
+    }
+
     style = style.replace(
-      new RegExp(upperChars[i]),
-      `-${upperChars[i].toLowerCase()}`,
+      new RegExp(char),
+      `-${char.toLowerCase()}`,
     )
   }
 
