@@ -91,13 +91,6 @@ function onClick() {
 }
 
 const metaKey = useMetaKey()
-
-function handleSelect(ev: CustomEvent) {
-  ev.preventDefault()
-  // isOpen.value = false
-  // eslint-disable-next-line no-console
-  console.log('Selected: ', ev.detail.value)
-}
 </script>
 
 <template>
@@ -207,109 +200,5 @@ function handleSelect(ev: CustomEvent) {
         </ComboboxRoot>
       </DialogContent>
     </DialogPortal>
-
-    <!-- <FocusScope trapped loop>
-      <BaseField class="px-2 pb-2">
-        <template #label>
-          <BaseText weight="medium" size="sm">
-            Search
-          </BaseText>
-        </template>
-        <template #hint>
-          <BaseText
-            v-if="hasResult"
-            size="xs"
-            class="opacity-60 ms-auto"
-          >
-            navigate with <kbd>↑</kbd> and <kbd>↓</kbd>
-          </BaseText>
-          <BaseText
-            v-else-if="!search"
-            size="xs"
-            class="opacity-60"
-          >
-            press <kbd>{{ metaKey }}</kbd> + <kbd>k</kbd> to open
-          </BaseText>
-        </template>
-
-        <template #default="{ inputAttrs, inputRef }">
-          <TairoInput
-            :ref="inputRef"
-            v-bind="inputAttrs"
-            v-model="search"
-            v-focus
-            type="search"
-            rounded="lg"
-            icon="lucide:search"
-            placeholder="Ex: button or analytics..."
-          />
-        </template>
-      </BaseField>
-
-      <div v-if="contentDocsResults?.length">
-        <div class="px-3 pt-2">
-          <span
-            class="nui-text-500 text-[0.65rem] font-medium uppercase tracking-wider"
-          >
-            Documentation Hub
-          </span>
-        </div>
-        <ul>
-          <li
-            v-for="page in contentDocsResults"
-            :key="page?.path"
-            class=""
-          >
-            <DemoAppSearchResult
-              :to="page?.path"
-              :search="search"
-              :title="page?.title"
-              :subtitle="page?.path"
-              :icon="page?.icon?.src"
-              @click.passive="onClick"
-            />
-          </li>
-        </ul>
-      </div>
-
-      <div v-if="demoPagesResults?.length">
-        <div class="px-3 pt-2">
-          <span
-            class="nui-text-500 text-[0.65rem] font-medium uppercase tracking-wider"
-          >
-            Demo Pages
-          </span>
-        </div>
-        <ul>
-          <li
-            v-for="page in demoPagesResults"
-            :key="page?.name"
-            class=""
-          >
-            <DemoAppSearchResult
-              :to="{
-                name: page?.name as string,
-              }"
-              :search="search"
-              :title="page?.meta?.preview?.title"
-              :subtitle="page?.meta?.preview?.description"
-              @click.passive="onClick"
-            />
-          </li>
-        </ul>
-      </div>
-    </FocusScope>
-    <div class="flex flex-col items-center py-3 text-center">
-      <div class="scale-[0.8]">
-        <BaseText
-          size="xs"
-          weight="medium"
-          class="text-muted-400"
-        >
-          Search by
-        </BaseText>
-        <TairoLogoText class="text-muted-400 mx-auto w-20" />
-      </div>
-    </div> -->
   </DialogRoot>
 </template>
