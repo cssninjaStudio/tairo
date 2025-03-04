@@ -13,7 +13,7 @@ icon:
 title: Color
 demo: '#examples/checkbox-animated/base.vue'
 ---
-A nice and friendly checkbox. Notice the usage of :doc-linker{to="BaseFocusLoop"} to loop focus through all the checkboxes. Use the `color` prop to change the color of the checkbox.
+A nice and friendly checkbox. Use the `color` prop to change the color of the checkbox.
 ::
 
 ::doc-component-demo

@@ -24,7 +24,7 @@ const options = ref([
 
 <template>
   <div class="flex flex-col gap-6 md:flex-row md:items-start">
-    <BaseFocusLoop class="flex w-3/5 flex-wrap items-end gap-4">
+    <FocusScope class="flex w-3/5 flex-wrap items-end gap-4">
       <BaseCheckboxAnimated
         v-model="options"
         value="Option 1"
@@ -54,6 +54,6 @@ const options = ref([
         value="Option 5"
         color="danger"
       />
-    </BaseFocusLoop>
+    </FocusScope>
   </div>
 </template>

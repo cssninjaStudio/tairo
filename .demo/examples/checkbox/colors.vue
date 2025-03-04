@@ -12,7 +12,7 @@ const options = reactive({
 </script>
 
 <template>
-  <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
+  <FocusScope class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseCheckbox
       v-model="options.first"
       label="Straight"
@@ -68,5 +68,5 @@ const options = reactive({
       rounded="full"
       :classes="{ wrapper: 'text-rose-500' }"
     />
-  </BaseFocusLoop>
+  </FocusScope>
 </template>

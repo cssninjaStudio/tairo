@@ -138,7 +138,7 @@ const showStackTrace = ref(true)
           <!-- eslint-disable vue/no-v-html -->
           <div
             v-if="props.error.stack"
-            class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+            class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100 **:[.stack]:text-sm **:[.stack.internal]:opacity-100 **:[.stack.internal]:ps-4 **:[.stack.internal]:text-xs"
             v-html="props.error.stack"
           />
           <!-- eslint-enable vue/no-v-html -->
@@ -147,15 +147,3 @@ const showStackTrace = ref(true)
     </DevOnly>
   </div>
 </template>
-
-<style>
-@import 'tailwindcss/theme' theme(reference);
-@import '@shuriken-ui/tailwind/theme.css' theme(reference);
-
-.stack {
-  @apply text-sm;
-}
-.stack.internal {
-  @apply opacity-100 ps-4 text-xs;
-}
-</style>

@@ -3,7 +3,7 @@ const value = ref(['Option 1', 'Option 2'])
 </script>
 
 <template>
-  <BaseFocusLoop class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
+  <FocusScope class="grid grid-cols-2 gap-6 md:max-w-lg md:grid-cols-4">
     <BaseCheckbox
       v-model="value"
       name="multiple-demo-1"
@@ -48,5 +48,5 @@ const value = ref(['Option 1', 'Option 2'])
       rounded="lg"
       color="muted"
     />
-  </BaseFocusLoop>
+  </FocusScope>
 </template>
