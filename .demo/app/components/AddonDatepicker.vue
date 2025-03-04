@@ -1,7 +1,6 @@
 <script setup lang="ts">
-// @ts-ignore
-import type { DatePickerDate, DatePickerRangeObject } from 'v-calendar/dist/types/src/use/datePicker'
-import { DatePicker as VCalendarDatePicker } from 'v-calendar'
+import type { DatePickerDate, DatePickerRangeObject } from 'v-calendar/dist/types/src/use/datePicker.js'
+import { DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
 
 defineOptions({
@@ -44,7 +43,7 @@ function onDayClick(_: any, event: MouseEvent): void {
 </script>
 
 <template>
-  <VCalendarDatePicker
+  <DatePicker
     v-if="date && (date as DatePickerRangeObject)?.start && (date as DatePickerRangeObject)?.end"
     v-model.range="date"
     :columns="2"
@@ -52,7 +51,7 @@ function onDayClick(_: any, event: MouseEvent): void {
     :locale="props.locale"
     @dayclick="onDayClick"
   />
-  <VCalendarDatePicker
+  <DatePicker
     v-else
     v-model="date"
     v-bind="{ ...attrs, ...$attrs }"
