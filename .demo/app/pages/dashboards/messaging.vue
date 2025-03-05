@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Messaging',
-  //layout: 'empty',
+  // layout: 'empty',
   preview: {
     title: 'Messaging app',
     description: 'For chat and messaging apps',
@@ -580,9 +580,9 @@ async function submitMessage() {
 
 <template>
   <div class="relative">
-    <div class="bg-muted-100 dark:bg-muted-900 flex min-h-screen">
+    <div class="flex">
       <!-- Sidebar -->
-      <div
+      <!-- <div
         class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative z-10 hidden h-screen w-20 border-r bg-white sm:block"
       >
         <div class="flex h-full flex-col justify-between">
@@ -632,9 +632,9 @@ async function submitMessage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Conversations -->
-      <div
+      <!-- <div
         class="ltablet:border-r border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative z-[9] h-screen w-16 bg-white sm:w-20 lg:border-r"
       >
         <div class="flex h-full flex-col">
@@ -647,7 +647,6 @@ async function submitMessage() {
               <Icon name="lucide:plus" class="size-4" />
             </span>
           </button>
-          <!-- List -->
           <a
             v-for="conversation in conversations"
             :key="conversation.id"
@@ -663,19 +662,14 @@ async function submitMessage() {
             <BaseAvatar :src="conversation.user.photo" size="sm" />
           </a>
         </div>
-      </div>
+      </div> -->
       <!-- Current conversation -->
       <div
-        class="relative w-full transition-all duration-300"
-        :class="
-          expanded
-            ? 'ltablet:max-w-[calc(100%_-_160px)] lg:max-w-[calc(100%_-_160px)]'
-            : 'ltablet:max-w-[calc(100%_-_470px)] lg:max-w-[calc(100%_-_550px)]'
-        "
+        class="relative flex w-full transition-all duration-300 h-[calc(100dvh_-_56px)] -mt-6"
       >
-        <div class="flex w-full flex-col">
+        <div class="flex w-full h-full flex-col grow">
           <!-- Header -->
-          <div
+          <!-- <div
             class="flex h-16 w-full items-center justify-between px-4 sm:px-8"
           >
             <TairoInput
@@ -688,11 +682,11 @@ async function submitMessage() {
             <TairoSidebarTools
               class="relative -end-4 z-20 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
             />
-          </div>
+          </div> -->
           <!-- Body -->
           <div
             ref="chatEl"
-            class="relative h-[calc(100vh_-_128px)] w-full p-4 sm:p-8"
+            class="relative grow w-full px-4 sm:px-8"
             :class="
               loading ? 'overflow-hidden' : 'overflow-y-auto nui-slimscroll'
             "
@@ -894,16 +888,17 @@ async function submitMessage() {
           <form
             method="POST"
             action=""
-            class="bg-muted-100 dark:bg-muted-900 flex h-16 w-full items-center px-4 sm:px-8"
+            class="flex h-16 w-full items-center px-4 sm:px-8 shrink-0"
             @submit.prevent="submitMessage"
           >
             <div class="relative w-full">
-              <BaseInput
+              <BaseTextarea
                 v-model.trim="message"
                 :disabled="messageLoading"
                 rounded="full"
-                class="h-10 ps-6 pe-24"
+                class="ps-6 pe-24"
                 placeholder="Write a message..."
+                autogrow
               />
               <div class="absolute end-2 top-0 flex h-10 items-center gap-1">
                 <button
@@ -925,10 +920,10 @@ async function submitMessage() {
       </div>
       <!-- Current user -->
       <div
-        class="ltablet:w-[310px] dark:bg-muted-800 fixed end-0 top-0 z-20 h-full w-[390px] bg-white transition-transform duration-300"
+        class="flex flex-col ltablet:w-[310px] dark:bg-muted-800 h-full w-[390px] border-s border-muted-200 dark:border-muted-800/80 shrink-0 -mt-6"
         :class="expanded ? 'translate-x-full' : 'translate-x-0'"
       >
-        <div class="flex h-16 w-full items-center justify-between px-8">
+        <div class="flex h-16 w-full items-center justify-between px-8 shrink-0">
           <BaseHeading
             tag="h3"
             size="lg"
@@ -943,7 +938,7 @@ async function submitMessage() {
             />
           </BaseButton>
         </div>
-        <div class="relative flex w-full flex-col px-8">
+        <div class="relative flex w-full flex-col px-8 grow">
           <!-- Loader -->
           <div v-if="loading" class="mt-8">
             <div class="mb-3 flex items-center justify-center">
