@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const isSwitcherOpen = useState('switcher-open', () => false)
-
-const sidebarId = ref('Dashboards')
-
 const menu = [
   {
     label: 'Dashboards',
@@ -725,6 +721,26 @@ const menu = [
     ],
   },
 ]
+
+const isSwitcherOpen = useState('switcher-open', () => false)
+
+const route = useRoute()
+const sidebarId = ref(getInitialSidebarId())
+
+function getInitialSidebarId() {
+  if (route.path.startsWith('/dashboards/messaging')) {
+    return 'Messaging'
+  }
+
+  // search for the active menu item
+  for (const item of menu) {
+    if (item.links.some(link => link.to === route.path || (link.children && link.children.some(child => child.to === route.path)))) {
+      return item.label
+    }
+  }
+
+  return 'Dashboards'
+}
 </script>
 
 <template>
@@ -749,7 +765,7 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <TairoSidebarTrigger :value="item.label">
@@ -762,10 +778,10 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
-            <TairoSidebarTrigger value="subsidebar-3" to="/dashboards/messaging">
+            <TairoSidebarTrigger value="Messaging" to="/dashboards/messaging">
               <Icon name="solar:chat-round-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
@@ -778,7 +794,7 @@ const menu = [
               portal: { to: '#teleports' },
             }"
           >
-            <TairoSidebarTrigger value="subsidebar-4" to="/dashboards/inbox">
+            <TairoSidebarTrigger value="Inbox" to="/dashboards/inbox">
               <Icon name="solar:letter-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
@@ -803,7 +819,7 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <TairoSidebarLink tabindex="0" @click="isSwitcherOpen = true">
@@ -815,7 +831,7 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <TairoSidebarLink to="/layouts/settings">
@@ -849,7 +865,7 @@ const menu = [
             <TairoSidebarSubsidebarCollapsible
               v-else
               :children="link.children"
-              :open="link.children.some((child) => child.to === $route.path) || undefined"
+              :default-open="link.children.some((child) => child.to === $route.path) || undefined"
             >
               <template #trigger>
                 <TairoSidebarSubsidebarCollapsibleTrigger>
@@ -862,24 +878,37 @@ const menu = [
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
 
-      <TairoSidebarSubsidebar value="subsidebar-3">
-        <TairoSidebarSubsidebarContent class="px-1!">
-          <NuxtLink
-            v-for="i in 26"
-            :key="i"
-            to="/layouts/profile"
-            class="flex h-12 w-full items-center justify-center hover:bg-muted-100 dark:hover:bg-muted-900 rounded-lg transitions-colors duration-100"
-            :class="i === 1 ? 'bg-primary-100 dark:bg-primary-950 rounded-s-none border-s border-primary-500' : ''"
+      <!-- <TairoSidebarSubsidebar value="subsidebar-2">
+        <TairoSidebarSubsidebarHeader>
+          <span>Subsidebar 2</span>
+
+          <BaseDropdown
+            :bindings="{
+              content: { side: 'bottom' },
+              portal: { disabled: true },
+            }"
           >
-            <BaseAvatar
-              size="xs"
-              :src="`/img/avatars/${i}.svg`"
-            />
-          </NuxtLink>
-        </TairoSidebarSubsidebarContent>
+            <template #button>
+              <BaseChip pusle size="xs" class="ms-auto">
+                <Icon name="solar:bell-line-duotone" class="size-4 " />
+              </BaseChip>
+            </template>
+
+            <BaseDropdownItem>
+              test
+            </BaseDropdownItem>
+          </BaseDropdown>
+        </TairoSidebarSubsidebarHeader>
+        <BaseMessage variant="info" class="mx-4 my-2">
+          Hello, World!
+        </BaseMessage>
+      </TairoSidebarSubsidebar> -->
+
+      <TairoSidebarSubsidebar value="Messaging">
+        <DemoSubsidebarMessaging />
       </TairoSidebarSubsidebar>
 
-      <TairoSidebarSubsidebar value="subsidebar-4" class="flex flex-col items-center">
+      <TairoSidebarSubsidebar value="Inbox" class="flex flex-col items-center">
         <TairoSidebarSubsidebarContent>
           <div class="flex h-12 w-full items-center justify-center shrink-0">
             <BaseButton size="icon-sm" rounded="full" variant="primary">

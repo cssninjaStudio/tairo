@@ -17,7 +17,7 @@ export interface TairoCheckboxAnimatedProps extends CheckboxRootProps {
     | 'info'
     | 'success'
     | 'warning'
-    | 'danger'
+    | 'destructive'
     | 'muted'
     | 'light'
     | 'dark'
@@ -36,6 +36,7 @@ const variants = {
   muted: 'text-muted-400',
   dark: 'text-muted-900 dark:text-muted-100',
   black: 'text-black dark:text-white',
+  custom: '',
 } as const
 </script>
 

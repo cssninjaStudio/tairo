@@ -13,7 +13,7 @@ definePageMeta({
   },
 })
 
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 const password = ref('')
 
@@ -94,13 +94,11 @@ const { text, copy, copied, isSupported } = useClipboard({ source: password })
 function handleClipboard() {
   copy(password.value)
   if (copied) {
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Success',
-      message: `Password was copied to clipboard!`,
-      color: 'success',
+      description: `Password was copied to clipboard!`,
       icon: 'ph:check',
-      closable: true,
+      progress: true,
     })
   }
 }

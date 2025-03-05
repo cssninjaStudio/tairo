@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { RouteRecordRaw } from 'vue-router'
 import { onKeyStroke } from '@vueuse/core'
+import MiniSearch from 'minisearch'
 
+const router = useRouter()
 const isMacLike = useIsMacLike()
 const isOpen = useState('search-open', () => false)
 const search = ref('')
@@ -15,53 +17,26 @@ onKeyStroke('k', (event) => {
   }
 })
 
-const { data: contentDocs } = useAsyncData(
-  () => {
-    if (!search.value)
-      return Promise.resolve([] as any[])
-
-    // @todo: content v3 search
-    return Promise.resolve([])
-    // return queryCollection()
-    //   .where({
-    //     $and: [
-    //       {
-    //         _type: 'markdown',
-    //         _draft: false,
-    //         _partial: false,
-    //       },
-    //       {
-    //         $or: [
-    //           {
-    //             components: { $icontains: search.value },
-    //           },
-    //           {
-    //             title: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
-    //           },
-    //           {
-    //             _path: { $regex: `/${search.value.replaceAll(' ', '.*')}/i` },
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   })
-    //   .limit(6)
-    //   .find()
-    //   .catch(() => []) as Promise<any[]>
+const { data: contentIndex } = await useAsyncData('search', () => queryCollectionSearchSections('docs'))
+const contentMS = new MiniSearch({
+  fields: ['title', 'titles', 'content'],
+  storeFields: ['title', 'titles', 'content'],
+  searchOptions: {
+    prefix: true,
+    fuzzy: 0.2,
   },
-  {
-    watch: [search],
-  },
-)
+})
+watchEffect(() => {
+  contentMS.removeAll()
+  if (!contentIndex.value) {
+    return
+  }
+  contentMS.addAll(contentIndex.value)
+})
+const contentResults = computed(() => contentMS.search(toValue(search)).slice(0, 6))
 
-const router = useRouter()
-const demoPages = computed(() => {
-  if (!search.value)
-    return []
-
-  const match: RouteRecordRaw[] = []
-  const searchRe = new RegExp(search.value, 'i')
-
+const routesIndex = computed(() => {
+  const match: any[] = []
   function traverseRoutes(routes: Readonly<RouteRecordRaw[]>) {
     for (const route of routes) {
       if (route.children) {
@@ -71,160 +46,150 @@ const demoPages = computed(() => {
         // skip dynamic route
         continue
       }
-      else if (
-        route.meta?.preview?.title
-        && searchRe.test(route.meta?.preview?.title)
-      ) {
-        match.push(route)
+      else if (!route.name) {
+        continue
       }
-      else if (
-        route.meta?.preview?.description
-        && searchRe.test(route.meta?.preview?.description)
-      ) {
-        match.push(route)
+      else {
+        match.push({
+          ...(route.meta?.preview || {}),
+          id: route.name,
+        })
       }
     }
   }
 
   traverseRoutes(router.options.routes)
 
-  return match.slice(0, 6)
+  return match
 })
-
-const contentDocsResults = computed(() => {
-  const max = 6 - Math.min(demoPages.value.length, 3)
-  return contentDocs.value?.slice(0, max)
+const routesMS = new MiniSearch({
+  fields: ['title', 'description'],
+  storeFields: ['title', 'description'],
+  searchOptions: {
+    prefix: true,
+    fuzzy: 0.2,
+  },
 })
-const demoPagesResults = computed(() => {
-  const max = 6 - Math.min(contentDocs.value?.length || 0, 3)
-  return demoPages.value?.slice(0, max)
+watchEffect(() => {
+  routesMS.removeAll()
+  if (!routesIndex.value) {
+    return
+  }
+  routesMS.addAll(routesIndex.value)
 })
+const routesResults = computed(() => routesMS.search(toValue(search)).slice(0, 6))
 
 const hasResult = computed(() =>
-  Boolean(contentDocsResults.value?.length || demoPagesResults.value?.length),
+  Boolean(contentResults.value?.length || routesResults.value?.length),
 )
-
-function onClick() {
+function handleSelect(ev: CustomEvent) {
+  ev.preventDefault()
   isOpen.value = false
+  router.push(ev.detail.value)
 }
-
-const metaKey = useMetaKey()
 </script>
 
 <template>
-  <div>
-    <TairoModal
-      :classes="{
-        wrapper: 'items-start! pt-20',
-        dialog: 'p-3 rounded-xl',
-      }"
-      :open="isOpen"
-      size="md"
-      @close="isOpen = false"
-    >
-      <FocusScope trapped loop>
-        <BaseField class="px-2 pb-2">
-          <template #label>
-            <BaseText weight="medium" size="sm">
-              Search
-            </BaseText>
-          </template>
-          <template #hint>
-            <BaseText
-              v-if="hasResult"
-              size="xs"
-              class="opacity-60 ms-auto"
-            >
-              navigate with <kbd>↑</kbd> and <kbd>↓</kbd>
-            </BaseText>
-            <BaseText
-              v-else-if="!search"
-              size="xs"
-              class="opacity-60"
-            >
-              press <kbd>{{ metaKey }}</kbd> + <kbd>k</kbd> to open
-            </BaseText>
-          </template>
+  <DialogRoot v-model:open="isOpen">
+    <DialogPortal>
+      <DialogOverlay class="bg-muted-800/70 dark:bg-muted-900/80 fixed inset-0 z-50" />
 
-          <template #default="{ inputAttrs, inputRef }">
-            <TairoInput
-              :ref="inputRef"
-              v-bind="inputAttrs"
-              v-model="search"
-              v-focus
-              type="search"
-              rounded="lg"
-              icon="lucide:search"
-              placeholder="Ex: button or analytics..."
-            />
-          </template>
-        </BaseField>
+      <DialogContent
+        class="p-2 fixed starting:opacity-0 starting:top-[8%] top-[10%] left-[50%] max-h-[85vh] w-[90vw] max-w-[32rem] translate-x-[-50%] text-sm rounded-lg overflow-hidden border border-white dark:border-muted-700 bg-white dark:bg-muted-800 focus:outline-none z-[100] transition-discrete transition-all duration-200 ease-out"
+      >
+        <VisuallyHidden>
+          <DialogTitle>Tairo search</DialogTitle>
+          <DialogDescription>Search in tairo demo and documentation</DialogDescription>
+        </VisuallyHidden>
 
-        <div v-if="contentDocsResults?.length">
-          <div class="px-3 pt-2">
-            <span
-              class="nui-text-500 text-[0.65rem] font-medium uppercase tracking-wider"
-            >
-              Documentation Hub
-            </span>
-          </div>
-          <ul>
-            <li
-              v-for="page in contentDocsResults"
-              :key="page?.path"
-              class=""
-            >
-              <DemoAppSearchResult
-                :to="page?.path"
-                :search="search"
-                :title="page?.title"
-                :subtitle="page?.path"
-                :icon="page?.icon?.src"
-                @click.passive="onClick"
+        <ComboboxRoot open ignore-filter :reset-search-term-on-blur="false" :reset-search-term-on-select="false">
+          <BaseField class="px-2 pb-2">
+            <template #label>
+              <BaseText weight="medium" size="sm">
+                Search
+              </BaseText>
+            </template>
+            <template #hint>
+              <BaseText
+                size="xs"
+                class="opacity-60 ms-auto"
+              >
+                navigate with <BaseKbd size="sm" variant="muted">↑</BaseKbd> and <BaseKbd size="sm" variant="muted">↓</BaseKbd>
+              </BaseText>
+            </template>
+
+            <div class="focus-within:nui-focus flex *:rounded-none *:not-last:border-e-0 *:last:border-s-0 rounded-lg *:first:rounded-s-lg *:last:rounded-e-lg">
+              <div class="ps-3 border flex items-center justify-center bg-input-default-bg text-input-default-text/60 border-input-default-border">
+                <Icon name="lucide:search" class="size-5" />
+              </div>
+              <ComboboxInput
+                v-model="search"
+                class="outline-none w-full text-ellipsis font-sans bg-input-default-bg border-input-default-border border text-input-default-text placeholder:text-input-default-placeholder h-12 text-sm ps-3 pe-4 rounded-lg"
+                placeholder="Ex: button or analytics..."
+                auto-focus
+                @keydown.enter.prevent
               />
-            </li>
-          </ul>
-        </div>
+            </div>
+          </BaseField>
 
-        <div v-if="demoPagesResults?.length">
-          <div class="px-3 pt-2">
-            <span
-              class="nui-text-500 text-[0.65rem] font-medium uppercase tracking-wider"
-            >
-              Demo Pages
-            </span>
-          </div>
-          <ul>
-            <li
-              v-for="page in demoPagesResults"
-              :key="page?.name"
-              class=""
-            >
-              <DemoAppSearchResult
-                :to="{
-                  name: page?.name as string,
-                }"
-                :search="search"
-                :title="page?.meta?.preview?.title"
-                :subtitle="page?.meta?.preview?.description"
-                @click.passive="onClick"
-              />
-            </li>
-          </ul>
-        </div>
-      </FocusScope>
-      <div class="flex flex-col items-center py-3 text-center">
-        <div class="scale-[0.8]">
-          <BaseText
-            size="xs"
-            weight="medium"
-            class="text-muted-400"
+          <ComboboxContent
+            v-if="hasResult"
+            class="p-2 max-h-[50vh] nui-slimscroll overflow-y-auto space-y-6 py-4"
+            @escape-key-down="isOpen = false"
           >
-            Search by
-          </BaseText>
-          <TairoLogoText class="text-muted-400 mx-auto w-20" />
-        </div>
-      </div>
-    </TairoModal>
-  </div>
+            <ComboboxEmpty v-if="search" class="text-center text-muted-foreground p-4">
+              No results
+            </ComboboxEmpty>
+            <ComboboxEmpty v-else class="text-center text-muted-foreground p-4">
+              Start typing to search
+            </ComboboxEmpty>
+
+            <ComboboxGroup v-if="contentResults?.length">
+              <ComboboxLabel class="px-2 mb-2">
+                <BaseTag variant="muted">
+                  Documentation Hub
+                </BaseTag>
+              </ComboboxLabel>
+
+              <ComboboxItem
+                v-for="page in contentResults"
+                :key="page?.id"
+                :value="page?.id"
+                class="scroll-mt-2"
+                @select="handleSelect"
+              >
+                <DemoAppSearchResult
+                  :search="search"
+                  :title="page?.title"
+                  :prefix="page?.titles?.join(' > ') ?? ''"
+                  :subtitle="page?.content"
+                />
+              </ComboboxItem>
+            </ComboboxGroup>
+
+            <ComboboxGroup v-if="routesResults?.length">
+              <ComboboxLabel class="px-2 mb-2">
+                <BaseTag variant="muted">
+                  Demo Pages
+                </BaseTag>
+              </ComboboxLabel>
+              <ComboboxItem
+                v-for="page in routesResults"
+                :key="page?.name"
+                :value="page?.id"
+                class="scroll-mt-2"
+                @select="handleSelect"
+              >
+                <DemoAppSearchResult
+                  :search="search"
+                  :title="page?.title"
+                  :subtitle="page?.description"
+                />
+              </ComboboxItem>
+            </ComboboxGroup>
+          </ComboboxContent>
+        </ComboboxRoot>
+      </DialogContent>
+    </DialogPortal>
+  </DialogRoot>
 </template>

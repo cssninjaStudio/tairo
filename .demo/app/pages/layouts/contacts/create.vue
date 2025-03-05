@@ -193,7 +193,7 @@ onBeforeRouteLeave(() => {
   }
 })
 
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(
@@ -216,13 +216,11 @@ const onSubmit = handleSubmit(
         setTimeout(resolve, 4000)
       })
 
-      toaster.clearAll()
-      toaster.show({
+      toaster.add({
         title: 'Success',
-        message: `Contact has been created!`,
-        color: 'success',
+        description: `Contact has been created!`,
         icon: 'ph:check',
-        closable: true,
+        progress: true,
       })
     }
     catch (error: any) {
@@ -235,13 +233,11 @@ const onSubmit = handleSubmit(
           behavior: 'smooth',
         })
 
-        toaster.clearAll()
-        toaster.show({
+        toaster.add({
           title: 'Oops!',
-          message: 'Please review the errors in the form',
-          color: 'danger',
+          description: 'Please review the errors in the form',
           icon: 'lucide:alert-triangle',
-          closable: true,
+          progress: true,
         })
       }
       return

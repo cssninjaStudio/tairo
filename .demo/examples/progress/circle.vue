@@ -6,7 +6,7 @@ const progressCircle = ref(25)
   <div class="max-w-xs space-y-4">
     <div class="flex items-end gap-2">
       <BaseProgressCircle
-        title="Primary circle progress bar"
+        title="Primary circle progress bareee"
         :size="45"
         :value="progressCircle"
         class="text-primary-500"

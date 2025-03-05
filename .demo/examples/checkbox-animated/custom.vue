@@ -5,7 +5,7 @@ const customValue = ref()
 <template>
   <div class="flex flex-col gap-6 md:flex-row md:items-start">
     <div class="flex w-3/5 flex-wrap items-end gap-4">
-      <BaseCheckboxAnimated
+      <TairoCheckboxAnimated
         v-model="customValue"
         true-value="checked"
         false-value="not-checked"

@@ -25,7 +25,7 @@ const initialState = ref<PaymentSend>({
   method: null,
 })
 
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 const { handleSubmit, currentStepId, progress, complete, steps, errors, goToStep } = provideMultiStepForm({
   initialState,
@@ -131,23 +131,19 @@ const { handleSubmit, currentStepId, progress, complete, steps, errors, goToStep
     // Simulate async request
     await new Promise(resolve => setTimeout(resolve, 4000))
 
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Success',
-      message: `Transfer request sent!`,
-      color: 'success',
+      description: `Transfer request sent!`,
       icon: 'ph:check',
-      closable: true,
+      progress: true,
     })
   },
   onError: (error) => {
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Error',
-      message: error.message,
-      color: 'danger',
+      description: error.message,
       icon: 'lucide:alert-triangle',
-      closable: true,
+      progress: true,
     })
   },
 })
