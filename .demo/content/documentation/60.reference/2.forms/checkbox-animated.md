@@ -1,7 +1,7 @@
 ---
-title: BaseCheckboxAnimated
+title: TairoCheckboxAnimated
 components:
-  - BaseCheckboxAnimated
+  - TairoCheckboxAnimated
 description: Use animated checkboxes to display fancy svg circle and check animations, which are ideal to engage your audience.
 icon:
   src: /img/illustrations/components/checkbox-icon.svg
@@ -40,4 +40,4 @@ demo: '#examples/checkbox-animated/true-false.vue'
 You can create a static checkbox by omitting the `v-model` (or `model-value`)
 ::
 
-:doc-component-meta{name="BaseCheckboxAnimated"}
+:doc-component-meta{name="TairoCheckboxAnimated"}

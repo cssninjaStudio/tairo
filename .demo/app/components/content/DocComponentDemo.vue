@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { parseMarkdown } from '@nuxtjs/mdc/runtime'
-
 const props = withDefaults(
   defineProps<{
     tag?: string
@@ -38,19 +36,9 @@ const hasDemoInfo = computed(() =>
 )
 const demoPending = ref(hasDemoInfo.value)
 const exampleComponent = shallowRef()
-const exampleSource = shallowRef()
-
-const { data: exampleMarkdown } = useAsyncData(async () => {
-  if (!exampleSource.value) {
-    return null
-  }
-  return await parseMarkdown(`\`\`\`vue\n${exampleSource.value}\n\`\`\``)
-}, {
-  watch: [exampleSource],
-})
 
 const hasDemoContent = computed(() =>
-  Boolean(exampleComponent.value && exampleMarkdown.value),
+  Boolean(exampleComponent.value),
 )
 
 const forceDark = ref(false)
@@ -61,7 +49,6 @@ watch(info, loadDemo)
 async function loadDemo() {
   if (!info.value.folder || !info.value.file) {
     exampleComponent.value = null
-    exampleSource.value = ''
     return
   }
   demoPending.value = true
@@ -70,20 +57,18 @@ async function loadDemo() {
   // we can not use path alias, nor paths in variables
   // this is a limitation of vite
   try {
-    const [compo, source] = await Promise.all([
-      import(`#examples/${info.value.folder}/${info.value.file}.vue`).then(
-        m => m.default,
-      ),
-      import(
-        `#examples/${info.value.folder}/${info.value.file}.vue?raw`
-      ).then(m => m.default),
-    ])
+    const compo = await import(`#examples/${info.value.folder}/${info.value.file}.vue`).then(
+      m => m.default,
+    )
     exampleComponent.value = markRaw(compo)
-    exampleSource.value = source
   }
   catch {
-    exampleComponent.value = null
-    exampleSource.value = ''
+    if (import.meta.dev) {
+      exampleComponent.value = h('div', `Failed to load demo: #examples/${info.value.folder}/${info.value.file}.vue`)
+    }
+    else {
+      exampleComponent.value = null
+    }
   }
   finally {
     demoPending.value = false
@@ -150,7 +135,7 @@ async function loadDemo() {
               <component :is="exampleComponent" v-if="exampleComponent" />
             </div>
 
-            <details v-if="exampleMarkdown && props.code" class="group mt-6">
+            <details v-if="'source' in $slots && props.code" class="group mt-6">
               <summary
                 class="focus-visible:nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
               >
@@ -161,15 +146,11 @@ async function loadDemo() {
                   class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
                 />
               </summary>
-              <CodeGroup>
-                <code filename="<app>/app/components/MyComponent.vue" language="vue">
-                  <ContentRenderer
-                    :value="exampleMarkdown"
-                    class="doc-markdown"
-                  />
-                </code>
-              </CodeGroup>
+              <slot name="source" />
             </details>
+            <DevOnly v-else>
+              No source code available for {{ props.demo }}
+            </DevOnly>
           </div>
         </div>
       </div>
