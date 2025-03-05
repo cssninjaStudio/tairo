@@ -23,7 +23,6 @@ const areaProgress = reactive(useAreaProgress())
 const gaugePersonal = reactive(useGaugePersonal())
 
 function useAreaCondition() {
-  const { primary } = useTailwindColors()
   const type = 'area'
   const height = 280
 
@@ -47,7 +46,18 @@ function useAreaCondition() {
       width: [2, 2, 2],
       curve: 'straight',
     },
-    colors: [primary.value],
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.1,
+      },
+    },
+    colors: ['var(--color-chart-base)'],
     labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     yaxis: {
       opposite: true,
@@ -73,7 +83,6 @@ function useAreaCondition() {
 }
 
 function useScatterEnergy() {
-  const { primary, info, success } = useTailwindColors()
   const height = 280
   const type = 'scatter'
 
@@ -88,7 +97,7 @@ function useScatterEnergy() {
         show: false,
       },
     },
-    colors: [primary.value, success.value, info.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-200)', 'var(--color-primary-400)'],
     dataLabels: {
       enabled: false,
       show: false,
@@ -184,7 +193,6 @@ function useScatterEnergy() {
 }
 
 function useBarOxygen() {
-  const { primary } = useTailwindColors()
   const height = 280
   const type = 'bar'
 
@@ -250,7 +258,7 @@ function useBarOxygen() {
         formatter: asPercent,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
   }
 
   const series = shallowRef([
@@ -269,7 +277,6 @@ function useBarOxygen() {
 }
 
 function useAreaProgress() {
-  const { primary } = useTailwindColors()
   const type = 'area'
   const height = 280
 
@@ -293,7 +300,18 @@ function useAreaProgress() {
       width: [2, 2, 2],
       curve: 'smooth',
     },
-    colors: [primary.value],
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.1,
+      },
+    },
+    colors: ['var(--color-chart-base)'],
     labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     yaxis: {
       opposite: true,
@@ -319,7 +337,6 @@ function useAreaProgress() {
 }
 
 function useGaugePersonal() {
-  const { primary } = useTailwindColors()
   const type = 'radialBar'
   const height = 220
 
@@ -335,7 +352,7 @@ function useGaugePersonal() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         startAngle: -90,
@@ -368,17 +385,6 @@ function useGaugePersonal() {
         },
       },
     },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        shadeIntensity: 0.1,
-        inverseColors: false,
-        opacityFrom: 1,
-        opacityTo: 1,
-        stops: [0, 50, 53, 91],
-      },
-    },
     labels: ['Average Results'],
   }
 
@@ -391,6 +397,9 @@ function useGaugePersonal() {
     series,
   }
 }
+
+// Datepicker
+const date = ref(new Date())
 </script>
 
 <template>
@@ -500,14 +509,18 @@ function useGaugePersonal() {
               size="md"
               class="bg-primary-500/10"
               variant="none"
+              rounded="none"
+              mask="blob"
             >
-              <Icon name="ph:drop-duotone" class="text-primary-500 size-5" />
+              <Icon name="solar:waterdrop-bold-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="text-muted-800 dark:text-muted-100 font-semibold">
+              <BaseText weight="semibold" class="text-muted-800 dark:text-muted-100">
                 114/90
-              </span>
-              <span class="text-muted-400 text-sm">Min/Max</span>
+              </BaseText>
+              <BaseText size="sm" class="text-muted-600 dark:text-muted-400">
+                Min/Max
+              </BaseText>
             </div>
           </div>
           <div>
@@ -519,11 +532,9 @@ function useGaugePersonal() {
             >
               <span>Blood quality</span>
             </BaseHeading>
-            <BaseParagraph size="xs" class="text-muted-400">
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.
-              </span>
+            <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 max-w-[260px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+              videtur.
             </BaseParagraph>
           </div>
         </div>
@@ -536,17 +547,18 @@ function useGaugePersonal() {
               size="md"
               class="bg-primary-500/10"
               variant="none"
+              rounded="none"
+              mask="blob"
             >
-              <Icon
-                name="ph:heartbeat-duotone"
-                class="text-primary-500 size-5"
-              />
+              <Icon name="solar:heart-pulse-2-bold-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="text-muted-800 dark:text-muted-100 font-semibold">
+              <BaseText weight="semibold" class="text-muted-800 dark:text-muted-100">
                 112
-              </span>
-              <span class="text-muted-400 text-sm">Bpm</span>
+              </BaseText>
+              <BaseText size="sm" class="text-muted-600 dark:text-muted-400">
+                Bpm
+              </BaseText>
             </div>
           </div>
           <div>
@@ -558,11 +570,9 @@ function useGaugePersonal() {
             >
               <span>Heart rate</span>
             </BaseHeading>
-            <BaseParagraph size="xs" class="text-muted-400">
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.
-              </span>
+            <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 max-w-[260px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+              videtur.
             </BaseParagraph>
           </div>
         </div>
@@ -575,17 +585,18 @@ function useGaugePersonal() {
               size="md"
               class="bg-primary-500/10"
               variant="none"
+              rounded="none"
+              mask="blob"
             >
-              <Icon
-                name="ph:drop-half-bottom-duotone"
-                class="text-primary-500 size-5"
-              />
+              <Icon name="solar:hearts-bold-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="text-muted-800 dark:text-muted-100 font-semibold">
+              <BaseText weight="semibold" class="text-muted-800 dark:text-muted-100">
                 12/14
-              </span>
-              <span class="text-muted-400 text-sm">Units</span>
+              </BaseText>
+              <BaseText size="sm" class="text-muted-600 dark:text-muted-400">
+                Units
+              </BaseText>
             </div>
           </div>
           <div>
@@ -597,11 +608,9 @@ function useGaugePersonal() {
             >
               <span>Blood pressure</span>
             </BaseHeading>
-            <BaseParagraph size="xs" class="text-muted-400">
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.
-              </span>
+            <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 max-w-[260px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+              videtur.
             </BaseParagraph>
           </div>
         </div>
@@ -614,14 +623,18 @@ function useGaugePersonal() {
               size="md"
               class="bg-primary-500/10"
               variant="none"
+              rounded="none"
+              mask="blob"
             >
-              <Icon name="ph:gauge-duotone" class="text-primary-500 size-5" />
+              <Icon name="solar:dumbbell-large-bold-duotone" class="text-primary-500 size-5" />
             </BaseIconBox>
             <div class="flex items-center gap-1 font-sans">
-              <span class="text-muted-800 dark:text-muted-100 font-semibold">
+              <BaseText weight="semibold" class="text-muted-800 dark:text-muted-100">
                 60.4
-              </span>
-              <span class="text-muted-400 text-sm">Lbs</span>
+              </BaseText>
+              <BaseText size="sm" class="text-muted-600 dark:text-muted-400">
+                Lbs
+              </BaseText>
             </div>
           </div>
           <div>
@@ -633,11 +646,9 @@ function useGaugePersonal() {
             >
               <span>Weight</span>
             </BaseHeading>
-            <BaseParagraph size="xs" class="text-muted-400">
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
-                videtur.
-              </span>
+            <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 max-w-[260px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit Illis
+              videtur.
             </BaseParagraph>
           </div>
         </div>
@@ -645,31 +656,35 @@ function useGaugePersonal() {
       <!-- Column -->
       <div class="col-span-12">
         <!-- Inner grid -->
-        <div class="grid grid-cols-12 gap-6">
+        <div class="grid grid-cols-12 gap-4">
           <!-- Inner column -->
-          <div class="ltablet:col-span-9 col-span-12 lg:col-span-9">
+          <div class="xl:col-span-8 col-span-12 2xl:col-span-9">
             <!-- Chart subgrid -->
-            <div class="grid grid-cols-12 gap-6">
+            <div class="grid grid-cols-12 gap-4">
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard rounded="lg" class="p-6">
-                  <div class="mb-2 flex items-center justify-between">
+                <BaseCard rounded="lg" class="p-4 md:p-6">
+                  <div class="mb-2 flex items-center gap-2">
                     <BaseHeading
                       as="h3"
                       size="md"
-                      weight="semibold"
+                      weight="medium"
                       lead="tight"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Overall Condition</span>
                     </BaseHeading>
+                    <BaseTooltip
+                      content="Based on last 7 days"
+                    >
+                      <Icon name="solar:question-circle-linear" class="size-4 text-muted-400" />
+                    </BaseTooltip>
                   </div>
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400 max-w-[240px]"
+                      class="text-muted-600 dark:text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your overall condition is very good. Make it even
                         better.
@@ -690,24 +705,28 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard rounded="lg" class="p-6">
-                  <div class="mb-2 flex items-center justify-between">
+                <BaseCard rounded="lg" class="p-4 md:p-6">
+                  <div class="mb-2 flex items-center gap-2">
                     <BaseHeading
                       as="h3"
                       size="md"
-                      weight="semibold"
+                      weight="medium"
                       lead="tight"
                       class="text-muted-800 dark:text-white"
                     >
                       <span>Energy Level</span>
                     </BaseHeading>
+                    <BaseTooltip
+                      content="Based on last 7 days"
+                    >
+                      <Icon name="solar:question-circle-linear" class="size-4 text-muted-400" />
+                    </BaseTooltip>
                   </div>
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400 max-w-[240px]"
+                      class="text-muted-600 dark:text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your energy seems a bit unstable. You can improve it.
                       </span>
@@ -724,24 +743,28 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard rounded="lg" class="p-6">
-                  <div class="mb-2 flex items-center justify-between">
+                <BaseCard rounded="lg" class="p-4 md:p-6">
+                  <div class="mb-2 flex items-center gap-2">
                     <BaseHeading
                       as="h3"
                       size="md"
-                      weight="semibold"
+                      weight="medium"
                       lead="tight"
                       class="text-muted-800 dark:text-white"
                     >
                       <span>Oxygenation</span>
                     </BaseHeading>
+                    <BaseTooltip
+                      content="Based on last 7 days"
+                    >
+                      <Icon name="solar:question-circle-linear" class="size-4 text-muted-400" />
+                    </BaseTooltip>
                   </div>
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400 max-w-[240px]"
+                      class="text-muted-600 dark:text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your oxygen seems a bit unstable. You can improve it.
                       </span>
@@ -761,24 +784,28 @@ function useGaugePersonal() {
               </div>
               <!-- Chart -->
               <div class="col-span-12 sm:col-span-6">
-                <BaseCard rounded="lg" class="p-6">
-                  <div class="mb-2 flex items-center justify-between">
+                <BaseCard rounded="lg" class="p-4 md:p-6">
+                  <div class="mb-2 flex items-center gap-2">
                     <BaseHeading
                       as="h3"
                       size="md"
-                      weight="semibold"
+                      weight="medium"
                       lead="tight"
                       class="text-muted-800 dark:text-white"
                     >
                       <span>Overall Progress</span>
                     </BaseHeading>
+                    <BaseTooltip
+                      content="Based on last 7 days"
+                    >
+                      <Icon name="solar:question-circle-linear" class="size-4 text-muted-400" />
+                    </BaseTooltip>
                   </div>
                   <div>
                     <BaseParagraph
                       size="xs"
-                      class="text-muted-400 max-w-[240px]"
+                      class="text-muted-600 dark:text-muted-400 max-w-[240px]"
                     >
-                      <Icon name="ph:question-duotone" class="size-4" />
                       <span>
                         Your overall progress is very good. Make it even better.
                       </span>
@@ -799,42 +826,27 @@ function useGaugePersonal() {
             </div>
           </div>
           <!-- Inner column -->
-          <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
-            <div class="flex flex-col gap-6">
+          <div class="xl:col-span-4 col-span-12 2xl:col-span-3">
+            <div class="flex flex-col gap-4">
               <!-- Widget -->
-              <BaseCard class="p-6" rounded="lg">
+              <BaseCard class="p-4 md:p-6" rounded="lg">
                 <div class="flex w-full items-center justify-between">
                   <DemoSearchCompact rounded="lg" />
                 </div>
               </BaseCard>
               <!-- Widget -->
               <BaseCard rounded="lg" class="p-2">
-                <Calendar
-                  :attributes="[
-                    {
-                      key: 'today',
-                      highlight: true,
-                      order: 0,
-                      dates: [new Date()],
-                    },
-                  ]"
-                  title-position="left"
-                  expanded
-                  borderless
-                  transparent
-                  trim-weeks
-                  class="max-w-full rounded-xl"
-                />
+                <AddonDatepicker v-model="date" locale="en" label="Start date" />
               </BaseCard>
               <!-- Widget -->
-              <BaseCard class="flex h-full flex-col p-6">
+              <BaseCard rounded="lg" class="flex h-full flex-col p-4 md:p-6">
                 <div class="mb-6 flex items-center justify-between">
                   <BaseHeading
                     as="h3"
                     size="md"
-                    weight="semibold"
+                    weight="medium"
                     lead="tight"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>Personal Score</span>
                   </BaseHeading>
@@ -844,7 +856,7 @@ function useGaugePersonal() {
                 </div>
                 <div class="mt-auto text-center">
                   <BaseParagraph size="sm">
-                    <span class="text-muted-400">
+                    <span class="text-muted-600 dark:text-muted-400">
                       Your score has been calculated based on the latest metrics
                     </span>
                   </BaseParagraph>

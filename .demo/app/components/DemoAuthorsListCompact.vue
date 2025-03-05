@@ -57,20 +57,20 @@ const authors = [
         <BaseHeading
           as="h4"
           size="sm"
-          weight="light"
+          weight="medium"
           lead="tight"
-          class="text-muted-800 dark:text-white"
+          class="text-muted-900 dark:text-white"
         >
           <span>{{ author.firstName }} {{ author.lastName.slice(0, 1) }}.</span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400">
+          <span class="text-muted-600 dark:text-muted-400">
             {{ author.role }}
           </span>
         </BaseParagraph>
       </div>
       <div class="ms-auto flex items-center gap-1">
-        <span class="text-muted-400 font-sans text-xs">
+        <span class="text-muted-500 dark:text-muted-300 font-sans text-xs">
           {{ author.articles }} articles
         </span>
         <BaseButton

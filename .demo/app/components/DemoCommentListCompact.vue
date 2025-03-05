@@ -58,16 +58,16 @@ const comments = [
         <BaseHeading
           as="h4"
           size="sm"
-          weight="light"
+          weight="medium"
           lead="tight"
-          class="text-muted-800 dark:text-white"
+          class="text-muted-900 dark:text-white"
         >
           <span>
             {{ comment.firstName }} {{ comment.lastName.slice(0, 1) }}.
           </span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400">
+          <span class="text-muted-600 dark:text-muted-400">
             {{ comment.content }}
           </span>
         </BaseParagraph>

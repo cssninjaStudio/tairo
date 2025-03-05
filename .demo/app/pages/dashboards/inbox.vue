@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Inbox',
-  layout: 'empty',
+  // layout: 'empty',
   preview: {
     title: 'Inbox app',
     description: 'For email and messaging apps',
@@ -35,15 +35,15 @@ const messages = [
   {
     id: 1,
     sender: {
-      name: 'Kendra Wilson',
-      email: 'kwilson@tairo.io',
-      photo: '/img/avatars/10.svg',
+      name: 'Joshua Stevens',
+      email: 'joshua@tairo.io',
+      photo: '/img/avatars/15.svg',
     },
     title: 'We need to review the project',
     abstract:
       'Lorem ipsum is a dummy text used by typographers and web designers.',
     content:
-      'Hi Maya,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Kendra',
+      'Hi Kendra,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Joshua',
     attachments: [
       {
         name: 'project.pdf',
@@ -57,6 +57,7 @@ const messages = [
       },
     ],
     time: '1 hour ago',
+    status: 'unread',
   },
   {
     id: 2,
@@ -65,11 +66,11 @@ const messages = [
       email: 'hermann@tairo.io',
       photo: '/img/avatars/16.svg',
     },
-    title: 'We need to review the project',
+    title: 'Demo not ready yet',
     abstract:
       'Lorem ipsum is a dummy text used by typographers and web designers.',
     content:
-      'Hi Maya,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Hermann',
+      'Hi Kendra,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Hermann',
     attachments: [
       {
         name: 'design.pdf',
@@ -83,6 +84,7 @@ const messages = [
       },
     ],
     time: '4 hours ago',
+    status: 'unread',
   },
   {
     id: 3,
@@ -91,11 +93,11 @@ const messages = [
       email: 'clarissa@tairo.io',
       photo: '/img/avatars/5.svg',
     },
-    title: 'How about having lunch together?',
+    title: 'How about having lunch together?👋',
     abstract:
       'Lorem ipsum is a dummy text used by typographers and web designers.',
     content:
-      'Hi Maya,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Clarissa',
+      'Hi Kendra,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Clarissa',
     attachments: [
       {
         name: 'restaurants.pdf',
@@ -104,6 +106,7 @@ const messages = [
       },
     ],
     time: '5 hours ago',
+    status: 'read',
   },
   {
     id: 4,
@@ -116,7 +119,7 @@ const messages = [
     abstract:
       'Lorem ipsum is a dummy text used by typographers and web designers.',
     content:
-      'Hi Maya,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Eddy',
+      'Hi Kendra,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Eddy',
     attachments: [
       {
         name: 'budget.pdf',
@@ -130,6 +133,7 @@ const messages = [
       },
     ],
     time: '7 hours ago',
+    status: 'read',
   },
   {
     id: 5,
@@ -142,7 +146,7 @@ const messages = [
     abstract:
       'Lorem ipsum is a dummy text used by typographers and web designers.',
     content:
-      'Hi Maya,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Clark',
+      'Hi Kendra,/n I spoke with the rest of the team this morning. They want to do a full review of the current progress. Do you think you would be available this afternoon or tomorrow in the morning?. /n We specifically need to go through the hi-fidelity wireframes amd see how they fit with the different UX scenari we already have. When something matches, we need Larry to start working on more detailed designs./n Also, I thought we could introduce some new tools. Iam not that much into XD anymore and I would like the team to switch to Figma within the month. Do you think that would be possible or are we going to spend a lot again with accelarated training sessions? /n Best Regards, /n Clark',
     attachments: [
       {
         name: 'feedback.pdf',
@@ -156,6 +160,7 @@ const messages = [
       },
     ],
     time: 'Yesterday ago',
+    status: 'read',
   },
 ]
 
@@ -171,10 +176,10 @@ const panelActive = ref(false)
 <template>
   <!-- Wrapper -->
   <div
-    class="bg-muted-100 dark:bg-muted-900 flex h-screen w-full overflow-hidden"
+    class=" -mt-6 w-full overflow-hidden"
   >
     <!-- Sidebar -->
-    <div
+    <!-- <div
       class="border-muted-200 dark:border-muted-700/40 dark:bg-muted-800 flex w-20 flex-col items-center border-r bg-white"
     >
       <NuxtLink
@@ -277,11 +282,11 @@ const panelActive = ref(false)
           </div>
         </div>
       </nav>
-    </div>
+    </div> -->
 
-    <SplitterGroup direction="horizontal">
+    <SplitterGroup direction="horizontal" class="h-[calc(100dvh_-_56px)]!">
       <SplitterPanel
-        :default-size="50"
+        :default-size="20"
         :min-size="md ? 30 : 100"
         :max-size="md ? 60 : 100"
       >
@@ -300,24 +305,42 @@ const panelActive = ref(false)
           </div>
 
           <ul
-            class="nui-slimscroll h-[calc(100dvh_-_64px)] space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
+            class="nui-slimscroll grow space-y-2 overflow-y-auto px-4 pb-8 sm:px-8"
           >
             <li
               v-for="message in messages"
               :key="message.id"
               class="duration 300 cursor-pointer rounded-xl p-4 transition-colors sm:p-6"
-              :class="
+              :class="[
                 activeMessage === message.id
-                  ? 'bg-primary-500/10'
-                  : 'hover:bg-muted-100 dark:hover:bg-muted-800'
-              "
+                  ? 'bg-muted-200/60 dark:bg-muted-950/60'
+                  : 'hover:bg-muted-100 dark:hover:bg-muted-950/30',
+                message.status === 'read' ? 'opacity-60 hover:opacity-100' : '',
+              ]"
               role="button"
               tabindex="0"
               @click=";(activeMessage = message.id), (panelActive = true)"
             >
-              <div class="mb-3 flex items-center gap-2">
+              <div>
+                <BaseHeading
+                  size="md"
+                  weight="medium"
+                  lead="tight"
+                  class="text-muted-900 dark:text-white mb-2"
+                >
+                  {{ message.title }}
+                </BaseHeading>
+                <BaseParagraph
+                  size="sm"
+                  lead="tight"
+                  class="text-muted-500 dark:text-muted-400 pointer-events-none"
+                >
+                  {{ message.abstract }}
+                </BaseParagraph>
+              </div>
+              <div class="mt-3 flex items-center gap-2">
                 <BaseAvatar
-                  size="xs"
+                  size="xxs"
                   rounded="none"
                   mask="blob"
                   :src="message.sender.photo"
@@ -326,16 +349,11 @@ const panelActive = ref(false)
                 <div class="pointer-events-none">
                   <BaseHeading
                     size="sm"
-                    weight="semibold"
+                    weight="medium"
                     lead="tight"
                   >
                     <span>{{ message.sender.name }}</span>
                   </BaseHeading>
-                  <BaseParagraph size="xs" lead="none">
-                    <span class="text-muted-500 dark:text-muted-400">
-                      {{ message.sender.email }}
-                    </span>
-                  </BaseParagraph>
                 </div>
                 <div class="pointer-events-none ms-auto">
                   <span class="text-muted-400 font-sans text-xs">
@@ -343,20 +361,15 @@ const panelActive = ref(false)
                   </span>
                 </div>
               </div>
-              <div
-                class="text-muted-500 dark:text-muted-400 pointer-events-none font-sans text-sm leading-tight"
-              >
-                {{ message.abstract }}
-              </div>
             </li>
           </ul>
         </div>
       </SplitterPanel>
-      <SplitterResizeHandle class="w-1 bg-muted-100 hover:bg-muted-200 dark:bg-muted-700/50 dark:hover:bg-muted-700 transition-colors duration-100" />
-      <SplitterPanel :default-size="50">
+      <SplitterResizeHandle class="w-1 bg-muted-100 hover:bg-muted-200 dark:bg-muted-800/50 dark:hover:bg-muted-800 transition-colors duration-100" />
+      <SplitterPanel :default-size="80">
         <!-- Message details -->
         <div
-          class="ltablet:static ltablet:grow border-muted-200 dark:border-muted-700/40 dark:bg-muted-800 fixed end-0 top-0 flex h-full flex-col border-l bg-white transition-transform duration-300 lg:static lg:grow"
+          class="ltablet:static ltablet:grow bg-muted-50 dark:bg-muted-900 border-muted-200 dark:border-muted-800/60 fixed end-0 top-0 z-10 flex h-full flex-col border-s transition-transform duration-300 lg:static lg:grow"
           :class="
             panelActive
               ? 'translate-x-0'
@@ -364,37 +377,31 @@ const panelActive = ref(false)
           "
         >
           <!-- Toolbar -->
-          <div class="ltablet:max-w-5xl mx-auto w-full lg:max-w-5xl">
+          <div class="ltablet:max-w-3xl mx-auto w-full lg:px-10">
             <div
-              class="relative z-10 flex h-16 w-full items-center justify-between px-8"
+              class="relative z-10 flex lg:hidden h-16 w-full items-center px-8"
             >
               <div
-                class="text-muted-700 dark:text-muted-300 flex items-center gap-2"
+                class="ms-auto text-muted-700 dark:text-muted-300 flex items-center gap-2"
               >
                 <button
                   type="button"
-                  class="ltablet:hidden flex size-9 items-center justify-center lg:hidden"
+                  class="flex size-9 items-center justify-center"
                   @click="panelActive = false"
                 >
-                  <Icon name="lucide:arrow-left" class="size-5" />
+                  <Icon name="lucide:x" class="size-5" />
                 </button>
-                <BaseHeading size="2xl">
-                  <span>Inbox</span>
-                </BaseHeading>
               </div>
-              <TairoSidebarTools
-                class="relative -end-4 z-20 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
-              />
             </div>
 
             <!-- Message header -->
             <div
-              class="ltablet:flex-row ltablet:items-center border-muted-200 dark:border-muted-700 flex h-24 flex-col justify-between border-b px-8 lg:flex-row lg:items-center"
+              class="ltablet:flex-row ltablet:items-center border-muted-200 dark:border-muted-800 flex h-20 flex-col justify-between border-b px-8 lg:flex-row lg:items-center"
             >
               <div class="flex items-center gap-x-4">
                 <div class="ltablet:block hidden lg:block">
                   <BaseAvatar
-                    size="lg"
+                    size="sm"
                     :src="selectedMessage?.sender.photo"
                     :alt="selectedMessage?.sender.name"
                   />
@@ -406,42 +413,43 @@ const panelActive = ref(false)
                     :alt="selectedMessage?.sender.name"
                   />
                 </div>
-                <div class="flex flex-col font-sans">
-                  <h3 class="text-lg font-semibold">
+                <div class="flex flex-col">
+                  <BaseHeading size="md" weight="medium" lead="tight" class="text-muted-900 dark:text-white">
                     {{ selectedMessage?.sender.name }}
-                  </h3>
-                  <p class="text-muted-400 text-sm">
+                  </BaseHeading>
+                  <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
                     {{ selectedMessage?.sender.email }}
-                  </p>
+                  </BaseParagraph>
                 </div>
               </div>
               <div>
                 <div class="ltablet:mb-0 mb-2 flex gap-x-2 lg:mb-0">
-                  <BaseButton size="icon-sm" class="scale-[0.8]">
-                    <Icon
-                      name="ph:arrow-bend-down-left-duotone"
-                      class="size-4"
-                    />
+                  <BaseButton size="icon-sm" rounded="md">
+                    <Icon name="solar:reply-2-linear" class="size-4" />
                   </BaseButton>
-                  <BaseButton size="icon-sm" class="scale-[0.8]">
-                    <Icon name="ph:bookmark-simple-duotone" class="size-4" />
+                  <BaseButton size="icon-sm" rounded="md">
+                    <Icon name="solar:bookmark-linear" class="size-4" />
                   </BaseButton>
-                  <BaseButton size="icon-sm" class="scale-[0.8]">
-                    <Icon name="ph:printer-duotone" class="size-4" />
-                  </BaseButton>
-                  <BaseButton size="icon-sm" class="scale-[0.8]">
-                    <Icon name="ph:trash-duotone" class="size-4" />
+                  <BaseButton size="icon-sm" rounded="md">
+                    <Icon name="solar:trash-bin-trash-linear" class="size-4" />
                   </BaseButton>
                 </div>
               </div>
             </div>
             <!-- Message body -->
             <div
-              class="nui-slimscroll h-[calc(100vh_-_344px)] overflow-y-auto p-8"
+              class="nui-slimscroll h-[calc(100vh_-_316px)] overflow-y-auto p-8"
             >
-              <h1 class="text-2xl font-bold">
+              <div v-if="selectedMessage.attachments.length > 0" class="mb-3 flex items-center gap-2">
+                <Icon name="solar:paperclip-linear" class="size-4 text-muted-500 dark:text-muted-400" />
+                <span>&middot;</span>
+                <BaseTag rounded="full">
+                  {{ selectedMessage?.attachments.length }} attachment{{ selectedMessage?.attachments.length > 1 ? 's' : '' }}
+                </BaseTag>
+              </div>
+              <BaseHeading size="2xl" weight="medium" class="text-muted-900 dark:text-white">
                 {{ selectedMessage?.title }}
-              </h1>
+              </BaseHeading>
               <article
                 class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"
               >
@@ -454,12 +462,12 @@ const panelActive = ref(false)
                 />
                 <!-- eslint-enable vue/no-v-html -->
               </article>
-              <div class="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-4">
+              <div class="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-4">
                 <button
                   v-for="(file, index) in selectedMessage?.attachments"
                   :key="index"
                   type="button"
-                  class="hover:bg-muted-100/80 dark:hover:bg-muted-700/60 group flex items-center gap-3 rounded-xl p-2 text-left transition-colors duration-300"
+                  class="cursor-pointer hover:bg-muted-200/50 dark:hover:bg-muted-800/60 group flex items-center gap-3 rounded-xl p-2 text-left transition-colors duration-300"
                 >
                   <img
                     v-if="file.type === 'pdf'"
@@ -493,11 +501,11 @@ const panelActive = ref(false)
                   >
                   <span class="block font-sans">
                     <span
-                      class="text-muted-800 dark:text-muted-100 block text-sm font-semibold"
+                      class="text-muted-900 dark:text-muted-100 block text-sm font-semibold"
                     >
                       {{ file.name }}
                     </span>
-                    <span class="text-muted-400 block text-xs">
+                    <span class="text-muted-600 dark:text-muted-400 block text-xs">
                       {{ file.size }}
                     </span>
                   </span>
@@ -507,37 +515,49 @@ const panelActive = ref(false)
                     >
                       <Icon
                         name="lucide:arrow-down"
-                        class="text-primary-500 size-4"
+                        class="size-4"
                       />
                     </span>
                   </span>
                 </button>
               </div>
             </div>
-            <!-- Messsage reply -->
+            <!-- Message reply -->
             <div
               class="relative flex h-44 w-full items-center justify-center px-8"
             >
               <div
-                class="border-muted-200 dark:border-muted-700/40 bg-muted-50 dark:bg-muted-900 focus-within:outline-muted-200 dark:focus-within:outline-muted-700 mb-3 w-full rounded-xl border outline-none outline-offset-4 transition-all duration-300 focus-within:outline-dashed focus-within:outline-2"
+                class="border-muted-300 dark:border-muted-800/60 bg-muted-100 dark:bg-muted-950 focus-within:outline-muted-200 dark:focus-within:outline-muted-700 mb-3 w-full rounded-xl border outline-none outline-offset-4 transition-all duration-300 focus-within:outline-dashed focus-within:outline-2"
               >
                 <textarea
-                  class="bg-muted-50 dark:bg-muted-900 placeholder:text-muted-300 dark:placeholder:text-muted-600 w-full resize-none rounded-2xl p-3 font-sans outline-none"
+                  class="bg-muted-100 dark:bg-muted-950 placeholder:text-muted-300 dark:placeholder:text-muted-600 w-full resize-none rounded-2xl p-3 font-sans outline-none"
                   placeholder="Type your reply here..."
                   rows="2"
                 />
                 <div class="flex items-center justify-between p-3">
-                  <button
-                    class="text-muted-500 dark:text-muted-100 flex size-6 items-center justify-center"
-                  >
-                    <Icon name="uit:paperclip" class="size-7" />
-                  </button>
+                  <div class="flex items-center gap-2">
+                    <BaseButton
+                      size="icon-md"
+                      variant="default"
+                      rounded="lg"
+                      class="text-muted-500 dark:text-muted-100 flex size-8 items-center justify-center"
+                    >
+                      <Icon name="solar:paperclip-linear" class="size-4" />
+                    </BaseButton>
+                    <BaseButton
+                      size="icon-md"
+                      variant="default"
+                      rounded="lg"
+                      class="text-muted-500 dark:text-muted-100 flex size-8 items-center justify-center"
+                    >
+                      <Icon name="solar:gallery-minimalistic-linear" class="size-4" />
+                    </BaseButton>
+                  </div>
                   <BaseButton
                     rounded="lg"
-                    variant="primary"
-                    class="w-24"
+                    variant="dark"
                   >
-                    <span>Reply</span>
+                    <span>Send Reply</span>
                   </BaseButton>
                 </div>
               </div>

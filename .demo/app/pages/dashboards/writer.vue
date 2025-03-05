@@ -15,13 +15,13 @@ const activePosts = ref('recent')
 </script>
 
 <template>
-  <div class="relative">
+  <div class="overflow-hidden relative px-4 md:px-6 lg:px-8 pb-20">
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 xl:col-span-8">
         <!-- Inner grid -->
-        <div class="grid grid-cols-12 gap-6">
+        <div class="grid grid-cols-12 gap-4">
           <!-- Header -->
           <div class="col-span-12">
             <div
@@ -36,12 +36,12 @@ const activePosts = ref('recent')
               </div>
               <div class="mt-6 grow sm:mt-0">
                 <div class="pb-4 text-center sm:pb-0 sm:text-left">
-                  <BaseHeading tag="h1" class="text-white opacity-90">
-                    <span>Hello, Maya</span>
+                  <BaseHeading tag="h1" size="2xl" class="text-white">
+                    <span>Hello, Kendra</span>
                   </BaseHeading>
                   <BaseParagraph
                     size="sm"
-                    class="max-w-xs text-white opacity-70"
+                    class="max-w-xs text-white/90"
                   >
                     <span>
                       Have any ideas for a new article? If not, you should
@@ -51,7 +51,6 @@ const activePosts = ref('recent')
                   <div class="mt-2">
                     <BaseButton
                       size="sm"
-                      variant="ghost"
                       class="w-full sm:w-auto"
                     >
                       <Icon name="lucide:plus" class="size-4" />
@@ -65,10 +64,10 @@ const activePosts = ref('recent')
           <!-- Content -->
           <div class="col-span-12">
             <!-- Sub grid -->
-            <div class="grid grid-cols-12 gap-6">
+            <div class="grid grid-cols-12 gap-4">
               <!-- Sub column -->
               <div class="col-span-12 sm:col-span-6">
-                <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-4">
                   <!-- Tile grid -->
                   <div class="grid grid-cols-12 gap-4">
                     <!-- Tile -->
@@ -82,7 +81,7 @@ const activePosts = ref('recent')
                           <span>Articles</span>
                         </BaseParagraph>
                         <span
-                          class="text-muted-800 dark:text-muted-100 block font-sans text-2xl font-bold"
+                          class="text-muted-900 dark:text-muted-100 block font-sans text-2xl font-bold"
                         >
                           138
                         </span>
@@ -99,7 +98,7 @@ const activePosts = ref('recent')
                           <span>Readers</span>
                         </BaseParagraph>
                         <span
-                          class="text-muted-800 dark:text-muted-100 block font-sans text-2xl font-bold"
+                          class="text-muted-900 dark:text-muted-100 block font-sans text-2xl font-bold"
                         >
                           921
                         </span>
@@ -116,7 +115,7 @@ const activePosts = ref('recent')
                           <span>Comments</span>
                         </BaseParagraph>
                         <span
-                          class="text-muted-800 dark:text-muted-100 block font-sans text-2xl font-bold"
+                          class="text-muted-900 dark:text-muted-100 block font-sans text-2xl font-bold"
                         >
                           279
                         </span>
@@ -124,20 +123,19 @@ const activePosts = ref('recent')
                     </div>
                   </div>
                   <!-- Widget -->
-                  <BaseCard class="p-6" rounded="lg">
+                  <BaseCard class="p-4 md:p-6" rounded="lg">
                     <!-- Title -->
                     <div class="mb-8 flex items-center justify-between">
                       <BaseHeading
                         as="h3"
                         size="md"
-                        weight="semibold"
+                        weight="medium"
                         lead="tight"
-                        class="text-muted-800 dark:text-white"
+                        class="text-muted-900 dark:text-white"
                       >
                         <span>Popular authors</span>
                       </BaseHeading>
                       <BaseButton
-                        variant="primary"
                         size="sm"
                         rounded="md"
                       >
@@ -151,20 +149,19 @@ const activePosts = ref('recent')
               <!-- Sub column -->
               <div class="col-span-12 sm:col-span-6">
                 <!-- Widget -->
-                <BaseCard class="p-6" rounded="lg">
+                <BaseCard class="p-4 md:p-6" rounded="lg">
                   <!-- Title -->
                   <div class="mb-8 flex items-center justify-between">
                     <BaseHeading
                       as="h3"
                       size="md"
-                      weight="semibold"
+                      weight="medium"
                       lead="tight"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Latest comments</span>
                     </BaseHeading>
                     <BaseButton
-                      variant="primary"
                       size="sm"
                       rounded="md"
                     >
@@ -179,16 +176,16 @@ const activePosts = ref('recent')
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 xl:col-span-4">
         <div class="bg-muted-200 dark:bg-muted-800/70 rounded-2xl p-6">
           <!-- Title -->
           <div class="mb-8 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
-              weight="semibold"
+              weight="medium"
               lead="tight"
-              class="text-muted-800 dark:text-white"
+              class="text-muted-900 dark:text-white"
             >
               <span>New articles</span>
             </BaseHeading>
@@ -210,7 +207,7 @@ const activePosts = ref('recent')
             </div>
           </div>
           <!-- Posts -->
-          <div class="ptablet:grid ptablet:grid-cols-2 flex flex-col gap-6">
+          <div class="grid grid-cols-1 md:portrait:grid-cols-2 lg:grid-cols-2 xl:landscape:grid-cols-1 flex flex-col gap-6">
             <!-- Post -->
             <NuxtLink to="#" class="flex flex-col">
               <img
@@ -219,20 +216,20 @@ const activePosts = ref('recent')
                 class="bg-muted-200 rounded-xl"
               >
               <BaseCard
-                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 rounded-2xl! p-6 shadow-xl"
+                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 rounded-2xl! p-4 md:p-6 shadow-xl"
               >
                 <div class="mb-3">
                   <BaseHeading
                     as="h4"
                     size="md"
-                    weight="light"
+                    weight="medium"
                     lead="tight"
-                    class="text-muted-800 mb-1 dark:text-white"
+                    class="text-muted-900 mb-1 dark:text-white"
                   >
                     <span>Learning the modern novel</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">
+                    <span class="text-muted-600 dark:text-muted-400">
                       Some article content and lorem ipsum sit dolor amet as a
                       nice dummy subtitle
                     </span>
@@ -249,14 +246,14 @@ const activePosts = ref('recent')
                     <BaseHeading
                       as="h4"
                       size="xs"
-                      weight="light"
+                      weight="medium"
                       lead="tight"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Mike Janovski</span>
                     </BaseHeading>
                     <BaseParagraph size="xs">
-                      <span class="text-muted-400">Novel writer</span>
+                      <span class="text-muted-600 dark:text-muted-400">Novel writer</span>
                     </BaseParagraph>
                   </div>
                 </div>
@@ -270,20 +267,20 @@ const activePosts = ref('recent')
                 class="bg-muted-200 rounded-xl"
               >
               <BaseCard
-                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 rounded-2xl! p-6 shadow-xl"
+                class="shadow-muted-300/30 dark:shadow-muted-900/20 -mt-8 rounded-2xl! p-4 md:p-6 shadow-xl"
               >
                 <div class="mb-3">
                   <BaseHeading
                     as="h4"
                     size="md"
-                    weight="light"
+                    weight="medium"
                     lead="tight"
-                    class="text-muted-800 mb-1 dark:text-white"
+                    class="text-muted-900 mb-1 dark:text-white"
                   >
                     <span>5 writing tips just for you</span>
                   </BaseHeading>
                   <BaseParagraph size="xs">
-                    <span class="text-muted-400">
+                    <span class="text-muted-600 dark:text-muted-400">
                       Some article content and lorem ipsum sit dolor amet as a
                       nice dummy subtitle
                     </span>
@@ -300,14 +297,14 @@ const activePosts = ref('recent')
                     <BaseHeading
                       as="h4"
                       size="xs"
-                      weight="light"
+                      weight="medium"
                       lead="tight"
-                      class="text-muted-800 dark:text-white"
+                      class="text-muted-900 dark:text-white"
                     >
                       <span>Clarissa Miller</span>
                     </BaseHeading>
                     <BaseParagraph size="xs">
-                      <span class="text-muted-400">Novel writer</span>
+                      <span class="text-muted-600 dark:text-muted-400">Novel writer</span>
                     </BaseParagraph>
                   </div>
                 </div>

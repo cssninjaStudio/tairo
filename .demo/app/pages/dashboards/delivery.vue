@@ -195,11 +195,11 @@ const total = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-6">
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 xl:col-span-8">
         <div class="flex flex-col gap-6">
           <!-- Header -->
           <div class="col-span-12">
@@ -215,7 +215,7 @@ const total = computed(() => {
               </div>
               <div class="mt-6 grow sm:mt-0">
                 <div class="pb-4 text-center sm:pb-0 sm:text-left">
-                  <BaseHeading tag="h1" class="mb-2 text-white opacity-90">
+                  <BaseHeading tag="h2" size="2xl" class="mb-2 text-white opacity-90">
                     <span>
                       Free delivery for 30 days!
                       <span class="text-3xl">🎉</span>
@@ -233,7 +233,7 @@ const total = computed(() => {
                   <div class="mt-2">
                     <BaseButton
                       size="sm"
-                      variant="ghost"
+                      variant="default"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
@@ -370,7 +370,7 @@ const total = computed(() => {
                     </div>
 
                     <div>
-                      <BaseButton rounded="lg">
+                      <BaseButton rounded="lg" size="sm">
                         <span>Order</span>
                       </BaseButton>
                     </div>
@@ -389,7 +389,7 @@ const total = computed(() => {
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 xl:col-span-4">
         <div
           class="bg-muted-200 dark:bg-muted-800 flex flex-col gap-6 rounded-2xl p-6"
         >
@@ -470,17 +470,17 @@ const total = computed(() => {
                 </div>
                 <div>
                   <p
-                    class="text-muted-800 dark:text-muted-100 font-sans text-sm"
+                    class="text-muted-900 dark:text-muted-100 font-sans text-sm"
                   >
                     {{ item.name }}
                   </p>
-                  <p class="text-muted-400 font-sans text-xs">
+                  <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                     unit price: ${{ item.price }}
                   </p>
                 </div>
                 <div class="ms-auto">
                   <p
-                    class="text-muted-800 dark:text-muted-100 font-sans text-sm font-semibold"
+                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
                   >
                     ${{ (item.price * item.quantity).toFixed(2) }}
                   </p>

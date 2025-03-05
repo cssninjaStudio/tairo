@@ -124,22 +124,22 @@ const matches = [
 </script>
 
 <template>
-  <div class="relative mt-12">
+  <div class="relative mt-12 px-4 md:px-6 lg:px-8 pb-20">
     <!-- Grid -->
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <div class="ptablet:flex-row flex flex-col gap-6">
+      <div class="col-span-12 lg:col-span-4">
+        <div class="flex flex-col gap-4">
           <!-- Widget -->
-          <BaseCard rounded="lg" class="p-8">
+          <BaseCard rounded="lg" class="p-4 md:p-8">
             <!-- Title -->
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
-                size="lg"
-                weight="semibold"
+                size="md"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>UEFA Champions League</span>
               </BaseHeading>
@@ -150,14 +150,14 @@ const matches = [
                 <BaseHeading
                   as="h4"
                   size="sm"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 mb-1 dark:text-white"
+                  class="text-muted-900 mb-1 dark:text-white"
                 >
                   <span>Group C</span>
                 </BaseHeading>
                 <BaseParagraph size="xs">
-                  <span class="text-muted-400">Match 3 of 6</span>
+                  <span class="text-muted-600 dark:text-muted-400">Match 3 of 6</span>
                 </BaseParagraph>
               </div>
               <div>
@@ -183,15 +183,15 @@ const matches = [
                 <BaseHeading
                   as="h4"
                   size="sm"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-500 dark:text-muted-400 mt-2"
+                  class="text-muted-600 dark:text-muted-400 mt-2"
                 >
                   <span>Barcelona</span>
                 </BaseHeading>
               </div>
               <div
-                class="text-muted-800 dark:text-muted-100 flex items-center justify-center gap-2 text-center font-sans"
+                class="text-muted-900 dark:text-muted-100 flex items-center justify-center gap-2 text-center font-sans"
               >
                 <span class="text-5xl font-bold">4</span>
                 <span class="text-4xl font-bold">:</span>
@@ -206,9 +206,9 @@ const matches = [
                 <BaseHeading
                   as="h4"
                   size="sm"
-                  weight="light"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-500 dark:text-muted-400 mt-2"
+                  class="text-muted-600 dark:text-muted-400 mt-2"
                 >
                   <span>PSG</span>
                 </BaseHeading>
@@ -226,15 +226,15 @@ const matches = [
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard rounded="lg" class="p-8">
+          <BaseCard rounded="lg" class="p-4 md:p-8">
             <!-- Title -->
             <div class="mb-6 flex items-center justify-between">
               <BaseHeading
                 as="h3"
-                size="lg"
-                weight="semibold"
+                size="md"
+                weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>Available Leagues</span>
               </BaseHeading>
@@ -244,8 +244,8 @@ const matches = [
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-        <div class="flex flex-col gap-6">
+      <div class="col-span-12 lg:col-span-8">
+        <div class="flex flex-col gap-4">
           <!-- Header -->
           <div class="col-span-12">
             <div
@@ -253,19 +253,19 @@ const matches = [
             >
               <div class="mt-6 grow pe-6 ps-6 sm:mt-0 sm:pe-0 sm:ps-10">
                 <div class="pb-4 text-center sm:pb-0 sm:text-left">
-                  <BaseHeading tag="h1" class="text-white opacity-90">
+                  <BaseHeading tag="h2" size="xl" class="text-white mb-2">
                     <span>Win awesome prizes in our contest</span>
                   </BaseHeading>
-                  <BaseParagraph size="sm" class="text-white opacity-70">
+                  <BaseParagraph size="sm" class="text-white/90 max-w-sm mb-3">
                     <span>
                       Predict who will win and how a match will end and get a
                       chance to win incredible cash prizes.
                     </span>
                   </BaseParagraph>
-                  <div class="mt-2">
+                  <div>
                     <BaseButton
                       size="sm"
-                      variant="link"
+                      variant="default"
                       class="w-full sm:w-auto"
                     >
                       <span>Learn More</span>
@@ -276,7 +276,7 @@ const matches = [
               </div>
               <div class="relative h-[280px] w-[320px] shrink-0 sm:h-[225px]">
                 <img
-                  class="pointer-events-none absolute bottom-0 end-6 sm:-end-10"
+                  class="pointer-events-none absolute bottom-0 end-6 sm:-end-4"
                   src="/img/illustrations/dashboards/soccer/soccer-player.svg"
                   alt="Soccer Player"
                 >
@@ -285,24 +285,24 @@ const matches = [
           </div>
           <!-- Table -->
           <BaseCard rounded="lg" class="p-8">
-            <div class="mb-6 flex gap-4 font-sans">
+            <div class="mb-6 flex gap-x-8 font-sans">
               <button
-                class="border-primary-500 text-muted-800 dark:text-muted-100 border-b-2 pb-4"
+                class="text-sm border-primary-500 text-muted-800 dark:text-muted-100 border-b-2 pb-4"
               >
                 All
               </button>
               <button
-                class="text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
+                class="text-sm text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
               >
                 Live
               </button>
               <button
-                class="text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
+                class="text-sm text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
               >
                 Finished
               </button>
               <button
-                class="text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
+                class="text-sm text-muted-400 dark:text-muted-500 border-b-2 border-transparent pb-4"
               >
                 Scheduled
               </button>
@@ -311,7 +311,7 @@ const matches = [
               <div class="inline-block min-w-full align-middle">
                 <div class="overflow-hidden">
                   <table
-                    class="min-w-full table-fixed divide-y divide-slate-200 text-left dark:divide-slate-700"
+                    class="min-w-full table-fixed divide-y divide-muted-200 text-left dark:divide-muted-800"
                   >
                     <thead>
                       <tr>
@@ -356,9 +356,9 @@ const matches = [
                               <BaseHeading
                                 as="h4"
                                 size="sm"
-                                weight="light"
+                                weight="medium"
                                 lead="none"
-                                class="text-muted-500 dark:text-muted-400"
+                                class="text-muted-600 dark:text-muted-400"
                               >
                                 <span>{{ match.match.home.name }}</span>
                               </BaseHeading>
@@ -396,9 +396,9 @@ const matches = [
                               <BaseHeading
                                 as="h4"
                                 size="sm"
-                                weight="light"
+                                weight="medium"
                                 lead="none"
-                                class="text-muted-500 dark:text-muted-400"
+                                class="text-muted-600 dark:text-muted-400"
                               >
                                 <span>{{ match.match.away.name }}</span>
                               </BaseHeading>

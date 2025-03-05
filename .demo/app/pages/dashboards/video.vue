@@ -189,7 +189,7 @@ const videos = [
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
@@ -198,26 +198,26 @@ const videos = [
         <div>
           <BaseHeading
             as="h2"
-            size="xl"
-            weight="light"
+            size="2xl"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             <span>Recent Videos</span>
           </BaseHeading>
-          <BaseParagraph>
-            <span class="text-muted-500">
+          <BaseParagraph size="sm">
+            <span class="text-muted-600 dark:text-muted-400">
               Recent videos that were posted earlier today
             </span>
           </BaseParagraph>
         </div>
       </div>
-      <div class="xs:text-center xs:mt-2 space-y-2">
-        <span class="text-muted-400 font-sans text-xs font-medium uppercase">
+      <div class="text-center mt-2 sm:text-start sm:mt-0 space-y-2">
+        <span class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase">
           My Team
         </span>
         <div class="flex items-center justify-center gap-2 md:justify-start">
-          <BaseButton size="icon-sm">
+          <BaseButton size="icon-sm" rounded="lg">
             <Icon name="lucide:plus" class="size-4" />
           </BaseButton>
           <BaseAvatar
@@ -251,12 +251,12 @@ const videos = [
     <!-- Featured videos -->
     <div class="relative">
       <!-- Grid -->
-      <div class="grid min-h-[440px] grid-cols-12 gap-6">
+      <div class="grid min-h-[440px] grid-cols-12 gap-4">
         <!-- Column -->
         <div
           v-for="video in featuredVideos.slice(0, 1)"
           :key="video.id"
-          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+          class="col-span-12 xl:col-span-6"
         >
           <div class="flex h-full flex-col">
             <div
@@ -273,7 +273,7 @@ const videos = [
               <div
                 class="absolute inset-0 z-20 flex size-full flex-col justify-between"
               >
-                <div class="ptablet:p-10 p-6">
+                <div class="md:portrait:p-10 p-6">
                   <NuxtLink
                     to="#"
                     class="group-hover:border-primary-500 text-muted-300 group-hover:text-primary-500 shadow-muted-300/30 dark:shadow-muted-900/20 flex size-14 items-center justify-center rounded-full border-2 border-transparent bg-white shadow-2xl transition-colors duration-300"
@@ -281,14 +281,14 @@ const videos = [
                     <Icon name="ic:round-play-arrow" class="size-7" />
                   </NuxtLink>
                 </div>
-                <div class="ptablet:p-10 p-6">
+                <div class="md:portrait:p-10 p-6">
                   <NuxtLink to="#">
                     <BaseHeading
                       as="h3"
                       size="3xl"
-                      weight="bold"
+                      weight="medium"
                       lead="tight"
-                      class="xs:text-xl hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
+                      class="text-xl sm:text-3xl max-w-sm hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
                     >
                       <span>{{ video.title }}</span>
                     </BaseHeading>
@@ -314,14 +314,15 @@ const videos = [
                       </NuxtLink>
 
                       <BaseParagraph size="xs">
-                        <span class="text-muted-400">{{ video.uploaded }}</span>
+                        <span class="text-muted-300">{{ video.uploaded }}</span>
                       </BaseParagraph>
                     </div>
                     <div class="ms-auto">
                       <BaseTag
-                        variant="primary"
+                        variant="none"
                         rounded="full"
                         size="sm"
+                        class="text-primary-300 border border-primary-300 bg-primary-400/20"
                       >
                         <span>{{ video.category }}</span>
                       </BaseTag>
@@ -333,9 +334,9 @@ const videos = [
           </div>
         </div>
         <!-- Column -->
-        <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+        <div class="col-span-12 xl:col-span-6">
           <div class="flex h-full flex-col">
-            <div class="grid h-full grid-cols-12 gap-6">
+            <div class="grid h-full grid-cols-12 gap-4">
               <!-- Subcolumn -->
               <div
                 v-for="video in featuredVideos.slice(1)"
@@ -372,7 +373,7 @@ const videos = [
                             size="md"
                             weight="medium"
                             lead="tight"
-                            class="xs:text-xl ptablet:text-xl ptablet:font-bold xs:font-bold hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
+                            class="text-lg md:portrait:text-xl max-w-xs hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
                           >
                             <span>{{ video.title }}</span>
                           </BaseHeading>
@@ -398,16 +399,17 @@ const videos = [
                             </NuxtLink>
 
                             <BaseParagraph size="xs">
-                              <span class="text-muted-400">
+                              <span class="text-muted-300">
                                 {{ video.uploaded }}
                               </span>
                             </BaseParagraph>
                           </div>
                           <div class="ms-auto">
                             <BaseTag
-                              variant="primary"
+                              variant="none"
                               rounded="full"
                               size="sm"
+                              class="text-primary-300 border border-primary-300 bg-primary-400/20"
                             >
                               <span>{{ video.category }}</span>
                             </BaseTag>
@@ -429,21 +431,21 @@ const videos = [
       class="mb-8 mt-12 flex flex-col justify-between md:flex-row md:items-center"
     >
       <div
-        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
+        class="flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
         <div>
           <BaseHeading
             as="h2"
             size="lg"
-            weight="light"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             <span>Popular Videos</span>
           </BaseHeading>
           <BaseParagraph size="sm">
-            <span class="text-muted-500">
-              Videos that were recently viewed by many people
+            <span class="text-muted-600 dark:text-muted-500">
+              Videos that were recently viewed many times
             </span>
           </BaseParagraph>
         </div>
@@ -466,7 +468,7 @@ const videos = [
       <div
         v-for="video in videos"
         :key="video.id"
-        class="ptablet:col-span-6 col-span-12 sm:col-span-4"
+        class="md:portrait:col-span-6 col-span-12 sm:col-span-6 2xl:col-span-4"
       >
         <div class="group flex flex-col">
           <div
@@ -498,7 +500,7 @@ const videos = [
                     size="xl"
                     weight="medium"
                     lead="tight"
-                    class="xs:text-xl xs:font-bold hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
+                    class="text-lg md:portrait:text-xl max-w-xs hover:text-primary-300 mb-4 line-clamp-2 text-white transition-colors duration-300"
                   >
                     <span>{{ video.title }}</span>
                   </BaseHeading>
@@ -525,14 +527,15 @@ const videos = [
                     </NuxtLink>
 
                     <BaseParagraph size="xs">
-                      <span class="text-muted-400">{{ video.uploaded }}</span>
+                      <span class="text-muted-300">{{ video.uploaded }}</span>
                     </BaseParagraph>
                   </div>
                   <div class="ms-auto">
                     <BaseTag
-                      variant="primary"
+                      variant="none"
                       rounded="full"
                       size="sm"
+                      class="text-primary-300 border border-primary-300 bg-primary-400/20"
                     >
                       <span>{{ video.category }}</span>
                     </BaseTag>

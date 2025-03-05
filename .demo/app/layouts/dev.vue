@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Label } from 'reka-ui'
-
 const isSwitcherOpen = useState('switcher-open', () => false)
 
 const sidebarId = ref('Dashboards')
@@ -168,11 +166,11 @@ const menu = [
         children: [
           {
             label: 'AI chat v1',
-            to: '/ai',
+            to: '/layouts/ai',
           },
           {
             label: 'AI chat v2',
-            to: '/ai/ui',
+            to: '/layouts/ai/ui',
           },
         ],
       },
@@ -736,7 +734,12 @@ const menu = [
 </script>
 
 <template>
-  <TairoSidebarLayout v-model="sidebarId" :class="sidebarId === 'subsidebar-3' ? '[--sidebar-subsidebar-width:4.5rem]' : ''">
+  <TairoSidebarLayout
+    v-model="sidebarId" :class="[
+      sidebarId === 'subsidebar-3' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
+      sidebarId === 'subsidebar-4' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
+    ]"
+  >
     <TairoSidebarLayoutNav>
       <TairoSidebar>
         <NuxtLink to="/" class="flex items-center justify-center size-14 shrink-0">
@@ -769,6 +772,18 @@ const menu = [
           >
             <TairoSidebarTrigger value="subsidebar-3" to="/dashboards/messaging">
               <Icon name="solar:chat-round-unread-linear" class="size-5" />
+            </TairoSidebarTrigger>
+          </BaseTooltip>
+          <BaseTooltip
+            content="Inbox"
+            variant="dark"
+            :bindings="{
+              content: { side: 'left' },
+              portal: { to: '#teleports' },
+            }"
+          >
+            <TairoSidebarTrigger value="subsidebar-4" to="/dashboards/inbox">
+              <Icon name="solar:letter-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
         </TairoSidebarLinks>
@@ -889,7 +904,7 @@ const menu = [
             v-for="i in 26"
             :key="i"
             to="/layouts/profile"
-            class="flex h-14 w-full items-center justify-center hover:bg-muted-100 dark:hover:bg-muted-900 rounded-lg transitions-colors duration-100"
+            class="flex h-12 w-full items-center justify-center hover:bg-muted-100 dark:hover:bg-muted-900 rounded-lg transitions-colors duration-100"
             :class="i === 1 ? 'bg-primary-100 dark:bg-primary-950 rounded-s-none border-s border-primary-500' : ''"
           >
             <BaseAvatar
@@ -897,6 +912,86 @@ const menu = [
               :src="`/img/avatars/${i}.svg`"
             />
           </NuxtLink>
+        </TairoSidebarSubsidebarContent>
+      </TairoSidebarSubsidebar>
+
+      <TairoSidebarSubsidebar value="subsidebar-4" class="flex flex-col items-center">
+        <TairoSidebarSubsidebarContent>
+          <div class="flex h-12 w-full items-center justify-center shrink-0">
+            <BaseButton size="icon-sm" rounded="full" variant="primary">
+              <Icon name="lucide:plus" class="size-4" />
+            </BaseButton>
+          </div>
+          <div class="flex h-12 w-full items-center justify-center shrink-0">
+            <BaseTooltip
+              content="Received"
+              variant="dark"
+              :bindings="{
+                content: { side: 'left' },
+                portal: { to: '#teleports' },
+              }"
+            >
+              <BaseButton size="icon-sm" rounded="md" variant="ghost">
+                <Icon name="solar:inbox-linear" class="size-5" />
+              </BaseButton>
+            </BaseTooltip>
+          </div>
+          <div class="flex h-12 w-full items-center justify-center shrink-0">
+            <BaseTooltip
+              content="Sent"
+              variant="dark"
+              :bindings="{
+                content: { side: 'left' },
+                portal: { to: '#teleports' },
+              }"
+            >
+              <BaseButton size="icon-sm" rounded="md" variant="ghost">
+                <Icon name="solar:inbox-out-linear" class="size-5" />
+              </BaseButton>
+            </BaseTooltip>
+          </div>
+          <div class="flex h-12 w-full items-center justify-center shrink-0">
+            <BaseTooltip
+              content="Important"
+              variant="dark"
+              :bindings="{
+                content: { side: 'left' },
+                portal: { to: '#teleports' },
+              }"
+            >
+              <BaseButton size="icon-sm" rounded="md" variant="ghost">
+                <Icon name="solar:bookmark-linear" class="size-5" />
+              </BaseButton>
+            </BaseTooltip>
+          </div>
+          <div class="flex h-12 w-full items-center justify-center shrink-0">
+            <BaseTooltip
+              content="Spam"
+              variant="dark"
+              :bindings="{
+                content: { side: 'left' },
+                portal: { to: '#teleports' },
+              }"
+            >
+              <BaseButton size="icon-sm" rounded="md" variant="ghost">
+                <Icon name="solar:trash-bin-trash-linear" class="size-5" />
+              </BaseButton>
+            </BaseTooltip>
+          </div>
+          <div class="flex h-12 w-full items-center justify-center shrink-0">
+            <BaseTooltip
+              content="Calendar"
+              variant="dark"
+              :bindings="{
+                content: { side: 'left' },
+                portal: { to: '#teleports' },
+              }"
+            >
+              <BaseButton size="icon-sm" rounded="md" variant="ghost">
+                <Icon name="solar:calendar-linear" class="size-5" />
+              </BaseButton>
+            </BaseTooltip>
+          </div>
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
     </TairoSidebarLayoutNav>
