@@ -11,28 +11,36 @@ definePageMeta({
   },
 })
 
+const route = useRoute()
 const chatEl = useTemplateRef<HTMLElement>('chatEl')
+const inputEl = useTemplateRef<any>('inputEl')
 const expanded = ref(false)
 const loading = ref(false)
 const search = ref('')
 const message = ref('')
 const messageLoading = ref(false)
-const selectedConversationId = ref(1)
+const selectedConversationId = computed(() => Number(route.params.id || '1'))
 
 const { data: selectedConversation } = useFetch(`/api/messaging/${selectedConversationId.value}`, {
   watch: [selectedConversationId],
 })
 
-// onMounted(() => {
-//   setTimeout(() => {
-//     if (chatEl.value) {
-//       chatEl.value.scrollTo({
-//         top: chatEl.value.scrollHeight,
-//         behavior: 'smooth',
-//       })
-//     }
-//   }, 300)
-// })
+watch(selectedConversation, async () => {
+  if (selectedConversation.value && chatEl.value) {
+    await nextTick()
+    chatEl.value.scrollTo({
+      top: chatEl.value.scrollHeight,
+      behavior: 'smooth',
+    })
+  }
+}, { immediate: true })
+
+function onEnter(event: KeyboardEvent) {
+  if (event.key === 'Enter' && !event.shiftKey) {
+    event.preventDefault()
+    submitMessage()
+  }
+}
 
 async function submitMessage() {
   if (!message.value)
@@ -63,6 +71,8 @@ async function submitMessage() {
       behavior: 'smooth',
     })
   }
+
+  inputEl.value?.$el?.focus()
 }
 </script>
 
@@ -213,7 +223,7 @@ async function submitMessage() {
                       item.type === 'sent' ? 'rounded-se-none' : '',
                     ]"
                   >
-                    <p class="font-sans text-sm">
+                    <p class="font-sans text-sm whitespace-pre-wrap">
                       {{ item.text }}
                     </p>
                   </div>
@@ -297,12 +307,15 @@ async function submitMessage() {
         >
           <div class="relative w-full">
             <BaseTextarea
+              ref="inputEl"
               v-model.trim="message"
+              v-focus
               :disabled="messageLoading"
               rounded="full"
               class="ps-6 pe-24"
               placeholder="Write a message..."
               autogrow
+              @keydown.enter="onEnter"
             />
             <div class="absolute end-2 top-0 flex h-10 items-center gap-1">
               <button
