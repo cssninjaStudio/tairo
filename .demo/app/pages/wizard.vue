@@ -23,7 +23,7 @@ const initialState = ref<Project>({
   budget: '< 5K',
 })
 
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 const { handleSubmit, currentStepId } = provideMultiStepForm({
   initialState,
@@ -104,23 +104,19 @@ const { handleSubmit, currentStepId } = provideMultiStepForm({
     // Simulate async request
     await new Promise(resolve => setTimeout(resolve, 4000))
 
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Success',
-      message: `Project ${state.name} created!`,
-      color: 'success',
+      description: `Project ${state.name} created!`,
       icon: 'ph:check',
-      closable: true,
+      progress: true,
     })
   },
   onError: (error) => {
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Oops!',
-      message: error.message,
-      color: 'danger',
+      description: error.message,
       icon: 'lucide:alert-triangle',
-      closable: true,
+      progress: true,
     })
   },
 })

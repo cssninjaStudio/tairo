@@ -81,7 +81,7 @@ const { values, handleSubmit, isSubmitting } = useForm({
 })
 
 const router = useRouter()
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(async (_values) => {
@@ -92,13 +92,11 @@ const onSubmit = handleSubmit(async (_values) => {
     // fake delay, this will make isSubmitting value to be true
     await new Promise(resolve => setTimeout(resolve, 4000))
 
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Success',
-      message: `Account created!`,
-      color: 'success',
+      description: `Account created!`,
       icon: 'ph:user-circle-fill',
-      closable: true,
+      progress: true,
     })
     router.push('/layouts/onboarding-1')
   }

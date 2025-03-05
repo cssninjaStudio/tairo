@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const isSwitcherOpen = useState('switcher-open', () => false)
-
-const sidebarId = ref('Dashboards')
-
 const menu = [
   {
     label: 'Dashboards',
@@ -731,13 +727,33 @@ const menu = [
     ],
   },
 ]
+
+const isSwitcherOpen = useState('switcher-open', () => false)
+
+const route = useRoute()
+const sidebarId = ref(getInitialSidebarId())
+
+function getInitialSidebarId() {
+  if (route.path.startsWith('/dashboards/messaging')) {
+    return 'Messaging'
+  }
+
+  // search for the active menu item
+  for (const item of menu) {
+    if (item.links.some(link => link.to === route.path || (link.children && link.children.some(child => child.to === route.path)))) {
+      return item.label
+    }
+  }
+
+  return 'Dashboards'
+}
 </script>
 
 <template>
   <TairoSidebarLayout
     v-model="sidebarId" :class="[
-      sidebarId === 'subsidebar-3' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
-      sidebarId === 'subsidebar-4' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'Messaging' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
+      sidebarId === 'Inbox' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
     ]"
   >
     <TairoSidebarLayoutNav>
@@ -754,7 +770,7 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <TairoSidebarTrigger :value="item.label">
@@ -767,10 +783,10 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
-            <TairoSidebarTrigger value="subsidebar-3" to="/dashboards/messaging">
+            <TairoSidebarTrigger value="Messaging" to="/dashboards/messaging">
               <Icon name="solar:chat-round-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
@@ -782,7 +798,7 @@ const menu = [
               portal: { to: '#teleports' },
             }"
           >
-            <TairoSidebarTrigger value="subsidebar-4" to="/dashboards/inbox">
+            <TairoSidebarTrigger value="Inbox" to="/dashboards/inbox">
               <Icon name="solar:letter-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
@@ -794,7 +810,7 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <TairoSidebarLink tabindex="0" @click="isSwitcherOpen = true">
@@ -806,7 +822,7 @@ const menu = [
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <TairoSidebarLink to="/layouts/settings">
@@ -840,7 +856,7 @@ const menu = [
             <TairoSidebarSubsidebarCollapsible
               v-else
               :children="link.children"
-              :open="link.children.some((child) => child.to === $route.path) || undefined"
+              :default-open="link.children.some((child) => child.to === $route.path) || undefined"
             >
               <template #trigger>
                 <TairoSidebarSubsidebarCollapsibleTrigger>
@@ -879,7 +895,7 @@ const menu = [
           <BaseDropdown
             :bindings="{
               content: { side: 'bottom' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <template #button>
@@ -898,24 +914,11 @@ const menu = [
         </BaseMessage>
       </TairoSidebarSubsidebar> -->
 
-      <TairoSidebarSubsidebar value="subsidebar-3">
-        <TairoSidebarSubsidebarContent class="px-1!">
-          <NuxtLink
-            v-for="i in 26"
-            :key="i"
-            to="/layouts/profile"
-            class="flex h-12 w-full items-center justify-center hover:bg-muted-100 dark:hover:bg-muted-900 rounded-lg transitions-colors duration-100"
-            :class="i === 1 ? 'bg-primary-100 dark:bg-primary-950 rounded-s-none border-s border-primary-500' : ''"
-          >
-            <BaseAvatar
-              size="xs"
-              :src="`/img/avatars/${i}.svg`"
-            />
-          </NuxtLink>
-        </TairoSidebarSubsidebarContent>
+      <TairoSidebarSubsidebar value="Messaging">
+        <DemoSubsidebarMessaging />
       </TairoSidebarSubsidebar>
 
-      <TairoSidebarSubsidebar value="subsidebar-4" class="flex flex-col items-center">
+      <TairoSidebarSubsidebar value="Inbox" class="flex flex-col items-center">
         <TairoSidebarSubsidebarContent>
           <div class="flex h-12 w-full items-center justify-center shrink-0">
             <BaseButton size="icon-sm" rounded="full" variant="primary">

@@ -12,7 +12,7 @@ const initialState = ref<Invite>({
   role: null,
 })
 
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = provideMultiStepForm({
   initialState,
@@ -63,23 +63,19 @@ const { handleSubmit, currentStepId, goToStep, progress, complete, steps } = pro
     // Simulate async request
     await new Promise(resolve => setTimeout(resolve, 4000))
 
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Success',
-      message: `Invitation has been sent!`,
-      color: 'success',
+      description: `Invitation has been sent!`,
       icon: 'ph:check',
-      closable: true,
+      progress: true,
     })
   },
   onError: (error) => {
-    toaster.clearAll()
-    toaster.show({
+    toaster.add({
       title: 'Error',
-      message: error.message,
-      color: 'danger',
+      description: error.message,
       icon: 'lucide:alert-triangle',
-      closable: true,
+      progress: true,
     })
   },
 })

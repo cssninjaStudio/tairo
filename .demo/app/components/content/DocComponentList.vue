@@ -6,8 +6,11 @@ const props = defineProps<{
 const meta = ref<string[]>([])
 
 const componentsMeta = await $fetch(`/api/component-meta`)
-// const componentsMeta = { value: {} }
-const { docRoutes: routesFlat } = await useDocumentationRoutes()
+const { data } = await useAsyncData('doc-nav', () => {
+  return queryCollection('docs')
+    .select('path', 'title', 'description', 'components', 'icon')
+    .all()
+})
 
 // filter unwanted components
 watchEffect(() => {
@@ -22,7 +25,7 @@ watchEffect(() => {
 // map component meta to documentation routes
 const componentsPagesMap = computed(() => {
   return meta.value.map((name) => {
-    const route = routesFlat.value.find(
+    const route = data.value?.find(
       (route: any) => route.components?.includes(name),
     )
     return {
@@ -35,14 +38,14 @@ const componentsPagesMap = computed(() => {
 // filter components without documentation routes
 const componentsWithPages = computed(() => {
   return componentsPagesMap.value.filter((c) => {
-    return routesFlat.value.find(
+    return data.value?.find(
       (route: any) => route.components?.includes(c.name),
     )
   })
 })
 const componentsWithoutPages = computed(() => {
   return componentsPagesMap.value.filter((c) => {
-    const route = routesFlat.value.find(
+    const route = data.value?.find(
       (route: any) => route.components?.includes(c.name),
     )
     return !route

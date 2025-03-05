@@ -40,7 +40,9 @@ export interface BaseFullscreenDropfileProps {
   variant?: 'default' | 'primary' | 'dark'
 }
 
-export interface BaseFullscreenDropfileEmits {}
+export interface BaseFullscreenDropfileEmits {
+  drop: [FileList | null]
+}
 export interface BaseFullscreenDropfileSlots {
   default: () => any
 }
