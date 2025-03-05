@@ -563,7 +563,7 @@ async function submitMessage() {
 
   await new Promise(resolve => setTimeout(resolve, 200))
 
-  conversations.value[index].messages.push(newMessage)
+  conversations.value[index]?.messages.push(newMessage)
   message.value = ''
   messageLoading.value = false
 
