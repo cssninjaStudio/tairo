@@ -1,43 +1,38 @@
 <script setup lang="ts">
-import type { RouteLocationRaw } from 'vue-router'
-
 const props = defineProps<{
-  to?: RouteLocationRaw
   title?: string
   subtitle?: string
+  prefix?: string
   icon?: string
   search?: string
 }>()
-const markedTitle = useNuiMark(
-  () => props.title,
-  () => props.search,
-  'text-muted-800 darktext-muted-300 group-focus:text-primary-500 underline decoration-muted-500/40 group-focus:decoration-primary-500/40 group-hover:decoration-primary-500/40 group-hover:text-primary-500 dark:group-focus:text-primary-400 dark:group-hover:text-primary-400 bg-transparent',
-)
-const markedSubtitle = useNuiMark(
-  () => props.subtitle,
-  () => props.search,
-  'text-muted-500 bg-transparent underline decoration-muted-500/30',
-)
 </script>
 
 <template>
-  <NuxtLink
-    class="focus-visible:nui-focus hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:focus:bg-muted-900 group flex items-center rounded-md p-3"
-    :to="props.to"
+  <div
+    class="focus-visible:nui-focus in-data-highlighted:nui-focus in-data-highlighted:bg-muted-50 hover:bg-muted-50 focus:bg-muted-50 dark:hover:bg-muted-900 dark:in-data-highlighted:bg-muted-900 dark:focus:bg-muted-900 group flex items-center rounded-md p-3"
   >
     <div class="flex grow flex-col">
-      <!-- eslint-disable vue/no-v-html -->
-      <span
-        v-if="props.title"
-        class="text-muted-600 dark:text-muted-400 font-heading group-hover:text-primary-500 group-focus:text-primary-500 dark:group-hover:text-primary-400 dark:group-focus:text-primary-400 text-sm"
-        v-html="markedTitle"
-      />
+      <span class="flex gap-1 items-center">
+        <span
+          v-if="props.prefix"
+          class="text-muted-500 dark:text-muted-600 text-sm"
+        >
+          {{ props.prefix }} >
+        </span>
+        <span
+          v-if="props.title"
+          class="text-muted-700 dark:text-muted-500 font-heading group-hover:text-primary-500 group-focus:text-primary-500 dark:group-hover:text-primary-400 dark:group-focus:text-primary-400 text-sm"
+        >
+          {{ props.title }}
+        </span>
+      </span>
       <span
         v-if="props.subtitle"
         class="text-muted-400 dark:text-muted-500 line-clamp-1 text-sm"
-        v-html="markedSubtitle"
-      />
-      <!-- eslint-enable vue/no-v-html -->
+      >
+        {{ props.subtitle }}
+      </span>
     </div>
     <div v-if="props.icon" class="shrink-0">
       <img
@@ -46,5 +41,5 @@ const markedSubtitle = useNuiMark(
         alt=""
       >
     </div>
-  </NuxtLink>
+  </div>
 </template>

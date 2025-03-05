@@ -30,11 +30,11 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
         class="p-2 fixed starting:opacity-0 starting:top-[8%] top-[10%] left-[50%] max-h-[85vh] w-[90vw] max-w-[32rem] translate-x-[-50%] text-sm rounded-lg overflow-hidden border border-white dark:border-muted-700 bg-white dark:bg-muted-800 focus:outline-none z-[100] transition-discrete transition-all duration-200 ease-out flex flex-col"
       >
         <div class="flex w-full items-center justify-between p-4 md:p-6">
-          <h3
+          <DialogTitle
             class="font-heading text-muted-900 text-lg font-medium leading-6 dark:text-white"
           >
             Theme configuration
-          </h3>
+          </DialogTitle>
 
           <BaseButton class="icon-md" @click="closeModal">
             <Icon name="lucide:x" class="size-4" />
@@ -49,7 +49,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
             <div
               class="col-span-12 flex flex-col gap-4 sm:col-span-"
             >
-              <div>
+              <DialogDescription>
                 <BaseHeading
                   as="h4"
                   size="sm"
@@ -61,7 +61,7 @@ function switchMuted(color: (typeof mutedPresets)[number]) {
                 <BaseParagraph size="sm" class="text-muted-400">
                   Make changes to the color palette
                 </BaseParagraph>
-              </div>
+              </DialogDescription>
               <div class="space-y-1">
                 <div class="grid grid-cols-1 gap-x-4 sm:grid-cols-2">
                   <div v-for="color in primaryPresets" :key="color.name">
