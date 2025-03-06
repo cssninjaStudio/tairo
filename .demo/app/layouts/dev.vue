@@ -750,9 +750,9 @@ function getRouteSidebarId() {
 <template>
   <TairoSidebarLayout
     v-model="sidebarId" :class="[
-      sidebarId === 'subsidebar-3' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
-      sidebarId === 'subsidebar-4' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
-      sidebarId === 'subsidebar-5' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'Messaging' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
+      sidebarId === 'Inbox' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'Calendar' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
     ]"
   >
     <TairoSidebarLayoutNav>
@@ -795,7 +795,7 @@ function getRouteSidebarId() {
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
             <TairoSidebarTrigger value="Inbox" to="/dashboards/inbox">
@@ -808,10 +808,10 @@ function getRouteSidebarId() {
             variant="dark"
             :bindings="{
               content: { side: 'left' },
-              portal: { to: '#teleports' },
+              portal: { disabled: true },
             }"
           >
-            <TairoSidebarTrigger value="subsidebar-5" to="/dashboards/calendar">
+            <TairoSidebarTrigger value="Calendar" to="/dashboards/calendar">
               <Icon name="solar:calendar-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
@@ -925,7 +925,7 @@ function getRouteSidebarId() {
               variant="dark"
               :bindings="{
                 content: { side: 'left' },
-                portal: { to: '#teleports' },
+                portal: { disabled: true },
               }"
             >
               <BaseButton size="icon-sm" rounded="md" variant="ghost">
@@ -939,7 +939,7 @@ function getRouteSidebarId() {
               variant="dark"
               :bindings="{
                 content: { side: 'left' },
-                portal: { to: '#teleports' },
+                portal: { disabled: true },
               }"
             >
               <BaseButton size="icon-sm" rounded="md" variant="ghost">
@@ -953,7 +953,7 @@ function getRouteSidebarId() {
               variant="dark"
               :bindings="{
                 content: { side: 'left' },
-                portal: { to: '#teleports' },
+                portal: { disabled: true },
               }"
             >
               <BaseButton size="icon-sm" rounded="md" variant="ghost">
@@ -967,7 +967,7 @@ function getRouteSidebarId() {
               variant="dark"
               :bindings="{
                 content: { side: 'left' },
-                portal: { to: '#teleports' },
+                portal: { disabled: true },
               }"
             >
               <BaseButton size="icon-sm" rounded="md" variant="ghost">
@@ -981,7 +981,7 @@ function getRouteSidebarId() {
               variant="dark"
               :bindings="{
                 content: { side: 'left' },
-                portal: { to: '#teleports' },
+                portal: { disabled: true },
               }"
             >
               <BaseButton size="icon-sm" rounded="md" variant="ghost">
@@ -992,7 +992,7 @@ function getRouteSidebarId() {
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
 
-      <TairoSidebarSubsidebar value="subsidebar-5" class="flex flex-col items-center">
+      <TairoSidebarSubsidebar value="Calendar" class="flex flex-col items-center">
         <TairoSidebarSubsidebarContent>
           <div class="flex h-12 w-full items-center justify-center shrink-0">
             <BaseButton size="icon-sm" rounded="full" variant="primary">
