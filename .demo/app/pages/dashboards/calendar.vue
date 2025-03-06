@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { CalendarCustomAttribute, CalendarEvent, CalendarSettings, VCalendarAttribute } from '~/utils/bundles/calendar'
 import {
   addMinutes,
   endOfDay,
@@ -7,12 +8,10 @@ import {
   isToday,
 } from 'date-fns'
 import { Calendar } from 'v-calendar'
-import { Container, Draggable } from 'vue3-smooth-dnd'
 
+import { Container, Draggable } from 'vue3-smooth-dnd'
 import {
-  type CalendarCustomAttribute,
-  type CalendarEvent,
-  type CalendarSettings,
+
   categoryTheme,
   datesToHeight,
   dateToTop,
@@ -24,7 +23,7 @@ import {
   useDragEventPending,
   useNowMarker,
   useViewPan,
-  type VCalendarAttribute,
+
 } from '~/utils/bundles/calendar'
 import 'v-calendar/dist/style.css'
 import '~/assets/css/vcalendar-weekly.css'
@@ -33,7 +32,7 @@ import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Calendar',
-  layout: 'empty',
+  // layout: 'empty',
   preview: {
     title: 'Calendar app',
     description: 'For email and messaging apps',
@@ -247,127 +246,21 @@ const selectedEventFeatures = computed({
 
 <template>
   <div
-    class="dark:bg-muted-900 flex h-screen w-full select-none overflow-x-auto bg-white lg:overflow-hidden"
+    class="flex w-full select-none overflow-x-auto lg:overflow-hidden -mt-6"
   >
-    <!-- Sidebar -->
-    <div
-      class="border-muted-200 dark:border-muted-800/40 dark:bg-muted-800 fixed start-0 top-0 z-50 flex h-full w-20 flex-col items-center border-r bg-white lg:static"
-    >
-      <NuxtLink
-        to="/dashboards"
-        class="flex size-16 items-center justify-center"
-      >
-        <TairoLogo class="text-primary-600 h-10" />
-      </NuxtLink>
-      <nav class="relative flex h-full flex-col">
-        <NuxtLink
-          to="/dashboards/inbox"
-          class="relative flex size-16 items-center justify-center"
-        >
-          <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
-          >
-            <Icon name="ph:tray-duotone" class="size-5" />
-            <span
-              class="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-pink-600 font-sans text-xs text-white"
-            >
-              3
-            </span>
-          </div>
-        </NuxtLink>
-        <NuxtLink
-          href="#"
-          class="relative flex size-16 items-center justify-center"
-        >
-          <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
-          >
-            <Icon name="ph:bookmark-simple-duotone" class="size-5" />
-          </div>
-        </NuxtLink>
-        <NuxtLink
-          to="/dashboards/calendar"
-          class="relative flex size-16 items-center justify-center"
-        >
-          <div
-            class="bg-primary-500/10 text-primary-500 relative flex size-12 items-center justify-center rounded-xl"
-          >
-            <Icon name="ph:calendar-blank-duotone" class="size-5" />
-          </div>
-        </NuxtLink>
-        <NuxtLink
-          to="/dashboards/inbox"
-          class="relative flex size-16 items-center justify-center"
-        >
-          <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
-          >
-            <Icon name="ph:folder-duotone" class="size-5" />
-          </div>
-        </NuxtLink>
-        <NuxtLink
-          to="/dashboards/inbox"
-          class="relative flex size-16 items-center justify-center"
-        >
-          <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
-          >
-            <Icon name="ph:trash-duotone" class="size-5" />
-          </div>
-        </NuxtLink>
-        <NuxtLink
-          to="/dashboards/inbox"
-          class="relative flex size-16 items-center justify-center"
-        >
-          <div
-            class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
-          >
-            <Icon name="ph:gear-six-duotone" class="size-5" />
-          </div>
-        </NuxtLink>
-        <div class="mt-auto flex flex-col items-center">
-          <a
-            href="#"
-            class="relative flex size-16 items-center justify-center"
-            title="Back"
-            @click.prevent="$router.back()"
-          >
-            <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
-            >
-              <Icon name="lucide:arrow-left" class="size-5" />
-            </div>
-          </a>
-          <button
-            type="button"
-            class="relative flex size-16 items-center justify-center"
-          >
-            <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-600 dark:text-muted-400 relative flex size-12 items-center justify-center rounded-xl"
-            >
-              <Icon name="lucide:plus" class="size-5" />
-            </div>
-          </button>
-          <div class="relative flex size-16 items-center justify-center">
-            <DemoAccountMenu />
-          </div>
-        </div>
-      </nav>
-    </div>
-
     <div
       class="border-muted-200 dark:border-muted-800 ms-20 flex w-[1500px] border-t lg:ms-0 lg:w-full"
     >
       <!-- scrollable area -->
       <div
         ref="scrollCalendarRef"
-        class="nui-slimscroll relative h-screen w-[1500px] grow space-y-14 overflow-auto lg:w-auto lg:overflow-x-hidden"
+        class="nui-slimscroll relative h-[calc(100dvh_-_56pxpx)] w-[1500px] flex flex-col grow space-y-14 overflow-auto lg:w-auto lg:overflow-x-hidden"
       >
         <!-- sticky header -->
         <div
           role="button"
           tabindex="-1"
-          class="dark:bg-muted-900 sticky top-0 z-20 flex bg-white"
+          class="dark:bg-muted-900 sticky top-0 z-20 flex bg-muted-50 mb-0!"
           @click="() => scrollCalendarToTop()"
         >
           <div
@@ -390,7 +283,7 @@ const selectedEventFeatures = computed({
             </span>
           </div>
         </div>
-        <div class="mt-0! flex">
+        <div class="flex grow">
           <!-- hours grid -->
           <div class="w-10">
             <div class="h-16" />
@@ -602,10 +495,10 @@ const selectedEventFeatures = computed({
 
       <!-- left panel -->
       <div
-        class="border-muted-200 dark:border-muted-800 hidden w-72 shrink-0 border-s sm:block"
+        class="border-muted-200 dark:border-muted-800 hidden flex flex-col w-72 h-full shrink-0 border-s sm:block"
       >
         <!-- toolbar -->
-        <div class="relative z-20 flex items-center justify-between p-2">
+        <div class="h-16 shrink-0 relative z-20 flex items-center justify-between px-2">
           <div>
             <button
               type="button"
@@ -621,7 +514,7 @@ const selectedEventFeatures = computed({
         <!-- settings -->
         <div
           v-if="showSettings"
-          class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4"
+          class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4 grow"
         >
           <div class="grid grid-cols-2 gap-x-2 gap-y-4">
             <BaseField

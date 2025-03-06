@@ -412,7 +412,7 @@ const menu = [
     ],
   },
   {
-    label: 'Projects',
+    label: 'Business',
     icon: 'solar:suitcase-lines-linear',
     links: [
       {
@@ -443,12 +443,6 @@ const menu = [
         icon: 'solar:widget-4-linear',
         to: '/layouts/projects/board',
       },
-    ],
-  },
-  {
-    label: 'Banking',
-    icon: 'solar:safe-square-linear',
-    links: [
       {
         label: 'Accounts',
         icon: 'solar:key-minimalistic-square-2-linear',
@@ -756,8 +750,9 @@ function getRouteSidebarId() {
 <template>
   <TairoSidebarLayout
     v-model="sidebarId" :class="[
-      sidebarId === 'Messaging' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
-      sidebarId === 'Inbox' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'subsidebar-3' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
+      sidebarId === 'subsidebar-4' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'subsidebar-5' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
     ]"
   >
     <TairoSidebarLayoutNav>
@@ -794,6 +789,7 @@ function getRouteSidebarId() {
               <Icon name="solar:chat-round-unread-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
+
           <BaseTooltip
             content="Inbox"
             variant="dark"
@@ -804,6 +800,19 @@ function getRouteSidebarId() {
           >
             <TairoSidebarTrigger value="Inbox" to="/dashboards/inbox">
               <Icon name="solar:letter-unread-linear" class="size-5" />
+            </TairoSidebarTrigger>
+          </BaseTooltip>
+
+          <BaseTooltip
+            content="Calendar"
+            variant="dark"
+            :bindings="{
+              content: { side: 'left' },
+              portal: { to: '#teleports' },
+            }"
+          >
+            <TairoSidebarTrigger value="subsidebar-5" to="/dashboards/calendar">
+              <Icon name="solar:calendar-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
         </TairoSidebarLinks>
@@ -870,25 +879,6 @@ function getRouteSidebarId() {
               </template>
             </TairoSidebarSubsidebarCollapsible>
           </template>
-
-          <!-- <TairoSidebarSubsidebarCollapsible
-            icon="solar:card-linear"
-            label="Payments"
-            :children="[
-              {
-                label: 'Gateways',
-                to: '#',
-              },
-              {
-                label: 'Statistics',
-                to: '#',
-              },
-              {
-                label: 'API Endpoints',
-                to: '#',
-              },
-            ]"
-          /> -->
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
 
@@ -998,6 +988,16 @@ function getRouteSidebarId() {
                 <Icon name="solar:calendar-linear" class="size-5" />
               </BaseButton>
             </BaseTooltip>
+          </div>
+        </TairoSidebarSubsidebarContent>
+      </TairoSidebarSubsidebar>
+
+      <TairoSidebarSubsidebar value="subsidebar-5" class="flex flex-col items-center">
+        <TairoSidebarSubsidebarContent>
+          <div class="flex h-12 w-full items-center justify-center shrink-0">
+            <BaseButton size="icon-sm" rounded="full" variant="primary">
+              <Icon name="lucide:plus" class="size-4" />
+            </BaseButton>
           </div>
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
