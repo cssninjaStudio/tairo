@@ -246,21 +246,21 @@ const selectedEventFeatures = computed({
 
 <template>
   <div
-    class="flex w-full select-none overflow-x-auto lg:overflow-hidden -mt-6"
+    class="flex w-full select-none h-[calc(100dvh_-_56px)]!"
   >
     <div
-      class="border-muted-200 dark:border-muted-800 ms-20 flex w-[1500px] border-t lg:ms-0 lg:w-full"
+      class="border-muted-200 dark:border-muted-800 flex w-full border-t -mt-6"
     >
       <!-- scrollable area -->
       <div
         ref="scrollCalendarRef"
-        class="nui-slimscroll relative h-[calc(100dvh_-_56pxpx)] w-[1500px] flex flex-col grow space-y-14 overflow-auto lg:w-auto lg:overflow-x-hidden"
+        class="nui-slimscroll relative w-full flex flex-col grow space-y-14 overflow-y-auto lg:w-auto lg:overflow-x-hidden"
       >
         <!-- sticky header -->
         <div
           role="button"
           tabindex="-1"
-          class="dark:bg-muted-900 sticky top-0 z-20 flex bg-muted-50 mb-0!"
+          class="dark:bg-muted-900 flex bg-muted-50 mb-0!"
           @click="() => scrollCalendarToTop()"
         >
           <div
@@ -283,7 +283,7 @@ const selectedEventFeatures = computed({
             </span>
           </div>
         </div>
-        <div class="flex grow">
+        <div class="flex h-[calc(100dvh_-_56px)]! overflow-y-auto nui-slimscroll">
           <!-- hours grid -->
           <div class="w-10">
             <div class="h-16" />
@@ -495,7 +495,7 @@ const selectedEventFeatures = computed({
 
       <!-- left panel -->
       <div
-        class="border-muted-200 dark:border-muted-800 hidden flex flex-col w-72 h-full shrink-0 border-s sm:block"
+        class="border-muted-200 dark:border-muted-800 hidden flex flex-col w-72 h-[calc(100dvh_-_56px)]! shrink-0 border-s sm:block"
       >
         <!-- toolbar -->
         <div class="h-16 shrink-0 relative z-20 flex items-center justify-between px-2">
@@ -514,7 +514,7 @@ const selectedEventFeatures = computed({
         <!-- settings -->
         <div
           v-if="showSettings"
-          class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4 grow"
+          class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4 h-auto shrink-0"
         >
           <div class="grid grid-cols-2 gap-x-2 gap-y-4">
             <BaseField
@@ -638,7 +638,7 @@ const selectedEventFeatures = computed({
         >
           <div
             v-if="selectedEvent"
-            class="nui-slimscroll relative h-[calc(100vh_-_53px)] p-6 pt-4"
+            class="nui-slimscroll relative grow p-6 pt-4"
             :class="{
               'overflow-y-auto overflow-x-hidden': !showSettings,
               'overflow-hidden': showSettings,
@@ -756,7 +756,7 @@ const selectedEventFeatures = computed({
           </div>
           <div
             v-else
-            class="nui-slimscroll relative h-[calc(100vh_-_53px)] p-6"
+            class="nui-slimscroll relative grow p-6"
             :class="{
               'overflow-y-auto overflow-x-hidden': !showSettings,
               'overflow-hidden': showSettings,

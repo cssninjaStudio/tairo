@@ -7,7 +7,7 @@ const { currentSubsidebarId } = useLayoutSidebarContext()
 </script>
 
 <template>
-  <div v-if="props.value === currentSubsidebarId" class="flex flex-col w-(--sidebar-subsidebar-width) h-full bg-white dark:bg-muted-950 border-e border-muted-200 dark:border-muted-800">
+  <div v-if="props.value === currentSubsidebarId" class="relative z-0 flex flex-col w-(--sidebar-subsidebar-width) h-full bg-white dark:bg-muted-950 border-e border-muted-200 dark:border-muted-800">
     <slot />
   </div>
 </template>
