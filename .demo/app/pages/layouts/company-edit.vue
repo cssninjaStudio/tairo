@@ -260,6 +260,7 @@ const onSubmit = handleSubmit(
         method="POST"
         action=""
         class=""
+        novalidate
         @submit.prevent="onSubmit"
       >
         <div class="space-y-8">

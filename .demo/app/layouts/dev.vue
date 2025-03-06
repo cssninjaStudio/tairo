@@ -731,9 +731,13 @@ const menu = [
 const isSwitcherOpen = useState('switcher-open', () => false)
 
 const route = useRoute()
-const sidebarId = ref(getInitialSidebarId())
+const sidebarId = ref(getRouteSidebarId())
 
-function getInitialSidebarId() {
+watch(() => route.path, () => {
+  sidebarId.value = getRouteSidebarId()
+})
+
+function getRouteSidebarId() {
   if (route.path.startsWith('/dashboards/messaging')) {
     return 'Messaging'
   }

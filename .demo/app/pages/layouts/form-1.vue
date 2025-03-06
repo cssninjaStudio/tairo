@@ -618,9 +618,14 @@ const onSubmit = handleSubmit(
                     :ref="inputRef"
                     v-bind="inputAttrs"
                     :model-value="field.value"
+                    placeholder="Select a manager"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   >
+                    <template v-if="field.value" #value="{ modelValue }">
+                      {{ modelValue?.name }}
+                    </template>
+
                     <TairoSelectItem
                       v-for="item in people"
                       :key="item.id"
