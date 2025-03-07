@@ -287,3 +287,30 @@ function getUsersLocation() {
     <slot />
   </div>
 </template>
+
+<style>
+@reference '~/assets/tailwind.css';
+
+.location-picker {
+  .mapboxgl-ctrl-geocoder {
+    @apply bg-transparent shadow-none;
+  }
+
+  .mapboxgl-ctrl-geocoder input {
+    @apply h-10 ps-10 font-sans text-input-default-text bg-input-default-bg border border-input-default-border shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
+    @apply in-[.rounded-none]:rounded-none!;
+    @apply in-[.rounded-sm]:rounded-sm;
+    @apply in-[.rounded-md]:rounded-md;
+    @apply in-[.rounded-lg]:rounded-lg;
+    @apply in-[.rounded-xl]:rounded-xl;
+  }
+
+  .mapboxgl-ctrl-geocoder--button {
+    @apply bg-transparent;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon-search {
+    @apply text-muted-400 dark:text-muted-600 fill-current top-2.5 start-3 scale-[1.1];
+  }
+}
+</style>

@@ -597,10 +597,10 @@ function selectFeature(feature?: any) {
   </div>
 </template>
 
-<style scoped>
+<style>
 @reference '~/assets/tailwind.css';
 
-.map-container :deep() {
+.map-container {
   .mapboxgl-popup-content {
     @apply p-3 pb-3! rounded-lg shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 border border-muted-200 dark:border-muted-700 bg-white dark:bg-muted-800;
   }

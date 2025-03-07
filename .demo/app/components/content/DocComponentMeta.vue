@@ -413,9 +413,3 @@ function wrapExternalLinks(string: string) {
     </div>
   </div>
 </template>
-
-<!-- <style scoped>
-.inline-sample:deep(.shiki) {
-  @apply my-0;
-}
-</style> -->
