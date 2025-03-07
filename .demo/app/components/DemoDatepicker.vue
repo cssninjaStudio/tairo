@@ -62,7 +62,7 @@ function formatDateForDisplay(date: any) {
   const formattedDate = (`0${date.getDate()}`).slice(-2) // appends 0 (zero) in single digit date
   const formattedMonth = MONTH_NAMES[date.getMonth()]
   const formattedMonthShortName = MONTH_SHORT_NAMES[date.getMonth()]
-  const formattedMonthInNumber = (`0${Number.parseInt(date.getMonth()) + 1}`).slice(-2)
+  const formattedMonthInNumber = (`0${Number.parseInt(date.getMonth(), 10) + 1}`).slice(-2)
   const formattedYear = date.getFullYear()
   if (dateFormat.value === 'DD-MM-YYYY') {
     return `${formattedDate}-${formattedMonthInNumber}-${formattedYear}` // 02-04-2022

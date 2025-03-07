@@ -4,7 +4,7 @@ import { kebabCase } from 'scule'
 const props = defineProps<{
   name: string
 }>()
-const docs = await useDocumentationMeta(() => props.name as any)
+const docs = await useDocumentationMeta(() => props.name as any).catch(() => undefined)
 
 /**
  * Wrap https://... links in markdown with <a href="...">...</a>
@@ -20,7 +20,7 @@ function wrapExternalLinks(string: string) {
   <div class="py-6">
     <div class="relative space-y-10">
       <div
-        v-if="docs.noOptions"
+        v-if="docs?.noOptions"
         class="mx-auto w-full"
       >
         <div class="flex items-center justify-center p-6">
@@ -44,7 +44,7 @@ function wrapExternalLinks(string: string) {
 
       <!-- Model display -->
       <div
-        v-if="docs.model"
+        v-if="docs?.model"
         class="mx-auto w-full"
       >
         <div class="overflow-x-auto rounded-md border border-muted-300 bg-white dark:border-muted-800 dark:bg-muted-950">
@@ -63,8 +63,8 @@ function wrapExternalLinks(string: string) {
               <tr class="border-t border-muted-300 text-sm dark:border-muted-800">
                 <td class="px-4 py-3">
                   <div class="flex items-center gap-1">
-                    <code class="rounded-sm bg-primary-500/20 px-1 text-[0.8rem] font-medium text-primary-600 dark:text-primary-400">{{ kebabCase(docs.model.name) }}</code>
-                    <div v-if="docs.model.description">
+                    <code class="rounded-sm bg-primary-500/20 px-1 text-[0.8rem] font-medium text-primary-600 dark:text-primary-400">{{ kebabCase(docs?.model.name) }}</code>
+                    <div v-if="docs?.model.description">
                       <BaseDropdown
                         orientation="start"
                         size="lg"
@@ -83,7 +83,7 @@ function wrapExternalLinks(string: string) {
                             size="xs"
                             class="text-muted-700 dark:text-muted-200"
                           >
-                            {{ docs.model.description }}
+                            {{ docs?.model.description }}
                           </BaseParagraph>
                           <BaseParagraph
                             size="xs"
@@ -92,7 +92,7 @@ function wrapExternalLinks(string: string) {
                             Additional info and tags like the default configuration value.
                           </BaseParagraph>
                           <div
-                            v-for="tag in docs.model.tags"
+                            v-for="tag in docs?.model.tags"
                             :key="tag.name"
                             class="flex gap-1"
                           >
@@ -119,7 +119,7 @@ function wrapExternalLinks(string: string) {
                 <td class="px-4 py-3">
                   <div class="flex items-center gap-1 font-mono text-muted-700 dark:text-muted-400">
                     <ComponentMetaCode>
-                      {{ docs.model.type }}
+                      {{ docs?.model.type }}
                     </ComponentMetaCode>
                   </div>
                 </td>
@@ -130,7 +130,7 @@ function wrapExternalLinks(string: string) {
       </div>
       <!-- Props display -->
       <div
-        v-if="docs.props?.length > 0"
+        v-if="docs?.props?.length > 0"
         class="w-full"
       >
         <div class="overflow-x-auto rounded-md border border-muted-300 bg-white dark:border-muted-800 dark:bg-muted-950">
@@ -150,7 +150,7 @@ function wrapExternalLinks(string: string) {
             </thead>
             <tbody>
               <tr
-                v-for="prop in docs.props"
+                v-for="prop in docs?.props"
                 :key="prop.name"
                 class="border-t border-muted-300 text-sm dark:border-muted-800"
               >
@@ -246,7 +246,7 @@ function wrapExternalLinks(string: string) {
       </div>
       <!-- Events display -->
       <div
-        v-if="docs.events?.length > 0"
+        v-if="docs?.events?.length > 0"
         class="mx-auto mt-10 w-full"
       >
         <div class="overflow-x-auto rounded-md border border-muted-300 bg-white dark:border-muted-800 dark:bg-muted-950">
@@ -263,7 +263,7 @@ function wrapExternalLinks(string: string) {
             </thead>
             <tbody>
               <tr
-                v-for="event in docs.events"
+                v-for="event in docs?.events"
                 :key="event.type"
                 class="border-t border-muted-300 text-sm dark:border-muted-800"
               >
@@ -309,7 +309,7 @@ function wrapExternalLinks(string: string) {
       </div>
       <!-- Slots display -->
       <div
-        v-if="docs.slots?.length > 0"
+        v-if="docs?.slots?.length > 0"
         class="mx-auto mt-10 w-full"
       >
         <div class="overflow-x-auto rounded-md border border-muted-300 bg-white dark:border-muted-800 dark:bg-muted-950">
@@ -326,7 +326,7 @@ function wrapExternalLinks(string: string) {
             </thead>
             <tbody>
               <tr
-                v-for="slot in docs.slots"
+                v-for="slot in docs?.slots"
                 :key="slot.name"
                 class="border-t border-muted-300 text-sm dark:border-muted-800"
               >
@@ -348,7 +348,7 @@ function wrapExternalLinks(string: string) {
         </div>
         <!-- Exposed display -->
         <div
-          v-if="docs.exposed?.length > 0"
+          v-if="docs?.exposed?.length > 0"
           class="mx-auto mt-10 w-full"
         >
           <div class="overflow-x-auto rounded-md border border-muted-300 bg-white dark:border-muted-800 dark:bg-muted-950">
@@ -365,7 +365,7 @@ function wrapExternalLinks(string: string) {
               </thead>
               <tbody>
                 <tr
-                  v-for="exposed in docs.exposed"
+                  v-for="exposed in docs?.exposed"
                   :key="exposed.name"
                   class="border-t border-muted-300 text-sm dark:border-muted-800"
                 >

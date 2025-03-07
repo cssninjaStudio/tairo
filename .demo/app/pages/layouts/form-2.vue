@@ -297,7 +297,7 @@ const onSubmit = handleSubmit(
 const currentRating = computed(() => {
   if (values.doctor?.rating === undefined || values.doctor?.rating === null)
     return 0
-  return Number.parseInt(values.doctor?.rating)
+  return Number.parseInt(values.doctor?.rating, 10)
 })
 
 const currentRatingText = computed(() => {
