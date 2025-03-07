@@ -180,10 +180,6 @@ const menu = [
         label: 'Left dock',
         to: '/dashboards/map-left',
       },
-      {
-        label: 'Right dock',
-        to: '/dashboards/map-right',
-      },
     ],
   },
   {

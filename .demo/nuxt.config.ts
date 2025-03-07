@@ -259,11 +259,12 @@ export default defineNuxtConfig({
         'unified',
         // useMultiStepForm
         'vue3-smooth-dnd',
+        // AddonMapboxLocationPicker
+        'ohash',
         'mapbox-gl',
-        '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js',
-        // DocComponentMeta
-        // useDocumentationMeta
-        // 'scule',
+        '@mapbox/mapbox-gl-geocoder',
+        // useTailwindColors
+        'colorjs.io',
         // form validation
         '@vee-validate/zod',
         'vee-validate',

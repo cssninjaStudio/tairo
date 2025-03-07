@@ -3,6 +3,7 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { DatePicker } from 'v-calendar'
 import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
+import 'v-calendar/dist/style.css'
 
 definePageMeta({
   title: 'Meeting',

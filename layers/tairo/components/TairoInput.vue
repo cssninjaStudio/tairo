@@ -58,7 +58,7 @@ const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invali
     </div>
     <BaseInput
       :ref="forwardRef"
-      class="ring-0!"
+      class="ring-0! focus-visible:ring-0!"
       v-bind="{
         ...forward,
         ...attrs,

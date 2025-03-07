@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { MapInitEvent } from '~/components/AddonMapboxLocationPicker.vue'
 import { toTypedSchema } from '@vee-validate/zod'
 import { DatePicker } from 'v-calendar'
 import { Field, useForm } from 'vee-validate'
@@ -24,6 +25,7 @@ const VALIDATION_TEXT = {
   SHORTDESC_REQUIRED: 'Short description can\'t be empty',
   LONGDESC_REQUIRED: 'Long description can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
+  LOCATION_REQUIRED: 'Click on the map to select a location',
 }
 
 // This is the Zod schema for the form input
@@ -41,6 +43,10 @@ const zodSchema = z
         start: z.date().nullable(),
         end: z.date().nullable(),
       }),
+      position: z.object({
+        lat: z.number(),
+        lng: z.number(),
+      }).optional(),
     }),
   })
   .superRefine((data, ctx) => {
@@ -51,6 +57,13 @@ const zodSchema = z
         code: z.ZodIssueCode.custom,
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['event.participants'],
+      })
+    }
+    if (!data.event.position) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.LOCATION_REQUIRED,
+        path: ['event.position'],
       })
     }
   })
@@ -195,6 +208,11 @@ const people = ref([
   'Hermann Schmidt',
   'Chloe Varley',
 ])
+
+function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
+  // eslint-disable-next-line no-console
+  console.log('onMapInit', geocoder, map, mapboxgl)
+}
 </script>
 
 <template>
@@ -202,6 +220,7 @@ const people = ref([
     action=""
     method="POST"
     class="relative py-3 sm:mx-auto sm:max-w-xl"
+    novalidate
     @submit.prevent="onSubmit"
   >
     <BaseCard rounded="lg" class="relative px-4 py-10 sm:p-10 md:mx-0">
@@ -372,6 +391,37 @@ const people = ref([
               </BaseField>
             </Field>
             <Field
+              v-slot="{ field, errorMessage, handleChange }"
+              name="event.position"
+            >
+              <BaseField
+                label="Event location"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
+              >
+                <LazyAddonMapboxLocationPicker
+                  hydrate-on-visible
+                  class="col-span-12 aspect-16/9"
+                  :class="errorMessage ? 'border border-destructive-500' : ''"
+                  rounded="lg"
+                  :options="{
+                    center: { lat: 34.0134, lng: -6.7882 },
+                    zoom: 10,
+                  }"
+                  :geocoder="{
+                    flyTo: true,
+                    placeholder: 'Search for a location...',
+                  }"
+                  :model-value="field.value"
+                  @update:model-value="handleChange"
+                  @init="onMapInit"
+                />
+              </BaseField>
+            </Field>
+            <Field
               v-slot="{ field, errorMessage, handleChange, handleBlur }"
               name="event.participants"
             >
@@ -386,7 +436,7 @@ const people = ref([
                 <BaseAutocomplete
                   :ref="inputRef"
                   v-bind="inputAttrs"
-                  :items="people"
+                  :items="people.map((name) => ({ label: name, value: name }))"
                   rounded="lg"
                   icon="ph:users-duotone"
                   placeholder="Add participants..."

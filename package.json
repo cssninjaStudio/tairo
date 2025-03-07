@@ -27,7 +27,7 @@
     "lint": "eslint --fix ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.3.0",
+    "@antfu/eslint-config": "^4.7.0",
     "eslint": "9.21.0",
     "eslint-plugin-format": "^1.0.1",
     "lint-staged": "15.4.3",

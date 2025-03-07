@@ -99,6 +99,10 @@ const zodSchema = z
       state: z.string().min(1, VALIDATION_TEXT.STATE_REQUIRED),
       zipcode: z.string().min(5, VALIDATION_TEXT.ZIPCODE_REQUIRED),
       country: z.string(),
+      position: z.object({
+        lat: z.number(),
+        lng: z.number(),
+      }).optional(),
     }),
   })
   .superRefine((data, ctx) => {
@@ -170,6 +174,10 @@ const initialValues = {
     state: '',
     zipcode: '',
     country: 'United States',
+    position: {
+      lat: 34.009263094955244,
+      lng: -118.42852935091915,
+    },
   },
 } satisfies FormInput
 
@@ -189,6 +197,7 @@ const {
 })
 
 const success = ref(false)
+const interactiveMap = ref(false)
 const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 
 // BaseInputFileHeadless gives us a listfile input, but we need to
@@ -462,7 +471,7 @@ const currentRatingText = computed(() => {
                   name="doctor.phone"
                 >
                   <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
+                    v-slot="{ inputAttrs }"
                     label="Emergency Phone"
                     :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
@@ -735,14 +744,35 @@ const currentRatingText = computed(() => {
                     </BaseText>
                     <div class="ms-auto">
                       <NuxtLink
-                        to="#"
-                        class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
+                        class="cursor-pointer text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
+                        @click="interactiveMap = !interactiveMap"
                       >
-                        Change
+                        {{ interactiveMap ? 'Save' : 'Change' }}
                       </NuxtLink>
                     </div>
                   </div>
                 </div>
+
+                <Field
+                  v-slot="{ field, handleChange }"
+                  name="doctor.position"
+                >
+                  <LazyAddonMapboxLocationPicker
+                    hydrate-on-visible
+                    class="col-span-12 aspect-16/9"
+                    rounded="lg"
+                    :model-value="field.value"
+                    :geocoder="interactiveMap"
+                    :geolocation="interactiveMap"
+                    :options="{
+                      interactive: interactiveMap,
+                    }"
+                    :marker="{
+                      draggable: interactiveMap,
+                    }"
+                    @update:model-value="handleChange"
+                  />
+                </Field>
               </div>
             </TairoFormGroup>
 
@@ -750,7 +780,7 @@ const currentRatingText = computed(() => {
               <div
                 class="-mt-4 inline-flex w-full items-center justify-end gap-2 sm:w-auto"
               >
-                <BaseButton class="h-12! w-full sm:w-40">
+                <BaseButton class="h-12! w-full sm:w-40" type="reset" @click="resetForm">
                   Cancel
                 </BaseButton>
                 <BaseButton
