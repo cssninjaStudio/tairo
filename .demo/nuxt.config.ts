@@ -223,8 +223,7 @@ export default defineNuxtConfig({
     define: {
       // Enable / disable Options API support. Disabling this will result in smaller bundles,
       // but may affect compatibility with 3rd party libraries if they rely on Options API.
-      // Splitplane uses Options API, so we need to enable it.
-      __VUE_OPTIONS_API__: true,
+      __VUE_OPTIONS_API__: false,
     },
     css: {
       // LightningCSS is a rust based CSS minifier that is faster than the default CSS minifier.
