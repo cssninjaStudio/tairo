@@ -149,7 +149,10 @@ async function loadDemo() {
               <slot name="source" />
             </details>
             <DevOnly v-else>
-              No source code available for {{ props.demo }}
+              <BaseMessage variant="warning">
+                <span>Unable to load demo source for</span>
+                <strong class="text-semibold ms-1">{{ props.demo }}</strong>
+              </BaseMessage>
             </DevOnly>
           </div>
         </div>

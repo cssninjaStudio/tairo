@@ -132,15 +132,17 @@ export default defineNuxtConfig({
     metaSources: ['@shuriken-ui/nuxt-component-meta'],
     exclude: [
       (component: any) => {
-        return true
+        if (!import.meta.env.ENABLE_DOCUMENTATION) {
+          return true
+        }
 
-        // const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
-        // const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-        // const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
+        const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+        const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+        const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
 
-        // const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
+        const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
 
-        // return isBlacklisted || isExcluded
+        return isBlacklisted || isExcluded
       },
     ],
   },
