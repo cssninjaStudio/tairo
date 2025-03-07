@@ -161,6 +161,10 @@ async function waitStyleLoaded() {
   updatePositionMarker()
 }
 function getMapStyle() {
+  if (props.options?.style) {
+    return props.options.style
+  }
+
   return colorMode.value === 'dark'
     ? 'mapbox://styles/mapbox/dark-v11'
     : 'mapbox://styles/mapbox/light-v11'

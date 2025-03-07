@@ -76,6 +76,7 @@
     "minisearch": "^7.1.2",
     "nuxt": "3.15.4",
     "nuxt-component-meta": "0.10.0",
+    "ohash": "^2.0.11",
     "parse5": "^7.2.1",
     "rehype-external-links": "3.0.0",
     "rehype-raw": "7.0.0",
