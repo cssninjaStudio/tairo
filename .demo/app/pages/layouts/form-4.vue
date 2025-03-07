@@ -25,6 +25,7 @@ const VALIDATION_TEXT = {
   SHORTDESC_REQUIRED: 'Short description can\'t be empty',
   LONGDESC_REQUIRED: 'Long description can\'t be empty',
   OPTION_REQUIRED: 'Please select an option',
+  LOCATION_REQUIRED: 'Click on the map to select a location',
 }
 
 // This is the Zod schema for the form input
@@ -45,10 +46,7 @@ const zodSchema = z
       position: z.object({
         lat: z.number(),
         lng: z.number(),
-      }, {
-        required_error: 'Click on the map to select a location',
-        invalid_type_error: 'Invalid position',
-      }),
+      }).optional(),
     }),
   })
   .superRefine((data, ctx) => {
@@ -59,6 +57,13 @@ const zodSchema = z
         code: z.ZodIssueCode.custom,
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['event.participants'],
+      })
+    }
+    if (!data.event.position) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: VALIDATION_TEXT.LOCATION_REQUIRED,
+        path: ['event.position'],
       })
     }
   })
@@ -205,6 +210,7 @@ const people = ref([
 ])
 
 function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
+  // eslint-disable-next-line no-console
   console.log('onMapInit', geocoder, map, mapboxgl)
 }
 </script>
@@ -430,7 +436,7 @@ function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
                 <BaseAutocomplete
                   :ref="inputRef"
                   v-bind="inputAttrs"
-                  :items="people"
+                  :items="people.map((name) => ({ label: name, value: name }))"
                   rounded="lg"
                   icon="ph:users-duotone"
                   placeholder="Add participants..."

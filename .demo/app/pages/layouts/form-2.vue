@@ -471,7 +471,7 @@ const currentRatingText = computed(() => {
                   name="doctor.phone"
                 >
                   <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
+                    v-slot="{ inputAttrs }"
                     label="Emergency Phone"
                     :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
