@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { type CalendarEvent, categoryTheme } from '~/utils/bundles/calendar'
+import type { CalendarEvent } from '~/utils/bundles/calendar'
+import { categoryTheme } from '~/utils/bundles/calendar'
 
 const props = defineProps<{
   event: Omit<CalendarEvent, 'startDate' | 'endDate'>
@@ -8,9 +9,8 @@ const props = defineProps<{
 
 <template>
   <div
-    class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group relative mb-4 flex h-full gap-px rounded-lg border bg-white p-4 transition duration-150 ease-out"
+    class="dark:bg-muted-950 border-muted-200 dark:border-muted-800 group relative mb-4 flex h-full gap-px rounded-lg border bg-white p-4 transition duration-150 ease-out"
   >
-    <!-- <div class="absolute inset-0 w-1 rounded-ss-lg rounded-es-lg" :class="[categoryTheme[event.category].color]"></div> -->
     <div
       role="button"
       class="dnd-drag-handler hover:bg-muted-100 dark:hover:bg-muted-900 m-px flex size-6 shrink-0 cursor-grab items-center justify-center rounded-full text-sm transition-colors duration-75"
@@ -24,15 +24,12 @@ const props = defineProps<{
       <div class="items-top flex w-full justify-between">
         <div>
           <div
-            class="text-muted-800 dark:text-muted-200 line-clamp-2 font-sans text-sm"
+            class="text-muted-800 dark:text-muted-200 line-clamp-2 font-sans font-medium text-sm mb-1"
             :title="props.event.title"
           >
             {{ props.event.title }}
           </div>
           <div class="text-muted-400 flex items-center gap-1 text-xs">
-            <!-- <div class="w-2 h-2 rounded-xs" :class="[categoryTheme[props.event.category].color]"></div>
-            <span>{{ categoryTheme[props.event.category].name }}</span> -->
-            <!-- <span class="text-muted-200">|</span> -->
             <Icon name="ph:clock" class="text-muted-400 size-4" />
             <span>{{ props.event.duration }} min</span>
           </div>
@@ -53,20 +50,20 @@ const props = defineProps<{
         </div>
       </div>
       <div
-        class="border-muted-200 dark:border-muted-700 mt-1 flex items-center justify-between border-t pt-2"
+        class="border-muted-200 dark:border-muted-800 mt-1 flex items-center justify-between border-t pt-2"
       >
         <div class="flex flex-wrap gap-2">
-          <BaseTooltip v-if="props.event.features?.record" content="Recorded">
-            <Icon name="ph:monitor-play-duotone" class="size-4 text-muted-400" />
+          <BaseTooltip v-if="props.event.features?.record" content="Recorded" :bindings="{ portal: { disabled: true } }">
+            <Icon name="solar:playback-speed-linear" class="size-4 text-muted-400" />
           </BaseTooltip>
-          <BaseTooltip v-if="props.event.features?.drive" content="Document joined">
-            <Icon name="ph:note-duotone" class="size-4 text-muted-400" />
+          <BaseTooltip v-if="props.event.features?.drive" content="Document attached" :bindings="{ portal: { disabled: true } }">
+            <Icon name="solar:document-text-linear" class="size-4 text-muted-400" />
           </BaseTooltip>
-          <BaseTooltip v-if="props.event.features?.external" content="External Users">
-            <Icon name="ph:lock-open-duotone" class="size-4 text-muted-400" />
+          <BaseTooltip v-if="props.event.features?.external" content="External Users" :bindings="{ portal: { disabled: true } }">
+            <Icon name="solar:folder-security-linear" class="size-4 text-muted-400" />
           </BaseTooltip>
-          <BaseTooltip v-if="props.event.features?.conversation" content="Has comments">
-            <Icon name="ph:chats-circle-duotone" class="size-4" />
+          <BaseTooltip v-if="props.event.features?.conversation" content="Has comments" :bindings="{ portal: { disabled: true } }">
+            <Icon name="solar:chat-round-line-linear" class="size-4 text-muted-400" />
           </BaseTooltip>
         </div>
         <div>

@@ -246,7 +246,7 @@ const selectedEventFeatures = computed({
 
 <template>
   <div
-    class="flex w-full select-none h-[calc(100dvh_-_56px)]!"
+    class="flex w-full select-none h-[calc(100dvh_-_85px)]!"
   >
     <div
       class="border-muted-200 dark:border-muted-800 flex w-full border-t -mt-6"
@@ -278,12 +278,12 @@ const selectedEventFeatures = computed({
             >
               <span>{{ capitalize(format(day, 'EEEE d')) }}</span>
               <span v-if="isToday(day)" class="text-primary-500 mb-[2px]">
-                <Icon name="ph:calendar-blank-duotone" />
+                <Icon name="lucide:check" class="size-4" />
               </span>
             </span>
           </div>
         </div>
-        <div class="flex h-[calc(100dvh_-_56px)]! overflow-y-auto nui-slimscroll">
+        <div class="flex h-[calc(100dvh_-_85px)]! overflow-y-auto nui-slimscroll">
           <!-- hours grid -->
           <div class="w-10">
             <div class="h-16" />
@@ -493,28 +493,26 @@ const selectedEventFeatures = computed({
         </div>
       </div>
 
-      <!-- left panel -->
+      <!-- Right panel -->
       <div
-        class="border-muted-200 dark:border-muted-800 hidden flex flex-col w-72 h-[calc(100dvh_-_56px)]! shrink-0 border-s sm:block"
+        class="bg-white dark:bg-muted-900 border-muted-200 dark:border-muted-800 hidden flex flex-col w-68 h-[calc(100dvh_-_60px)]! shrink-0 border-s sm:block overflow-hidden"
       >
         <!-- toolbar -->
-        <div class="h-16 shrink-0 relative z-20 flex items-center justify-between px-2">
+        <div class="h-[52px] shrink-0 flex items-center justify-end px-4">
           <div>
-            <button
-              type="button"
-              class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-800 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
-              @click="showSettings = !showSettings"
-            >
-              <Icon name="ph:gear-six-duotone" class="text-muted-400 size-5" />
-            </button>
+            <BaseButton v-if="!showSettings" size="icon-sm" rounded="md" @click="showSettings = !showSettings">
+              <Icon name="lucide:settings" class="text-muted-400 size-4" />
+            </BaseButton>
+            <BaseButton v-else size="icon-sm" rounded="md" @click="showSettings = !showSettings">
+              <Icon name="lucide:x" class="text-muted-400 size-4" />
+            </BaseButton>
           </div>
-          <TairoSidebarTools />
         </div>
 
         <!-- settings -->
         <div
           v-if="showSettings"
-          class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white px-6 py-4 h-auto shrink-0"
+          class="dark:bg-muted-900 border-muted-300 dark:border-muted-800 border-y bg-white p-4 shrink-0"
         >
           <div class="grid grid-cols-2 gap-x-2 gap-y-4">
             <BaseField
@@ -638,7 +636,7 @@ const selectedEventFeatures = computed({
         >
           <div
             v-if="selectedEvent"
-            class="nui-slimscroll relative grow p-6 pt-4"
+            class="overflow-y-auto nui-slimscroll relative grow p-4"
             :class="{
               'overflow-y-auto overflow-x-hidden': !showSettings,
               'overflow-hidden': showSettings,
@@ -651,21 +649,23 @@ const selectedEventFeatures = computed({
               class="absolute inset-0 z-50 cursor-pointer backdrop-blur-[2px]"
               @click="showSettings = false"
             />
-            <BaseHeading
-              size="sm"
-              weight="medium"
-              lead="snug"
-              class="text-muted-400 dark:text-muted-500 mb-4 flex items-center justify-between uppercase"
-            >
-              <span>Event Info</span>
+            <div class="flex items-center justify-between mb-4">
+              <BaseHeading
+                size="xs"
+                weight="medium"
+                lead="snug"
+                class="text-muted-600 dark:text-muted-400 uppercase uppercase"
+              >
+                <span>Event Info</span>
+              </BaseHeading>
               <BaseButton
-                size="icon-md"
-                class="dark:bg-muted-800 bg-white"
+                size="icon-sm"
+                class="dark:bg-muted-800 bg-white scale-90"
                 @click="selectedEventId = undefined"
               >
                 <Icon name="lucide:x" class="size-4" />
               </BaseButton>
-            </BaseHeading>
+            </div>
 
             <div class="flex flex-col gap-2">
               <BaseField
@@ -738,25 +738,25 @@ const selectedEventFeatures = computed({
                 </template>
               </BaseField>
 
-              <CheckboxGroupRoot v-model="selectedEventFeatures" as="div" class="grid grid-cols-4 gap-2 pt-4">
+              <CheckboxGroupRoot v-model="selectedEventFeatures" as="div" class="flex justify-end gap-3 pt-4">
                 <BaseTooltip disable-closing-trigger content="Record">
-                  <TairoCheckboxCardIcon value="record" icon="ph:monitor-play-duotone" />
+                  <TairoCheckboxCardIcon value="record" icon="solar:playback-speed-linear" />
                 </BaseTooltip>
                 <BaseTooltip disable-closing-trigger content="Document included">
-                  <TairoCheckboxCardIcon value="drive" icon="ph:note-duotone" />
+                  <TairoCheckboxCardIcon value="drive" icon="solar:document-text-linear" />
                 </BaseTooltip>
                 <BaseTooltip disable-closing-trigger content="External Users">
-                  <TairoCheckboxCardIcon value="external" icon="ph:lock-open-duotone" />
+                  <TairoCheckboxCardIcon value="external" icon="solar:folder-security-linear" />
                 </BaseTooltip>
                 <BaseTooltip disable-closing-trigger content="Comment allowed">
-                  <TairoCheckboxCardIcon value="conversation" icon="ph:chats-circle-duotone" />
+                  <TairoCheckboxCardIcon value="conversation" icon="solar:chat-round-line-linear" />
                 </BaseTooltip>
               </CheckboxGroupRoot>
             </div>
           </div>
           <div
             v-else
-            class="nui-slimscroll relative grow p-6"
+            class="nui-slimscroll overflow-y-auto relative grow p-4"
             :class="{
               'overflow-y-auto overflow-x-hidden': !showSettings,
               'overflow-hidden': showSettings,
@@ -772,7 +772,7 @@ const selectedEventFeatures = computed({
 
             <!-- Draggable pending events cards -->
             <Container
-              class="flex min-h-[300px]! flex-col"
+              class="flex flex-col"
               tag="div"
               orientation="vertical"
               group-name="unscheduled"
@@ -793,10 +793,10 @@ const selectedEventFeatures = computed({
             >
               <template v-if="pendingEvents?.length">
                 <BaseHeading
-                  size="sm"
+                  size="xs"
                   weight="medium"
                   lead="snug"
-                  class="text-muted-400 dark:text-muted-500 mb-4 uppercase"
+                  class="text-muted-600 dark:text-muted-400 mb-4 uppercase"
                 >
                   Pending events
                 </BaseHeading>
@@ -828,15 +828,15 @@ const selectedEventFeatures = computed({
                     <BaseHeading
                       as="h4"
                       size="lg"
-                      weight="light"
-                      class="mb-1"
+                      weight="medium"
+                      class="mb-1 text-muted-900 dark:text-white"
                     >
                       <span>No pending events</span>
                     </BaseHeading>
                     <BaseParagraph
                       size="xs"
                       lead="tight"
-                      class="text-muted-400 mx-auto max-w-[200px] font-sans!"
+                      class="text-muted-600 dark:text-muted-400 mx-auto max-w-[200px] font-sans!"
                     >
                       <span>You've planned all your events for this week.</span>
                     </BaseParagraph>
