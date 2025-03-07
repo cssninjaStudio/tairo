@@ -37,8 +37,8 @@ const { forwardRef } = useForwardExpose()
       class="group"
     >
       <BaseCard
-        rounded="lg"
-        class="text-muted-300 group-data-[state=checked]:border-primary-500 group-data-[state=checked]:text-primary-500 p-4"
+        rounded="md"
+        class="text-muted-300 group-data-[state=checked]:bg-primary-500/10 group-data-[state=checked]:text-primary-500 size-8 flex items-center justify-center"
       >
         <div class="flex flex-col items-center gap-1">
           <slot>
