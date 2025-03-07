@@ -42,6 +42,7 @@ let mapboxgl: MapboxGL
 const mode = ref<'base' | 'navigation' | 'satelite'>('base')
 
 const isLoading = ref(true)
+const hasError = ref(true)
 const config = useRuntimeConfig()
 const colorMode = useColorMode()
 const mapElement = useTemplateRef<HTMLElement>('mapElement')
@@ -75,11 +76,16 @@ watch(colorMode, updateMapStyle)
 async function initMapbox() {
   try {
     if (!config.public.mapboxToken) {
+      hasError.value = true
       return
     }
     if (!mapElement.value) {
       return
     }
+
+    hasError.value = false
+    isLoading.value = true
+
     mapboxgl = await import('mapbox-gl').then(m => m.default)
     mapboxgl.accessToken = config.public.mapboxToken
 
@@ -89,6 +95,12 @@ async function initMapbox() {
       style: getMapStyle(),
     })
     map.value.on('style.load', waitStyleLoaded)
+    map.value.on('error', (event) => {
+      hasError.value = true
+    })
+  }
+  catch (error) {
+    hasError.value = true
   }
   finally {
     setTimeout(() => {
@@ -556,7 +568,7 @@ function selectFeature(feature?: any) {
           <template v-if="isLoading">
             <Icon name="nui-icon:spiner" class="size-5 text-muted-400 dark:text-muted-500" />
           </template>
-          <template v-else>
+          <template v-else-if="hasError">
             <DevOnly>
               <BaseHeading size="lg">
                 Invalid Mapbox token.

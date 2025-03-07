@@ -57,6 +57,7 @@ let Geocoder: MapboxGeocoderGL
 
 const isCurrentLocation = ref(false)
 const isLoading = ref(true)
+const hasError = ref(true)
 const config = useRuntimeConfig()
 const colorMode = useColorMode()
 const { primary } = useTailwindColors()
@@ -83,12 +84,14 @@ watch(modelValue, updatePositionMarker)
 async function initMapbox() {
   try {
     if (!config.public.mapboxToken) {
+      hasError.value = true
       return
     }
     if (!mapElement.value) {
       return
     }
 
+    hasError.value = false
     isLoading.value = true
 
     if (!mapboxgl || !Geocoder) {
@@ -115,6 +118,9 @@ async function initMapbox() {
       ...props.options,
     })
     map.value.on('style.load', waitStyleLoaded)
+    map.value.on('error', (event) => {
+      hasError.value = true
+    })
 
     // Update position on map click
     map.value.on('click', (event) => {
@@ -142,6 +148,9 @@ async function initMapbox() {
       map: map.value,
       geocoder: geocoder.value as any,
     })
+  }
+  catch (error) {
+    hasError.value = true
   }
   finally {
     setTimeout(() => {
@@ -250,7 +259,7 @@ function getUsersLocation() {
         <template v-if="isLoading">
           <Icon name="nui-icon:spiner" class="size-6 text-muted-400 dark:text-muted-500" />
         </template>
-        <template v-else>
+        <template v-else-if="hasError">
           <DevOnly>
             <BaseHeading size="lg">
               Invalid Mapbox token.
@@ -278,30 +287,3 @@ function getUsersLocation() {
     <slot />
   </div>
 </template>
-
-<style scoped>
-@reference '~/assets/tailwind.css';
-
-.location-picker :deep() {
-  .mapboxgl-ctrl-geocoder {
-    @apply bg-transparent shadow-none;
-  }
-
-  .mapboxgl-ctrl-geocoder input {
-    @apply h-10 ps-10 font-sans text-input-default-text bg-input-default-bg border border-input-default-border shadow-xl shadow-muted-300/30 dark:shadow-muted-900/40 transition-colors duration-300;
-    @apply in-[.rounded-none]:rounded-none!;
-    @apply in-[.rounded-sm]:rounded-sm;
-    @apply in-[.rounded-md]:rounded-md;
-    @apply in-[.rounded-lg]:rounded-lg;
-    @apply in-[.rounded-xl]:rounded-xl;
-  }
-
-  .mapboxgl-ctrl-geocoder--button {
-    @apply bg-transparent;
-  }
-
-  .mapboxgl-ctrl-geocoder--icon-search {
-    @apply text-muted-400 dark:text-muted-600 fill-current top-2.5 start-3 scale-[1.1];
-  }
-}
-</style>
