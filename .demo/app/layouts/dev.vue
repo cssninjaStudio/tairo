@@ -181,16 +181,6 @@ const menu = [
         to: '/dashboards/delivery',
       },
       {
-        label: 'Map overview',
-        icon: 'solar:map-linear',
-        children: [
-          {
-            label: 'Left dock',
-            to: '/dashboards/map-left',
-          },
-        ],
-      },
-      {
         label: 'Direct messaging',
         icon: 'solar:chat-square-linear',
         children: [

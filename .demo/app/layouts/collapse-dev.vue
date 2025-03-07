@@ -175,12 +175,7 @@ const menu = [
   {
     label: 'Map overview',
     icon: 'solar:map-linear',
-    children: [
-      {
-        label: 'Left dock',
-        to: '/dashboards/map-left',
-      },
-    ],
+    to: '/dashboards/map',
   },
   {
     label: 'Email inbox',

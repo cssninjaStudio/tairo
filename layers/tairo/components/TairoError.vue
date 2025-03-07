@@ -53,7 +53,7 @@ const showStackTrace = ref(true)
 
       <div class="mt-4">
         <div
-          class="text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
+          class="flex items-center justify-center text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
         >
           <span>{{ props.error?.statusCode }}</span>
         </div>
