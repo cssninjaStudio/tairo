@@ -19,7 +19,7 @@ function handleClick(menuId?: string) {
   <NuxtLink
     role="button"
     tabindex="0"
-    class="flex h-14 w-full items-center justify-center duration-300 cursor-pointer rounded-lg outline-none"
+    class="flex h-14 w-full items-center justify-center duration-300 cursor-pointer rounded-lg outline-none shrink-0"
     @click="handleClick(props.value)"
   >
     <div

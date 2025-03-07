@@ -188,16 +188,7 @@ const menu = [
             label: 'Left dock',
             to: '/dashboards/map-left',
           },
-          {
-            label: 'Right dock',
-            to: '/dashboards/map-right',
-          },
         ],
-      },
-      {
-        label: 'Email inbox',
-        icon: 'solar:letter-unread-linear',
-        to: '/dashboards/inbox',
       },
       {
         label: 'Direct messaging',
@@ -735,6 +726,15 @@ function getRouteSidebarId() {
   if (route.path.startsWith('/dashboards/messaging')) {
     return 'Messaging'
   }
+  if (route.path.startsWith('/dashboards/inbox')) {
+    return 'Inbox'
+  }
+  if (route.path.startsWith('/dashboards/calendar')) {
+    return 'Calendar'
+  }
+  if (route.path.startsWith('/dashboards/map')) {
+    return 'Map'
+  }
 
   // search for the active menu item
   for (const item of menu) {
@@ -753,6 +753,7 @@ function getRouteSidebarId() {
       sidebarId === 'Messaging' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
       sidebarId === 'Inbox' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
       sidebarId === 'Calendar' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'Map' ? '[--sidebar-subsidebar-width:0rem]' : '',
     ]"
   >
     <TairoSidebarLayoutNav>
@@ -761,7 +762,7 @@ function getRouteSidebarId() {
           <TairoLogo class="size-8 text-primary-heavy dark:text-primary-light" />
         </NuxtLink>
 
-        <TairoSidebarLinks>
+        <TairoSidebarLinks class="overflow-y-auto nui-slimscroll">
           <BaseTooltip
             v-for="item in menu"
             :key="item.label"
@@ -813,6 +814,18 @@ function getRouteSidebarId() {
           >
             <TairoSidebarTrigger value="Calendar" to="/dashboards/calendar">
               <Icon name="solar:calendar-linear" class="size-5" />
+            </TairoSidebarTrigger>
+          </BaseTooltip>
+          <BaseTooltip
+            content="Map"
+            variant="dark"
+            :bindings="{
+              content: { side: 'left' },
+              portal: { disabled: true },
+            }"
+          >
+            <TairoSidebarTrigger value="Map" to="/dashboards/map">
+              <Icon name="solar:map-point-wave-linear" class="size-5" />
             </TairoSidebarTrigger>
           </BaseTooltip>
         </TairoSidebarLinks>
