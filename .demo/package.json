@@ -74,7 +74,7 @@
     "magic-string": "0.30.17",
     "mapbox-gl": "3.10.0",
     "minisearch": "^7.1.2",
-    "nuxt": "3.15.4",
+    "nuxt": "3.16.0",
     "nuxt-component-meta": "0.10.0",
     "ohash": "^2.0.11",
     "parse5": "^7.2.1",
