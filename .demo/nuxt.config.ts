@@ -226,8 +226,15 @@ export default defineNuxtConfig({
       // Splitplane uses Options API, so we need to enable it.
       __VUE_OPTIONS_API__: true,
     },
+    css: {
+      // LightningCSS is a rust based CSS minifier that is faster than the default CSS minifier.
+      // @see https://vite.dev/guide/features.html#lightning-css
+      // @see https://lightningcss.dev/
+      transformer: 'lightningcss',
+    },
     build: {
       target: 'esnext',
+      cssMinify: 'lightningcss',
     },
     // Defining the optimizeDeps.include option prebuilds the dependencies, this avoid
     // some reloads when navigating between pages during development.

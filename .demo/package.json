@@ -71,6 +71,7 @@
     "imask": "7.6.1",
     "klona": "^2.0.6",
     "libphonenumber-js": "^1.12.5",
+    "lightningcss": "^1.29.2",
     "magic-string": "0.30.17",
     "mapbox-gl": "3.10.0",
     "minisearch": "^7.1.2",
