@@ -41,7 +41,7 @@ const forward = useForwardPropsEmits(reactiveOmit(props, ['id', 'variant', 'roun
     <BaseCard
       :rounded="props.rounded"
       :variant="props.variant"
-      class="group focus-visible:nui-focus ring-primary-500! relative flex items-center justify-center shrink-0 cursor-pointer disabled:pointer-events-none disabled:opacity-50 text-muted-400 data-[state=checked]:border-primary-500 relative border px-2 py-4 flex w-full flex-col items-center gap-2 text-center"
+      class="group focus-visible:nui-focus ring-primary-500! relative flex items-center justify-center shrink-0 cursor-pointer disabled:pointer-events-none disabled:opacity-50 text-muted-400 data-[state=checked]:bg-white dark:data-[state=checked]:bg-muted-950 data-[state=checked]:border-primary-500 relative border px-2 py-4 flex w-full flex-col items-center gap-2 text-center"
     >
       <slot>
         <Icon

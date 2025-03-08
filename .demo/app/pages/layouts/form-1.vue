@@ -281,34 +281,6 @@ const onSubmit = handleSubmit(
 
 <template>
   <div class="px-4 md:px-6 lg:px-8 pb-20">
-    <!-- <div class="mb-4 flex flex-col justify-between md:flex-row md:items-center">
-      <div
-        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
-      >
-        <div>
-          <BaseHeading
-            as="h2"
-            size="xl"
-            weight="light"
-            lead="tight"
-            class="text-muted-800 dark:text-white"
-          >
-            <span>New company</span>
-          </BaseHeading>
-          <BaseParagraph size="sm">
-            <span class="text-muted-500"> Create a new company record </span>
-          </BaseParagraph>
-        </div>
-      </div>
-      <div
-        class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
-      >
-        <BaseButton @click.prevent="$router.back()">
-          <Icon name="lucide:arrow-left" class="size-3" />
-          <span>Cancel</span>
-        </BaseButton>
-      </div>
-    </div> -->
     <form
       method="POST"
       action=""
@@ -325,7 +297,7 @@ const onSubmit = handleSubmit(
               <div class="max-w-xs pe-4 space-y-2">
                 <BaseHeading
                   as="h3"
-                  size="lg"
+                  size="md"
                   weight="medium"
                   class="text-muted-900 dark:text-white"
                 >
@@ -414,7 +386,7 @@ const onSubmit = handleSubmit(
               <div class="max-w-xs pe-4 space-y-2">
                 <BaseHeading
                   as="h3"
-                  size="lg"
+                  size="md"
                   weight="medium"
                   class="text-muted-900 dark:text-white"
                 >
@@ -537,7 +509,7 @@ const onSubmit = handleSubmit(
               <div class="max-w-xs pe-4 space-y-2">
                 <BaseHeading
                   as="h3"
-                  size="lg"
+                  size="md"
                   weight="medium"
                   class="text-muted-900 dark:text-white"
                 >

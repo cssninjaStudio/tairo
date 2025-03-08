@@ -6,7 +6,7 @@ import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
-  title: 'New Doctor',
+  title: 'Create doctor',
   preview: {
     title: 'Form layout 2',
     description: 'For forms and input fields',
@@ -319,678 +319,675 @@ const currentRatingText = computed(() => {
 </script>
 
 <template>
-  <form
-    action=""
-    method="POST"
-    class="grid grid-cols-12 gap-6"
-    novalidate
-    @submit.prevent="onSubmit"
-  >
-    <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-      <BaseCard rounded="sm" class="p-4 md:p-8">
-        <div class="grid grid-cols-1 gap-4 gap-y-2 text-sm lg:grid-cols-12">
-          <div class="col-span-12 mb-10 text-gray-600 sm:col-span-3 sm:mb-0">
-            <BaseHeading
-              as="h2"
-              size="lg"
-              weight="medium"
-            >
-              New Doctor
-            </BaseHeading>
-            <BaseText
-              size="xs"
-              class="text-muted-400"
-            >
-              Fill in the required fields
-            </BaseText>
-          </div>
-
-          <div class="ltablet:col-span-9 col-span-12 space-y-10 lg:col-span-9">
-            <TairoFormGroup
-              label="General info"
-              sublabel="Some general information"
-            >
-              <div class="grid grid-cols-12 gap-4">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.firstName"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="First name"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 md:col-span-6"
-                    required
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <form
+      action=""
+      method="POST"
+      class="grid grid-cols-12 gap-4"
+      novalidate
+      @submit.prevent="onSubmit"
+    >
+      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+        <BaseCard rounded="sm" class="p-4 md:p-8">
+          <div class="grid grid-cols-1 gap-4 gap-y-2 text-sm lg:grid-cols-12">
+            <div class="col-span-12 mb-10 text-gray-600 sm:col-span-3 sm:mb-0">
+              <BaseHeading
+                as="h2"
+                size="lg"
+                weight="medium"
+                class="text-muted-900 dark:text-white"
+              >
+                New Doctor
+              </BaseHeading>
+              <BaseText
+                size="xs"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                Fill in the required fields
+              </BaseText>
+            </div>
+            <div class="ltablet:col-span-9 col-span-12 space-y-10 lg:col-span-9">
+              <TairoFormGroup
+                label="General info"
+                sublabel="Some general information"
+              >
+                <div class="grid grid-cols-12 gap-4">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.firstName"
                   >
-                    <TairoInput
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:user-duotone"
-                      placeholder="Ex: John"
-                      :model-value="field.value"
-                      type="text"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.lastName"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Last name"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 md:col-span-6"
-                  >
-                    <TairoInput
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:user-duotone"
-                      placeholder="Ex: Doe"
-                      :model-value="field.value"
-                      type="text"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.email"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Email Address"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 md:col-span-6"
-                  >
-                    <TairoInput
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:envelope-duotone"
-                      placeholder="Ex: johndoe@gmail.com"
-                      :model-value="field.value"
-                      type="email"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.speciality"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Speciality"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 md:col-span-6"
-                  >
-                    <TairoSelect
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:first-aid-duotone"
-                      :model-value="field.value"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    >
-                      <BaseSelectItem value="Surgery">
-                        Surgery
-                      </BaseSelectItem>
-                      <BaseSelectItem value="Cardiology">
-                        Cardiology
-                      </BaseSelectItem>
-                      <BaseSelectItem value="Pediatry">
-                        Pediatry
-                      </BaseSelectItem>
-                      <BaseSelectItem value="Dermatology">
-                        Dermatology
-                      </BaseSelectItem>
-                      <BaseSelectItem value="Traumatology">
-                        Traumatology
-                      </BaseSelectItem>
-                    </TairoSelect>
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.phone"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs }"
-                    label="Emergency Phone"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12"
-                    required
-                  >
-                    <AddonInputPhone
-                      v-bind="inputAttrs"
-                      ref="inputPhoneRef"
-                      placeholder="Ex: +1 555 555 5555"
-                      icon="lucide:phone"
-                      :model-value="field.value"
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="First name"
+                      :state="errorMessage ? 'error' : 'idle'"
                       :error="errorMessage"
                       :disabled="isSubmitting"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.comments"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Comments"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12"
-                  >
-                    <BaseTextarea
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      placeholder="Ex: General Orthopedic Surgery, Foot & Ankle Surgery"
-                      rows="3"
-                      :model-value="field.value"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.status"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Status"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 md:col-span-4"
-                  >
-                    <TairoSelect
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:heartbeat-duotone"
-                      :model-value="field.value"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
+                      class="col-span-12 md:col-span-6"
+                      required
                     >
-                      <BaseSelectItem value="intern">
-                        Intern
-                      </BaseSelectItem>
-                      <BaseSelectItem value="resident">
-                        Resident
-                      </BaseSelectItem>
-                      <BaseSelectItem value="titular">
-                        Titular
-                      </BaseSelectItem>
-                    </TairoSelect>
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.experience"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Experience"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 md:col-span-4"
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:user-linear"
+                        placeholder="Ex: John"
+                        :model-value="field.value"
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.lastName"
                   >
-                    <TairoSelect
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:trophy-duotone"
-                      :model-value="field.value"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    >
-                      <BaseSelectItem
-                        v-for="value in ['0-5', '5-10', '10-15', '15+']"
-                        :key="value"
-                        :value
-                      >
-                        {{ value }}
-                      </BaseSelectItem>
-                    </TairoSelect>
-                  </BaseField>
-                </Field>
-
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.rating"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Rating"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 md:col-span-4"
-                  >
-                    <TairoSelect
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:star-duotone"
-                      :model-value="field.value"
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Last name"
+                      :state="errorMessage ? 'error' : 'idle'"
                       :error="errorMessage"
                       :disabled="isSubmitting"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
+                      class="col-span-12 md:col-span-6"
                     >
-                      <BaseSelectItem value="1">
-                        B+
-                      </BaseSelectItem>
-                      <BaseSelectItem value="2">
-                        A
-                      </BaseSelectItem>
-                      <BaseSelectItem value="3">
-                        A+
-                      </BaseSelectItem>
-                      <BaseSelectItem value="4">
-                        S
-                      </BaseSelectItem>
-                      <BaseSelectItem value="5">
-                        S+
-                      </BaseSelectItem>
-                    </TairoSelect>
-                  </BaseField>
-                </Field>
-              </div>
-            </TairoFormGroup>
-
-            <TairoFormGroup
-              label="Personal info"
-              sublabel="Some personal information"
-            >
-              <div class="grid grid-cols-12 gap-4">
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.address"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Address / Street"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12"
-                    required
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:user-linear"
+                        placeholder="Ex: Doe"
+                        :model-value="field.value"
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.email"
                   >
-                    <TairoInput
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:map-pin-duotone"
-                      placeholder="Ex: App 2 suite g3 santa monica"
-                      :model-value="field.value"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.city"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="City"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 sm:col-span-4"
-                    required
-                  >
-                    <TairoInput
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:buildings-duotone"
-                      placeholder="Ex: Los Angeles"
-                      :model-value="field.value"
-                      type="text"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.state"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="State / Province"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 sm:col-span-4"
-                    required
-                  >
-                    <TairoInput
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:globe-duotone"
-                      placeholder="Ex: CA"
-                      :model-value="field.value"
-                      type="text"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="doctor.zipcode"
-                >
-                  <BaseField
-                    v-slot="{ inputAttrs, inputRef }"
-                    label="Zip Code"
-                    :state="errorMessage ? 'error' : 'idle'"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    class="col-span-12 sm:col-span-4"
-                    required
-                  >
-                    <TairoInput
-                      :ref="inputRef"
-                      v-bind="inputAttrs"
-                      icon="ph:paper-plane-tilt-duotone"
-                      placeholder="Ex: 912656"
-                      :model-value="field.value"
-                      type="text"
-                      @update:model-value="handleChange"
-                      @blur="handleBlur"
-                    />
-                  </BaseField>
-                </Field>
-                <div class="col-span-12">
-                  <div
-                    class="bg-muted-100 dark:bg-muted-700/70 flex items-center gap-2 rounded-lg p-4"
-                  >
-                    <BaseAvatar
-                      size="xs"
-                      src="/img/icons/flags/united-states-of-america.svg"
-                    />
-                    <BaseText
-                      size="sm"
-                      class="text-muted-500 dark:text-muted-400"
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Email Address"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 md:col-span-6"
                     >
-                      United States
-                    </BaseText>
-                    <div class="ms-auto">
-                      <NuxtLink
-                        class="cursor-pointer text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
-                        @click="interactiveMap = !interactiveMap"
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:letter-linear"
+                        placeholder="Ex: johndoe@gmail.com"
+                        :model-value="field.value"
+                        type="email"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.speciality"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Speciality"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 md:col-span-6"
+                    >
+                      <TairoSelect
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:dropper-3-linear"
+                        :model-value="field.value"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
                       >
-                        {{ interactiveMap ? 'Save' : 'Change' }}
-                      </NuxtLink>
+                        <BaseSelectItem value="Surgery">
+                          Surgery
+                        </BaseSelectItem>
+                        <BaseSelectItem value="Cardiology">
+                          Cardiology
+                        </BaseSelectItem>
+                        <BaseSelectItem value="Pediatry">
+                          Pediatry
+                        </BaseSelectItem>
+                        <BaseSelectItem value="Dermatology">
+                          Dermatology
+                        </BaseSelectItem>
+                        <BaseSelectItem value="Traumatology">
+                          Traumatology
+                        </BaseSelectItem>
+                      </TairoSelect>
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.phone"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs }"
+                      label="Emergency Phone"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12"
+                      required
+                    >
+                      <AddonInputPhone
+                        v-bind="inputAttrs"
+                        ref="inputPhoneRef"
+                        placeholder="Ex: +1 555 555 5555"
+                        icon="solar:phone-rounded-linear"
+                        :model-value="field.value"
+                        :error="errorMessage"
+                        :disabled="isSubmitting"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.comments"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Comments"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12"
+                    >
+                      <BaseTextarea
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        placeholder="Ex: General Orthopedic Surgery, Foot & Ankle Surgery"
+                        rows="3"
+                        :model-value="field.value"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.status"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Status"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 md:col-span-4"
+                    >
+                      <TairoSelect
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:heart-pulse-2-linear"
+                        :model-value="field.value"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      >
+                        <BaseSelectItem value="intern">
+                          Intern
+                        </BaseSelectItem>
+                        <BaseSelectItem value="resident">
+                          Resident
+                        </BaseSelectItem>
+                        <BaseSelectItem value="titular">
+                          Titular
+                        </BaseSelectItem>
+                      </TairoSelect>
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.experience"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Experience"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 md:col-span-4"
+                    >
+                      <TairoSelect
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:glasses-linear"
+                        :model-value="field.value"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      >
+                        <BaseSelectItem
+                          v-for="value in ['0-5', '5-10', '10-15', '15+']"
+                          :key="value"
+                          :value
+                        >
+                          {{ value }}
+                        </BaseSelectItem>
+                      </TairoSelect>
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.rating"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Rating"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 md:col-span-4"
+                    >
+                      <TairoSelect
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:star-linear"
+                        :model-value="field.value"
+                        :error="errorMessage"
+                        :disabled="isSubmitting"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      >
+                        <BaseSelectItem value="1">
+                          B+
+                        </BaseSelectItem>
+                        <BaseSelectItem value="2">
+                          A
+                        </BaseSelectItem>
+                        <BaseSelectItem value="3">
+                          A+
+                        </BaseSelectItem>
+                        <BaseSelectItem value="4">
+                          S
+                        </BaseSelectItem>
+                        <BaseSelectItem value="5">
+                          S+
+                        </BaseSelectItem>
+                      </TairoSelect>
+                    </BaseField>
+                  </Field>
+                </div>
+              </TairoFormGroup>
+              <TairoFormGroup
+                label="Personal info"
+                sublabel="Some personal information"
+              >
+                <div class="grid grid-cols-12 gap-4">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.address"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Address / Street"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12"
+                      required
+                    >
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:map-point-linear"
+                        placeholder="Ex: App 2 suite g3 santa monica"
+                        :model-value="field.value"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.city"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="City"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 sm:col-span-4"
+                      required
+                    >
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:buildings-linear"
+                        placeholder="Ex: Los Angeles"
+                        :model-value="field.value"
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.state"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="State / Province"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 sm:col-span-4"
+                      required
+                    >
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:earth-linear"
+                        placeholder="Ex: CA"
+                        :model-value="field.value"
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="doctor.zipcode"
+                  >
+                    <BaseField
+                      v-slot="{ inputAttrs, inputRef }"
+                      label="Zip Code"
+                      :state="errorMessage ? 'error' : 'idle'"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      class="col-span-12 sm:col-span-4"
+                      required
+                    >
+                      <TairoInput
+                        :ref="inputRef"
+                        v-bind="inputAttrs"
+                        icon="solar:delivery-linear"
+                        placeholder="Ex: 912656"
+                        :model-value="field.value"
+                        type="text"
+                        @update:model-value="handleChange"
+                        @blur="handleBlur"
+                      />
+                    </BaseField>
+                  </Field>
+                  <div class="col-span-12">
+                    <div
+                      class="bg-muted-100 dark:bg-muted-700/70 flex items-center gap-2 rounded-lg p-4"
+                    >
+                      <BaseAvatar
+                        size="xs"
+                        src="/img/icons/flags/united-states-of-america.svg"
+                      />
+                      <BaseText
+                        size="sm"
+                        class="text-muted-500 dark:text-muted-400"
+                      >
+                        United States
+                      </BaseText>
+                      <div class="ms-auto">
+                        <NuxtLink
+                          class="cursor-pointer text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
+                          @click="interactiveMap = !interactiveMap"
+                        >
+                          {{ interactiveMap ? 'Save' : 'Change' }}
+                        </NuxtLink>
+                      </div>
                     </div>
                   </div>
+                  <Field
+                    v-slot="{ field, handleChange }"
+                    name="doctor.position"
+                  >
+                    <LazyAddonMapboxLocationPicker
+                      hydrate-on-visible
+                      class="col-span-12 aspect-16/9"
+                      rounded="lg"
+                      :model-value="field.value"
+                      :geocoder="interactiveMap"
+                      :geolocation="interactiveMap"
+                      :options="{
+                        interactive: interactiveMap,
+                      }"
+                      :marker="{
+                        draggable: interactiveMap,
+                      }"
+                      @update:model-value="handleChange"
+                    />
+                  </Field>
                 </div>
-
-                <Field
-                  v-slot="{ field, handleChange }"
-                  name="doctor.position"
+              </TairoFormGroup>
+              <div class="text-right md:col-span-5">
+                <div
+                  class="-mt-4 inline-flex w-full items-center justify-end gap-2 sm:w-auto"
                 >
-                  <LazyAddonMapboxLocationPicker
-                    hydrate-on-visible
-                    class="col-span-12 aspect-16/9"
-                    rounded="lg"
-                    :model-value="field.value"
-                    :geocoder="interactiveMap"
-                    :geolocation="interactiveMap"
-                    :options="{
-                      interactive: interactiveMap,
-                    }"
-                    :marker="{
-                      draggable: interactiveMap,
-                    }"
-                    @update:model-value="handleChange"
-                  />
-                </Field>
-              </div>
-            </TairoFormGroup>
-
-            <div class="text-right md:col-span-5">
-              <div
-                class="-mt-4 inline-flex w-full items-center justify-end gap-2 sm:w-auto"
-              >
-                <BaseButton class="h-12! w-full sm:w-40" type="reset" @click="resetForm">
-                  Cancel
-                </BaseButton>
-                <BaseButton
-                  type="submit"
-                  variant="primary"
-                  class="h-12! w-full sm:w-40"
-                >
-                  Submit
-                </BaseButton>
+                  <BaseButton rounded="md" variant="ghost" class="w-full sm:w-32" type="reset" @click="resetForm">
+                    Cancel
+                  </BaseButton>
+                  <BaseButton
+                    type="submit"
+                    rounded="md"
+                    variant="primary"
+                    class="w-full sm:w-32"
+                  >
+                    Submit
+                  </BaseButton>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </BaseCard>
-    </div>
-    <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-      <BaseCard class="ptablet:p-8 p-6 lg:p-8">
-        <BaseText
-          size="xs"
-          weight="medium"
-          class="text-muted-400 mb-6 block uppercase tracking-wider"
-        >
-          Record preview
-        </BaseText>
-        <div class="mb-4 flex">
-          <div class="grow">
-            <BaseHeading
-              as="h3"
-              weight="medium"
-            >
-              Dr. {{ values.doctor?.firstName }}
-              {{ values.doctor?.lastName }}
-            </BaseHeading>
-            <BaseText
-              size="sm"
-              class="text-muted-400"
-            >
-              {{ values.doctor?.city === '' ? 'City' : values.doctor?.city }},
-              {{
-                values.doctor?.state === '' ? 'State' : values.doctor?.state
-              }}
-            </BaseText>
-          </div>
-          <div class="shrink-0">
-            <BaseAvatar size="lg" src="/img/avatars/20.svg" />
-          </div>
-        </div>
-        <div>
-          <BaseHeading
-            as="h3"
-            size="md"
+        </BaseCard>
+      </div>
+      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+        <BaseCard class="ptablet:p-8 p-6 lg:p-8">
+          <BaseText
+            size="xs"
             weight="medium"
+            class="text-muted-600 dark:text-muted-400 mb-6 block uppercase tracking-wider"
           >
-            {{
-              values.doctor?.speciality === null
-                ? 'Main speciality'
-                : values.doctor?.speciality
-            }}
-          </BaseHeading>
-          <BaseText size="sm" class="text-muted-400">
-            {{
-              values.doctor?.comments === ''
-                ? 'Observations will be shown here'
-                : values.doctor?.comments
-            }}
+            Record preview
           </BaseText>
-        </div>
-        <div
-          class="divide-muted-200 dark:divide-muted-700 flex w-full items-center divide-x py-6"
-        >
-          <div class="xxl:pe-6 flex flex-1 flex-col gap-1 pe-4">
-            <BaseHeading
-              as="h3"
-              size="sm"
-              weight="medium"
-              lead="none"
-            >
-              {{
-                values.doctor?.status === null ? 'n/a' : values.doctor?.status
-              }}
-            </BaseHeading>
-            <BaseText size="xs" class="text-muted-400">
-              Role status
-            </BaseText>
-          </div>
-          <div class="xxl:px-6 flex flex-1 flex-col gap-1 px-4">
-            <BaseHeading
-              as="h3"
-              size="sm"
-              weight="medium"
-              lead="none"
-            >
-              {{
-                values.doctor?.experience === null
-                  ? 'n/a'
-                  : values.doctor?.experience
-              }}
-            </BaseHeading>
-            <BaseText size="xs" class="text-muted-400">
-              Years of exp.
-            </BaseText>
-          </div>
-          <div class="xxl:ps-6 flex flex-1 flex-col gap-1 ps-4">
-            <BaseHeading
-              as="h3"
-              size="sm"
-              weight="medium"
-              lead="none"
-            >
-              Lvl.
-              {{
-                values.doctor?.rating === null ? 'n/a' : values.doctor?.rating
-              }}
-            </BaseHeading>
-            <BaseText size="xs" class="text-muted-400">
-              Global rating
-            </BaseText>
-          </div>
-        </div>
-        <div>
-          <div class="flex items-end justify-between">
-            <div class="w-24 text-xs uppercase leading-tight">
-              Rating
+          <div class="mb-4 flex">
+            <div class="grow">
+              <BaseHeading
+                as="h3"
+                weight="medium"
+                class="text-muted-900 dark:text-white"
+              >
+                Dr. {{ values.doctor?.firstName }}
+                {{ values.doctor?.lastName }}
+              </BaseHeading>
+              <BaseText
+                size="sm"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                {{ values.doctor?.city === '' ? 'City' : values.doctor?.city }},
+                {{
+                  values.doctor?.state === '' ? 'State' : values.doctor?.state
+                }}
+              </BaseText>
             </div>
-            <div class="text-success-600 font-sans text-xs font-semibold">
-              {{ currentRatingText }}
+            <div class="shrink-0">
+              <BaseAvatar size="md" src="/img/avatars/20.svg" />
             </div>
           </div>
-          <div class="mt-1 flex">
-            <div
-              class="dark:border-muted-800 h-3 grow border-x border-white"
-              :class="
-                currentRating > 0
-                  ? 'bg-success-600'
-                  : 'bg-muted-200 dark:bg-muted-700'
-              "
-            />
-            <div
-              class="dark:border-muted-800 h-3 grow border-x border-white"
-              :class="
-                currentRating >= 2
-                  ? 'bg-success-600'
-                  : 'bg-muted-200 dark:bg-muted-700'
-              "
-            />
-            <div
-              class="dark:border-muted-800 h-3 grow border-x border-white"
-              :class="
-                currentRating >= 3
-                  ? 'bg-success-600'
-                  : 'bg-muted-200 dark:bg-muted-700'
-              "
-            />
-            <div
-              class="dark:border-muted-800 h-3 grow border-x border-white"
-              :class="
-                currentRating >= 4
-                  ? 'bg-success-600'
-                  : 'bg-muted-200 dark:bg-muted-700'
-              "
-            />
-            <div
-              class="dark:border-muted-800 h-3 grow border-x border-white"
-              :class="
-                currentRating === 5
-                  ? 'bg-success-600'
-                  : 'bg-muted-200 dark:bg-muted-700'
-              "
-            />
+          <div>
+            <BaseHeading
+              as="h3"
+              size="md"
+              weight="medium"
+              class="text-muted-900 dark:text-white"
+            >
+              {{
+                values.doctor?.speciality === null
+                  ? 'Main speciality'
+                  : values.doctor?.speciality
+              }}
+            </BaseHeading>
+            <BaseText size="sm" class="text-muted-600 dark:text-muted-400">
+              {{
+                values.doctor?.comments === ''
+                  ? 'Observations will be shown here'
+                  : values.doctor?.comments
+              }}
+            </BaseText>
           </div>
-        </div>
-        <div class="text-muted-400 mt-6 flex items-center gap-2">
-          <Icon name="lucide:mail" class="size-4" />
-          <BaseLink
-            v-if="values.doctor?.email"
-            class="block"
-            :href="`mailto:${values.doctor?.email}`"
+          <div
+            class="divide-muted-200 dark:divide-muted-700 flex w-full items-center divide-x py-6"
           >
-            <BaseText size="xs">
-              {{ values.doctor?.email }}
+            <div class="xxl:pe-6 flex flex-1 flex-col gap-1 pe-4">
+              <BaseHeading
+                as="h3"
+                size="sm"
+                weight="medium"
+                lead="none"
+                class="text-muted-900 dark:text-white"
+              >
+                {{
+                  values.doctor?.status === null ? 'n/a' : values.doctor?.status
+                }}
+              </BaseHeading>
+              <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
+                Role status
+              </BaseText>
+            </div>
+            <div class="xxl:px-6 flex flex-1 flex-col gap-1 px-4">
+              <BaseHeading
+                as="h3"
+                size="sm"
+                weight="medium"
+                lead="none"
+                class="text-muted-900 dark:text-white"
+              >
+                {{
+                  values.doctor?.experience === null
+                    ? 'n/a'
+                    : values.doctor?.experience
+                }}
+              </BaseHeading>
+              <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
+                Years of exp.
+              </BaseText>
+            </div>
+            <div class="xxl:ps-6 flex flex-1 flex-col gap-1 ps-4">
+              <BaseHeading
+                as="h3"
+                size="sm"
+                weight="medium"
+                lead="none"
+                class="text-muted-900 dark:text-white"
+              >
+                Lvl.
+                {{
+                  values.doctor?.rating === null ? 'n/a' : values.doctor?.rating
+                }}
+              </BaseHeading>
+              <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
+                Global rating
+              </BaseText>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-end justify-between">
+              <div class="w-24 text-xs uppercase leading-tight">
+                Rating
+              </div>
+              <div class="text-success-600 font-sans text-xs font-semibold">
+                {{ currentRatingText }}
+              </div>
+            </div>
+            <div class="mt-1 flex">
+              <div
+                class="dark:border-muted-800 h-3 grow border-x border-white"
+                :class="
+                  currentRating > 0
+                    ? 'bg-success-600'
+                    : 'bg-muted-200 dark:bg-muted-700'
+                "
+              />
+              <div
+                class="dark:border-muted-800 h-3 grow border-x border-white"
+                :class="
+                  currentRating >= 2
+                    ? 'bg-success-600'
+                    : 'bg-muted-200 dark:bg-muted-700'
+                "
+              />
+              <div
+                class="dark:border-muted-800 h-3 grow border-x border-white"
+                :class="
+                  currentRating >= 3
+                    ? 'bg-success-600'
+                    : 'bg-muted-200 dark:bg-muted-700'
+                "
+              />
+              <div
+                class="dark:border-muted-800 h-3 grow border-x border-white"
+                :class="
+                  currentRating >= 4
+                    ? 'bg-success-600'
+                    : 'bg-muted-200 dark:bg-muted-700'
+                "
+              />
+              <div
+                class="dark:border-muted-800 h-3 grow border-x border-white"
+                :class="
+                  currentRating === 5
+                    ? 'bg-success-600'
+                    : 'bg-muted-200 dark:bg-muted-700'
+                "
+              />
+            </div>
+          </div>
+          <div class="text-muted-400 mt-6 flex items-center gap-2">
+            <Icon name="solar:letter-linear" class="size-4" />
+            <BaseLink
+              v-if="values.doctor?.email"
+              class="block"
+              :href="`mailto:${values.doctor?.email}`"
+            >
+              <BaseText size="xs">
+                {{ values.doctor?.email }}
+              </BaseText>
+            </BaseLink>
+            <BaseText
+              v-else
+              size="xs"
+              class="text-muted-600 dark:text-muted-400 opacity-80"
+            >
+              Fill up your email
             </BaseText>
-          </BaseLink>
-          <BaseText
-            v-else
-            size="xs"
-            class="opacity-50"
-          >
-            Fill up your email
-          </BaseText>
-        </div>
-        <div class="text-muted-400 mt-6 flex items-center gap-2">
-          <Icon name="lucide:phone" class="size-4" />
-          <BaseLink
-            v-if="values.doctor?.phone"
-            class="block"
-            :href="`tel:${values.doctor?.phone}`"
-          >
-            <BaseText size="xs">
-              {{ values.doctor?.phone }}
+          </div>
+          <div class="text-muted-400 mt-6 flex items-center gap-2">
+            <Icon name="solar:phone-rounded-linear" class="size-4" />
+            <BaseLink
+              v-if="values.doctor?.phone"
+              class="block"
+              :href="`tel:${values.doctor?.phone}`"
+            >
+              <BaseText size="xs">
+                {{ values.doctor?.phone }}
+              </BaseText>
+            </BaseLink>
+            <BaseText
+              v-else
+              size="xs"
+              class="text-muted-600 dark:text-muted-400 opacity-80"
+            >
+              Fill up your emergency phone
             </BaseText>
-          </BaseLink>
-          <BaseText
-            v-else
-            size="xs"
-            class="opacity-50"
-          >
-            Fill up your emergency phone
-          </BaseText>
-        </div>
-      </BaseCard>
-    </div>
-  </form>
+          </div>
+        </BaseCard>
+      </div>
+    </form>
+  </div>
 </template>

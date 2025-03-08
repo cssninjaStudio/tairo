@@ -9,7 +9,7 @@ import 'v-calendar/dist/style.css'
 import '~/assets/css/vcalendar.css'
 
 definePageMeta({
-  title: 'New Event',
+  title: 'Create event',
   preview: {
     title: 'Form layout 4',
     description: 'For forms and input fields',
@@ -216,324 +216,331 @@ function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
 </script>
 
 <template>
-  <form
-    action=""
-    method="POST"
-    class="relative py-3 sm:mx-auto sm:max-w-xl"
-    novalidate
-    @submit.prevent="onSubmit"
-  >
-    <BaseCard rounded="lg" class="relative px-4 py-10 sm:p-10 md:mx-0">
-      <div class="mx-auto max-w-md">
-        <div class="flex items-center gap-4">
-          <div
-            class="bg-primary-500/20 text-primary-500 flex size-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
-          >
-            <Icon name="ph:calendar-blank-duotone" class="size-5" />
-          </div>
-          <div class="block text-xl font-semibold text-gray-700">
-            <BaseHeading
-              as="h3"
-              size="lg"
-              weight="medium"
-            >
-              Create an Event
-            </BaseHeading>
-            <BaseText
-              size="sm"
-              class="text-muted-400"
-            >
-              Create a new upcoming event.
-            </BaseText>
-          </div>
-        </div>
-        <div class="divide-y divide-gray-200">
-          <div class="grid grid-cols-12 gap-4 py-8">
-            <Field
-              v-slot="{ field, errorMessage, handleChange, handleBlur }"
-              name="event.title"
-            >
-              <BaseField
-                v-slot="{ inputAttrs, inputRef }"
-                label="Event title"
-                :state="errorMessage ? 'error' : 'idle'"
-                :error="errorMessage"
-                :disabled="isSubmitting"
-                class="col-span-12"
-                required
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <form
+      action=""
+      method="POST"
+      class="relative sm:max-w-2xl"
+      novalidate
+      @submit.prevent="onSubmit"
+    >
+      <BaseCard rounded="md" class="relative p-4 md:p-6">
+        <div>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center justify-center size-12 bg-white dark:bg-muted-950 rounded-full shadow-lg ring-1 ring-muted-900/5 dark:ring-primary-500/20">
+              <div
+                class="bg-primary-500/20 text-primary-500 flex size-10 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
               >
-                <TairoInput
-                  :ref="inputRef"
-                  v-bind="inputAttrs"
-                  rounded="lg"
-                  icon="ph:ticket-duotone"
-                  placeholder="Ex: Next team building party"
-                  :model-value="field.value"
-                  type="text"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
-              </BaseField>
-            </Field>
-            <Field
-              v-slot="{ field, errorMessage, handleChange, handleBlur }"
-              name="event.shortDesc"
-            >
-              <BaseField
-                v-slot="{ inputAttrs, inputRef }"
-                label="Short description"
-                :state="errorMessage ? 'error' : 'idle'"
-                :error="errorMessage"
-                :disabled="isSubmitting"
-                class="col-span-12"
-                required
+                <Icon name="solar:calendar-mark-bold-duotone" class="size-5" />
+              </div>
+            </div>
+            <div class="">
+              <BaseHeading
+                as="h3"
+                size="md"
+                weight="medium"
+                lead="tight"
+                class="text-muted-900 dark:text-white"
               >
-                <TairoInput
-                  :ref="inputRef"
-                  v-bind="inputAttrs"
-                  rounded="lg"
-                  icon="ph:circles-four-duotone"
-                  placeholder="Ex: We will meet to have fun together"
-                  :model-value="field.value"
-                  type="text"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
-              </BaseField>
-            </Field>
-            <div class="relative z-20 col-span-12">
+                Create an event
+              </BaseHeading>
+              <BaseParagraph
+                size="sm"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                Create a new upcoming event.
+              </BaseParagraph>
+            </div>
+          </div>
+          <div>
+            <div class="grid grid-cols-12 gap-4 py-8">
               <Field
-                v-slot="{
-                  field,
-                  errorMessage,
-                  handleChange,
-                }"
-                name="event.dates"
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="event.title"
               >
-                <DatePicker
-                  :model-value="field.value"
-                  :model-modifiers="{ range: true }"
-                  :masks="masks"
-                  :min-date="new Date()"
-                  mode="dateTime"
-                  hide-time-header
-                  trim-weeks
-                  @update:model-value="handleChange"
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Event title"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
                 >
-                  <template #default="{ inputValue, inputEvents }">
-                    <div class="flex w-full flex-col gap-4 sm:flex-row">
-                      <BaseField
-                        v-slot="{ inputAttrs, inputRef }"
-                        label="Start date"
-                        :state="errorMessage ? 'error' : 'idle'"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        class="relative grow"
-                        required
-                      >
-                        <TairoInput
-                          :ref="inputRef"
-                          v-bind="inputAttrs"
-                          rounded="lg"
-                          icon="ph:calendar-blank-duotone"
-                          :value="inputValue.start"
-                          type="text"
-                          v-on="inputEvents.start"
-                        />
-                      </BaseField>
-                      <BaseField
-                        v-slot="{ inputAttrs, inputRef }"
-                        label="End date"
-                        :state="errorMessage ? 'error' : 'idle'"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        class="relative grow"
-                        required
-                      >
-                        <TairoInput
-                          :ref="inputRef"
-                          v-bind="inputAttrs"
-                          rounded="lg"
-                          icon="ph:calendar-blank-duotone"
-                          :value="inputValue.end"
-                          type="text"
-                          v-on="inputEvents.end"
-                        />
-                      </BaseField>
-                    </div>
-                  </template>
-                </DatePicker>
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    rounded="lg"
+                    icon="solar:earth-linear"
+                    placeholder="Ex: Next team building party"
+                    :model-value="field.value"
+                    type="text"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="event.shortDesc"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Short description"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
+                >
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    rounded="lg"
+                    icon="solar:list-linear"
+                    placeholder="Ex: We will meet to have fun together"
+                    :model-value="field.value"
+                    type="text"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
+              </Field>
+              <div class="relative z-20 col-span-12">
+                <Field
+                  v-slot="{
+                    field,
+                    errorMessage,
+                    handleChange,
+                  }"
+                  name="event.dates"
+                >
+                  <DatePicker
+                    :model-value="field.value"
+                    :model-modifiers="{ range: true }"
+                    :masks="masks"
+                    :min-date="new Date()"
+                    mode="dateTime"
+                    hide-time-header
+                    trim-weeks
+                    @update:model-value="handleChange"
+                  >
+                    <template #default="{ inputValue, inputEvents }">
+                      <div class="flex w-full flex-col gap-4 sm:flex-row">
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Start date"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="relative grow"
+                          required
+                        >
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
+                            rounded="lg"
+                            icon="solar:calendar-linear"
+                            :value="inputValue.start"
+                            type="text"
+                            v-on="inputEvents.start"
+                          />
+                        </BaseField>
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="End date"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          class="relative grow"
+                          required
+                        >
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
+                            rounded="lg"
+                            icon="solar:calendar-linear"
+                            :value="inputValue.end"
+                            type="text"
+                            v-on="inputEvents.end"
+                          />
+                        </BaseField>
+                      </div>
+                    </template>
+                  </DatePicker>
+                </Field>
+              </div>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="event.longDesc"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Long description"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
+                >
+                  <BaseTextarea
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    rounded="lg"
+                    placeholder="Ex: Some additional details about the event..."
+                    rows="5"
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange }"
+                name="event.position"
+              >
+                <BaseField
+                  label="Event location"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                  required
+                >
+                  <LazyAddonMapboxLocationPicker
+                    hydrate-on-visible
+                    class="col-span-12 aspect-16/9"
+                    :class="errorMessage ? 'border border-destructive-500' : ''"
+                    rounded="lg"
+                    :options="{
+                      center: { lat: 34.0134, lng: -6.7882 },
+                      zoom: 10,
+                    }"
+                    :geocoder="{
+                      flyTo: true,
+                      placeholder: 'Search for a location...',
+                    }"
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @init="onMapInit"
+                  />
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="event.participants"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Participants"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12"
+                >
+                  <BaseAutocomplete
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    :items="people.map((name) => ({ label: name, value: name }))"
+                    rounded="lg"
+                    icon="solar:users-group-rounded-linear"
+                    placeholder="Add participants..."
+                    multiple
+                    allow-create
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="event.color"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Event color"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12 sm:col-span-6"
+                >
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    type="color"
+                    list="eventColors"
+                    rounded="lg"
+                    icon="solar:waterdrops-linear"
+                    placeholder="Pick an event color..."
+                    class="appearance-none"
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                  <datalist id="eventColors">
+                    <option value="#84cc16" />
+                    <option value="#22c55e" />
+                    <option value="#0ea5e9" />
+                    <option value="#6366f1" />
+                    <option value="#8b5cf6" />
+                    <option value="#d946ef" />
+                    <option value="#f43f5e" />
+                    <option value="#facc15" />
+                    <option value="#fb923c" />
+                    <option value="#9ca3af" />
+                  </datalist>
+                </BaseField>
+              </Field>
+              <Field
+                v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                name="event.category"
+              >
+                <BaseField
+                  v-slot="{ inputAttrs, inputRef }"
+                  label="Event category"
+                  :state="errorMessage ? 'error' : 'idle'"
+                  :error="errorMessage"
+                  :disabled="isSubmitting"
+                  class="col-span-12 sm:col-span-6"
+                >
+                  <TairoInput
+                    :ref="inputRef"
+                    v-bind="inputAttrs"
+                    list="eventCategories"
+                    rounded="lg"
+                    icon="solar:wineglass-linear"
+                    placeholder="Pick a category..."
+                    :model-value="field.value"
+                    @update:model-value="handleChange"
+                    @blur="handleBlur"
+                  />
+                  <datalist id="eventCategories">
+                    <option value="Chrome" />
+                    <option value="Firefox" />
+                    <option value="Opera" />
+                    <option value="Safari" />
+                    <option value="Microsoft Edge" />
+                  </datalist>
+                </BaseField>
               </Field>
             </div>
-            <Field
-              v-slot="{ field, errorMessage, handleChange, handleBlur }"
-              name="event.longDesc"
-            >
-              <BaseField
-                v-slot="{ inputAttrs, inputRef }"
-                label="Long description"
-                :state="errorMessage ? 'error' : 'idle'"
-                :error="errorMessage"
-                :disabled="isSubmitting"
-                class="col-span-12"
-                required
+            <div class="flex items-center justify-end gap-3 pt-4">
+              <BaseButton rounded="md" variant="ghost" class="w-full md:w-36">
+                Cancel
+              </BaseButton>
+              <BaseButton
+                type="submit"
+                rounded="md"
+                variant="primary"
+                class="w-full md:w-36"
               >
-                <BaseTextarea
-                  :ref="inputRef"
-                  v-bind="inputAttrs"
-                  rounded="lg"
-                  placeholder="Ex: Some additional details about the event..."
-                  rows="5"
-                  :model-value="field.value"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
-              </BaseField>
-            </Field>
-            <Field
-              v-slot="{ field, errorMessage, handleChange }"
-              name="event.position"
-            >
-              <BaseField
-                label="Event location"
-                :state="errorMessage ? 'error' : 'idle'"
-                :error="errorMessage"
-                :disabled="isSubmitting"
-                class="col-span-12"
-                required
-              >
-                <LazyAddonMapboxLocationPicker
-                  hydrate-on-visible
-                  class="col-span-12 aspect-16/9"
-                  :class="errorMessage ? 'border border-destructive-500' : ''"
-                  rounded="lg"
-                  :options="{
-                    center: { lat: 34.0134, lng: -6.7882 },
-                    zoom: 10,
-                  }"
-                  :geocoder="{
-                    flyTo: true,
-                    placeholder: 'Search for a location...',
-                  }"
-                  :model-value="field.value"
-                  @update:model-value="handleChange"
-                  @init="onMapInit"
-                />
-              </BaseField>
-            </Field>
-            <Field
-              v-slot="{ field, errorMessage, handleChange, handleBlur }"
-              name="event.participants"
-            >
-              <BaseField
-                v-slot="{ inputAttrs, inputRef }"
-                label="Participants"
-                :state="errorMessage ? 'error' : 'idle'"
-                :error="errorMessage"
-                :disabled="isSubmitting"
-                class="col-span-12"
-              >
-                <BaseAutocomplete
-                  :ref="inputRef"
-                  v-bind="inputAttrs"
-                  :items="people.map((name) => ({ label: name, value: name }))"
-                  rounded="lg"
-                  icon="ph:users-duotone"
-                  placeholder="Add participants..."
-                  multiple
-                  allow-create
-                  :model-value="field.value"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
-              </BaseField>
-            </Field>
-            <Field
-              v-slot="{ field, errorMessage, handleChange, handleBlur }"
-              name="event.color"
-            >
-              <BaseField
-                v-slot="{ inputAttrs, inputRef }"
-                label="Event color"
-                :state="errorMessage ? 'error' : 'idle'"
-                :error="errorMessage"
-                :disabled="isSubmitting"
-                class="col-span-12 sm:col-span-6"
-              >
-                <TairoInput
-                  :ref="inputRef"
-                  v-bind="inputAttrs"
-                  type="color"
-                  list="eventColors"
-                  rounded="lg"
-                  icon="ph:drop-half-duotone"
-                  placeholder="Pick an event color..."
-                  :model-value="field.value"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
-                <datalist id="eventColors">
-                  <option value="#84cc16" />
-                  <option value="#22c55e" />
-                  <option value="#0ea5e9" />
-                  <option value="#6366f1" />
-                  <option value="#8b5cf6" />
-                  <option value="#d946ef" />
-                  <option value="#f43f5e" />
-                  <option value="#facc15" />
-                  <option value="#fb923c" />
-                  <option value="#9ca3af" />
-                </datalist>
-              </BaseField>
-            </Field>
-            <Field
-              v-slot="{ field, errorMessage, handleChange, handleBlur }"
-              name="event.category"
-            >
-              <BaseField
-                v-slot="{ inputAttrs, inputRef }"
-                label="Event category"
-                :state="errorMessage ? 'error' : 'idle'"
-                :error="errorMessage"
-                :disabled="isSubmitting"
-                class="col-span-12 sm:col-span-6"
-              >
-                <TairoInput
-                  :ref="inputRef"
-                  v-bind="inputAttrs"
-                  list="eventCategories"
-                  rounded="lg"
-                  icon="ph:ticket-duotone"
-                  placeholder="Pick a category..."
-                  :model-value="field.value"
-                  @update:model-value="handleChange"
-                  @blur="handleBlur"
-                />
-                <datalist id="eventCategories">
-                  <option value="Chrome" />
-                  <option value="Firefox" />
-                  <option value="Opera" />
-                  <option value="Safari" />
-                  <option value="Microsoft Edge" />
-                </datalist>
-              </BaseField>
-            </Field>
-          </div>
-          <div class="flex items-center gap-4 pt-4">
-            <BaseButton rounded="lg" class="h-12! w-full">
-              Cancel
-            </BaseButton>
-            <BaseButton
-              type="submit"
-              rounded="lg"
-              variant="primary"
-              class="h-12! w-full"
-            >
-              Create
-            </BaseButton>
+                Create
+              </BaseButton>
+            </div>
           </div>
         </div>
-      </div>
-    </BaseCard>
-  </form>
+      </BaseCard>
+    </form>
+  </div>
 </template>

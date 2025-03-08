@@ -246,8 +246,8 @@ onNuxtReady(async () => {
               <Icon
                 :name="
                   showPassword
-                    ? 'mdi:eye-outline'
-                    : 'mdi:eye-off-outline'
+                    ? 'solar:eye-linear'
+                    : 'solar:eye-closed-linear'
                 "
                 class="size-4"
               />

@@ -105,236 +105,241 @@ function handleClipboard() {
 </script>
 
 <template>
-  <div class="relative py-3 sm:mx-auto sm:max-w-xl">
-    <BaseCard rounded="lg" class="relative px-4 py-10 sm:p-10 md:mx-0">
-      <div class="mx-auto max-w-md">
-        <div class="flex items-center gap-4">
-          <div
-            class="bg-primary-500/20 text-primary-500 flex size-14 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
-          >
-            <Icon name="ph:lock-duotone" class="size-5" />
-          </div>
-          <div class="text-muted-700 block text-xl font-semibold">
-            <BaseHeading
-              as="h3"
-              size="lg"
-              weight="medium"
-              class="text-muted-800 dark:text-muted-100"
-            >
-              New Password
-            </BaseHeading>
-            <BaseText
-              size="sm"
-              class="text-muted-400"
-            >
-              Generate a random password.
-            </BaseText>
-          </div>
-        </div>
-        <div class="divide-muted-200 dark:divide-muted-700 divide-y">
-          <div class="grid grid-cols-12 gap-4 py-5">
-            <div class="col-span-12">
-              <BaseParagraph size="sm" class="text-muted-400">
-                Change the length value to generate a new random password. You
-                can also change the character types.
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <div class="relative py-3 sm:mx-auto sm:max-w-xl">
+      <BaseCard rounded="md" class="relative p-4 md:p-6">
+        <div>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center justify-center size-12 bg-white dark:bg-muted-950 rounded-full shadow-lg ring-1 ring-muted-900/5 dark:ring-primary-500/20">
+              <div
+                class="bg-primary-500/20 text-primary-500 flex size-10 shrink-0 items-center justify-center rounded-full font-sans text-2xl"
+              >
+                <Icon name="solar:lock-keyhole-minimalistic-bold-duotone" class="size-5" />
+              </div>
+            </div>
+            <div class="">
+              <BaseHeading
+                as="h3"
+                size="md"
+                weight="medium"
+                lead="tight"
+                class="text-muted-900 dark:text-white"
+              >
+                New password
+              </BaseHeading>
+              <BaseParagraph
+                size="sm"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                Generate a strong and secure password.
               </BaseParagraph>
             </div>
           </div>
-          <div class="text-muted-800 mx-auto w-full pt-5">
-            <div class="relative mb-2">
-              <label
-                class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
-              >Password strength</label>
-
-              <AddonInputPassword
-                v-model="password"
-                placeholder="Password"
-                rounded="lg"
-                show
-                touched
-              />
+          <div class="divide-muted-200 dark:divide-muted-800/80 divide-y">
+            <div class="grid grid-cols-12 gap-4 py-5">
+              <div class="col-span-12">
+                <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
+                  Change the length value to generate a new random password. You
+                  can also change the character types.
+                </BaseParagraph>
+              </div>
             </div>
-            <hr
-              class="border-muted-200 dark:border-muted-700 my-5 h-px border bg-transparent"
-            >
-            <BaseAccordion type="single" collapsible>
-              <BaseAccordionItem
-                value="passphrase"
-                title="Memorable niceware passwords"
+            <div class="text-muted-800 mx-auto w-full pt-5">
+              <div class="relative mb-2">
+                <label
+                  class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
+                >Password strength</label>
+                <AddonInputPassword
+                  v-model="password"
+                  placeholder="Password"
+                  rounded="lg"
+                  show
+                  touched
+                />
+              </div>
+              <hr
+                class="border-muted-200 dark:border-muted-800/80 my-5 h-px border bg-transparent"
               >
-                <div>
-                  <div class="mb-2">
-                    <label
-                      class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
-                    >Passphrase strength</label>
-                    <BaseInputNumber
-                      v-model="phraseStrength[0]"
-                      placeholder="Bits"
-                      rounded="lg"
-                      :min="1"
-                      :max="8"
-                      :step="1"
-                    />
-                    <div class="w-full py-5">
-                      <BaseSlider
-                        v-model="phraseStrength"
+              <BaseAccordion type="single" collapsible>
+                <BaseAccordionItem
+                  value="passphrase"
+                  title="Memorable niceware passwords"
+                >
+                  <div>
+                    <div class="mb-2">
+                      <label
+                        class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
+                      >Passphrase strength</label>
+                      <BaseInputNumber
+                        v-model="phraseStrength[0]"
+                        placeholder="Bits"
+                        rounded="lg"
                         :min="1"
                         :max="8"
                         :step="1"
                       />
+                      <div class="w-full py-5">
+                        <BaseSlider
+                          v-model="phraseStrength"
+                          :min="1"
+                          :max="8"
+                          :step="1"
+                          variant="primary"
+                        />
+                      </div>
                     </div>
-                  </div>
-
-                  <div
-                    class="mt-6 flex flex-col gap-2 sm:flex-row"
-                  >
-                    <BaseButton
-                      v-if="isSupported"
-                      rounded="lg"
-                      class="h-12! w-full"
-                      @click="handleClipboard"
+                    <div
+                      class="mt-6 flex flex-col gap-3 sm:flex-row"
                     >
-                      <Icon name="ph:cards-duotone" class="size-5" />
-                      <span>Copy to Clipboard</span>
-                    </BaseButton>
-                    <div v-else class="h-12">
-                      <BaseText
-                        class="text-muted-400"
-                        size="sm"
+                      <BaseButton
+                        v-if="isSupported"
+                        rounded="md"
+                        class="w-full"
+                        @click="handleClipboard"
                       >
-                        Your browser does not support Clipboard API.
-                      </BaseText>
+                        <Icon name="solar:copy-linear" class="size-4" />
+                        <span>Copy to Clipboard</span>
+                      </BaseButton>
+                      <div v-else class="h-12">
+                        <BaseText
+                          class="text-muted-400"
+                          size="sm"
+                        >
+                          Your browser does not support Clipboard API.
+                        </BaseText>
+                      </div>
+                      <BaseButton
+                        variant="primary"
+                        rounded="md"
+                        class="w-full"
+                        @click="generatePassphrase()"
+                      >
+                        <Icon name="solar:restart-circle-linear" class="size-4" />
+                        <span>Generate New</span>
+                      </BaseButton>
                     </div>
-                    <BaseButton
-                      variant="primary"
-                      rounded="lg"
-                      class="h-12! w-full"
-                      @click="generatePassphrase()"
-                    >
-                      <Icon name="ph:arrows-clockwise" class="size-5" />
-                      <span>Generate New</span>
-                    </BaseButton>
                   </div>
-                </div>
-              </BaseAccordionItem>
-              <BaseAccordionItem
-                value="password"
-                title="Memorable niceware passwords"
-              >
-                <div>
-                  <div class="mb-2">
-                    <label
-                      class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
-                    >Password length</label>
-                    <BaseInputNumber
-                      v-model="charsLength[0]"
-                      placeholder="Length"
-                      rounded="lg"
-                      :min="1"
-                      :max="42"
-                      :step="1"
-                    />
-                    <div class="w-full py-5">
-                      <BaseSlider
-                        v-model="charsLength"
+                </BaseAccordionItem>
+                <BaseAccordionItem
+                  value="password"
+                  title="Memorable niceware passwords"
+                >
+                  <div>
+                    <div class="mb-2">
+                      <label
+                        class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
+                      >Password length</label>
+                      <BaseInputNumber
+                        v-model="charsLength[0]"
+                        placeholder="Length"
+                        rounded="lg"
                         :min="1"
                         :max="42"
                         :step="1"
                       />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      class="text-muted-500 dark:text-muted-400 mb-4 block text-xs font-semibold"
-                    >Character types</label>
-                    <div class="grid gap-6 pb-4 sm:grid-cols-2">
-                      <div class="flex items-center gap-3">
-                        <TairoCheckboxAnimated
-                          v-model="charsLower"
-                          variant="success"
+                      <div class="w-full py-5">
+                        <BaseSlider
+                          v-model="charsLength"
+                          :min="1"
+                          :max="42"
+                          :step="1"
+                          variant="primary"
                         />
-                        <BaseText
-                          class="text-muted-500 dark:text"
-                          size="sm"
-                        >
-                          Lowercase
-                        </BaseText>
-                      </div>
-                      <div class="flex items-center gap-3">
-                        <TairoCheckboxAnimated
-                          v-model="charsUpper"
-                          variant="success"
-                        />
-                        <BaseText
-                          class="text-muted-500 dark:text"
-                          size="sm"
-                        >
-                          Uppercase
-                        </BaseText>
-                      </div>
-                      <div class="flex items-center gap-3">
-                        <TairoCheckboxAnimated
-                          v-model="charsNumeric"
-                          variant="success"
-                        />
-                        <BaseText
-                          class="text-muted-500 dark:text"
-                          size="sm"
-                        >
-                          Numbers
-                        </BaseText>
-                      </div>
-                      <div class="flex items-center gap-3">
-                        <TairoCheckboxAnimated
-                          v-model="charsSymbols"
-                          variant="success"
-                        />
-                        <BaseText
-                          class="text-muted-500 dark:text"
-                          size="sm"
-                        >
-                          Symbols
-                        </BaseText>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="mt-6 flex flex-col gap-2 sm:flex-row"
-                  >
-                    <BaseButton
-                      v-if="isSupported"
-                      rounded="lg"
-                      class="h-12! w-full"
-                      @click="handleClipboard"
+                    <div>
+                      <label
+                        class="text-muted-500 dark:text-muted-400 mb-4 block text-xs font-semibold"
+                      >Character types</label>
+                      <div class="grid gap-6 pb-4 sm:grid-cols-2">
+                        <div class="flex items-center gap-3">
+                          <TairoCheckboxAnimated
+                            v-model="charsLower"
+                            variant="success"
+                          />
+                          <BaseText
+                            class="text-muted-500 dark:text"
+                            size="sm"
+                          >
+                            Lowercase
+                          </BaseText>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <TairoCheckboxAnimated
+                            v-model="charsUpper"
+                            variant="success"
+                          />
+                          <BaseText
+                            class="text-muted-500 dark:text"
+                            size="sm"
+                          >
+                            Uppercase
+                          </BaseText>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <TairoCheckboxAnimated
+                            v-model="charsNumeric"
+                            variant="success"
+                          />
+                          <BaseText
+                            class="text-muted-500 dark:text"
+                            size="sm"
+                          >
+                            Numbers
+                          </BaseText>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <TairoCheckboxAnimated
+                            v-model="charsSymbols"
+                            variant="success"
+                          />
+                          <BaseText
+                            class="text-muted-500 dark:text"
+                            size="sm"
+                          >
+                            Symbols
+                          </BaseText>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-6 flex flex-col gap-2 sm:flex-row"
                     >
-                      <Icon name="ph:cards-duotone" class="size-5" />
-                      <span>Copy to Clipboard</span>
-                    </BaseButton>
-                    <div v-else class="h-12">
-                      <BaseText
-                        class="text-muted-400"
-                        size="sm"
+                      <BaseButton
+                        v-if="isSupported"
+                        rounded="md"
+                        class="w-full"
+                        @click="handleClipboard"
                       >
-                        Your browser does not support Clipboard API.
-                      </BaseText>
+                        <Icon name="solar:copy-linear" class="size-4" />
+                        <span>Copy to Clipboard</span>
+                      </BaseButton>
+                      <div v-else class="h-12">
+                        <BaseText
+                          class="text-muted-400"
+                          size="sm"
+                        >
+                          Your browser does not support Clipboard API.
+                        </BaseText>
+                      </div>
+                      <BaseButton
+                        variant="primary"
+                        rounded="md"
+                        class="w-full"
+                        :disabled="!hasChars"
+                        @click="generatePassword()"
+                      >
+                        <Icon name="solar:restart-circle-linear" class="size-4" />
+                        <span>Generate New</span>
+                      </BaseButton>
                     </div>
-                    <BaseButton
-                      variant="primary"
-                      rounded="lg"
-                      class="h-12! w-full"
-                      :disabled="!hasChars"
-                      @click="generatePassword()"
-                    >
-                      <Icon name="ph:arrows-clockwise" class="size-5" />
-                      <span>Generate New</span>
-                    </BaseButton>
                   </div>
-                </div>
-              </BaseAccordionItem>
-            </BaseAccordion>
+                </BaseAccordionItem>
+              </BaseAccordion>
+            </div>
           </div>
         </div>
-      </div>
-    </BaseCard>
+      </BaseCard>
+    </div>
   </div>
 </template>

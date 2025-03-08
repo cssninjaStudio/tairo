@@ -236,679 +236,680 @@ const colorCode = ref('color_code_1')
 </script>
 
 <template>
-  <form
-    action=""
-    method="POST"
-    class="mx-auto w-full max-w-3xl"
-    novalidate
-    @submit.prevent="onSubmit"
-  >
-    <BaseCard>
-      <div
-        class="border-muted-200 dark:border-muted-700 flex items-center justify-between gap-4 border-b px-10 py-5"
-      >
-        <div>
-          <BaseHeading
-            as="h3"
-            size="md"
-            weight="medium"
-          >
-            New Meeting
-          </BaseHeading>
-          <BaseText
-            size="xs"
-            class="text-muted-400"
-          >
-            Schedule a new meeting
-          </BaseText>
-        </div>
-        <div class="ms-auto flex items-center gap-2">
-          <BaseButton @click.prevent="$router.back()">
-            <Icon name="lucide:arrow-left" class="size-3" />
-            <span>Cancel</span>
-          </BaseButton>
-          <BaseButton type="submit" variant="primary">
-            <Icon name="lucide:check" class="size-3" />
-            <span>Save</span>
-          </BaseButton>
-        </div>
-      </div>
-      <div class="px-10 py-5">
-        <div class="grid grid-cols-12 gap-4">
-          <Field
-            v-slot="{ field, errorMessage, handleChange, handleBlur }"
-            name="meeting.title"
-          >
-            <BaseField
-              v-slot="{ inputAttrs, inputRef }"
-              label="What is this meeting about?"
-              :state="errorMessage ? 'error' : 'idle'"
-              :error="errorMessage"
-              :disabled="isSubmitting"
-              class="col-span-12"
-              required
-            >
-              <TairoInput
-                :ref="inputRef"
-                v-bind="inputAttrs"
-                placeholder="Ex: Project review with the design team"
-                icon="lucide:slack"
-                :model-value="field.value"
-                type="text"
-                @update:model-value="handleChange"
-                @blur="handleBlur"
-              />
-            </BaseField>
-          </Field>
-          <div class="relative z-10 col-span-12 sm:col-span-6">
-            <DatePicker
-              v-model.range="dates"
-              :masks="masks"
-              :min-date="new Date()"
-              mode="date"
-              hide-time-header
-              trim-weeks
-            >
-              <template #default="{ inputValue, inputEvents }">
-                <div class="flex w-full flex-col gap-4 sm:flex-row">
-                  <div class="relative grow">
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="meeting.startDate"
-                    >
-                      <BaseField
-                        v-slot="{ inputAttrs, inputRef }"
-                        label="Start date"
-                        :state="errorMessage ? 'error' : 'idle'"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        required
-                      >
-                        <TairoInput
-                          :ref="inputRef"
-                          v-bind="inputAttrs"
-                          icon="ph:calendar-blank-duotone"
-                          :value="inputValue.start"
-                          :model-value="field.value"
-                          type="text"
-                          v-on="inputEvents.start"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        />
-                      </BaseField>
-                    </Field>
-                  </div>
-                  <div class="relative grow">
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="meeting.endDate"
-                    >
-                      <BaseField
-                        v-slot="{ inputAttrs, inputRef }"
-                        label="End date"
-                        :state="errorMessage ? 'error' : 'idle'"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        required
-                      >
-                        <TairoInput
-                          :ref="inputRef"
-                          v-bind="inputAttrs"
-                          icon="ph:calendar-blank-duotone"
-                          :value="inputValue.end"
-                          :model-value="field.value"
-                          type="text"
-                          v-on="inputEvents.end"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        />
-                      </BaseField>
-                    </Field>
-                  </div>
-                </div>
-              </template>
-            </DatePicker>
-          </div>
-          <div class="relative z-10 col-span-12 sm:col-span-6">
-            <DatePicker
-              v-model.range="dates"
-              :masks="masks"
-              :min-date="new Date()"
-              mode="time"
-              hide-time-header
-              trim-weeks
-            >
-              <template #default="{ inputValue, inputEvents }">
-                <div class="flex w-full flex-col gap-4 sm:flex-row">
-                  <div class="relative grow">
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="meeting.startTime"
-                    >
-                      <BaseField
-                        v-slot="{ inputAttrs, inputRef }"
-                        label="Start time"
-                        :state="errorMessage ? 'error' : 'idle'"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        required
-                      >
-                        <TairoInput
-                          :ref="inputRef"
-                          v-bind="inputAttrs"
-                          icon="ph:calendar-blank-duotone"
-                          :value="inputValue.start"
-                          :model-value="field.value"
-                          type="text"
-                          v-on="inputEvents.start"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        />
-                      </BaseField>
-                    </Field>
-                  </div>
-                  <div class="relative grow">
-                    <Field
-                      v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                      name="meeting.endTime"
-                    >
-                      <BaseField
-                        v-slot="{ inputAttrs, inputRef }"
-                        label="End time"
-                        :state="errorMessage ? 'error' : 'idle'"
-                        :error="errorMessage"
-                        :disabled="isSubmitting"
-                        required
-                      >
-                        <TairoInput
-                          :ref="inputRef"
-                          v-bind="inputAttrs"
-                          icon="ph:calendar-blank-duotone"
-                          :value="inputValue.end"
-                          :model-value="field.value"
-                          type="text"
-                          v-on="inputEvents.end"
-                          @update:model-value="handleChange"
-                          @blur="handleBlur"
-                        />
-                      </BaseField>
-                    </Field>
-                  </div>
-                </div>
-              </template>
-            </DatePicker>
-          </div>
-          <div class="relative z-0 col-span-12">
-            <div class="my-4">
-              <Field
-                v-slot="{ field, errorMessage, handleChange }"
-                name="meeting.frequency"
-              >
-                <BaseField
-                  label="Meeting frequency"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                >
-                  <BaseRadioGroup
-                    :model-value="field.value"
-                    :disabled="isSubmitting"
-                    class="flex items-center gap-6"
-                    @update:model-value="handleChange"
-                  >
-                    <BaseRadio
-                      label="All day"
-                      value="day"
-                      variant="primary"
-                    />
-                    <BaseRadio
-                      label="Repeat every week"
-                      value="week"
-                      variant="primary"
-                    />
-                  </BaseRadioGroup>
-                </BaseField>
-              </Field>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="bg-muted-50 dark:bg-muted-800/70 border-muted-200 dark:border-muted-700 border-t p-10"
-      >
-        <div class="flex items-center justify-between">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <form
+      action=""
+      method="POST"
+      class="mx-auto w-full max-w-3xl"
+      novalidate
+      @submit.prevent="onSubmit"
+    >
+      <BaseCard>
+        <div
+          class="border-muted-200 dark:border-muted-700 flex items-center justify-between gap-4 border-b px-10 py-5"
+        >
           <div>
             <BaseHeading
               as="h3"
               size="md"
               weight="medium"
+              class="text-muted-900 dark:text-white"
             >
-              Meeting details
+              New Meeting
             </BaseHeading>
-            <BaseText
+            <BaseParagraph
               size="xs"
-              class="text-muted-400"
+              class="text-muted-600 dark:text-muted-400"
             >
-              Add some meeting details
-            </BaseText>
+              Schedule a new meeting
+            </BaseParagraph>
           </div>
-          <div>
-            <BaseButton>
-              <Icon name="lucide:plus" class="size-3" />
-              <span>Add people</span>
+          <div class="ms-auto flex items-center gap-2">
+            <BaseButton @click.prevent="$router.back()">
+              <Icon name="lucide:arrow-left" class="size-3" />
+              <span>Cancel</span>
+            </BaseButton>
+            <BaseButton type="submit" variant="primary">
+              <Icon name="lucide:check" class="size-3" />
+              <span>Save</span>
             </BaseButton>
           </div>
         </div>
-        <div class="mt-10 grid grid-cols-12 gap-4">
-          <div class="col-span-12 grid grid-cols-12">
-            <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
-              <label class="nui-label text-[0.825rem]">Participants</label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <div class="flex items-center gap-3">
-                <BaseTooltip
-                  v-for="participant in [
-                    { name: 'Anna B.', avatar: '/img/avatars/24.svg' },
-                    { name: 'Kendra W.', avatar: '/img/avatars/10.svg' },
-                    { name: 'John H.', avatar: '/img/avatars/8.svg' },
-                    { name: 'Melany L.', avatar: '/img/avatars/25.svg' },
-                  ]"
-                  :key="participant.name"
-                  :content="participant.name"
-                >
-                  <BaseAvatar :src="participant.avatar" />
-                </BaseTooltip>
-                <div class="ms-auto">
-                  <button
-                    type="button"
-                    class="text-primary-500 font-sans text-sm underline underline-offset-4"
-                  >
-                    Manage
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-12 grid grid-cols-12">
-            <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
-              <label class="nui-label text-[0.825rem]">Meeting location</label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="meeting.location"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    type="text"
-                    placeholder="Ex: meeting room A"
-                    icon="lucide:map-pin"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-            </div>
-          </div>
-          <div class="col-span-12 grid grid-cols-12">
-            <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
-              <label class="nui-label text-[0.825rem]">Meeting URL</label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="meeting.url"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    type="text"
-                    placeholder="https://zoom.us/m/123456789"
-                    icon="lucide:video"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-            </div>
-          </div>
-          <div class="col-span-12 grid grid-cols-12">
-            <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
-              <label class="nui-label text-[0.825rem]">Calendar</label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="meeting.calendar"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <TairoSelectItem
-                      v-for="item in calendars"
-                      :key="item.id"
-                      :value="item.id"
-                      :text-value="item.name"
-                      :icon="item.icon"
-                      :name="item.name"
-                      :text="item.text"
-                    />
-                  </BaseSelect>
-                </BaseField>
-              </Field>
-            </div>
-          </div>
-          <div class="col-span-12 grid grid-cols-12">
-            <div
-              class="col-span-12 flex flex-col justify-start pt-2 sm:col-span-3"
+        <div class="px-10 py-5">
+          <div class="grid grid-cols-12 gap-4">
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="meeting.title"
             >
-              <label class="nui-label text-[0.825rem]">
-                Description<span class="select-none text-destructive-base dark:text-destructive-light">
-                  <Icon name="lucide:asterisk" class="size-3 inline-block align-text-top" />
-                </span>
-              </label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="meeting.description"
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                label="What is this meeting about?"
+                :state="errorMessage ? 'error' : 'idle'"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                >
-                  <BaseTextarea
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    placeholder="Write some additional details about the meeting..."
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-            </div>
-          </div>
-          <div class="col-span-12 grid grid-cols-12">
-            <div
-              class="col-span-12 flex flex-col justify-start pt-4 sm:col-span-3"
-            >
-              <label class="nui-label text-[0.825rem]">Attachments</label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <BaseInputFileHeadless
-                v-slot="{ open, remove, preview, drop, files }"
-                v-model="uploadedFiles"
-                multiple
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  placeholder="Ex: Project review with the design team"
+                  icon="lucide:slack"
+                  :model-value="field.value"
+                  type="text"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <div class="relative z-10 col-span-12 sm:col-span-6">
+              <DatePicker
+                v-model.range="dates"
+                :masks="masks"
+                :min-date="new Date()"
+                mode="date"
+                hide-time-header
+                trim-weeks
               >
-                <!-- Controls -->
-                <div class="mb-4 flex items-center gap-2">
-                  <button
-                    type="button"
-                    class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
-                    tooltip="Select files"
-                    @click="open"
-                  >
-                    <Icon
-                      name="lucide:plus"
-                      class="absolute start-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2"
-                    />
-                    <span class="sr-only">Select files</span>
-                  </button>
-                  <button
-                    type="button"
-                    class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
-                    tooltip="Start Upload"
-                  >
-                    <Icon name="lucide:arrow-up" class="size-4" />
-
-                    <span class="sr-only">Start Upload</span>
-                  </button>
-                </div>
-
-                <div
-                  role="button"
-                  tabindex="-1"
-                  class=""
-                  @dragenter.stop.prevent
-                  @dragover.stop.prevent
-                  @drop="drop"
-                >
-                  <div
-                    v-if="!files?.length"
-                    class="focus-visible:nui-focus border-muted-300 dark:border-muted-700 hover:border-muted-400 focus:border-muted-400 dark:hover:border-muted-600 dark:focus:border-muted-700 group cursor-pointer rounded-lg border-[3px] border-dashed p-8 transition-colors duration-300"
-                    tabindex="0"
-                    role="button"
-                    @click="open"
-                    @keydown.enter.prevent="open"
-                  >
-                    <div class="p-5 text-center">
-                      <Icon
-                        name="mdi-light:cloud-upload"
-                        class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mx-auto mb-2 size-10 transition-colors duration-300"
-                      />
-                      <h4 class="text-muted-400 font-sans text-sm">
-                        Drop files to upload
-                      </h4>
-                      <div>
-                        <span
-                          class="text-muted-400 font-sans text-[0.7rem] font-semibold uppercase"
-                        >
-                          Or
-                        </span>
-                      </div>
-                      <label
-                        for="file"
-                        class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 cursor-pointer font-sans text-sm underline underline-offset-4 transition-colors duration-300"
+                <template #default="{ inputValue, inputEvents }">
+                  <div class="flex w-full flex-col gap-4 sm:flex-row">
+                    <div class="relative grow">
+                      <Field
+                        v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                        name="meeting.startDate"
                       >
-                        Select files
-                      </label>
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Start date"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          required
+                        >
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
+                            icon="solar:calendar-linear"
+                            :value="inputValue.start"
+                            :model-value="field.value"
+                            type="text"
+                            v-on="inputEvents.start"
+                            @update:model-value="handleChange"
+                            @blur="handleBlur"
+                          />
+                        </BaseField>
+                      </Field>
+                    </div>
+                    <div class="relative grow">
+                      <Field
+                        v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                        name="meeting.endDate"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="End date"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          required
+                        >
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
+                            icon="solar:calendar-linear"
+                            :value="inputValue.end"
+                            :model-value="field.value"
+                            type="text"
+                            v-on="inputEvents.end"
+                            @update:model-value="handleChange"
+                            @blur="handleBlur"
+                          />
+                        </BaseField>
+                      </Field>
                     </div>
                   </div>
-                  <ul v-else class="mt-6 space-y-2">
-                    <li v-for="file in files" :key="file.name">
-                      <div
-                        class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative flex items-center justify-end gap-2 rounded-xl border bg-white p-3"
-                      >
-                        <div class="flex items-center gap-2">
-                          <div class="shrink-0">
-                            <img
-                              v-if="file.type.startsWith('image')"
-                              class="size-14 rounded-xl object-cover object-center"
-                              :src="preview(file).value"
-                              alt="Image preview"
-                            >
-                            <img
-                              v-else
-                              class="size-14 rounded-xl object-cover object-center"
-                              src="/img/avatars/placeholder-file.png"
-                              alt="Image preview"
-                            >
-                          </div>
-                          <div class="font-sans">
-                            <span
-                              class="text-muted-800 dark:text-muted-100 line-clamp-1 block text-sm"
-                            >
-                              {{ file.name }}
-                            </span>
-                            <span class="text-muted-400 block text-xs">
-                              {{ formatFileSize(file.size) }}
-                            </span>
-                          </div>
-                        </div>
-
-                        <div
-                          class="ms-auto w-32 px-4 transition-opacity duration-300 opacity-100"
-                        >
-                          <BaseProgress
-                            :model-value="0"
-                            size="xs"
-                          />
-                        </div>
-                        <div class="flex gap-2">
-                          <button
-                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
-                            disabled
-                            type="button"
-                            tooltip="Cancel"
-                          >
-                            <Icon name="lucide:slash" class="size-4" />
-                            <span class="sr-only">Cancel</span>
-                          </button>
-
-                          <button
-                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
-                            type="button"
-                            tooltip="Upload"
-                          >
-                            <Icon name="lucide:arrow-up" class="size-4" />
-                            <span class="sr-only">Upload</span>
-                          </button>
-                          <button
-                            class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
-                            type="button"
-                            tooltip="Remove"
-                            @click.prevent="remove(file)"
-                          >
-                            <Icon name="lucide:x" class="size-4" />
-                            <span class="sr-only">Remove</span>
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </BaseInputFileHeadless>
+                </template>
+              </DatePicker>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="bg-muted-50 dark:bg-muted-800/70 border-muted-200 dark:border-muted-700 border-t p-10"
-      >
-        <div class="grid grid-cols-12 gap-8 pb-6">
-          <div class="col-span-12 grid grid-cols-12">
-            <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
-              <label class="nui-label text-[0.825rem]">Color code</label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <Field
-                v-slot="{ field, handleChange }"
-                name="meeting.colorCode"
+            <div class="relative z-10 col-span-12 sm:col-span-6">
+              <DatePicker
+                v-model.range="dates"
+                :masks="masks"
+                :min-date="new Date()"
+                mode="time"
+                hide-time-header
+                trim-weeks
               >
-                <RadioGroupRoot
-                  :disabled="isSubmitting"
-                  :model-value="field.value"
-                  class="flex items-center gap-3"
-                  @update:model-value="handleChange"
-                >
-                  <RadioGroupItem value="color_code_1" class="border-primary-500 data-[state=checked]:bg-primary-500 size-4 rounded-full border-2 transition-colors duration-300" />
-                  <RadioGroupItem value="color_code_2" class="border-info-500 data-[state=checked]:bg-info-500 size-4 rounded-full border-2 transition-colors duration-300" />
-                  <RadioGroupItem value="color_code_3" class="border-success-500 data-[state=checked]:bg-success-500 size-4 rounded-full border-2 transition-colors duration-300" />
-                  <RadioGroupItem value="color_code_4" class="border-destructive-500 data-[state=checked]:bg-destructive-500 size-4 rounded-full border-2 transition-colors duration-300" />
-                  <RadioGroupItem value="color_code_5" class="size-4 rounded-full border-2 border-lime-500 transition-colors duration-300 data-[state=checked]:bg-lime-500" />
-                  <RadioGroupItem value="color_code_6" class="size-4 rounded-full border-2 border-pink-500 transition-colors duration-300 data-[state=checked]:bg-pink-500" />
-                </RadioGroupRoot>
-              </Field>
+                <template #default="{ inputValue, inputEvents }">
+                  <div class="flex w-full flex-col gap-4 sm:flex-row">
+                    <div class="relative grow">
+                      <Field
+                        v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                        name="meeting.startTime"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="Start time"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          required
+                        >
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
+                            icon="solar:watch-square-minimalistic-linear"
+                            :value="inputValue.start"
+                            :model-value="field.value"
+                            type="text"
+                            v-on="inputEvents.start"
+                            @update:model-value="handleChange"
+                            @blur="handleBlur"
+                          />
+                        </BaseField>
+                      </Field>
+                    </div>
+                    <div class="relative grow">
+                      <Field
+                        v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                        name="meeting.endTime"
+                      >
+                        <BaseField
+                          v-slot="{ inputAttrs, inputRef }"
+                          label="End time"
+                          :state="errorMessage ? 'error' : 'idle'"
+                          :error="errorMessage"
+                          :disabled="isSubmitting"
+                          required
+                        >
+                          <TairoInput
+                            :ref="inputRef"
+                            v-bind="inputAttrs"
+                            icon="solar:watch-square-minimalistic-linear"
+                            :value="inputValue.end"
+                            :model-value="field.value"
+                            type="text"
+                            v-on="inputEvents.end"
+                            @update:model-value="handleChange"
+                            @blur="handleBlur"
+                          />
+                        </BaseField>
+                      </Field>
+                    </div>
+                  </div>
+                </template>
+              </DatePicker>
             </div>
-          </div>
-          <div class="col-span-12 grid grid-cols-12">
-            <div
-              class="col-span-12 flex flex-col justify-start pt-1 sm:col-span-3"
-            >
-              <label class="nui-label text-[0.825rem]">Notifications</label>
-            </div>
-            <div class="col-span-12 sm:col-span-9">
-              <div class="flex flex-col gap-6">
+            <div class="relative z-0 col-span-12">
+              <div class="my-4">
                 <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.notifications.general"
+                  v-slot="{ field, errorMessage, handleChange }"
+                  name="meeting.frequency"
                 >
-                  <BaseCheckbox
-                    variant="primary"
-                    label="General notifications"
-                    :model-value="field.value"
+                  <BaseField
+                    label="Meeting frequency"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.notifications.team"
-                >
-                  <BaseCheckbox
-                    variant="primary"
-                    label="Team notifications"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.notifications.reminders"
-                >
-                  <BaseCheckbox
-                    variant="primary"
-                    label="Auto reminders"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-                <Field
-                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="meeting.notifications.modifications"
-                >
-                  <BaseCheckbox
-                    variant="primary"
-                    label="Modifications"
-                    :model-value="field.value"
-                    :error="errorMessage"
-                    :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                  >
+                    <BaseRadioGroup
+                      :model-value="field.value"
+                      :disabled="isSubmitting"
+                      class="flex items-center gap-6 pt-2"
+                      @update:model-value="handleChange"
+                    >
+                      <BaseRadio
+                        label="All day"
+                        value="day"
+                        variant="default"
+                      />
+                      <BaseRadio
+                        label="Repeat every week"
+                        value="week"
+                        variant="default"
+                      />
+                    </BaseRadioGroup>
+                  </BaseField>
                 </Field>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </BaseCard>
-    <TairoFormSave />
-  </form>
+        <div
+          class="bg-muted-50 dark:bg-muted-800/70 border-muted-200 dark:border-muted-700 border-t p-10"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <BaseHeading
+                as="h3"
+                size="md"
+                weight="medium"
+                class="text-muted-900 dark:text-white"
+              >
+                Meeting details
+              </BaseHeading>
+              <BaseText
+                size="xs"
+                class="text-muted-600 dark:text-muted-400"
+              >
+                Add some meeting details
+              </BaseText>
+            </div>
+            <div>
+              <BaseButton>
+                <Icon name="lucide:plus" class="size-3" />
+                <span>Add people</span>
+              </BaseButton>
+            </div>
+          </div>
+          <div class="mt-10 grid grid-cols-12 gap-4">
+            <div class="col-span-12 grid grid-cols-12">
+              <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
+                <label class="nui-label text-[0.825rem]">Participants</label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <div class="flex items-center gap-3">
+                  <BaseTooltip
+                    v-for="participant in [
+                      { name: 'Anna B.', avatar: '/img/avatars/24.svg' },
+                      { name: 'Kendra W.', avatar: '/img/avatars/10.svg' },
+                      { name: 'John H.', avatar: '/img/avatars/8.svg' },
+                      { name: 'Melany L.', avatar: '/img/avatars/25.svg' },
+                    ]"
+                    :key="participant.name"
+                    :content="participant.name"
+                  >
+                    <BaseAvatar :src="participant.avatar" />
+                  </BaseTooltip>
+                  <div class="ms-auto">
+                    <button
+                      type="button"
+                      class="text-primary-500 font-sans text-sm underline underline-offset-4"
+                    >
+                      Manage
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 grid grid-cols-12">
+              <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
+                <label class="nui-label text-[0.825rem]">Meeting location</label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="meeting.location"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                  >
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      type="text"
+                      placeholder="Ex: meeting room A"
+                      icon="solar:map-point-linear"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
+                </Field>
+              </div>
+            </div>
+            <div class="col-span-12 grid grid-cols-12">
+              <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
+                <label class="nui-label text-[0.825rem]">Meeting URL</label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="meeting.url"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                  >
+                    <TairoInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      type="text"
+                      placeholder="https://zoom.us/m/123456789"
+                      icon="solar:videocamera-linear"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
+                </Field>
+              </div>
+            </div>
+            <div class="col-span-12 grid grid-cols-12">
+              <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
+                <label class="nui-label text-[0.825rem]">Calendar</label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="meeting.calendar"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                  >
+                    <BaseSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    >
+                      <TairoSelectItem
+                        v-for="item in calendars"
+                        :key="item.id"
+                        :value="item.id"
+                        :text-value="item.name"
+                        :icon="item.icon"
+                        :name="item.name"
+                        :text="item.text"
+                      />
+                    </BaseSelect>
+                  </BaseField>
+                </Field>
+              </div>
+            </div>
+            <div class="col-span-12 grid grid-cols-12">
+              <div
+                class="col-span-12 flex flex-col justify-start pt-2 sm:col-span-3"
+              >
+                <label class="nui-label text-[0.825rem]">
+                  Description<span class="select-none text-destructive-base dark:text-destructive-light">
+                    <Icon name="lucide:asterisk" class="size-3 inline-block align-text-top" />
+                  </span>
+                </label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="meeting.description"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                  >
+                    <BaseTextarea
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      placeholder="Write some additional details about the meeting..."
+                      :aria-invalid="errorMessage ? 'true' : undefined"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
+                </Field>
+              </div>
+            </div>
+            <div class="col-span-12 grid grid-cols-12">
+              <div
+                class="col-span-12 flex flex-col justify-start pt-4 sm:col-span-3"
+              >
+                <label class="nui-label text-[0.825rem]">Attachments</label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <BaseInputFileHeadless
+                  v-slot="{ open, remove, preview, drop, files }"
+                  v-model="uploadedFiles"
+                  multiple
+                >
+                  <!-- Controls -->
+                  <div class="mb-4 flex items-center gap-2">
+                    <button
+                      type="button"
+                      class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                      tooltip="Select files"
+                      @click="open"
+                    >
+                      <Icon
+                        name="lucide:plus"
+                        class="absolute start-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2"
+                      />
+                      <span class="sr-only">Select files</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                      tooltip="Start Upload"
+                    >
+                      <Icon name="lucide:arrow-up" class="size-4" />
+                      <span class="sr-only">Start Upload</span>
+                    </button>
+                  </div>
+                  <div
+                    role="button"
+                    tabindex="-1"
+                    class=""
+                    @dragenter.stop.prevent
+                    @dragover.stop.prevent
+                    @drop="drop"
+                  >
+                    <div
+                      v-if="!files?.length"
+                      class="focus-visible:nui-focus border-muted-300 dark:border-muted-700 hover:border-muted-400 focus:border-muted-400 dark:hover:border-muted-600 dark:focus:border-muted-700 group cursor-pointer rounded-lg border-[3px] border-dashed p-8 transition-colors duration-300"
+                      tabindex="0"
+                      role="button"
+                      @click="open"
+                      @keydown.enter.prevent="open"
+                    >
+                      <div class="p-5 text-center">
+                        <Icon
+                          name="solar:cloud-upload-linear"
+                          class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mx-auto mb-2 size-10 transition-colors duration-300"
+                        />
+                        <h4 class="text-muted-400 font-sans text-sm">
+                          Drop files to upload
+                        </h4>
+                        <div>
+                          <span
+                            class="text-muted-400 font-sans text-[0.7rem] font-semibold uppercase"
+                          >
+                            Or
+                          </span>
+                        </div>
+                        <label
+                          for="file"
+                          class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 cursor-pointer font-sans text-sm underline underline-offset-4 transition-colors duration-300"
+                        >
+                          Select files
+                        </label>
+                      </div>
+                    </div>
+                    <ul v-else class="mt-6 space-y-2">
+                      <li v-for="file in files" :key="file.name">
+                        <div
+                          class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative flex items-center justify-end gap-2 rounded-xl border bg-white p-3"
+                        >
+                          <div class="flex items-center gap-2">
+                            <div class="shrink-0">
+                              <img
+                                v-if="file.type.startsWith('image')"
+                                class="size-14 rounded-xl object-cover object-center"
+                                :src="preview(file).value"
+                                alt="Image preview"
+                              >
+                              <img
+                                v-else
+                                class="size-14 rounded-xl object-cover object-center"
+                                src="/img/avatars/placeholder-file.png"
+                                alt="Image preview"
+                              >
+                            </div>
+                            <div class="font-sans">
+                              <span
+                                class="text-muted-800 dark:text-muted-100 line-clamp-1 block text-sm"
+                              >
+                                {{ file.name }}
+                              </span>
+                              <span class="text-muted-400 block text-xs">
+                                {{ formatFileSize(file.size) }}
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="ms-auto w-32 px-4 transition-opacity duration-300 opacity-100"
+                          >
+                            <BaseProgress
+                              :model-value="0"
+                              size="xs"
+                              variant="primary"
+                            />
+                          </div>
+                          <div class="flex gap-2">
+                            <button
+                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
+                              disabled
+                              type="button"
+                              tooltip="Cancel"
+                            >
+                              <Icon name="lucide:slash" class="size-4" />
+                              <span class="sr-only">Cancel</span>
+                            </button>
+                            <button
+                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                              type="button"
+                              tooltip="Upload"
+                            >
+                              <Icon name="lucide:arrow-up" class="size-4" />
+                              <span class="sr-only">Upload</span>
+                            </button>
+                            <button
+                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                              type="button"
+                              tooltip="Remove"
+                              @click.prevent="remove(file)"
+                            >
+                              <Icon name="lucide:x" class="size-4" />
+                              <span class="sr-only">Remove</span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </BaseInputFileHeadless>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-muted-50 dark:bg-muted-800/70 border-muted-200 dark:border-muted-700 border-t p-10"
+        >
+          <div class="grid grid-cols-12 gap-8 pb-6">
+            <div class="col-span-12 grid grid-cols-12">
+              <div class="col-span-12 flex flex-col justify-center sm:col-span-3">
+                <label class="nui-label text-[0.825rem]">Color code</label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <Field
+                  v-slot="{ field, handleChange }"
+                  name="meeting.colorCode"
+                >
+                  <RadioGroupRoot
+                    :disabled="isSubmitting"
+                    :model-value="field.value"
+                    class="flex items-center gap-3"
+                    @update:model-value="handleChange"
+                  >
+                    <RadioGroupItem value="color_code_1" class="border-primary-500 data-[state=checked]:bg-primary-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                    <RadioGroupItem value="color_code_2" class="border-info-500 data-[state=checked]:bg-info-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                    <RadioGroupItem value="color_code_3" class="border-success-500 data-[state=checked]:bg-success-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                    <RadioGroupItem value="color_code_4" class="border-destructive-500 data-[state=checked]:bg-destructive-500 size-4 rounded-full border-2 transition-colors duration-300" />
+                    <RadioGroupItem value="color_code_5" class="size-4 rounded-full border-2 border-lime-500 transition-colors duration-300 data-[state=checked]:bg-lime-500" />
+                    <RadioGroupItem value="color_code_6" class="size-4 rounded-full border-2 border-pink-500 transition-colors duration-300 data-[state=checked]:bg-pink-500" />
+                  </RadioGroupRoot>
+                </Field>
+              </div>
+            </div>
+            <div class="col-span-12 grid grid-cols-12">
+              <div
+                class="col-span-12 flex flex-col justify-start pt-1 sm:col-span-3"
+              >
+                <label class="nui-label text-[0.825rem]">Notifications</label>
+              </div>
+              <div class="col-span-12 sm:col-span-9">
+                <div class="flex flex-col gap-6">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="meeting.notifications.general"
+                  >
+                    <BaseCheckbox
+                      variant="default"
+                      label="General notifications"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="meeting.notifications.team"
+                  >
+                    <BaseCheckbox
+                      variant="default"
+                      label="Team notifications"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="meeting.notifications.reminders"
+                  >
+                    <BaseCheckbox
+                      variant="default"
+                      label="Auto reminders"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="meeting.notifications.modifications"
+                  >
+                    <BaseCheckbox
+                      variant="default"
+                      label="Modifications"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </BaseCard>
+      <TairoFormSave rounded="md" />
+    </form>
+  </div>
 </template>
