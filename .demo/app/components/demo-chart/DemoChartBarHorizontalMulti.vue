@@ -2,7 +2,6 @@
 const demoBarHorizontalMulti = reactive(useDemoBarHorizontalMulti())
 
 function useDemoBarHorizontalMulti() {
-  const { primary, info } = useTailwindColors()
   const type = 'bar'
   const height = 280
 
@@ -12,7 +11,7 @@ function useDemoBarHorizontalMulti() {
         show: false,
       },
     },
-    colors: [primary.value, info.value],
+    colors: ['var(--color-chart-base)', 'var(--color-amber-400)'],
     title: {
       text: '',
       align: 'left',

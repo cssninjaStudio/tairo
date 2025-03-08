@@ -2,7 +2,6 @@
 const demoRadialMulti = reactive(useDemoRadialMulti())
 
 function useDemoRadialMulti() {
-  const { primary, info, success, danger } = useTailwindColors()
   const height = 295
   const type = 'radialBar'
 
@@ -15,7 +14,7 @@ function useDemoRadialMulti() {
         show: false,
       },
     },
-    colors: [primary.value, success.value, info.value, danger.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)'],
     plotOptions: {
       radialBar: {
         dataLabels: {

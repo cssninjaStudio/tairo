@@ -2,7 +2,6 @@
 const demoBarHorizontal = reactive(useDemoBarHorizontal())
 
 function useDemoBarHorizontal() {
-  const { primary } = useTailwindColors()
   const type = 'bar'
   const height = 280
 
@@ -12,7 +11,7 @@ function useDemoBarHorizontal() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       bar: {
         horizontal: true,

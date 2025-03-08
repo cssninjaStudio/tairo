@@ -2,7 +2,6 @@
 const demoScatter = reactive(useDemoScatter())
 
 function useDemoScatter() {
-  const { primary, info, success, danger } = useTailwindColors()
   const type = 'scatter'
   const height = 280
 
@@ -18,7 +17,7 @@ function useDemoScatter() {
         show: false,
       },
     },
-    colors: [primary.value, success.value, info.value, danger.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)'],
     dataLabels: {
       enabled: false,
     },
@@ -85,17 +84,6 @@ function useDemoScatter() {
       data: generateDayWiseTimeSeries(
         new Date('11 Feb 2017 GMT').getTime(),
         10,
-        {
-          min: 10,
-          max: 60,
-        },
-      ),
-    },
-    {
-      name: 'Team 5',
-      data: generateDayWiseTimeSeries(
-        new Date('11 Feb 2017 GMT').getTime(),
-        30,
         {
           min: 10,
           max: 60,

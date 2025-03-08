@@ -2,7 +2,6 @@
 const demoLineMulti = reactive(useDemoLineMulti())
 
 function useDemoLineMulti() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'line'
   const height = 280
 
@@ -15,7 +14,7 @@ function useDemoLineMulti() {
         show: false,
       },
     },
-    colors: [primary.value, success.value, info.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)'],
     dataLabels: {
       enabled: false,
     },

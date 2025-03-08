@@ -2,7 +2,6 @@
 const demoPie = reactive(useDemoPie())
 
 function useDemoPie() {
-  const { primary, info, success, danger } = useTailwindColors()
   const height = 335
   const type = 'pie'
 
@@ -13,7 +12,7 @@ function useDemoPie() {
         weight: 500,
       },
     },
-    colors: [primary.value, success.value, info.value, danger.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)', 'var(--color-teal-400)'],
     labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
     responsive: [
       {
@@ -51,6 +50,18 @@ function useDemoPie() {
 <template>
   <div class="relative">
     <BaseCard class="p-6">
+      <!-- Title -->
+      <div class="mb-6">
+        <BaseHeading
+          as="h3"
+          size="md"
+          weight="semibold"
+          lead="tight"
+          class="text-muted-800 dark:text-white"
+        >
+          <span>Pie Chart</span>
+        </BaseHeading>
+      </div>
       <AddonApexcharts v-bind="demoPie" />
     </BaseCard>
   </div>

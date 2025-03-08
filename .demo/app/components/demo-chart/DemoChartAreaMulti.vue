@@ -2,7 +2,6 @@
 const demoAreaMulti = reactive(useDemoAreaMulti())
 
 function useDemoAreaMulti() {
-  const { primary, info, success } = useTailwindColors()
   const type = 'area'
   const height = 280
 
@@ -12,7 +11,7 @@ function useDemoAreaMulti() {
         show: false,
       },
     },
-    colors: [primary.value, info.value, success.value],
+    colors: ['var(--color-chart-base)', 'var(--color-amber-300)'],
     title: {
       text: '',
       align: 'left',
@@ -26,6 +25,17 @@ function useDemoAreaMulti() {
     stroke: {
       width: [2, 2, 2],
       curve: 'smooth',
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)', 'var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.75,
+      },
     },
     xaxis: {
       type: 'datetime',

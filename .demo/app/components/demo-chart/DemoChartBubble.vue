@@ -2,7 +2,6 @@
 const demoBubble = reactive(useDemoBubble())
 
 function useDemoBubble() {
-  const { primary, info, success, danger } = useTailwindColors()
   const type = 'bubble'
   const height = 280
 
@@ -12,7 +11,7 @@ function useDemoBubble() {
         show: false,
       },
     },
-    colors: [primary.value, success.value, info.value, danger.value],
+    colors: ['var(--color-chart-base)', 'var(--color-amber-400)', 'var(--color-indigo-400)', 'var(--color-primary-300)'],
     dataLabels: {
       enabled: false,
     },

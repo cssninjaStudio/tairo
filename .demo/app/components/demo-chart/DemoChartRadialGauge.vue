@@ -2,7 +2,6 @@
 const demoRadialGauge = reactive(useDemoRadialGauge())
 
 function useDemoRadialGauge() {
-  const { primary } = useTailwindColors()
   const height = 370
   const type = 'radialBar'
 
@@ -16,7 +15,7 @@ function useDemoRadialGauge() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         startAngle: -135,
@@ -33,17 +32,6 @@ function useDemoRadialGauge() {
             formatter: asPercent,
           },
         },
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'dark',
-        shadeIntensity: 0.15,
-        inverseColors: false,
-        opacityFrom: 1,
-        opacityTo: 1,
-        stops: [0, 50, 65, 91],
       },
     },
     stroke: {

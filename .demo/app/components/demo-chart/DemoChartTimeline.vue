@@ -2,7 +2,6 @@
 const demoTimeline = reactive(useDemoTimeline())
 
 function useDemoTimeline() {
-  const { primary, info, success, warning, danger } = useTailwindColors()
   const type = 'rangeBar'
   const height = 280
 
@@ -17,11 +16,11 @@ function useDemoTimeline() {
       },
     },
     colors: [
-      primary.value,
-      info.value,
-      success.value,
-      warning.value,
-      danger.value,
+      'var(--color-chart-base)',
+      'var(--color-primary-300)',
+      'var(--color-amber-400)',
+      'var(--color-indigo-400)',
+      'var(--color-teal-400)',
     ],
     plotOptions: {
       bar: {
@@ -69,7 +68,7 @@ function useDemoTimeline() {
             new Date('2019-02-27').getTime(),
             new Date('2019-03-04').getTime(),
           ],
-          fillColor: primary.value,
+          fillColor: 'var(--color-chart-base)',
         },
         {
           x: 'Design',
@@ -77,7 +76,7 @@ function useDemoTimeline() {
             new Date('2019-03-04').getTime(),
             new Date('2019-03-08').getTime(),
           ],
-          fillColor: info.value,
+          fillColor: 'var(--color-primary-300)',
         },
         {
           x: 'Coding',
@@ -85,7 +84,7 @@ function useDemoTimeline() {
             new Date('2019-03-07').getTime(),
             new Date('2019-03-10').getTime(),
           ],
-          fillColor: success.value,
+          fillColor: 'var(--color-amber-400)',
         },
         {
           x: 'Testing',
@@ -93,7 +92,7 @@ function useDemoTimeline() {
             new Date('2019-03-08').getTime(),
             new Date('2019-03-12').getTime(),
           ],
-          fillColor: warning.value,
+          fillColor: 'var(--color-indigo-400)',
         },
         {
           x: 'Deployment',
@@ -101,7 +100,7 @@ function useDemoTimeline() {
             new Date('2019-03-12').getTime(),
             new Date('2019-03-17').getTime(),
           ],
-          fillColor: danger.value,
+          fillColor: 'var(--color-teal-400)',
         },
       ],
     },

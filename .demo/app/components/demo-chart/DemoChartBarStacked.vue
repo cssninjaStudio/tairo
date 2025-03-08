@@ -2,7 +2,6 @@
 const demoBarStacked = reactive(useDemoBarStacked())
 
 function useDemoBarStacked() {
-  const { primary, info, success, danger } = useTailwindColors()
   const type = 'bar'
   const height = 280
 
@@ -22,7 +21,7 @@ function useDemoBarStacked() {
         fontWeight: 300,
       },
     },
-    colors: [primary.value, success.value, info.value, danger.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)'],
     responsive: [
       {
         breakpoint: 480,

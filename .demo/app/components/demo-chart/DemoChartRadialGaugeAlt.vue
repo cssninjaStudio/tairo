@@ -2,7 +2,6 @@
 const demoRadialGaugeAlt = reactive(useDemoRadialGaugeAlt())
 
 function useDemoRadialGaugeAlt() {
-  const { primary } = useTailwindColors()
   const height = 295
   const type = 'radialBar'
 
@@ -20,7 +19,7 @@ function useDemoRadialGaugeAlt() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         startAngle: -90,
@@ -47,17 +46,6 @@ function useDemoRadialGaugeAlt() {
             fontSize: '22px',
           },
         },
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        shadeIntensity: 0.1,
-        inverseColors: false,
-        opacityFrom: 1,
-        opacityTo: 1,
-        stops: [0, 50, 53, 91],
       },
     },
     labels: ['Average Results'],

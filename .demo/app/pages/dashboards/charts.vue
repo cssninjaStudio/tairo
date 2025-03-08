@@ -26,8 +26,8 @@ definePageMeta({
       <DemoChartBarRange />
       <DemoChartBarHorizontal />
       <DemoChartBarHorizontalMulti />
-      <DemoChartTimeline />
       <DemoChartBubble />
+      <DemoChartTimeline class="2xl:col-span-2" />
       <DemoChartScatter />
       <DemoChartPie />
       <DemoChartDonut />

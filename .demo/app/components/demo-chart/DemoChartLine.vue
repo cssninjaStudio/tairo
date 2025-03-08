@@ -2,7 +2,6 @@
 const demoLine = reactive(useDemoLine())
 
 function useDemoLine() {
-  const { primary } = useTailwindColors()
   const type = 'line'
   const height = 280
 
@@ -15,7 +14,7 @@ function useDemoLine() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     dataLabels: {
       enabled: false,
     },

@@ -2,7 +2,6 @@
 const demoDonut = reactive(useDemoDonut())
 
 function useDemoDonut() {
-  const { primary, info, success, danger } = useTailwindColors()
   const height = 290
   const type = 'donut'
 
@@ -11,7 +10,7 @@ function useDemoDonut() {
       text: '',
     },
     labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-    colors: [primary.value, success.value, info.value, danger.value],
+    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)', 'var(--color-teal-400)'],
     responsive: [
       {
         breakpoint: 480,
@@ -48,6 +47,18 @@ function useDemoDonut() {
 <template>
   <div class="relative">
     <BaseCard class="p-6">
+      <!-- Title -->
+      <div class="mb-6">
+        <BaseHeading
+          as="h3"
+          size="md"
+          weight="semibold"
+          lead="tight"
+          class="text-muted-800 dark:text-white"
+        >
+          <span>Donut Chart</span>
+        </BaseHeading>
+      </div>
       <AddonApexcharts v-bind="demoDonut" />
     </BaseCard>
   </div>

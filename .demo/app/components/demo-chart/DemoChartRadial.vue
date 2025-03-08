@@ -2,7 +2,6 @@
 const demoRadial = reactive(useDemoRadial())
 
 function useDemoRadial() {
-  const { primary } = useTailwindColors()
   const height = 265
   const type = 'radialBar'
 
@@ -15,7 +14,7 @@ function useDemoRadial() {
         show: false,
       },
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     plotOptions: {
       radialBar: {
         hollow: {

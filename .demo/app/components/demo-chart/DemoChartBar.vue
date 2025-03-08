@@ -2,7 +2,6 @@
 const demoBar = reactive(useDemoBar())
 
 function useDemoBar() {
-  const { primary, info, success, warning } = useTailwindColors()
   const type = 'bar'
   const height = 280
 
@@ -78,7 +77,7 @@ function useDemoBar() {
         formatter: asPercent,
       },
     },
-    colors: [primary.value, success.value, info.value, warning.value],
+    colors: ['var(--color-chart-base)'],
     title: {
       text: '',
       align: 'left',

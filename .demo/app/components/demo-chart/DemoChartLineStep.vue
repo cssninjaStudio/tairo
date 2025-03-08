@@ -2,7 +2,6 @@
 const demoLineStep = reactive(useDemoLineStep())
 
 function useDemoLineStep() {
-  const { primary } = useTailwindColors()
   const type = 'line'
   const height = 280
 
@@ -16,7 +15,7 @@ function useDemoLineStep() {
       width: [2, 2, 2],
       curve: 'stepline',
     },
-    colors: [primary.value],
+    colors: ['var(--color-chart-base)'],
     dataLabels: {
       enabled: false,
     },

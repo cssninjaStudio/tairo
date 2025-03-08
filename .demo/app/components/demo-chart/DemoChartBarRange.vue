@@ -2,7 +2,6 @@
 const demoBarRange = reactive(useDemoBarRange())
 
 function useDemoBarRange() {
-  const { primary, info, success, warning } = useTailwindColors()
   const type = 'rangeBar'
   const height = 280
 
@@ -12,7 +11,7 @@ function useDemoBarRange() {
         show: false,
       },
     },
-    colors: [primary.value, success.value, info.value, warning.value],
+    colors: ['var(--color-chart-base)', 'var(--color-amber-400)'],
     title: {
       text: '',
       align: 'left',

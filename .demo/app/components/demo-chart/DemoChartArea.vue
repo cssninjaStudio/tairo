@@ -2,7 +2,6 @@
 const demoArea = reactive(useDemoArea())
 
 function useDemoArea() {
-  const { primary } = useTailwindColors()
   const type = 'area'
   const height = 280
 
@@ -22,7 +21,18 @@ function useDemoArea() {
       width: [2, 2, 2],
       curve: 'straight',
     },
-    colors: [primary.value],
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.75,
+      },
+    },
+    colors: ['var(--color-chart-base)'],
     title: {
       text: '',
       align: 'left',
