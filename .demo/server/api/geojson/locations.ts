@@ -28,6 +28,7 @@ const locations = {
         openingCount: '6pm',
         phone: '+1 555 456-5659',
         website: 'https://huro.cssninja.io',
+        rating: 4.5,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: -69,
@@ -50,6 +51,7 @@ const locations = {
         openingCount: '5pm',
         phone: '+1 555 154-4568',
         website: 'https://huro.cssninja.io',
+        rating: 4.9,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: -35,
@@ -72,6 +74,7 @@ const locations = {
         openingCount: '8pm',
         phone: '+1 555 456-7897',
         website: 'https://huro.cssninja.io',
+        rating: 4.2,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 18.5,
@@ -94,6 +97,7 @@ const locations = {
         openingCount: '11pm',
         phone: '+1 555 456-5659',
         website: 'https://huro.cssninja.io',
+        rating: 4.7,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 0,
@@ -116,6 +120,7 @@ const locations = {
         openingCount: '4:30pm',
         phone: '+1 555 456-7568',
         website: 'https://huro.cssninja.io',
+        rating: 4.6,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: -158.3,
@@ -138,6 +143,7 @@ const locations = {
         openingCount: '7pm',
         phone: '+1 555 456-5659',
         website: 'https://huro.cssninja.io',
+        rating: 4.4,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 38.5,
@@ -160,6 +166,7 @@ const locations = {
         openingCount: '6pm',
         phone: '+1 555 456-5659',
         website: 'https://huro.cssninja.io',
+        rating: 4.8,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 68.6,
@@ -182,6 +189,7 @@ const locations = {
         openingCount: '6pm',
         phone: '+1 555 755-3382',
         website: 'https://huro.cssninja.io',
+        rating: 4.9,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: -144.8,
@@ -204,6 +212,7 @@ const locations = {
         openingCount: '9pm',
         phone: '+1 555 456-8984',
         website: 'https://huro.cssninja.io',
+        rating: 4.7,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 19.7,
@@ -226,6 +235,7 @@ const locations = {
         openingCount: '10am',
         phone: '+1 555 123-4567',
         website: 'https://huro.cssninja.io',
+        rating: 4.6,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 112.5,
@@ -248,6 +258,7 @@ const locations = {
         openingCount: '8am',
         phone: '+1 555 987-6543',
         website: 'https://huro.cssninja.io',
+        rating: 4.8,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: -135.5,
@@ -270,6 +281,7 @@ const locations = {
         openingCount: '7am',
         phone: '+1 555 321-7654',
         website: 'https://huro.cssninja.io',
+        rating: 4.9,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
       },
@@ -289,6 +301,7 @@ const locations = {
         openingCount: '9am',
         phone: '+1 555 654-3210',
         website: 'https://huro.cssninja.io',
+        rating: 4.7,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 23.2,
@@ -311,6 +324,7 @@ const locations = {
         openingCount: '5am',
         phone: '+1 555 789-0123',
         website: 'https://huro.cssninja.io',
+        rating: 4.6,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 0,
@@ -333,6 +347,7 @@ const locations = {
         openingCount: '10am',
         phone: '+1 555 012-3456',
         website: 'https://huro.cssninja.io',
+        rating: 4.8,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: -22.4,
@@ -355,6 +370,7 @@ const locations = {
         openingCount: '8pm',
         phone: '+1 555 210-5432',
         website: 'https://huro.cssninja.io',
+        rating: 4.9,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 137.4,
@@ -377,6 +393,7 @@ const locations = {
         openingCount: '6am',
         phone: '+1 555 543-2109',
         website: 'https://huro.cssninja.io',
+        rating: 4.7,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
       },
@@ -396,6 +413,7 @@ const locations = {
         openingCount: '7pm',
         phone: '+1 555 678-9012',
         website: 'https://huro.cssninja.io',
+        rating: 4.8,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
       },
@@ -415,6 +433,7 @@ const locations = {
         openingCount: '6am',
         phone: '+1 555 111-2222',
         website: 'https://huro.cssninja.io',
+        rating: 4.9,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
       },
@@ -434,6 +453,7 @@ const locations = {
         openingCount: '9am',
         phone: '+1 555 333-4444',
         website: 'https://huro.cssninja.io',
+        rating: 4.7,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
         bearing: 44.8,
@@ -451,11 +471,12 @@ const locations = {
       properties: {
         id: 'bakerystop',
         name: 'Bakery Stop',
-        logo: '/img/icons/logos/bakerystop.svg',
+        logo: '/img/icons/logos/okano.svg',
         distance: 5.1,
         openingCount: '5am',
         phone: '+1 555 555-6666',
         website: 'https://huro.cssninja.io',
+        rating: 4.8,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
       },
@@ -470,11 +491,12 @@ const locations = {
       properties: {
         id: 'gymzone',
         name: 'Gym Zone',
-        logo: '/img/icons/logos/gymzone.svg',
+        logo: '/img/icons/logos/nitro.svg',
         distance: 6.7,
         openingCount: '4am',
         phone: '+1 555 777-8888',
         website: 'https://huro.cssninja.io',
+        rating: 4.7,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
       },
@@ -489,11 +511,12 @@ const locations = {
       properties: {
         id: 'librarycorner',
         name: 'Library Corner',
-        logo: '/img/icons/logos/librarycorner.svg',
+        logo: '/img/icons/logos/bookworm.svg',
         distance: 7.3,
         openingCount: '8am',
         phone: '+1 555 999-0000',
         website: 'https://huro.cssninja.io',
+        rating: 4.8,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Memini me adesse meam.',
       },

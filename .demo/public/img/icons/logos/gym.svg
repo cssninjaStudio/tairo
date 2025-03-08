@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="gym" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 379 379">
+  <rect y="-.59" width="379" height="379" fill="#000c22"/>
+  <g>
+    <g>
+      <g>
+        <g>
+          <path d="M129.35,213.05c0,2.28-1.84,4.12-4.11,4.12h0c-2.27,0-4.12-1.84-4.12-4.12v-39.81c0-2.27,1.85-4.12,4.12-4.12h0c2.28,0,4.11,1.84,4.11,4.12v39.81Z" fill="#fff"/>
+          <path d="M140.33,213.05c0,2.28-1.84,4.12-4.11,4.12h0c-2.27,0-4.12-1.84-4.12-4.12v-39.81c0-2.27,1.84-4.12,4.12-4.12h0c2.27,0,4.11,1.84,4.11,4.12v39.81Z" fill="#fff"/>
+          <path d="M151.31,213.05c0,2.28-1.84,4.12-4.12,4.12h0c-2.27,0-4.12-1.84-4.12-4.12v-39.81c0-2.27,1.84-4.12,4.12-4.12h0c2.27,0,4.12,1.84,4.12,4.12v39.81Z" fill="#fff"/>
+        </g>
+        <g>
+          <path d="M235.92,213.05c0,2.28-1.85,4.12-4.12,4.12h0c-2.27,0-4.12-1.84-4.12-4.12v-39.81c0-2.27,1.85-4.12,4.12-4.12h0c2.28,0,4.12,1.84,4.12,4.12v39.81Z" fill="#fff"/>
+          <path d="M246.9,213.05c0,2.28-1.85,4.12-4.12,4.12h0c-2.27,0-4.12-1.84-4.12-4.12v-39.81c0-2.27,1.85-4.12,4.12-4.12h0c2.27,0,4.12,1.84,4.12,4.12v39.81Z" fill="#fff"/>
+          <path d="M257.89,213.05c0,2.28-1.85,4.12-4.12,4.12h0c-2.27,0-4.12-1.84-4.12-4.12v-39.81c0-2.27,1.85-4.12,4.12-4.12h0c2.27,0,4.12,1.84,4.12,4.12v39.81Z" fill="#fff"/>
+        </g>
+      </g>
+      <rect x="149.33" y="190.43" width="82.47" height="5.42" fill="#fff"/>
+      <g>
+        <rect x="112.3" y="190.43" width="12.93" height="5.42" fill="#fff"/>
+        <rect x="253.77" y="190.43" width="12.92" height="5.42" fill="#fff"/>
+      </g>
+    </g>
+    <g>
+      <polygon points="120.21 267.03 117.12 273.27 110.24 274.27 115.22 279.13 114.04 285.99 120.21 282.75 126.37 285.99 125.19 279.13 130.18 274.27 123.29 273.27 120.21 267.03" fill="#fff"/>
+      <polygon points="154.85 267.03 151.77 273.27 144.88 274.27 149.87 279.13 148.69 285.99 154.85 282.75 161.02 285.99 159.84 279.13 164.82 274.27 157.93 273.27 154.85 267.03" fill="#fff"/>
+      <polygon points="189.5 258.53 185.04 267.57 175.06 269.02 182.28 276.05 180.57 285.99 189.5 281.3 198.43 285.99 196.72 276.05 203.94 269.02 193.96 267.57 189.5 258.53" fill="#fff"/>
+      <polygon points="224.15 267.03 221.06 273.27 214.17 274.27 219.16 279.13 217.98 285.99 224.15 282.75 230.31 285.99 229.13 279.13 234.12 274.27 227.23 273.27 224.15 267.03" fill="#fff"/>
+      <polygon points="258.79 267.03 255.71 273.27 248.82 274.27 253.81 279.13 252.63 285.99 258.79 282.75 264.95 285.99 263.77 279.13 268.76 274.27 261.87 273.27 258.79 267.03" fill="#fff"/>
+    </g>
+    <g>
+      <text transform="translate(122.94 113.15) rotate(-28.6)" fill="#fff" font-family="NexaRustSans-Black, &apos;NexaRustSans Black&apos;" font-size="47.61" font-weight="800"><tspan x="0" y="0">P</tspan></text>
+      <text transform="translate(143.37 101.27) rotate(-15.1)" fill="#fff" font-family="NexaRustSans-Black, &apos;NexaRustSans Black&apos;" font-size="47.61" font-weight="800"><tspan x="0" y="0">O</tspan></text>
+      <text transform="translate(172.92 92.45) rotate(1.72)" fill="#fff" font-family="NexaRustSans-Black, &apos;NexaRustSans Black&apos;" font-size="47.61" font-weight="800"><tspan x="0" y="0">W</tspan></text>
+      <text transform="translate(211.18 94.43) rotate(16.46)" fill="#fff" font-family="NexaRustSans-Black, &apos;NexaRustSans Black&apos;" font-size="47.61" font-weight="800"><tspan x="0" y="0">E</tspan></text>
+      <text transform="translate(232.28 100.39) rotate(27.85)" fill="#fff" font-family="NexaRustSans-Black, &apos;NexaRustSans Black&apos;" font-size="47.61" font-weight="800"><tspan x="0" y="0">R</tspan></text>
+    </g>
+    <text transform="translate(142.34 151.01)" fill="#fff" font-family="NexaRustSans-Black, &apos;NexaRustSans Black&apos;" font-size="47.61" font-weight="800"><tspan x="0" y="0">G</tspan><tspan x="30.76" y="0" letter-spacing="-.01em">Y</tspan><tspan x="56.04" y="0">M</tspan></text>
+    <g>
+      <polygon points="293.48 131.74 304.75 108.37 283.85 133.95 291.84 136.85 276.27 154.88 283.12 157.37 267.44 179.24 293.52 155.97 285.72 153.14 301.28 134.57 293.48 131.74" fill="#ff8c00"/>
+      <polygon points="85.52 131.74 74.25 108.37 95.14 133.95 87.15 136.85 102.73 154.88 95.88 157.37 111.56 179.24 85.48 155.97 93.27 153.14 77.72 134.57 85.52 131.74" fill="#ff8c00"/>
+    </g>
+    <text transform="translate(96.24 248.96)" fill="#ff8c00" font-family="Aleo-Regular, Aleo" font-size="27.21"><tspan x="0" y="0">FITNESS CLUB</tspan></text>
+  </g>
+</svg>

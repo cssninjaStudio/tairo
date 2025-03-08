@@ -6,7 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 type MapboxGL = typeof import('mapbox-gl').default
 
 definePageMeta({
-  title: 'Map',
+  title: 'Map locations',
   preview: {
     title: 'Mapbox GL for location based apps',
     description: 'For location based apps',
@@ -39,7 +39,7 @@ const options: Partial<MapOptions> = {
 
 let mapboxgl: MapboxGL
 
-const mode = ref<'base' | 'navigation' | 'satelite'>('base')
+const mode = ref<'base' | 'navigation' | 'satellite'>('base')
 
 const isLoading = ref(true)
 const hasError = ref(true)
@@ -136,7 +136,7 @@ function getMapStyle() {
       return colorMode.value === 'dark'
         ? 'mapbox://styles/mapbox/navigation-night-v1'
         : 'mapbox://styles/mapbox/navigation-day-v1'
-    case 'satelite':
+    case 'satellite':
       return 'mapbox://styles/mapbox/standard-satellite'
   }
 }
@@ -151,7 +151,7 @@ function updateMapStyle() {
     waitStyleLoaded()
   }
 
-  if (mode.value === 'satelite') {
+  if (mode.value === 'satellite') {
     if (colorMode.value === 'dark') {
       map.value.setConfigProperty('basemap', 'lightPreset', 'night')
     }
@@ -337,7 +337,7 @@ function loadTerrain() {
     map.value?.removeLayer(buildingLayer.id)
   }
 
-  if (mode.value !== 'satelite') {
+  if (mode.value !== 'satellite') {
     // Get layer id to insert the 3d buildings below (if exists), to ensure buildings are below place markers
     const labelLayerId = layers?.find(layer => layer.type === 'symbol' && layer.layout?.['text-field'])?.id
 
@@ -450,7 +450,7 @@ function selectFeature(feature?: any) {
   >
     <!-- Sidebar -->
     <div
-      class="ltablet:w-96 dark:bg-muted-800 w-full shrink-0 bg-white h-[calc(100dvh_-_56px)] lg:w-96"
+      class="ltablet:w-96 dark:bg-muted-900 w-full shrink-0 bg-muted-50 h-[calc(100dvh_-_56px)] lg:w-96"
     >
       <div
         class="nui-slimscroll overflow-y-auto p-6 h-[calc(100dvh_-_56px)]!"
@@ -461,7 +461,7 @@ function selectFeature(feature?: any) {
           weight="medium"
           class="mb-4 uppercase tracking-wider flex"
         >
-          <span class="text-muted-400 grow">Recent Locations</span>
+          <span class="text-muted-600 dark:text-muted-400 grow">Recent Locations</span>
           <Icon v-if="status === 'pending'" name="nui-icon:spiner" class="size-4 text-muted-400" />
         </BaseHeading>
 
@@ -470,16 +470,26 @@ function selectFeature(feature?: any) {
           class="ptablet:flex-none ptablet:grid ptablet:grid-cols-2 ptablet:pb-10 flex flex-col gap-4"
         >
           <template v-if="status === 'pending' && !places?.features">
-            <BasePlaceload class="w-full h-[180px] rounded-lg" />
-            <BasePlaceload class="w-full h-[180px] rounded-lg" />
-            <BasePlaceload class="w-full h-[180px] rounded-lg" />
+            <BaseCard v-for="index in 5" :key="index" rounded="md" class="p-4 md:p-5">
+              <div class="flex flex items-center gap-2">
+                <BasePlaceload class="size-8 rounded-full shrink-0" />
+                <div class="space-y-1 grow">
+                  <BasePlaceload class="w-1/3 h-2 rounded-md" />
+                  <BasePlaceload class="w-1/2 h-2 rounded-md" />
+                </div>
+              </div>
+              <div class="space-y-1 mt-3">
+                <BasePlaceload class="w-4/6 h-2 rounded-md" />
+                <BasePlaceload class="w-5/6 h-2 rounded-md" />
+              </div>
+            </BaseCard>
           </template>
           <template v-else-if="places?.features">
             <BaseCard
               v-for="(feature, key) in places!.features"
               :key="key"
-              class="cursor-pointer p-6"
-              rounded="lg"
+              class="cursor-pointer p-4 md:p-5"
+              rounded="md"
               :data-feature-id="feature.properties?.id"
               :class="[
                 selectedLocation?.id === feature.properties?.id && 'border-primary-500',
@@ -498,48 +508,43 @@ function selectFeature(feature?: any) {
                     >
                       {{ feature.properties?.name }}
                     </h4>
-                    <p class="text-muted-400 text-sm">
+                    <p class="text-muted-400 text-xs">
                       Open until {{ feature.properties?.openingCount }}
                     </p>
                   </div>
+                  <div class="ms-auto flex items-center gap-1">
+                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
+                    <BaseText size="xs" weight="medium" class="text-muted-400">
+                      {{ feature.properties?.rating }}
+                    </BaseText>
+                  </div>
                 </div>
                 <div
-                  class="text-muted-500 dark:text-muted-400 mb-4 font-sans text-sm"
+                  class="text-muted-500 dark:text-muted-400 font-sans text-xs"
                 >
                   <p>
                     {{ feature.properties?.description }}
                   </p>
                 </div>
-                <div class="flex items-center justify-between">
-                  <div class="flex gap-1">
-                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
-                    <Icon name="uiw:star-on" class="size-3 text-yellow-400" />
-                  </div>
-                  <div class="relative">
-                    <div
-                      class="text-muted-400 flex items-center gap-1 font-sans text-sm"
-                    >
-                      <Icon name="lucide:flag" class="size-4" />
-                      <span class="dark-inverted">
-                        {{ feature.properties?.distance }} mile
-                      </span>
-                    </div>
-                  </div>
-                </div>
 
                 <div
                   v-if="selectedLocation?.id === feature.properties?.id"
-                  class="mt-4 flex gap-2"
+                  class="mt-3 flex items-center gap-2"
                 >
-                  <BaseButton variant="primary">
+                  <BaseButton size="sm" variant="primary">
                     Schedule a trip
                   </BaseButton>
-                  <BaseButton variant="muted">
+                  <BaseButton size="sm" variant="muted">
                     Details
                   </BaseButton>
+                  <div
+                    class="ms-auto text-muted-400 flex items-center gap-1 font-sans text-xs"
+                  >
+                    <Icon name="lucide:flag" class="size-3" />
+                    <span class="dark-inverted">
+                      {{ feature.properties?.distance }} miles
+                    </span>
+                  </div>
                 </div>
               </div>
             </BaseCard>
@@ -581,16 +586,30 @@ function selectFeature(feature?: any) {
         </div>
       </div>
 
-      <div class="absolute bottom-10 start-2">
-        <div v-for="modeId in (['base', 'navigation', 'satelite'] as const)" :key="modeId">
-          <BaseButton
-            @click="() => {
-              mode = modeId
-              updateMapStyle()
-            }"
-          >
-            {{ modeId }}
-          </BaseButton>
+      <div class="group/modes absolute bottom-8 start-2">
+        <div class="flex items-center gap-3">
+          <BaseTooltip :content="`Mode: ${mode}`" :bindings="{ portal: { disabled: true } }">
+            <div role="button" class="group/button flex items-center justify-center size-20 border border-muted-300 dark:border-muted-800 rounded-xl bg-white dark:bg-muted-950 shadow-lg">
+              <img :src="`/img/illustrations/maps/${mode}.svg`" alt="Map mode" class="size-[4.35rem] rounded-lg group-hover/button:scale-95 transition-all duration-200">
+            </div>
+          </BaseTooltip>
+          <div class="flex items-center gap-3 h-20 border border-muted-300 dark:border-muted-800 rounded-lg bg-white dark:bg-muted-950 shadow-lg px-3 pointer-events-none group-hover/modes:pointer-events-auto opacity-0 group-hover/modes:opacity-100 transition-opacity duration-200">
+            <div v-for="modeId in (['base', 'navigation', 'satellite'] as const)" :key="modeId" class="group/mode">
+              <button
+                type="button"
+                class="cursor-pointer text-center flex flex-col items-center gap-0.5"
+                @click="() => {
+                  mode = modeId
+                  updateMapStyle()
+                }"
+              >
+                <img :src="`/img/illustrations/maps/${modeId}.svg`" alt="Map mode" class="size-10 rounded-md group-hover/mode:grayscale-0 transition-all duration-200" :class="mode === modeId ? 'ring-2 ring-primary-500 dark:ring-primary-400' : 'grayscale opacity-60'">
+                <BaseText size="xs" weight="medium" class="capitalize text-muted-400 group-hover/mode:text-muted-900 dark:group-hover/mode:text-muted-100 transition-colors duration-200" :class="mode === modeId ? 'text-muted-900 dark:text-muted-100' : 'text-muted-400'">
+                  {{ modeId }}
+                </BaseText>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
