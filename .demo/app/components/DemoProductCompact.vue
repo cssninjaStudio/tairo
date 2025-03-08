@@ -55,12 +55,12 @@ const props = withDefaults(
         size="md"
         weight="medium"
         lead="tight"
-        class="text-muted-800 mb-1 dark:text-white"
+        class="text-muted-900 mb-1 dark:text-white"
       >
         <span>{{ props.title }}</span>
       </BaseHeading>
       <BaseParagraph size="xs">
-        <span class="text-muted-400">{{ props.text }}</span>
+        <span class="text-muted-600 dark:text-muted-400">{{ props.text }}</span>
       </BaseParagraph>
     </div>
     <div class="mt-4">
@@ -69,7 +69,7 @@ const props = withDefaults(
         variant="primary"
         :rounded="props.rounded"
       >
-        <Icon name="lucide:shopping-cart" class="size-4" />
+        <Icon name="solar:cart-large-minimalistic-linear" class="size-4" />
         <span>Add to Cart</span>
       </BaseButton>
     </div>

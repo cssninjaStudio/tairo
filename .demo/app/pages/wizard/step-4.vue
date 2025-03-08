@@ -96,8 +96,8 @@ const toggled = ref(Boolean(project.value.files?.length))
             >
               <div class="p-5 text-center">
                 <Icon
-                  name="mdi-light:cloud-upload"
-                  class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 size-12 transition-colors duration-300"
+                  name="solar:cloud-plus-linear"
+                  class="text-muted-400 group-hover:text-primary-500 group-focus:text-primary-500 mb-2 mx-auto size-12 transition-colors duration-300"
                 />
                 <h4 class="text-muted-400 font-sans text-base">
                   Drop files to upload

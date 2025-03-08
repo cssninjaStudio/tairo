@@ -11,22 +11,22 @@ const props = withDefaults(
 const links = [
   {
     title: 'Profile',
-    icon: 'ph:user-duotone',
+    icon: 'solar:user-rounded-bold-duotone',
     url: '#',
   },
   {
     title: 'Settings',
-    icon: 'ph:gear-six-duotone',
+    icon: 'solar:stopwatch-bold-duotone',
     url: '#',
   },
   {
     title: 'Messages',
-    icon: 'ph:chat-circle-duotone',
+    icon: 'solar:chat-line-bold-duotone',
     url: '#',
   },
   {
     title: 'Tasks',
-    icon: 'ph:check-circle-duotone',
+    icon: 'solar:add-square-bold-duotone',
     url: '#',
   },
 ]
@@ -49,6 +49,8 @@ const links = [
           <BaseIconBox
             variant="none"
             class="bg-primary-500/20 text-primary-500 group-hover:bg-primary-500 transition-colors duration-300 group-hover:text-white"
+            rounded="none"
+            mask="blob"
           >
             <Icon :name="link.icon" />
           </BaseIconBox>

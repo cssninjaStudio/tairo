@@ -34,7 +34,7 @@ const props = withDefaults(
         <span>{{ props.title }}</span>
       </BaseHeading>
       <BaseParagraph size="sm">
-        <span class="text-muted-500">
+        <span class="text-muted-600 dark:text-muted-400">
           {{ props.text }}
         </span>
       </BaseParagraph>

@@ -21,14 +21,14 @@ onClickOutside(target, () => (open.value = false))
 </script>
 
 <template>
-  <div class="dark:bg-muted-800 absolute start-0 top-0 h-16 w-full bg-white">
+  <div class="dark:bg-muted-950 absolute start-0 top-0 h-16 w-full bg-white">
     <div class="relative flex h-16 w-full items-center justify-between px-4">
       <div class="flex items-center">
         <NuxtLink
           to="/dashboards"
-          class="border-muted-200 dark:border-muted-700 flex w-14 items-center justify-center border-r pe-6"
+          class="border-muted-200 dark:border-muted-800 flex w-14 items-center justify-center border-r pe-6"
         >
-          <TairoLogo class="text-primary-600 h-10 shrink-0" />
+          <TairoLogo class="text-primary-600 h-8 shrink-0" />
         </NuxtLink>
         <div class="hidden items-center gap-2 ps-6 font-sans sm:flex">
           <p class="text-muted-500 dark:text-muted-400">
@@ -51,7 +51,7 @@ onClickOutside(target, () => (open.value = false))
             />
           </button>
           <div
-            class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-900/30 absolute start-0 top-8 z-20 w-52 rounded-xl border bg-white p-2 shadow-xl transition-all duration-300"
+            class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 shadow-muted-300/30 dark:shadow-muted-900/30 absolute start-0 top-8 z-20 w-52 rounded-xl border bg-white p-2 shadow-xl transition-all duration-300"
             :class="
               open
                 ? 'opacity-100 translate-y-0'
@@ -63,7 +63,7 @@ onClickOutside(target, () => (open.value = false))
                 v-for="step in steps"
                 :key="step.id"
                 type="button"
-                class="hover:bg-muted-100 dark:hover:bg-muted-700 flex w-full items-center gap-2 rounded-lg px-3 py-2 font-sans disabled:cursor-not-allowed disabled:opacity-70"
+                class="cursor-pointer hover:bg-muted-100 dark:hover:bg-muted-900 flex w-full items-center gap-2 rounded-lg px-3 py-2 font-sans disabled:cursor-not-allowed disabled:opacity-70"
                 @click="
                   () => {
                     open = false
@@ -91,6 +91,7 @@ onClickOutside(target, () => (open.value = false))
           :model-value="progress"
           size="xs"
           rounded="full"
+          variant="primary"
         />
       </div>
     </div>

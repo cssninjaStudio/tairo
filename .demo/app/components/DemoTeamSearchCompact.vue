@@ -78,7 +78,7 @@ const filteredMembers = computed(() => {
     </BaseField>
     <div v-if="filteredMembers.length === 0">
       <div class="flex flex-col items-center py-10 text-center">
-        <Icon name="pepicons-print:person" class="text-primary-500 size-10" />
+        <Icon name="solar:user-rounded-linear" class="text-primary-500 size-10" />
         <BaseHeading
           as="h4"
           size="md"
@@ -87,7 +87,7 @@ const filteredMembers = computed(() => {
         >
           <span>No matching results</span>
         </BaseHeading>
-        <BaseParagraph size="xs" class="text-muted-400 mx-auto max-w-[240px]">
+        <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 mx-auto max-w-[240px]">
           <span>
             Looks like we couldn't find any matchig results. Try different
             search terms.
@@ -117,16 +117,16 @@ const filteredMembers = computed(() => {
           <BaseHeading
             as="h4"
             size="xs"
-            weight="light"
+            weight="medium"
             lead="tight"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             <span>
               {{ member.firstName }} {{ member.lastName.slice(0, 1) }}.
             </span>
           </BaseHeading>
           <BaseParagraph size="xs">
-            <span class="text-muted-400">
+            <span class="text-muted-600 dark:text-muted-400">
               {{ member.role }}
             </span>
           </BaseParagraph>
@@ -137,7 +137,7 @@ const filteredMembers = computed(() => {
           <BaseButton
             to="#"
             :rounded="props.rounded"
-            variant="muted"
+            variant="default"
             size="icon-md"
             class="scale-75"
           >

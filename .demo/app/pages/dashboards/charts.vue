@@ -13,8 +13,8 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 2xl:grid-cols-3">
       <DemoChartLine />
       <DemoChartLineMulti />
       <DemoChartLineStep />

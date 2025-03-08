@@ -39,13 +39,13 @@ const products = [
       <BaseHeading
         as="h3"
         size="md"
-        weight="semibold"
+        weight="medium"
         lead="tight"
       >
         Shopping cart
       </BaseHeading>
       <BaseTag
-        variant="primary"
+        variant="default"
         size="sm"
         rounded="full"
       >
@@ -74,7 +74,7 @@ const products = [
           >
         </div>
         <div>
-          <p class="text-muted-500 dark:text-muted-400 mt-1 font-sans text-xs">
+          <p class="text-muted-600 dark:text-muted-400 mt-1 font-sans text-xs">
             {{ product.name }}
           </p>
           <p class="font-sans font-semibold">

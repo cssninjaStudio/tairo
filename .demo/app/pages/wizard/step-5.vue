@@ -34,8 +34,8 @@ const team: TeamMember[] = [
     role: undefined,
   },
   {
-    picture: '/img/avatars/10.svg',
-    name: 'Kendra Wilson',
+    picture: '/img/avatars/2.svg',
+    name: 'Maya Rosselini',
     role: undefined,
   },
   {
@@ -140,10 +140,10 @@ watchEffect(() => {
         <div class="flex w-full flex-col items-center">
           <BaseAvatar
             size="xl"
-            src="/img/avatars/2.svg"
+            src="/img/avatars/10.svg"
             badge-src="/img/icons/flags/united-states-of-america.svg"
           />
-          <p class="text-muted-400 my-3 font-sans text-sm">
+          <p class="text-muted-600 dark:text-muted-400 my-3 font-sans text-sm">
             You are the project owner
           </p>
           <div class="relative w-full max-w-sm">
@@ -151,7 +151,7 @@ watchEffect(() => {
               v-model="search"
               icon="lucide:search"
               rounded="lg"
-              placeholder="ex: Clarissa, Kendra, ..."
+              placeholder="ex: Clarissa, Maya, ..."
             />
             <div
               class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-900/30 absolute start-0 top-14 z-20 w-full rounded-xl border bg-white p-4 shadow-xl transition-all duration-300"
@@ -302,6 +302,7 @@ watchEffect(() => {
                           size="xs"
                           :model-value="getRoleLevel(member)"
                           :max="3"
+                          variant="primary"
                         />
                       </div>
                     </div>

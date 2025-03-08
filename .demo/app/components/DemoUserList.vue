@@ -72,11 +72,11 @@ const users = [
           size="sm"
           weight="medium"
           lead="tight"
-          class="text-muted-800 dark:text-muted-100"
+          class="text-muted-900 dark:text-muted-100"
         >
           <span>{{ user.name }}</span>
         </BaseHeading>
-        <BaseText size="xs" class="text-muted-400">
+        <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
           <span>{{ user.position }}</span>
         </BaseText>
       </div>

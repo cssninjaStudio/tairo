@@ -131,32 +131,40 @@ const avatarPreview = useNuiFilePreview(() => project.value.avatar)
                     size="sm"
                     class="bg-primary-500/10 text-primary-600"
                     variant="none"
+                    rounded="none"
+                    mask="blob"
                   >
-                    <Icon name="ph:briefcase-duotone" class="size-5" />
+                    <Icon name="solar:suitcase-lines-linear" class="size-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'design'"
                     size="sm"
                     class="bg-orange-500/10 text-orange-600"
                     variant="none"
+                    rounded="none"
+                    mask="blob"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="size-5" />
+                    <Icon name="solar:structure-linear" class="size-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'development'"
                     size="sm"
                     class="bg-emerald-500/10 text-emerald-600"
                     variant="none"
+                    rounded="none"
+                    mask="blob"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="size-5" />
+                    <Icon name="solar:structure-linear" class="size-5" />
                   </BaseIconBox>
                   <BaseIconBox
                     v-else-if="project.type === 'marketing'"
                     size="sm"
                     class="bg-yellow-500/10 text-yellow-500"
                     variant="none"
+                    rounded="none"
+                    mask="blob"
                   >
-                    <Icon name="ph:bounding-box-duotone" class="size-5" />
+                    <Icon name="solar:structure-linear" class="size-5" />
                   </BaseIconBox>
                   <div>
                     <div class="text-muted-400 text-xs">

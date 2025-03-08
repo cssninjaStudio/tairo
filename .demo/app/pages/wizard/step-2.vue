@@ -38,7 +38,7 @@ watch(inputFile, (value) => {
     <div class="mx-auto flex w-full max-w-5xl flex-col px-4">
       <div class="flex items-center justify-center">
         <BaseFullscreenDropfile
-          icon="ph:image-duotone"
+          icon="solar:gallery-linear"
           :filter-file-dropped="(file) => file.type.startsWith('image')"
           @drop="
             (value) => {
@@ -97,12 +97,12 @@ watch(inputFile, (value) => {
       </div>
 
       <div class="my-4 text-center font-sans">
-        <p class="text-muted-500 text-sm">
+        <BaseParagraph size="sm" weight="medium" class="text-muted-900 dark:text-white">
           Upload a project logo
-        </p>
-        <p class="text-muted-400 text-xs">
+        </BaseParagraph>
+        <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
           File size cannot exceed 2MB
-        </p>
+        </BaseParagraph>
       </div>
       <div class="mx-auto flex w-full max-w-sm flex-col gap-3">
         <BaseField :error="errors.fields.name">

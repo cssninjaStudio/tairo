@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'md',
   },
 )
 
 const items = [
   {
-    icon: 'ph:phone-duotone',
+    icon: 'solar:phone-rounded-bold-duotone',
     image: undefined,
     title: 'Call Danny at Colby\'s',
     description: 'Today - 11:30am',
@@ -22,7 +22,7 @@ const items = [
     description: 'Today - 01:00pm',
   },
   {
-    icon: 'ph:chat-circle-duotone',
+    icon: 'solar:chat-dots-bold-duotone',
     image: undefined,
     title: 'Answer Annie\'s messages',
     description: 'Today - 01:45pm',
@@ -34,19 +34,19 @@ const items = [
     description: 'Today - 03:00pm',
   },
   {
-    icon: 'ph:envelope-duotone',
+    icon: 'solar:letter-bold-duotone',
     image: undefined,
     title: 'Send marketing campaign',
     description: 'Today - 03:30pm',
   },
   {
-    icon: 'ph:selection-all-duotone',
+    icon: 'solar:suitcase-bold-duotone',
     image: undefined,
     title: 'Project review',
     description: 'Today - 04:30pm',
   },
   {
-    icon: 'ph:note-duotone',
+    icon: 'solar:file-bold-duotone',
     image: undefined,
     title: 'Write proposal for Andy',
     description: 'Today - 06:30pm',
@@ -65,9 +65,10 @@ const items = [
       <div
         class="border-muted-200 text-muted-400 after:border-muted-300 dark:border-muted-600 dark:bg-muted-700 dark:after:border-muted-600 relative flex size-9 items-center justify-center border bg-white shadow-lg after:absolute after:-end-8 after:top-4 after:h-px after:w-5 after:border-t after:content-['']"
         :class="[
-          props.shape === 'rounded' ? 'rounded-md' : '',
-          props.shape === 'curved' ? 'rounded-xl' : '',
-          props.shape === 'full' ? 'rounded-full' : '',
+          props.rounded === 'sm' ? 'rounded-md' : '',
+          props.rounded === 'md' ? 'rounded-lg' : '',
+          props.rounded === 'lg' ? 'rounded-xl' : '',
+          props.rounded === 'full' ? 'rounded-full' : '',
         ]"
       >
         <Icon
@@ -80,16 +81,17 @@ const items = [
           :src="item.image"
           class="max-w-full object-cover shadow-xs dark:border-transparent"
           :class="[
-            props.shape === 'rounded' ? 'rounded-md' : '',
-            props.shape === 'curved' ? 'rounded-xl' : '',
-            props.shape === 'full' ? 'rounded-full' : '',
+            props.rounded === 'sm' ? 'rounded-md' : '',
+            props.rounded === 'md' ? 'rounded-lg' : '',
+            props.rounded === 'lg' ? 'rounded-xl' : '',
+            props.rounded === 'full' ? 'rounded-full' : '',
           ]"
           :alt="item.title"
         >
       </div>
       <div class="ms-10">
         <h6
-          class="font-heading text-muted-800 text-sm font-medium dark:text-white"
+          class="font-heading text-muted-900 text-sm font-medium dark:text-white"
         >
           {{ item.title }}
         </h6>

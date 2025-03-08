@@ -26,7 +26,7 @@ const props = withDefaults(
       </BaseHeading>
       <div class="relative">
         <Icon :name="props.icon" class="text-muted-400 size-4" />
-        <div v-if="indicator" class="absolute -end-0.5 top-0.5">
+        <div v-if="indicator" class="absolute -end-0.5 -top-0.5">
           <span class="relative flex size-2">
             <span
               class="bg-primary-400 absolute inline-flex size-full animate-ping rounded-full opacity-75"
@@ -40,7 +40,7 @@ const props = withDefaults(
     </div>
     <div>
       <BaseParagraph size="xs">
-        <span class="text-muted-400">
+        <span class="text-muted-600 dark:text-muted-400">
           {{ props.text }}
         </span>
       </BaseParagraph>

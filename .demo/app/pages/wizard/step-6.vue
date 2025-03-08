@@ -104,13 +104,13 @@ const tools: Tool[] = [
             rounded="lg"
             class="group-data-[state=checked]:border-primary-500 group-data-[state=checked]:shadow-muted-300/30 dark:group-data-[state=checked]:shadow-muted-900/30 p-4 group-data-[state=checked]:shadow-xl"
           >
-            <div class="flex items-center justify-start gap-3">
+            <div class="cursor-pointer flex items-center justify-start gap-3">
               <img
                 :src="tool.logo"
                 class="size-8"
                 alt=""
               >
-              <div class="grow">
+              <div class="grow text-start">
                 <div
                   class="text-muted-800 dark:text-muted-100 text-sm font-medium"
                 >

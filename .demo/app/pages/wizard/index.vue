@@ -40,10 +40,10 @@ function onSelectType(type: ProjectType) {
       <div class="ltablet:grid-cols-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Choice -->
         <div
-          class="dark:hover:bg-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="border border-transparent hover:border-muted-200 dark:hover:border-muted-800 dark:hover:bg-muted-950 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
           :class="[
             project.type === 'design'
-              ? 'dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white shadow-xl'
+              ? 'dark:bg-muted-950 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white border border-muted-200 dark:border-muted-800 shadow-xl'
               : '',
           ]"
         >
@@ -57,11 +57,11 @@ function onSelectType(type: ProjectType) {
               tag="h3"
               weight="medium"
               size="xl"
-              class="text-muted-800 dark:text-muted-100 mb-2"
+              class="text-muted-900 dark:text-white mb-2"
             >
               <span>UI/UX design</span>
             </BaseHeading>
-            <BaseParagraph class="text-muted-400">
+            <BaseParagraph class="text-muted-600 dark:text-muted-400">
               <span>
                 UI/UX is done to improve interaction between the user and the
                 product.
@@ -83,7 +83,7 @@ function onSelectType(type: ProjectType) {
             <div class="mt-4 text-center">
               <NuxtLink
                 to="/wizard"
-                class="text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
+                class="tracking-wide hover:underline underline-offset-4 text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
               >
                 <span>Learn More</span>
               </NuxtLink>
@@ -92,10 +92,10 @@ function onSelectType(type: ProjectType) {
         </div>
         <!-- Choice -->
         <div
-          class="dark:hover:bg-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="border border-transparent hover:border-muted-200 dark:hover:border-muted-800 dark:hover:bg-muted-950 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
           :class="[
             project.type === 'development'
-              ? 'dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white shadow-xl'
+              ? 'dark:bg-muted-950 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white border border-muted-200 dark:border-muted-800 shadow-xl'
               : '',
           ]"
         >
@@ -109,11 +109,11 @@ function onSelectType(type: ProjectType) {
               tag="h3"
               weight="medium"
               size="xl"
-              class="text-muted-800 dark:text-muted-100 mb-2"
+              class="text-muted-900 dark:text-white0 mb-2"
             >
               <span>Web Development</span>
             </BaseHeading>
-            <BaseParagraph class="text-muted-400">
+            <BaseParagraph class="text-muted-600 dark:text-muted-400">
               <span>
                 A discipline that involves the creation of websites and web
                 applications
@@ -135,7 +135,7 @@ function onSelectType(type: ProjectType) {
             <div class="mt-4 text-center">
               <NuxtLink
                 to="/wizard"
-                class="text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
+                class="tracking-wide hover:underline underline-offset-4 text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
               >
                 <span>Learn More</span>
               </NuxtLink>
@@ -144,10 +144,10 @@ function onSelectType(type: ProjectType) {
         </div>
         <!-- Choice -->
         <div
-          class="dark:hover:bg-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="border border-transparent hover:border-muted-200 dark:hover:border-muted-800 dark:hover:bg-muted-950 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"
           :class="[
             project.type === 'marketing'
-              ? 'dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white shadow-xl'
+              ? 'dark:bg-muted-950 shadow-muted-300/30 dark:shadow-muted-800/30 bg-white border border-muted-200 dark:border-muted-800 shadow-xl'
               : '',
           ]"
         >
@@ -161,11 +161,11 @@ function onSelectType(type: ProjectType) {
               tag="h3"
               weight="medium"
               size="xl"
-              class="text-muted-800 dark:text-muted-100 mb-2"
+              class="text-muted-900 dark:text-white0 mb-2"
             >
               <span>Marketing</span>
             </BaseHeading>
-            <BaseParagraph class="text-muted-400">
+            <BaseParagraph class="text-muted-600 dark:text-muted-400">
               <span>
                 A discipline that involves the creation of promotional content
               </span>
@@ -186,7 +186,7 @@ function onSelectType(type: ProjectType) {
             <div class="mt-4 text-center">
               <NuxtLink
                 to="/wizard"
-                class="text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
+                class="tracking-wide hover:underline underline-offset-4 text-muted-400 hover:text-primary-500 font-sans text-[0.65rem] font-semibold uppercase opacity-0 transition-all duration-300 group-hover:opacity-100"
               >
                 <span>Learn More</span>
               </NuxtLink>

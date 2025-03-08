@@ -25,15 +25,15 @@ const props = withDefaults(
       <BaseHeading
         as="h3"
         size="md"
-        weight="semibold"
+        weight="medium"
         lead="tight"
-        class="text-muted-800 dark:text-white"
+        class="text-muted-900 dark:text-white"
       >
         <span>Inbox</span>
       </BaseHeading>
       <div class="relative">
-        <Icon name="lucide:mail" class="text-muted-400 size-4" />
-        <div class="absolute -end-1 top-0.5">
+        <Icon name="solar:letter-linear" class="text-muted-400 size-4" />
+        <div class="absolute -end-0.5 -top-0.5">
           <span class="relative flex size-2">
             <span
               class="bg-primary-400 absolute inline-flex size-full animate-ping rounded-full opacity-75"
@@ -59,7 +59,7 @@ const props = withDefaults(
       </div>
       <span class="text-muted-500 dark:text-muted-400 font-sans text-sm">
         Sent by
-        <span class="text-muted-800 dark:text-muted-100">{{ props.name }}</span>
+        <span class="text-muted-900 dark:text-muted-100">{{ props.name }}</span>
       </span>
     </div>
     <div
@@ -71,12 +71,12 @@ const props = withDefaults(
     >
       <div class="mb-4 flex items-center gap-2">
         <div class="bg-success-500 size-2 shrink-0 rounded-full" />
-        <h3 class="text-muted-800 dark:text-muted-100 font-sans text-sm">
+        <h3 class="text-muted-900 dark:text-muted-100 font-sans text-sm">
           {{ props.title }}
         </h3>
       </div>
       <div class="mb-2">
-        <p class="text-muted-500 dark:text-muted-400 font-sans text-xs">
+        <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
           {{ props.text }}
         </p>
       </div>

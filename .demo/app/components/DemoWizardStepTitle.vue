@@ -9,11 +9,12 @@ const { currentStep } = useMultiStepForm<Project, ProjectStepData>()
     <BaseHeading
       tag="h1"
       size="2xl"
-      class="text-muted-800 dark:text-white"
+      weight="medium"
+      class="text-muted-900 dark:text-white"
     >
       <span>{{ currentStep?.meta?.title }}</span>
     </BaseHeading>
-    <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
+    <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
       <span>{{ currentStep?.meta?.subtitle }}</span>
     </BaseParagraph>
   </div>

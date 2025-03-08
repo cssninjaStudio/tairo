@@ -43,12 +43,12 @@ const props = withDefaults(
           size="md"
           weight="medium"
           lead="tight"
-          class="text-muted-800 mb-1 dark:text-white"
+          class="text-muted-900 mb-1 dark:text-white"
         >
           <span>{{ props.title }}</span>
         </BaseHeading>
         <BaseParagraph v-if="props.text" size="xs">
-          <span class="text-muted-400">{{ props.text }}</span>
+          <span class="text-muted-600 dark:text-muted-400">{{ props.text }}</span>
         </BaseParagraph>
       </slot>
     </div>

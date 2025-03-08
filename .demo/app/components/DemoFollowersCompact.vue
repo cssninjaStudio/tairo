@@ -21,9 +21,9 @@ const followers = [
       <BaseHeading
         as="h3"
         size="sm"
-        weight="semibold"
+        weight="medium"
         lead="tight"
-        class="text-muted-800 dark:text-white"
+        class="text-muted-900 dark:text-white"
       >
         <span>Followers</span>
       </BaseHeading>
@@ -35,7 +35,7 @@ const followers = [
     </div>
     <div>
       <BaseParagraph size="xs">
-        <span class="text-muted-400">
+        <span class="text-muted-600 dark:text-muted-400">
           Great News!
           <NuxtLink
             to="#"

@@ -152,7 +152,7 @@ useHead({
       <div class="pb-32 pt-24">
         <NuxtPage />
       </div>
-      <DemoWizardButtons />
+      <DemoWizardButtons rounded="md" />
     </form>
   </TairoSidebarLayout>
 </template>

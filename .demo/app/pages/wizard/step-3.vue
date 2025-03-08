@@ -128,7 +128,7 @@ const budget = ref('< 5K')
       <BaseCard rounded="lg" class="relative z-10 p-6">
         <div class="mb-4 text-center">
           <h3
-            class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
+            class="tracking-wide text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
           >
             Customer
           </h3>
@@ -221,7 +221,7 @@ const budget = ref('< 5K')
       <BaseCard rounded="lg" class="p-6">
         <div class="mb-4 text-center">
           <h3
-            class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
+            class="tracking-wide text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
           >
             Time Frame
           </h3>
@@ -286,7 +286,7 @@ const budget = ref('< 5K')
       <BaseCard rounded="lg" class="p-6">
         <div class="mb-4 text-center">
           <h3
-            class="text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
+            class="tracking-wide text-muted-400 font-sans text-[0.65rem] font-semibold uppercase"
           >
             Initial budget
           </h3>

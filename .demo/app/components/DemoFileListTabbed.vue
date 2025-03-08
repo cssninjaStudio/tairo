@@ -112,76 +112,21 @@ const savedFiles = [
                 size="sm"
                 weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-muted-100"
+                class="text-muted-900 dark:text-muted-100"
               >
                 <span>{{ file.name }}</span>
               </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
+              <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
                 <span>{{ file.type }}</span>
               </BaseText>
             </div>
             <div class="ms-auto">
-              <BaseDropdown
-                label="Dropdown"
-                placement="bottom-end"
-                size="md"
-                class="z-20"
-                rounded="lg"
+              <BaseButton
+                size="sm"
+                :rounded="props.rounded"
               >
-                <BaseDropdownItem
-                  to="#"
-                  title="Download"
-                  text="Download this file"
-                >
-                  <template #start>
-                    <Icon
-                      name="ph:cloud-arrow-down-duotone"
-                      class="me-2 block size-5"
-                    />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Upload"
-                  text="Upload a new version"
-                >
-                  <template #start>
-                    <Icon
-                      name="ph:cloud-arrow-up-duotone"
-                      class="me-2 block size-5"
-                    />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownSeparator />
-                <BaseDropdownItem
-                  to="#"
-                  title="Permissions"
-                  text="Manage permissions"
-                >
-                  <template #start>
-                    <Icon name="ph:lock-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Share"
-                  text="Share this file"
-                >
-                  <template #start>
-                    <Icon name="ph:share-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownSeparator />
-                <BaseDropdownItem
-                  to="#"
-                  title="Delete"
-                  text="Delete this file"
-                >
-                  <template #start>
-                    <Icon name="ph:trash-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-              </BaseDropdown>
+                View
+              </BaseButton>
             </div>
           </div>
         </div>
@@ -204,76 +149,21 @@ const savedFiles = [
                 size="sm"
                 weight="medium"
                 lead="tight"
-                class="text-muted-800 dark:text-muted-100"
+                class="text-muted-900 dark:text-muted-100"
               >
                 <span>{{ file.name }}</span>
               </BaseHeading>
-              <BaseText size="xs" class="text-muted-400">
+              <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
                 <span>{{ file.type }}</span>
               </BaseText>
             </div>
             <div class="ms-auto">
-              <BaseDropdown
-                label="Dropdown"
-                placement="bottom-end"
-                size="md"
-                rounded="lg"
-                class="z-20"
+              <BaseButton
+                size="sm"
+                :rounded="props.rounded"
               >
-                <BaseDropdownItem
-                  to="#"
-                  title="Download"
-                  text="Download this file"
-                >
-                  <template #start>
-                    <Icon
-                      name="ph:cloud-arrow-down-duotone"
-                      class="me-2 block size-5"
-                    />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Upload"
-                  text="Upload a new version"
-                >
-                  <template #start>
-                    <Icon
-                      name="ph:cloud-arrow-up-duotone"
-                      class="me-2 block size-5"
-                    />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownSeparator />
-                <BaseDropdownItem
-                  to="#"
-                  title="Permissions"
-                  text="Manage permissions"
-                >
-                  <template #start>
-                    <Icon name="ph:lock-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownItem
-                  to="#"
-                  title="Share"
-                  text="Share this file"
-                >
-                  <template #start>
-                    <Icon name="ph:share-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-                <BaseDropdownSeparator />
-                <BaseDropdownItem
-                  to="#"
-                  title="Delete"
-                  text="Delete this file"
-                >
-                  <template #start>
-                    <Icon name="ph:trash-duotone" class="me-2 block size-5" />
-                  </template>
-                </BaseDropdownItem>
-              </BaseDropdown>
+                View
+              </BaseButton>
             </div>
           </div>
         </div>

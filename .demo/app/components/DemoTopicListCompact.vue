@@ -12,28 +12,28 @@ const topics = [
   {
     id: 0,
     title: 'Ecology',
-    icon: 'ph:leaf-duotone',
+    icon: 'solar:earth-bold-duotone',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter autem vobis placet. Quae duo sunt, unum facit.',
   },
   {
     id: 1,
     title: 'Logistics',
-    icon: 'ph:boat-duotone',
+    icon: 'solar:box-bold-duotone',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter autem vobis placet.',
   },
   {
     id: 2,
     title: 'Business',
-    icon: 'ph:suitcase-duotone',
+    icon: 'solar:suitcase-bold-duotone',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter autem vobis placet. Quae duo sunt, unum facit.',
   },
   {
     id: 3,
     title: 'Movies',
-    icon: 'ph:popcorn-duotone',
+    icon: 'solar:video-frame-play-horizontal-bold-duotone',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter autem vobis placet. Quae duo sunt, unum facit.',
   },
@@ -59,16 +59,16 @@ const topics = [
         <BaseHeading
           as="h4"
           size="sm"
-          weight="light"
+          weight="medium"
           lead="tight"
-          class="text-muted-800 dark:text-white"
+          class="text-muted-900 dark:text-white"
         >
           <span>
             {{ topic.title }}
           </span>
         </BaseHeading>
         <BaseParagraph size="xs">
-          <span class="text-muted-400">
+          <span class="text-muted-600 dark:text-muted-400">
             {{ topic.content }}
           </span>
         </BaseParagraph>

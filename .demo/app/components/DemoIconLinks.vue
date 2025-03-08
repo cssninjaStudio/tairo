@@ -3,22 +3,22 @@ const links = [
   {
     name: 'Activity',
     url: '#',
-    icon: 'lucide:activity',
+    icon: 'solar:heart-pulse-2-linear',
   },
   {
     name: 'Search',
     url: '#',
-    icon: 'lucide:search',
+    icon: 'solar:minimalistic-magnifer-linear',
   },
   {
     name: 'Files',
     url: '#',
-    icon: 'lucide:file-text',
+    icon: 'solar:document-linear',
   },
   {
     name: 'Home',
     url: '#',
-    icon: 'lucide:home',
+    icon: 'solar:home-smile-angle-linear',
   },
 ]
 </script>
@@ -31,7 +31,7 @@ const links = [
       :to="link.url"
       class="text-muted-400 hover:bg-primary-500 hover:shadow-primary-500/30 dark:hover:shadow-primary-800/30 flex size-9 items-center justify-center rounded-full transition-all duration-300 hover:text-white hover:shadow-xl"
     >
-      <Icon :name="link.icon" class="size-4" />
+      <Icon :name="link.icon" class="size-5" />
     </NuxtLink>
   </div>
 </template>

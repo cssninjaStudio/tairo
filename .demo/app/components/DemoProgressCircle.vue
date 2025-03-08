@@ -24,7 +24,7 @@ const props = withDefaults(
         :size="140"
         :max="100"
         :thickness="1"
-        class="text-primary-500"
+        variant="primary"
       />
       <div
         class="absolute start-1/2 top-1/2 size-16 -translate-x-1/2 -translate-y-1/2"
@@ -38,12 +38,12 @@ const props = withDefaults(
         size="md"
         weight="medium"
         lead="tight"
-        class="text-muted-800 mb-1 dark:text-white"
+        class="text-muted-900 mb-1 dark:text-white"
       >
         <span>{{ props.title }}</span>
       </BaseHeading>
       <BaseParagraph size="xs">
-        <span class="text-muted-400">{{ props.text }}</span>
+        <span class="text-muted-600 dark:text-muted-400">{{ props.text }}</span>
       </BaseParagraph>
     </div>
   </div>

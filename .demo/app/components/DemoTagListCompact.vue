@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    rounded?: 'none' | 'sm' | 'md' | 'lg'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   }>(),
   {
     rounded: 'sm',
@@ -48,8 +48,7 @@ const tags = [
       v-for="tag in tags"
       :key="tag.id"
       :rounded="props.rounded"
-      :variant="tag.highlight ? 'solid' : 'outline'"
-      color="primary"
+      :variant="tag.highlight ? 'default' : 'primary'"
       size="sm"
     >
       <span>{{ tag.name }}</span>

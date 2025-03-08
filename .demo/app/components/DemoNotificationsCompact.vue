@@ -4,9 +4,9 @@
       <BaseHeading
         as="h3"
         size="sm"
-        weight="semibold"
+        weight="medium"
         lead="tight"
-        class="text-muted-800 dark:text-white"
+        class="text-muted-900 dark:text-white"
       >
         <span>Notifications</span>
       </BaseHeading>

@@ -57,10 +57,10 @@ const props = defineProps<{
       class="border-muted-200 dark:border-muted-700 mt-auto flex items-end justify-between border-t pt-3"
     >
       <a
-        href="mailto:maya@tairo.io"
+        href="mailto:kendra@tairo.io"
         class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
       >
-        maya@tairo.io
+        kendra@tairo.io
       </a>
       <Icon name="solar:letter-unread-linear" class="text-muted-400 size-5" />
     </div>

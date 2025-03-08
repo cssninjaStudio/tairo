@@ -12,27 +12,27 @@ const menu = [
   {
     name: 'Global',
     url: '#',
-    icon: 'lucide:circle',
+    icon: 'solar:compass-linear',
   },
   {
     name: 'Business',
     url: '#',
-    icon: 'lucide:briefcase',
+    icon: 'solar:suitcase-linear',
   },
   {
     name: 'Entertainment',
     url: '#',
-    icon: 'lucide:play',
+    icon: 'solar:bowling-linear',
   },
   {
     name: 'Design',
     url: '#',
-    icon: 'lucide:feather',
+    icon: 'solar:structure-linear',
   },
   {
     name: 'Files',
     url: '#',
-    icon: 'lucide:file',
+    icon: 'solar:document-linear',
   },
 ]
 </script>
@@ -52,7 +52,7 @@ const menu = [
           props.shape === 'curved' ? 'rounded-xl' : '',
         ]"
       >
-        <Icon :name="item.icon" class="size-4" />
+        <Icon :name="item.icon" class="size-5" />
       </div>
       <span
         class="text-muted-400 group-hover:text-muted-800 dark:group-hover:text-muted-100 font-sans text-sm transition-colors duration-300"
