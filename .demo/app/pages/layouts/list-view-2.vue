@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapperTabbed :labels="['Active', 'Inactive']">
       <template #left>
         <TairoInput
@@ -93,10 +93,10 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                 v-for="item in data?.data"
                 :key="item.id"
                 rounded="lg"
-                class="flex flex-col p-5 sm:flex-row sm:items-center"
+                class="flex flex-col p-4 sm:flex-row sm:items-center"
               >
                 <div
-                  class="flex flex-col justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
+                  class="flex flex-col justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-start"
                 >
                   <img
                     class="bg-muted-100 dark:bg-muted-700/60 w-full rounded-lg sm:max-w-[130px]"
@@ -107,13 +107,13 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                   >
                   <div>
                     <div
-                      class="flex flex-col gap-2 text-left sm:flex-row sm:items-center"
+                      class="flex flex-col gap-2 text-start sm:flex-row sm:items-center mb-1"
                     >
                       <BaseHeading
                         tag="h3"
                         size="sm"
                         weight="medium"
-                        class="text-muted-800 dark:text-muted-100"
+                        class="text-muted-900 dark:text-muted-100"
                       >
                         {{ item.name }}
                       </BaseHeading>
@@ -168,12 +168,11 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                     <BaseParagraph
                       size="xs"
                       lead="none"
-                      class="text-muted-400 mt-3 flex gap-1 text-left text-sm sm:mt-0 sm:items-end"
+                      class="text-muted-400 flex gap-1 text-left text-sm sm:mt-0 sm:items-end"
                     >
-                      <Icon name="lucide:map-pin" class="size-3" />
                       <span>{{ item.location }}</span>
                     </BaseParagraph>
-                    <div class="text-primary-500 my-2 flex items-center gap-2">
+                    <div class="text-muted-900 dark:text-white font-medium my-2 flex items-center gap-2">
                       <span class="font-sans text-xs">
                         {{ item.details.rooms }} rooms
                       </span>
@@ -221,10 +220,10 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                 <div
                   class="ptablet:flex-col mt-4 flex items-center justify-end gap-2 sm:ms-auto sm:mt-4"
                 >
-                  <BaseButton class="w-full sm:w-28">
+                  <BaseButton size="sm" rounded="md" variant="ghost" class="w-full sm:w-24">
                     More Info
                   </BaseButton>
-                  <BaseButton variant="primary" class="w-full sm:w-28">
+                  <BaseButton size="sm" rounded="md" variant="default" class="w-full sm:w-24">
                     <span>Book Now</span>
                   </BaseButton>
                 </div>
@@ -235,7 +234,8 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                 :page="1"
                 :total="100"
                 :items-per-page="10"
-                rounded="full"
+                rounded="lg"
+                class="w-full"
               />
             </div>
           </div>

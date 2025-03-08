@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapperTabbed :labels="['All', 'Saved']" rounded="lg">
       <template #left>
         <TairoInput
@@ -81,7 +81,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
               </template>
             </BasePlaceholderPage>
           </div>
-          <div v-else class="space-y-4">
+          <div v-else class="space-y-3">
             <TransitionGroup
               enter-active-class="transform-gpu"
               enter-from-class="opacity-0 -translate-x-full"
@@ -94,7 +94,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 v-for="item in data?.data"
                 :key="item.id"
                 rounded="lg"
-                class="flex flex-col p-5 sm:flex-row sm:items-center"
+                class="flex flex-col p-4 sm:flex-row sm:items-center"
               >
                 <div
                   class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
@@ -103,7 +103,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <BaseAvatar
                       :src="item.icon"
                       :badge-src="item.author.avatar"
-                      size="lg"
+                      size="md"
                       class="bg-muted-100 dark:bg-muted-700/70"
                     />
                   </BaseTooltip>
@@ -120,9 +120,9 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       class="flex items-center justify-center gap-6 sm:justify-start sm:gap-0"
                     >
                       <div
-                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
+                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:archive" class="size-3" />
+                        <Icon name="solar:file-check-linear" class="size-4" />
                         <span>{{ item.category }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -131,7 +131,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="size-3" />
+                        <Icon name="solar:clock-square-linear" class="size-4" />
                         <span>{{ item.duration }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
@@ -140,7 +140,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <div
                         class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:paperclip" class="size-3" />
+                        <Icon name="solar:paperclip-linear" class="size-4" />
                         <span>{{ item.attachments }}</span>
                       </div>
                     </div>
@@ -157,14 +157,14 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       :avatars="item.followers"
                       :limit="3"
                     />
-                    <p class="text-muted-400 font-sans text-xs">
+                    <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                       Like this
                     </p>
                   </div>
                   <div class="flex w-full items-center gap-2 sm:w-auto">
                     <BaseButton
                       size="sm"
-                      class="w-full sm:w-24"
+                      class="w-full sm:w-20"
                     >
                       <span>Cook</span>
                     </BaseButton>
@@ -175,7 +175,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                         variant="muted"
                         class="hidden sm:inline-flex"
                       >
-                        <Icon name="ph:heart-duotone" class="size-4" />
+                        <Icon name="solar:heart-pulse-2-bold-duotone" class="size-4" />
                       </BaseButton>
                     </BaseTooltip>
                   </div>
@@ -188,6 +188,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                 :total="100"
                 :items-per-page="10"
                 rounded="lg"
+                class="w-full"
               />
             </div>
           </div>

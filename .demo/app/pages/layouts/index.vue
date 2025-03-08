@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -88,7 +88,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
             </template>
           </BasePlaceholderPage>
         </div>
-        <div v-else class="space-y-4">
+        <div v-else class="space-y-3">
           <TransitionGroup
             enter-active-class="transform-gpu"
             enter-from-class="opacity-0 -translate-x-full"
@@ -101,13 +101,13 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
               v-for="item in data?.data"
               :key="item.id"
               rounded="lg"
-              class="flex flex-col p-5 sm:flex-row sm:items-center"
+              class="flex flex-col p-4 sm:flex-row sm:items-center"
             >
               <div
                 class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
               >
                 <BaseAvatar
-                  size="lg"
+                  size="sm"
                   :src="item.medias.avatar"
                   :badge-src="item.medias.flag"
                 />
@@ -123,9 +123,8 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   <BaseParagraph
                     size="xs"
                     lead="none"
-                    class="text-muted-400 flex items-end text-sm"
+                    class="text-muted-600 dark:text-muted-400 flex items-end text-sm"
                   >
-                    <Icon name="lucide:map-pin" class="size-4" />
                     <span>{{ item.location }}</span>
                   </BaseParagraph>
                 </div>
@@ -158,8 +157,8 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     </BaseHeading>
                     <BaseParagraph
                       lead="none"
-                      weight="semibold"
-                      class="text-muted-400 text-[0.65rem]! uppercase"
+                      weight="medium"
+                      class="text-muted-400 text-[0.65rem]! uppercase tracking-wide"
                     >
                       <span>Projects</span>
                     </BaseParagraph>
@@ -175,8 +174,8 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     </BaseHeading>
                     <BaseParagraph
                       lead="none"
-                      weight="semibold"
-                      class="text-muted-400 text-[0.65rem]! uppercase"
+                      weight="medium"
+                      class="text-muted-400 text-[0.65rem]! uppercase tracking-wide"
                     >
                       <span>Replies</span>
                     </BaseParagraph>
@@ -192,8 +191,8 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     </BaseHeading>
                     <BaseParagraph
                       lead="none"
-                      weight="semibold"
-                      class="text-muted-400 text-[0.65rem]! uppercase"
+                      weight="medium"
+                      class="text-muted-400 text-[0.65rem]! uppercase tracking-wide"
                     >
                       <span>Posts</span>
                     </BaseParagraph>
@@ -207,12 +206,12 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                     :avatars="item.teams"
                     :limit="3"
                   />
-                  <p class="text-muted-400 font-sans text-xs">
+                  <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                     In Team
                   </p>
                 </div>
                 <div class="sm:ms-6">
-                  <BaseButton class="w-full sm:w-auto">
+                  <BaseButton size="sm" rounded="md" class="w-full sm:w-auto">
                     View
                   </BaseButton>
                 </div>
@@ -220,12 +219,14 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
             </BaseCard>
           </TransitionGroup>
 
-          <div>
+          <div class="mt-4">
             <BasePagination
               v-model:page="page"
-              :total="data?.total ?? 0"
-              :items-per-page="perPage"
+              :items-per-page="8"
+              :total="512"
+              :sibling-count="2"
               rounded="full"
+              class="w-full"
             />
           </div>
         </div>

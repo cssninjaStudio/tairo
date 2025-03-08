@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapperTabbed
       :labels="['Active', 'Inactive']"
       rounded="full"
@@ -98,14 +98,14 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 v-for="item in data?.data"
                 :key="item.id"
                 rounded="lg"
-                class="flex flex-col p-5 sm:flex-row sm:items-center"
+                class="flex flex-col p-4 sm:flex-row sm:items-center"
               >
                 <div
                   class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
                 >
                   <BaseAvatar
                     :src="item.logo"
-                    size="lg"
+                    size="sm"
                     class="bg-muted-100 dark:bg-muted-700/70"
                   />
                   <div class="w-full sm:w-auto">
@@ -113,7 +113,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       tag="h3"
                       size="sm"
                       weight="medium"
-                      class="text-muted-800 dark:text-muted-100"
+                      class="text-muted-900 dark:text-muted-100"
                     >
                       {{ item.title }}
                     </BaseHeading>
@@ -121,27 +121,27 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       class="flex items-center justify-between sm:justify-start"
                     >
                       <div
-                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
+                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:map-pin" class="size-3" />
+                        <Icon name="solar:map-point-linear" class="size-4" />
                         <span>{{ item.location }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
+                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:clock" class="size-3" />
+                        <Icon name="solar:watch-square-minimalistic-linear" class="size-4" />
                         <span>{{ item.duration }}</span>
                       </div>
                       <div class="hidden px-2 sm:block">
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
+                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
                       >
-                        <Icon name="lucide:check-circle" class="size-3" />
+                        <Icon name="solar:revote-linear" class="size-4" />
                         <span>{{ item.requirements }}</span>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                   class="mt-4 flex items-center justify-end gap-2 sm:ms-auto sm:mt-0"
                 >
                   <BaseButton
-                    class="w-full sm:w-24" size="sm"
+                    class="w-full sm:w-20" size="sm"
                   >
                     <span>Apply</span>
                   </BaseButton>
@@ -162,7 +162,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       variant="muted"
                       class="hidden sm:inline-flex"
                     >
-                      <Icon name="ph:bookmark-duotone" class="size-4" />
+                      <Icon name="solar:bookmark-linear" class="size-4" />
                     </BaseButton>
                   </BaseTooltip>
                 </div>
@@ -174,6 +174,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 :total="100"
                 :items-per-page="10"
                 rounded="full"
+                class="w-full"
               />
             </div>
           </div>
