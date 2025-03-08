@@ -67,7 +67,7 @@ function difficultyLabel(itemDifficulty: number) {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapperTabbed
       :labels="['All', 'Saved']"
       reverse
@@ -147,7 +147,7 @@ function difficultyLabel(itemDifficulty: number) {
                   >
                     <Icon
                       :name="item.skill.icon"
-                      class="text-primary-500 size-5"
+                      class="text-muted-400 size-5"
                     />
                     <span
                       class="text-muted-500 dark:text-muted-400 font-sans text-sm"
@@ -209,7 +209,7 @@ function difficultyLabel(itemDifficulty: number) {
                   </BaseTooltip>
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButton variant="muted">
+                  <BaseButton rounded="md" size="sm">
                     <span>View</span>
                   </BaseButton>
                 </DemoFlexTableCell>
@@ -217,12 +217,14 @@ function difficultyLabel(itemDifficulty: number) {
             </DemoFlexTableRow>
           </TransitionGroup>
 
-          <div v-if="!pending && data?.data.length !== 0" class="pt-6">
+          <div v-if="!pending && data?.data.length !== 0" class="pt-3">
             <BasePagination
               v-model:page="page"
-              :total="data?.total ?? 0"
-              :items-per-page="perPage"
-              rounded="full"
+              :items-per-page="8"
+              :total="512"
+              :sibling-count="2"
+              rounded="md"
+              class="w-full"
             />
           </div>
         </div>

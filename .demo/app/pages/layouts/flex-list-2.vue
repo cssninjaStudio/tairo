@@ -66,7 +66,7 @@ function statusColor(itemStatus: string) {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -186,7 +186,7 @@ function statusColor(itemStatus: string) {
                   />
                 </DemoFlexTableCell>
                 <DemoFlexTableCell label="action" :hide-label="index > 0">
-                  <BaseButton variant="muted">
+                  <BaseButton rounded="md" size="sm">
                     <span>View</span>
                   </BaseButton>
                 </DemoFlexTableCell>
@@ -197,9 +197,11 @@ function statusColor(itemStatus: string) {
         <div v-if="!pending && data?.data.length !== 0" class="mt-4">
           <BasePagination
             v-model:page="page"
-            :total="data?.total ?? 0"
-            :items-per-page="perPage"
-            rounded="full"
+            :items-per-page="8"
+            :total="512"
+            :sibling-count="2"
+            rounded="lg"
+            class="w-full"
           />
         </div>
       </div>

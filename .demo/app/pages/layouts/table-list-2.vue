@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -63,9 +63,6 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
         <BaseSelect
           v-model="perPage"
           label=""
-          :classes="{
-            wrapper: 'w-full sm:w-40',
-          }"
         >
           <BaseSelectItem :value="10">
             10 per page
@@ -134,7 +131,7 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                     <img
                       :src="item.image"
                       :alt="item.name"
-                      class="max-w-[80px]"
+                      class="max-w-[72px]"
                     >
                   </div>
                 </TairoTableCell>
@@ -151,12 +148,12 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
                   {{ item.stock }}
                 </TairoTableCell>
                 <TairoTableCell light spaced>
-                  <span class="text-primary-500 text-sm font-medium">
+                  <BaseTag size="sm" rounded="full">
                     {{ item.category }}
-                  </span>
+                  </BaseTag>
                 </TairoTableCell>
                 <TairoTableCell spaced>
-                  <BaseButton variant="muted">
+                  <BaseButton rounded="md" size="sm">
                     Manage
                   </BaseButton>
                 </TairoTableCell>
@@ -168,7 +165,8 @@ const { data, pending, error, refresh } = await useFetch('/api/products', {
               v-model:page="page"
               :total="data?.total ?? 0"
               :items-per-page="perPage"
-              rounded="lg"
+              rounded="md"
+              class="w-full"
             />
           </div>
         </div>

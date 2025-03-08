@@ -14,7 +14,7 @@ const props = withDefaults(
 <template>
   <div class="flex flex-col">
     <div
-      class="border-muted-300 dark:border-muted-800 border"
+      class="border-muted-300 dark:border-muted-800 border overflow-hidden"
       :class="[
         props.scrollable && 'nui-slimscroll overflow-x-auto',
         props.rounded === 'sm' && 'rounded-md',

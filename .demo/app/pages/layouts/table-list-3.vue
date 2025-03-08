@@ -68,7 +68,7 @@ function toggleAllVisibleSelection() {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -197,17 +197,17 @@ function toggleAllVisibleSelection() {
                         class="bg-muted-500/20 text-muted-500"
                       />
                       <div class="ms-3 leading-none">
-                        <h4 class="font-sans text-sm font-medium">
+                        <h4 class="text-muted-900 dark:text-muted-400 font-sans text-sm font-medium">
                           {{ item.author.name }}
                         </h4>
-                        <p class="text-muted-400 font-sans text-xs">
+                        <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                           {{ item.uploaded }}
                         </p>
                       </div>
                     </div>
                   </TairoTableCell>
                   <TairoTableCell spaced>
-                    <BaseButton variant="muted">
+                    <BaseButton rounded="md" size="sm">
                       Manage
                     </BaseButton>
                   </TairoTableCell>
@@ -221,6 +221,7 @@ function toggleAllVisibleSelection() {
               :total="data?.total ?? 0"
               :items-per-page="perPage"
               rounded="lg"
+              class="w-full"
             />
           </div>
         </div>

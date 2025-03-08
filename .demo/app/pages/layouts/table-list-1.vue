@@ -70,7 +70,7 @@ function toggleAllVisibleSelection() {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -83,9 +83,6 @@ function toggleAllVisibleSelection() {
         <BaseSelect
           v-model="perPage"
           label=""
-          :classes="{
-            wrapper: 'w-full sm:w-40',
-          }"
         >
           <BaseSelectItem :value="10">
             10 per page
@@ -187,10 +184,10 @@ function toggleAllVisibleSelection() {
                         :class="getRandomColor()"
                       />
                       <div class="ms-3 leading-none">
-                        <h4 class="font-sans text-sm font-medium">
+                        <h4 class="text-muted-900 dark:text-white font-sans text-sm font-medium">
                           {{ item.username }}
                         </h4>
-                        <p class="text-muted-400 font-sans text-xs">
+                        <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                           {{ item.position }}
                         </p>
                       </div>
@@ -202,10 +199,10 @@ function toggleAllVisibleSelection() {
                   <TairoTableCell spaced class="capitalize">
                     <BaseTag
                       v-if="item.status === 'available'"
-                      variant="primary"
+                      variant="none"
                       rounded="full"
                       size="sm"
-                      class="font-medium"
+                      class="font-medium bg-green-500/10 text-green-600 border border-green-500"
                     >
                       {{ item.status }}
                     </BaseTag>
@@ -244,7 +241,7 @@ function toggleAllVisibleSelection() {
                           :model-value="item.completed"
                           :thickness="1"
                           :size="50"
-                          class="text-success-500"
+                          variant="primary"
                         />
                         <span
                           class="absolute start-1/2 top-1/2 z-10 ms-0.5 -translate-x-1/2 -translate-y-1/2 font-sans text-[0.65rem] font-semibold rtl:me-0.5 rtl:ms-0 rtl:translate-x-1/2"
@@ -260,14 +257,14 @@ function toggleAllVisibleSelection() {
                   <TairoTableCell spaced>
                     <div class="flex justify-end">
                       <BaseDropdown
-                        label="Dropdown"
+                        label="Actions"
                         placement="bottom-end"
                         rounded="md"
                       >
                         <BaseDropdownItem
                           to="#"
-                          title="User"
-                          text="View details"
+                          title="Details"
+                          text="View user details"
                           rounded="md"
                         />
                       </BaseDropdown>
@@ -283,6 +280,7 @@ function toggleAllVisibleSelection() {
               :total="data?.total ?? 0"
               :items-per-page="perPage"
               rounded="lg"
+              class="w-full"
             />
           </div>
         </div>
