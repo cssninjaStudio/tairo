@@ -14,7 +14,6 @@ definePageMeta({
 const route = useRoute()
 const chatEl = useTemplateRef<HTMLElement>('chatEl')
 const inputEl = useTemplateRef<any>('inputEl')
-const expanded = ref(false)
 const loading = ref(false)
 const search = ref('')
 const message = ref('')
@@ -211,7 +210,7 @@ async function submitMessage() {
                   />
                   <BaseAvatar
                     v-else-if="item.type === 'sent'"
-                    src="/img/avatars/2.svg"
+                    src="/img/avatars/10.svg"
                     size="xs"
                   />
                 </div>
@@ -337,9 +336,7 @@ async function submitMessage() {
     </div>
     <!-- Current user -->
     <div
-      class="flex flex-col ltablet:w-[310px] dark:bg-muted-800 h-full w-[390px] border-s border-muted-200 dark:border-muted-800/80 shrink-0 -mt-6"
-      :class="expanded ? 'translate-x-full' : 'translate-x-0'"
-    >
+      class="flex flex-col ltablet:w-[310px] dark:bg-muted-800 h-full w-[390px] border-s border-muted-200 dark:border-muted-800/80 shrink-0 -mt-6">
       <div class="flex h-16 w-full items-center justify-between px-8 shrink-0">
         <BaseHeading
           tag="h3"
@@ -348,12 +345,6 @@ async function submitMessage() {
         >
           <span>User details</span>
         </BaseHeading>
-        <BaseButton size="icon-sm" @click="expanded = true">
-          <Icon
-            name="lucide:arrow-right"
-            class="pointer-events-none size-4"
-          />
-        </BaseButton>
       </div>
       <div class="relative flex w-full flex-col px-8 grow">
         <!-- Loader -->
@@ -399,7 +390,7 @@ async function submitMessage() {
             >
               <span>{{ selectedConversation?.user.name }}</span>
             </BaseHeading>
-            <BaseParagraph size="sm" class="text-muted-400">
+            <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
               <span>{{ selectedConversation?.user.role }}</span>
             </BaseParagraph>
             <div class="my-4">
@@ -415,7 +406,7 @@ async function submitMessage() {
             >
               <div class="flex items-center justify-center gap-2 px-4">
                 <Icon
-                  name="ph:timer-duotone"
+                  name="solar:clock-square-linear"
                   class="text-muted-400 size-4"
                 />
                 <span class="text-muted-400 font-sans text-xs">
@@ -424,7 +415,7 @@ async function submitMessage() {
               </div>
               <div class="flex items-center justify-center gap-2 px-4">
                 <Icon
-                  name="ph:map-pin-duotone"
+                  name="solar:map-point-linear"
                   class="text-muted-400 size-4"
                 />
                 <span class="text-muted-400 font-sans text-xs">

@@ -676,7 +676,7 @@ async function submitMessage() {
           <!-- New conversation -->
           <div class="flex h-20 items-center justify-center pe-2">
             <BaseButton
-              rounded="full"
+              rounded="lg"
               variant="primary"
               class="w-full"
             >
@@ -691,7 +691,7 @@ async function submitMessage() {
             <button
               v-for="conversation in conversations"
               :key="conversation.id"
-              class="flex items-center gap-2 rounded-xl p-2 transition-colors duration-200 ease-in-out"
+              class="cursor-pointer flex items-center gap-2 rounded-xl p-2 transition-colors duration-200 ease-in-out"
               :class="
                 activeConversation === conversation.id
                   ? 'bg-primary-500/10'
@@ -699,7 +699,7 @@ async function submitMessage() {
               "
               @click.prevent="selectConversation(conversation.id)"
             >
-              <BaseAvatar :src="conversation.user.photo" />
+              <BaseAvatar size="xs" :src="conversation.user.photo" />
               <BaseText
                 size="sm"
                 :class="
@@ -721,51 +721,42 @@ async function submitMessage() {
             </button>
           </div>
           <!-- Footer actions -->
-          <div class="flex h-20 items-center justify-between gap-3 pe-2">
-            <NuxtLink
-              to="/dashboards"
-              class="text-muted-500 dark:text-muted-400 hover:text-primary-500 border-muted-200 dark:border-muted-800 hover:border-primary-500 flex size-12 items-center justify-center rounded-xl border transition-colors duration-200 dark:hover:border-purple-500 dark:hover:text-purple-500"
-            >
-              <Icon name="ion:arrow-back-outline" class="size-4" />
-            </NuxtLink>
-            <BaseTooltip content="Messaging">
-              <button
-                class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
-                :class="
-                  selectedOption === 'chat'
-                    ? 'bg-primary-500/10 text-primary-500'
-                    : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
-                "
-                @click="selectedOption = 'chat'"
+          <div class="flex h-16 items-center justify-between gap-3 pe-2">
+            <BaseTooltip content="Dashboard" :bindings="{ portal: { disabled: true } }">
+              <BaseButton
+                to="/dashboards"
+                size="icon-sm"
+                rounded="md"
               >
-                <Icon name="ion:chatbubble-outline" class="size-5" />
-              </button>
+                <Icon name="solar:home-smile-angle-linear" class="size-4" />
+              </BaseButton>
             </BaseTooltip>
-            <BaseTooltip content="Calendar">
-              <button
-                class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
-                :class="
-                  selectedOption === 'calendar'
-                    ? 'bg-primary-500/10 text-primary-500'
-                    : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
-                "
-                @click="selectedOption = 'calendar'"
+            <BaseTooltip content="Messaging" :bindings="{ portal: { disabled: true } }">
+              <BaseButton
+                to="/dashboards/messaging"
+                size="icon-sm"
+                rounded="md"
               >
-                <Icon name="ion:calendar-outline" class="size-5" />
-              </button>
+                <Icon name="solar:chat-round-unread-linear" class="size-4" />
+              </BaseButton>
             </BaseTooltip>
-            <BaseTooltip content="Preferences">
-              <button
-                class="flex size-12 items-center justify-center rounded-xl transition-colors duration-200"
-                :class="
-                  selectedOption === 'settings'
-                    ? 'bg-primary-500/10 text-primary-500'
-                    : 'bg-muted-50 hover:bg-muted-100 dark:bg-muted-900 dark:hover:bg-muted-800 text-muted-500'
-                "
-                @click="selectedOption = 'settings'"
+            <BaseTooltip content="Calendar" :bindings="{ portal: { disabled: true } }">
+              <BaseButton
+                to="/dashboards/calendar"
+                size="icon-sm"
+                rounded="md"
               >
-                <Icon name="ion:options-outline" class="size-5" />
-              </button>
+                <Icon name="solar:calendar-minimalistic-linear" class="size-4" />
+              </BaseButton>
+            </BaseTooltip>
+            <BaseTooltip content="Preferences" :bindings="{ portal: { disabled: true } }">
+              <BaseButton
+                to="/layouts/preferences"
+                size="icon-sm"
+                rounded="md"
+              >
+                <Icon name="solar:tuning-linear" class="size-4" />
+              </BaseButton>
             </BaseTooltip>
           </div>
         </div>
@@ -894,7 +885,7 @@ async function submitMessage() {
                       />
                       <BaseAvatar
                         v-else-if="item.type === 'sent'"
-                        src="/img/avatars/2.svg"
+                        src="/img/avatars/10.svg"
                         size="xs"
                       />
                     </div>
@@ -999,7 +990,7 @@ async function submitMessage() {
                   <button
                     class="hover:bg-muted-100 dark:hover:bg-muted-900 text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hidden size-10 items-center justify-center rounded-xl transition-colors duration-200 focus:outline-none sm:flex"
                   >
-                    <Icon name="lucide:paperclip" class="size-5" />
+                    <Icon name="solar:paperclip-linear" class="size-5" />
                   </button>
                 </div>
                 <div class="grow">
@@ -1014,20 +1005,7 @@ async function submitMessage() {
                     <button
                       class="text-muted-400 hover:text-muted-600 absolute right-0 top-0 flex h-full w-12 items-center justify-center"
                     >
-                      <svg
-                        class="size-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
+                      <Icon name="solar:sticker-smile-square-linear" class="size-5" />
                     </button>
                   </div>
                 </div>
@@ -1038,10 +1016,6 @@ async function submitMessage() {
                     rounded="lg"
                   >
                     <span>Send</span>
-                    <Icon
-                      name="ph:paper-plane-right-duotone"
-                      class="hidden! size-5 sm:block!"
-                    />
                   </BaseButton>
                 </div>
               </form>
@@ -1097,7 +1071,7 @@ async function submitMessage() {
               >
                 <span>{{ selectedConversation?.user.name }}</span>
               </BaseHeading>
-              <BaseParagraph size="sm" class="text-muted-400">
+              <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
                 <span>{{ selectedConversation?.user.role }}</span>
               </BaseParagraph>
               <div class="my-4">
@@ -1113,7 +1087,7 @@ async function submitMessage() {
               >
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
-                    name="ph:timer-duotone"
+                    name="solar:clock-square-linear"
                     class="text-muted-400 size-4"
                   />
                   <span class="text-muted-400 font-sans text-xs">
@@ -1122,7 +1096,7 @@ async function submitMessage() {
                 </div>
                 <div class="flex items-center justify-center gap-2 px-4">
                   <Icon
-                    name="ph:map-pin-duotone"
+                    name="solar:map-point-linear"
                     class="text-muted-400 size-4"
                   />
                   <span class="text-muted-400 font-sans text-xs">

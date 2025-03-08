@@ -12,7 +12,7 @@ const props = defineProps<{
           class="relative inline-flex size-10 items-center justify-center rounded-full"
         >
           <img
-            src="/img/avatars/2.svg"
+            src="/img/avatars/10.svg"
             class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
             alt=""
           >
@@ -32,7 +32,7 @@ const props = defineProps<{
                 class="relative inline-flex size-14 items-center justify-center rounded-full"
               >
                 <img
-                  src="/img/avatars/2.svg"
+                  src="/img/avatars/10.svg"
                   class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent"
                   alt=""
                 >
@@ -41,7 +41,7 @@ const props = defineProps<{
                 <h6
                   class="font-heading text-muted-800 text-sm font-medium dark:text-white"
                 >
-                  Maya Rosselini
+                  Kendra Wilson
                 </h6>
                 <p class="text-muted-400 font-sans text-xs">
                   Product Manager
