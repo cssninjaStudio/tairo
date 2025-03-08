@@ -53,7 +53,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -123,17 +123,17 @@ const { data, pending, error, refresh } = await useFetch(
                   />
                   <div class="leading-none">
                     <h4
-                      class="text-muted-800 dark:text-muted-100 font-sans text-sm font-medium"
+                      class="text-muted-900 dark:text-muted-100 font-sans text-sm font-medium"
                     >
                       {{ item.owner.name }}
                     </h4>
-                    <p class="text-muted-400 font-sans text-xs">
+                    <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                       Updated {{ item.updated }}
                     </p>
                   </div>
                   <div class="ms-auto">
                     <BaseDropdown
-                      label="Dropdown"
+                      label="Manage"
                       placement="bottom-end"
                       size="md"
                       class="z-20"
@@ -146,7 +146,7 @@ const { data, pending, error, refresh } = await useFetch(
                       >
                         <template #start>
                           <Icon
-                            name="ph:pencil-duotone"
+                            name="solar:pen-2-linear"
                             class="me-2 block size-5"
                           />
                         </template>
@@ -159,7 +159,7 @@ const { data, pending, error, refresh } = await useFetch(
                       >
                         <template #start>
                           <Icon
-                            name="ph:lock-duotone"
+                            name="solar:lock-keyhole-linear"
                             class="me-2 block size-5"
                           />
                         </template>
@@ -171,7 +171,7 @@ const { data, pending, error, refresh } = await useFetch(
                       >
                         <template #start>
                           <Icon
-                            name="ph:share-duotone"
+                            name="solar:square-share-line-linear"
                             class="me-2 block size-5"
                           />
                         </template>
@@ -184,7 +184,7 @@ const { data, pending, error, refresh } = await useFetch(
                       >
                         <template #start>
                           <Icon
-                            name="ph:trash-duotone"
+                            name="solar:trash-bin-trash-linear"
                             class="me-2 block size-5"
                           />
                         </template>
@@ -202,13 +202,13 @@ const { data, pending, error, refresh } = await useFetch(
                 <div class="my-4 flex items-center justify-between">
                   <div>
                     <h4
-                      class="text-muted-800 dark:text-muted-100 font-sans text-base font-medium"
+                      class="text-muted-900 dark:text-muted-100 font-sans text-base font-medium"
                     >
                       {{ item.name }}
                     </h4>
                     <div class="text-muted-400 flex items-center gap-1">
-                      <Icon name="ph:calendar-blank-duotone" class="size-4" />
-                      <p class="font-sans text-sm">
+                      <Icon name="solar:calendar-minimalistic-linear" class="size-4" />
+                      <p class="font-sans text-xs">
                         {{ item.dueDate }}
                       </p>
                     </div>

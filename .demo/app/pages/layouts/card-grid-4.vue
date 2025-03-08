@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -109,7 +109,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                 v-for="item in data?.data"
                 :key="item.id"
                 rounded="lg"
-                class="group p-3"
+                class="group p-3 flex flex-col"
               >
                 <div class="relative">
                   <img
@@ -126,7 +126,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                     {{ item.category }}
                   </BaseTag>
                 </div>
-                <div>
+                <div class="flex flex-col grow">
                   <div class="mb-6 mt-3">
                     <BaseHeading
                       tag="h3"
@@ -152,12 +152,12 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
                       >
                         {{ item.author.name }}
                       </h4>
-                      <p class="text-muted-400 font-sans text-xs">
+                      <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                         {{ item.published }}
                       </p>
                     </div>
                     <div class="ms-auto">
-                      <BaseButton to="#" rounded="sm">
+                      <BaseButton to="#" rounded="md" size="sm">
                         <Icon name="lucide:edit-3" />
                         <span>Edit</span>
                       </BaseButton>
@@ -173,6 +173,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
               :total="data?.total ?? 0"
               :items-per-page="perPage"
               rounded="lg"
+              class="w-full"
             />
           </div>
         </div>

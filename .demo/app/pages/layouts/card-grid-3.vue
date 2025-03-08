@@ -53,7 +53,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -112,7 +112,7 @@ const { data, pending, error, refresh } = await useFetch(
                 v-for="item in data?.data"
                 :key="item.id"
                 rounded="lg"
-                class="p-6"
+                class="p-4 md:p-6"
               >
                 <div class="mb-3 flex items-center justify-center">
                   <BaseTooltip :content="item.owner.name">
@@ -134,10 +134,10 @@ const { data, pending, error, refresh } = await useFetch(
                         {{ item.name }}
                       </h4>
                       <div
-                        class="text-muted-400 flex items-center justify-center gap-1"
+                        class="text-muted-600 dark:text-muted-400 flex items-center justify-center gap-1"
                       >
-                        <Icon name="ph:calendar-blank-duotone" class="size-4" />
-                        <p class="font-sans text-sm">
+                        <Icon name="solar:calendar-minimalistic-linear" class="size-4" />
+                        <p class="font-sans text-xs">
                           {{ item.dueDate }}
                         </p>
                       </div>
@@ -168,6 +168,7 @@ const { data, pending, error, refresh } = await useFetch(
               :total="data?.total ?? 0"
               :items-per-page="perPage"
               rounded="lg"
+              class="w-full"
             />
           </div>
         </div>

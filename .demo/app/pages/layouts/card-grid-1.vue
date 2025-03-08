@@ -53,7 +53,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -111,7 +111,7 @@ const { data, pending, error, refresh } = await useFetch(
               leave-from-class="opacity-100 translate-x-0"
               leave-to-class="opacity-0 -translate-x-full"
             >
-              <BaseCard v-for="item in data?.data" :key="item.id">
+              <BaseCard v-for="item in data?.data" :key="item.id" rounded="md">
                 <div
                   class="border-muted-200 dark:border-muted-700 flex flex-col items-center border-b p-6 sm:flex-row"
                 >
@@ -120,7 +120,7 @@ const { data, pending, error, refresh } = await useFetch(
                       :src="item.picture"
                       :badge-src="item.badge"
                       :text="item.initials"
-                      size="xl"
+                      size="md"
                       class="bg-muted-500/20 text-muted-500"
                     />
                     <div class="text-center leading-none sm:text-left">
@@ -129,7 +129,7 @@ const { data, pending, error, refresh } = await useFetch(
                       >
                         {{ item.username }}
                       </h4>
-                      <p class="text-muted-400 font-sans text-sm">
+                      <p class="text-muted-600 dark:text-muted-400 font-sans text-sm">
                         {{ item.position }}
                       </p>
                     </div>
@@ -170,7 +170,7 @@ const { data, pending, error, refresh } = await useFetch(
                     />
                   </div>
                   <div class="mt-4 w-full sm:mt-0 sm:w-auto">
-                    <BaseButton class="w-full sm:w-auto">
+                    <BaseButton rounded="md" size="sm" class="w-full sm:w-auto">
                       View profile
                     </BaseButton>
                   </div>
@@ -184,6 +184,7 @@ const { data, pending, error, refresh } = await useFetch(
               :total="data?.total ?? 0"
               :items-per-page="perPage"
               rounded="lg"
+              class="w-full"
             />
           </div>
         </div>
