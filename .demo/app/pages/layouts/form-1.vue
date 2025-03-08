@@ -4,7 +4,7 @@ import { Field, useFieldError, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 definePageMeta({
-  title: 'Form layout 1',
+  title: 'Create company',
   preview: {
     title: 'Form layout 1',
     description: 'For forms and input fields',
@@ -280,8 +280,8 @@ const onSubmit = handleSubmit(
 </script>
 
 <template>
-  <div>
-    <div class="mb-4 flex flex-col justify-between md:flex-row md:items-center">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <!-- <div class="mb-4 flex flex-col justify-between md:flex-row md:items-center">
       <div
         class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-left lg:max-w-full"
       >
@@ -308,23 +308,38 @@ const onSubmit = handleSubmit(
           <span>Cancel</span>
         </BaseButton>
       </div>
-    </div>
-    <BaseCard>
-      <form
-        method="POST"
-        action=""
-        class="divide-muted-200 dark:divide-muted-700 grid divide-x sm:grid-cols-2"
-        novalidate
-        @submit.prevent="onSubmit"
-      >
-        <div
-          rounded="lg"
-          class="bg-muted-50 dark:bg-muted-800/60 space-y-8 p-10"
-        >
-          <div class="mx-auto flex w-full max-w-[410px] flex-col">
-            <div>
+    </div> -->
+    <form
+      method="POST"
+      action=""
+      class="flex flex-col"
+      novalidate
+      @submit.prevent="onSubmit"
+    >
+      <div class="mt-12">
+        <div class="flex w-full max-w-5xl flex-col space-y-16">
+          <!-- Dual column -->
+          <div class="grid grid-cols-12 gap-8">
+            <!-- Label column -->
+            <div class="col-span-12 md:col-span-4">
+              <div class="max-w-xs pe-4 space-y-2">
+                <BaseHeading
+                  as="h3"
+                  size="lg"
+                  weight="medium"
+                  class="text-muted-900 dark:text-white"
+                >
+                  <span>Company avatar</span>
+                </BaseHeading>
+                <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
+                  Upload a company logo or avatar. This image will be displayed in the company profile.
+                </BaseParagraph>
+              </div>
+            </div>
+            <!-- Input column -->
+            <div class="col-span-12 md:col-span-8">
               <div
-                class="relative mb-5 flex flex-col items-center justify-center gap-4"
+                class="relative mb-5 flex flex-col gap-4"
               >
                 <BaseFullscreenDropfile
                   icon="ph:image-duotone"
@@ -390,6 +405,28 @@ const onSubmit = handleSubmit(
                   {{ fileError }}
                 </div>
               </div>
+            </div>
+          </div>
+          <!-- Dual column -->
+          <div class="grid grid-cols-12 gap-8">
+            <!-- Label column -->
+            <div class="col-span-12 md:col-span-4">
+              <div class="max-w-xs pe-4 space-y-2">
+                <BaseHeading
+                  as="h3"
+                  size="lg"
+                  weight="medium"
+                  class="text-muted-900 dark:text-white"
+                >
+                  <span>Contact info</span>
+                </BaseHeading>
+                <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
+                  Fill in basic information about the company. This information will be displayed in the company profile.
+                </BaseParagraph>
+              </div>
+            </div>
+            <!-- Input column -->
+            <div class="col-span-12 md:col-span-8">
               <div class="grid grid-cols-12 gap-4">
                 <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
                   <Field
@@ -491,7 +528,29 @@ const onSubmit = handleSubmit(
                   </Field>
                 </div>
               </div>
-              <div class="mb-6 mt-4">
+            </div>
+          </div>
+          <!-- Dual column -->
+          <div class="grid grid-cols-12 gap-8">
+            <!-- Label column -->
+            <div class="col-span-12 md:col-span-4">
+              <div class="max-w-xs pe-4 space-y-2">
+                <BaseHeading
+                  as="h3"
+                  size="lg"
+                  weight="medium"
+                  class="text-muted-900 dark:text-white"
+                >
+                  <span>Business info</span>
+                </BaseHeading>
+                <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
+                  Fill in business information about the company. This information will be displayed in the company profile.
+                </BaseParagraph>
+              </div>
+            </div>
+            <!-- Input column -->
+            <div class="col-span-12 md:col-span-8">
+              <div class="mb-6">
                 <Field
                   v-slot="{ field, errorMessage, handleChange }"
                   name="company.type"
@@ -510,21 +569,21 @@ const onSubmit = handleSubmit(
                     >
                       <TairoRadioCard
                         value="team_member_1"
-                        icon="ph:house-simple-duotone"
+                        icon="solar:home-2-linear"
                         label="Solo"
                         subtitle="Small company"
                         variant="muted"
                       />
                       <TairoRadioCard
                         value="team_member_2"
-                        icon="ph:storefront-duotone"
+                        icon="solar:shop-linear"
                         label="LLC"
                         subtitle="Medium company"
                         variant="muted"
                       />
                       <TairoRadioCard
                         value="team_member_3"
-                        icon="ph:buildings-duotone"
+                        icon="solar:buildings-linear"
                         label="Corp"
                         subtitle="Bigger company"
                         variant="muted"
@@ -533,193 +592,199 @@ const onSubmit = handleSubmit(
                   </BaseField>
                 </Field>
               </div>
-            </div>
-          </div>
-        </div>
-        <div rounded="lg" class="w-full space-y-8 p-10">
-          <div class="mx-auto w-full max-w-[410px] sm:pt-28">
-            <div class="grid grid-cols-12 gap-4">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="company.income"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  label="Income"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="ltablet:col-span-6 col-span-12 lg:col-span-6"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    rounded="sm"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <BaseSelectItem
-                      v-for="value in ['0 - 250K', '250K - 500K', '500K - 1M', '1M - 5M', '10M+']"
-                      :key="value"
-                      :value
-                    >
-                      {{ value }}
-                    </BaseSelectItem>
-                  </BaseSelect>
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="company.employees"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  label="Employees"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="ltablet:col-span-6 col-span-12 lg:col-span-6"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    rounded="sm"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <BaseSelectItem
-                      v-for="value in ['1-10 employees', '10-50 employees', '50-100 employees', '100+ employees']"
-                      :key="value"
-                      :value
-                    >
-                      {{ value }}
-                    </BaseSelectItem>
-                  </BaseSelect>
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="company.manager"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  label="Manager"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="ltablet:col-span-8 col-span-12 lg:col-span-8"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    placeholder="Select a manager"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <template v-if="field.value" #value="{ modelValue }">
-                      {{ modelValue?.name }}
-                    </template>
-
-                    <TairoSelectItem
-                      v-for="item in people"
-                      :key="item.id"
-                      :value="item"
-                      :media="item.media"
-                      :name="item.name"
-                      :text="item.text"
-                    />
-                  </BaseSelect>
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="company.status"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  label="Status"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="ltablet:col-span-4 col-span-12 lg:col-span-4"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    rounded="sm"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  >
-                    <BaseSelectItem value="active">
-                      Active
-                    </BaseSelectItem>
-                    <BaseSelectItem value="inactive">
-                      Inactive
-                    </BaseSelectItem>
-                  </BaseSelect>
-                </BaseField>
-              </Field>
-
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="company.notes"
-              >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  label="Company notes"
-                  :state="errorMessage ? 'error' : 'idle'"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12"
-                >
-                  <BaseTextarea
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    placeholder="Write some notes..."
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <div class="col-span-12">
+              <div class="grid grid-cols-12 gap-4">
                 <Field
                   v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                  name="company.privateRecord"
+                  name="company.income"
                 >
-                  <BaseCheckbox
-                    label="This record is private"
-                    :model-value="field.value"
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Income"
+                    :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                    class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                    required
+                  >
+                    <BaseSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      rounded="sm"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    >
+                      <BaseSelectItem
+                        v-for="value in ['0 - 250K', '250K - 500K', '500K - 1M', '1M - 5M', '10M+']"
+                        :key="value"
+                        :value
+                      >
+                        {{ value }}
+                      </BaseSelectItem>
+                    </BaseSelect>
+                  </BaseField>
                 </Field>
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="company.employees"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Employees"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                    required
+                  >
+                    <BaseSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      rounded="sm"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    >
+                      <BaseSelectItem
+                        v-for="value in ['1-10 employees', '10-50 employees', '50-100 employees', '100+ employees']"
+                        :key="value"
+                        :value
+                      >
+                        {{ value }}
+                      </BaseSelectItem>
+                    </BaseSelect>
+                  </BaseField>
+                </Field>
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="company.manager"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Manager"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="ltablet:col-span-8 col-span-12 lg:col-span-8"
+                    required
+                  >
+                    <BaseSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      :model-value="field.value"
+                      placeholder="Select a manager"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    >
+                      <template v-if="field.value" #value="{ modelValue }">
+                        {{ modelValue?.name }}
+                      </template>
+
+                      <TairoSelectItem
+                        v-for="item in people"
+                        :key="item.id"
+                        :value="item"
+                        :media="item.media"
+                        :name="item.name"
+                        :text="item.text"
+                      />
+                    </BaseSelect>
+                  </BaseField>
+                </Field>
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="company.status"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Status"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                    required
+                  >
+                    <BaseSelect
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      rounded="sm"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    >
+                      <BaseSelectItem value="active">
+                        Active
+                      </BaseSelectItem>
+                      <BaseSelectItem value="inactive">
+                        Inactive
+                      </BaseSelectItem>
+                    </BaseSelect>
+                  </BaseField>
+                </Field>
+
+                <Field
+                  v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                  name="company.notes"
+                >
+                  <BaseField
+                    v-slot="{ inputAttrs, inputRef }"
+                    label="Company notes"
+                    :state="errorMessage ? 'error' : 'idle'"
+                    :error="errorMessage"
+                    :disabled="isSubmitting"
+                    class="col-span-12"
+                  >
+                    <BaseTextarea
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      placeholder="Write some notes..."
+                      :model-value="field.value"
+                      rows="4"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </BaseField>
+                </Field>
+                <div class="col-span-12">
+                  <Field
+                    v-slot="{ field, errorMessage, handleChange, handleBlur }"
+                    name="company.privateRecord"
+                  >
+                    <BaseCheckbox
+                      label="This record is private"
+                      :model-value="field.value"
+                      :error="errorMessage"
+                      :disabled="isSubmitting"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </Field>
+                </div>
               </div>
-            </div>
-            <div
-              class="mt-5 flex flex-col-reverse text-right md:block md:space-x-3"
-            >
-              <BaseButton
-                type="submit"
-                variant="primary"
-                class="h-12! w-full sm:w-40"
+              <div
+                class="mt-5 flex flex-col md:flex-row md:justify-end gap-3"
               >
-                Create Company
-              </BaseButton>
+                <BaseButton
+                  type="submit"
+                  variant="ghost"
+                  rounded="md"
+                  class="w-full sm:w-32"
+                >
+                  Cancel
+                </BaseButton>
+                <BaseButton
+                  type="submit"
+                  variant="primary"
+                  rounded="md"
+                  class="w-full sm:w-32"
+                >
+                  Create
+                </BaseButton>
+              </div>
             </div>
           </div>
         </div>
-      </form>
-    </BaseCard>
+      </div>
+    </form>
   </div>
 </template>

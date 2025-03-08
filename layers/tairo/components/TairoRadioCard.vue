@@ -47,7 +47,7 @@ const forward = useForwardPropsEmits(reactiveOmit(props, ['id', 'variant', 'roun
         <Icon
           v-if="props.icon"
           :name="props.icon"
-          class="group-data-[state=checked]:text-primary-500 mx-auto size-5"
+          class="group-data-[state=checked]:text-primary-500 mx-auto size-6"
         />
 
         <div>
