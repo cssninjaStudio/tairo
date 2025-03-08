@@ -14,7 +14,7 @@ definePageMeta({
 const route = useRoute()
 const router = useRouter()
 const page = computed({
-  get: () => Number.parseInt((route.query.page as string) ?? '1'),
+  get: () => Number.parseInt((route.query.page as string) ?? '1', 10),
   set: (value) => {
     router.push({
       query: {

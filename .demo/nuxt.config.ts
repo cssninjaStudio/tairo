@@ -1,11 +1,6 @@
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
-import {
-  demoRules,
-  documentationRules,
-  landingRules,
-} from './config/routes-rules'
 
 // This is a regular expression used to extract the example source code from the markdown content.
 const docExampleRe = /demo: '#examples\/([\w-]+)\/([\w-]+).vue'\r?\n---\r?\n([\s\S]*?)\r?\n::\r?\n/g
@@ -137,15 +132,17 @@ export default defineNuxtConfig({
     metaSources: ['@shuriken-ui/nuxt-component-meta'],
     exclude: [
       (component: any) => {
-        return true
+        if (!import.meta.env.ENABLE_DOCUMENTATION) {
+          return true
+        }
 
-        // const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
-        // const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-        // const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
+        const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+        const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+        const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
 
-        // const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
+        const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
 
-        // return isBlacklisted || isExcluded
+        return isBlacklisted || isExcluded
       },
     ],
   },
@@ -195,7 +192,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // nuxt behavior configuration
   runtimeConfig: {
     public: {
       // mapbox config
@@ -205,9 +201,30 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    ...demoRules,
-    ...landingRules,
-    ...documentationRules,
+    '/': {
+      swr: 3600,
+    },
+    '/demos': {
+      swr: 3600,
+    },
+    '/auth/**': {
+      swr: 3600,
+    },
+    '/documentation': {
+      swr: 3600,
+    },
+    '/documentation/**': {
+      swr: 3600,
+    },
+    '/dashboards/**': {
+      swr: 3600,
+    },
+    '/layouts/**': {
+      swr: 3600,
+    },
+    '/wizard/**': {
+      swr: 3600,
+    },
   },
 
   // nuxt build configuration
@@ -263,8 +280,6 @@ export default defineNuxtConfig({
         'remark-parse',
         'remark-rehype',
         'unified',
-        // useMultiStepForm
-        'vue3-smooth-dnd',
         // AddonMapboxLocationPicker
         'ohash',
         'mapbox-gl',
@@ -276,6 +291,7 @@ export default defineNuxtConfig({
         'vee-validate',
         'zod',
         // calendar app
+        'vue3-smooth-dnd',
         'date-fns',
         'date-fns/locale',
         // profile edit page

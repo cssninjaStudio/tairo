@@ -3,7 +3,6 @@ title: BaseDropdown
 components:
   - BaseDropdown
   - BaseDropdownItem
-  - BaseDropdownDivider
 description: Dropdown are used to display multiple options after a user interaction. Customize how they look and feel using the available props.
 icon:
   src: /img/illustrations/components/dropdown-icon.svg
@@ -140,4 +139,3 @@ Dropdown menus and items can be heavily customized, using wrapping elements, scr
 
 :doc-component-meta{name="BaseDropdown"}
 :doc-component-meta{name="BaseDropdownItem"}
-:doc-component-meta{name="BaseDropdownDivider"}

@@ -434,7 +434,7 @@ const itemSubtotal = computed(() =>
                           weight="semibold"
                           class="text-muted-800 dark:text-muted-100"
                         >
-                          {{ asDollar(parseInt(itemSubtotal)) }}
+                          {{ asDollar(parseInt(itemSubtotal, 10)) }}
                         </BaseParagraph>
                       </div>
                     </div>
@@ -527,7 +527,7 @@ const itemSubtotal = computed(() =>
                 lead="none"
                 class="mb-3"
               >
-                {{ asDollar(parseInt(itemSubtotal)) }}
+                {{ asDollar(parseInt(itemSubtotal, 10)) }}
                 <BaseText size="xs" class="text-muted-400 inline">
                   (Tax incl.)
                 </BaseText>
