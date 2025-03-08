@@ -314,7 +314,7 @@ const onSubmit = handleSubmit(
                 class="relative mb-5 flex flex-col gap-4"
               >
                 <BaseFullscreenDropfile
-                  icon="ph:image-duotone"
+                  icon="solar:gallery-linear"
                   :filter-file-dropped="
                     (file) => file.type.startsWith('image')
                   "

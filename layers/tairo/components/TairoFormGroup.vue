@@ -20,13 +20,14 @@ const props = withDefaults(
         size="md"
         weight="medium"
         lead="none"
+        class="text-muted-900 dark:text-white"
       >
         {{ props.label }}
       </BaseHeading>
       <BaseText
         v-if="props.sublabel"
         size="xs"
-        class="text-muted-400"
+        class="text-muted-600 dark:text-muted-400"
       >
         {{ props.sublabel }}
       </BaseText>

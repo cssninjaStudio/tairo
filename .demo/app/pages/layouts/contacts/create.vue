@@ -272,7 +272,7 @@ const onSubmit = handleSubmit(
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <div>
       <form
         method="POST"
@@ -288,7 +288,7 @@ const onSubmit = handleSubmit(
                   class="relative mb-5 flex flex-col items-center justify-center gap-4"
                 >
                   <BaseFullscreenDropfile
-                    icon="ph:image-duotone"
+                    icon="solar:gallery-linear"
                     :filter-file-dropped="
                       (file) => file.type.startsWith('image')
                     "
@@ -351,7 +351,7 @@ const onSubmit = handleSubmit(
                   </div>
                 </div>
                 <!-- Form fields -->
-                <div class="space-y-12">
+                <div class="space-y-16">
                   <!-- Personal info -->
                   <TairoFormGroup
                     label="Personal info"
@@ -382,7 +382,7 @@ const onSubmit = handleSubmit(
                             <TairoInput
                               :ref="inputRef"
                               v-bind="inputAttrs"
-                              icon="ph:user-duotone"
+                              icon="solar:user-rounded-linear"
                               placeholder="Ex: John"
                               :model-value="field.value"
                               type="text"
@@ -416,7 +416,7 @@ const onSubmit = handleSubmit(
                             <TairoInput
                               :ref="inputRef"
                               v-bind="inputAttrs"
-                              icon="ph:user-duotone"
+                              icon="solar:user-rounded-linear"
                               placeholder="Ex: Doe"
                               :model-value="field.value"
                               type="text"
@@ -450,7 +450,7 @@ const onSubmit = handleSubmit(
                             <TairoInput
                               :ref="inputRef"
                               v-bind="inputAttrs"
-                              icon="ph:buildings-duotone"
+                              icon="solar:buildings-linear"
                               placeholder="Ex: Acme Inc."
                               :model-value="field.value"
                               type="text"
@@ -481,7 +481,7 @@ const onSubmit = handleSubmit(
                             <TairoInput
                               :ref="inputRef"
                               v-bind="inputAttrs"
-                              icon="ph:suitcase-duotone"
+                              icon="solar:suitcase-lines-linear"
                               placeholder="Ex: Freelance / Software company"
                               :model-value="field.value"
                               type="text"
@@ -512,7 +512,7 @@ const onSubmit = handleSubmit(
                             <TairoInput
                               :ref="inputRef"
                               v-bind="inputAttrs"
-                              icon="ph:envelope-duotone"
+                              icon="solar:letter-linear"
                               placeholder="Ex: hello@acme.co"
                               :model-value="field.value"
                               type="email"
@@ -543,7 +543,7 @@ const onSubmit = handleSubmit(
                             <TairoInput
                               :ref="inputRef"
                               v-bind="inputAttrs"
-                              icon="lucide:phone"
+                              icon="solar:phone-rounded-linear"
                               placeholder="Ex: +1 555 123 4567"
                               :model-value="field.value"
                               type="tel"
@@ -611,13 +611,13 @@ const onSubmit = handleSubmit(
                             >
                               <TairoRadioCard
                                 value="person"
-                                icon="ph:user-duotone"
+                                icon="solar:user-rounded-linear"
                                 label="Person"
                                 subtitle="Personal contact"
                               />
                               <TairoRadioCard
                                 value="company"
-                                icon="ph:buildings-duotone"
+                                icon="solar:buildings-2-linear"
                                 label="Company"
                                 subtitle="Enterprise contact"
                               />
@@ -697,7 +697,7 @@ const onSubmit = handleSubmit(
                           <TairoInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:map-pin-duotone"
+                            icon="solar:map-point-linear"
                             placeholder="Ex: App 12 suite G4 Santa Barbara"
                             :model-value="field.value"
                             @update:model-value="handleChange"
@@ -726,7 +726,7 @@ const onSubmit = handleSubmit(
                           <TairoInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:buildings-duotone"
+                            icon="solar:buildings-linear"
                             placeholder="Ex: Los Angeles"
                             :model-value="field.value"
                             type="text"
@@ -756,7 +756,7 @@ const onSubmit = handleSubmit(
                           <TairoInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:globe-duotone"
+                            icon="solar:earth-linear"
                             placeholder="Ex: CA"
                             :model-value="field.value"
                             type="text"
@@ -786,7 +786,7 @@ const onSubmit = handleSubmit(
                           <BaseInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:paper-plane-tilt-duotone"
+                            icon="solar:box-linear"
                             placeholder="Ex: 912656"
                             :model-value="field.value"
                             type="text"
@@ -861,7 +861,7 @@ const onSubmit = handleSubmit(
                           <TairoInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:bank-duotone"
+                            icon="solar:card-linear"
                             placeholder="Ex: 4134 1213 3298 4273"
                             :model-value="field.value"
                             type="number"
@@ -891,7 +891,7 @@ const onSubmit = handleSubmit(
                           <TairoInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:arrows-left-right-duotone"
+                            icon="solar:sort-horizontal-linear"
                             placeholder="Ex: USX35B"
                             :model-value="field.value"
                             type="text"
@@ -921,7 +921,7 @@ const onSubmit = handleSubmit(
                           <BaseInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:compass-duotone"
+                            icon="solar:compass-square-linear"
                             placeholder="Ex: 2873213"
                             :model-value="field.value"
                             type="number"
@@ -951,7 +951,7 @@ const onSubmit = handleSubmit(
                           <TairoInput
                             :ref="inputRef"
                             v-bind="inputAttrs"
-                            icon="ph:note-duotone"
+                            icon="solar:document-linear"
                             placeholder="Ex: TX-DHDZ526"
                             :model-value="field.value"
                             @update:model-value="handleChange"
@@ -1008,7 +1008,6 @@ const onSubmit = handleSubmit(
                       type="button"
                       variant="muted"
                       class="w-full sm:w-44"
-                      size="lg"
                       rounded="md"
                     >
                       Cancel
@@ -1017,7 +1016,6 @@ const onSubmit = handleSubmit(
                       type="submit"
                       variant="primary"
                       class="w-full sm:w-44"
-                      size="lg"
                       rounded="md"
                       :loading="isSubmitting"
                     >

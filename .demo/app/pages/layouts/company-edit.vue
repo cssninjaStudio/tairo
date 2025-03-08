@@ -254,7 +254,7 @@ const onSubmit = handleSubmit(
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <div>
       <form
         method="POST"
@@ -263,7 +263,7 @@ const onSubmit = handleSubmit(
         novalidate
         @submit.prevent="onSubmit"
       >
-        <div class="space-y-8">
+        <div class="space-y-16">
           <div class="mx-auto flex w-full max-w-2xl flex-col">
             <div>
               <div>
@@ -271,7 +271,7 @@ const onSubmit = handleSubmit(
                   class="relative mb-5 flex flex-col items-center justify-center gap-4"
                 >
                   <BaseFullscreenDropfile
-                    icon="ph:image-duotone"
+                    icon="solar:gallery-linear"
                     :filter-file-dropped="
                       (file) => file.type.startsWith('image')
                     "
@@ -363,7 +363,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:buildings-duotone"
+                            icon="solar:buildings-linear"
                             placeholder="Ex: Acme Inc."
                             type="text"
                             @update:model-value="handleChange"
@@ -393,7 +393,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:buildings-duotone"
+                            icon="solar:buildings-linear"
                             placeholder="Ex: Acme Systems"
                             type="text"
                             @update:model-value="handleChange"
@@ -422,7 +422,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:buildings-duotone"
+                            icon="solar:buildings-linear"
                             placeholder="Ex: Acme Systems"
                             type="text"
                             @update:model-value="handleChange"
@@ -452,7 +452,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:envelope-duotone"
+                            icon="solar:letter-linear"
                             placeholder="Ex: contact@acme.com"
                             type="email"
                             @update:model-value="handleChange"
@@ -482,7 +482,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="lucide:phone"
+                            icon="solar:phone-rounded-linear"
                             placeholder="Ex: +1 555 123 4567"
                             type="tel"
                             @update:model-value="handleChange"
@@ -512,7 +512,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="lucide:twitter"
+                            icon="fa6-brands:x-twitter"
                             placeholder="Ex: @acmeinc"
                             type="text"
                             @update:model-value="handleChange"
@@ -551,7 +551,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:map-pin-duotone"
+                            icon="solar:map-point-linear"
                             placeholder="Ex: 48, Santa Barbara Railroad"
                             type="text"
                             @update:model-value="handleChange"
@@ -581,7 +581,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:map-pin-duotone"
+                            icon="solar:map-point-linear"
                             placeholder="Ex: App 12 suite G4"
                             type="text"
                             @update:model-value="handleChange"
@@ -611,7 +611,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:buildings-duotone"
+                            icon="solar:earth-linear"
                             placeholder="Ex: Los Angeles"
                             type="text"
                             @update:model-value="handleChange"
@@ -641,7 +641,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:globe-duotone"
+                            icon="solar:earth-linear"
                             placeholder="Ex: CA"
                             type="text"
                             @update:model-value="handleChange"
@@ -671,7 +671,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:paper-plane-tilt-duotone"
+                            icon="solar:box-linear"
                             placeholder="Ex: 912656"
                             type="text"
                             @update:model-value="handleChange"
@@ -762,7 +762,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:map-pin-duotone"
+                            icon="solar:map-point-linear"
                             placeholder="Ex: 48, Santa Barbara Railroad"
                             type="text"
                             @update:model-value="handleChange"
@@ -792,7 +792,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:map-pin-duotone"
+                            icon="solar:map-point-linear"
                             placeholder="Ex: App 12 suite G4"
                             type="text"
                             @update:model-value="handleChange"
@@ -822,7 +822,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:buildings-duotone"
+                            icon="solar:earth-linear"
                             placeholder="Ex: Los Angeles"
                             type="text"
                             @update:model-value="handleChange"
@@ -852,7 +852,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:globe-duotone"
+                            icon="solar:earth-linear"
                             placeholder="Ex: CA"
                             type="text"
                             @update:model-value="handleChange"
@@ -882,7 +882,7 @@ const onSubmit = handleSubmit(
                             :ref="inputRef"
                             v-bind="inputAttrs"
                             :model-value="field.value"
-                            icon="ph:paper-plane-tilt-duotone"
+                            icon="solar:box-linear"
                             placeholder="Ex: 912656"
                             type="text"
                             @update:model-value="handleChange"
@@ -951,19 +951,17 @@ const onSubmit = handleSubmit(
                     <BaseButton
                       to="/layouts/company"
                       type="button"
-                      variant="muted"
-                      class="w-full sm:w-40"
+                      variant="ghost"
+                      class="w-full sm:w-36"
                       rounded="md"
-                      size="lg"
                     >
                       Cancel
                     </BaseButton>
                     <BaseButton
                       type="submit"
                       variant="primary"
-                      class="w-full sm:w-40"
+                      class="w-full sm:w-36"
                       rounded="md"
-                      size="lg"
                       :loading="isSubmitting"
                     >
                       Save Changes
