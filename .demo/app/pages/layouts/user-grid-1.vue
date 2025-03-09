@@ -53,7 +53,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -111,13 +111,13 @@ const { data, pending, error, refresh } = await useFetch(
             <BaseCard
               v-for="(item, index) in data?.data"
               :key="index"
-              rounded="sm"
+              rounded="md"
               elevated-hover
-              class="p-6"
+              class="p-4 md:p-6"
             >
               <div class="mb-3 flex w-full items-center justify-center">
                 <BaseAvatar
-                  size="xl"
+                  size="lg"
                   :src="item.src"
                   :badge-src="item.badge"
                   :text="item.initials"
@@ -130,10 +130,11 @@ const { data, pending, error, refresh } = await useFetch(
                   size="md"
                   weight="medium"
                   lead="none"
+                  class="text-muted-900 dar:text-white"
                 >
                   {{ item.username }}
                 </BaseHeading>
-                <BaseParagraph size="xs" class="text-muted-400">
+                <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
                   {{ item.position }}
                 </BaseParagraph>
               </div>
@@ -149,11 +150,11 @@ const { data, pending, error, refresh } = await useFetch(
               </div>
               <div class="flex items-center gap-2">
                 <BaseButton rounded="sm" class="w-full">
-                  <Icon name="ph:user-duotone" class="size-4" />
+                  <Icon name="solar:user-rounded-linear" class="size-4" />
                   <span>Profile</span>
                 </BaseButton>
                 <BaseButton rounded="sm" class="w-full">
-                  <Icon name="ph:chat-circle-duotone" class="size-4" />
+                  <Icon name="solar:chat-dots-linear" class="size-4" />
                   <span>Talk</span>
                 </BaseButton>
               </div>
@@ -166,6 +167,7 @@ const { data, pending, error, refresh } = await useFetch(
             :total="data?.total ?? 0"
             :items-per-page="perPage"
             rounded="lg"
+            class="w-full"
           />
         </div>
       </div>

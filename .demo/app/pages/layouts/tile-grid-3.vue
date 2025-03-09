@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -135,7 +135,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <div
                       class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:archive" class="size-3" />
+                      <Icon name="solar:box-linear" class="size-4" />
                       <span>{{ item.category }}</span>
                     </div>
                     <div class="hidden px-2 sm:block">
@@ -144,7 +144,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <div
                       class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:clock" class="size-3" />
+                      <Icon name="solar:clock-square-linear" class="size-4" />
                       <span>{{ item.duration }}</span>
                     </div>
                     <div class="hidden px-2 sm:block">
@@ -153,14 +153,14 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     <div
                       class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
                     >
-                      <Icon name="lucide:paperclip" class="size-3" />
+                      <Icon name="solar:paperclip-2-linear" class="size-4" />
                       <span>{{ item.attachments }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    label="Dropdown"
+                    label="Manage"
                     placement="bottom-end"
                     size="md"
                     class="z-20"
@@ -173,7 +173,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     >
                       <template #start>
                         <Icon
-                          name="ph:download-duotone"
+                          name="solar:download-linear"
                           class="me-2 block size-5"
                         />
                       </template>
@@ -186,7 +186,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     >
                       <template #start>
                         <Icon
-                          name="ph:share-duotone"
+                          name="solar:share-linear"
                           class="me-2 block size-5"
                         />
                       </template>
@@ -199,7 +199,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     >
                       <template #start>
                         <Icon
-                          name="ph:bookmark-simple-duotone"
+                          name="solar:bookmark-linear"
                           class="me-2 block size-5"
                         />
                       </template>
@@ -216,6 +216,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
             :total="data?.total ?? 0"
             :items-per-page="perPage"
             rounded="lg"
+            class="w-full"
           />
         </div>
       </div>

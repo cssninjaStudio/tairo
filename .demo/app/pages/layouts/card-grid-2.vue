@@ -238,6 +238,7 @@ const { data, pending, error, refresh } = await useFetch(
               :total="data?.total ?? 0"
               :items-per-page="perPage"
               rounded="lg"
+              class="w-full"
             />
           </div>
         </div>

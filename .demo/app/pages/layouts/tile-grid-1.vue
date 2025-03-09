@@ -53,7 +53,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -116,7 +116,7 @@ const { data, pending, error, refresh } = await useFetch(
             >
               <div class="flex w-full items-center gap-2">
                 <BaseAvatar
-                  size="md"
+                  size="sm"
                   :src="item.picture"
                   :badge-src="item.badge"
                   :text="item.initials"
@@ -130,17 +130,24 @@ const { data, pending, error, refresh } = await useFetch(
                   >
                     {{ item.username }}
                   </BaseHeading>
-                  <BaseParagraph size="xs" class="text-muted-400">
+                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
                     {{ item.position }}
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto">
                   <BaseDropdown
-                    label="Dropdown"
-                    placement="bottom-end"
+                    label="Manage"
                     size="md"
                     class="z-20"
                     rounded="lg"
+                    :bindings="{
+                      portal: {
+                        disabled: true,
+                      },
+                      content: {
+                        positionStrategy: 'absolute',
+                      },
+                    }"
                   >
                     <BaseDropdownItem
                       to="#"
@@ -149,7 +156,7 @@ const { data, pending, error, refresh } = await useFetch(
                     >
                       <template #start>
                         <Icon
-                          name="ph:lock-duotone"
+                          name="solar:lock-keyhole-linear"
                           class="me-2 block size-5"
                         />
                       </template>
@@ -161,7 +168,7 @@ const { data, pending, error, refresh } = await useFetch(
                     >
                       <template #start>
                         <Icon
-                          name="ph:chat-circle-duotone"
+                          name="solar:chat-dots-linear"
                           class="me-2 block size-5"
                         />
                       </template>
@@ -173,7 +180,7 @@ const { data, pending, error, refresh } = await useFetch(
                     >
                       <template #start>
                         <Icon
-                          name="ph:share-duotone"
+                          name="solar:share-linear"
                           class="me-2 block size-5"
                         />
                       </template>
@@ -186,7 +193,7 @@ const { data, pending, error, refresh } = await useFetch(
                     >
                       <template #start>
                         <Icon
-                          name="ph:trash-duotone"
+                          name="solar:trash-bin-minimalistic-linear"
                           class="me-2 block size-5"
                         />
                       </template>
@@ -203,6 +210,7 @@ const { data, pending, error, refresh } = await useFetch(
             :total="data?.total ?? 0"
             :items-per-page="perPage"
             rounded="lg"
+            class="w-full"
           />
         </div>
       </div>
