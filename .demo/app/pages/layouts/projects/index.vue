@@ -88,7 +88,7 @@ const { data, pending, error, refresh } = await useFetch(
               </h4>
             </div>
             <div
-              class="ltablet:grid-cols-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+              class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
             >
               <TransitionGroup
                 enter-active-class="transform-gpu"

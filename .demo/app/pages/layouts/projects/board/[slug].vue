@@ -180,20 +180,20 @@ function onDrop(column: ColumnContent, dropResult: any) {
         <BaseTooltip content="Project details">
           <BaseButton
             :to="`/layouts/projects/details/${slug}`"
-            size="icon-md"
-            rounded="lg"
+            size="icon-sm"
+            rounded="full"
           >
-            <Icon name="lucide:layout-template" class="size-4" />
+            <Icon name="solar:widget-4-linear" class="size-4" />
           </BaseButton>
         </BaseTooltip>
-        <BaseTooltip content="Project details">
-          <BaseButton rounded="full">
+        <BaseTooltip content="New Task">
+          <BaseButton size="icon-sm" rounded="full" variant="primary">
             <Icon name="lucide:plus" class="size-4" />
           </BaseButton>
         </BaseTooltip>
       </div>
     </div>
-    <div class="flex h-[calc(100vh_-_133px)] grow space-x-6 overflow-auto pt-2">
+    <div class="flex h-[calc(100vh_-_128px)] grow space-x-6 overflow-auto pt-2">
       <!-- Column -->
       <div
         v-for="column in board"
@@ -277,7 +277,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                         size="xxs"
                         class="shrink-0"
                       />
-                      <BaseText size="xs" class="text-muted-400">
+                      <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
                         {{
                           task.assignee.tooltip
                         }}
@@ -290,7 +290,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                           task.checklist.length > 1 ? 's' : ''
                         } in checklist`"
                       >
-                        <Icon name="lucide:check-circle" class="size-4" />
+                        <Icon name="solar:check-square-linear" class="size-4" />
                       </BaseTooltip>
                       <BaseTooltip
                         v-if="task.files.length > 0"
@@ -298,7 +298,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                           task.files.length > 1 ? 's' : ''
                         } uploaded`"
                       >
-                        <Icon name="lucide:file" class="size-4" />
+                        <Icon name="solar:file-linear" class="size-4" />
                       </BaseTooltip>
                       <BaseTooltip
                         v-if="task.comments.length > 0"
@@ -306,7 +306,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                           task.comments.length > 1 ? 's' : ''
                         }`"
                       >
-                        <Icon name="lucide:message-circle" class="size-4" />
+                        <Icon name="solar:chat-dots-linear" class="size-4" />
                       </BaseTooltip>
                     </div>
                   </div>
@@ -318,21 +318,21 @@ function onDrop(column: ColumnContent, dropResult: any) {
               <div
                 class="text-muted-400 mt-10 flex items-center justify-center"
               >
-                <Icon name="ph:kanban-thin" class="size-12" />
+                <Icon name="solar:widget-6-linear" class="size-8" />
               </div>
               <div class="mt-2 text-center">
                 <BaseHeading
                   as="h4"
                   size="md"
-                  weight="light"
-                  class="mb-1"
+                  weight="medium"
+                  class="mb-1 text-muted-900 dark:text-muted-100"
                 >
                   <span>Nothing to show</span>
                 </BaseHeading>
                 <BaseParagraph
                   size="xs"
                   lead="tight"
-                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[200px] font-sans!"
+                  class="text-muted-500 dark:text-muted-400 mx-auto max-w-[230px] font-sans!"
                 >
                   <span>There are no pending tasks to show in here for now.</span>
                 </BaseParagraph>

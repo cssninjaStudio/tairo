@@ -88,7 +88,7 @@ const { data, pending, error, refresh } = await useFetch(
               </h4>
             </div>
             <div
-              class="ltablet:grid-cols-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+              class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
             >
               <TransitionGroup
                 enter-active-class="transform-gpu"
@@ -157,7 +157,7 @@ const { data, pending, error, refresh } = await useFetch(
                           </span>
                         </div>
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:users-duotone" class="size-4" />
+                          <Icon name="solar:users-group-rounded-linear" class="size-4" />
                           <span class="font-sans">{{ item.team.length }}</span>
                         </div>
                       </div>
@@ -275,7 +275,7 @@ const { data, pending, error, refresh } = await useFetch(
                             </span>
                           </div>
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:users-duotone" class="size-4" />
+                            <Icon name="solar:users-group-rounded-linear" class="size-4" />
                             <span class="font-sans">
                               {{ item.team.length }}
                             </span>

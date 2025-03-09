@@ -54,7 +54,7 @@ const { data, pending, error, refresh } = await useFetch(
         />
       </template>
       <template #right>
-        <BaseCard rounded="lg" class="min-w-[340px]">
+        <BaseCard rounded="lg" class="min-w-[340px] w-full sm:w-auto">
           <div class="grid grid-cols-4 p-4">
             <div class="relative flex flex-col text-center">
               <span

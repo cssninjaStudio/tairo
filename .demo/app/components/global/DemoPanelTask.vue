@@ -22,26 +22,33 @@ const commentArea = ref('')
 
 <template>
   <div
-    class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border bg-white"
+    class="border-muted-200 dark:border-muted-800/80 dark:bg-muted-950 border bg-white"
   >
     <FocusScope trapped loop>
-      <div class="flex h-16 w-full items-center justify-between px-10">
-        <h2
-          class="font-heading text-muted-700 text-lg font-semibold dark:text-white"
-        >
-          Task Details
-        </h2>
+      <div
+        class="border-muted-200 dark:border-muted-800/80 flex h-20 w-full items-center justify-between border-b px-6"
+      >
+        <div>
+          <BaseHeading weight="medium">
+            Task Details
+          </BaseHeading>
+          <BaseParagraph size="sm" class="text-muted-400">
+            Task details and information
+          </BaseParagraph>
+        </div>
+
+        <!-- Close button -->
         <button
           type="button"
-          class="text-muted-400 focus-visible:nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
+          class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-8 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
           @click="close"
         >
-          <Icon name="feather:chevron-right" class="size-6" />
+          <Icon name="lucide:arrow-right" class="size-4" />
         </button>
       </div>
 
       <div
-        class="nui-slimscroll relative h-[calc(100vh_-_64px)] w-full overflow-y-auto px-10 py-5"
+        class="nui-slimscroll relative h-[calc(100vh_-_80px)] w-full overflow-y-auto px-6 py-5"
       >
         <div>
           <div class="mb-4 flex items-center justify-between">
@@ -55,7 +62,7 @@ const commentArea = ref('')
                 </BaseButton>
               </BaseTooltip>
               <h4
-                class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
               >
                 Overview
               </h4>
@@ -79,7 +86,7 @@ const commentArea = ref('')
               <span>Task #{{ props.task?.id }}</span>
             </BaseTag>
           </div>
-          <div class="border-muted-200 dark:border-muted-700 border-b pb-6">
+          <div class="border-muted-200 dark:border-muted-800/80 border-b pb-6">
             <BaseHeading
               as="h3"
               size="md"
@@ -101,7 +108,7 @@ const commentArea = ref('')
                 <div>
                   <BaseText
                     size="xs"
-                    class="text-muted-400"
+                    class="text-muted-600 dark:text-muted-400"
                     lead="none"
                   >
                     Assigned to
@@ -131,8 +138,8 @@ const commentArea = ref('')
               </div>
             </div>
           </div>
-          <div class="border-muted-200 dark:border-muted-700 border-b py-6">
-            <h4 class="text-muted-400 font-sans text-xs font-semibold uppercase">
+          <div class="border-muted-200 dark:border-muted-800/80 border-b py-6">
+            <h4 class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase">
               Checklist
             </h4>
             <div v-if="props.task?.checklist.length === 0">
@@ -167,15 +174,15 @@ const commentArea = ref('')
                   <BaseCheckbox
                     v-model="item.done"
                     class="shrink-0"
-                    variant="primary"
+                    variant="default"
                     :label="item.text"
                   />
                 </div>
               </div>
             </div>
           </div>
-          <div class="border-muted-200 dark:border-muted-700 border-b py-6">
-            <h4 class="text-muted-400 font-sans text-xs font-semibold uppercase">
+          <div class="border-muted-200 dark:border-muted-800/80 border-b py-6">
+            <h4 class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase">
               Attached Files ({{ props.task?.files.length }})
             </h4>
             <div v-if="props.task?.files.length === 0">
@@ -241,7 +248,7 @@ const commentArea = ref('')
             </div>
           </div>
           <div class="py-6">
-            <h4 class="text-muted-400 font-sans text-xs font-semibold uppercase">
+            <h4 class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase">
               Comments ({{ props.task?.comments.length }})
             </h4>
             <div v-if="props.task?.comments.length === 0">
