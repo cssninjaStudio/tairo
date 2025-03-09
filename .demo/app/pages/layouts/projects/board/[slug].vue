@@ -3,7 +3,7 @@ import { Container, Draggable } from 'vue3-smooth-dnd'
 
 definePageMeta({
   title: 'Project Board',
-  layout: 'empty',
+  // layout: 'empty',
   preview: [
     {
       title: 'Project board',
@@ -94,22 +94,22 @@ if (tasks.value) {
   for (const task of tasks.value) {
     switch (task.status) {
       case 0:
-        columns.new.tasks.push(task)
+        columns.new?.tasks.push(task)
         break
       case 1:
-        columns.inProgress.tasks.push(task)
+        columns.inProgress?.tasks.push(task)
         break
       case 2:
-        columns.blocked.tasks.push(task)
+        columns.blocked?.tasks.push(task)
         break
       case 3:
-        columns.onHold.tasks.push(task)
+        columns.onHold?.tasks.push(task)
         break
       case 4:
-        columns.inReview.tasks.push(task)
+        columns.inReview?.tasks.push(task)
         break
       case 5:
-        columns.done.tasks.push(task)
+        columns.done?.tasks.push(task)
         break
     }
   }
@@ -155,10 +155,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
 </script>
 
 <template>
-  <TairoSidebarLayout
-    horizontal-scroll
-    class="bg-muted-100 dark:bg-muted-900 h-screen w-full"
-  >
+  <div class="ps-4 md:ps-6 lg:ps-8">
     <div
       v-if="data?.project !== undefined"
       class="flex h-12 items-center justify-between pe-4 xl:pe-10"
@@ -369,7 +366,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
       </div>
       <div class="w-6 shrink-0" />
     </div>
-  </TairoSidebarLayout>
+  </div>
 </template>
 
 <style>

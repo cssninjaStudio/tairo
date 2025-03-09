@@ -43,7 +43,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -151,7 +151,7 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                       <div class="text-muted-400 flex items-center gap-4">
                         <div class="flex items-center gap-1 text-sm">
-                          <Icon name="ph:paperclip-duotone" class="size-4" />
+                          <Icon name="solar:paperclip-linear" class="size-4" />
                           <span class="font-sans">
                             {{ item.files.length }}
                           </span>
@@ -269,7 +269,7 @@ const { data, pending, error, refresh } = await useFetch(
                         </div>
                         <div class="text-muted-400 flex items-center gap-4">
                           <div class="flex items-center gap-1 text-sm">
-                            <Icon name="ph:paperclip-duotone" class="size-4" />
+                            <Icon name="solar:paperclip-linear" class="size-4" />
                             <span class="font-sans">
                               {{ item.files.length }}
                             </span>
