@@ -55,7 +55,7 @@ const daySpentProgress = computed(() => {
                 as="h4"
                 size="sm"
                 weight="medium"
-                class="text-muted-800 dark:text-muted-100"
+                class="text-muted-900 dark:text-muted-100"
               >
                 {{ card.name }}
               </BaseHeading>
@@ -68,7 +68,7 @@ const daySpentProgress = computed(() => {
                 as="h4"
                 size="sm"
                 weight="medium"
-                class="text-muted-800 dark:text-muted-100"
+                class="text-muted-900 dark:text-muted-100"
               >
                 ${{ card.daySpent.toFixed(2) }}
               </BaseHeading>
@@ -81,6 +81,7 @@ const daySpentProgress = computed(() => {
           <BaseProgress
             :model-value="daySpentProgress"
             size="xs"
+            variant="primary"
             class="my-2"
           />
 

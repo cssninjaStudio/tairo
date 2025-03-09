@@ -233,7 +233,7 @@ const onSubmit = handleSubmit(
                   <BaseHeading
                     size="xl"
                     weight="medium"
-                    class="text-muted-800 mb-8 dark:text-white"
+                    class="text-muted-900 mb-8 dark:text-white"
                   >
                     New Credit Card
                   </BaseHeading>
@@ -268,11 +268,7 @@ const onSubmit = handleSubmit(
                         >
                           <span class="flex w-full items-center gap-3 text-start">
                             <TairoLogo v-if="values?.account" class="text-primary-500 size-8" />
-                            <Icon
-                              v-else
-                              name="lucide:wallet"
-                              class="text-muted-500 mx-1 my-2 size-6"
-                            />
+                            <TairoLogo v-else class="text-muted-300 dark:text-muted-800 size-8" />
                             <div v-if="values?.account">
                               <BaseText
                                 size="sm"
@@ -302,6 +298,7 @@ const onSubmit = handleSubmit(
                         :key="account.id"
                         :title="`${account.type} ${account.label}`"
                         :text="`$${account.balance.toFixed(2)}`"
+                        class="w-full"
                         @click="setFieldValue('account', account)"
                       >
                         <template #start>

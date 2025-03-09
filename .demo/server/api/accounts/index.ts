@@ -43,9 +43,9 @@ async function getDemoData() {
       number: '**** 4897',
       balance: 9543.12,
       owner: {
-        name: 'Maya Rosselini',
+        name: 'Kendra Wilson',
         avatar: '/img/avatars/10.svg',
-        slug: 'maya-rosselini',
+        slug: 'kendra-wilson',
       },
       details: {
         routingNumber: '856854851',
@@ -97,9 +97,9 @@ async function getDemoData() {
       number: '**** 6279',
       balance: 4653.97,
       owner: {
-        name: 'Maya Rosselini',
-        avatar: '/img/avatars/7.svg',
-        slug: 'maya-rosselini',
+        name: 'Kendra Wilson',
+        avatar: '/img/avatars/10.svg',
+        slug: 'kendra-wilson',
       },
       details: {
         routingNumber: '856854851',

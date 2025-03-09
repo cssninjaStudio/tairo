@@ -14,7 +14,6 @@ onKeyStroke('Escape', close)
 const demoAreaBalance = reactive(useDemoAreaBalance())
 
 function useDemoAreaBalance() {
-  const { primary } = useTailwindColors()
   const type = 'area'
   const height = 250
 
@@ -34,7 +33,18 @@ function useDemoAreaBalance() {
       width: [2, 2, 2],
       curve: 'smooth',
     },
-    colors: [primary.value],
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'light',
+        type: 'vertical',
+        gradientToColors: ['var(--color-chart-gradient)'],
+        shadeIntensity: 0,
+        opacityFrom: 0.6,
+        opacityTo: 0.75,
+      },
+    },
+    colors: ['var(--color-chart-base)'],
     legend: {
       show: false,
       position: 'top',
@@ -128,23 +138,23 @@ function useDemoAreaBalance() {
               as="h4"
               size="lg"
               weight="medium"
-              class="text-muted-800 dark:text-muted-100 capitalize"
+              class="text-muted-900 dark:text-muted-100 capitalize"
             >
               {{ props.account.type }} {{ props.account.number }}
             </BaseHeading>
-            <BaseParagraph size="sm" class="text-muted-400">
+            <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
               {{ account.owner.name }}
             </BaseParagraph>
           </div>
           <!-- Balance -->
           <div class="py-6 pe-4 text-end">
-            <BaseParagraph size="xs" class="text-muted-400 mb-1">
+            <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 mb-1">
               Account balance
             </BaseParagraph>
             <BaseParagraph
               size="2xl"
               weight="medium"
-              class="text-muted-800 dark:text-muted-100 mb-1"
+              class="text-muted-900 dark:text-muted-100 mb-1"
             >
               ${{ account.balance.toFixed(2) }}
             </BaseParagraph>

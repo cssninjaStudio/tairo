@@ -16,23 +16,23 @@ const isRules = computed(() => {
 
 <template>
   <!-- Wrapper -->
-  <div class="w-full pb-24">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="flex items-center justify-end py-6">
+    <div class="flex items-center justify-end pb-6">
       <!-- Buttons -->
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
-          rounded="full"
+          rounded="md"
           size="sm"
         >
-          <Icon name="lucide:building" class="size-4" />
+          <Icon name="lucide:plus" class="size-4" />
           <span>New Account</span>
         </BaseButton>
         <BaseButton
-          rounded="full"
+          rounded="md"
           size="sm"
         >
-          <Icon name="lucide:link" class="size-4" />
+          <Icon name="solar:link-circle-linear" class="size-4" />
           <span>Link Account</span>
         </BaseButton>
       </div>
@@ -43,7 +43,7 @@ const isRules = computed(() => {
       <!-- Tabs -->
       <div class="flex items-center justify-between overflow-hidden">
         <div
-          class="border-muted-200 dark:border-muted-800 xs:overflow-x-auto flex grow gap-x-6 border-b font-sans"
+          class="border-muted-200 dark:border-muted-800 xs:overflow-x-auto flex grow gap-x-6 border-b font-sans text-sm"
         >
           <NuxtLink
             to="/layouts/accounts"

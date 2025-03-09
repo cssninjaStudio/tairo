@@ -2,7 +2,7 @@
 definePageMeta({
   title: 'Linked Accounts',
   preview: {
-    title: 'Linked Accounts',
+    title: 'Linked accounts',
     description: 'For account management',
     categories: ['layouts', 'lists'],
     src: '/img/screens/layouts-accounts-linked.png',

@@ -57,7 +57,7 @@ const scheduled = computed(() => {
       <!-- Needs approval -->
       <div class="w-full">
         <h3
-          class="font-heading text-muted-800 dark:text-muted-200 mb-5 text-xl"
+          class="font-heading text-muted-900 dark:text-white mb-5 text-xl"
         >
           Needs approval
         </h3>
@@ -128,7 +128,7 @@ const scheduled = computed(() => {
       <!-- Scheduled -->
       <div class="w-full">
         <h3
-          class="font-heading text-muted-800 dark:text-muted-200 mb-5 text-xl"
+          class="font-heading text-muted-900 dark:text-white mb-5 text-xl"
         >
           Scheduled
         </h3>

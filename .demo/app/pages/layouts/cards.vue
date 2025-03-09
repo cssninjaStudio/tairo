@@ -49,7 +49,7 @@ function openCardPanel(id: number, cards: any) {
 </script>
 
 <template>
-  <div class="w-full pb-24">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div class="flex items-center justify-between py-6">
       <TairoInput
@@ -149,7 +149,7 @@ function openCardPanel(id: number, cards: any) {
               <div
                 class="text-muted-500 dark:text-muted-300 me-5 flex items-center gap-2 md:me-0"
               >
-                <Icon name="lucide:credit-card" class="size-5" />
+                <Icon name="solar:card-linear" class="size-5" />
                 <BaseText
                   size="sm"
                   weight="medium"

@@ -48,7 +48,7 @@ const { data, pending, error, refresh } = await useFetch(
   <div>
     <!-- Placeholder -->
     <div v-if="data?.data?.length === 0" class="mb-8">
-      <p class="font-heading text-muted-500 dark:text-muted-500 text-sm">
+      <p class="font-heading text-muted-500 dark:text-muted-400 text-sm">
         You don't have any active rules
       </p>
     </div>
@@ -61,7 +61,7 @@ const { data, pending, error, refresh } = await useFetch(
       class="bg-muted-200 dark:bg-muted-800 w-full max-w-3xl rounded-xl px-10 py-8"
     >
       <div class="space-y-4">
-        <h4 class="font-heading text-muted-500 dark:text-muted-500 text-sm">
+        <h4 class="font-heading text-muted-500 dark:text-white font-medium text-sm">
           Add a rule
         </h4>
         <!-- Rule -->
@@ -76,8 +76,8 @@ const { data, pending, error, refresh } = await useFetch(
                 class="text-muted-600 dark:text-muted-400 group-hover:text-muted-700 dark:group-hover:text-muted-200 size-4 transition-colors duration-300"
               />
               <Icon
-                name="ph:diamonds-four-duotone"
-                class="iconify text-muted-400 group-hover:text-primary-500 size-6 transition-colors duration-300"
+                name="solar:widget-6-linear"
+                class="iconify text-muted-400 group-hover:text-primary-500 size-5 transition-colors duration-300"
               />
               <BaseText
                 size="sm"
@@ -91,7 +91,7 @@ const { data, pending, error, refresh } = await useFetch(
             <div class="flex size-full flex-col justify-center">
               <BaseParagraph
                 size="sm"
-                class="text-muted-500 dark:text-muted-500"
+                class="text-muted-500 dark:text-muted-300"
               >
                 Keep an account at a target balance by moving funds to or from
                 savings each day.
@@ -111,8 +111,8 @@ const { data, pending, error, refresh } = await useFetch(
                 class="text-muted-600 dark:text-muted-400 group-hover:text-muted-700 dark:group-hover:text-muted-200 size-4 transition-colors duration-300"
               />
               <Icon
-                name="ph:compass-duotone"
-                class="iconify text-muted-400 group-hover:text-primary-500 size-6 transition-colors duration-300"
+                name="solar:compass-square-linear"
+                class="iconify text-muted-400 group-hover:text-primary-500 size-5 transition-colors duration-300"
               />
               <BaseText
                 size="sm"
@@ -126,7 +126,7 @@ const { data, pending, error, refresh } = await useFetch(
             <div class="flex size-full flex-col justify-center">
               <BaseParagraph
                 size="sm"
-                class="text-muted-500 dark:text-muted-500"
+                class="text-muted-500 dark:text-muted-300"
               >
                 Keep an account at $0 by moving incoming funds to savings after
                 each transaction.

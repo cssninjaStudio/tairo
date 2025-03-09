@@ -66,23 +66,25 @@ const companies = computed(() => {
               <Icon name="lucide:plus" class="size-4" />
             </BaseButton>
           </BaseTooltip>
-          <h3 class="font-heading text-muted-800 dark:text-muted-200 text-xl">
+          <h3 class="font-heading text-muted-900 dark:text-white text-xl">
             Contacts
           </h3>
-          <TairoInput
-            v-model="filter"
-            icon="lucide:search"
-            rounded="lg"
-            placeholder="Search contacts..."
-            class="ms-auto"
-          />
+          <div class="ms-auto">
+            <TairoInput
+              v-model="filter"
+              icon="lucide:search"
+              rounded="lg"
+              placeholder="Search contacts..."
+              class="ms-auto"
+            />
+          </div>
         </div>
 
         <div class="py-6">
           <BaseParagraph
-            size="sm"
+            size="xs"
             weight="medium"
-            class="text-muted-400 mb-4 uppercase"
+            class="text-muted-600 dark:text-muted-400 mb-4 uppercase"
           >
             People
           </BaseParagraph>
@@ -96,7 +98,7 @@ const companies = computed(() => {
           />
 
           <!-- People -->
-          <div v-else class="grid gap-5 md:grid-cols-3">
+          <div v-else class="grid gap-4 md:grid-cols-3 2xl:grid-cols-4">
             <!-- Grid item -->
             <NuxtLink
               v-for="item in people"
@@ -141,9 +143,9 @@ const companies = computed(() => {
 
         <div class="py-6">
           <BaseParagraph
-            size="sm"
+            size="xs"
             weight="medium"
-            class="text-muted-400 mb-4 uppercase"
+            class="text-muted-600 dark:text-muted-400 mb-4 uppercase"
           >
             Companies
           </BaseParagraph>
@@ -157,7 +159,7 @@ const companies = computed(() => {
           />
 
           <!-- Companies -->
-          <div v-else class="grid gap-5 md:grid-cols-3">
+          <div v-else class="grid gap-4 md:grid-cols-3 2xl:grid-cols-4">
             <!-- Grid item -->
             <NuxtLink
               v-for="item in companies"
