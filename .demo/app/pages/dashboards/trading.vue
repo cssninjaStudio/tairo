@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 definePageMeta({
   title: 'Trading',
   preview: {
@@ -107,96 +109,91 @@ function setAccount(account: any) {
 const areaBtcPrice = reactive(useStockPrice())
 
 function useStockPrice() {
-  const type = 'area'
-  const height = 390
+  const series = shallowRef(selectedBank.value!.series)
 
-  const options = {
-    chart: {
-      zoom: {
+  return defineApexchartsProps({
+    type: 'area',
+    height: 390,
+    series,
+    options: {
+      chart: {
+        zoom: {
+          enabled: false,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      dataLabels: {
         enabled: false,
       },
-      toolbar: {
+      stroke: {
+        width: [2, 2, 2],
+        curve: 'smooth',
+      },
+      colors: ['var(--color-chart-base)'],
+      legend: {
         show: false,
+        position: 'top',
       },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      width: [2, 2, 2],
-      curve: 'smooth',
-    },
-    colors: ['var(--color-chart-base)'],
-    legend: {
-      show: false,
-      position: 'top',
-    },
-    grid: {
-      show: false,
-      padding: {
-        left: -10,
-        right: 0,
-        bottom: 10,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-      categories: [
-        '2023-01-01T00:00:00.000Z',
-        '2023-02-01T00:00:00.000Z',
-        '2023-03-01T00:00:00.000Z',
-        '2023-04-01T00:00:00.000Z',
-        '2023-05-01T00:00:00.000Z',
-        '2023-06-01T00:00:00.000Z',
-        '2023-07-01T00:00:00.000Z',
-        '2023-08-01T00:00:00.000Z',
-        '2023-09-01T00:00:00.000Z',
-        '2023-10-01T00:00:00.000Z',
-        '2023-11-01T00:00:00.000Z',
-        '2023-12-01T00:00:00.000Z',
-      ],
-    },
-    yaxis: {
-      labels: {
+      grid: {
         show: false,
-        offsetX: -15,
+        padding: {
+          left: -10,
+          right: 0,
+          bottom: 10,
+        },
       },
-      axisBorder: {
-        show: false,
+      xaxis: {
+        type: 'datetime',
+        categories: [
+          '2023-01-01T00:00:00.000Z',
+          '2023-02-01T00:00:00.000Z',
+          '2023-03-01T00:00:00.000Z',
+          '2023-04-01T00:00:00.000Z',
+          '2023-05-01T00:00:00.000Z',
+          '2023-06-01T00:00:00.000Z',
+          '2023-07-01T00:00:00.000Z',
+          '2023-08-01T00:00:00.000Z',
+          '2023-09-01T00:00:00.000Z',
+          '2023-10-01T00:00:00.000Z',
+          '2023-11-01T00:00:00.000Z',
+          '2023-12-01T00:00:00.000Z',
+        ],
       },
-      axisTicks: {
-        show: false,
+      yaxis: {
+        labels: {
+          show: false,
+          offsetX: -15,
+        },
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+      },
+      tooltip: {
+        x: {
+          format: 'dd/MM/yy HH:mm',
+        },
+        y: {
+          formatter: value => formatPrice(value),
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.75,
+        },
       },
     },
-    tooltip: {
-      x: {
-        format: 'dd/MM/yy HH:mm',
-      },
-      y: {
-        formatter: (val: number) => `$${val}`,
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        gradientToColors: ['var(--color-chart-gradient)'],
-        shadeIntensity: 0,
-        opacityFrom: 0.6,
-        opacityTo: 0.75,
-      },
-    },
-  }
-
-  const series = ref(selectedBank.value!.series)
-
-  return {
-    type,
-    height,
-    options,
-    series,
-  }
+  })
 }
 </script>
 

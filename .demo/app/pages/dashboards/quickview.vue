@@ -86,7 +86,7 @@ definePageMeta({
                       lead="none"
                       class="text-muted-800 dark:text-muted-100"
                     >
-                      {{ asDollar(1234.15) }}
+                      {{ formatPrice(1234.15) }}
                     </BaseText>
                   </div>
                 </NuxtLink>
@@ -124,7 +124,7 @@ definePageMeta({
                       lead="none"
                       class="text-muted-800 dark:text-muted-100"
                     >
-                      {{ asDollar(249.99) }}
+                      {{ formatPrice(249.99) }}
                     </BaseText>
                   </div>
                 </NuxtLink>
@@ -186,7 +186,7 @@ definePageMeta({
                       lead="none"
                       class="text-muted-900 dark:text-muted-100"
                     >
-                      - {{ asDollar(938.39) }}
+                      - {{ formatPrice(938.39) }}
                     </BaseText>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ definePageMeta({
                       lead="none"
                       class="text-muted-900 dark:text-muted-100"
                     >
-                      - {{ asDollar(1234.15) }}
+                      - {{ formatPrice(1234.15) }}
                     </BaseText>
                   </div>
                 </div>
@@ -278,7 +278,7 @@ definePageMeta({
                       lead="none"
                       class="text-muted-900 dark:text-muted-100"
                     >
-                      - {{ asDollar(23.69) }}
+                      - {{ formatPrice(23.69) }}
                     </BaseText>
                   </div>
                 </div>
@@ -324,7 +324,7 @@ definePageMeta({
                       lead="none"
                       class="text-muted-900 dark:text-muted-100"
                     >
-                      + {{ asDollar(2399.99) }}
+                      + {{ formatPrice(2399.99) }}
                     </BaseText>
                   </div>
                 </div>
@@ -370,7 +370,7 @@ definePageMeta({
                       lead="none"
                       class="text-muted-900 dark:text-muted-100"
                     >
-                      - {{ asDollar(49.99) }}
+                      - {{ formatPrice(49.99) }}
                     </BaseText>
                   </div>
                 </div>
@@ -393,13 +393,11 @@ definePageMeta({
               size="3xl"
               class="text-muted-800 dark:text-muted-100"
             >
-              {{ asDollar(687.22) }}
+              {{ formatPrice(687.22) }}
             </BaseHeading>
           </div>
           <div class="pb-6">
-            <div>
-              <DemoChartAreaBalance />
-            </div>
+            <DemoChartAreaBalance />
           </div>
           <div class="flex flex-col gap-6">
             <!-- Account -->
@@ -413,7 +411,7 @@ definePageMeta({
                 lead="none"
                 class="text-muted-800 dark:text-muted-100"
               >
-                {{ asDollar(9543.13) }}
+                {{ formatPrice(9543.13) }}
               </BaseText>
               <div
                 class="divide-muted-300 dark:divide-muted-800 ms-auto flex items-center divide-x"
@@ -442,7 +440,7 @@ definePageMeta({
                 lead="none"
                 class="text-muted-800 dark:text-muted-100"
               >
-                {{ asDollar(2816.27) }}
+                {{ formatPrice(2816.27) }}
               </BaseText>
               <div
                 class="divide-muted-300 dark:divide-muted-800 ms-auto flex items-center divide-x"
@@ -479,9 +477,9 @@ definePageMeta({
                   size="sm"
                   class="text-mute-800 dark:text-muted-100"
                 >
-                  {{ asDollar(950) }} /
+                  {{ formatPrice(950) }} /
                   <span class="font-semibold">{{
-                    asDollar(2500)
+                    formatPrice(2500)
                   }}</span>
                 </BaseHeading>
                 <BaseParagraph
@@ -516,9 +514,9 @@ definePageMeta({
                   size="sm"
                   class="text-mute-800 dark:text-muted-100"
                 >
-                  {{ asDollar(231.12) }} /
+                  {{ formatPrice(231.12) }} /
                   <span class="font-semibold">{{
-                    asDollar(5000)
+                    formatPrice(5000)
                   }}</span>
                 </BaseHeading>
                 <BaseParagraph

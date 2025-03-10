@@ -1,44 +1,41 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoRadial = reactive(useDemoRadial())
 
 function useDemoRadial() {
-  const height = 265
-  const type = 'radialBar'
+  const series = shallowRef([70])
 
-  const options = {
-    title: {
-      text: '',
-    },
-    chart: {
-      toolbar: {
-        show: false,
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 265,
+    series,
+    options: {
+      title: {
+        text: '',
       },
-    },
-    colors: ['var(--color-chart-base)'],
-    plotOptions: {
-      radialBar: {
-        hollow: {
-          size: '70%',
+      chart: {
+        toolbar: {
+          show: false,
         },
-        dataLabels: {
-          value: {
-            fontSize: '16px',
-            offsetY: 5,
+      },
+      colors: ['var(--color-chart-base)'],
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            size: '70%',
+          },
+          dataLabels: {
+            value: {
+              fontSize: '16px',
+              offsetY: 5,
+            },
           },
         },
       },
+      labels: ['Power'],
     },
-    labels: ['Power'],
-  }
-
-  const series = shallowRef([70])
-
-  return {
-    type,
-    height,
-    options,
-    series,
-  }
+  })
 }
 </script>
 

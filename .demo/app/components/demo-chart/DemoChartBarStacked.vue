@@ -1,66 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoBarStacked = reactive(useDemoBarStacked())
 
 function useDemoBarStacked() {
-  const type = 'bar'
-  const height = 280
-
-  const options = {
-    chart: {
-      stacked: true,
-      toolbar: {
-        show: false,
-      },
-      zoom: {
-        enabled: true,
-      },
-    },
-    dataLabels: {
-      style: {
-        colors: ['#fff'],
-        fontWeight: 300,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)'],
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          legend: {
-            position: 'top',
-          },
-        },
-      },
-    ],
-    plotOptions: {
-      bar: {
-        horizontal: false,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-      categories: [
-        '01/01/2011 GMT',
-        '01/02/2011 GMT',
-        '01/03/2011 GMT',
-        '01/04/2011 GMT',
-        '01/05/2011 GMT',
-        '01/06/2011 GMT',
-      ],
-    },
-    title: {
-      text: '',
-      align: 'left',
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-    fill: {
-      opacity: 1,
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Desktops',
@@ -80,12 +23,66 @@ function useDemoBarStacked() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'bar',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        stacked: true,
+        toolbar: {
+          show: false,
+        },
+        zoom: {
+          enabled: true,
+        },
+      },
+      dataLabels: {
+        style: {
+          colors: ['#fff'],
+          fontWeight: 300,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)'],
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            legend: {
+              position: 'top',
+            },
+          },
+        },
+      ],
+      plotOptions: {
+        bar: {
+          horizontal: false,
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+        categories: [
+          '01/01/2011 GMT',
+          '01/02/2011 GMT',
+          '01/03/2011 GMT',
+          '01/04/2011 GMT',
+          '01/05/2011 GMT',
+          '01/06/2011 GMT',
+        ],
+      },
+      title: {
+        text: '',
+        align: 'left',
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+      fill: {
+        opacity: 1,
+      },
+    },
+  })
 }
 </script>
 

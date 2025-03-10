@@ -1,68 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoBarMulti = reactive(useDemoBarMulti())
 
 function useDemoBarMulti() {
-  const type = 'bar'
-  const height = 280
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: '55%',
-        endingShape: 'rounded',
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-violet-200)', 'var(--color-violet-800)'],
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      show: true,
-      width: 2,
-      colors: ['transparent'],
-    },
-    xaxis: {
-      categories: [
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-      ],
-    },
-    yaxis: {
-      title: {
-        text: 'Amount',
-      },
-    },
-    fill: {
-      opacity: 1,
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-    title: {
-      text: '',
-      align: 'left',
-    },
-    tooltip: {
-      y: {
-        formatter: asDollar,
-      },
-    },
-  }
-
   const series = ref([
     {
       name: 'Net Profit',
@@ -78,12 +19,68 @@ function useDemoBarMulti() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'bar',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '55%',
+          // endingShape: 'rounded',
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-violet-200)', 'var(--color-violet-800)'],
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent'],
+      },
+      xaxis: {
+        categories: [
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+        ],
+      },
+      yaxis: {
+        title: {
+          text: 'Amount',
+        },
+      },
+      fill: {
+        opacity: 1,
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+      title: {
+        text: '',
+        align: 'left',
+      },
+      tooltip: {
+        y: {
+          formatter: value => formatPrice(value),
+        },
+      },
+    },
+  })
 }
 </script>
 

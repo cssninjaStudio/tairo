@@ -1,25 +1,10 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoRadar = reactive(useDemoRadar())
 
 function useDemoRadar() {
   const { primary, success, info, danger } = useTailwindColors()
-  const height = 350
-  const type = 'radar'
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: [primary.value, success.value, info.value, danger.value],
-    title: {
-      text: '',
-    },
-    xaxis: {
-      categories: ['January', 'February', 'March', 'April', 'May', 'June'],
-    },
-  }
 
   const series = shallowRef([
     {
@@ -28,12 +13,25 @@ function useDemoRadar() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'radar',
+    height: 350,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: [primary.value, success.value, info.value, danger.value],
+      title: {
+        text: '',
+      },
+      xaxis: {
+        categories: ['January', 'February', 'March', 'April', 'May', 'June'],
+      },
+    },
+  })
 }
 </script>
 

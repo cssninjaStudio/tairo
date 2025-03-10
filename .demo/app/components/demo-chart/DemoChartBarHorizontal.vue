@@ -1,45 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoBarHorizontal = reactive(useDemoBarHorizontal())
 
 function useDemoBarHorizontal() {
-  const type = 'bar'
-  const height = 280
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-    plotOptions: {
-      bar: {
-        horizontal: true,
-      },
-    },
-    title: {
-      text: '',
-      align: 'left',
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    xaxis: {
-      categories: [
-        'South Korea',
-        'Canada',
-        'United Kingdom',
-        'Netherlands',
-        'Italy',
-        'France',
-        'Japan',
-        'United States',
-        'China',
-        'Germany',
-      ],
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Spaceships',
@@ -47,12 +11,45 @@ function useDemoBarHorizontal() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'bar',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+      plotOptions: {
+        bar: {
+          horizontal: true,
+        },
+      },
+      title: {
+        text: '',
+        align: 'left',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      xaxis: {
+        categories: [
+          'South Korea',
+          'Canada',
+          'United Kingdom',
+          'Netherlands',
+          'Italy',
+          'France',
+          'Japan',
+          'United States',
+          'China',
+          'Germany',
+        ],
+      },
+    },
+  })
 }
 </script>
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 definePageMeta({
   title: 'My Projects',
   preview: {
@@ -15,57 +17,6 @@ const areaTaskCompletion = reactive(useAreaTaskCompletion())
 const barTeamEfficiency = reactive(useBarTeamEfficiency())
 
 function useAreaTaskCompletion() {
-  const type = 'area'
-  const height = 380
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-indigo-600)', 'var(--color-amber-600)'],
-    legend: {
-      show: false,
-      position: 'top',
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      width: [2, 2, 2],
-      curve: 'smooth',
-    },
-    xaxis: {
-      type: 'datetime',
-      categories: [
-        '2024-09-19T00:00:00.000Z',
-        '2024-09-20T01:30:00.000Z',
-        '2024-09-21T02:30:00.000Z',
-        '2024-09-22T03:30:00.000Z',
-        '2024-09-23T04:30:00.000Z',
-        '2024-09-24T05:30:00.000Z',
-        '2024-09-25T06:30:00.000Z',
-      ],
-    },
-    tooltip: {
-      x: {
-        format: 'dd/MM/yy HH:mm',
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        gradientToColors: ['var(--color-chart-gradient)'],
-        shadeIntensity: 0,
-        opacityFrom: 0.6,
-        opacityTo: 0.1,
-      },
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Pending',
@@ -81,76 +32,61 @@ function useAreaTaskCompletion() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 380,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-indigo-600)', 'var(--color-amber-600)'],
+      legend: {
+        show: false,
+        position: 'top',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: [2, 2, 2],
+        curve: 'smooth',
+      },
+      xaxis: {
+        type: 'datetime',
+        categories: [
+          '2024-09-19T00:00:00.000Z',
+          '2024-09-20T01:30:00.000Z',
+          '2024-09-21T02:30:00.000Z',
+          '2024-09-22T03:30:00.000Z',
+          '2024-09-23T04:30:00.000Z',
+          '2024-09-24T05:30:00.000Z',
+          '2024-09-25T06:30:00.000Z',
+        ],
+      },
+      tooltip: {
+        x: {
+          format: 'dd/MM/yy HH:mm',
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.1,
+        },
+      },
+    },
+  })
 }
 
 function useBarTeamEfficiency() {
-  const type = 'bar'
-  const height = 380
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-indigo-400)', 'var(--color-indigo-500)'],
-    legend: {
-      show: false,
-      position: 'top',
-    },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        endingShape: 'rounded',
-        columnWidth: '55%',
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      show: true,
-      width: 2,
-      colors: ['transparent'],
-    },
-    xaxis: {
-      categories: [
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-      ],
-    },
-    yaxis: {
-      labels: {
-        formatter(val: string) {
-          return val + 70
-        },
-      },
-    },
-    fill: {
-      opacity: 1,
-    },
-    tooltip: {
-      y: {
-        formatter(val: string) {
-          return `${val}hrs`
-        },
-      },
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Design',
@@ -166,12 +102,59 @@ function useBarTeamEfficiency() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'bar',
+    height: 380,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-indigo-400)', 'var(--color-indigo-500)'],
+      legend: {
+        show: false,
+        position: 'top',
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          // endingShape: 'rounded',
+          columnWidth: '55%',
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent'],
+      },
+      xaxis: {
+        categories: [
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+        ],
+      },
+      fill: {
+        opacity: 1,
+      },
+      tooltip: {
+        y: {
+          formatter: value => `${value} hours`,
+        },
+      },
+    },
+  })
 }
 </script>
 

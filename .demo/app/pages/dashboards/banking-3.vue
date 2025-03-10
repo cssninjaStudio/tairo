@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 definePageMeta({
   title: 'Cryptocurrency',
   preview: {
@@ -19,92 +21,6 @@ const radialPopularity = reactive(useRadialPopularity())
 
 function useAreaBtcPrice() {
   const { primary, info, success } = useTailwindColors()
-
-  const type = 'area'
-  const height = 350
-
-  const options = shallowRef({
-    chart: {
-      foreColor: '#999',
-      stacked: true,
-      toolbar: {
-        show: false,
-      },
-      dropShadow: {
-        enabled: true,
-        enabledSeries: [0],
-        top: -2,
-        left: 2,
-        blur: 5,
-        opacity: 0.06,
-      },
-    },
-    colors: [success.value, primary.value, info.value],
-    stroke: {
-      curve: 'smooth',
-      width: 3,
-    },
-    title: {
-      text: '',
-      align: 'left',
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    markers: {
-      size: 0,
-      strokeColor: '#fff',
-      strokeWidth: 3,
-      strokeOpacity: 1,
-      fillOpacity: 1,
-      hover: {
-        size: 6,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-    },
-    yaxis: {
-      labels: {
-        offsetX: 0,
-        offsetY: -5,
-      },
-      tooltip: {
-        enabled: true,
-      },
-    },
-    grid: {
-      show: true,
-      padding: {
-        left: -5,
-        right: 5,
-      },
-    },
-    tooltip: {
-      x: {
-        format: 'dd MMM yyyy',
-      },
-      y: {
-        formatter(val: number) {
-          return `${val}%`
-        },
-      },
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-    fill: {
-      type: 'solid',
-      fillOpacity: 0.7,
-    },
-  })
 
   const series = shallowRef([
     {
@@ -164,131 +80,200 @@ function useAreaBtcPrice() {
     const series = []
     let x = new Date('11 Nov 2022').getTime()
     while (i < count) {
-      series.push([x, values[s]?.[i]])
+      series.push([x, values[s]![i]!])
       x += 86400000
       i++
     }
     return series
   }
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 350,
     series,
-  }
+    options: {
+      chart: {
+        foreColor: '#999',
+        stacked: true,
+        toolbar: {
+          show: false,
+        },
+        dropShadow: {
+          enabled: true,
+          enabledOnSeries: [0],
+          top: -2,
+          left: 2,
+          blur: 5,
+          opacity: 0.06,
+        },
+      },
+      colors: [success.value, primary.value, info.value],
+      stroke: {
+        curve: 'smooth',
+        width: 3,
+      },
+      title: {
+        text: '',
+        align: 'left',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      markers: {
+        size: 0,
+        strokeColors: '#fff',
+        strokeWidth: 3,
+        strokeOpacity: 1,
+        fillOpacity: 1,
+        hover: {
+          size: 6,
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+      },
+      yaxis: {
+        labels: {
+          offsetX: 0,
+          offsetY: -5,
+        },
+        tooltip: {
+          enabled: true,
+        },
+      },
+      grid: {
+        show: true,
+        padding: {
+          left: -5,
+          right: 5,
+        },
+      },
+      tooltip: {
+        x: {
+          format: 'dd MMM yyyy',
+        },
+        y: {
+          formatter: value => `${value} %`,
+        },
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+      fill: {
+        type: 'solid',
+        opacity: 0.7,
+      },
+    },
+  })
 }
 
 function useRadialEvolution() {
   const { primary, info, success } = useTailwindColors()
-  const type = 'radialBar'
-  const height = 220
 
   const series = shallowRef([54])
 
-  const options = {
-    colors: [primary.value, success.value, info.value],
-    title: {
-      text: '',
-      align: 'left',
-    },
-    plotOptions: {
-      radialBar: {
-        dataLabels: {
-          name: {
-            offsetY: 15,
-            fontSize: '13px',
-            fontFamily: 'Roboto, sans-serif',
-            color: 'var(--color-muted-400)',
-            formatter() {
-              return ['(30 days)']
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 220,
+    series,
+    options: {
+      colors: [primary.value, success.value, info.value],
+      title: {
+        text: '',
+        align: 'left',
+      },
+      plotOptions: {
+        radialBar: {
+          dataLabels: {
+            name: {
+              offsetY: 15,
+              fontSize: '13px',
+              fontFamily: 'var(--font-alt)',
+              color: 'var(--color-muted-400)',
             },
-          },
-          value: {
-            color: 'var(--color-muted-400)',
-            offsetY: -20,
-            fontSize: '16px',
-            fontFamily: 'Roboto, sans-serif',
-            fontWeight: '500',
+            value: {
+              color: 'var(--color-muted-400)',
+              offsetY: -20,
+              fontSize: '16px',
+              fontFamily: 'var(--font-alt)',
+              fontWeight: '500',
+            },
+            total: {
+              formatter: () => '(30 days)',
+            },
           },
         },
       },
+      labels: ['Median Ratio'],
     },
-    labels: ['Median Ratio'],
-  }
-
-  return {
-    type,
-    height,
-    series,
-    options,
-  }
+  })
 }
 
 function useRadialPopularity() {
   const { primary, success } = useTailwindColors()
-  const type = 'radialBar'
-  const height = 225
 
-  const options = {
-    title: {
-      text: '',
-    },
-    chart: {
-      toolbar: {
-        show: false,
+  const series = shallowRef([67])
+
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 225,
+    series,
+    options: {
+      title: {
+        text: '',
       },
-    },
-    colors: [primary.value, success.value],
-    plotOptions: {
-      radialBar: {
-        startAngle: -135,
-        endAngle: 135,
-        dataLabels: {
-          name: {
-            fontSize: '13px',
-            fontWeight: '600',
-            color: 'var(--color-muted-400)',
-            offsetY: 80,
-          },
-          value: {
-            offsetY: 40,
-            fontSize: '18px',
-            fontFamily: 'Roboto, sans-serif',
-            fontWeight: '500',
-            color: undefined,
-            formatter(val: number) {
-              return `${val}%`
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: [primary.value, success.value],
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 135,
+          dataLabels: {
+            name: {
+              fontSize: '13px',
+              fontWeight: '600',
+              color: 'var(--color-muted-400)',
+              offsetY: 80,
+            },
+            value: {
+              offsetY: 40,
+              fontSize: '18px',
+              fontFamily: 'var(--font-alt)',
+              fontWeight: '500',
+              color: undefined,
+              formatter: value => `${value} %`,
             },
           },
         },
       },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'dark',
-        shadeIntensity: 0.15,
-        inverseColors: false,
-        opacityFrom: 1,
-        opacityTo: 1,
-        stops: [0, 50, 65, 91],
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'dark',
+          shadeIntensity: 0.15,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 65, 91],
+        },
       },
+      stroke: {
+        dashArray: 4,
+      },
+      labels: ['(30 days)'],
     },
-    stroke: {
-      dashArray: 4,
-    },
-    labels: ['(30 days)'],
-  }
-
-  const series = shallowRef([67])
-
-  return {
-    type,
-    height,
-    options,
-    series,
-  }
+  })
 }
 </script>
 

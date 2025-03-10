@@ -1,64 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoTimeline = reactive(useDemoTimeline())
 
 function useDemoTimeline() {
-  const type = 'rangeBar'
-  const height = 280
-
-  const options = {
-    title: {
-      text: '',
-      align: 'left',
-    },
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: [
-      'var(--color-chart-base)',
-      'var(--color-primary-300)',
-      'var(--color-amber-400)',
-      'var(--color-indigo-400)',
-      'var(--color-teal-400)',
-    ],
-    plotOptions: {
-      bar: {
-        horizontal: true,
-        distributed: true,
-        dataLabels: {
-          hideOverflowingLabels: false,
-        },
-      },
-    },
-    dataLabels: {
-      enabled: true,
-      formatter(val: string, opts: any) {
-        const label = opts.w.globals.labels[opts.dataPointIndex]
-        const a = Number(val[0])
-        const b = Number(val[1])
-        const diff = b - a
-        return `${label}: ${diff}${diff > 1 ? 'D' : 'd'}`
-      },
-      style: {
-        colors: ['#f3f4f5', '#fff'],
-        weight: 400,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-    },
-    yaxis: {
-      show: false,
-    },
-    grid: {
-      row: {
-        colors: ['transparent'],
-        opacity: 1,
-      },
-    },
-  }
-
   const series = shallowRef([
     {
       data: [
@@ -106,12 +51,64 @@ function useDemoTimeline() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'rangeBar',
+    height: 280,
     series,
-  }
+    options: {
+      title: {
+        text: '',
+        align: 'left',
+      },
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: [
+        'var(--color-chart-base)',
+        'var(--color-primary-300)',
+        'var(--color-amber-400)',
+        'var(--color-indigo-400)',
+        'var(--color-teal-400)',
+      ],
+      plotOptions: {
+        bar: {
+          horizontal: true,
+          distributed: true,
+          dataLabels: {
+            hideOverflowingLabels: false,
+          },
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        formatter(val: string, opts: any) {
+          const label = opts.w.globals.labels[opts.dataPointIndex]
+          const a = Number(val[0])
+          const b = Number(val[1])
+          const diff = b - a
+          return `${label}: ${diff}${diff > 1 ? 'D' : 'd'}`
+        },
+        style: {
+          colors: ['#f3f4f5', '#fff'],
+          fontWeight: 400,
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+      },
+      yaxis: {
+        show: false,
+      },
+      grid: {
+        row: {
+          colors: ['transparent'],
+          opacity: 1,
+        },
+      },
+    },
+  })
 }
 </script>
 

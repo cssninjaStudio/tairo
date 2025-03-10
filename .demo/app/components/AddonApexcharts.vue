@@ -1,21 +1,52 @@
-<script setup lang="ts">
+<script lang="ts">
 import type { ApexOptions } from 'apexcharts'
 import { useIntersectionObserver } from '@vueuse/core'
+import { hydrateOnVisible } from 'vue'
 import '~/assets/css/apexcharts.css'
 
-const props = defineProps<{
+export interface AddonApexchartsProps {
   type: NonNullable<ApexOptions['chart']>['type']
   height: NonNullable<ApexOptions['chart']>['height']
   width?: NonNullable<ApexOptions['chart']>['width']
-  series: ApexOptions['series']
+  series: MaybeRefOrGetter<ApexOptions['series']>
   /**
    * ApexCharts options - Without `series`, `chart.type` / `chart.height` / `chart.width`  properties
    * @see https://apexcharts.com/docs/options/
    */
-  options?: Omit<ApexOptions, 'series' | 'chart'> & { chart?: Omit<ApexOptions['chart'], 'type' | 'height' | 'width'> }
-}>()
-const { LazyApexCharts, isLoaded } = useLazyApexCharts()
+  options?: Omit<ApexOptions, 'series' | 'chart'> & { chart?: Omit<NonNullable<ApexOptions['chart']>, 'type' | 'height' | 'width'> }
+}
+
+export function defineApexchartsProps(props: AddonApexchartsProps): AddonApexchartsProps {
+  return props
+}
+
+const useIsLoaded = () => useState('apex-loaded', () => false)
+
+/**
+ * Use `defineAsyncComponent` to lazy load the component only when needed
+ * This improves the initial load time of the page when the component is not needed
+ *
+ * Using a ref to track when the component is loaded is not necessary, but it's
+ * a good practice to be able to show a loading state while the component is loading.
+ */
+const LazyApexCharts = defineAsyncComponent({
+  suspensible: false,
+  hydrate: hydrateOnVisible(),
+  loader: () => {
+    return import('vue3-apexcharts').then((module) => {
+      nextTick(() => {
+        useIsLoaded().value = true
+      })
+      return module.default
+    })
+  },
+})
+</script>
+
+<script setup lang="ts">
+const props = defineProps<AddonApexchartsProps>()
 const target = ref(null)
+const isLoaded = useIsLoaded()
 const targetIsVisible = ref(false)
 
 // When the target is visible on viewport, load the chart
@@ -52,7 +83,7 @@ const { stop } = useIntersectionObserver(target, ([entry]) => {
         class="m-4 w-[calc(100%-32px)] text-center"
         :style="{ height: `${Number(height) - 32}px` }"
       >
-        Failed to load chart...
+        <DevOnly>Failed to load chart...</DevOnly>
       </div>
     </ClientOnly>
   </div>

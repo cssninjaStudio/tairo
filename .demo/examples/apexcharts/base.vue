@@ -1,95 +1,11 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const areaBtcPrice = reactive(useAreaBtcPrice())
 
 // You can create your own composable function to handle the logic of your chart
 function useAreaBtcPrice() {
   const { primary, info, success } = useTailwindColors()
-
-  const type = 'area'
-  const height = 350
-
-  const options = shallowRef({
-    chart: {
-      foreColor: '#999',
-      stacked: true,
-      toolbar: {
-        show: false,
-      },
-      dropShadow: {
-        enabled: true,
-        enabledSeries: [0],
-        top: -2,
-        left: 2,
-        blur: 5,
-        opacity: 0.06,
-      },
-    },
-    colors: [success.value, primary.value, info.value],
-    stroke: {
-      curve: 'smooth',
-      width: 3,
-    },
-    title: {
-      text: '',
-      align: 'left',
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    markers: {
-      size: 0,
-      strokeColor: '#fff',
-      strokeWidth: 3,
-      strokeOpacity: 1,
-      fillOpacity: 1,
-      hover: {
-        size: 6,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-    },
-    yaxis: {
-      labels: {
-        offsetX: 0,
-        offsetY: -5,
-      },
-      tooltip: {
-        enabled: true,
-      },
-    },
-    grid: {
-      show: true,
-      padding: {
-        left: -5,
-        right: 5,
-      },
-    },
-    tooltip: {
-      x: {
-        format: 'dd MMM yyyy',
-      },
-      y: {
-        formatter(val: number) {
-          return `${val}%`
-        },
-      },
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-    fill: {
-      type: 'solid',
-      fillOpacity: 0.7,
-    },
-  })
 
   const series = shallowRef([
     {
@@ -111,19 +27,98 @@ function useAreaBtcPrice() {
     const series = []
     let x = new Date('11 Nov 2022').getTime()
     while (i < count) {
-      series.push([x, values[s][i]])
+      series.push([x, values[s]![i]!])
       x += 86400000
       i++
     }
     return series
   }
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 350,
     series,
-  }
+    options: {
+      chart: {
+        foreColor: '#999',
+        stacked: true,
+        toolbar: {
+          show: false,
+        },
+        dropShadow: {
+          enabled: true,
+          enabledOnSeries: [0],
+          top: -2,
+          left: 2,
+          blur: 5,
+          opacity: 0.06,
+        },
+      },
+      colors: [success.value, primary.value, info.value],
+      stroke: {
+        curve: 'smooth',
+        width: 3,
+      },
+      title: {
+        text: '',
+        align: 'left',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      markers: {
+        size: 0,
+        strokeColors: '#fff',
+        strokeWidth: 3,
+        strokeOpacity: 1,
+        fillOpacity: 1,
+        hover: {
+          size: 6,
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+      },
+      yaxis: {
+        labels: {
+          offsetX: 0,
+          offsetY: -5,
+        },
+        tooltip: {
+          enabled: true,
+        },
+      },
+      grid: {
+        show: true,
+        padding: {
+          left: -5,
+          right: 5,
+        },
+      },
+      tooltip: {
+        x: {
+          format: 'dd MMM yyyy',
+        },
+        y: {
+          formatter: value => `${value} %`,
+        },
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+      fill: {
+        type: 'solid',
+        opacity: 0.7,
+      },
+    },
+  })
 }
 </script>
 

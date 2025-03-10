@@ -1,61 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoAreaMulti = reactive(useDemoAreaMulti())
 
 function useDemoAreaMulti() {
-  const type = 'area'
-  const height = 280
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-amber-300)'],
-    title: {
-      text: '',
-      align: 'left',
-    },
-    legend: {
-      position: 'top',
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      width: [2, 2, 2],
-      curve: 'smooth',
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        gradientToColors: ['var(--color-chart-gradient)', 'var(--color-chart-gradient)'],
-        shadeIntensity: 0,
-        opacityFrom: 0.6,
-        opacityTo: 0.75,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-      categories: [
-        '2018-09-19T00:00:00.000Z',
-        '2018-09-19T01:30:00.000Z',
-        '2018-09-19T02:30:00.000Z',
-        '2018-09-19T03:30:00.000Z',
-        '2018-09-19T04:30:00.000Z',
-        '2018-09-19T05:30:00.000Z',
-        '2018-09-19T06:30:00.000Z',
-      ],
-    },
-    tooltip: {
-      x: {
-        format: 'dd/MM/yy HH:mm',
-      },
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Completed',
@@ -67,12 +15,61 @@ function useDemoAreaMulti() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-amber-300)'],
+      title: {
+        text: '',
+        align: 'left',
+      },
+      legend: {
+        position: 'top',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: [2, 2, 2],
+        curve: 'smooth',
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)', 'var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.75,
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+        categories: [
+          '2018-09-19T00:00:00.000Z',
+          '2018-09-19T01:30:00.000Z',
+          '2018-09-19T02:30:00.000Z',
+          '2018-09-19T03:30:00.000Z',
+          '2018-09-19T04:30:00.000Z',
+          '2018-09-19T05:30:00.000Z',
+          '2018-09-19T06:30:00.000Z',
+        ],
+      },
+      tooltip: {
+        x: {
+          format: 'dd/MM/yy HH:mm',
+        },
+      },
+    },
+  })
 }
 </script>
 

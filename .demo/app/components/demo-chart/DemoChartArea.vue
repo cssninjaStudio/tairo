@@ -1,12 +1,17 @@
 <script setup lang="ts">
+import type { AddonApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoArea = reactive(useDemoArea())
 
-function useDemoArea() {
+function useDemoArea(): AddonApexchartsProps {
   const type = 'area'
   const height = 280
 
   const options = {
     chart: {
+      animations: {
+        enabled: false,
+      },
       zoom: {
         enabled: false,
       },
@@ -68,7 +73,7 @@ function useDemoArea() {
     legend: {
       horizontalAlign: 'left',
     },
-  }
+  } satisfies AddonApexchartsProps['options']
 
   const series = shallowRef([
     {
