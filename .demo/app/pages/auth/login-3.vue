@@ -163,7 +163,7 @@ const onSubmit = handleSubmit(async (values) => {
                     :model-value="field.value"
                     autocomplete="email"
                     rounded="md"
-                    icon="ph:user-duotone"
+                    icon="solar:user-rounded-linear"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
@@ -186,7 +186,7 @@ const onSubmit = handleSubmit(async (values) => {
                     v-bind="inputAttrs"
                     :model-value="field.value"
                     type="password"
-                    icon="ph:lock-duotone"
+                    icon="solar:lock-keyhole-linear"
                     autocomplete="current-password"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
@@ -205,7 +205,7 @@ const onSubmit = handleSubmit(async (values) => {
                   :model-value="field.value"
                   :disabled="isSubmitting"
                   label="Trust for 60 days"
-                  variant="primary"
+                  variant="default"
                   @update:model-value="handleChange"
                   @blur="handleBlur"
                 />

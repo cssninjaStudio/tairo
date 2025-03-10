@@ -208,7 +208,7 @@ const onSubmit = handleSubmit(async (_values) => {
                 :model-value="field.value"
                 autocomplete="username"
                 rounded="lg"
-                icon="ph:fingerprint-duotone"
+                icon="solar:user-rounded-linear"
                 @update:model-value="handleChange"
                 @blur="handleBlur"
               />
@@ -233,7 +233,7 @@ const onSubmit = handleSubmit(async (_values) => {
                 type="email"
                 autocomplete="current-email"
                 rounded="lg"
-                icon="ph:at-duotone"
+                icon="solar:mention-circle-linear"
                 @update:model-value="handleChange"
                 @blur="handleBlur"
               />
@@ -256,7 +256,7 @@ const onSubmit = handleSubmit(async (_values) => {
                 v-bind="inputAttrs"
                 :model-value="field.value"
                 :error="errorMessage"
-                icon="ph:lock-duotone"
+                icon="solar:lock-keyhole-linear"
                 :disabled="isSubmitting"
                 :user-inputs="[values.username ?? '', values.email ?? '']"
                 rounded="lg"

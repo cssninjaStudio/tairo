@@ -247,7 +247,7 @@ const onSubmit = handleSubmit(async (values) => {
                       placeholder="ex: maya@cssninja.io"
                       type="email"
                       autocomplete="email"
-                      icon="lucide:mail"
+                      icon="solar:letter-linear"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
@@ -274,7 +274,7 @@ const onSubmit = handleSubmit(async (values) => {
                       :disabled="isSubmitting"
                       :user-inputs="[values.email ?? '']"
                       placeholder="••••••••••"
-                      icon="lucide:lock"
+                      icon="solar:lock-keyhole-linear"
                       class="border-s-0 rounded-s-none ring-0!"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
@@ -302,7 +302,7 @@ const onSubmit = handleSubmit(async (values) => {
                       :disabled="isSubmitting"
                       type="password"
                       placeholder="••••••••••"
-                      icon="lucide:lock"
+                      icon="solar:lock-keyhole-minimalistic-linear"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     />
@@ -319,7 +319,7 @@ const onSubmit = handleSubmit(async (values) => {
                       :model-value="field.value"
                       :disabled="isSubmitting"
                       :error="errorMessage"
-                      variant="primary"
+                      variant="default"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
@@ -364,19 +364,19 @@ const onSubmit = handleSubmit(async (values) => {
               <div class="grid grid-cols-3 gap-2">
                 <button
                   type="button"
-                  class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded-sm px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300"
+                  class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded-md cursor-pointer px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300"
                 >
                   <Icon name="fa6-brands:google" class="size-5" />
                 </button>
                 <button
                   type="button"
-                  class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded-sm px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300"
+                  class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded-md cursor-pointer px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300"
                 >
-                  <Icon name="fa6-brands:twitter" class="size-5" />
+                  <Icon name="fa6-brands:x-twitter" class="size-5" />
                 </button>
                 <button
                   type="button"
-                  class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded-sm px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300"
+                  class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 relative inline-flex w-full items-center justify-center rounded-md cursor-pointer px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300"
                 >
                   <Icon name="fa6-brands:linkedin-in" class="size-5" />
                 </button>

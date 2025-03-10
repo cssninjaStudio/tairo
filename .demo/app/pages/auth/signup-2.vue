@@ -234,7 +234,7 @@ const onSubmit = handleSubmit(async (_values) => {
                       :model-value="field.value"
                       :disabled="isSubmitting"
                       :error="errorMessage"
-                      variant="primary"
+                      variant="default"
                       @update:model-value="handleChange"
                       @blur="handleBlur"
                     >
@@ -279,19 +279,19 @@ const onSubmit = handleSubmit(async (_values) => {
               <div class="grid grid-cols-3 gap-2">
                 <button
                   type="button"
-                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 focus-visible:nui-focus relative inline-flex w-full items-center justify-center rounded-sm px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300 hover:bg-white"
+                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 focus-visible:nui-focus relative inline-flex w-full items-center justify-center rounded-md cursor-pointer px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300 hover:bg-white"
                 >
                   <Icon name="fa6-brands:google" class="size-5" />
                 </button>
                 <button
                   type="button"
-                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 focus-visible:nui-focus relative inline-flex w-full items-center justify-center rounded-sm px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300 hover:bg-white"
+                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 focus-visible:nui-focus relative inline-flex w-full items-center justify-center rounded-md cursor-pointer px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300 hover:bg-white"
                 >
-                  <Icon name="fa6-brands:twitter" class="size-5" />
+                  <Icon name="fa6-brands:x-twitter" class="size-5" />
                 </button>
                 <button
                   type="button"
-                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 focus-visible:nui-focus relative inline-flex w-full items-center justify-center rounded-sm px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300 hover:bg-white"
+                  class="bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 focus-visible:nui-focus relative inline-flex w-full items-center justify-center rounded-md cursor-pointer px-0 py-3 text-center text-sm font-semibold shadow-xs transition-all duration-300 hover:bg-white"
                 >
                   <Icon name="fa6-brands:linkedin-in" class="size-5" />
                 </button>

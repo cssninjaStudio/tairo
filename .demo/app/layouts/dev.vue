@@ -567,7 +567,7 @@ const menu = [
       {
         label: 'Forgot password',
         icon: 'solar:refresh-square-linear',
-        to: '/auth/forgot',
+        to: '/auth/recover',
       },
       {
         label: 'Account',
