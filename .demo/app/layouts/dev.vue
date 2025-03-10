@@ -591,7 +591,7 @@ const menu = [
           },
           {
             label: 'User info',
-            to: '/layouts/user',
+            to: '/layouts/user-details',
           },
           {
             label: 'Company info',
