@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Calendar } from 'v-calendar'
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 import 'v-calendar/dist/style.css'
 import '~/assets/css/vcalendar.css'
@@ -16,6 +16,9 @@ definePageMeta({
   },
 })
 
+// Datepicker
+const date = ref(new Date())
+
 const areaCondition = reactive(useAreaCondition())
 const scatterEnergy = reactive(useScatterEnergy())
 const barOxygen = reactive(useBarOxygen())
@@ -23,50 +26,6 @@ const areaProgress = reactive(useAreaProgress())
 const gaugePersonal = reactive(useGaugePersonal())
 
 function useAreaCondition() {
-  const type = 'area'
-  const height = 280
-
-  const options = {
-    chart: {
-      offsetX: 20,
-      zoom: {
-        enabled: false,
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    grid: {
-      show: false,
-    },
-    stroke: {
-      width: [2, 2, 2],
-      curve: 'straight',
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        gradientToColors: ['var(--color-chart-gradient)'],
-        shadeIntensity: 0,
-        opacityFrom: 0.6,
-        opacityTo: 0.1,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-    labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    yaxis: {
-      opposite: true,
-    },
-    legend: {
-      horizontalAlign: 'left',
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Condition (pt)',
@@ -74,62 +33,54 @@ function useAreaCondition() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        offsetX: 20,
+        zoom: {
+          enabled: false,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      grid: {
+        show: false,
+      },
+      stroke: {
+        width: [2, 2, 2],
+        curve: 'straight',
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.1,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+      labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      yaxis: {
+        opposite: true,
+      },
+      legend: {
+        horizontalAlign: 'left',
+      },
+    },
+  })
 }
 
 function useScatterEnergy() {
-  const height = 280
-  const type = 'scatter'
-
-  const options = {
-    chart: {
-      height: 280,
-      type: 'scatter',
-      zoom: {
-        type: 'xy',
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-primary-200)', 'var(--color-primary-400)'],
-    dataLabels: {
-      enabled: false,
-      show: false,
-    },
-    grid: {
-      show: false,
-      xaxis: {
-        lines: {
-          show: false,
-        },
-      },
-      yaxis: {
-        lines: {
-          show: false,
-        },
-      },
-    },
-    xaxis: {
-      show: false,
-      type: 'datetime',
-    },
-    yaxis: {
-      show: false,
-      max: 70,
-    },
-    legend: {
-      show: false,
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Tonic',
@@ -184,83 +135,55 @@ function useScatterEnergy() {
     return series
   }
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'scatter',
+    height: 280,
     series,
-  }
-}
-
-function useBarOxygen() {
-  const height = 280
-  const type = 'bar'
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    plotOptions: {
-      bar: {
-        dataLabels: {
-          position: 'top', // top, center, bottom
+    options: {
+      chart: {
+        zoom: {
+          type: 'xy',
+        },
+        toolbar: {
+          show: false,
         },
       },
-    },
-    dataLabels: {
-      enabled: true,
-      formatter: asPercent,
-      offsetY: -20,
-      style: {
-        fontSize: '12px',
-        colors: ['#304758'],
+      colors: ['var(--color-chart-base)', 'var(--color-primary-200)', 'var(--color-primary-400)'],
+      dataLabels: {
+        enabled: false,
+        // show: false,
       },
-    },
-    grid: {
-      show: false,
-    },
-    xaxis: {
-      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      position: 'top',
-      axisBorder: {
+      grid: {
         show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-      crosshairs: {
-        fill: {
-          type: 'gradient',
-          gradient: {
-            colorFrom: '#D8E3F0',
-            colorTo: '#BED1E6',
-            stops: [0, 100],
-            opacityFrom: 0.4,
-            opacityTo: 0.5,
+        xaxis: {
+          lines: {
+            show: false,
+          },
+        },
+        yaxis: {
+          lines: {
+            show: false,
           },
         },
       },
-      tooltip: {
-        enabled: true,
+      xaxis: {
+        // show: false,
+        type: 'datetime',
+      },
+      yaxis: {
+        show: false,
+        max: 70,
+      },
+      legend: {
+        show: false,
+        position: 'top',
+        horizontalAlign: 'center',
       },
     },
-    yaxis: {
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-      labels: {
-        show: false,
-        formatter: asPercent,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-  }
+  })
+}
 
+function useBarOxygen() {
   const series = shallowRef([
     {
       name: 'Variation (pt)',
@@ -268,59 +191,78 @@ function useBarOxygen() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'bar',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            position: 'top', // top, center, bottom
+          },
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: value => `${value} %`,
+        offsetY: -20,
+        style: {
+          fontSize: '12px',
+          colors: ['#304758'],
+        },
+      },
+      grid: {
+        show: false,
+      },
+      xaxis: {
+        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        position: 'top',
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+        crosshairs: {
+          fill: {
+            type: 'gradient',
+            gradient: {
+              colorFrom: '#D8E3F0',
+              colorTo: '#BED1E6',
+              stops: [0, 100],
+              opacityFrom: 0.4,
+              opacityTo: 0.5,
+            },
+          },
+        },
+        tooltip: {
+          enabled: true,
+        },
+      },
+      yaxis: {
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: false,
+          formatter: value => `${value} %`,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+    },
+  })
 }
 
 function useAreaProgress() {
-  const type = 'area'
-  const height = 280
-
-  const options = {
-    chart: {
-      offsetX: 20,
-      zoom: {
-        enabled: false,
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    grid: {
-      show: false,
-    },
-    stroke: {
-      width: [2, 2, 2],
-      curve: 'smooth',
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        gradientToColors: ['var(--color-chart-gradient)'],
-        shadeIntensity: 0,
-        opacityFrom: 0.6,
-        opacityTo: 0.1,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-    labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    yaxis: {
-      opposite: true,
-    },
-    legend: {
-      horizontalAlign: 'left',
-    },
-  } as const
-
   const series = shallowRef([
     {
       name: 'Progress (pt)',
@@ -328,78 +270,109 @@ function useAreaProgress() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        offsetX: 20,
+        zoom: {
+          enabled: false,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      grid: {
+        show: false,
+      },
+      stroke: {
+        width: [2, 2, 2],
+        curve: 'smooth',
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.1,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+      labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      yaxis: {
+        opposite: true,
+      },
+      legend: {
+        horizontalAlign: 'left',
+      },
+    },
+  })
 }
 
 function useGaugePersonal() {
-  const type = 'radialBar'
-  const height = 220
-
-  const options = {
-    title: {
-      text: undefined,
-    },
-    chart: {
-      sparkline: {
-        enabled: true,
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-    plotOptions: {
-      radialBar: {
-        startAngle: -90,
-        endAngle: 90,
-        track: {
-          background: '#e7e7e7',
-          strokeWidth: '97%',
-          margin: 5, // margin is in pixels
-          dropShadow: {
-            enabled: false,
-            top: 2,
-            left: 0,
-            color: '#999',
-            opacity: 1,
-            blur: 2,
-          },
-        },
-        hollow: {
-          margin: 0,
-          size: '35%',
-        },
-        dataLabels: {
-          name: {
-            show: false,
-          },
-          value: {
-            offsetY: -2,
-            fontSize: '22px',
-          },
-        },
-      },
-    },
-    labels: ['Average Results'],
-  }
-
   const series = shallowRef([76])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 220,
     series,
-  }
+    options: {
+      title: {
+        text: undefined,
+      },
+      chart: {
+        sparkline: {
+          enabled: true,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+      plotOptions: {
+        radialBar: {
+          startAngle: -90,
+          endAngle: 90,
+          track: {
+            background: '#e7e7e7',
+            strokeWidth: '97%',
+            margin: 5, // margin is in pixels
+            dropShadow: {
+              enabled: false,
+              top: 2,
+              left: 0,
+              color: '#999',
+              opacity: 1,
+              blur: 2,
+            },
+          },
+          hollow: {
+            margin: 0,
+            size: '35%',
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            value: {
+              offsetY: -2,
+              fontSize: '22px',
+            },
+          },
+        },
+      },
+      labels: ['Average Results'],
+    },
+  })
 }
-
-// Datepicker
-const date = ref(new Date())
 </script>
 
 <template>

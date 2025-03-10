@@ -31,86 +31,13 @@ export default defineNuxtConfig({
   ],
 
   modules: [
+    '@nuxtjs/i18n',
     '@nuxt/image',
     '@nuxt/content',
     'nuxt-component-meta',
   ],
   alias: {
     '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
-  },
-  hooks: {
-    /**
-     * This hook is used to inject the example source code
-     * into the markdown documentation content.
-     */
-    'content:file:beforeParse': async ({ file }) => {
-      if (file.extension !== '.md') {
-        return
-      }
-
-      if (!docExampleRe.test(file.body)) {
-        return
-      }
-
-      const reads: Promise<void>[] = []
-      const replacements: {
-        search: string
-        replace: string
-      }[] = []
-
-      // Ensure the regex is reset before using it
-      docExampleRe.lastIndex = 0
-      const matches = [...file.body.matchAll(docExampleRe)]
-
-      for (const [search, folder, name, slot] of matches) {
-        const path = fileURLToPath(new URL(`./examples/${folder}/${name}.vue`, import.meta.url))
-
-        if (slot?.includes('#source')) {
-          continue
-        }
-
-        if (!existsSync(path)) {
-          console.error(`Example file not found in "${file.id}": ${path}`)
-          continue
-        }
-
-        reads.push(
-          readFile(path, 'utf-8')
-            .then((source) => {
-              if (!source) {
-                console.error(`Example file is empty in "${file.id}": ${path}`)
-                return
-              }
-
-              const replace = [
-                `demo: '#examples/${folder}/${name}.vue'`,
-                '---',
-                slot,
-                '',
-                '#source',
-                ':::code-group',
-                `\`\`\`vue [#examples/${folder}/${name}.vue]`,
-                source,
-                '```',
-                ':::',
-                '::',
-              ].join('\n')
-
-              replacements.push({ search, replace })
-            })
-            .catch((error) => {
-              console.error(`Error reading example file in "${file.id}": ${path}`)
-              console.error(error)
-            }),
-        )
-      }
-
-      await Promise.all(reads)
-
-      for (const { search, replace } of replacements) {
-        file.body = file.body.replace(search, replace)
-      }
-    },
   },
   content: {
     build: {
@@ -200,6 +127,21 @@ export default defineNuxtConfig({
     },
   },
 
+  i18n: {
+    baseUrl: '/',
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    lazy: true,
+    locales: [
+      { code: 'en', dir: 'ltr', language: 'en-US', file: 'en-US.yaml', name: 'English', isCatchallLocale: true },
+      { code: 'fr', dir: 'ltr', language: 'fr-FR', file: 'fr-FR.yaml', name: 'Français' },
+      { code: 'es', dir: 'ltr', language: 'es-ES', file: 'es-ES.yaml', name: 'Español' },
+      { code: 'de', dir: 'ltr', language: 'de-DE', file: 'de-DE.yaml', name: 'Deutsch' },
+      { code: 'ar', dir: 'rtl', language: 'ar-SA', file: 'ar-SA.yaml', name: 'العربية' },
+      { code: 'ja', dir: 'ltr', language: 'ja-JP', file: 'ja-JP.yaml', name: '日本語' },
+    ],
+  },
+
   routeRules: {
     '/': {
       swr: 3600,
@@ -270,16 +212,6 @@ export default defineNuxtConfig({
         '@zxcvbn-ts/language-common',
         '@zxcvbn-ts/language-en',
         '@zxcvbn-ts/language-fr',
-        // AddonMarkdownRemark
-        'rehype-external-links',
-        'rehype-raw',
-        'rehype-sanitize',
-        'rehype-stringify',
-        '@shikijs/rehype',
-        'remark-gfm',
-        'remark-parse',
-        'remark-rehype',
-        'unified',
         // AddonMapboxLocationPicker
         'ohash',
         'mapbox-gl',

@@ -15,7 +15,6 @@ const isRules = computed(() => {
 </script>
 
 <template>
-  <!-- Wrapper -->
   <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div class="flex items-center justify-end pb-6">

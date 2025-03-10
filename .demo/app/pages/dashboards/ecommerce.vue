@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Calendar } from 'v-calendar'
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 import 'v-calendar/dist/style.css'
 import '~/assets/css/vcalendar.css'
@@ -16,6 +16,9 @@ definePageMeta({
   },
 })
 
+// Datepicker
+const date = ref(new Date())
+
 const sparkLineOne = reactive(useSparkLineOne())
 const sparkLineTwo = reactive(useSparkLineTwo())
 const sparkLineThree = reactive(useSparkLineThree())
@@ -29,50 +32,6 @@ const gaugePersonal = reactive(useGaugePersonal())
 const barOrders = reactive(useBarOrders())
 
 function useSparkLineOne() {
-  const height = 60
-  const type = 'line'
-
-  const options = {
-    chart: {
-      id: 'sparkline1',
-      sparkline: {
-        enabled: true,
-      },
-      group: 'sparklines',
-    },
-    grid: {
-      padding: {
-        top: 10,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-      width: [2],
-    },
-    markers: {
-      size: 0,
-    },
-    yaxis: {
-      min: 0,
-      labels: {
-        minWidth: 100,
-      },
-    },
-    tooltip: {
-      fixed: {
-        enabled: true,
-        position: 'right',
-      },
-      x: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-  } as const
-
   const series = shallowRef([
     {
       name: 'Sales',
@@ -80,57 +39,54 @@ function useSparkLineOne() {
     },
   ])
 
-  return { height, type, options, series }
+  return defineApexchartsProps({
+    type: 'line',
+    height: 60,
+    series,
+    options: {
+      chart: {
+        id: 'sparkline1',
+        sparkline: {
+          enabled: true,
+        },
+        group: 'sparklines',
+      },
+      grid: {
+        padding: {
+          top: 10,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+      },
+      stroke: {
+        curve: 'smooth',
+        width: [2],
+      },
+      markers: {
+        size: 0,
+      },
+      yaxis: {
+        min: 0,
+        labels: {
+          minWidth: 100,
+        },
+      },
+      tooltip: {
+        fixed: {
+          enabled: true,
+          position: 'right',
+        },
+        x: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+    },
+  })
 }
 
 function useSparkLineTwo() {
-  const type = 'line'
-  const height = 60
-
-  const options = {
-    chart: {
-      id: 'sparkline2',
-      sparkline: {
-        enabled: true,
-      },
-      group: 'sparklines',
-    },
-    grid: {
-      padding: {
-        top: 10,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-      width: [2],
-    },
-    markers: {
-      size: 0,
-    },
-    yaxis: {
-      min: 0,
-      labels: {
-        minWidth: 100,
-      },
-    },
-    tooltip: {
-      fixed: {
-        enabled: true,
-        position: 'right',
-      },
-      x: {
-        show: false,
-      },
-      y: {
-        formatter: asKDollar,
-      },
-    },
-    colors: ['var(--color-success-500)'],
-  } as const
-
   const series = shallowRef([
     {
       name: 'Income',
@@ -138,59 +94,57 @@ function useSparkLineTwo() {
     },
   ])
 
-  return { height, type, options, series }
+  return defineApexchartsProps({
+    type: 'line',
+    height: 60,
+    series,
+    options: {
+      chart: {
+        id: 'sparkline2',
+        sparkline: {
+          enabled: true,
+        },
+        group: 'sparklines',
+      },
+      grid: {
+        padding: {
+          top: 10,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+      },
+      stroke: {
+        curve: 'smooth',
+        width: [2],
+      },
+      markers: {
+        size: 0,
+      },
+      yaxis: {
+        min: 0,
+        labels: {
+          minWidth: 100,
+        },
+      },
+      tooltip: {
+        fixed: {
+          enabled: true,
+          position: 'right',
+        },
+        x: {
+          show: false,
+        },
+        y: {
+          formatter: value => `${formatPrice(value)}k`,
+        },
+      },
+      colors: ['var(--color-success-500)'],
+    },
+  })
 }
 
 function useSparkLineThree() {
-  const height = 60
-  const type = 'line'
-
-  const options = {
-    chart: {
-      id: 'sparkline3',
-      sparkline: {
-        enabled: true,
-      },
-      group: 'sparklines',
-    },
-    grid: {
-      padding: {
-        top: 10,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-      width: [2],
-    },
-    markers: {
-      size: 0,
-    },
-    tooltip: {
-      fixed: {
-        enabled: true,
-        position: 'right',
-      },
-      x: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-info-500)'],
-    xaxis: {
-      crosshairs: {
-        width: 1,
-      },
-    },
-    yaxis: {
-      min: 0,
-      labels: {
-        minWidth: 100,
-      },
-    },
-  } as const
-
   const series = shallowRef([
     {
       name: 'New Orders',
@@ -198,59 +152,59 @@ function useSparkLineThree() {
     },
   ])
 
-  return { height, type, options, series }
+  return defineApexchartsProps({
+    type: 'line',
+    height: 60,
+    series,
+    options: {
+      chart: {
+        id: 'sparkline3',
+        sparkline: {
+          enabled: true,
+        },
+        group: 'sparklines',
+      },
+      grid: {
+        padding: {
+          top: 10,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+      },
+      stroke: {
+        curve: 'smooth',
+        width: [2],
+      },
+      markers: {
+        size: 0,
+      },
+      tooltip: {
+        fixed: {
+          enabled: true,
+          position: 'right',
+        },
+        x: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-info-500)'],
+      xaxis: {
+        crosshairs: {
+          width: 1,
+        },
+      },
+      yaxis: {
+        min: 0,
+        labels: {
+          minWidth: 100,
+        },
+      },
+    },
+  })
 }
 
 function useSparkLineFour() {
-  const type = 'line'
-  const height = 60
-
-  const options = {
-    chart: {
-      id: 'sparkline4',
-      sparkline: {
-        enabled: true,
-      },
-      group: 'sparklines',
-    },
-    grid: {
-      padding: {
-        top: 10,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-      width: [2],
-    },
-    markers: {
-      size: 0,
-    },
-    tooltip: {
-      fixed: {
-        enabled: true,
-        position: 'right',
-      },
-      x: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-destructive-500)'],
-    xaxis: {
-      crosshairs: {
-        width: 1,
-      },
-    },
-    yaxis: {
-      min: 0,
-      labels: {
-        minWidth: 100,
-      },
-    },
-  } as const
-
   const series = shallowRef([
     {
       name: 'Abandonned',
@@ -258,66 +212,59 @@ function useSparkLineFour() {
     },
   ])
 
-  return { height, type, options, series }
+  return defineApexchartsProps({
+    type: 'line',
+    height: 60,
+    series,
+    options: {
+      chart: {
+        id: 'sparkline4',
+        sparkline: {
+          enabled: true,
+        },
+        group: 'sparklines',
+      },
+      grid: {
+        padding: {
+          top: 10,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+      },
+      stroke: {
+        curve: 'smooth',
+        width: [2],
+      },
+      markers: {
+        size: 0,
+      },
+      tooltip: {
+        fixed: {
+          enabled: true,
+          position: 'right',
+        },
+        x: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-destructive-500)'],
+      xaxis: {
+        crosshairs: {
+          width: 1,
+        },
+      },
+      yaxis: {
+        min: 0,
+        labels: {
+          minWidth: 100,
+        },
+      },
+    },
+  })
 }
 
 function useAreaCustomers() {
-  const type = 'area'
-  const height = 280
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-indigo-500)', 'var(--color-primary-400)'],
-    title: {
-      show: false,
-      text: undefined,
-      align: 'left',
-    },
-    legend: {
-      show: false,
-      position: 'top',
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      width: [2, 2, 2],
-      curve: 'smooth',
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        gradientToColors: ['var(--color-chart-gradient)'],
-        shadeIntensity: 0,
-        opacityFrom: 0.6,
-        opacityTo: 0.1,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-      categories: [
-        '2020-09-19T00:00:00.000Z',
-        '2020-09-20T01:30:00.000Z',
-        '2020-09-21T02:30:00.000Z',
-        '2020-09-22T03:30:00.000Z',
-        '2020-09-23T04:30:00.000Z',
-        '2020-09-24T05:30:00.000Z',
-        '2020-09-25T06:30:00.000Z',
-      ],
-    },
-    tooltip: {
-      x: {
-        format: 'dd/MM/yy HH:mm',
-      },
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Returning',
@@ -333,261 +280,258 @@ function useAreaCustomers() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-indigo-500)', 'var(--color-primary-400)'],
+      title: {
+        // show: false,
+        text: undefined,
+        align: 'left',
+      },
+      legend: {
+        show: false,
+        position: 'top',
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: [2, 2, 2],
+        curve: 'smooth',
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.1,
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+        categories: [
+          '2020-09-19T00:00:00.000Z',
+          '2020-09-20T01:30:00.000Z',
+          '2020-09-21T02:30:00.000Z',
+          '2020-09-22T03:30:00.000Z',
+          '2020-09-23T04:30:00.000Z',
+          '2020-09-24T05:30:00.000Z',
+          '2020-09-25T06:30:00.000Z',
+        ],
+      },
+      tooltip: {
+        x: {
+          format: 'dd/MM/yy HH:mm',
+        },
+      },
+    },
+  })
 }
 
 function useRadialSalesRevenue() {
-  const type = 'radialBar'
-  const height = 155
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-    plotOptions: {
-      radialBar: {
-        hollow: {
-          size: '75%',
-        },
-        dataLabels: {
-          show: true,
-          name: {
-            show: false,
-            fontSize: '12px',
-            fontFamily: 'Inter, sans-serif',
-            fontWeight: 400,
-            offsetY: 5,
-          },
-          value: {
-            show: true,
-            fontWeight: 600,
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '16px',
-            offsetY: 5,
-          },
-        },
-      },
-    },
-    labels: ['Progress'],
-  }
-
   const series = shallowRef([65])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 155,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            size: '75%',
+          },
+          dataLabels: {
+            show: true,
+            name: {
+              show: false,
+              fontSize: '12px',
+              fontFamily: 'var(--font-sans)',
+              fontWeight: 400,
+              offsetY: 5,
+            },
+            value: {
+              show: true,
+              fontWeight: 600,
+              fontFamily: 'var(--font-sans)',
+              fontSize: '16px',
+              offsetY: 5,
+            },
+          },
+        },
+      },
+      labels: ['Progress'],
+    },
+  })
 }
 
 function useRadialSmallOne() {
-  const type = 'radialBar'
-  const height = 75
+  const series = shallowRef([31])
 
-  const options = {
-    chart: {
-      type: 'radialBar',
-      offsetY: -10,
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-    plotOptions: {
-      radialBar: {
-        hollow: {
-          size: '50%',
-        },
-        dataLabels: {
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 75,
+    series,
+    options: {
+      chart: {
+        offsetY: -10,
+        toolbar: {
           show: false,
         },
       },
+      colors: ['var(--color-chart-base)'],
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            size: '50%',
+          },
+          dataLabels: {
+            show: false,
+          },
+        },
+      },
+      labels: [''],
     },
-    labels: [''],
-  }
-
-  const series = shallowRef([31])
-
-  return {
-    type,
-    height,
-    options,
-    series,
-  }
+  })
 }
 
 function useRadialSmallTwo() {
-  const type = 'radialBar'
-  const height = 75
+  const series = shallowRef([53])
 
-  const options = {
-    chart: {
-      type: 'radialBar',
-      offsetY: -10,
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-success-500)'],
-    plotOptions: {
-      radialBar: {
-        hollow: {
-          size: '50%',
-        },
-        dataLabels: {
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 75,
+    series,
+    options: {
+      chart: {
+        offsetY: -10,
+        toolbar: {
           show: false,
         },
       },
+      colors: ['var(--color-success-500)'],
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            size: '50%',
+          },
+          dataLabels: {
+            show: false,
+          },
+        },
+      },
+      labels: [''],
     },
-    labels: [''],
-  }
-
-  const series = shallowRef([53])
-
-  return {
-    type,
-    height,
-    options,
-    series,
-  }
+  })
 }
 
 function useRadialSmallThree() {
-  const type = 'radialBar'
-  const height = 75
+  const series = shallowRef([84])
 
-  const options = {
-    chart: {
-      type: 'radialBar',
-      offsetY: -10,
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-destructive-500)'],
-    plotOptions: {
-      radialBar: {
-        hollow: {
-          size: '50%',
-        },
-        dataLabels: {
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 75,
+    series,
+    options: {
+      chart: {
+        offsetY: -10,
+        toolbar: {
           show: false,
         },
       },
+      colors: ['var(--color-destructive-500)'],
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            size: '50%',
+          },
+          dataLabels: {
+            show: false,
+          },
+        },
+      },
+      labels: [''],
     },
-    labels: [''],
-  }
-
-  const series = shallowRef([84])
-
-  return {
-    type,
-    height,
-    options,
-    series,
-  }
+  })
 }
 
 function useGaugePersonal() {
   const { primary } = useTailwindColors()
-  const type = 'radialBar'
-  const height = 220
-
-  const options = {
-    title: {
-      text: undefined,
-    },
-    chart: {
-      sparkline: {
-        enabled: true,
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: [primary.value],
-    plotOptions: {
-      radialBar: {
-        startAngle: -90,
-        endAngle: 90,
-        track: {
-          background: '#e7e7e7',
-          strokeWidth: '97%',
-          margin: 5, // margin is in pixels
-          dropShadow: {
-            enabled: false,
-            top: 2,
-            left: 0,
-            color: '#999',
-            opacity: 1,
-            blur: 2,
-          },
-        },
-        hollow: {
-          margin: 0,
-          size: '35%',
-        },
-        dataLabels: {
-          name: {
-            show: false,
-          },
-          value: {
-            offsetY: -2,
-            fontSize: '22px',
-          },
-        },
-      },
-    },
-    labels: ['Average Results'],
-  }
-
   const series = shallowRef([76])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 220,
     series,
-  }
+    options: {
+      title: {
+        text: undefined,
+      },
+      chart: {
+        sparkline: {
+          enabled: true,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: [primary.value],
+      plotOptions: {
+        radialBar: {
+          startAngle: -90,
+          endAngle: 90,
+          track: {
+            background: '#e7e7e7',
+            strokeWidth: '97%',
+            margin: 5, // margin is in pixels
+            dropShadow: {
+              enabled: false,
+              top: 2,
+              left: 0,
+              color: '#999',
+              opacity: 1,
+              blur: 2,
+            },
+          },
+          hollow: {
+            margin: 0,
+            size: '35%',
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            value: {
+              offsetY: -2,
+              fontSize: '22px',
+            },
+          },
+        },
+      },
+      labels: ['Average Results'],
+    },
+  })
 }
 
 function useBarOrders() {
-  const type = 'bar'
-  const height = 210
-
   const series = shallowRef<any[]>([])
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-indigo-500)'],
-    dataLabels: {
-      enabled: false,
-    },
-    noData: {
-      text: 'Loading...',
-    },
-    xaxis: {
-      type: 'category',
-      tickPlacement: 'on',
-      labels: {
-        rotate: -45,
-        rotateAlways: true,
-      },
-    },
-  } as const
 
   // delay the data loading
   let timeout: any
@@ -711,16 +655,34 @@ function useBarOrders() {
     clearTimeout(timeout2)
   })
 
-  return {
-    height,
-    type,
+  return defineApexchartsProps({
+    type: 'bar',
+    height: 210,
     series,
-    options,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-indigo-500)'],
+      dataLabels: {
+        enabled: false,
+      },
+      noData: {
+        text: 'Loading...',
+      },
+      xaxis: {
+        type: 'category',
+        tickPlacement: 'on',
+        labels: {
+          rotate: -45,
+          rotateAlways: true,
+        },
+      },
+    },
+  })
 }
-
-// Datepicker
-const date = ref(new Date())
 </script>
 
 <template>

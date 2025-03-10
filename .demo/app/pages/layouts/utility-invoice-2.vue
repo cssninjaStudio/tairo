@@ -385,7 +385,7 @@ const itemSubtotal = computed(() =>
                           weight="semibold"
                           class="text-muted-800 dark:text-muted-100"
                         >
-                          {{ asDollar(1525.18) }}
+                          {{ formatPrice(1525.18) }}
                         </BaseParagraph>
                       </div>
                       <div class="flex items-center justify-between">
@@ -400,7 +400,7 @@ const itemSubtotal = computed(() =>
                           weight="semibold"
                           class="text-muted-800 dark:text-muted-100"
                         >
-                          {{ asDollar(0.0) }}
+                          {{ formatPrice(0.0) }}
                         </BaseParagraph>
                       </div>
                       <div class="flex items-center justify-between">
@@ -415,7 +415,7 @@ const itemSubtotal = computed(() =>
                           weight="semibold"
                           class="text-muted-800 dark:text-muted-100"
                         >
-                          {{ asDollar(0.0) }}
+                          {{ formatPrice(0.0) }}
                         </BaseParagraph>
                       </div>
                     </div>
@@ -434,7 +434,7 @@ const itemSubtotal = computed(() =>
                           weight="semibold"
                           class="text-muted-800 dark:text-muted-100"
                         >
-                          {{ asDollar(parseInt(itemSubtotal, 10)) }}
+                          {{ formatPrice(parseInt(itemSubtotal, 10)) }}
                         </BaseParagraph>
                       </div>
                     </div>
@@ -527,7 +527,7 @@ const itemSubtotal = computed(() =>
                 lead="none"
                 class="mb-3"
               >
-                {{ asDollar(parseInt(itemSubtotal, 10)) }}
+                {{ formatPrice(parseInt(itemSubtotal, 10)) }}
                 <BaseText size="xs" class="text-muted-400 inline">
                   (Tax incl.)
                 </BaseText>

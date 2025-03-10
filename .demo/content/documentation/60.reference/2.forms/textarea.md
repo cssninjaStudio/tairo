@@ -83,12 +83,4 @@ demo: '#examples/textarea/disabled.vue'
 Textarea can be shown disabled. Use the `disabled` prop to disable the textarea.
 ::
 
-::doc-component-demo
----
-title: Custom addons
-demo: '#examples/textarea/addon.vue'
----
-Textarea can have custom addons. Use the `addon` slot to add your own custom addons.
-::
-
 :doc-component-meta{name="BaseTextarea"}

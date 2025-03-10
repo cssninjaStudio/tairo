@@ -1,35 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoBarRange = reactive(useDemoBarRange())
 
 function useDemoBarRange() {
-  const type = 'rangeBar'
-  const height = 280
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-amber-400)'],
-    title: {
-      text: '',
-      align: 'left',
-    },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-      },
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-    dataLabels: {
-      enabled: true,
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Corporate',
@@ -75,12 +49,35 @@ function useDemoBarRange() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'rangeBar',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-amber-400)'],
+      title: {
+        text: '',
+        align: 'left',
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+        },
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+      dataLabels: {
+        enabled: true,
+      },
+    },
+  })
 }
 </script>
 

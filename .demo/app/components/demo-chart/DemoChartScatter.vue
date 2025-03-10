@@ -1,50 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoScatter = reactive(useDemoScatter())
 
 function useDemoScatter() {
-  const type = 'scatter'
-  const height = 280
-
-  const options = {
-    title: {
-      text: '',
-    },
-    chart: {
-      zoom: {
-        type: 'xy',
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)'],
-    dataLabels: {
-      enabled: false,
-    },
-    grid: {
-      xaxis: {
-        lines: {
-          show: true,
-        },
-      },
-      yaxis: {
-        lines: {
-          show: true,
-        },
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-    },
-    yaxis: {
-      max: 70,
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Team 1',
@@ -110,12 +69,50 @@ function useDemoScatter() {
     return series
   }
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'scatter',
+    height: 280,
     series,
-  }
+    options: {
+      title: {
+        text: '',
+      },
+      chart: {
+        zoom: {
+          type: 'xy',
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-primary-300)', 'var(--color-amber-400)', 'var(--color-indigo-400)'],
+      dataLabels: {
+        enabled: false,
+      },
+      grid: {
+        xaxis: {
+          lines: {
+            show: true,
+          },
+        },
+        yaxis: {
+          lines: {
+            show: true,
+          },
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+      },
+      yaxis: {
+        max: 70,
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+    },
+  })
 }
 </script>
 

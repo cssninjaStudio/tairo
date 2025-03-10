@@ -21,7 +21,7 @@ const activeTab = ref('tab-1')
           class="text-muted-400 focus-visible:nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
           @click="close"
         >
-          <Icon name="feather:chevron-right" class="size-6" />
+          <Icon name="feather:chevron-right" class="size-6 rtl:rotate-180" />
         </button>
       </div>
 

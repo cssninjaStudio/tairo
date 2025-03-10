@@ -1,7 +1,14 @@
 <script setup lang="ts">
-
+const { t, locale, locales, setLocale, onLanguageSwitched } = useI18n()
 const { close } = usePanels()
 onKeyStroke('Escape', close)
+
+const localeValue = computed({
+  get: () => locale.value,
+  set: (value) => {
+    setLocale(value)
+  },
+})
 </script>
 
 <template>
@@ -11,46 +18,46 @@ onKeyStroke('Escape', close)
         <h2
           class="font-heading text-muted-700 text-lg font-semibold dark:text-white"
         >
-          Select language
+          {{ t('panels.language.title') }}
         </h2>
         <button
           type="button"
           class="text-muted-400 focus-visible:nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
           @click="close"
         >
-          <Icon name="feather:chevron-right" class="size-6" />
+          <Icon name="feather:chevron-right" class="size-6 rtl:rotate-180" />
         </button>
       </div>
 
       <div class="relative h-[calc(100dvh_-_64px)] w-full px-10">
-        <div class="grid grid-cols-3 py-6">
-          <!-- Radio box -->
-          <div class="relative my-4 flex items-center justify-center">
-            <div class="focus-visible:nui-focus relative rounded-full">
-              <input
-                type="radio"
-                name="language_selection"
-                class="peer absolute start-0 top-0 z-20 size-full cursor-pointer opacity-0"
-                checked
-              >
-              <div
-                class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
-              >
-                <img
-                  class="size-10 rounded-full"
-                  src="/img/icons/flags/united-states-of-america.svg"
-                  alt="flag icon"
+        <RadioGroupRoot v-model="localeValue" class="grid grid-cols-3 py-6">
+          <RadioGroupItem
+            v-for="other in locales"
+            :key="other.code"
+            :value="other.code"
+            class="relative my-4 flex items-center justify-center outline-none"
+          >
+            <BaseTooltip :content="other.name" :bindings="{ portal: { disabled: true } }">
+              <div class="in-focus-visible:nui-focus relative rounded-full">
+                <div
+                  class="border-muted-200 in-data-[state=checked]:border-primary-500 dark:border-muted-600 flex size-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"
                 >
+                  <img
+                    class="size-10 rounded-full"
+                    :src="getLocaleFlag(other.code)"
+                    alt="flag icon"
+                  >
+                </div>
+                <RadioGroupIndicator
+                  class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 size-7 flex items-center justify-center rounded-full border-4 border-white text-white"
+                >
+                  <Icon name="feather:check" class="size-3" />
+                </RadioGroupIndicator>
               </div>
-              <div
-                class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden size-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex"
-              >
-                <Icon name="feather:check" class="size-3" />
-              </div>
-            </div>
-          </div>
-          <!-- Radio box -->
-          <div class="relative my-4 flex items-center justify-center">
+            </BaseTooltip>
+          </RadioGroupItem>
+
+          <!-- <div class="relative my-4 flex items-center justify-center">
             <div class="focus-visible:nui-focus relative rounded-full">
               <input
                 type="radio"
@@ -73,7 +80,7 @@ onKeyStroke('Escape', close)
               </div>
             </div>
           </div>
-          <!-- Radio box -->
+
           <div class="relative my-4 flex items-center justify-center">
             <div class="focus-visible:nui-focus relative rounded-full">
               <input
@@ -97,7 +104,7 @@ onKeyStroke('Escape', close)
               </div>
             </div>
           </div>
-          <!-- Radio box -->
+
           <div class="relative my-4 flex items-center justify-center">
             <div class="focus-visible:nui-focus relative rounded-full">
               <input
@@ -121,7 +128,7 @@ onKeyStroke('Escape', close)
               </div>
             </div>
           </div>
-          <!-- Radio box -->
+
           <div class="relative my-4 flex items-center justify-center">
             <div class="focus-visible:nui-focus relative rounded-full">
               <input
@@ -145,7 +152,7 @@ onKeyStroke('Escape', close)
               </div>
             </div>
           </div>
-          <!-- Radio box -->
+
           <div class="relative my-4 flex items-center justify-center">
             <div class="focus-visible:nui-focus relative rounded-full">
               <input
@@ -168,8 +175,8 @@ onKeyStroke('Escape', close)
                 <Icon name="feather:check" class="size-3" />
               </div>
             </div>
-          </div>
-        </div>
+          </div> -->
+        </RadioGroupRoot>
 
         <div>
           <img

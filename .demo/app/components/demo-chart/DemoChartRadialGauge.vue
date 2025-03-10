@@ -1,53 +1,50 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoRadialGauge = reactive(useDemoRadialGauge())
 
 function useDemoRadialGauge() {
-  const height = 370
-  const type = 'radialBar'
+  const series = shallowRef([67])
 
-  const options = {
-    title: {
-      text: '',
-    },
-    chart: {
-      offsetY: -10,
-      toolbar: {
-        show: false,
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 370,
+    series,
+    options: {
+      title: {
+        text: '',
       },
-    },
-    colors: ['var(--color-chart-base)'],
-    plotOptions: {
-      radialBar: {
-        startAngle: -135,
-        endAngle: 135,
-        dataLabels: {
-          name: {
-            fontSize: '14px',
-            color: undefined,
-          },
-          value: {
-            offsetY: 10,
-            fontSize: '18px',
-            color: undefined,
-            formatter: asPercent,
+      chart: {
+        offsetY: -10,
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 135,
+          dataLabels: {
+            name: {
+              fontSize: '14px',
+              color: undefined,
+            },
+            value: {
+              offsetY: 10,
+              fontSize: '18px',
+              color: undefined,
+              formatter: value => `${value} %`,
+            },
           },
         },
       },
+      stroke: {
+        dashArray: 4,
+      },
+      labels: ['Median Ratio'],
     },
-    stroke: {
-      dashArray: 4,
-    },
-    labels: ['Median Ratio'],
-  }
-
-  const series = shallowRef([67])
-
-  return {
-    type,
-    height,
-    options,
-    series,
-  }
+  })
 }
 </script>
 

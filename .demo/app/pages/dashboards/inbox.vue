@@ -174,7 +174,6 @@ const panelActive = ref(false)
 </script>
 
 <template>
-  <!-- Wrapper -->
   <div
     class=" -mt-6 w-full overflow-hidden"
   >
@@ -440,11 +439,11 @@ const panelActive = ref(false)
             <div
               class="nui-slimscroll h-[calc(100vh_-_316px)] overflow-y-auto p-8"
             >
-              <div v-if="selectedMessage.attachments.length > 0" class="mb-3 flex items-center gap-2">
+              <div v-if="selectedMessage?.attachments?.length" class="mb-3 flex items-center gap-2">
                 <Icon name="solar:paperclip-linear" class="size-4 text-muted-500 dark:text-muted-400" />
                 <span>&middot;</span>
                 <BaseTag rounded="full">
-                  {{ selectedMessage?.attachments.length }} attachment{{ selectedMessage?.attachments.length > 1 ? 's' : '' }}
+                  {{ selectedMessage?.attachments.length }} attachment{{ selectedMessage.attachments.length > 1 ? 's' : '' }}
                 </BaseTag>
               </div>
               <BaseHeading size="2xl" weight="medium" class="text-muted-900 dark:text-white">

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 definePageMeta({
   title: 'Company',
   preview: {
@@ -15,127 +17,62 @@ const gaugePersonal = reactive(useGaugePersonal())
 const barSalesProfit = reactive(useBarSalesProfit())
 
 function useGaugePersonal() {
-  const type = 'radialBar'
-  const height = 220
-
-  const options = {
-    title: {
-      text: undefined,
-    },
-    chart: {
-      sparkline: {
-        enabled: true,
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)'],
-    plotOptions: {
-      radialBar: {
-        startAngle: -90,
-        endAngle: 90,
-        track: {
-          strokeWidth: '97%',
-          margin: 0, // margin is in pixels
-          dropShadow: {
-            enabled: false,
-            top: 2,
-            left: 0,
-            color: '#999',
-            opacity: 1,
-            blur: 2,
-          },
-        },
-        hollow: {
-          margin: 0,
-          size: '35%',
-        },
-        dataLabels: {
-          name: {
-            show: false,
-          },
-          value: {
-            offsetY: -2,
-            fontSize: '22px',
-          },
-        },
-      },
-    },
-    labels: ['Average Results'],
-  }
-
   const series = shallowRef([76])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'radialBar',
+    height: 220,
     series,
-  }
+    options: {
+      title: {
+        text: undefined,
+      },
+      chart: {
+        sparkline: {
+          enabled: true,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)'],
+      plotOptions: {
+        radialBar: {
+          startAngle: -90,
+          endAngle: 90,
+          track: {
+            strokeWidth: '97%',
+            margin: 0, // margin is in pixels
+            dropShadow: {
+              enabled: false,
+              top: 2,
+              left: 0,
+              color: '#999',
+              opacity: 1,
+              blur: 2,
+            },
+          },
+          hollow: {
+            margin: 0,
+            size: '35%',
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            value: {
+              offsetY: -2,
+              fontSize: '22px',
+            },
+          },
+        },
+      },
+      labels: ['Average Results'],
+    },
+  })
 }
 
 function useBarSalesProfit() {
-  const type = 'bar'
-  const height = 250
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-primary-400)', 'var(--color-indigo-500)'],
-    legend: {
-      position: 'top',
-    },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        endingShape: 'rounded',
-        columnWidth: '55%',
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      show: true,
-      width: 2,
-      colors: ['transparent'],
-    },
-    xaxis: {
-      categories: [
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-      ],
-    },
-    yaxis: {
-      labels: {
-        formatter(val: string) {
-          return val + 70
-        },
-      },
-    },
-    fill: {
-      opacity: 1,
-    },
-    tooltip: {
-      y: {
-        formatter(val: string) {
-          return val + 70
-        },
-      },
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Net Profit',
@@ -151,12 +88,53 @@ function useBarSalesProfit() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'bar',
+    height: 250,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-primary-400)', 'var(--color-indigo-500)'],
+      legend: {
+        position: 'top',
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          // endingShape: 'rounded',
+          columnWidth: '55%',
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent'],
+      },
+      xaxis: {
+        categories: [
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+        ],
+      },
+      fill: {
+        opacity: 1,
+      },
+    },
+  })
 }
 
 const team = shallowRef([

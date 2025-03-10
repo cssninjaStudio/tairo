@@ -1,79 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const areaSubscriptions = reactive(useAreaSubscriptions())
 
 function useAreaSubscriptions() {
-  const type = 'area'
-  const height = 240
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-      sparkline: {
-        enabled: true,
-      },
-    },
-    colors: ['var(--chart-color-base)', 'var(--color-indigo-500)', 'var(--color-primary-400)'],
-    grid: {
-      show: false,
-      padding: {
-        left: 0,
-        right: 0,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      width: [2],
-      curve: 'smooth',
-    },
-    xaxis: {
-      type: 'numeric',
-      lines: {
-        show: false,
-      },
-      axisBorder: {
-        show: false,
-      },
-      labels: {
-        show: false,
-      },
-    },
-    yaxis: [
-      {
-        y: 0,
-        offsetX: 0,
-        offsetY: 0,
-        labels: {
-          show: false,
-        },
-        padding: {
-          left: 0,
-          right: 0,
-        },
-      },
-    ],
-    tooltip: {
-      x: {
-        show: false,
-        format: 'dd/MM/yy HH:mm',
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        gradientToColors: ['var(--color-chart-gradient)'],
-        shadeIntensity: 0,
-        opacityFrom: 0.6,
-        opacityTo: 0.75,
-      },
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'New Users',
@@ -89,7 +19,79 @@ function useAreaSubscriptions() {
     },
   ])
 
-  return { type, height, options, series }
+  return defineApexchartsProps({
+    type: 'area',
+    height: 240,
+    series,
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+        sparkline: {
+          enabled: true,
+        },
+      },
+      colors: ['var(--chart-color-base)', 'var(--color-indigo-500)', 'var(--color-primary-400)'],
+      grid: {
+        show: false,
+        padding: {
+          left: 0,
+          right: 0,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: [2],
+        curve: 'smooth',
+      },
+      xaxis: {
+        type: 'numeric',
+        // lines: {
+        //   show: false,
+        // },
+        axisBorder: {
+          show: false,
+        },
+        labels: {
+          show: false,
+        },
+      },
+      yaxis: [
+        {
+          // y: 0,
+          // offsetX: 0,
+          // offsetY: 0,
+          labels: {
+            show: false,
+          },
+          // padding: {
+          //   left: 0,
+          //   right: 0,
+          // },
+        },
+      ],
+      tooltip: {
+        x: {
+          show: false,
+          format: 'dd/MM/yy HH:mm',
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.75,
+        },
+      },
+    },
+  })
 }
 </script>
 

@@ -1,39 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoBubble = reactive(useDemoBubble())
 
 function useDemoBubble() {
-  const type = 'bubble'
-  const height = 280
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ['var(--color-chart-base)', 'var(--color-amber-400)', 'var(--color-indigo-400)', 'var(--color-primary-300)'],
-    dataLabels: {
-      enabled: false,
-    },
-    fill: {
-      opacity: 0.8,
-    },
-    title: {
-      text: '',
-    },
-    xaxis: {
-      tickAmount: 12,
-      type: 'category',
-    },
-    yaxis: {
-      max: 70,
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'Bubble1',
@@ -85,12 +55,39 @@ function useDemoBubble() {
     return _series
   }
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'bubble',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      colors: ['var(--color-chart-base)', 'var(--color-amber-400)', 'var(--color-indigo-400)', 'var(--color-primary-300)'],
+      dataLabels: {
+        enabled: false,
+      },
+      fill: {
+        opacity: 0.8,
+      },
+      title: {
+        text: '',
+      },
+      xaxis: {
+        tickAmount: 12,
+        type: 'category',
+      },
+      yaxis: {
+        max: 70,
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+    },
+  })
 }
 </script>
 

@@ -1,51 +1,9 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoLineStep = reactive(useDemoLineStep())
 
 function useDemoLineStep() {
-  const type = 'line'
-  const height = 280
-
-  const options = {
-    chart: {
-      toolbar: {
-        show: false,
-      },
-    },
-    stroke: {
-      width: [2, 2, 2],
-      curve: 'stepline',
-    },
-    colors: ['var(--color-chart-base)'],
-    dataLabels: {
-      enabled: false,
-    },
-    title: {
-      text: '',
-      align: 'left',
-    },
-    markers: {
-      hover: {
-        sizeOffset: 4,
-      },
-    },
-    xaxis: {
-      categories: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-      ],
-    },
-  }
-
   const series = shallowRef([
     {
       name: 'New members',
@@ -53,12 +11,51 @@ function useDemoLineStep() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'line',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        toolbar: {
+          show: false,
+        },
+      },
+      stroke: {
+        width: [2, 2, 2],
+        curve: 'stepline',
+      },
+      colors: ['var(--color-chart-base)'],
+      dataLabels: {
+        enabled: false,
+      },
+      title: {
+        text: '',
+        align: 'left',
+      },
+      markers: {
+        hover: {
+          sizeOffset: 4,
+        },
+      },
+      xaxis: {
+        categories: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+      },
+    },
+  })
 }
 </script>
 

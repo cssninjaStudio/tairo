@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
+
 const demoAreasMultiple = reactive(useDemoAreasMultiple())
 
 function useDemoAreasMultiple() {
   const { primary, info, success } = useTailwindColors()
-  const type = 'area'
-  const height = 280
 
   const dataSeries = [
     [
@@ -1463,87 +1463,18 @@ function useDemoAreasMultiple() {
 
   for (let i = 0; i < 12; i++) {
     ts1 = ts1 + 86400000
-    const innerArr: any[] = [ts1, dataSeries[2][i].value]
+    const innerArr: any[] = [ts1, dataSeries[2]![i]!.value]
     dataSet[0].push(innerArr)
   }
   for (let i = 0; i < 18; i++) {
     ts2 = ts2 + 86400000
-    const innerArr: any[] = [ts2, dataSeries[1][i].value]
+    const innerArr: any[] = [ts2, dataSeries[1]![i]!.value]
     dataSet[1].push(innerArr)
   }
   for (let i = 0; i < 12; i++) {
     ts3 = ts3 + 86400000
-    const innerArr: any[] = [ts3, dataSeries[0][i].value]
+    const innerArr: any[] = [ts3, dataSeries[0]![i]!.value]
     dataSet[2].push(innerArr)
-  }
-
-  const options = {
-    chart: {
-      stacked: false,
-      zoom: {
-        enabled: false,
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    markers: {
-      size: 0,
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shadeIntensity: 1,
-        inverseColors: false,
-        opacityFrom: 0.45,
-        opacityTo: 0.05,
-        stops: [20, 100, 100, 100],
-      },
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: '#8e8da4',
-        },
-        offsetX: 0,
-        formatter: toFixed(2, 1000000),
-      },
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-      tickAmount: 8,
-      min: new Date('01/01/2014').getTime(),
-      max: new Date('01/20/2014').getTime(),
-      labels: {
-        rotate: -15,
-        rotateAlways: true,
-        formatter: toDate('DD MMM YYYY'),
-      },
-    },
-    colors: [primary.value, info.value, success.value],
-    title: {
-      text: '',
-      align: 'left',
-    },
-    tooltip: {
-      shared: true,
-    },
-    stroke: {
-      width: [2, 2, 2],
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'center',
-    },
   }
 
   const series = shallowRef([
@@ -1561,12 +1492,79 @@ function useDemoAreasMultiple() {
     },
   ])
 
-  return {
-    type,
-    height,
-    options,
+  return defineApexchartsProps({
+    type: 'area',
+    height: 280,
     series,
-  }
+    options: {
+      chart: {
+        stacked: false,
+        zoom: {
+          enabled: false,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      markers: {
+        size: 0,
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          inverseColors: false,
+          opacityFrom: 0.45,
+          opacityTo: 0.05,
+          stops: [20, 100, 100, 100],
+        },
+      },
+      yaxis: {
+        labels: {
+          style: {
+            colors: '#8e8da4',
+          },
+          offsetX: 0,
+          formatter: val => (val / 1_000_000).toFixed(2),
+        },
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+      },
+      xaxis: {
+        type: 'datetime',
+        tickAmount: 8,
+        min: new Date('01/01/2014').getTime(),
+        max: new Date('01/20/2014').getTime(),
+        labels: {
+          rotate: -15,
+          rotateAlways: true,
+          formatter: (val, timestamp) => timestamp?.toString() ?? '',
+        },
+      },
+      colors: [primary.value, info.value, success.value],
+      title: {
+        text: '',
+        align: 'left',
+      },
+      tooltip: {
+        shared: true,
+      },
+      stroke: {
+        width: [2, 2, 2],
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+      },
+    },
+  })
 }
 </script>
 
