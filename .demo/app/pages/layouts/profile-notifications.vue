@@ -23,17 +23,17 @@ if (data.value) {
 </script>
 
 <template>
-  <div class="min-h-screen overflow-hidden">
-    <div class="mx-auto w-full max-w-4xl pt-12">
+  <div class="min-h-screen overflow-hidden px-4 md:px-6 lg:px-8 pb-20">
+    <div class="w-full max-w-5xl pt-10">
       <div v-if="notifications.length === 0" />
       <div v-else class="">
         <div
           v-for="item in notifications"
           :key="item.id"
-          class="ltablet:after:start-[104px] after:border-muted-300 dark:after:border-muted-800 relative flex items-center gap-4 after:absolute after:start-[8px] after:top-3 after:h-full after:w-px after:border-e-2 after:content-[''] lg:after:start-[104px] [&:not(:first-child)]:pt-3"
+          class="ltablet:after:start-[104px] after:border-muted-300 dark:after:border-muted-800 relative flex items-center gap-4 after:absolute after:start-[8px] after:top-3 after:h-full after:w-px after:border-e-2 after:content-[''] lg:after:start-[119px] [&:not(:first-child)]:pt-3"
         >
           <div class="ltablet:block hidden w-24 text-right lg:block">
-            <BaseText size="xs" class="text-muted-400">
+            <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
               {{ item.date }}
             </BaseText>
           </div>
@@ -41,12 +41,11 @@ if (data.value) {
             class="dark:bg-muted-800 relative z-10 size-4 shrink-0 rounded-full bg-white"
           >
             <div
-              class="size-4 rounded-full border-2 border-current"
-              :class="getRandomColor()"
+              class="size-4 rounded-full border-2 border-muted-300 dark:border-muted-600"
             />
           </div>
 
-          <BaseCard class="p-4">
+          <BaseCard class="p-4 grow">
             <div class="flex w-full items-center gap-4">
               <div
                 class="size-2 shrink-0 rounded-full"
@@ -56,10 +55,10 @@ if (data.value) {
                     : 'bg-muted-300 dark:bg-muted-700/50'
                 "
               />
-              <BaseAvatar :src="item.user.src" size="sm" />
+              <BaseAvatar :src="item.user.src" size="xs" />
               <div>
                 <BaseText size="sm" lead="tight">
-                  <span class="text-muted-800 dark:text-muted-100">{{ item.user.name }}&nbsp;</span>
+                  <span class="text-muted-800 dark:text-muted-100 font-medium">{{ item.user.name }}&nbsp;</span>
                   <span class="text-muted-500 dark:text-muted-400">{{ item.target.text }}&nbsp;</span>
                   <NuxtLink
                     :to="item.target.url"
@@ -72,7 +71,7 @@ if (data.value) {
                 <BaseText size="xs" class="text-muted-400">
                   <span class="ltablet:hidden lg:hidden">{{ item.date }}</span>
                   <span class="ltablet:hidden px-2 lg:hidden">&middot;</span>
-                  <span>{{ item.time }}</span>
+                  <span class="block">{{ item.time }}</span>
                 </BaseText>
               </div>
               <div class="ms-auto hidden items-center gap-3 sm:flex">

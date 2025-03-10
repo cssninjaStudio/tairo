@@ -15,25 +15,32 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-5xl">
+  <div class="mx-auto w-full max-w-5xl px-4 md:px-6 lg:px-8 pb-20">
     <div v-if="!data" />
     <div v-else class="relative w-full">
       <div class="absolute end-0 top-2 z-20">
         <BaseDropdown
-          label="Dropdown"
           placement="bottom-end"
           size="md"
           class="z-20"
           rounded="lg"
         >
-          <BaseDropdownSeparator />
+          <template #button>
+            <BaseButton
+              size="icon-sm"
+              rounded="full"
+              class="bg-white text-muted-400 dark:bg-muted-800 dark:text-muted-400"
+            >
+              <Icon name="lucide:more-horizontal" class="size-4" />
+            </BaseButton>
+          </template>
           <BaseDropdownItem
             to="/layouts/profile-edit"
             title="Edit"
             text="Edit profile"
           >
             <template #start>
-              <Icon name="ph:pencil-duotone" class="me-2 block size-5" />
+              <Icon name="solar:pen-2-linear" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownSeparator />
@@ -43,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             text="Security settings"
           >
             <template #start>
-              <Icon name="ph:lock-duotone" class="me-2 block size-5" />
+              <Icon name="solar:lock-keyhole-linear" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownItem
@@ -52,7 +59,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             text="Manage billing"
           >
             <template #start>
-              <Icon name="ph:bank-duotone" class="me-2 block size-5" />
+              <Icon name="solar:card-linear" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
           <BaseDropdownSeparator />
@@ -62,7 +69,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             text="Share profile"
           >
             <template #start>
-              <Icon name="ph:link-duotone" class="me-2 block size-5" />
+              <Icon name="solar:link-circle-linear" class="me-2 block size-5" />
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
@@ -83,14 +90,14 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           >
             {{ data?.personalInfo.firstName }} {{ data?.personalInfo.lastName }}
           </BaseHeading>
-          <BaseParagraph size="sm" class="text-muted-400 mb-3 mt-1">
+          <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400 mb-3 mt-1">
             {{ data?.personalInfo.shortBio }}
           </BaseParagraph>
           <div
             class="divide-muted-200 dark:divide-muted-800 flex items-center justify-center divide-x"
           >
             <div class="text-muted-400 flex h-8 items-center gap-1 px-4">
-              <Icon name="ph:circles-three-duotone" class="size-5" />
+              <Icon name="solar:widget-6-linear" class="size-5" />
               <BaseText size="sm">
                 {{ data?.personalInfo.relations }}+ relations
               </BaseText>
@@ -98,7 +105,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div
               class="text-muted-400 hidden h-8 items-center gap-1 px-4 sm:flex"
             >
-              <Icon name="ph:check-circle-duotone" class="size-5" />
+              <Icon name="solar:suitcase-lines-linear" class="size-5" />
               <BaseText size="sm">
                 {{ data?.personalInfo.projects }} projects
               </BaseText>
@@ -121,18 +128,17 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
       </div>
 
       <div
-        class="ltablet:grid-cols-5 mx-auto mt-6 grid w-full max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-5"
+        class="mx-auto mt-6 grid w-full max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4 lg:landscape:grid-cols-5"
       >
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:buildings-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:buildings-2-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -150,14 +156,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:users-four-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:users-group-rounded-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -175,14 +180,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:briefcase-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:suitcase-lines-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -200,14 +204,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:lock-open-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:lock-keyhole-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -225,14 +228,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:note-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:file-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -250,14 +252,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:upload-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:upload-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -275,14 +276,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:credit-card-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:card-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -300,14 +300,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:chat-circle-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:chat-dots-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -325,14 +324,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:shield-check-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:shield-check-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"
@@ -350,14 +348,13 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
         </BaseCard>
         <BaseCard
           rounded="lg"
-          elevated-hover
-          class="hover:border-primary-500! group border-2"
+          class="hover:border-primary-500! group"
         >
           <NuxtLink to="#" class="block py-6 px-4">
             <div class="text-center">
               <Icon
-                name="ph:gear-six-duotone"
-                class="group-hover:text-primary-500 text-muted-400 size-8 transition-all duration-300 group-hover:rotate-6"
+                name="solar:settings-linear"
+                class="group-hover:text-primary-500 text-muted-400 size-6 transition-all duration-300 group-hover:rotate-6 mx-auto"
               />
               <BaseHeading
                 tag="h3"

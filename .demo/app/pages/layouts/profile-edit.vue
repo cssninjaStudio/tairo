@@ -15,31 +15,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
 </script>
 
 <template>
-  <div class="min-h-screen overflow-hidden">
-    <div class="grid gap-8 sm:grid-cols-12">
-      <div class="col-span-12 sm:col-span-4">
-        <div class="flex w-full items-center gap-2">
-          <BaseAvatar
-            :src="data?.personalInfo.picture"
-            :badge-src="data?.personalInfo.badge"
-            size="md"
-          />
-          <div class="">
-            <BaseHeading
-              tag="h2"
-              size="md"
-              weight="medium"
-              lead="none"
-            >
-              {{ data?.personalInfo.firstName }}
-              {{ data?.personalInfo.lastName }}
-            </BaseHeading>
-            <BaseParagraph size="xs" class="text-muted-400">
-              {{ data?.personalInfo.role }}
-            </BaseParagraph>
-          </div>
-        </div>
-        <div class="mt-8 max-w-[240px]">
+  <div class="min-h-screen overflow-hidden px-4 md:px-6 lg:px-8 pb-20">
+    <div class="grid sm:grid-cols-12">
+      <div class="col-span-12 sm:col-span-3">
+        <div class="relative pe-20">
           <ul class="space-y-1 font-sans text-sm">
             <li>
               <NuxtLink
@@ -47,7 +26,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:user-duotone" class="size-4" />
+                <Icon name="solar:user-rounded-linear" class="size-5" />
                 <span>General</span>
               </NuxtLink>
             </li>
@@ -57,7 +36,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:buildings-duotone" class="size-4" />
+                <Icon name="solar:buildings-2-linear" class="size-5" />
                 <span>Experience</span>
               </NuxtLink>
             </li>
@@ -67,7 +46,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:sketch-logo-duotone" class="size-4" />
+                <Icon name="solar:add-folder-outline" class="size-5" />
                 <span>Skills & Tools</span>
               </NuxtLink>
             </li>
@@ -77,14 +56,14 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 exact-active-class="text-primary-500! bg-primary-500/10!"
                 class="text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:bg-muted-50 dark:hover:bg-muted-700/50 flex items-center gap-2 rounded-lg p-3 transition-colors duration-300"
               >
-                <Icon name="ph:gear-six-duotone" class="size-4" />
+                <Icon name="solar:settings-linear" class="size-5" />
                 <span>Settings</span>
               </NuxtLink>
             </li>
           </ul>
         </div>
       </div>
-      <div class="col-span-12 sm:col-span-8">
+      <div class="col-span-12 sm:col-span-9">
         <NuxtPage />
       </div>
     </div>

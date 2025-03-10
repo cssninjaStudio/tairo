@@ -275,506 +275,491 @@ const onSubmit = handleSubmit(
   <form
     method="POST"
     action=""
-    class="w-full pb-16"
+    class="w-full pb-16 max-w-3xl dark:[--color-input-default-bg:var(--color-muted-950)]"
     novalidate
     @submit.prevent="onSubmit"
   >
-    <BaseCard>
-      <div class="flex items-center justify-between p-4">
-        <div>
-          <BaseHeading
-            tag="h2"
-            size="sm"
-            weight="medium"
-            lead="normal"
-            class="uppercase tracking-wider"
-          >
-            General info
-          </BaseHeading>
-          <BaseText size="xs" class="text-muted-400">
-            Edit your account's general information
-          </BaseText>
-        </div>
-        <div class="flex items-center gap-2">
-          <BaseButton class="w-24" to="/layouts/profile">
-            Cancel
-          </BaseButton>
-          <BaseButton
-            type="submit"
-            variant="primary"
-            class="w-24"
-            :disabled="isSubmitting"
-            :loading="isSubmitting"
-          >
-            Save
-          </BaseButton>
-        </div>
+    <div class="flex items-center justify-end border-b border-muted-300 dark:border-muted-800 pb-4 mb-6">
+      <div class="flex items-center gap-2">
+        <BaseButton class="w-24" to="/layouts/profile">
+          Cancel
+        </BaseButton>
+        <BaseButton
+          type="submit"
+          variant="primary"
+          class="w-24"
+          :disabled="isSubmitting"
+          :loading="isSubmitting"
+        >
+          Save
+        </BaseButton>
       </div>
-      <div class="p-4">
-        <div class="mx-auto max-w-lg space-y-12 py-8">
-          <BaseMessage v-if="success" @close="success = false">
-            Your profile has been updated!
-          </BaseMessage>
-          <BaseMessage
-            v-if="fieldsWithErrors"
-            type="danger"
-            @close="() => setErrors({})"
-          >
-            This form has {{ fieldsWithErrors }} errors, please check them
-            before submitting
-          </BaseMessage>
+    </div>
+    <div>
+      <div class="space-y-12">
+        <BaseMessage v-if="success" @close="success = false">
+          Your profile has been updated!
+        </BaseMessage>
+        <BaseMessage
+          v-if="fieldsWithErrors"
+          type="danger"
+          @close="() => setErrors({})"
+        >
+          This form has {{ fieldsWithErrors }} errors, please check them
+          before submitting
+        </BaseMessage>
 
-          <TairoFormGroup
-            label="Profile picture"
-            sublabel="This is how others will recognize you"
+        <TairoFormGroup
+          label="Profile picture"
+          sublabel="This is how others will recognize you"
+        >
+          <div
+            class="relative flex flex-col gap-4"
           >
-            <div
-              class="relative flex flex-col items-center justify-center gap-4"
+            <BaseFullscreenDropfile
+              icon="ph:image-duotone"
+              :filter-file-dropped="(file) => file.type.startsWith('image')"
+              @drop="
+                (value) => {
+                  inputFile = value
+                }
+              "
+            />
+            <BaseInputFileHeadless
+              v-slot="{ open, remove, preview, files }"
+              v-model="inputFile"
+              accept="image/*"
             >
-              <BaseFullscreenDropfile
-                icon="ph:image-duotone"
-                :filter-file-dropped="(file) => file.type.startsWith('image')"
-                @drop="
-                  (value) => {
-                    inputFile = value
-                  }
-                "
-              />
-              <BaseInputFileHeadless
-                v-slot="{ open, remove, preview, files }"
-                v-model="inputFile"
-                accept="image/*"
-              >
-                <div class="relative size-24">
-                  <img
-                    v-if="files?.length && files.item(0)"
-                    :src="preview(files.item(0)!).value"
-                    alt="Upload preview"
-                    class="bg-muted-200 dark:bg-muted-700/60 size-24 rounded-full object-cover object-center"
-                  >
-                  <img
-                    v-else
-                    :src="currentAvatar"
-                    alt="Upload preview"
-                    class="bg-muted-200 dark:bg-muted-700/60 size-24 rounded-full object-cover object-center"
-                  >
-                  <div
-                    v-if="files?.length && files.item(0)"
-                    class="absolute bottom-0 end-0 z-20"
-                  >
-                    <BaseTooltip content="Remove image">
-                      <BaseButton
-                        size="icon-sm"
-                        rounded="full"
-                        @click="remove(files.item(0)!)"
-                      >
-                        <Icon name="lucide:x" class="size-4" />
-                      </BaseButton>
-                    </BaseTooltip>
-                  </div>
-                  <div v-else class="absolute bottom-0 end-0 z-20">
-                    <BaseTooltip content="Upload image">
-                      <BaseButton
-                        size="icon-sm"
-                        rounded="full"
-                        @click="open"
-                      >
-                        <Icon name="lucide:plus" class="size-4" />
-                      </BaseButton>
-                    </BaseTooltip>
-                  </div>
+              <div class="relative size-16">
+                <img
+                  v-if="files?.length && files.item(0)"
+                  :src="preview(files.item(0)!).value"
+                  alt="Upload preview"
+                  class="bg-muted-200 dark:bg-muted-700/60 size-16 rounded-full object-cover object-center"
+                >
+                <img
+                  v-else
+                  :src="currentAvatar"
+                  alt="Upload preview"
+                  class="bg-muted-200 dark:bg-muted-700/60 size-16 rounded-full object-cover object-center"
+                >
+                <div
+                  v-if="files?.length && files.item(0)"
+                  class="absolute -bottom-0.5 -end-0.5 z-20"
+                >
+                  <BaseTooltip content="Remove image">
+                    <BaseButton
+                      size="icon-sm"
+                      rounded="full"
+                      @click="remove(files.item(0)!)"
+                    >
+                      <Icon name="lucide:x" class="size-4" />
+                    </BaseButton>
+                  </BaseTooltip>
                 </div>
-              </BaseInputFileHeadless>
-              <div
-                v-if="fileError"
-                class="text-destructive-600 inline-block font-sans text-[.8rem]"
-              >
-                {{ fileError }}
+                <div v-else class="absolute -bottom-0.5 -end-0.5 z-20">
+                  <BaseTooltip content="Upload image">
+                    <BaseButton
+                      size="icon-sm"
+                      rounded="full"
+                      @click="open"
+                    >
+                      <Icon name="lucide:plus" class="size-4" />
+                    </BaseButton>
+                  </BaseTooltip>
+                </div>
               </div>
+            </BaseInputFileHeadless>
+            <div
+              v-if="fileError"
+              class="text-destructive-600 inline-block font-sans text-[.8rem]"
+            >
+              {{ fileError }}
             </div>
-          </TairoFormGroup>
+          </div>
+        </TairoFormGroup>
 
-          <TairoFormGroup
-            label="Profile Info"
-            sublabel="Others diserve to know you more"
-          >
-            <div class="grid grid-cols-12 gap-4">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="profile.firstName"
+        <TairoFormGroup
+          label="Profile Info"
+          sublabel="Others diserve to know you more"
+        >
+          <div class="grid grid-cols-12 gap-4">
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="profile.firstName"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                  required
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="ph:user-duotone"
-                    placeholder="First name"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="profile.lastName"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="solar:user-rounded-linear"
+                  placeholder="First name"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="profile.lastName"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                  required
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="ph:user-duotone"
-                    placeholder="Last name"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="profile.role"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="solar:user-rounded-linear"
+                  placeholder="Last name"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="profile.role"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12"
-                  required
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="ph:suitcase-duotone"
-                    placeholder="Job title"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="profile.location"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="solar:suitcase-lines-linear"
+                  placeholder="Job title"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="profile.location"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="ph:map-pin-duotone"
-                    placeholder="Location"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="profile.bio"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="solar:map-point-linear"
+                  placeholder="Location"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="profile.bio"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12"
-                >
-                  <BaseTextarea
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    rows="4"
-                    placeholder="About you / Short bio..."
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-            </div>
-          </TairoFormGroup>
+                <BaseTextarea
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  rows="4"
+                  placeholder="About you / Short bio..."
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+          </div>
+        </TairoFormGroup>
 
-          <TairoFormGroup
-            label="Professional Info"
-            sublabel="This can help you to win some opportunities"
-          >
-            <div class="grid grid-cols-12 gap-4">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="info.experience"
+        <TairoFormGroup
+          label="Professional Info"
+          sublabel="This can help you to win some opportunities"
+        >
+          <div class="grid grid-cols-12 gap-4">
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="info.experience"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    placeholder="Experience"
-                    rounded="sm"
-                    :items="experience.map((value) => ({
-                      value,
-                      textValue: value,
-                    }))"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="info.firstJob"
+                <BaseSelect
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  placeholder="Experience"
+                  rounded="sm"
+                  :items="experience.map((value) => ({
+                    value,
+                    textValue: value,
+                  }))"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="info.firstJob"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    placeholder="Is this your first job?"
-                    rounded="sm"
-                    :items="answers.map((item) => ({
-                      value: item.value,
-                      textValue: item.label,
-                    }))"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="info.flexible"
+                <BaseSelect
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  placeholder="Is this your first job?"
+                  rounded="sm"
+                  :items="answers.map((item) => ({
+                    value: item.value,
+                    textValue: item.label,
+                  }))"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="info.flexible"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    placeholder="Are you flexible?"
-                    rounded="sm"
-                    :items="answers.map((item) => ({
-                      value: item.value,
-                      textValue: item.label,
-                    }))"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="info.remote"
+                <BaseSelect
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  placeholder="Are you flexible?"
+                  rounded="sm"
+                  :items="answers.map((item) => ({
+                    value: item.value,
+                    textValue: item.label,
+                  }))"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="info.remote"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                  required
-                >
-                  <BaseSelect
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    placeholder="Do you work remotely?"
-                    rounded="sm"
-                    :items="answers.map((item) => ({
-                      value: item.value,
-                      textValue: item.label,
-                    }))"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-            </div>
-          </TairoFormGroup>
+                <BaseSelect
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  placeholder="Do you work remotely?"
+                  rounded="sm"
+                  :items="answers.map((item) => ({
+                    value: item.value,
+                    textValue: item.label,
+                  }))"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+          </div>
+        </TairoFormGroup>
 
-          <TairoFormGroup
-            label="Social Profiles"
-            sublabel="This can help others finding you on social media"
-          >
-            <div class="grid grid-cols-12 gap-4">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="social.facebook"
+        <TairoFormGroup
+          label="Social Profiles"
+          sublabel="This can help others finding you on social media"
+        >
+          <div class="grid grid-cols-12 gap-4">
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="social.facebook"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="fa6-brands:facebook-f"
-                    placeholder="Facebook URL"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="social.twitter"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="fa6-brands:facebook-f"
+                  placeholder="Facebook URL"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="social.twitter"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="fa6-brands:twitter"
-                    placeholder="Twitter URL"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="social.dribbble"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="fa6-brands:x-twitter"
+                  placeholder="Twitter URL"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="social.dribbble"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="fa6-brands:dribbble"
-                    placeholder="Dribbble URL"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="social.instagram"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="fa6-brands:dribbble"
+                  placeholder="Dribbble URL"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="social.instagram"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="fa6-brands:instagram"
-                    placeholder="Instagram URL"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="social.github"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="fa6-brands:instagram"
+                  placeholder="Instagram URL"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="social.github"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    type="text"
-                    icon="fa6-brands:github"
-                    placeholder="Github URL"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="social.gitlab"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  type="text"
+                  icon="fa6-brands:github"
+                  placeholder="Github URL"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="social.gitlab"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12 sm:col-span-6"
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12 sm:col-span-6"
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    icon="fa6-brands:gitlab"
-                    placeholder="Gitlab URL"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-            </div>
-          </TairoFormGroup>
-        </div>
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  icon="fa6-brands:gitlab"
+                  placeholder="Gitlab URL"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+          </div>
+        </TairoFormGroup>
       </div>
-    </BaseCard>
+    </div>
     <TairoFormSave
+      rounded="md"
       :disabled="isSubmitting"
       :loading="isSubmitting"
       @reset="resetForm"

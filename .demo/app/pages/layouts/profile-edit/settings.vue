@@ -236,260 +236,244 @@ const onSubmit = handleSubmit(
   <form
     method="POST"
     action=""
-    class="w-full pb-16"
+    class="w-full pb-16 max-w-3xl dark:[--color-input-default-bg:var(--color-muted-950)]"
     @submit.prevent="onSubmit"
   >
-    <BaseCard>
-      <div class="flex items-center justify-between p-4">
-        <div>
-          <BaseHeading
-            tag="h2"
-            size="sm"
-            weight="medium"
-            lead="normal"
-            class="uppercase tracking-wider"
-          >
-            Settings
-          </BaseHeading>
-          <BaseText size="xs" class="text-muted-400">
-            Edit your account prefs and settings
-          </BaseText>
-        </div>
-        <div class="flex items-center gap-2">
-          <BaseButton class="w-24" to="/layouts/profile">
-            Cancel
-          </BaseButton>
-          <BaseButton
-            type="submit"
-            variant="primary"
-            class="w-24"
-            :disabled="isSubmitting"
-            :loading="isSubmitting"
-          >
-            Save
-          </BaseButton>
-        </div>
+    <div class="flex items-center justify-end border-b border-muted-300 dark:border-muted-800 pb-4 mb-6">
+      <div class="flex items-center gap-2">
+        <BaseButton class="w-24" to="/layouts/profile">
+          Cancel
+        </BaseButton>
+        <BaseButton
+          type="submit"
+          variant="primary"
+          class="w-24"
+          :disabled="isSubmitting"
+          :loading="isSubmitting"
+        >
+          Save
+        </BaseButton>
       </div>
-      <div class="p-4">
-        <div class="mx-auto max-w-lg space-y-12 py-8">
-          <BaseMessage v-if="success" @close="success = false">
-            Your settings has been saved!
-          </BaseMessage>
-          <BaseMessage
-            v-if="fieldsWithErrors"
-            type="danger"
-            @close="() => setErrors({})"
-          >
-            This form has {{ fieldsWithErrors }} errors, please check them
-            before submitting
-          </BaseMessage>
+    </div>
+    <div>
+      <div class="space-y-12">
+        <BaseMessage v-if="success" @close="success = false">
+          Your settings has been saved!
+        </BaseMessage>
+        <BaseMessage
+          v-if="fieldsWithErrors"
+          type="danger"
+          @close="() => setErrors({})"
+        >
+          This form has {{ fieldsWithErrors }} errors, please check them
+          before submitting
+        </BaseMessage>
 
-          <TairoFormGroup
-            label="Change Password"
-            sublabel="For an improved account security"
-          >
-            <input id="username" type="email" name="username" autocomplete="username" value="maya@cssninja.io" class="sr-only" readonly>
-            <div class="grid grid-cols-12 gap-4">
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="currentPassword"
+        <TairoFormGroup
+          label="Change Password"
+          sublabel="For an improved account security"
+        >
+          <input id="username" type="email" name="username" autocomplete="username" value="maya@cssninja.io" class="sr-only" readonly>
+          <div class="grid grid-cols-12 gap-4">
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="currentPassword"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12"
-                  required
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    type="password"
-                    icon="ph:lock-duotone"
-                    placeholder="Old password"
-                    autocomplete="current-password"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="newPassword"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  type="password"
+                  icon="ph:lock-duotone"
+                  placeholder="Old password"
+                  autocomplete="current-password"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="newPassword"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12"
-                  required
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    type="password"
-                    icon="ph:lock-duotone"
-                    placeholder="New password"
-                    autocomplete="new-password"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-              <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="confirmPassword"
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  type="password"
+                  icon="ph:lock-duotone"
+                  placeholder="New password"
+                  autocomplete="new-password"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="confirmPassword"
+            >
+              <BaseField
+                v-slot="{ inputAttrs, inputRef }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
               >
-                <BaseField
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
-                  :disabled="isSubmitting"
-                  class="col-span-12"
-                  required
-                >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    type="password"
-                    autocomplete="new-password"
-                    icon="ph:lock-duotone"
-                    placeholder="Repeat new password"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
-              </Field>
-            </div>
-          </TairoFormGroup>
-          <TairoFormGroup
-            label="2 Factor Auth"
-            sublabel="Two factor authentication"
-          >
-            <div class="grid grid-cols-12 gap-4">
-              <div class="col-span-12">
-                <Field
-                  v-slot="{ field, handleChange, handleBlur }"
-                  name="twoFactor.enabled"
-                >
-                  <BaseSwitchThin
-                    :model-value="field.value"
-                    :disabled="isSubmitting"
-                    label="Enabled"
-                    sublabel="Toggle 2 factor authentication"
-                    variant="primary"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-              </div>
+                <TairoInput
+                  :ref="inputRef"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  type="password"
+                  autocomplete="new-password"
+                  icon="ph:lock-duotone"
+                  placeholder="Repeat new password"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+          </div>
+        </TairoFormGroup>
+        <TairoFormGroup
+          label="2 Factor Auth"
+          sublabel="Two factor authentication"
+        >
+          <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-12">
               <Field
-                v-slot="{ field, errorMessage, handleChange, handleBlur }"
-                name="twoFactor.phoneNumber"
+                v-slot="{ field, handleChange, handleBlur }"
+                name="twoFactor.enabled"
               >
-                <BaseField
-                  v-show="values.twoFactor?.enabled"
-                  v-slot="{ inputAttrs, inputRef }"
-                  :error="errorMessage"
+                <BaseSwitchThin
+                  :model-value="field.value"
                   :disabled="isSubmitting"
-                  class="col-span-12"
-                  required
-                >
-                  <TairoInput
-                    ref="phoneInput"
-                    v-bind="inputAttrs"
-                    :model-value="field.value"
-                    :aria-invalid="errorMessage ? 'true' : undefined"
-                    type="tel"
-                    icon="ph:phone-duotone"
-                    placeholder="(000) 000-0000"
-                    autocomplete="tel"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </BaseField>
+                  label="Enabled"
+                  sublabel="Toggle 2 factor authentication"
+                  variant="primary"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
               </Field>
             </div>
-          </TairoFormGroup>
-          <TairoFormGroup
-            label="Notifications"
-            sublabel="Configure how you receive notifications"
-          >
-            <div class="grid grid-cols-12 gap-4">
-              <div class="col-span-12">
-                <Field
-                  v-slot="{ field, handleChange, handleBlur }"
-                  name="notifications.enabled"
-                >
-                  <BaseSwitchBall
-                    :model-value="field.value"
-                    :disabled="isSubmitting"
-                    label="Enabled"
-                    sublabel="Receive emails notifications from the app"
-                    variant="primary"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-              </div>
-              <div v-show="values.notifications?.enabled" class="col-span-12">
-                <Field
-                  v-slot="{ field, handleChange, handleBlur }"
-                  name="notifications.flushLowPriority"
-                >
-                  <BaseSwitchBall
-                    :model-value="field.value"
-                    :disabled="isSubmitting"
-                    label="Flush"
-                    sublabel="Discard low priority notifications"
-                    variant="primary"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-              </div>
-              <div v-show="values.notifications?.enabled" class="col-span-12">
-                <Field
-                  v-slot="{ field, handleChange, handleBlur }"
-                  name="notifications.marketing"
-                >
-                  <BaseSwitchBall
-                    :model-value="field.value"
-                    :disabled="isSubmitting"
-                    label="Marketing"
-                    sublabel="Enable marketing emails"
-                    variant="primary"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-              </div>
-              <div v-show="values.notifications?.enabled" class="col-span-12">
-                <Field
-                  v-slot="{ field, handleChange, handleBlur }"
-                  name="notifications.partners"
-                >
-                  <BaseSwitchBall
-                    :model-value="field.value"
-                    :disabled="isSubmitting"
-                    label="Partners"
-                    sublabel="Enable partner emails"
-                    variant="primary"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
-                </Field>
-              </div>
+            <Field
+              v-slot="{ field, errorMessage, handleChange, handleBlur }"
+              name="twoFactor.phoneNumber"
+            >
+              <BaseField
+                v-show="values.twoFactor?.enabled"
+                v-slot="{ inputAttrs }"
+                :error="errorMessage"
+                :disabled="isSubmitting"
+                class="col-span-12"
+                required
+              >
+                <TairoInput
+                  ref="phoneInput"
+                  v-bind="inputAttrs"
+                  :model-value="field.value"
+                  :aria-invalid="errorMessage ? 'true' : undefined"
+                  type="tel"
+                  icon="ph:phone-duotone"
+                  placeholder="(000) 000-0000"
+                  autocomplete="tel"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </BaseField>
+            </Field>
+          </div>
+        </TairoFormGroup>
+        <TairoFormGroup
+          label="Notifications"
+          sublabel="Configure how you receive notifications"
+        >
+          <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-12">
+              <Field
+                v-slot="{ field, handleChange, handleBlur }"
+                name="notifications.enabled"
+              >
+                <BaseSwitchBall
+                  :model-value="field.value"
+                  :disabled="isSubmitting"
+                  label="Enabled"
+                  sublabel="Receive emails notifications from the app"
+                  variant="primary"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </Field>
             </div>
-          </TairoFormGroup>
-        </div>
+            <div v-show="values.notifications?.enabled" class="col-span-12">
+              <Field
+                v-slot="{ field, handleChange, handleBlur }"
+                name="notifications.flushLowPriority"
+              >
+                <BaseSwitchBall
+                  :model-value="field.value"
+                  :disabled="isSubmitting"
+                  label="Flush"
+                  sublabel="Discard low priority notifications"
+                  variant="primary"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </Field>
+            </div>
+            <div v-show="values.notifications?.enabled" class="col-span-12">
+              <Field
+                v-slot="{ field, handleChange, handleBlur }"
+                name="notifications.marketing"
+              >
+                <BaseSwitchBall
+                  :model-value="field.value"
+                  :disabled="isSubmitting"
+                  label="Marketing"
+                  sublabel="Enable marketing emails"
+                  variant="primary"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </Field>
+            </div>
+            <div v-show="values.notifications?.enabled" class="col-span-12">
+              <Field
+                v-slot="{ field, handleChange, handleBlur }"
+                name="notifications.partners"
+              >
+                <BaseSwitchBall
+                  :model-value="field.value"
+                  :disabled="isSubmitting"
+                  label="Partners"
+                  sublabel="Enable partner emails"
+                  variant="primary"
+                  @update:model-value="handleChange"
+                  @blur="handleBlur"
+                />
+              </Field>
+            </div>
+          </div>
+        </TairoFormGroup>
       </div>
-    </BaseCard>
+    </div>
     <TairoFormSave
       :disabled="isSubmitting"
       :loading="isSubmitting"

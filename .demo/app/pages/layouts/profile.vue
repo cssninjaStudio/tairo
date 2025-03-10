@@ -131,9 +131,9 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
           </div>
         </div>
         <div class="mt-6 grid grid-cols-12 gap-4">
-          <div class="col-span-12 sm:col-span-8">
-            <div class="flex flex-col gap-6">
-              <BaseCard class="p-8">
+          <div class="col-span-12 lg:landscape:col-span-8">
+            <div class="flex flex-col gap-4">
+              <BaseCard rounded="md" class="p-4 md:p-8">
                 <!-- Bio -->
                 <div class="border-muted-200 dark:border-muted-700 border-b pb-8">
                   <div class="mb-4 flex items-center gap-2">
@@ -281,7 +281,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         >
                           {{ item.name }}
                         </BaseHeading>
-                        <BaseParagraph size="xs" class="text-muted-400">
+                        <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                           <span>{{ item.experience }} years of experience</span>
                         </BaseParagraph>
                       </div>
@@ -312,7 +312,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
               </BaseCard>
               <!-- Recommandations -->
-              <BaseCard class="p-8">
+              <BaseCard rounded="md" class="p-4 md:p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
                     class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
@@ -320,11 +320,11 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     Recommendations
                   </h4>
                 </div>
-                <div class="grid gap-6 sm:grid-cols-2">
+                <div class="grid gap-4 sm:grid-cols-2">
                   <div
                     v-for="item in data.personalInfo.recommandations"
                     :key="item.name"
-                    class="bg-muted-100 dark:bg-muted-700/60 rounded-md p-5"
+                    class="bg-muted-100 dark:bg-muted-700/60 rounded-lg p-5"
                   >
                     <div class="flex flex-col py-4">
                       <BaseAvatar
@@ -342,10 +342,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         >
                           {{ item.name }}
                         </BaseHeading>
-                        <BaseText size="xs" class="text-muted-400 mb-4">
+                        <BaseText size="xs" class="text-muted-400 dark:text-muted-300 mb-4">
                           <span>{{ item.role }}</span>
                         </BaseText>
-                        <BaseParagraph size="xs" class="text-muted-400">
+                        <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 max-w-xs mx-auto">
                           <span>{{ item.text }}</span>
                         </BaseParagraph>
                         <div class="mt-4">
@@ -360,10 +360,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               </BaseCard>
             </div>
           </div>
-          <div class="col-span-12 sm:col-span-4">
+          <div class="col-span-12 lg:landscape:col-span-4">
             <div class="flex flex-col gap-4">
               <!-- Notifications -->
-              <BaseCard class="p-8">
+              <BaseCard rounded="md" class="p-4 md:p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
                     class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
@@ -371,18 +371,18 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                     Notifications
                   </h4>
                   <div class="ms-auto">
-                    <BaseSwitchBall v-model="data.notifications" />
+                    <BaseSwitchBall v-model="data.notifications" variant="primary" />
                   </div>
                 </div>
                 <div>
-                  <BaseParagraph size="xs" class="text-muted-400">
+                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
                     Enable or disable this setting to manage if your network
                     should be notified when you make changes to your profile.
                   </BaseParagraph>
                 </div>
               </BaseCard>
               <!-- Tools -->
-              <BaseCard class="p-8">
+              <BaseCard rounded="md" class="p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
                     class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
@@ -408,7 +408,8 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         :size="68"
                         :thickness="1.5"
                         :model-value="item.level"
-                        class="text-primary-500 absolute -start-2.5 -top-2.5"
+                        variant="primary"
+                        class="absolute -start-2.5 -top-2.5"
                       />
                     </div>
                     <div>
@@ -419,7 +420,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       >
                         {{ item.name }}
                       </BaseHeading>
-                      <BaseParagraph size="xs" class="text-muted-400">
+                      <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                         <span>{{ item.mastery }}</span>
                       </BaseParagraph>
                     </div>
@@ -427,7 +428,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 </div>
               </BaseCard>
               <!-- Recent Views -->
-              <BaseCard class="p-8">
+              <BaseCard rounded="md" class="p-4 md:p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
                     class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
@@ -456,7 +457,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                       >
                         {{ item.name }}
                       </BaseHeading>
-                      <BaseParagraph size="xs" class="text-muted-400">
+                      <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                         <span>{{ item.role }}</span>
                       </BaseParagraph>
                     </div>
