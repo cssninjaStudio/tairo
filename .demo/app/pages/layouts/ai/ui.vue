@@ -139,20 +139,20 @@ function closeUpgrade() {
     </aside>
     <!-- Sidebar -->
     <aside
-      class="group/sidebar bg-muted-50 dark:bg-muted-950 fixed start-0 top-0 z-30 flex h-full transition-all duration-300 lg:relative lg:h-auto"
+      class="group/sidebar bg-muted-50 dark:bg-muted-950 fixed start-0 top-0 z-0 flex h-full transition-all duration-300 lg:relative lg:h-auto"
       :class="[
-        isCollapsed ? 'w-[--sidebar-width-collapsed]' : 'w-[--sidebar-width]',
+        isCollapsed ? 'w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)',
         isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
       ]"
       style="--sidebar-width:231px;--sidebar-width-collapsed:49px"
     >
       <div
         class="border-muted-200 dark:border-muted-800 fixed inset-y-0 left-0 z-10 flex h-svh flex-col overflow-hidden border-r transition-all duration-300"
-        :class="isCollapsed ? 'lg:w-[--sidebar-width-collapsed]' : 'w-[--sidebar-width]'"
+        :class="isCollapsed ? 'lg:w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)'"
       >
         <div
           class="flex h-svh flex-1 translate-x-[-0.5px] flex-col overflow-hidden transition-all duration-300"
-          :class="isCollapsed ? 'w-[--sidebar-width-collapsed]' : 'w-[--sidebar-width]'"
+          :class="isCollapsed ? 'w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)'"
         >
           <div class="relative flex items-center p-2 pb-1">
             <div class="flex items-center gap-2.5">
@@ -163,7 +163,7 @@ function closeUpgrade() {
             <div class="flex-1" />
             <div
               class="absolute z-10 transition-all duration-300 group-hover/sidebar:opacity-100"
-              :class="isCollapsed ? 'opacity-0 -start-6 hidden' : 'w-[--sidebar-width] start-[calc(var(--sidebar-width)-theme(spacing.10))] opacity-100'"
+              :class="isCollapsed ? 'opacity-0 -start-6 hidden' : 'w-(--sidebar-width) start-[calc(var(--sidebar-width)-theme(spacing.10))] opacity-100'"
             >
               <BaseButton
                 size="icon-sm"
@@ -386,9 +386,7 @@ function closeUpgrade() {
                   rounded="lg"
                   label="Dropdown"
                   orientation="start"
-                  :classes="{
-                    wrapper: 'group/dropdown',
-                  }"
+                  class="group/dropdown"
                 >
                   <template #button>
                     <button type="button" class="group-hover/dropdown:bg-muted-100 dark:group-hover/dropdown:bg-muted-800 flex size-8 items-center justify-center rounded-lg p-1 transition-all duration-300">
