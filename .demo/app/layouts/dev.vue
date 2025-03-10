@@ -849,7 +849,7 @@ function getRouteSidebarId() {
             <BaseThemeToggle class="scale-90" />
           </TairoSidebarLink>
           <TairoSidebarLink to="/layouts/profile">
-            <BaseChip size="sm" pulse color="custom" :offset="3" class="text-green-600">
+            <BaseChip size="sm" pulse color="custom" :offset="3" class="text-green-600 flex items-center justify-center">
               <BaseAvatar
                 size="xs"
                 src="/img/avatars/10.svg"

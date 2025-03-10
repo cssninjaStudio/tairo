@@ -21,20 +21,27 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
       <div v-else class="relative w-full">
         <div class="absolute end-0 top-2 z-20">
           <BaseDropdown
-            label="Dropdown"
             placement="bottom-end"
             size="md"
             class="z-20"
             rounded="lg"
           >
-            <BaseDropdownSeparator />
+            <template #button>
+              <BaseButton
+                size="icon-sm"
+                rounded="full"
+                class="bg-white text-muted-400 dark:bg-muted-800 dark:text-muted-400"
+              >
+                <Icon name="lucide:more-horizontal" class="size-4" />
+              </BaseButton>
+            </template>
             <BaseDropdownItem
               to="/layouts/profile-edit"
               title="Edit"
               text="Edit profile"
             >
               <template #start>
-                <Icon name="ph:pencil-duotone" class="me-2 block size-5" />
+                <Icon name="solar:pen-2-linear" class="me-2 block size-5" />
               </template>
             </BaseDropdownItem>
             <BaseDropdownSeparator />
@@ -44,7 +51,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               text="Security settings"
             >
               <template #start>
-                <Icon name="ph:lock-duotone" class="me-2 block size-5" />
+                <Icon name="solar:lock-keyhole-linear" class="me-2 block size-5" />
               </template>
             </BaseDropdownItem>
             <BaseDropdownItem
@@ -53,7 +60,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               text="Manage billing"
             >
               <template #start>
-                <Icon name="ph:bank-duotone" class="me-2 block size-5" />
+                <Icon name="solar:card-linear" class="me-2 block size-5" />
               </template>
             </BaseDropdownItem>
             <BaseDropdownSeparator />
@@ -63,7 +70,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               text="Share profile"
             >
               <template #start>
-                <Icon name="ph:link-duotone" class="me-2 block size-5" />
+                <Icon name="solar:link-circle-linear" class="me-2 block size-5" />
               </template>
             </BaseDropdownItem>
           </BaseDropdown>
@@ -87,14 +94,14 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             >
               {{ data?.personalInfo.firstName }} {{ data?.personalInfo.lastName }}
             </BaseHeading>
-            <BaseParagraph size="sm" class="text-muted-400 mb-3 mt-1">
+            <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400 mb-3 mt-1">
               {{ data?.personalInfo.shortBio }}
             </BaseParagraph>
             <div
               class="divide-muted-200 dark:divide-muted-800 flex items-center justify-center divide-x"
             >
               <div class="text-muted-400 flex h-8 items-center gap-1 px-4">
-                <Icon name="ph:circles-three-duotone" class="size-5" />
+                <Icon name="solar:widget-6-linear" class="size-5" />
                 <BaseText size="sm">
                   {{ data?.personalInfo.relations }}+ relations
                 </BaseText>
@@ -102,7 +109,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <div
                 class="text-muted-400 hidden h-8 items-center gap-1 px-4 sm:flex"
               >
-                <Icon name="ph:check-circle-duotone" class="size-5" />
+                <Icon name="solar:suitcase-lines-linear" class="size-5" />
                 <BaseText size="sm">
                   {{ data?.personalInfo.projects }} projects
                 </BaseText>
@@ -131,7 +138,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 <div class="border-muted-200 dark:border-muted-700 border-b pb-8">
                   <div class="mb-4 flex items-center gap-2">
                     <h4
-                      class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                      class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                     >
                       About me
                     </h4>
@@ -149,7 +156,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 <div class="border-muted-200 dark:border-muted-700 border-b py-8">
                   <div class="mb-8 flex items-center gap-2">
                     <h4
-                      class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                      class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                     >
                       Experiences
                     </h4>
@@ -173,7 +180,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         >
                           {{ item.company }}
                         </BaseHeading>
-                        <BaseParagraph size="xs" class="text-muted-400">
+                        <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                           <span>{{ item.period }}</span>
                         </BaseParagraph>
                         <BaseParagraph size="xs" class="text-primary-500">
@@ -187,7 +194,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 <div class="border-muted-200 dark:border-muted-700 border-b py-8">
                   <div class="mb-8 flex items-center gap-2">
                     <h4
-                      class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                      class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                     >
                       Languages
                     </h4>
@@ -210,7 +217,8 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                           :size="68"
                           :thickness="1.5"
                           :model-value="item.level"
-                          class="text-primary-500 absolute -start-2.5 -top-2.5"
+                          variant="primary"
+                          class="absolute -start-2.5 -top-2.5"
                         />
                       </div>
                       <div>
@@ -221,7 +229,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         >
                           {{ item.name }}
                         </BaseHeading>
-                        <BaseParagraph size="xs" class="text-muted-400">
+                        <BaseParagraph size="xs" class="text-muted-500 dark:text-muted-400">
                           <span>{{ item.mastery }}</span>
                         </BaseParagraph>
                       </div>
@@ -232,7 +240,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                 <div class="py-8">
                   <div class="mb-8 flex items-center gap-2">
                     <h4
-                      class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                      class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                     >
                       Skills
                     </h4>
@@ -255,13 +263,14 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                         <Icon
                           v-else
                           :name="item.icon"
-                          class="text-muted-400 size-6"
+                          class="text-muted-500 dark:text-muted-400 size-6"
                         />
                         <BaseProgressCircle
                           :size="68"
                           :thickness="1.5"
                           :model-value="item.level"
-                          class="text-primary-500 absolute -start-2.5 -top-2.5"
+                          variant="primary"
+                          class="absolute -start-2.5 -top-2.5"
                         />
                       </div>
                       <div>
@@ -306,7 +315,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <BaseCard class="p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
-                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                    class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                   >
                     Recommendations
                   </h4>
@@ -357,7 +366,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <BaseCard class="p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
-                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                    class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                   >
                     Notifications
                   </h4>
@@ -376,7 +385,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <BaseCard class="p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
-                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                    class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                   >
                     Tools
                   </h4>
@@ -421,7 +430,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <BaseCard class="p-8">
                 <div class="mb-8 flex items-center gap-2">
                   <h4
-                    class="text-muted-400 font-sans text-xs font-semibold uppercase"
+                    class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
                   >
                     Recent Views
                   </h4>

@@ -5,9 +5,9 @@ export default defineEventHandler(async () => {
 async function getDemoData() {
   return Promise.resolve({
     personalInfo: {
-      firstName: 'Maya',
-      lastName: 'Rosselini',
-      picture: '/img/avatars/2.svg',
+      firstName: 'Kendra',
+      lastName: 'Wilson',
+      picture: '/img/avatars/10.svg',
       badge: '/img/icons/flags/united-states-of-america.svg',
       role: 'Product Manager',
       shortBio:
@@ -25,7 +25,7 @@ async function getDemoData() {
         {
           name: 'twitter',
           url: 'https://twitter.com',
-          icon: 'fa6-brands:twitter',
+          icon: 'fa6-brands:x-twitter',
         },
         {
           name: 'linkedin',
@@ -183,7 +183,7 @@ async function getDemoData() {
           name: 'Product management',
           experience: 4,
           level: 95,
-          icon: 'ph:archive-duotone',
+          icon: 'solar:box-linear',
           related: {
             total: '2K',
             people: [
