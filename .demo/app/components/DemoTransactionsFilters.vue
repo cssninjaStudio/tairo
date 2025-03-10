@@ -80,7 +80,7 @@ const paymentMethods = ref<string[]>([])
           rounded="md"
           size="sm"
         >
-          <Icon name="lucide:filter" class="size-4" />
+          <Icon name="solar:filter-linear" class="size-4" />
           <span>Add Filter</span>
         </BaseButton>
       </DropdownMenuTrigger>
@@ -105,7 +105,7 @@ const paymentMethods = ref<string[]>([])
               "
               @click="activeFilterTab = 'filter-1'"
             >
-              <Icon name="lucide:calendar" class="size-4" />
+              <Icon name="solar:calendar-linear" class="size-5" />
               <span>Creation date</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -121,7 +121,7 @@ const paymentMethods = ref<string[]>([])
               "
               @click="activeFilterTab = 'filter-2'"
             >
-              <Icon name="lucide:search" class="size-4" />
+              <Icon name="solar:minimalistic-magnifer-linear" class="size-5" />
               <span>Keywords</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -137,7 +137,7 @@ const paymentMethods = ref<string[]>([])
               "
               @click="activeFilterTab = 'filter-3'"
             >
-              <Icon name="lucide:loader" class="size-4" />
+              <Icon name="solar:sticker-smile-square-linear" class="size-5" />
               <span>Status</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -153,7 +153,7 @@ const paymentMethods = ref<string[]>([])
               "
               @click="activeFilterTab = 'filter-4'"
             >
-              <Icon name="lucide:piggy-bank" class="size-4" />
+              <Icon name="solar:widget-2-linear" class="size-5" />
               <span>Accounts</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -169,7 +169,7 @@ const paymentMethods = ref<string[]>([])
               "
               @click="activeFilterTab = 'filter-5'"
             >
-              <Icon name="lucide:credit-card" class="size-4" />
+              <Icon name="solar:card-linear" class="size-5" />
               <span>Payment</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>

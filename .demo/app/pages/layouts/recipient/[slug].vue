@@ -91,14 +91,14 @@ function statusColor(itemStatus: string) {
 </script>
 
 <template>
-  <div v-if="data?.recipient" class="pb-20">
+  <div v-if="data?.recipient" class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="flex items-center justify-end py-6">
+    <div class="flex items-center justify-end pb-6">
       <!-- Buttons -->
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
           to="/layouts/payments/recipients"
-          rounded="full"
+          rounded="md"
           size="sm"
         >
           <Icon name="lucide:arrow-left" class="size-4" />
@@ -106,7 +106,7 @@ function statusColor(itemStatus: string) {
         </BaseButton>
         <BaseButton
           to="/layouts/contacts/create"
-          rounded="full"
+          rounded="md"
           size="sm"
         >
           <Icon name="lucide:plus" class="size-4" />
@@ -114,10 +114,10 @@ function statusColor(itemStatus: string) {
         </BaseButton>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-4">
       <!-- Info -->
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <!-- Recipient -->
           <BaseCard
             rounded="md"
@@ -130,7 +130,7 @@ function statusColor(itemStatus: string) {
               <BaseAvatar
                 :src="data.recipient.picture"
                 :alt="data.recipient.name"
-                size="lg"
+                size="md"
                 rounded="none"
                 mask="blob"
                 class="bg-muted-100 dark:bg-muted-900"
@@ -144,7 +144,7 @@ function statusColor(itemStatus: string) {
                 >
                   {{ data.recipient.name }}
                 </BaseHeading>
-                <BaseParagraph size="sm" class="text-muted-400 line-clamp-1">
+                <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                   {{ data.recipient.category }}
                 </BaseParagraph>
               </div>
@@ -199,7 +199,7 @@ function statusColor(itemStatus: string) {
                 >
                   Additional info
                 </BaseHeading>
-                <BaseParagraph size="xs" class="text-muted-400 line-clamp-1">
+                <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                   More details about this contact
                 </BaseParagraph>
               </div>
@@ -208,8 +208,8 @@ function statusColor(itemStatus: string) {
             <div class="mb-6 space-y-4">
               <!-- Status -->
               <div class="flex items-center justify-between">
-                <div class="text-muted-400 flex items-center gap-1">
-                  <Icon name="ph:circle-dashed-duotone" class="size-5" />
+                <div class="text-muted-600 dark:text-muted-400 flex items-center gap-1">
+                  <Icon name="solar:sticker-smile-square-linear" class="size-5" />
                   <BaseParagraph size="sm">
                     Status
                   </BaseParagraph>
@@ -226,8 +226,8 @@ function statusColor(itemStatus: string) {
               </div>
               <!-- Email -->
               <div class="flex items-center justify-between">
-                <div class="text-muted-400 flex items-center gap-1">
-                  <Icon name="ph:envelope-duotone" class="size-5" />
+                <div class="text-muted-600 dark:text-muted-400 flex items-center gap-1">
+                  <Icon name="solar:letter-linear" class="size-5" />
                   <BaseParagraph size="sm">
                     Email
                   </BaseParagraph>
@@ -242,8 +242,8 @@ function statusColor(itemStatus: string) {
               </div>
               <!-- Phone number -->
               <div class="flex items-center justify-between">
-                <div class="text-muted-400 flex items-center gap-1">
-                  <Icon name="ph:phone-duotone" class="size-5" />
+                <div class="text-muted-600 dark:text-muted-400 flex items-center gap-1">
+                  <Icon name="solar:phone-rounded-linear" class="size-5" />
                   <BaseParagraph size="sm">
                     Phone number
                   </BaseParagraph>
@@ -258,8 +258,8 @@ function statusColor(itemStatus: string) {
               </div>
               <!-- Tax ID -->
               <div class="flex items-center justify-between">
-                <div class="text-muted-400 flex items-center gap-1">
-                  <Icon name="ph:bank-duotone" class="size-5" />
+                <div class="text-muted-600 dark:text-muted-400 flex items-center gap-1">
+                  <Icon name="solar:bill-list-linear" class="size-5" />
                   <BaseParagraph size="sm">
                     Tax ID
                   </BaseParagraph>
@@ -274,8 +274,8 @@ function statusColor(itemStatus: string) {
               </div>
               <!-- Language -->
               <div class="flex items-center justify-between">
-                <div class="text-muted-400 flex items-center gap-1">
-                  <Icon name="ph:chats-circle-duotone" class="size-5" />
+                <div class="text-muted-600 dark:text-muted-400 flex items-center gap-1">
+                  <Icon name="solar:chat-dots-linear" class="size-5" />
                   <BaseParagraph size="sm">
                     Language
                   </BaseParagraph>
@@ -294,7 +294,7 @@ function statusColor(itemStatus: string) {
             >
               <BaseText
                 size="sm"
-                class="text-muted-400"
+                class="text-muted-600 dark:text-muted-400"
               >
                 Notifications
               </BaseText>
@@ -308,7 +308,7 @@ function statusColor(itemStatus: string) {
       <!-- Content -->
       <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
         <!-- Grid -->
-        <div class="grid grid-cols-12 gap-6">
+        <div class="grid grid-cols-12 gap-4">
           <!-- tile -->
           <div class="col-span-12 sm:col-span-4">
             <BaseCard
@@ -320,19 +320,19 @@ function statusColor(itemStatus: string) {
                 <Icon
                   v-if="data.recipient.paymentMethod.name === 'paypal'"
                   name="logos:paypal"
-                  class="mb-4 text-4xl"
+                  class="mb-4 text-4xl mx-auto"
                 />
                 <Icon
                   v-else-if="data.recipient.paymentMethod.name === 'stripe'"
                   name="bi:stripe"
-                  class="mb-4 text-4xl text-indigo-600"
+                  class="mb-4 text-4xl mx-auto text-indigo-600"
                 />
                 <div>
                   <BaseHeading
                     weight="medium"
                     size="sm"
                     lead="none"
-                    class="line-clamp-1 capitalize"
+                    class="line-clamp-1 capitalize text-muted-900 dark:text-white"
                   >
                     {{ data.recipient.paymentMethod.name }}
                   </BaseHeading>
@@ -353,7 +353,7 @@ function statusColor(itemStatus: string) {
               <div class="text-center">
                 <div>
                   <BaseHeading
-                    weight="semibold"
+                    weight="medium"
                     size="2xl"
                     lead="none"
                     class="mb-3"
@@ -396,15 +396,15 @@ function statusColor(itemStatus: string) {
             <BaseCard
               rounded="md"
               shadow="hover"
-              class="p-8"
+              class="p-4 md:p-8"
             >
               <div class="mb-8 flex items-center justify-between">
                 <BaseHeading
                   as="h4"
-                  size="sm"
+                  size="xs"
                   weight="medium"
                   lead="none"
-                  class="text-muted-400 uppercase"
+                  class="text-muted-600 dark:text-muted-400 uppercase"
                 >
                   History
                 </BaseHeading>
@@ -447,9 +447,8 @@ function statusColor(itemStatus: string) {
                       <td class="py-2">
                         <BaseText
                           size="sm"
-                          weight="medium"
                           lead="none"
-                          class="text-muted-400"
+                          class="text-muted-600 dark:text-muted-400"
                         >
                           {{ item.date }}
                         </BaseText>
@@ -489,17 +488,17 @@ function statusColor(itemStatus: string) {
                         <div class="text-muted-400 flex items-center gap-2">
                           <Icon
                             v-if="item.method === 'credit card'"
-                            name="ph:credit-card-duotone"
+                            name="solar:card-linear"
                             class="size-5"
                           />
                           <Icon
                             v-else-if="item.method === 'cheque'"
-                            name="ph:pen-nib-duotone"
+                            name="solar:document-linear"
                             class="size-5"
                           />
                           <Icon
                             v-else-if="item.method === 'transfer'"
-                            name="ph:arrows-left-right-duotone"
+                            name="solar:transfer-horizontal-linear"
                             class="size-5"
                           />
                           <BaseText

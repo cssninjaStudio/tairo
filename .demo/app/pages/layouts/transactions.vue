@@ -66,9 +66,9 @@ function statusColor(itemStatus: string) {
 </script>
 
 <template>
-  <div class="w-full pb-24">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="flex items-center justify-between py-6">
+    <div class="flex items-center justify-between pb-6">
       <TairoInput
         v-model="filter"
         icon="lucide:search"
@@ -98,10 +98,10 @@ function statusColor(itemStatus: string) {
 
         <div class="ms-auto">
           <BaseButton
-            rounded="full"
+            rounded="md"
             size="sm"
           >
-            <Icon name="lucide:download" class="size-4" />
+            <Icon name="solar:download-linear" class="size-4" />
             <span>Export All</span>
           </BaseButton>
         </div>
@@ -156,9 +156,8 @@ function statusColor(itemStatus: string) {
             <td class="p-4">
               <BaseText
                 size="sm"
-                weight="medium"
                 lead="none"
-                class="text-muted-400"
+                class="text-muted-600 dark:text-muted-400"
               >
                 {{ item.date }}
               </BaseText>
@@ -168,7 +167,7 @@ function statusColor(itemStatus: string) {
                 size="sm"
                 weight="medium"
                 lead="none"
-                class="text-muted-600 dark:text-muted-300"
+                class="text-muted-600 dark:text-muted-400"
               >
                 {{ item.issuer }}
               </BaseText>
@@ -208,29 +207,28 @@ function statusColor(itemStatus: string) {
               <div class="text-muted-400 flex items-center gap-2">
                 <Icon
                   v-if="item.method === 'credit card'"
-                  name="ph:credit-card-duotone"
+                  name="solar:card-linear"
                   class="size-5"
                 />
                 <Icon
                   v-else-if="item.method === 'cheque'"
-                  name="ph:pen-nib-duotone"
+                  name="solar:document-linear"
                   class="size-5"
                 />
                 <Icon
                   v-else-if="item.method === 'transfer'"
-                  name="ph:arrows-left-right-duotone"
+                  name="solar:transfer-horizontal-linear"
                   class="size-5"
                 />
                 <Icon
                   v-else-if="item.method === 'bank'"
-                  name="ph:bank-duotone"
+                  name="solar:safe-square-linear"
                   class="size-5"
                 />
                 <BaseText
                   size="sm"
-                  weight="medium"
                   lead="none"
-                  class="text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   {{ item.method }}
                 </BaseText>
@@ -245,7 +243,8 @@ function statusColor(itemStatus: string) {
           v-model:page="page"
           :total="data?.total ?? 0"
           :items-per-page="perPage"
-          rounded="md"
+          rounded="lg"
+          class="w-full"
         />
       </div>
     </div>

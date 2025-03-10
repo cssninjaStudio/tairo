@@ -69,7 +69,7 @@ const timeCategoryTo = ref('')
           rounded="md"
           size="sm"
         >
-          <Icon name="lucide:filter" class="size-4" />
+          <Icon name="solar:filter-linear" class="size-4" />
           <span>Add Filter</span>
         </BaseButton>
       </DropdownMenuTrigger>
@@ -94,7 +94,7 @@ const timeCategoryTo = ref('')
               "
               @click="activeFilterTab = 'filter-1'"
             >
-              <Icon name="lucide:credit-card" class="size-4" />
+              <Icon name="solar:card-linear" class="size-5" />
               <span>Card type</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -110,7 +110,7 @@ const timeCategoryTo = ref('')
               "
               @click="activeFilterTab = 'filter-2'"
             >
-              <Icon name="lucide:user" class="size-4" />
+              <Icon name="solar:user-rounded-linear" class="size-5" />
               <span>Cardholder</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -126,7 +126,7 @@ const timeCategoryTo = ref('')
               "
               @click="activeFilterTab = 'filter-3'"
             >
-              <Icon name="lucide:loader" class="size-4" />
+              <Icon name="solar:sticker-smile-square-linear" class="size-5" />
               <span>Status</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -142,7 +142,7 @@ const timeCategoryTo = ref('')
               "
               @click="activeFilterTab = 'filter-4'"
             >
-              <Icon name="lucide:banknote" class="size-4" />
+              <Icon name="solar:wad-of-money-linear" class="size-5" />
               <span>Spendings</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>
@@ -158,7 +158,7 @@ const timeCategoryTo = ref('')
               "
               @click="activeFilterTab = 'filter-5'"
             >
-              <Icon name="lucide:calendar" class="size-4" />
+              <Icon name="solar:calendar-linear" class="size-5" />
               <span>Creation date</span>
               <Icon name="lucide:chevron-right" class="ms-auto size-4" />
             </button>

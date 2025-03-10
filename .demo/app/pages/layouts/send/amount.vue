@@ -66,7 +66,7 @@ function setAccount(account: any) {
         as="h2"
         size="2xl"
         weight="medium"
-        class="md:3xl! text-muted-800 dark:text-white"
+        class="md:3xl! text-muted-900 dark:text-white"
       >
         {{ steps[currentStepId]?.meta.title }}
       </BaseHeading>
@@ -86,7 +86,7 @@ function setAccount(account: any) {
           v-model.number="request.amount"
           v-focus
           type="number"
-          rounded="none"
+          rounded="md"
           icon="lucide:dollar-sign"
           placeholder="0.00"
           :max="request.account ? request.account.balance : undefined"
@@ -109,11 +109,7 @@ function setAccount(account: any) {
               >
                 <span class="flex w-full items-center gap-3 text-start">
                   <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
-                  <Icon
-                    v-else
-                    name="lucide:wallet"
-                    class="text-muted-500 mx-1 my-2 size-6"
-                  />
+                  <TairoLogo v-else class="text-muted-300 dark:text-muted-800 size-8" />
                   <div v-if="request.account">
                     <BaseText
                       size="sm"

@@ -44,161 +44,163 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl">
-    <div v-if="!pending && data?.recent.length === 0">
-      <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">
-        <BaseHeading
-          tag="h4"
-          size="lg"
-          weight="medium"
-        >
-          No projects
-        </BaseHeading>
-        <BaseParagraph size="sm" class="text-muted-400">
-          You've recently viewed these projects.
-        </BaseParagraph>
-      </div>
-    </div>
-    <div v-else>
-      <div class="my-6 text-center">
-        <Icon
-          name="ph:square-half-duotone"
-          class="text-primary-500 mx-auto mb-2 size-10"
-        />
-        <BaseHeading
-          tag="h4"
-          size="2xl"
-          weight="medium"
-        >
-          Your recent projects
-        </BaseHeading>
-        <BaseParagraph size="sm" class="text-muted-400">
-          Here are your recently viewed projects.
-        </BaseParagraph>
-        <div class="mx-auto mt-6 flex max-w-xs justify-center">
-          <BaseAutocomplete
-            v-model="selectedProject"
-            :items="data?.data"
-            :display-value="(item) => item.name"
-            rounded="lg"
-            icon="lucide:search"
-            placeholder="Search..."
-            label="Search projects"
-            label-float
-            clearable
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <div class="mx-auto max-w-2xl">
+      <div v-if="!pending && data?.recent.length === 0">
+        <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">
+          <BaseHeading
+            tag="h4"
+            size="lg"
+            weight="medium"
           >
-            <template
-              #empty="{
-                pending: pendingAutocomplete,
-                query: queryAutocomplete,
-              }"
-            >
-              <BasePlaceload v-if="pendingAutocomplete" />
-              <span
-                v-else-if="!queryAutocomplete"
-                class="text-muted-700 dark:text-muted-400 cursor-default select-none"
-              >
-                Ex: Delivery app project...
-              </span>
-            </template>
-            <template #item="{ item, selected }">
-              <NuxtLink
-                :to="`/layouts/projects/details/${item.slug}`"
-                class="block"
-              >
-                <BaseAutocompleteItem
-                  :value="{
-                    name: item.name,
-                    text: `${item.customer.name} | ${item.customer.text}`,
-                    media: item.customer.logo,
-                  }"
-                  :properties="{
-                    label: 'name',
-                    sublabel: 'text',
-                    media: 'media',
-                  }"
-                  :selected="selected"
-                />
-              </NuxtLink>
-            </template>
-          </BaseAutocomplete>
+            No projects
+          </BaseHeading>
+          <BaseParagraph size="sm" class="text-muted-400">
+            You've recently viewed these projects.
+          </BaseParagraph>
         </div>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <TransitionGroup
-          enter-active-class="transform-gpu"
-          enter-from-class="opacity-0 -translate-x-full"
-          enter-to-class="opacity-100 translate-x-0"
-          leave-active-class="absolute transform-gpu"
-          leave-from-class="opacity-100 translate-x-0"
-          leave-to-class="opacity-0 -translate-x-full"
-        >
-          <NuxtLink
-            v-for="(item, r) in data?.recent.slice(0, 4)"
-            :key="r"
-            class="group block"
-            :to="`/layouts/projects/details/${item.slug}`"
+      <div v-else>
+        <div class="my-6 text-center">
+          <Icon
+            name="solar:widget-2-linear"
+            class="text-primary-500 mx-auto mb-2 size-10"
+          />
+          <BaseHeading
+            tag="h4"
+            size="2xl"
+            weight="medium"
           >
-            <BaseCard
+            Your recent projects
+          </BaseHeading>
+          <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
+            Here are your recently viewed projects.
+          </BaseParagraph>
+          <div class="mx-auto mt-6 flex max-w-xs justify-center">
+            <BaseAutocomplete
+              v-model="selectedProject"
+              :items="data?.data"
+              :display-value="(item) => item.name"
               rounded="lg"
-              elevated-hover
-              class="group-hover:border-primary-500! p-5"
+              icon="lucide:search"
+              placeholder="Search..."
+              label="Search projects"
+              label-float
+              clearable
             >
-              <div class="mb-6 flex gap-2">
-                <BaseTooltip>
-                  <BaseAvatar
-                    :src="item.customer.logo"
-                    size="sm"
-                    rounded="full"
-                    :content="item.name"
-                    class="bg-muted-100 dark:bg-muted-700"
+              <template
+                #empty="{
+                  pending: pendingAutocomplete,
+                  query: queryAutocomplete,
+                }"
+              >
+                <BasePlaceload v-if="pendingAutocomplete" />
+                <span
+                  v-else-if="!queryAutocomplete"
+                  class="text-muted-700 dark:text-muted-400 cursor-default select-none"
+                >
+                  Ex: Delivery app project...
+                </span>
+              </template>
+              <template #item="{ item, selected }">
+                <NuxtLink
+                  :to="`/layouts/projects/details/${item.slug}`"
+                  class="block"
+                >
+                  <BaseAutocompleteItem
+                    :value="{
+                      name: item.name,
+                      text: `${item.customer.name} | ${item.customer.text}`,
+                      media: item.customer.logo,
+                    }"
+                    :properties="{
+                      label: 'name',
+                      sublabel: 'text',
+                      media: 'media',
+                    }"
+                    :selected="selected"
                   />
-                </BaseTooltip>
-                <div>
-                  <BaseHeading
-                    tag="h5"
-                    size="sm"
-                    weight="medium"
-                    class="line-clamp-1"
-                  >
-                    {{ item.name }}
-                  </BaseHeading>
-                  <BaseParagraph size="xs" class="text-muted-400">
-                    {{ item.customer.name }} | {{ item.customer.text }}
-                  </BaseParagraph>
-                </div>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <BaseTooltip
-                    v-for="stack in item.stacks"
-                    :key="stack.name"
-                    :content="stack.name"
-                  >
+                </NuxtLink>
+              </template>
+            </BaseAutocomplete>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <TransitionGroup
+            enter-active-class="transform-gpu"
+            enter-from-class="opacity-0 -translate-x-full"
+            enter-to-class="opacity-100 translate-x-0"
+            leave-active-class="absolute transform-gpu"
+            leave-from-class="opacity-100 translate-x-0"
+            leave-to-class="opacity-0 -translate-x-full"
+          >
+            <NuxtLink
+              v-for="(item, r) in data?.recent.slice(0, 4)"
+              :key="r"
+              class="group block"
+              :to="`/layouts/projects/details/${item.slug}`"
+            >
+              <BaseCard
+                rounded="lg"
+                elevated-hover
+                class="group-hover:border-primary-500! p-5"
+              >
+                <div class="mb-6 flex gap-2">
+                  <BaseTooltip>
                     <BaseAvatar
-                      :src="stack.icon"
-                      size="xxs"
+                      :src="item.customer.logo"
+                      size="sm"
                       rounded="full"
+                      :content="item.name"
                       class="bg-muted-100 dark:bg-muted-700"
                     />
                   </BaseTooltip>
-                </div>
-                <div class="text-muted-400 flex items-center gap-4">
-                  <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:paperclip-duotone" class="size-4" />
-                    <span class="font-sans">
-                      {{ item.files.length }}
-                    </span>
+                  <div>
+                    <BaseHeading
+                      tag="h5"
+                      size="sm"
+                      weight="medium"
+                      class="line-clamp-1"
+                    >
+                      {{ item.name }}
+                    </BaseHeading>
+                    <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
+                      {{ item.customer.name }} | {{ item.customer.text }}
+                    </BaseParagraph>
                   </div>
-                  <div class="flex items-center gap-1 text-sm">
-                    <Icon name="ph:users-duotone" class="size-4" />
-                    <span class="font-sans">{{ item.team.length }}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <BaseTooltip
+                      v-for="stack in item.stacks"
+                      :key="stack.name"
+                      :content="stack.name"
+                    >
+                      <BaseAvatar
+                        :src="stack.icon"
+                        size="xxs"
+                        rounded="full"
+                        class="bg-muted-100 dark:bg-muted-700"
+                      />
+                    </BaseTooltip>
+                  </div>
+                  <div class="text-muted-400 flex items-center gap-4">
+                    <div class="flex items-center gap-1 text-sm">
+                      <Icon name="solar:paperclip-linear" class="size-4" />
+                      <span class="font-sans">
+                        {{ item.files.length }}
+                      </span>
+                    </div>
+                    <div class="flex items-center gap-1 text-sm">
+                      <Icon name="solar:users-group-rounded-linear" class="size-4" />
+                      <span class="font-sans">{{ item.team.length }}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </BaseCard>
-          </NuxtLink>
-        </TransitionGroup>
+              </BaseCard>
+            </NuxtLink>
+          </TransitionGroup>
+        </div>
       </div>
     </div>
   </div>

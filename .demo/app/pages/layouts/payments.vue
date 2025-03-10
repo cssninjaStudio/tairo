@@ -16,25 +16,25 @@ const isRecipients = computed(() => {
 
 <template>
   <!-- Wrapper -->
-  <div class="w-full pb-24">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="flex items-center justify-end py-6">
+    <div class="flex items-center justify-end pb-6">
       <!-- Buttons -->
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
           to="/layouts/send"
-          rounded="full"
+          rounded="md"
           size="sm"
         >
-          <Icon name="lucide:send" class="size-4" />
+          <Icon name="solar:wad-of-money-linear" class="size-4" />
           <span>New Payment</span>
         </BaseButton>
         <BaseButton
           to="/layouts/receive"
-          rounded="full"
+          rounded="md"
           size="sm"
         >
-          <Icon name="lucide:mail" class="size-4" />
+          <Icon name="solar:letter-linear" class="size-4" />
           <span>Request Payment</span>
         </BaseButton>
       </div>
@@ -45,7 +45,7 @@ const isRecipients = computed(() => {
       <!-- Tabs -->
       <div class="flex items-center justify-between overflow-hidden">
         <div
-          class="border-muted-200 dark:border-muted-800 xs:overflow-x-auto flex grow gap-x-6 border-b font-sans"
+          class="border-muted-200 dark:border-muted-800 xs:overflow-x-auto flex grow gap-x-6 border-b font-sans text-sm"
         >
           <NuxtLink
             to="/layouts/payments"

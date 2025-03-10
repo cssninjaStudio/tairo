@@ -119,7 +119,7 @@ function openAccountPanel(id: number, accounts: any) {
               size="sm"
               @click.stop
             >
-              <Icon name="lucide:edit-3" class="size-4" />
+              <Icon name="solar:pen-2-linear" class="size-4" />
               <span class="font-heading text-sm">New rule</span>
             </BaseButton>
           </div>

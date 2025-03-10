@@ -27,7 +27,7 @@ const amount = ref<string>()
 </script>
 
 <template>
-  <div class="py-12">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
     <div class="flex min-h-[450px] items-center">
       <!-- Step 1 -->
       <div
@@ -236,7 +236,7 @@ const amount = ref<string>()
                   :ref="inputRef"
                   v-bind="inputAttrs"
                   v-model="fullName"
-                  icon="lucide:user"
+                  icon="solar:user-rounded-linear"
                   placeholder="Your complete name"
                   class="w-full"
                 />
@@ -358,7 +358,7 @@ const amount = ref<string>()
                     class="hover:bg-muted-100 dark:hover:bg-muted-800 flex gap-4 rounded-lg px-4 py-3 transition-colors duration-300"
                   >
                     <Icon
-                      name="ph:bank-duotone"
+                      name="solar:document-add-linear"
                       class="text-primary-500 size-7"
                     />
                     <div>
@@ -386,7 +386,7 @@ const amount = ref<string>()
                     class="hover:bg-muted-100 dark:hover:bg-muted-800 flex gap-4 rounded-lg px-4 py-3 transition-colors duration-300"
                   >
                     <Icon
-                      name="ph:coins-duotone"
+                      name="solar:diploma-linear"
                       class="text-primary-500 size-7"
                     />
                     <div>

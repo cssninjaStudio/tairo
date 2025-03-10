@@ -502,7 +502,7 @@ const menu = [
         children: [
           {
             label: 'Members',
-            to: '/layouts/accounts',
+            to: '/layouts/members',
           },
           {
             label: 'Investments',
@@ -567,7 +567,7 @@ const menu = [
       {
         label: 'Forgot password',
         icon: 'solar:refresh-square-linear',
-        to: '/auth/forgot',
+        to: '/auth/recover',
       },
       {
         label: 'Account',
@@ -591,7 +591,7 @@ const menu = [
           },
           {
             label: 'User info',
-            to: '/layouts/user',
+            to: '/layouts/user-details',
           },
           {
             label: 'Company info',

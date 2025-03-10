@@ -38,15 +38,15 @@ onBeforeMount(checkPreviousSteps)
           as="h2"
           size="2xl"
           weight="medium"
-          class="md:3xl! text-muted-800 dark:text-white"
+          class="md:3xl! text-muted-900 dark:text-white"
         >
-          {{ steps[currentStepId].meta.title }}
+          {{ steps[currentStepId]?.meta.title }}
         </BaseHeading>
         <BaseParagraph
           size="sm"
           class="text-muted-500 dark:text-muted-400 max-w-sm"
         >
-          {{ steps[currentStepId].meta.subtitle }}
+          {{ steps[currentStepId]?.meta.subtitle }}
         </BaseParagraph>
       </div>
 

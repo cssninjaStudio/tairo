@@ -71,7 +71,7 @@ function statusColor(itemStatus: string) {
       <!-- Payments received -->
       <div class="mb-16 w-full">
         <h3
-          class="font-heading text-muted-800 dark:text-muted-200 mb-5 text-xl"
+          class="font-heading text-muted-900 dark:text-white mb-5 text-xl"
         >
           Received payments
         </h3>
@@ -189,7 +189,7 @@ function statusColor(itemStatus: string) {
       <!-- Payments requests -->
       <div class="w-full">
         <h3
-          class="font-heading text-muted-800 dark:text-muted-200 mb-5 text-xl"
+          class="font-heading text-muted-900 dark:text-white mb-5 text-xl"
         >
           Payment requests
         </h3>

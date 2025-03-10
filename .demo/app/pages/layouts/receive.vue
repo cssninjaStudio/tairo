@@ -129,7 +129,7 @@ useHead({
                 >
                   <span
                     class="bg-primary-500 block size-2 rounded-full transition-transform duration-300"
-                    :class="currentStepId >= index ? 'scale-1' : 'scale-0'"
+                    :class="currentStepId >= index ? 'scale-100' : 'scale-0'"
                   />
                 </div>
               </div>

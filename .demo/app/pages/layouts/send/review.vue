@@ -39,7 +39,7 @@ onBeforeMount(checkPreviousSteps)
           as="h2"
           size="2xl"
           weight="medium"
-          class="md:3xl! text-muted-800 dark:text-white"
+          class="md:3xl! text-muted-900 dark:text-white"
         >
           {{ steps[currentStepId]?.meta.title }}
         </BaseHeading>
@@ -63,7 +63,7 @@ onBeforeMount(checkPreviousSteps)
               as="h3"
               size="3xl"
               weight="medium"
-              class="text-muted-800 dark:text-muted-100"
+              class="text-muted-900 dark:text-muted-100"
             >
               ${{ request.amount?.toFixed(2) }}
             </BaseHeading>

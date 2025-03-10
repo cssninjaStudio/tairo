@@ -149,7 +149,7 @@ const onSubmit = handleSubmit(async (values) => {
             <button
               class="bg-muted-200 dark:bg-muted-700 hover:bg-muted-100 dark:hover:bg-muted-600 text-muted-600 dark:text-muted-400 focus-visible:nui-focus w-[calc(50%_-_0.5rem)] cursor-pointer rounded-xl px-5 py-4 text-center transition-colors duration-300 md:w-auto"
             >
-              <Icon name="fa6-brands:twitter" class="mx-auto size-4" />
+              <Icon name="fa6-brands:x-twitter" class="mx-auto size-4" />
             </button>
             <!-- Linkedin button -->
             <button
@@ -242,7 +242,7 @@ const onSubmit = handleSubmit(async (values) => {
                     :model-value="field.value"
                     :disabled="isSubmitting"
                     label="Trust for 60 days"
-                    variant="primary"
+                    variant="default"
                     @update:model-value="handleChange"
                     @blur="handleBlur"
                   />
