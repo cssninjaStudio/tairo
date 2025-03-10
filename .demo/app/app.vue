@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { locale } = useI18n()
+const head = useLocaleHead()
 const route = useRoute()
 const app = useAppConfig()
 
@@ -14,18 +16,19 @@ useHead({
       : `${app.tairo?.title}`
   },
   htmlAttrs: {
-    lang: 'en',
-    dir: 'ltr',
+    lang: () => head.value.htmlAttrs!.lang,
+    dir: () => head.value.htmlAttrs!.dir,
   },
-  link: [
+  link: () => [
+    ...(head.value.link || []),
     {
       rel: 'icon',
       type: 'image/png',
       href: '/img/favicon.png',
     },
   ],
-
-  meta: [
+  meta: () => [
+    ...(head.value.meta || []),
     {
       name: 'description',
       content: () =>
@@ -72,7 +75,7 @@ useHead({
 </script>
 
 <template>
-  <BaseProviders>
+  <BaseProviders :config="{ dir: head.htmlAttrs!.dir, locale }">
     <!--
       Global app search modal
       @see .demo/components/DemoAppSearch.vue

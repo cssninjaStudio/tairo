@@ -31,6 +31,7 @@ export default defineNuxtConfig({
   ],
 
   modules: [
+    '@nuxtjs/i18n',
     '@nuxt/image',
     '@nuxt/content',
     'nuxt-component-meta',
@@ -198,6 +199,21 @@ export default defineNuxtConfig({
       mapboxToken: '', // set it via NUXT_PUBLIC_MAPBOX_TOKEN env
       siteUrl: '', // set it via NUXT_PUBLIC_SITE_URL
     },
+  },
+
+  i18n: {
+    baseUrl: '/',
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    lazy: true,
+    locales: [
+      { code: 'en', dir: 'ltr', language: 'en-US', file: 'en-US.yaml', name: 'English', isCatchallLocale: true },
+      { code: 'fr', dir: 'ltr', language: 'fr-FR', file: 'fr-FR.yaml', name: 'Français' },
+      { code: 'es', dir: 'ltr', language: 'es-ES', file: 'es-ES.yaml', name: 'Español' },
+      { code: 'de', dir: 'ltr', language: 'de-DE', file: 'de-DE.yaml', name: 'Deutsch' },
+      { code: 'ar', dir: 'rtl', language: 'ar-SA', file: 'ar-SA.yaml', name: 'العربية' },
+      { code: 'ja', dir: 'ltr', language: 'ja-JP', file: 'ja-JP.yaml', name: '日本語' },
+    ],
   },
 
   routeRules: {

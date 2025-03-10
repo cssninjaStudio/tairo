@@ -1008,7 +1008,7 @@ function getRouteSidebarId() {
 
     <TairoSidebarLayoutContent class="min-h-screen">
       <div class="px-4 md:px-6 xl:px-8">
-        <TairoToolbar />
+        <DemoToolbar />
       </div>
       <slot />
     </TairoSidebarLayoutContent>

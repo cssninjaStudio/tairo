@@ -49,6 +49,7 @@
     "@mapbox/mapbox-gl-geocoder": "5.0.3",
     "@nuxt/content": "3.3.0",
     "@nuxt/image": "1.9.0",
+    "@nuxtjs/i18n": "^9.3.1",
     "@popperjs/core": "2.11.8",
     "@shikijs/rehype": "3.1.0",
     "@shuriken-ui/nuxt": "4.0.0-alpha.33",
