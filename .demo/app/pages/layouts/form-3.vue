@@ -26,7 +26,7 @@ const termsApproval = ref(false)
 
 <template>
   <div class="px-4 md:px-6 lg:px-8 pb-20">
-    <form class="grid w-full gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid w-full gap-4 md:grid-cols-2 lg:grid-cols-3">
       <div class="lg:col-span-2">
         <BaseCard rounded="md">
           <div
@@ -366,6 +366,6 @@ const termsApproval = ref(false)
           </div>
         </BaseCard>
       </div>
-    </form>
+    </div>
   </div>
 </template>

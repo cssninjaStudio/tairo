@@ -81,7 +81,6 @@ const archive = [
 </script>
 
 <template>
-  <!-- Wrapper -->
   <div class="bg-muted-white dark:bg-muted-900 h-screen w-full overflow-hidden">
     <!-- Sidebar -->
     <div
@@ -269,14 +268,13 @@ const archive = [
                       orientation="start"
                       rounded="lg"
                     >
-                      <template #button="{ open = false }">
+                      <template #button>
                         <button type="button" class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex h-10 w-40 items-center gap-2 whitespace-nowrap rounded-lg border bg-white pe-12 ps-3 md:w-48">
                           <span class="shrink-0 whitespace-nowrap pe-4 font-sans text-[0.85rem] font-medium leading-none">Tairo GPT Mode</span>
                           <span class="absolute end-0 top-0 flex size-10 items-center justify-center">
                             <Icon
                               name="lucide:chevron-down"
-                              class="text-muted-900 dark:text-muted-300 size-5 shrink-0 transition-all duration-300"
-                              :class="open ? '-rotate-180' : ''"
+                              class="text-muted-900 dark:text-muted-300 size-5 shrink-0 transition-all duration-300 in-data-[state=open]:-rotate-180"
                             />
                           </span>
                         </button>

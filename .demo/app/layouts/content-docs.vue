@@ -92,7 +92,7 @@ const { data: navigation } = await useAsyncData('docs-navigation', () => queryCo
             </div>
             <!-- Content -->
             <div class="grow px-4 md:px-6 xl:px-8 overflow-hidden">
-              <div class="w-full max-w-3xl mx-auto pt-6 xl:px-6">
+              <div class="w-full max-w-5xl mx-auto pt-6 xl:px-6">
                 <slot />
               </div>
               <div class="pt-10 pb-20">

@@ -1,6 +1,5 @@
 <script lang="ts">
 import type { BaseInputProps } from '@shuriken-ui/nuxt'
-import type { AcceptableValue } from 'reka-ui'
 import { reactiveOmit } from '@vueuse/core'
 import { useForwardExpose, useForwardProps } from 'reka-ui'
 
@@ -23,7 +22,7 @@ const forward = useForwardProps(reactiveOmit(props, ['icon']))
 const { forwardRef } = useForwardExpose()
 
 const ctx = useNuiField({
-  defaultValue: null,
+  defaultValue: undefined,
   optional: true,
 })
 const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invalid' in attrs && attrs['aria-invalid'] === 'true'))

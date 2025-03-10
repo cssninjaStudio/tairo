@@ -122,32 +122,28 @@ function closeUpgrade() {
 </script>
 
 <template>
-  <!-- Wrapper -->
   <div class="dark:bg-muted-900 flex min-h-screen w-full flex-col bg-white sm:flex-row">
     <!-- Mobile menu -->
-    <aside>
-      <div class="absolute z-10 flex h-16 items-center ps-3 lg:hidden">
-        <button
-          class="text-muted-900 disabled:text-muted-400"
-          type="button"
-          @click="isMobileOpen = !isMobileOpen"
-        >
-          <Icon name="lucide:menu" class="size-4 shrink-0 md:size-5" />
-          <span class="sr-only">Show Menu</span>
-        </button>
-      </div>
+    <aside class="absolute z-10 flex h-16 items-center ps-3 lg:hidden">
+      <button
+        class="text-muted-900 disabled:text-muted-400"
+        type="button"
+        @click="isMobileOpen = !isMobileOpen"
+      >
+        <Icon name="lucide:menu" class="size-4 shrink-0 md:size-5" />
+        <span class="sr-only">Show Menu</span>
+      </button>
     </aside>
     <!-- Sidebar -->
     <aside
-      class="group/sidebar bg-muted-50 dark:bg-muted-950 fixed start-0 top-0 z-0 flex h-full transition-all duration-300 lg:relative lg:h-auto"
+      class="group/sidebar bg-muted-50 dark:bg-muted-950 fixed start-0 top-0 z-30 flex h-full transition-all duration-300 lg:relative lg:h-auto [--sidebar-width:231px] [--sidebar-width-collapsed:49px]"
       :class="[
         isCollapsed ? 'w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)',
         isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
       ]"
-      style="--sidebar-width:231px;--sidebar-width-collapsed:49px"
     >
       <div
-        class="border-muted-200 dark:border-muted-800 fixed inset-y-0 left-0 z-10 flex h-svh flex-col overflow-hidden border-r transition-all duration-300"
+        class="border-muted-200 dark:border-muted-800 fixed inset-y-0 left-0 z-auto flex h-svh flex-col overflow-hidden border-r transition-all duration-300"
         :class="isCollapsed ? 'lg:w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)'"
       >
         <div
@@ -163,7 +159,7 @@ function closeUpgrade() {
             <div class="flex-1" />
             <div
               class="absolute z-10 transition-all duration-300 group-hover/sidebar:opacity-100"
-              :class="isCollapsed ? 'opacity-0 -start-6 hidden' : 'w-(--sidebar-width) start-[calc(var(--sidebar-width)-theme(spacing.10))] opacity-100'"
+              :class="isCollapsed ? 'opacity-0 -start-6 hidden' : 'w-(--sidebar-width) start-[calc(var(--sidebar-width)-(calc(var(--spacing)*10)))] opacity-100'"
             >
               <BaseButton
                 size="icon-sm"
@@ -254,7 +250,7 @@ function closeUpgrade() {
                       orientation="start"
                     >
                       <template #button>
-                        <button type="button" class="pointer-events-none flex size-8 items-center justify-center rounded-lg p-1 opacity-0 transition-all duration-300 group-hover/item:pointer-events-auto group-hover/item:opacity-100">
+                        <button type="button" class="flex size-8 items-center justify-center rounded-lg p-1 opacity-0 transition-all duration-300 group-hover/item:opacity-100">
                           <Icon
                             name="lucide:more-horizontal"
                             class="size-4"
@@ -340,223 +336,227 @@ function closeUpgrade() {
       </div>
     </aside>
     <!-- Main -->
-    <main class="relative min-h-screen grow">
-      <div class="bg-background absolute inset-0 flex justify-center overflow-hidden">
-        <div class="absolute inset-0 flex select-none items-center justify-center overflow-hidden sm:p-4">
-          <div class="absolute inset-0 left-1/2 z-0 flex size-full max-w-screen-2xl -translate-x-1/2 items-center justify-center">
-            <TairoLogoText class="pointer-events-none h-16 -translate-y-40 p-2 text-black/5 transition-opacity duration-200 md:-translate-y-36 dark:text-white/5" :class="conversation.length > 0 ? 'opacity-0' : ''" />
-          </div>
-          <div class="pointer-events-none absolute end-5 top-5">
-            <BaseTag
-              size="sm"
-              rounded="full"
-              class="scale-90 font-medium"
-            >
-              <Icon name="mingcute:sparkles-fill" class="size-4 shrink-0 text-yellow-400" />
-              <span>Public Beta</span>
-            </BaseTag>
-          </div>
-          <div class="absolute end-32 top-[1.35rem] scale-75">
-            <BaseThemeSwitch />
-          </div>
-          <!-- Content -->
-          <div
-            class="absolute z-20 flex min-h-[285px] w-full flex-col items-stretch justify-start sm:min-h-[270px]"
-            :class="conversation.length === 0 ? 'top-1/2 -translate-y-1/2' : 'top-0 h-screen'"
+    <main class="relative z-auto min-h-screen grow">
+      <div
+        class="pointer-events-none absolute inset-0 left-1/2 z-auto flex size-full max-w-screen-2xl -translate-x-1/2 items-center justify-center"
+        :class="conversation.length > 0 ? 'opacity-0' : ''"
+      >
+        <TairoLogoText class="h-16 -translate-y-40 p-2 text-black/5 transition-opacity duration-200 md:-translate-y-36 dark:text-white/5" />
+      </div>
+      <div class="absolute inset-0 z-auto flex items-center justify-center overflow-hidden sm:p-4">
+        <div class="absolute end-5 top-5.5">
+          <BaseTag
+            size="sm"
+            rounded="full"
+            class="scale-90 font-medium flex gap-1"
           >
-            <div v-if="conversation.length > 0" class="dark:bg-muted-900 flex h-16 items-center justify-between bg-white px-6">
-              <div class="flex items-center gap-3">
-                <button type="button" class="font-sans text-sm font-medium underline-offset-4 hover:underline">
-                  New Chat
-                </button>
-                <BaseTag
-                  size="sm"
-                  rounded="full"
-                  class="scale-90 font-medium"
-                >
-                  <Icon name="solar:lock-keyhole-minimalistic-unlocked-bold" class="relative -top-0.5 me-2 size-3 shrink-0" />
-                  <span>Private</span>
-                </BaseTag>
+            <Icon name="mingcute:sparkles-fill" class="size-4 shrink-0 text-yellow-400" />
+            <span>Public Beta</span>
+          </BaseTag>
+        </div>
+        <div class="absolute end-32 top-[1.35rem] scale-75">
+          <BaseThemeSwitch />
+        </div>
+        <!-- Content -->
+        <div
+          class="absolute z-20 flex min-h-[285px] w-full flex-col items-stretch justify-start sm:min-h-[270px]"
+          :class="conversation.length === 0 ? 'top-1/2 -translate-y-1/2' : 'top-0 h-screen'"
+        >
+          <div v-if="conversation.length > 0" class="dark:bg-muted-900 flex h-16 items-center justify-between bg-white px-6">
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="font-sans text-sm font-medium underline-offset-4 hover:underline"
+                @click="clearMessages"
+              >
+                New Chat
+              </button>
+              <BaseTag
+                size="sm"
+                rounded="full"
+                class="scale-90 font-medium flex gap-1 items-center justify-center"
+              >
+                <Icon name="solar:lock-keyhole-minimalistic-unlocked-bold" class="size-3 shrink-0" />
+                <span>Private</span>
+              </BaseTag>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="scale-75">
+                <BaseThemeSwitch />
               </div>
-              <div class="flex items-center gap-3">
-                <div class="scale-75">
-                  <BaseThemeSwitch />
-                </div>
-                <BaseDropdown
-                  rounded="lg"
-                  label="Dropdown"
-                  orientation="start"
-                  class="group/dropdown"
+              <BaseDropdown
+                rounded="lg"
+                label="Dropdown"
+                orientation="start"
+                class="group/dropdown"
+              >
+                <template #button>
+                  <button type="button" class="group-hover/dropdown:bg-muted-100 dark:group-hover/dropdown:bg-muted-800 flex size-8 items-center justify-center rounded-lg p-1 transition-all duration-300">
+                    <Icon
+                      name="lucide:more-horizontal"
+                      class="size-4"
+                    />
+                  </button>
+                </template>
+                <BaseDropdownItem
+                  to="#"
+                  title="Share"
+                  text="Share this chat"
+                  rounded="sm"
                 >
-                  <template #button>
-                    <button type="button" class="group-hover/dropdown:bg-muted-100 dark:group-hover/dropdown:bg-muted-800 flex size-8 items-center justify-center rounded-lg p-1 transition-all duration-300">
-                      <Icon
-                        name="lucide:more-horizontal"
-                        class="size-4"
-                      />
-                    </button>
+                  <template #start>
+                    <Icon name="lucide:share" class="me-2 block size-4" />
                   </template>
-                  <BaseDropdownItem
-                    to="#"
-                    title="Share"
-                    text="Share this chat"
-                    rounded="sm"
-                  >
-                    <template #start>
-                      <Icon name="lucide:share" class="me-2 block size-4" />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#"
-                    title="Rename"
-                    text="Rename this chat"
-                    rounded="sm"
-                  >
-                    <template #start>
-                      <Icon name="lucide:edit-3" class="me-2 block size-4" />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#"
-                    title="Archive"
-                    text="Archive this chat"
-                    rounded="sm"
-                  >
-                    <template #start>
-                      <Icon name="lucide:archive" class="me-2 block size-4" />
-                    </template>
-                  </BaseDropdownItem>
-                  <BaseDropdownItem
-                    to="#"
-                    title="Delete"
-                    text="Delete this chat"
-                    rounded="sm"
-                  >
-                    <template #start>
-                      <Icon name="lucide:trash-2" class="me-2 block size-4" />
-                    </template>
-                  </BaseDropdownItem>
-                </BaseDropdown>
-              </div>
+                </BaseDropdownItem>
+                <BaseDropdownItem
+                  to="#"
+                  title="Rename"
+                  text="Rename this chat"
+                  rounded="sm"
+                >
+                  <template #start>
+                    <Icon name="lucide:edit-3" class="me-2 block size-4" />
+                  </template>
+                </BaseDropdownItem>
+                <BaseDropdownItem
+                  to="#"
+                  title="Archive"
+                  text="Archive this chat"
+                  rounded="sm"
+                >
+                  <template #start>
+                    <Icon name="lucide:archive" class="me-2 block size-4" />
+                  </template>
+                </BaseDropdownItem>
+                <BaseDropdownItem
+                  to="#"
+                  title="Delete"
+                  text="Delete this chat"
+                  rounded="sm"
+                >
+                  <template #start>
+                    <Icon name="lucide:trash-2" class="me-2 block size-4" />
+                  </template>
+                </BaseDropdownItem>
+              </BaseDropdown>
             </div>
-            <!-- Header -->
-            <div v-if="conversation.length === 0" class="mx-auto mb-6 flex max-w-[49rem] flex-col items-center gap-2 px-6">
-              <BaseHeading
-                as="h1"
-                size="lg"
-                weight="semibold"
-                class="text-muted-900 text-pretty text-center tracking-tighter sm:text-xl! md:text-3xl! dark:text-white"
-              >
-                What do you want to ship?
-              </BaseHeading>
-              <h2 class="text-muted-700 dark:text-muted-500 text-balance text-center text-sm">
-                Generate UI, ask questions, debug, execute code, and much more.
-              </h2>
-            </div>
-            <!-- Conversation -->
-            <div
-              v-else
-              ref="chatEl"
-              class="nui-slimscroll relative mx-auto size-full max-w-[49rem] grow overflow-y-auto px-6"
+          </div>
+          <!-- Header -->
+          <div v-if="conversation.length === 0" class="mx-auto mb-6 flex max-w-[49rem] flex-col items-center gap-2 px-6">
+            <BaseHeading
+              as="h1"
+              size="lg"
+              weight="semibold"
+              class="text-muted-900 text-pretty text-center tracking-tighter sm:text-xl! md:text-3xl! dark:text-white"
             >
-              <div
-                class="relative min-h-full w-full transition-opacity duration-150 ease-in"
-                style="height: 600px;"
-              >
-                <div class="absolute inset-0 mx-auto flex max-w-3xl flex-col pb-16">
-                  <div v-for="(item, index) in conversation" :key="item.text">
-                    <div class="mt-4 flex w-full px-4 py-3 pt-4 empty:hidden">
+              What do you want to ship?
+            </BaseHeading>
+            <h2 class="text-muted-700 dark:text-muted-500 text-balance text-center text-sm">
+              Generate UI, ask questions, debug, execute code, and much more.
+            </h2>
+          </div>
+          <!-- Conversation -->
+          <div
+            v-else
+            ref="chatEl"
+            class="nui-slimscroll relative mx-auto size-full max-w-[49rem] grow overflow-y-auto px-6"
+          >
+            <div
+              class="relative min-h-full w-full transition-opacity duration-150 ease-in h-[600px]"
+            >
+              <div class="absolute inset-0 mx-auto flex max-w-3xl flex-col pb-16">
+                <div v-for="(item, index) in conversation" :key="item.text">
+                  <div class="mt-4 flex w-full px-4 py-3 pt-4 empty:hidden">
+                    <div class="group w-full gap-2">
+                      <div class="relative flex items-start gap-2">
+                        <div class="flex items-center">
+                          <BaseAvatar size="xxs" :src="item.user.avatar" />
+                        </div>
+                        <div class="min-w-0 flex-1 translate-y-[0.5px]">
+                          <div class="flex flex-1 -translate-x-1 flex-col items-stretch gap-2">
+                            <div class="prose prose-sm prose-muted dark:prose-invert w-full min-w-0 break-words pl-1">
+                              <p>{{ item.text }}</p>
+                            </div>
+                            <div class="absolute inset-y-0 right-0 z-10">
+                              <div class="dark:bg-muted-950 border-muted-200 dark:border-muted-700 sticky top-3 flex w-fit -translate-y-1.5 items-center gap-1 rounded-[10px] border bg-white p-1 opacity-0 shadow-xs group-hover:opacity-100">
+                                <button
+                                  class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
+                                >
+                                  <Icon name="solar:pen-linear" class="size-4" />
+                                </button>
+                                <button
+                                  class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
+                                >
+                                  <Icon name="solar:trash-bin-minimalistic-linear" class="size-4" />
+                                </button>
+                                <button
+                                  class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
+                                >
+                                  <Icon name="solar:copy-linear" class="size-4" />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex w-full px-4 py-3 pb-10 empty:hidden">
+                    <div class="w-full">
                       <div class="group w-full gap-2">
                         <div class="relative flex items-start gap-2">
                           <div class="flex items-center">
-                            <BaseAvatar size="xxs" :src="item.user.avatar" />
+                            <div class="relative size-6 items-center justify-center overflow-visible">
+                              <div class="absolute inset-0 flex items-center justify-center">
+                                <TairoLogo class="text-muted-400 size-6" />
+                              </div>
+                            </div>
                           </div>
                           <div class="min-w-0 flex-1 translate-y-[0.5px]">
-                            <div class="flex flex-1 -translate-x-1 flex-col items-stretch gap-2">
-                              <div class="prose prose-sm prose-muted w-full min-w-0 break-words pl-1">
-                                <p>{{ item.text }}</p>
-                              </div>
-                              <div class="absolute inset-y-0 right-0 z-10">
-                                <div class="dark:bg-muted-950 border-muted-200 dark:border-muted-700 pointer-events-auto sticky top-3 flex w-fit -translate-y-1.5 items-center gap-1 rounded-[10px] border bg-white p-1 opacity-0 shadow-xs group-hover:opacity-100">
-                                  <button
-                                    class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
-                                  >
-                                    <Icon name="solar:pen-linear" class="size-4" />
-                                  </button>
-                                  <button
-                                    class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
-                                  >
-                                    <Icon name="solar:trash-bin-minimalistic-linear" class="size-4" />
-                                  </button>
-                                  <button
-                                    class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
-                                  >
-                                    <Icon name="solar:copy-linear" class="size-4" />
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex w-full px-4 py-3 pb-10 empty:hidden">
-                      <div class="w-full">
-                        <div class="group w-full gap-2">
-                          <div class="relative flex items-start gap-2">
-                            <div class="flex items-center">
-                              <div class="relative size-6 items-center justify-center overflow-visible">
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                  <TairoLogo class="text-muted-400 size-6" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="min-w-0 flex-1 translate-y-[0.5px]">
-                              <div class="flex min-w-0 flex-1 flex-col items-stretch gap-6">
-                                <div class="flex-1 text-sm">
-                                  <div>
-                                    <div v-if="loading && index === conversation.length - 1" class="space-y-8">
-                                      <div class="space-y-3">
-                                        <BasePlaceload class="h-3 w-full rounded-sm" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
-                                        <BasePlaceload class="h-3 w-3/5 rounded-sm" />
-                                      </div>
-                                      <div class="space-y-3">
-                                        <BasePlaceload class="h-3 w-full rounded-sm" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
-                                      </div>
-                                      <div class="space-y-3">
-                                        <BasePlaceload class="h-3 w-full rounded-sm" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
-                                        <BasePlaceload class="h-3 w-full rounded-sm" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
-                                        <BasePlaceload class="h-3 w-full rounded-sm" />
-                                        <BasePlaceload class="h-3 w-4/5 rounded-sm" />
-                                      </div>
+                            <div class="flex min-w-0 flex-1 flex-col items-stretch gap-6">
+                              <div class="flex-1 text-sm">
+                                <div>
+                                  <div v-if="loading && index === conversation.length - 1" class="space-y-8">
+                                    <div class="space-y-3">
+                                      <BasePlaceload class="h-3 w-full rounded-sm" />
+                                      <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                      <BasePlaceload class="h-3 w-3/5 rounded-sm" />
                                     </div>
-                                    <div
-                                      v-else
-                                      class="prose prose-sm prose-muted min-w-0 break-words"
-                                      v-html="item.response"
-                                    />
+                                    <div class="space-y-3">
+                                      <BasePlaceload class="h-3 w-full rounded-sm" />
+                                      <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                    </div>
+                                    <div class="space-y-3">
+                                      <BasePlaceload class="h-3 w-full rounded-sm" />
+                                      <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                      <BasePlaceload class="h-3 w-full rounded-sm" />
+                                      <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                      <BasePlaceload class="h-3 w-full rounded-sm" />
+                                      <BasePlaceload class="h-3 w-4/5 rounded-sm" />
+                                    </div>
                                   </div>
+                                  <div
+                                    v-else
+                                    class="prose prose-sm prose-muted dark:prose-invert min-w-0 break-words"
+                                    v-html="item.response"
+                                  />
                                 </div>
-                                <div v-if="!loading" class="flex items-center gap-2">
-                                  <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
-                                    <Icon name="solar:copy-linear" class="size-4" />
-                                    <span class="hidden sm:inline-block">Copy</span>
-                                  </button>
-                                  <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
-                                    <Icon name="solar:refresh-linear" class="size-4" />
-                                    <span class="hidden sm:inline-block">Retry</span>
-                                  </button>
-                                  <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
-                                    <Icon name="solar:like-linear" class="size-4" />
-                                  </button>
-                                  <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
-                                    <Icon name="solar:dislike-linear" class="size-4" />
-                                  </button>
-                                </div>
+                              </div>
+                              <div v-if="!loading" class="flex items-center gap-2">
+                                <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
+                                  <Icon name="solar:copy-linear" class="size-4" />
+                                  <span class="hidden sm:inline-block">Copy</span>
+                                </button>
+                                <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
+                                  <Icon name="solar:refresh-linear" class="size-4" />
+                                  <span class="hidden sm:inline-block">Retry</span>
+                                </button>
+                                <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
+                                  <Icon name="solar:like-linear" class="size-4" />
+                                </button>
+                                <button class="border-muted-100 dark:border-muted-950 dark:bg-muted-950 bg-muted-100 text-muted-900 dark:text-muted-100 hover:bg-muted-200 focus-visible:bg-muted-200 focus:bg-muted-200 dark:hover:bg-muted-800 dark:focus-visible:bg-muted-800 dark:focus:bg-muted-800 inline-flex h-7 shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap text-nowrap rounded-lg border px-2 text-xs font-medium outline-none">
+                                  <Icon name="solar:dislike-linear" class="size-4" />
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -566,143 +566,136 @@ function closeUpgrade() {
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Chat compose -->
-            <div class="relative inset-x-0 bottom-0 flex items-center">
-              <div class="relative z-10 mx-auto flex w-full max-w-[49rem] flex-col px-6">
-                <div class="bg-muted-100 dark:bg-muted-800 text-muted-600 relative rounded-t-xl transition-transform delay-1000 duration-500" :class="upgrade ? 'translate-y-0' : 'translate-y-12'">
-                  <div class="text-muted-900 flex items-center justify-between gap-2 py-1.5 pl-3 pr-2 text-xs md:text-sm">
-                    <span class="block sm:hidden">Get more messages with Premium.</span>
-                    <span class="hidden sm:block">Need more messages? Get higher limits with Premium.</span>
-                    <div class="flex items-center gap-1">
-                      <button type="button" class="text-primary-500 inline-flex h-5 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-lg bg-transparent p-0! px-3 font-sans text-sm font-medium underline-offset-2 outline-none transition-all hover:underline">
-                        Upgrade Plan
-                      </button>
-                      <button type="button" @click="closeUpgrade">
-                        <Icon name="lucide:x" class="size-4" />
-                        <span class="sr-only">Close</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="rounded-b-xl" :class="upgrade ? 'bg-muted-100 dark:bg-muted-800' : ''">
-                  <form class="border-muted-300 dark:border-muted-800 relative rounded-xl border transition-colors">
-                    <div class="@container/textarea relative z-10 grid rounded-xl">
-                      <label class="sr-only" for="chat-main-textarea">Chat Input</label>
-                      <BaseTextarea
-                        v-model="input"
-                        rounded="md"
-                        placeholder="Ask Tairo a question…"
-                        :rows="2"
-                        :classes="{
-                          textarea: 'resize-none',
-                        }"
-                        addon
-                      >
-                        <template #addon>
-                          <div class="flex items-center gap-2">
-                            <BaseAvatar
-                              src="/img/avatars/2.svg"
-                              class="me-1"
-                              size="xs"
-                            />
-                            <BaseButton
-                              size="icon-sm"
-                              rounded="md"
-                            >
-                              <Icon name="lucide:paperclip" class="size-4" />
-                            </BaseButton>
-                            <BaseButton
-                              size="sm"
-                              rounded="md"
-                            >
-                              <Icon name="lucide:plus" class="size-4" />
-                              <span>Project</span>
-                            </BaseButton>
-                          </div>
-
-                          <div class="flex items-center gap-2">
-                            <BaseButton
-                              size="icon-sm"
-                              rounded="md"
-                              variant="dark"
-                              :loading="loading"
-                              @click="addMessage"
-                            >
-                              <Icon name="lucide:arrow-up" class="size-4" />
-                            </BaseButton>
-                          </div>
-                        </template>
-                      </BaseTextarea>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div v-if="conversation.length === 0" class="mx-auto flex h-20 min-h-0 max-w-[49rem] shrink-0 items-center justify-center px-6 sm:h-16">
-              <div class="flex flex-wrap justify-center gap-3" style="opacity:1">
-                <h2 class="sr-only">
-                  Suggested Chat Messages
-                </h2>
-                <button
-                  v-for="item in recentChats"
-                  :key="item.title"
-                  class="dark:bg-muted-950 text-muted-900 dark:text-muted-100 hover:bg-muted-100 dark:hover:bg-muted-800 border-muted-300 dark:border-muted-800 inline-flex h-6 shrink-0 cursor-pointer items-center justify-center gap-0.5 whitespace-nowrap text-nowrap rounded-full border bg-white px-2 text-xs font-medium outline-none transition-all"
-                >
-                  <span class="block md:hidden">{{ item.title }}</span>
-                  <span class="hidden md:block">{{ item.title }}</span>
-                  <svg
-                    data-testid="geist-icon"
-                    height="16"
-                    stroke-linejoin="round"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    style="color: currentcolor;"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M6.75011 4H6.00011V5.5H6.75011H9.43945L5.46978 9.46967L4.93945 10L6.00011 11.0607L6.53044 10.5303L10.499 6.56182V9.25V10H11.999V9.25V5C11.999 4.44772 11.5512 4 10.999 4H6.75011Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div v-else>
-              <p class="text-muted-500 py-2 text-center text-xs">
-                v0 may make mistakes. Please use with discretion.
-              </p>
             </div>
           </div>
-          <footer v-if="conversation.length === 0" class="absolute bottom-4 text-xs">
-            <nav class="divide-muted-300 dark:divide-muted-700 mx-auto flex h-4 max-w-[49rem] divide-x px-6">
-              <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
-                FAQ
-              </NuxtLink>
-              <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
-                Tairo
-              </NuxtLink>
-              <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
-                Terms
-              </NuxtLink>
-              <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
-                AI Policy
-              </NuxtLink>
-              <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
-                Privacy
-              </NuxtLink>
-            </nav>
-          </footer>
+          <!-- Chat compose -->
+          <div class="flex items-center">
+            <div class="mx-auto flex w-full max-w-[49rem] flex-col px-6">
+              <div v-if="upgrade" class="bg-muted-100 dark:bg-muted-800 text-muted-600 rounded-t-xl">
+                <div class="text-muted-900 flex items-center justify-between gap-2 py-1.5 pl-3 pr-2 text-xs md:text-sm">
+                  <span class="block sm:hidden">Get more messages with Premium.</span>
+                  <span class="hidden sm:block">Need more messages? Get higher limits with Premium.</span>
+                  <div class="flex items-center gap-1">
+                    <button type="button" class="text-primary-500 inline-flex h-5 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-lg bg-transparent p-0! px-3 font-sans text-sm font-medium underline-offset-2 outline-none transition-all hover:underline">
+                      Upgrade Plan
+                    </button>
+                    <button type="button" @click="closeUpgrade">
+                      <Icon name="lucide:x" class="size-4" />
+                      <span class="sr-only">Close</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <form @submit.prevent="addMessage">
+                <BaseTextarea
+                  v-model="input"
+                  v-focus
+                  rounded="md"
+                  placeholder="Ask Tairo a question…"
+                  autogrow
+                  :class="[upgrade && 'rounded-t-none!']"
+                />
+
+                <div class="flex items-center justify-between mt-4">
+                  <div class="flex items-center gap-2">
+                    <BaseAvatar
+                      src="/img/avatars/2.svg"
+                      class="me-1"
+                      size="xs"
+                    />
+                    <BaseButton
+                      size="icon-sm"
+                      rounded="md"
+                    >
+                      <Icon name="lucide:paperclip" class="size-4" />
+                    </BaseButton>
+                    <BaseButton
+                      size="sm"
+                      rounded="md"
+                    >
+                      <Icon name="lucide:plus" class="size-4" />
+                      <span>Project</span>
+                    </BaseButton>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <BaseButton
+                      size="icon-sm"
+                      rounded="md"
+                      variant="dark"
+                      :loading="loading"
+                      type="submit"
+                    >
+                      <Icon name="lucide:arrow-up" class="size-4" />
+                    </BaseButton>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div v-if="conversation.length === 0" class="mx-auto flex h-20 min-h-0 max-w-[49rem] shrink-0 items-center justify-center px-6 sm:h-16">
+            <div class="flex flex-wrap justify-center gap-3">
+              <h2 class="sr-only">
+                Suggested Chat Messages
+              </h2>
+              <button
+                v-for="item in recentChats"
+                :key="item.title"
+                class="dark:bg-muted-950 text-muted-900 dark:text-muted-100 hover:bg-muted-100 dark:hover:bg-muted-800 border-muted-300 dark:border-muted-800 inline-flex h-6 shrink-0 cursor-pointer items-center justify-center gap-0.5 whitespace-nowrap text-nowrap rounded-full border bg-white px-2 text-xs font-medium outline-none transition-all"
+              >
+                <span class="block md:hidden">{{ item.title }}</span>
+                <span class="hidden md:block">{{ item.title }}</span>
+                <svg
+                  height="16"
+                  stroke-linejoin="round"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  class="text-current"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.75011 4H6.00011V5.5H6.75011H9.43945L5.46978 9.46967L4.93945 10L6.00011 11.0607L6.53044 10.5303L10.499 6.56182V9.25V10H11.999V9.25V5C11.999 4.44772 11.5512 4 10.999 4H6.75011Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div v-else>
+            <p class="text-muted-500 py-2 text-center text-xs">
+              TairoGPT may make mistakes. Please use with discretion.
+            </p>
+          </div>
         </div>
+        <footer v-if="conversation.length === 0" class="absolute bottom-4 text-xs">
+          <nav class="divide-muted-300 dark:divide-muted-700 mx-auto flex h-4 max-w-[49rem] divide-x px-6">
+            <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
+              FAQ
+            </NuxtLink>
+            <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
+              Tairo
+            </NuxtLink>
+            <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
+              Terms
+            </NuxtLink>
+            <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
+              AI Policy
+            </NuxtLink>
+            <NuxtLink class="text-muted-600 hover:text-muted-900 dark:text-muted-500 dark:hover:text-muted-100 flex items-center gap-1 px-2 transition-colors" to="/">
+              Privacy
+            </NuxtLink>
+          </nav>
+        </footer>
       </div>
     </main>
+
     <!-- Overlay -->
     <div
+      v-if="isMobileOpen"
       role="button"
       tabindex="0"
-      class="bg-muted-950/80 fixed start-0 top-0 z-[29] size-full transition-opacity duration-300 lg:pointer-events-none! lg:opacity-0!"
-      :class="isMobileOpen ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'"
+      class="bg-muted-950/80 fixed start-0 top-0 z-[29] size-full starting:opacity-0 transition-opacity duration-300 lg:pointer-events-none! lg:opacity-0!"
       @click="isMobileOpen = false"
     />
   </div>

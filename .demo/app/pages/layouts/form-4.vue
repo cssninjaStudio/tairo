@@ -465,19 +465,26 @@ function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
                   :disabled="isSubmitting"
                   class="col-span-12 sm:col-span-6"
                 >
-                  <TairoInput
-                    :ref="inputRef"
-                    v-bind="inputAttrs"
-                    type="color"
-                    list="eventColors"
-                    rounded="lg"
-                    icon="solar:waterdrops-linear"
-                    placeholder="Pick an event color..."
-                    class="appearance-none"
-                    :model-value="field.value"
-                    @update:model-value="handleChange"
-                    @blur="handleBlur"
-                  />
+                  <div class="focus-within:nui-focus flex *:rounded-none *:not-last:border-e-0 *:last:border-s-0 rounded-lg *:first:rounded-s-lg *:last:rounded-e-lg">
+                    <BaseInput
+                      :ref="inputRef"
+                      v-bind="inputAttrs"
+                      rounded="lg"
+                      type="color"
+                      class="ring-0! focus-visible:ring-0! w-16! px-1! overflow-hidden"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                    <BaseInput
+                      class="ring-0! focus-visible:ring-0!"
+                      rounded="lg"
+                      placeholder="#000000"
+                      :model-value="field.value"
+                      @update:model-value="handleChange"
+                      @blur="handleBlur"
+                    />
+                  </div>
                   <datalist id="eventColors">
                     <option value="#84cc16" />
                     <option value="#22c55e" />
