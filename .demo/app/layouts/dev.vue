@@ -502,7 +502,7 @@ const menu = [
         children: [
           {
             label: 'Members',
-            to: '/layouts/accounts',
+            to: '/layouts/members',
           },
           {
             label: 'Investments',

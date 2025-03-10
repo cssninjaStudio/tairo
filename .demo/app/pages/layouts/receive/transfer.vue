@@ -72,7 +72,7 @@ function setAccount(account: any) {
           as="h2"
           size="2xl"
           weight="medium"
-          class="md:3xl! text-muted-800 dark:text-white"
+          class="md:3xl! text-muted-900 dark:text-white"
         >
           Bank transfer
         </BaseHeading>
@@ -92,7 +92,7 @@ function setAccount(account: any) {
             v-model="request.amount"
             v-focus
             type="number"
-            rounded="none"
+            rounded="md"
             icon="lucide:dollar-sign"
             placeholder="0.00"
           />
@@ -161,11 +161,7 @@ function setAccount(account: any) {
               >
                 <span class="flex w-full items-center gap-3 text-start">
                   <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
-                  <Icon
-                    v-else
-                    name="lucide:wallet"
-                    class="text-muted-500 mx-1 my-2 size-6"
-                  />
+                  <TairoLogo v-else class="text-muted-300 dark:text-muted-800 size-8" />
                   <div v-if="request.account">
                     <BaseText
                       size="sm"
@@ -220,7 +216,7 @@ function setAccount(account: any) {
           as="h2"
           size="2xl"
           weight="medium"
-          class="md:3xl! text-muted-800 dark:text-white"
+          class="md:3xl! text-muted-900 dark:text-white"
         >
           Payment link
         </BaseHeading>
@@ -240,7 +236,7 @@ function setAccount(account: any) {
             v-model="request.amount"
             v-focus
             type="number"
-            rounded="none"
+            rounded="md"
             icon="lucide:dollar-sign"
             placeholder="0.00"
           />
@@ -260,7 +256,7 @@ function setAccount(account: any) {
           <BaseField :error="errors.fields.email">
             <TairoInput
               v-model="request.email"
-              icon="lucide:mail"
+              icon="solar:letter-linear"
               placeholder="Ex: johndoe@gmail.com"
             />
           </BaseField>
@@ -287,11 +283,7 @@ function setAccount(account: any) {
               >
                 <span class="flex w-full items-center gap-3 text-start">
                   <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
-                  <Icon
-                    v-else
-                    name="lucide:wallet"
-                    class="text-muted-500 mx-1 my-2 size-6"
-                  />
+                  <TairoLogo v-else class="text-muted-300 dark:text-muted-800 size-8" />
                   <div v-if="request.account">
                     <BaseText
                       size="sm"
@@ -348,7 +340,7 @@ function setAccount(account: any) {
               as="h2"
               size="2xl"
               weight="medium"
-              class="md:3xl! text-muted-800 dark:text-white"
+              class="md:3xl! text-muted-900 dark:text-white"
             >
               Wire details
             </BaseHeading>
@@ -362,7 +354,7 @@ function setAccount(account: any) {
             <a
               class="text-primary-500 hover:text-primary-600 inline-flex cursor-pointer items-center gap-2 transition-colors duration-300"
             >
-              <Icon name="lucide:download" class="size-4" />
+              <Icon name="solar:download-linear" class="size-4" />
               <BaseText size="xs" weight="semibold">Download as PDF</BaseText>
             </a>
           </div>
@@ -380,11 +372,7 @@ function setAccount(account: any) {
             >
               <span class="flex w-full items-center gap-3 text-start">
                 <TairoLogo v-if="request.account" class="text-primary-500 size-8" />
-                <Icon
-                  v-else
-                  name="lucide:wallet"
-                  class="text-muted-500 mx-1 my-2 size-6"
-                />
+                <TairoLogo v-else class="text-muted-300 dark:text-muted-800 size-8" />
                 <div v-if="request.account">
                   <BaseText
                     size="sm"

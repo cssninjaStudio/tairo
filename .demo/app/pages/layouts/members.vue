@@ -32,24 +32,24 @@ const currentMember = ref()
 
 <template>
   <!-- Wrapper -->
-  <div class="w-full pb-24">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="flex items-center justify-end py-6">
+    <div class="flex items-center justify-end pb-6">
       <!-- Buttons -->
       <div class="hidden items-center gap-2 md:flex">
         <BaseButton
           to="/layouts/invite"
-          rounded="full"
+          rounded="md"
           size="sm"
         >
-          <Icon name="lucide:user" class="size-4" />
+          <Icon name="solar:user-rounded-linear" class="size-4" />
           <span>Invite a Member</span>
         </BaseButton>
         <BaseButton
-          rounded="full"
+          rounded="md"
           size="sm"
         >
-          <Icon name="lucide:edit-3" class="size-4" />
+          <Icon name="solar:pen-2-linear" class="size-4" />
           <span>Edit Member</span>
         </BaseButton>
       </div>
@@ -69,13 +69,13 @@ const currentMember = ref()
           >
             <NuxtLink
               :to="`/layouts/members/${member.slug}`"
-              class="hover:bg-muted-200 dark:hover:bg-muted-800/60 flex items-center gap-2 rounded-xl p-4"
-              active-class="bg-muted-200 dark:bg-muted-800/60"
+              class="hover:bg-muted-200/80 dark:hover:bg-muted-800/60 flex items-center gap-2 rounded-xl p-4"
+              active-class="bg-muted-200/80 dark:bg-muted-800/60"
             >
               <BaseAvatar
                 :src="member.picture"
                 :alt="member.name"
-                size="sm"
+                size="xs"
               />
               <div>
                 <BaseHeading
@@ -86,7 +86,7 @@ const currentMember = ref()
                 >
                   {{ member.name }}
                 </BaseHeading>
-                <BaseParagraph size="xs" class="text-muted-400 line-clamp-1">
+                <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                   {{ member.email }}
                 </BaseParagraph>
               </div>
