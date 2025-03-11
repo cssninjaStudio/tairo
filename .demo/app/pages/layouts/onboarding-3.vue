@@ -91,9 +91,9 @@ const roles = [
         <div class="pt-8 text-center">
           <BaseHeading
             tag="h2"
-            size="3xl"
+            size="2xl"
             weight="medium"
-            class="mb-2"
+            class="mb-2 text-muted-900 dark:text-white"
           >
             Choose a profile
           </BaseHeading>
@@ -120,7 +120,7 @@ const roles = [
                         class="dark:bg-muted-900 absolute end-0 top-0 z-20 flex size-6 items-center justify-center rounded-full bg-white"
                       >
                         <Icon
-                          name="ph:check-circle-duotone"
+                          name="solar:check-circle-bold-duotone"
                           class="text-primary-500 size-6"
                         />
                       </RadioGroupIndicator>

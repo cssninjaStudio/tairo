@@ -15,22 +15,22 @@ const searchTerms = ref('Ice cream pizza')
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-5xl">
-    <div class="mx-auto mt-6 flex w-full max-w-sm items-center justify-center">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
+    <div class="my-6 flex w-full items-center gap-3">
       <TairoInput
         v-model="searchTerms"
         icon="lucide:search"
         placeholder="Search..."
         rounded="full"
       />
-    </div>
-    <div class="mb-12 mt-2 text-center">
-      <BaseText
-        size="sm"
-        class="text-muted-400"
-      >
-        0 results for "Ice cream pizza"
-      </BaseText>
+      <div>
+        <BaseText
+          size="sm"
+          class="text-muted-400"
+        >
+          0 results found
+        </BaseText>
+      </div>
     </div>
     <div>
       <BasePlaceholderPage

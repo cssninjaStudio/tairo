@@ -59,7 +59,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="incoming" />
+              <BaseSwitchThin v-model="incoming" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -80,7 +80,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="outgoing" />
+              <BaseSwitchThin v-model="outgoing" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -101,7 +101,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="failed" />
+              <BaseSwitchThin v-model="failed" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -122,7 +122,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="uncashed" />
+              <BaseSwitchThin v-model="uncashed" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -143,7 +143,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="payments" />
+              <BaseSwitchThin v-model="payments" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -198,7 +198,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="low" />
+              <BaseSwitchThin v-model="low" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -252,7 +252,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="features" />
+              <BaseSwitchThin v-model="features" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -273,7 +273,7 @@ const offers = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="offers" />
+              <BaseSwitchThin v-model="offers" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"

@@ -14,29 +14,26 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="pb-6">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="max-w-md">
-        <BaseHeading
-          as="h3"
-          size="lg"
-          weight="semibold"
-          class="text-muted-900 dark:text-white"
-        >
-          Manage your account
-        </BaseHeading>
-        <BaseParagraph
-          size="sm"
-          weight="medium"
-          lead="normal"
-          class="text-muted-500 dark:text-muted-400 mt-2"
-        >
-          Make sure to check your preferences and update your account settings, accordingly to your needs.
-        </BaseParagraph>
-      </div>
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
+    <div class="max-w-md">
+      <BaseHeading
+        as="h3"
+        size="md"
+        weight="medium"
+        class="text-muted-900 dark:text-white"
+      >
+        Manage your account
+      </BaseHeading>
+      <BaseParagraph
+        size="sm"
+        lead="tight"
+        class="text-muted-500 dark:text-muted-400 mt-2"
+      >
+        Make sure to check your preferences and update your account settings, accordingly to your needs.
+      </BaseParagraph>
     </div>
 
-    <div class="mx-auto mt-8 max-w-7xl px-4">
+    <div class="mt-8">
       <div class="w-full overflow-x-auto pb-1">
         <div class="border-muted-300 dark:border-muted-800 border-b">
           <nav class="-mb-px flex space-x-10">

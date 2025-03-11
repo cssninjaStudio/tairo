@@ -65,7 +65,7 @@ const privateMessages = ref(true)
                 </BaseHeading>
                 <BaseText size="sm">mayar@gmail.com</BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -92,7 +92,7 @@ const privateMessages = ref(true)
                 </BaseHeading>
                 <BaseText size="sm">Maya Rosselini</BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -119,7 +119,7 @@ const privateMessages = ref(true)
                 </BaseHeading>
                 <BaseText size="sm">Maya Rosselini</BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -180,7 +180,7 @@ const privateMessages = ref(true)
                 </BaseHeading>
                 <BaseText size="sm">08/23/1986</BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -207,7 +207,7 @@ const privateMessages = ref(true)
                 </BaseHeading>
                 <BaseText size="sm">+1 559 454 15</BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -235,7 +235,7 @@ const privateMessages = ref(true)
                 <BaseParagraph size="sm">47, Victorian Av.</BaseParagraph>
                 <BaseParagraph size="sm">Suite G3, New York, NY</BaseParagraph>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"

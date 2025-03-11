@@ -72,9 +72,9 @@ function goToStep(n: number) {
         <div class="pt-8 text-center">
           <BaseHeading
             tag="h2"
-            size="3xl"
+            size="2xl"
             weight="medium"
-            class="mb-2"
+            class="mb-2 text-muted-900 dark:text-white"
           >
             Welcome to Tairo 👋
           </BaseHeading>
@@ -88,74 +88,83 @@ function goToStep(n: number) {
             <div class="mx-auto w-full">
               <div class="w-full">
                 <BaseRadioGroup v-model="twoFaMode" class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
-                  <TairoRadioCard value="email_address">
-                    <img
-                      src="/img/illustrations/onboarding/2fa-web.svg"
-                      alt="2 factor authentication with email"
-                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
-                    >
-                    <BaseHeading
-                      size="md"
-                      weight="medium"
-                    >
-                      With Email
-                    </BaseHeading>
-                    <BaseParagraph
-                      size="xs"
-                      lead="snug"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      We will send you a confirmation code to your email
-                      address
-                    </BaseParagraph>
-                  </TairoRadioCard>
-                  <TairoRadioCard value="phone_number">
-                    <img
-                      src="/img/illustrations/onboarding/2fa-sms.svg"
-                      alt="2 factor authentication with SMS"
-                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
-                    >
-                    <BaseHeading
-                      size="md"
-                      weight="medium"
-                    >
-                      With SMS
-                    </BaseHeading>
-                    <BaseParagraph
-                      size="xs"
-                      lead="snug"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      We will send you an SMS with the code on your mobile
-                      phone
-                    </BaseParagraph>
-                  </TairoRadioCard>
-                  <TairoRadioCard value="app_id">
-                    <img
-                      src="/img/illustrations/onboarding/2fa-app.svg"
-                      alt="2 factor authentication with app"
-                      class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
-                    >
-                    <BaseHeading
-                      size="md"
-                      weight="medium"
-                    >
-                      With an App
-                    </BaseHeading>
-                    <BaseParagraph
-                      size="xs"
-                      lead="snug"
-                      class="text-muted-500 dark:text-muted-400"
-                    >
-                      We will send you the code on your
-                      <NuxtLink
-                        to="https://authy.com/"
-                        class="text-primary-500 underline-offset-4 hover:underline"
+                  <TairoRadioCard rounded="md" value="email_address">
+                    <div class="p-2">
+                      <img
+                        src="/img/illustrations/onboarding/2fa-web.svg"
+                        alt="2 factor authentication with email"
+                        class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
                       >
-                        Authy
-                      </NuxtLink>
-                      authenticator app
-                    </BaseParagraph>
+                      <BaseHeading
+                        size="md"
+                        weight="medium"
+                        class="text-muted-900 dark:text-muted-100"
+                      >
+                        With Email
+                      </BaseHeading>
+                      <BaseParagraph
+                        size="xs"
+                        lead="snug"
+                        class="text-muted-500 dark:text-muted-400"
+                      >
+                        We will send you a confirmation code to your email
+                        address
+                      </BaseParagraph>
+                    </div>
+                  </TairoRadioCard>
+                  <TairoRadioCard rounded="md" value="phone_number">
+                    <div class="p-2">
+                      <img
+                        src="/img/illustrations/onboarding/2fa-sms.svg"
+                        alt="2 factor authentication with SMS"
+                        class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                      >
+                      <BaseHeading
+                        size="md"
+                        weight="medium"
+                        class="text-muted-900 dark:text-muted-100"
+                      >
+                        With SMS
+                      </BaseHeading>
+                      <BaseParagraph
+                        size="xs"
+                        lead="snug"
+                        class="text-muted-500 dark:text-muted-400"
+                      >
+                        We will send you an SMS with the code on your mobile
+                        phone
+                      </BaseParagraph>
+                    </div>
+                  </TairoRadioCard>
+                  <TairoRadioCard rounded="md" value="app_id">
+                    <div class="p-2">
+                      <img
+                        src="/img/illustrations/onboarding/2fa-app.svg"
+                        alt="2 factor authentication with app"
+                        class="mx-auto max-w-[160px] grayscale-100 group-hover:grayscale-0 group-data-[state=checked]:grayscale-0 transition-all duration-200"
+                      >
+                      <BaseHeading
+                        size="md"
+                        weight="medium"
+                        class="text-muted-900 dark:text-muted-100"
+                      >
+                        With an App
+                      </BaseHeading>
+                      <BaseParagraph
+                        size="xs"
+                        lead="snug"
+                        class="text-muted-500 dark:text-muted-400"
+                      >
+                        We will send you the code on your
+                        <NuxtLink
+                          to="https://authy.com/"
+                          class="text-primary-500 underline-offset-4 hover:underline"
+                        >
+                          Authy
+                        </NuxtLink>
+                        authenticator app
+                      </BaseParagraph>
+                    </div>
                   </TairoRadioCard>
                 </BaseRadioGroup>
                 <div class="mx-auto flex flex-col items-center">
@@ -187,25 +196,25 @@ function goToStep(n: number) {
             class="pointer-events-none flex w-full items-center justify-center pt-8"
           >
             <BaseIconBox
-              variant="primary"
-              size="lg"
+              variant="none"
+              size="md"
               rounded="full"
-              class="mx-auto"
+              class="mx-auto bg-primary-500/20 dark:bg-primary-500/20"
             >
               <Icon
                 v-if="twoFaMode === 'email_address'"
-                name="ph:envelope-duotone"
-                class="text-primary-500 mx-auto size-8"
+                name="solar:letter-linear"
+                class="text-primary-500 mx-auto size-6"
               />
               <Icon
                 v-else-if="twoFaMode === 'phone_number'"
-                name="ph:device-mobile-speaker-duotone"
-                class="text-primary-500 mx-auto size-8"
+                name="solar:phone-rounded-linear"
+                class="text-primary-500 mx-auto size-6"
               />
               <Icon
                 v-else-if="twoFaMode === 'app_id'"
-                name="ph:fingerprint-duotone"
-                class="text-primary-500 mx-auto size-8"
+                name="solar:sidebar-minimalistic-linear"
+                class="text-primary-500 mx-auto size-6"
               />
             </BaseIconBox>
           </div>
@@ -214,7 +223,7 @@ function goToStep(n: number) {
               tag="h2"
               size="3xl"
               weight="medium"
-              class="mb-1"
+              class="mb-1 text-muted-900 dark:text-muted-100"
             >
               Enter your {{ twoFaMode.split('_').join(' ') }}
             </BaseHeading>
@@ -227,7 +236,7 @@ function goToStep(n: number) {
             <TairoInput
               v-if="twoFaMode === 'email_address'"
               v-model="email"
-              icon="ph:envelope-duotone"
+              icon="solar:letter-linear"
               rounded="lg"
               type="email"
               placeholder="Ex: johndoe@gmail.com"
@@ -235,7 +244,7 @@ function goToStep(n: number) {
             <TairoInput
               v-else-if="twoFaMode === 'phone_number'"
               v-model="tel"
-              icon="ph:device-mobile-speaker-duotone"
+              icon="solar:phone-rounded-linear"
               rounded="lg"
               type="tel"
               placeholder="Ex: +15554815659"
@@ -261,7 +270,7 @@ function goToStep(n: number) {
               </div>
               <TairoInput
                 v-model="code"
-                icon="ph:fingerprint-duotone"
+                icon="solar:sidebar-minimalistic-linear"
                 rounded="lg"
                 placeholder="Ex: efcdwdeg16jei85"
               />
@@ -298,14 +307,14 @@ function goToStep(n: number) {
                 <TairoCheckAnimated v-if="validatePin" size="sm" />
                 <BaseIconBox
                   v-else
-                  variant="primary"
-                  size="lg"
+                  variant="none"
+                  size="md"
                   rounded="full"
-                  class="mx-auto"
+                  class="mx-auto bg-primary-500/20 dark:bg-primary-500/20"
                 >
                   <Icon
-                    name="ph:lock-duotone"
-                    class="text-primary-500 mx-auto size-8"
+                    name="solar:lock-password-linear"
+                    class="text-primary-500 mx-auto size-6"
                   />
                 </BaseIconBox>
               </div>
@@ -347,7 +356,7 @@ function goToStep(n: number) {
                   v-for="(i, idx) in codeLength"
                   :key="i"
                   :index="idx"
-                  class="dark:bg-muted-800 focus-visible:nui-focus inline w-16 select-none rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all"
+                  class="dark:bg-muted-950 focus-visible:nui-focus inline w-16 select-none border border-muted-200 dark:border-muted-800 rounded-lg bg-white py-5 text-center text-4xl font-bold transition-all placeholder:text-muted-300 dark:placeholder:text-muted-700"
                 />
               </PinInputRoot>
               <div class="mt-10">

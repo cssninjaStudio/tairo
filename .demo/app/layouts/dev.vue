@@ -841,7 +841,7 @@ function getRouteSidebarId() {
               portal: { disabled: true },
             }"
           >
-            <TairoSidebarLink to="/layouts/settings">
+            <TairoSidebarLink to="/layouts/preferences">
               <Icon name="solar:settings-linear" class="size-5" />
             </TairoSidebarLink>
           </BaseTooltip>

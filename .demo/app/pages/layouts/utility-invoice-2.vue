@@ -27,13 +27,13 @@ const itemSubtotal = computed(() =>
 </script>
 
 <template>
-  <div class="pb-20">
-    <div class="grid grid-cols-12 gap-6">
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-12 gap-4">
       <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <BaseCard
             rounded="md"
-            class="p-6"
+            class="p-4 md:p-6"
           >
             <div class="mb-8 flex items-center gap-4">
               <BaseAvatar
@@ -49,23 +49,23 @@ const itemSubtotal = computed(() =>
                   weight="medium"
                   size="lg"
                   lead="none"
-                  class="line-clamp-1"
+                  class="line-clamp-1 text-muted-900 dark:text-muted-100"
                 >
                   Amazon
                 </BaseHeading>
-                <BaseParagraph size="xs" class="text-muted-400 line-clamp-1">
+                <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                   Ecommerce Company
                 </BaseParagraph>
               </div>
               <div class="ms-auto">
                 <div class="text-end">
-                  <BaseParagraph size="sm" class="text-muted-400 line-clamp-1">
+                  <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                     48, Church Street
                   </BaseParagraph>
-                  <BaseParagraph size="sm" class="text-muted-400 line-clamp-1">
+                  <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                     Los Angeles, 92384
                   </BaseParagraph>
-                  <BaseParagraph size="sm" class="text-muted-400 line-clamp-1">
+                  <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                     United States
                   </BaseParagraph>
                 </div>
@@ -151,13 +151,13 @@ const itemSubtotal = computed(() =>
                   <BaseHeading
                     weight="medium"
                     size="sm"
-                    class="text-mute-800 dark:text-muted-100"
+                    class="text-mute-900 dark:text-muted-100"
                   >
                     Invoice details
                   </BaseHeading>
                   <BaseParagraph
                     size="xs"
-                    class="text-muted-400"
+                    class="text-muted-600 dark:text-muted-400"
                   >
                     List the invoiced items
                   </BaseParagraph>
@@ -179,8 +179,8 @@ const itemSubtotal = computed(() =>
                       >
                         <BaseText
                           size="xs"
-                          weight="semibold"
-                          class="text-muted-400"
+                          weight="medium"
+                          class="text-muted-500 dark:text-muted-400"
                         >
                           Item Name
                         </BaseText>
@@ -188,8 +188,8 @@ const itemSubtotal = computed(() =>
                       <th class="min-w-[90px] px-2 text-start sm:min-w-[auto]">
                         <BaseText
                           size="xs"
-                          weight="semibold"
-                          class="text-muted-400"
+                          weight="medium"
+                          class="text-muted-500 dark:text-muted-400"
                         >
                           Hours
                         </BaseText>
@@ -197,8 +197,8 @@ const itemSubtotal = computed(() =>
                       <th class="min-w-[120px] px-2 text-start sm:min-w-[auto]">
                         <BaseText
                           size="xs"
-                          weight="semibold"
-                          class="text-muted-400"
+                          weight="medium"
+                          class="text-muted-500 dark:text-muted-400"
                         >
                           Rate/hr
                         </BaseText>
@@ -206,8 +206,8 @@ const itemSubtotal = computed(() =>
                       <th class="min-w-[60px] px-2 text-start sm:min-w-[60px]">
                         <BaseText
                           size="xs"
-                          weight="semibold"
-                          class="text-muted-400"
+                          weight="medium"
+                          class="text-muted-500 dark:text-muted-400"
                         >
                           Tax
                         </BaseText>
@@ -215,8 +215,8 @@ const itemSubtotal = computed(() =>
                       <th class="min-w-[120px] px-2 text-start sm:min-w-[120px]">
                         <BaseText
                           size="xs"
-                          weight="semibold"
-                          class="text-muted-400"
+                          weight="medium"
+                          class="text-muted-500 dark:text-muted-400"
                         >
                           Subtotal
                         </BaseText>
@@ -282,7 +282,7 @@ const itemSubtotal = computed(() =>
                       <BaseHeading
                         weight="medium"
                         size="sm"
-                        class="text-muted-800 dark:text-muted-100"
+                        class="text-muted-900 dark:text-muted-100"
                       >
                         Payment method
                       </BaseHeading>
@@ -291,7 +291,7 @@ const itemSubtotal = computed(() =>
                         rounded="lg"
                         size="icon-sm"
                       >
-                        <Icon name="lucide:edit-2" class="size-4" />
+                        <Icon name="solar:pen-2-linear" class="size-4" />
                       </BaseButton>
                     </div>
                     <div class="bg-muted-100 dark:bg-muted-900 rounded-xl p-6">
@@ -309,14 +309,14 @@ const itemSubtotal = computed(() =>
                         <div class="flex items-center justify-between">
                           <BaseParagraph
                             size="sm"
-                            class="text-muted-400"
+                            class="text-muted-600 dark:text-muted-400"
                           >
                             Name
                           </BaseParagraph>
                           <BaseParagraph
                             size="sm"
                             weight="semibold"
-                            class="text-muted-800 dark:text-muted-100"
+                            class="text-muted-900 dark:text-muted-100"
                           >
                             Kendra Wilson
                           </BaseParagraph>
@@ -324,14 +324,14 @@ const itemSubtotal = computed(() =>
                         <div class="flex items-center justify-between">
                           <BaseParagraph
                             size="sm"
-                            class="text-muted-400"
+                            class="text-muted-600 dark:text-muted-400"
                           >
                             Account
                           </BaseParagraph>
                           <BaseParagraph
                             size="sm"
                             weight="medium"
-                            class="text-muted-800 dark:text-muted-100"
+                            class="text-muted-900 dark:text-muted-100"
                           >
                             3524 65456 3245 4869
                           </BaseParagraph>
@@ -339,14 +339,14 @@ const itemSubtotal = computed(() =>
                         <div class="flex items-center justify-between">
                           <BaseParagraph
                             size="sm"
-                            class="text-muted-400"
+                            class="text-muted-600 dark:text-muted-400"
                           >
                             Routing
                           </BaseParagraph>
                           <BaseParagraph
                             size="sm"
                             weight="medium"
-                            class="text-muted-800 dark:text-muted-100"
+                            class="text-muted-900 dark:text-muted-100"
                           >
                             4238293
                           </BaseParagraph>
@@ -361,7 +361,7 @@ const itemSubtotal = computed(() =>
                         <BaseHeading
                           weight="medium"
                           size="sm"
-                          class="text-muted-800 dark:text-muted-100"
+                          class="text-muted-900 dark:text-muted-100"
                         >
                           Amount billed
                         </BaseHeading>
@@ -376,14 +376,14 @@ const itemSubtotal = computed(() =>
                       <div class="flex items-center justify-between">
                         <BaseParagraph
                           size="sm"
-                          class="text-muted-400"
+                          class="text-muted-600 dark:text-muted-400"
                         >
                           Subtotal
                         </BaseParagraph>
                         <BaseParagraph
                           size="sm"
                           weight="semibold"
-                          class="text-muted-800 dark:text-muted-100"
+                          class="text-muted-900 dark:text-muted-100"
                         >
                           {{ formatPrice(1525.18) }}
                         </BaseParagraph>
@@ -391,14 +391,14 @@ const itemSubtotal = computed(() =>
                       <div class="flex items-center justify-between">
                         <BaseParagraph
                           size="sm"
-                          class="text-muted-400"
+                          class="text-muted-600 dark:text-muted-400"
                         >
                           Discount
                         </BaseParagraph>
                         <BaseParagraph
                           size="sm"
                           weight="semibold"
-                          class="text-muted-800 dark:text-muted-100"
+                          class="text-muted-900 dark:text-muted-100"
                         >
                           {{ formatPrice(0.0) }}
                         </BaseParagraph>
@@ -406,14 +406,14 @@ const itemSubtotal = computed(() =>
                       <div class="flex items-center justify-between">
                         <BaseParagraph
                           size="sm"
-                          class="text-muted-400"
+                          class="text-muted-600 dark:text-muted-400"
                         >
                           Taxes
                         </BaseParagraph>
                         <BaseParagraph
                           size="sm"
                           weight="semibold"
-                          class="text-muted-800 dark:text-muted-100"
+                          class="text-muted-900 dark:text-muted-100"
                         >
                           {{ formatPrice(0.0) }}
                         </BaseParagraph>
@@ -421,11 +421,11 @@ const itemSubtotal = computed(() =>
                     </div>
                     <div class="mt-auto sm:ps-10">
                       <div
-                        class="border-muted-200 dark:border-muted-800 flex items-center justify-between border-t pt-6"
+                        class="border-muted-200 dark:border-muted-800/80 flex items-center justify-between border-t pt-6"
                       >
                         <BaseParagraph
                           size="sm"
-                          class="text-muted-400"
+                          class="text-muted-600 dark:text-muted-400"
                         >
                           Total
                         </BaseParagraph>
@@ -446,12 +446,11 @@ const itemSubtotal = computed(() =>
         </div>
       </div>
       <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
           <!-- Customer -->
           <BaseCard
             rounded="md"
-            elevated
-            class="p-6"
+            class="p-4 md:p-6"
           >
             <div
               class="border-muted-200 dark:border-muted-800 mb-6 flex items-center gap-4 border-b pb-8"
@@ -505,7 +504,7 @@ const itemSubtotal = computed(() =>
           <!-- Amount -->
           <BaseCard
             rounded="md"
-            class="p-6"
+            class="p-4 md:p-6"
           >
             <div class="mb-6">
               <BaseHeading
@@ -516,11 +515,11 @@ const itemSubtotal = computed(() =>
               >
                 Invoice amount
               </BaseHeading>
-              <BaseParagraph size="xs" class="text-muted-400 line-clamp-1">
+              <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400 line-clamp-1">
                 Expressed in USD
               </BaseParagraph>
             </div>
-            <div class="border-muted-200 dark:border-muted-800 border-b pb-4">
+            <div class="border-muted-200 dark:border-muted-800/80 border-b pb-4">
               <BaseHeading
                 weight="semibold"
                 size="2xl"
@@ -534,6 +533,7 @@ const itemSubtotal = computed(() =>
               </BaseHeading>
               <BaseTag
                 rounded="full"
+                variant="primary"
               >
                 Due on Apr 11, 2024
               </BaseTag>
@@ -541,7 +541,7 @@ const itemSubtotal = computed(() =>
             <div class="flex items-center justify-between pt-4">
               <BaseText
                 size="sm"
-                class="text-muted-400"
+                class="text-muted-600 dark:text-muted-400"
               >
                 Attach PDF in mail
               </BaseText>
@@ -553,31 +553,29 @@ const itemSubtotal = computed(() =>
           <!-- Actions -->
           <BaseCard
             rounded="md"
-            class="p-6"
+            class="p-4 md:p-6 space-y-4"
           >
             <div class="flex gap-4">
               <BaseButton rounded="md" class="w-full">
-                <Icon name="lucide:eye" class="size-4" />
+                <Icon name="solar:eye-linear" class="size-4" />
                 <span>Preview</span>
               </BaseButton>
               <BaseButton rounded="md" class="w-full">
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <span>Download</span>
               </BaseButton>
             </div>
+            <!-- Submit -->
+            <div>
+              <BaseButton
+                rounded="md"
+                variant="primary"
+                class="w-full"
+              >
+                <span>Send Invoice</span>
+              </BaseButton>
+            </div>
           </BaseCard>
-          <!-- Submit -->
-          <div>
-            <BaseButton
-              rounded="md"
-              variant="primary"
-              size="lg"
-              class="w-full"
-            >
-              <Icon name="lucide:mail" class="size-4" />
-              <span>Send Invoice</span>
-            </BaseButton>
-          </div>
         </div>
       </div>
     </div>

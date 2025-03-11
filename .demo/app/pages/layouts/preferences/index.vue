@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Profile',
+  title: 'Preferences',
   preview: {
     title: 'Preferences - Profile',
     description: 'For account management',
@@ -13,13 +13,13 @@ definePageMeta({
 })
 
 const form = reactive({
-  username: 'mayaRD',
-  firstName: 'Maya',
-  lastName: 'Rosselini',
-  email: 'maya@tairo.io',
+  username: 'kendraw',
+  firstName: 'Kendra',
+  lastName: 'Wilson',
+  email: 'kendra@tairo.io',
   jobTitle: 'UI/UX Designer',
   country: 'United States',
-  website: 'mayarosselini.com',
+  website: 'kendra-wilson.me',
   bio: '',
   showProfile: true,
 })
@@ -55,7 +55,7 @@ const form = reactive({
           <div class="mt-2 sm:col-span-2 sm:mt-0">
             <div class="flex items-center space-x-6">
               <BaseAvatar
-                src="/img/avatars/2.svg"
+                src="/img/avatars/10.svg"
                 size="md"
                 rounded="none"
                 mask="blob"
@@ -217,12 +217,11 @@ const form = reactive({
         </div>
       </div>
 
-      <div class="mt-6 sm:mt-12">
+      <div class="mt-6 sm:mt-12 flex justify-end">
         <BaseButton
-          size="lg"
           rounded="md"
           variant="primary"
-          class="w-full md:w-48"
+          class="w-full md:w-40"
         >
           Update Profile
         </BaseButton>

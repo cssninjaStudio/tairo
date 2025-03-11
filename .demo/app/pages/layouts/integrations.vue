@@ -14,12 +14,12 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full pb-20">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <div class="space-y-16">
       <!-- Group -->
       <div>
         <!-- Header -->
-        <div class="border-muted-200 dark:border-muted-800 border-b py-6">
+        <div class="border-muted-200 dark:border-muted-800 border-b pb-6">
           <BaseHeading
             as="h2"
             size="lg"
@@ -61,9 +61,9 @@ definePageMeta({
           class="divide-muted-200 dark:divide-muted-800 space-y-8 divide-y pt-6"
         >
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
+          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar
-              size="md"
+              size="sm"
               src="/img/logos/companies/quickbooks-full.svg"
             />
             <div class="max-w-lg">
@@ -90,14 +90,14 @@ definePageMeta({
                 rounded="md"
                 size="sm"
               >
-                <Icon name="lucide:link" class="size-4" />
+                <Icon name="solar:link-circle-linear" class="size-4" />
                 <span>Connect to Quickbooks</span>
               </BaseButton>
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
-            <BaseAvatar size="md" src="/img/logos/companies/xero-full.svg" />
+          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+            <BaseAvatar size="sm" src="/img/logos/companies/xero-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
                 as="h4"
@@ -122,15 +122,15 @@ definePageMeta({
                 rounded="md"
                 size="sm"
               >
-                <Icon name="lucide:link" class="size-4" />
+                <Icon name="solar:link-circle-linear" class="size-4" />
                 <span>Connect to Xero</span>
               </BaseButton>
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
+          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar
-              size="md"
+              size="sm"
               src="/img/logos/companies/freshbooks-full.svg"
             />
             <div class="max-w-lg">
@@ -157,7 +157,7 @@ definePageMeta({
                 rounded="md"
                 size="sm"
               >
-                <Icon name="lucide:link" class="size-4" />
+                <Icon name="solar:link-circle-linear" class="size-4" />
                 <span>Connect to Freshbooks</span>
               </BaseButton>
             </div>
@@ -182,11 +182,11 @@ definePageMeta({
         </div>
         <!-- Content -->
         <div
-          class="divide-muted-200 dark:divide-muted-800 space-y-8 divide-y pt-6"
+          class="divide-muted-200 dark:divide-muted-800 divide-y pt-6"
         >
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
-            <BaseAvatar size="md" src="/img/logos/companies/zapier-full.svg" />
+          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+            <BaseAvatar size="sm" src="/img/logos/companies/zapier-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
                 as="h4"
@@ -211,14 +211,14 @@ definePageMeta({
                 rounded="md"
                 size="sm"
               >
-                <Icon name="lucide:link" class="size-4" />
+                <Icon name="solar:link-circle-linear" class="size-4" />
                 <span>Connect to Zapier</span>
               </BaseButton>
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
-            <BaseAvatar size="md" src="/img/logos/companies/google-full.svg" />
+          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+            <BaseAvatar size="sm" src="/img/logos/companies/google-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
                 as="h4"
@@ -243,14 +243,14 @@ definePageMeta({
                 rounded="md"
                 size="sm"
               >
-                <Icon name="lucide:link" class="size-4" />
+                <Icon name="solar:link-circle-linear" class="size-4" />
                 <span>Connect to Google</span>
               </BaseButton>
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
-            <BaseAvatar size="md" src="/img/logos/companies/stripe-full.svg" />
+          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+            <BaseAvatar size="sm" src="/img/logos/companies/stripe-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
                 as="h4"
@@ -275,14 +275,14 @@ definePageMeta({
                 rounded="md"
                 size="sm"
               >
-                <Icon name="lucide:link" class="size-4" />
+                <Icon name="solar:link-circle-linear" class="size-4" />
                 <span>Connect to Stripe</span>
               </BaseButton>
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 pt-8 lg:flex-row">
-            <BaseAvatar size="md" src="/img/logos/companies/paypal-full.svg" />
+          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+            <BaseAvatar size="sm" src="/img/logos/companies/paypal-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
                 as="h4"
@@ -307,7 +307,7 @@ definePageMeta({
                 rounded="md"
                 size="sm"
               >
-                <Icon name="lucide:link" class="size-4" />
+                <Icon name="solar:link-circle-linear" class="size-4" />
                 <span>Connect to Paypal</span>
               </BaseButton>
             </div>

@@ -58,7 +58,7 @@ const password = ref(true)
                 <h3 class="font-heading text-muted-400 text-xs">Password</h3>
                 <span>Change password</span>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -80,7 +80,7 @@ const password = ref(true)
                 </h3>
                 <span>Generate codes</span>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -143,7 +143,7 @@ const password = ref(true)
                   Setup 2 factor
                 </BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -172,7 +172,7 @@ const password = ref(true)
                   Setup key
                 </BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -201,7 +201,7 @@ const password = ref(true)
                   Phone number
                 </BaseText>
               </div>
-              <Icon name="lucide:edit-3" class="ms-auto size-4" />
+              <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
               <BaseText
                 size="xs"
                 weight="semibold"
@@ -250,7 +250,7 @@ const password = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="session" />
+              <BaseSwitchThin v-model="session" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"
@@ -271,7 +271,7 @@ const password = ref(true)
             <div
               class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-50 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
             >
-              <BaseSwitchThin v-model="password" />
+              <BaseSwitchThin v-model="password" variant="primary" />
               <div>
                 <BaseHeading
                   as="h3"

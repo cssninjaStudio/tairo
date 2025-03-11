@@ -52,14 +52,13 @@ const integrations = [
             src="/img/avatars/15.svg"
             size="lg"
           />
-          <div class="max-w-xs flex-1 space-y-1">
-            <BaseParagraph weight="semibold" class="text-muted-900 dark:text-white">
+          <div class="max-w-xs flex-1">
+            <BaseParagraph weight="semibold" class="text-primary-700 dark:text-primary-400">
               Learn how to connect to our API
             </BaseParagraph>
             <BaseParagraph
               size="sm"
-              weight="medium"
-              class="text-muted-500 dark:text-muted-400"
+              class="text-primary-600 dark:text-primary-300"
             >
               We've put together a nice and simple tutorial.
             </BaseParagraph>

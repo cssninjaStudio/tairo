@@ -40,9 +40,9 @@ const pricingMode = ref('free')
         <div class="pt-8 text-center">
           <BaseHeading
             tag="h2"
-            size="3xl"
+            size="2xl"
             weight="medium"
-            class="mb-2"
+            class="mb-2 text-muted-900 dark:text-white"
           >
             Start your Free Trial
           </BaseHeading>
@@ -55,11 +55,11 @@ const pricingMode = ref('free')
           <div class="w-full">
             <div class="mx-auto w-full">
               <div class="w-full">
-                <BaseRadioGroup v-model="pricingMode" class="mx-auto mb-8 grid max-w-4xl gap-6 sm:grid-cols-3">
-                  <TairoRadioCard value="free">
+                <BaseRadioGroup v-model="pricingMode" class="mx-auto mb-8 grid max-w-4xl gap-4 sm:grid-cols-3">
+                  <TairoRadioCard rounded="md" value="free">
                     <template #indicator>
                       <Icon
-                        name="ph:check-circle-duotone"
+                        name="solar:check-circle-bold-duotone"
                         class="size-7 group-data-[state=unchecked]:opacity-0"
                       />
                     </template>
@@ -71,6 +71,7 @@ const pricingMode = ref('free')
                     <BaseHeading
                       size="md"
                       weight="medium"
+                      class="text-muted-900 dark:text-white"
                     >
                       Free
                     </BaseHeading>
@@ -85,17 +86,17 @@ const pricingMode = ref('free')
                     <div
                       class="flex items-center justify-center gap-2 pt-4"
                     >
-                      <BaseText>
+                      <BaseText class="text-muted-900 dark:text-white">
                         <span>$0</span>
-                        <span class="text-muted-400 text-xs">
+                        <span class="text-muted-500 dark:text-muted-400 text-xs">
                           /per month</span>
                       </BaseText>
                     </div>
                   </TairoRadioCard>
-                  <TairoRadioCard value="starter">
+                  <TairoRadioCard rounded="md" value="starter">
                     <template #indicator>
                       <Icon
-                        name="ph:check-circle-duotone"
+                        name="solar:check-circle-bold-duotone"
                         class="size-7 group-data-[state=unchecked]:opacity-0"
                       />
                     </template>
@@ -107,6 +108,7 @@ const pricingMode = ref('free')
                     <BaseHeading
                       size="md"
                       weight="medium"
+                      class="text-muted-900 dark:text-white"
                     >
                       Starter
                     </BaseHeading>
@@ -121,17 +123,17 @@ const pricingMode = ref('free')
                     <div
                       class="flex items-center justify-center gap-2 pt-4"
                     >
-                      <BaseText>
+                      <BaseText class="text-muted-900 dark:text-white">
                         <span>$29</span>
-                        <span class="text-muted-400 text-xs">
+                        <span class="text-muted-500 dark:text-muted-400 text-xs">
                           /per month</span>
                       </BaseText>
                     </div>
                   </TairoRadioCard>
-                  <TairoRadioCard value="business">
+                  <TairoRadioCard rounded="md" value="business">
                     <template #indicator>
                       <Icon
-                        name="ph:check-circle-duotone"
+                        name="solar:check-circle-bold-duotone"
                         class="size-7 group-data-[state=unchecked]:opacity-0"
                       />
                     </template>
@@ -143,6 +145,7 @@ const pricingMode = ref('free')
                     <BaseHeading
                       size="md"
                       weight="medium"
+                      class="text-muted-900 dark:text-white"
                     >
                       Business
                     </BaseHeading>
@@ -157,9 +160,9 @@ const pricingMode = ref('free')
                     <div
                       class="flex items-center justify-center gap-2 pt-4"
                     >
-                      <BaseText>
+                      <BaseText class="text-muted-900 dark:text-white">
                         <span>$49</span>
-                        <span class="text-muted-400 text-xs">
+                        <span class="text-muted-500 dark:text-muted-400 text-xs">
                           /per month</span>
                       </BaseText>
                     </div>
