@@ -191,23 +191,25 @@ function handleClipboard() {
                     <div
                       class="mt-6 flex flex-col gap-3 sm:flex-row"
                     >
-                      <BaseButton
-                        v-if="isSupported"
-                        rounded="md"
-                        class="w-full"
-                        @click="handleClipboard"
-                      >
-                        <Icon name="solar:copy-linear" class="size-4" />
-                        <span>Copy to Clipboard</span>
-                      </BaseButton>
-                      <div v-else class="h-12">
-                        <BaseText
-                          class="text-muted-400"
-                          size="sm"
+                      <ClientOnly>
+                        <BaseButton
+                          v-if="isSupported"
+                          rounded="md"
+                          class="w-full"
+                          @click="handleClipboard"
                         >
-                          Your browser does not support Clipboard API.
-                        </BaseText>
-                      </div>
+                          <Icon name="solar:copy-linear" class="size-4" />
+                          <span>Copy to Clipboard</span>
+                        </BaseButton>
+                        <div v-else class="h-12">
+                          <BaseText
+                            class="text-muted-400"
+                            size="sm"
+                          >
+                            Your browser does not support Clipboard API.
+                          </BaseText>
+                        </div>
+                      </ClientOnly>
                       <BaseButton
                         variant="primary"
                         rounded="md"
@@ -305,23 +307,25 @@ function handleClipboard() {
                     <div
                       class="mt-6 flex flex-col gap-2 sm:flex-row"
                     >
-                      <BaseButton
-                        v-if="isSupported"
-                        rounded="md"
-                        class="w-full"
-                        @click="handleClipboard"
-                      >
-                        <Icon name="solar:copy-linear" class="size-4" />
-                        <span>Copy to Clipboard</span>
-                      </BaseButton>
-                      <div v-else class="h-12">
-                        <BaseText
-                          class="text-muted-400"
-                          size="sm"
+                      <ClientOnly>
+                        <BaseButton
+                          v-if="isSupported"
+                          rounded="md"
+                          class="w-full"
+                          @click="handleClipboard"
                         >
-                          Your browser does not support Clipboard API.
-                        </BaseText>
-                      </div>
+                          <Icon name="solar:copy-linear" class="size-4" />
+                          <span>Copy to Clipboard</span>
+                        </BaseButton>
+                        <div v-else class="h-12">
+                          <BaseText
+                            class="text-muted-400"
+                            size="sm"
+                          >
+                            Your browser does not support Clipboard API.
+                          </BaseText>
+                        </div>
+                      </ClientOnly>
                       <BaseButton
                         variant="primary"
                         rounded="md"

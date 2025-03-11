@@ -4,7 +4,7 @@ import { computed, useRuntimeConfig } from '#imports'
 const props = defineProps<{ id?: string }>()
 
 const { headings } = useRuntimeConfig().public.mdc
-const generate = computed(() => props.id && headings?.anchorLinks?.h2)
+const generate = computed(() => props.id && ((typeof headings?.anchorLinks === 'boolean' && headings?.anchorLinks === true) || (typeof headings?.anchorLinks === 'object' && headings?.anchorLinks?.h2)))
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const generate = computed(() => props.id && headings?.anchorLinks?.h2)
     as="h2"
     size="2xl"
     weight="medium"
-    class="group/heading mb-3 mt-8"
+    class="group/heading mb-3 mt-8 scroll-mt-20"
   >
     <a
       v-if="generate"

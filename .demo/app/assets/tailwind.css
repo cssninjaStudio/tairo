@@ -2,9 +2,12 @@
 @import '@shuriken-ui/nuxt';
 @import '#cssninja/tairo';
 
+@source '../../examples';
+
 @theme {
   --font-sans: 'Inter Variable', sans-serif;
-  --font-mono: 'Fira Code Variable,' ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --default-mono-font-family: 'Fira Code Variable';
+  --font-mono: var(--default-mono-font-family), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --font-alt: 'Karla Variable', sans-serif;
   --font-heading: var(--font-sans);
 

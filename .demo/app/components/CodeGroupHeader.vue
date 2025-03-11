@@ -48,32 +48,34 @@ const { copy, copied, isSupported } = useClipboard({
       </span>
     </button>
 
-    <div
-      v-if="isSupported"
-      class="pointer-events-none absolute z-[2] mt-12 opacity-0 transition-opacity duration-300 group-hover/code:pointer-events-auto group-hover/code:opacity-100"
-      :class="hasPreview ? 'end-4' : 'end-2'"
-    >
-      <BaseTooltip disable-closing-trigger :content="copied ? 'Copied!' : 'Copy'">
-        <BaseButton
-          size="icon-sm"
-          rounded="md"
-          class="cursor-pointer"
-          :aria-label="copied ? 'Copied!' : 'Copy'"
-          @click="() => copy()"
-        >
-          <Icon
-            v-if="!copied"
-            name="lucide:copy"
-            class="size-4"
-          />
-          <Icon
-            v-else
-            name="lucide:check"
-            class="size-4 text-success-500"
-          />
-        </BaseButton>
-      </BaseTooltip>
-    </div>
+    <ClientOnly>
+      <div
+        v-if="isSupported"
+        class="pointer-events-none absolute z-[2] mt-12 opacity-0 transition-opacity duration-300 group-hover/code:pointer-events-auto group-hover/code:opacity-100"
+        :class="hasPreview ? 'end-4' : 'end-2'"
+      >
+        <BaseTooltip disable-closing-trigger :content="copied ? 'Copied!' : 'Copy'">
+          <BaseButton
+            size="icon-sm"
+            rounded="md"
+            class="cursor-pointer"
+            :aria-label="copied ? 'Copied!' : 'Copy'"
+            @click="() => copy()"
+          >
+            <Icon
+              v-if="!copied"
+              name="lucide:copy"
+              class="size-4"
+            />
+            <Icon
+              v-else
+              name="lucide:check"
+              class="size-4 text-success-500"
+            />
+          </BaseButton>
+        </BaseTooltip>
+      </div>
+    </ClientOnly>
     <div
       class="absolute z-[2] mt-1.5"
       :class="hasPreview ? 'end-5' : 'end-3'"

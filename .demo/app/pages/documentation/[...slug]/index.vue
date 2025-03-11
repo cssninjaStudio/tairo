@@ -34,8 +34,15 @@ useSeoMeta({
     <ContentRenderer v-if="data" :value="data">
       <template #empty>
         <DocComponentDemo>
-          <div>
-            <p>The page you are looking for does not exist.</p>
+          <div class="not-prose">
+            <BaseHeading
+              as="h1"
+              weight="medium"
+              size="lg"
+              class="text-muted-700 dark:text-muted-200 mb-4"
+            >
+              The page you are looking for does not have any content.
+            </BaseHeading>
             <div class="flex flex-row gap-6">
               <BaseButton to="/documentation">
                 Back to Hub
@@ -48,5 +55,25 @@ useSeoMeta({
         </DocComponentDemo>
       </template>
     </ContentRenderer>
+    <DocComponentDemo v-else>
+      <div class="not-prose">
+        <BaseHeading
+          as="h1"
+          weight="medium"
+          size="lg"
+          class="text-muted-700 dark:text-muted-200 mb-4"
+        >
+          The page you are looking for does not exist.
+        </BaseHeading>
+        <div class="flex flex-row gap-6">
+          <BaseButton to="/documentation">
+            Back to Hub
+          </BaseButton>
+          <BaseButton variant="ghost" to="/">
+            Back to Home
+          </BaseButton>
+        </div>
+      </div>
+    </DocComponentDemo>
   </div>
 </template>

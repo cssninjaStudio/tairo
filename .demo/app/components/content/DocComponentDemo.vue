@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { BaseMessage } from '#components'
+
 const props = withDefaults(
   defineProps<{
     tag?: string
@@ -26,6 +28,8 @@ if (import.meta.dev && props.demo && !demoRE.test(props.demo)) {
   )
 }
 
+const slots = useSlots()
+
 const info = computed(() => {
   const [, folder, file] = props.demo?.match(demoRE) ?? []
   return { folder, file }
@@ -38,7 +42,7 @@ const demoPending = ref(hasDemoInfo.value)
 const exampleComponent = shallowRef()
 
 const hasDemoContent = computed(() =>
-  Boolean(exampleComponent.value),
+  Boolean(exampleComponent.value || 'demo' in slots),
 )
 
 const forceDark = ref(false)
@@ -57,14 +61,23 @@ async function loadDemo() {
   // we can not use path alias, nor paths in variables
   // this is a limitation of vite
   try {
-    const compo = await import(`#examples/${info.value.folder}/${info.value.file}.vue`).then(
-      m => m.default,
-    )
-    exampleComponent.value = markRaw(compo)
+    // const compo = await import(`#examples/${info.value.folder}/${info.value.file}.vue`).then(
+    //   m => m.default,
+    // )
+    // exampleComponent.value = markRaw(compo)
   }
   catch {
     if (import.meta.dev) {
-      exampleComponent.value = h('div', `Failed to load demo: #examples/${info.value.folder}/${info.value.file}.vue`)
+      exampleComponent.value = h(
+        BaseMessage,
+        {
+          variant: 'warning',
+        },
+        [
+          `Unable to load demo component for`,
+          h('strong', { class: 'text-semibold mx-1' }, `#examples/${info.value.folder}/${info.value.file}.vue`),
+        ],
+      )
     }
     else {
       exampleComponent.value = null
@@ -77,7 +90,7 @@ async function loadDemo() {
 </script>
 
 <template>
-  <div class="border-muted-200 dark:border-muted-800 group mb-10 border-b">
+  <div class="group mb-10">
     <div
       v-if="props.title || props.tag || (hasDemoContent && props.dark)"
       class="mb-4 flex items-center"
@@ -102,15 +115,6 @@ async function loadDemo() {
       >
         {{ props.tag }}
       </div>
-
-      <div
-        v-if="hasDemoContent && props.dark"
-        class="ms-auto flex items-center gap-2"
-      >
-        <BaseCheckbox v-model="forceDark">
-          dark preview
-        </BaseCheckbox>
-      </div>
     </div>
 
     <div v-if="'grid' in $slots" class="mb-4 grid gap-4 md:grid-cols-3">
@@ -118,45 +122,50 @@ async function loadDemo() {
     </div>
 
     <div :class="[forceDark ? 'dark' : '']">
-      <div :class="[condensed ? 'max-w-screen-sm pb-6' : 'pb-6']">
-        <div
-          class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative mb-4 w-full rounded-md border bg-white p-6 transition-all duration-300"
-        >
-          <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
-            <div
-              class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 prose-tr:border-muted-200 prose-thead:border-muted-200 dark:prose-tr:border-muted-700 dark:prose-thead:border-muted-700 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
-            >
-              <slot />
-            </div>
+      <div
+        class="border-muted-200 dark:border-muted-800 dark:bg-muted-900 relative w-full rounded-md border bg-white p-6 transition-all duration-300"
+      >
+        <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
+          <div
+            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 prose-tr:border-muted-200 prose-thead:border-muted-200 dark:prose-tr:border-muted-700 dark:prose-thead:border-muted-700 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
+          >
+            <slot />
           </div>
+        </div>
 
-          <div v-if="hasDemoContent" class="flex flex-col gap-4">
+        <div v-if="hasDemoContent" class="flex flex-col gap-4">
+          <slot name="demo">
             <div>
               <component :is="exampleComponent" v-if="exampleComponent" />
             </div>
-
-            <details v-if="'source' in $slots && props.code" class="group mt-6">
-              <summary
-                class="focus-visible:nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
-              >
-                <span class="inline group-open:hidden">Show code</span>
-                <span class="hidden group-open:inline">Hide code</span>
-                <Icon
-                  name="lucide:chevron-down"
-                  class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
-                />
-              </summary>
-              <slot name="source" />
-            </details>
-            <DevOnly v-else>
-              <BaseMessage variant="warning">
-                <span>Unable to load demo source for</span>
-                <strong class="text-semibold ms-1">{{ props.demo }}</strong>
-              </BaseMessage>
-            </DevOnly>
-          </div>
+          </slot>
         </div>
       </div>
     </div>
+
+    <details v-if="'source' in $slots && props.code" class="group mt-2">
+      <summary
+        class="focus-visible:nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+      >
+        <span class="inline group-open:hidden">Show code</span>
+        <span class="hidden group-open:inline">Hide code</span>
+        <Icon
+          name="lucide:chevron-down"
+          class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
+        />
+
+        <ClientOnly>
+          <div
+            v-if="hasDemoContent && props.dark"
+            class="ms-auto flex items-center gap-2"
+          >
+            <BaseCheckbox v-model="forceDark">
+              dark preview
+            </BaseCheckbox>
+          </div>
+        </ClientOnly>
+      </summary>
+      <slot name="source" />
+    </details>
   </div>
 </template>

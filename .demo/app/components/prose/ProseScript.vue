@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
 defineProps({
   src: {
     type: String,
     default: '',
   },
 })
-const isDev = computed(() => import.meta.dev)
+const isDev = import.meta.dev
 </script>
 
 <template>

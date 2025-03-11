@@ -21,8 +21,8 @@ function wrapExternalLinks(string: string) {
     <div class="relative space-y-10">
       <div v-if="!docs?.meta">
         <DevOnly>
-          <BaseMessage variant="destructive">
-            Component <strong class="text-semibold mx-1">&lt;{{ props.name }}&gt;</strong> not found.
+          <BaseMessage variant="warning">
+            Unable to load component <strong class="text-semibold mx-1">&lt;{{ props.name }}&gt;</strong> metadata.
           </BaseMessage>
         </DevOnly>
       </div>

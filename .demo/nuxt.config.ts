@@ -1,10 +1,3 @@
-import { existsSync } from 'node:fs'
-import { readFile } from 'node:fs/promises'
-import { fileURLToPath } from 'node:url'
-
-// This is a regular expression used to extract the example source code from the markdown content.
-const docExampleRe = /demo: '#examples\/([\w-]+)\/([\w-]+).vue'\r?\n---\r?\n([\s\S]*?)\r?\n::\r?\n/g
-
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-05',
   future: {
@@ -34,11 +27,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/image',
     '@nuxt/content',
-    'nuxt-component-meta',
   ],
-  alias: {
-    '#examples': fileURLToPath(new URL('./examples', import.meta.url)),
-  },
   content: {
     build: {
       markdown: {
@@ -55,29 +44,13 @@ export default defineNuxtConfig({
       anchorLinks: true,
     },
   },
-  componentMeta: {
-    metaSources: ['@shuriken-ui/nuxt-component-meta'],
-    exclude: [
-      (component: any) => {
-        if (!import.meta.env.ENABLE_DOCUMENTATION) {
-          return true
-        }
-
-        const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
-        const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-        const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
-
-        const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
-
-        return isBlacklisted || isExcluded
-      },
-    ],
-  },
 
   experimental: {
     viewTransition: true,
     defaults: {
       nuxtLink: {
+        // Here we disable the prefetch for visibility and enable it for interaction.
+        // This is a good balance between performance and user experience when having a lot of links.
         prefetchOn: {
           visibility: false,
           interaction: true,
@@ -87,7 +60,7 @@ export default defineNuxtConfig({
   },
   $development: {
     experimental: {
-      appManifest: false,
+      // Disable prefetch for development, this will make the development faster.
       defaults: {
         nuxtLink: {
           prefetch: false,
@@ -129,7 +102,10 @@ export default defineNuxtConfig({
 
   i18n: {
     baseUrl: '/',
-    strategy: 'prefix_except_default',
+    // We use no_prefix strategy to avoid having the locale prefix in the URL,
+    // This may not be the best strategy for SEO, but it's the best for the demo.
+    // We recommend using the default prefix_except_default strategy for SEO.
+    strategy: 'no_prefix',
     defaultLocale: 'en',
     lazy: true,
     locales: [
@@ -169,7 +145,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // nuxt build configuration
   nitro: {
     esbuild: {
       options: {
