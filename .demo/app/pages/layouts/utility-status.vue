@@ -14,10 +14,10 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen overflow-hidden px-4">
+  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen overflow-hidden px-4 md:px-6 lg:px-8 pb-20">
     <div class="mx-auto max-w-3xl">
       <div
-        class="mx-auto flex h-16 w-full max-w-4xl items-center justify-between px-4"
+        class="mx-auto flex h-16 w-full max-w-4xl items-center justify-between"
       >
         <NuxtLink
           to="/"
@@ -33,10 +33,7 @@ definePageMeta({
       <div class="mx-auto max-w-4xl space-y-12 py-12">
         <div>
           <div class="flex flex-col gap-4 pb-16 text-center">
-            <Icon
-              name="ph:check-circle-duotone"
-              class="text-success-500 mx-auto size-8"
-            />
+            <TairoCheckAnimated color="success" size="sm" class="mx-auto" />
             <div>
               <BaseHeading
                 as="h3"
@@ -47,7 +44,7 @@ definePageMeta({
               >
                 All services online
               </BaseHeading>
-              <BaseParagraph size="sm" class="text-muted-400">
+              <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
                 As of March 14, 2023 at 11:08 PM GMT
               </BaseParagraph>
             </div>
@@ -72,12 +69,12 @@ definePageMeta({
             <div>
               <!-- Item -->
               <div
-                class="border-muted-200 dark:border-muted-700 py-8 [&:not(:last-child)]:border-b"
+                class="border-muted-200 dark:border-muted-800/80 py-8 [&:not(:last-child)]:border-b"
               >
                 <div class="flex items-center justify-between gap-4">
                   <div class="mb-1 flex items-center gap-2">
                     <Icon
-                      name="ph:check-circle-duotone"
+                      name="lucide:check"
                       class="text-success-500 size-4"
                     />
                     <BaseText size="sm">
@@ -115,10 +112,10 @@ definePageMeta({
                     >
                       <BaseCard rounded="lg" elevated>
                         <div
-                          class="border-muted-200 dark:border-muted-700 flex items-center gap-1 border-b p-3"
+                          class="border-muted-200 dark:border-muted-800/80 flex items-center gap-1 border-b p-3"
                         >
                           <Icon
-                            name="ph:check-circle-duotone"
+                            name="lucide:check"
                             class="text-success-500 size-4"
                           />
                           <BaseText
@@ -154,12 +151,12 @@ definePageMeta({
               </div>
               <!-- Item -->
               <div
-                class="border-muted-200 dark:border-muted-700 py-8 [&:not(:last-child)]:border-b"
+                class="border-muted-200 dark:border-muted-800/80 py-8 [&:not(:last-child)]:border-b"
               >
                 <div class="flex items-center justify-between gap-4">
                   <div class="mb-1 flex items-center gap-2">
                     <Icon
-                      name="ph:check-circle-duotone"
+                      name="lucide:check"
                       class="text-success-500 size-4"
                     />
                     <BaseText size="sm">
@@ -209,12 +206,12 @@ definePageMeta({
               </div>
               <!-- Item -->
               <div
-                class="border-muted-200 dark:border-muted-700 py-8 [&:not(:last-child)]:border-b"
+                class="border-muted-200 dark:border-muted-800/80 py-8 [&:not(:last-child)]:border-b"
               >
                 <div class="flex items-center justify-between gap-4">
                   <div class="mb-1 flex items-center gap-2">
                     <Icon
-                      name="ph:check-circle-duotone"
+                      name="lucide:check"
                       class="text-success-500 size-4"
                     />
                     <BaseText size="sm">
@@ -267,9 +264,9 @@ definePageMeta({
         </div>
         <BaseCard rounded="lg" class="mt-12">
           <div
-            class="border-muted-200 dark:border-muted-700 flex items-center gap-3 border-b p-6"
+            class="border-muted-200 dark:border-muted-800/80 flex items-center gap-3 border-b p-6"
           >
-            <Icon name="fa6-brands:twitter" class="size-6 text-sky-500" />
+            <Icon name="fa6-brands:x-twitter" class="size-6 text-muted-900 dark:text-white" />
             <BaseHeading size="sm" weight="medium">
               @cssninjaStudio
             </BaseHeading>
@@ -278,7 +275,7 @@ definePageMeta({
                 to="#"
                 class="text-primary-500 font-sans text-sm underline-offset-4 hover:underline"
               >
-                View on Twitter
+                View on X
               </NuxtLink>
             </div>
           </div>
@@ -289,7 +286,7 @@ definePageMeta({
                 <BaseText
                   size="sm"
                   weight="medium"
-                  class="text-muted-400 dark:text-muted-300 mb-1"
+                  class="text-muted-600 dark:text-muted-400 dark:text-muted-300 mb-1"
                 >
                   March 14 at 5:39pm
                 </BaseText>
@@ -309,7 +306,7 @@ definePageMeta({
                 <BaseText
                   size="sm"
                   weight="medium"
-                  class="text-muted-400 dark:text-muted-300 mb-1"
+                  class="text-muted-600 dark:text-muted-400 dark:text-muted-300 mb-1"
                 >
                   Dec 11 at 8:48am
                 </BaseText>

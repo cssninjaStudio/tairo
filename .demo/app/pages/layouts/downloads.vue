@@ -16,19 +16,20 @@ const format = ref('quickbooks')
 </script>
 
 <template>
-  <div class="w-full pb-24">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="border-muted-200 dark:border-muted-800 border-b py-6">
+    <div class="border-muted-200 dark:border-muted-800 border-b pb-6">
       <div
         class="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-start"
       >
         <BaseIconBox
-          variant="primary"
+          variant="none"
           size="md"
           rounded="none"
           mask="blob"
+          class="bg-primary-500/10 text-primary-500 dark:bg-primary-600/20 dark:text-primary-400"
         >
-          <Icon name="ph:chart-pie-slice-duotone" class="size-6" />
+          <Icon name="solar:chart-square-bold-duotone" class="size-6" />
         </BaseIconBox>
         <div>
           <BaseHeading
@@ -106,12 +107,12 @@ const format = ref('quickbooks')
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Jul 2023
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -125,12 +126,12 @@ const format = ref('quickbooks')
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Jun 2023
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -144,12 +145,12 @@ const format = ref('quickbooks')
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   May 2023
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -163,12 +164,12 @@ const format = ref('quickbooks')
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Apr 2023
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -182,12 +183,12 @@ const format = ref('quickbooks')
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Mar 2023
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -201,12 +202,12 @@ const format = ref('quickbooks')
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Feb 2023
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -220,12 +221,12 @@ const format = ref('quickbooks')
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Jan 2023
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"

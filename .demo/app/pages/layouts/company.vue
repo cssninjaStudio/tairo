@@ -14,14 +14,14 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="border-muted-200 dark:border-muted-800 border-b py-6">
+    <div class="border-muted-200 dark:border-muted-800 border-b pb-6">
       <div class="flex items-center gap-3">
         <div
           class="nui-mask nui-mask-blob bg-muted-200 dark:bg-muted-800 flex size-16 shrink-0 items-center justify-center"
         >
-          <Icon name="ph:buildings-duotone" class="size-7" />
+          <Icon name="solar:buildings-linear" class="size-7" />
         </div>
         <div>
           <BaseHeading
@@ -76,7 +76,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="/layouts/company-edit"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
               >
                 <div>
                   <BaseHeading
@@ -91,7 +91,7 @@ definePageMeta({
                     Acme LLC.
                   </BaseText>
                 </div>
-                <Icon name="lucide:edit-3" class="ms-auto size-4" />
+                <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -105,7 +105,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="/layouts/company-edit"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
               >
                 <div>
                   <BaseHeading
@@ -120,7 +120,7 @@ definePageMeta({
                     Acme LLC.
                   </BaseText>
                 </div>
-                <Icon name="lucide:edit-3" class="ms-auto size-4" />
+                <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -134,7 +134,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="/layouts/company-edit"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
               >
                 <div>
                   <BaseHeading
@@ -149,7 +149,7 @@ definePageMeta({
                     Acme Systems
                   </BaseText>
                 </div>
-                <Icon name="lucide:edit-3" class="ms-auto size-4" />
+                <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -198,7 +198,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="/layouts/company-edit"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
               >
                 <div>
                   <BaseHeading
@@ -213,7 +213,7 @@ definePageMeta({
                     hello@acme.io
                   </BaseText>
                 </div>
-                <Icon name="lucide:edit-3" class="ms-auto size-4" />
+                <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -227,7 +227,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="/layouts/company-edit"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
               >
                 <div>
                   <BaseHeading
@@ -242,7 +242,7 @@ definePageMeta({
                     +1 (612) 429-3263
                   </BaseText>
                 </div>
-                <Icon name="lucide:edit-3" class="ms-auto size-4" />
+                <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -256,7 +256,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="/layouts/company-edit"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-4 p-4 text-sm transition-colors duration-300"
               >
                 <div>
                   <BaseHeading
@@ -271,7 +271,7 @@ definePageMeta({
                     @acmellc
                   </BaseText>
                 </div>
-                <Icon name="lucide:edit-3" class="ms-auto size-4" />
+                <Icon name="solar:pen-2-linear" class="ms-auto size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"

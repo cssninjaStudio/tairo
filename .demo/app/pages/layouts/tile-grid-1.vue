@@ -140,15 +140,12 @@ const { data, pending, error, refresh } = await useFetch(
                     size="md"
                     class="z-20"
                     rounded="lg"
-                    :bindings="{
-                      portal: {
-                        disabled: true,
-                      },
-                      content: {
-                        positionStrategy: 'absolute',
-                      },
-                    }"
                   >
+                    <template #button>
+                      <BaseButton size="icon-sm" rounded="full">
+                        <Icon name="lucide:more-horizontal" class="size-4" />
+                      </BaseButton>
+                    </template>
                     <BaseDropdownItem
                       to="#"
                       title="Permissions"

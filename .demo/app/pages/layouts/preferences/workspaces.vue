@@ -70,7 +70,6 @@ const workspaces = [
             </BaseHeading>
             <BaseParagraph
               size="sm"
-              weight="medium"
               class="text-muted-500 dark:text-muted-400"
             >
               Lorem ipsum dolor sit amet, consectetur adipis.
@@ -100,17 +99,16 @@ const workspaces = [
                 <div class="relative">
                   <BaseAvatar :src="workspace.img" size="sm" />
                 </div>
-                <div class="space-y-1">
+                <div>
                   <BaseParagraph
                     size="sm"
-                    weight="semibold"
+                    weight="medium"
                     class="text-muted-900 dark:text-muted-100"
                   >
                     {{ workspace.name }}
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
-                    weight="medium"
                     class="text-muted-500 dark:text-muted-400"
                   >
                     {{ workspace.members.length }} members
@@ -158,13 +156,12 @@ const workspaces = [
               as="h4"
               size="md"
               weight="medium"
-              class="text-muted-900 text-base font-bold dark:text-white"
+              class="text-muted-900 text-base dark:text-white"
             >
               Workspace members
             </BaseHeading>
             <BaseParagraph
               size="sm"
-              weight="medium"
               class="text-muted-500 dark:text-muted-400"
             >
               Lorem ipsum dolor sit amet, consectetur adipis.
@@ -180,7 +177,7 @@ const workspaces = [
         </div>
 
         <div class="mt-8 flow-root">
-          <div v-if="workspaces[selectedWorkspace].members.length === 0">
+          <div v-if="workspaces[selectedWorkspace]?.members.length === 0">
             <BasePlaceholderPage
               title="Nothing to show"
               subtitle="There are no members to show in this workspace. Start inviting people to join."
@@ -198,7 +195,7 @@ const workspaces = [
           </div>
           <div v-else class="divide-muted-100 dark:divide-muted-700 -my-5 divide-y">
             <div
-              v-for="(member, index) in workspaces[selectedWorkspace].members"
+              v-for="(member, index) in workspaces[selectedWorkspace]?.members"
               :key="member.name"
               class="cursor-pointer p-4 transition-colors duration-300"
               :class="selectedWorkspace === index ? '' : ''"
@@ -210,17 +207,16 @@ const workspaces = [
                 <div class="relative">
                   <BaseAvatar :src="member.img" size="sm" />
                 </div>
-                <div class="space-y-1">
+                <div>
                   <BaseParagraph
                     size="sm"
-                    weight="semibold"
+                    weight="medium"
                     class="text-muted-900 dark:text-muted-100"
                   >
                     {{ member.name }}
                   </BaseParagraph>
                   <BaseParagraph
                     size="sm"
-                    weight="medium"
                     class="text-muted-500 dark:text-muted-400"
                   >
                     {{ member.email }}

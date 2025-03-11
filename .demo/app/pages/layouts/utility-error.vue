@@ -73,109 +73,117 @@ const showStackTrace = ref(false)
 </script>
 
 <template>
-  <TairoSidebarLayout>
-    <template #toolbar-title>
-      {{ app.tairo?.title }}
-    </template>
-
-    <BasePlaceholderPage
-      :title="title"
-      :subtitle="description"
-      image-size="md"
-      class="relative items-end!"
-    >
-      <template #image>
-        <component
-          :is="resolveComponentOrNative(app.tairo?.error.logo.component)"
-          v-if="app.tairo?.error?.logo?.component"
-          v-bind="app.tairo?.error.logo.props"
-        />
-      </template>
-
-      <div class="mt-4">
-        <div
-          class="text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
+  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen overflow-hidden px-4 md:px-6 lg:px-8 pb-20">
+    <div class="mx-auto max-w-7xl">
+      <div
+        class="mx-auto mb-20 flex h-16 w-full max-w-4xl items-center justify-between"
+      >
+        <NuxtLink
+          to="/"
+          class="text-muted-400 hover:text-primary-500 dark:text-muted-700 dark:hover:text-primary-500 transition-colors duration-300"
         >
-          <span>{{ props.error?.statusCode }}</span>
-        </div>
-        <BaseButton
-          variant="primary"
-          class="h-12! w-48 items-center gap-2"
-          rounded="lg"
-          @click="handleError"
-        >
-          <Icon name="feather:arrow-left" />
-          Take me Back
-        </BaseButton>
-        <div class="mt-6 flex items-center justify-center">
-          <BaseSwitchBall
-            v-model="showStackTrace"
-            :label="`${showStackTrace ? 'Hide' : 'Show'} Stacktrace (dev)`"
-          />
+          <TairoLogoText class="h-7" />
+        </NuxtLink>
+        <div class="flex items-center gap-4">
+          <BaseThemeToggle />
         </div>
       </div>
-    </BasePlaceholderPage>
-
-    <div v-if="showStackTrace">
-      <BaseCard
-        v-focus
-        rounded="lg"
-        class="focus-visible:nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
-        tabindex="0"
+      <BasePlaceholderPage
+        :title="title"
+        :subtitle="description"
+        image-size="md"
+        class="relative items-end!"
       >
-        <div
-          class="mb-3 flex items-center justify-start gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
-        >
-          <BaseTag
-            v-if="props.error.statusCode"
-            size="sm"
+        <template #image>
+          <component
+            :is="resolveComponentOrNative(app.tairo?.error.logo.component)"
+            v-if="app.tairo?.error?.logo?.component"
+            v-bind="app.tairo?.error.logo.props"
+          />
+        </template>
+        <div class="mt-4">
+          <div
+            class="text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-x-1/4 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
           >
-            {{ props.error.statusCode }}
-          </BaseTag>
-          <BaseTag
-            v-if="props.error.url"
-            size="sm"
-          >
-            {{ props.error.url }}
-          </BaseTag>
+            <span>{{ props.error?.statusCode }}</span>
+          </div>
           <BaseButton
-            variant="muted"
-            size="icon-md"
-            class="ms-auto"
-            @click="showStackTrace = false"
+            variant="primary"
+            class="h-12! w-48 items-center gap-2"
+            rounded="lg"
+            @click="handleError"
           >
-            <Icon name="lucide:x" class="size-4" />
+            <Icon name="feather:arrow-left" />
+            Take me Back
           </BaseButton>
-        </div>
-        <div class="mb-4 flex items-center gap-2">
-          <BaseIconBox
-            rounded="full"
-            size="md"
-          >
-            <Icon name="ph:skull-duotone" class="size-6" />
-          </BaseIconBox>
-          <div>
-            <h4
-              class="text-destructive-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
-            >
-              {{ props.error.message }}
-            </h4>
-            <p class="nui-text-500 font-sans text-xs font-medium">
-              This is a demo stacktrace, you won't see it in production.
-            </p>
+          <div class="mt-6 flex items-center justify-center">
+            <BaseSwitchBall
+              v-model="showStackTrace"
+              :label="`${showStackTrace ? 'Hide' : 'Show'} Stacktrace (dev)`"
+            />
           </div>
         </div>
-
-        <!-- eslint-disable vue/no-v-html -->
-        <div
-          v-if="props.error.stack"
-          class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
-          v-html="props.error.stack"
-        />
-        <!-- eslint-enable vue/no-v-html -->
-      </BaseCard>
+      </BasePlaceholderPage>
+      <div v-if="showStackTrace">
+        <BaseCard
+          v-focus
+          rounded="lg"
+          class="focus-visible:nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
+          tabindex="0"
+        >
+          <div
+            class="mb-3 flex items-center justify-start gap-1 opacity-30 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
+          >
+            <BaseTag
+              v-if="props.error.statusCode"
+              size="sm"
+            >
+              {{ props.error.statusCode }}
+            </BaseTag>
+            <BaseTag
+              v-if="props.error.url"
+              size="sm"
+            >
+              {{ props.error.url }}
+            </BaseTag>
+            <BaseButton
+              variant="muted"
+              size="icon-md"
+              class="ms-auto"
+              @click="showStackTrace = false"
+            >
+              <Icon name="lucide:x" class="size-4" />
+            </BaseButton>
+          </div>
+          <div class="mb-4 flex items-center gap-2">
+            <BaseIconBox
+              rounded="full"
+              size="md"
+            >
+              <Icon name="ph:skull-duotone" class="size-6" />
+            </BaseIconBox>
+            <div>
+              <h4
+                class="text-destructive-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
+              >
+                {{ props.error.message }}
+              </h4>
+              <p class="nui-text-500 font-sans text-xs font-medium">
+                This is a demo stacktrace, you won't see it in production.
+              </p>
+            </div>
+          </div>
+          <!-- eslint-disable vue/no-v-html -->
+          <div
+            v-if="props.error.stack"
+            class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+            v-html="props.error.stack"
+          />
+          <!-- eslint-enable vue/no-v-html -->
+        </BaseCard>
+      </div>
     </div>
-  </TairoSidebarLayout>
+  </div>
 </template>
 
 <style>

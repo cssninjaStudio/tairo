@@ -71,24 +71,9 @@ const development = computed(() => {
 </script>
 
 <template>
-  <div class="w-full pb-24">
-    <!-- Header -->
-    <div class="border-muted-200 dark:border-muted-800 border-b py-6">
-      <BaseHeading
-        as="h2"
-        size="3xl"
-        weight="medium"
-        class="text-muted-800 dark:text-white"
-      >
-        Offers
-      </BaseHeading>
-      <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
-        Discover special offers from our partners
-      </BaseParagraph>
-    </div>
-
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- List -->
-    <div class="space-y-10 py-6">
+    <div class="space-y-10 pb-6">
       <!-- popular offers -->
       <div class="py-6">
         <div class="mb-6">
@@ -96,7 +81,7 @@ const development = computed(() => {
             as="h3"
             size="xl"
             weight="medium"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             Popular
           </BaseHeading>
@@ -106,7 +91,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in popular"
@@ -127,7 +112,7 @@ const development = computed(() => {
             as="h3"
             size="xl"
             weight="medium"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             Recent
           </BaseHeading>
@@ -137,7 +122,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in recent"
@@ -158,7 +143,7 @@ const development = computed(() => {
             as="h3"
             size="xl"
             weight="medium"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             Communication
           </BaseHeading>
@@ -168,7 +153,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in communication"
@@ -189,7 +174,7 @@ const development = computed(() => {
             as="h3"
             size="xl"
             weight="medium"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             UX Design
           </BaseHeading>
@@ -199,7 +184,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in design"
@@ -220,7 +205,7 @@ const development = computed(() => {
             as="h3"
             size="xl"
             weight="medium"
-            class="text-muted-800 dark:text-white"
+            class="text-muted-900 dark:text-white"
           >
             Development
           </BaseHeading>
@@ -230,7 +215,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="ptablet:grid-cols-2 ltablet:grid-cols-3 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-6 lg:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in development"

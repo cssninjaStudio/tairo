@@ -14,9 +14,9 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full pb-24">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
-    <div class="border-muted-200 dark:border-muted-800 border-b py-6">
+    <div class="border-muted-200 dark:border-muted-800 border-b pb-6">
       <BaseHeading
         as="h2"
         size="xl"
@@ -66,7 +66,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Q1 Statement
@@ -85,12 +85,12 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Q2 Statement
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -104,7 +104,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Q3 Statement
@@ -157,7 +157,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Wire details
@@ -176,7 +176,7 @@ definePageMeta({
             <div class="group">
               <NuxtLink
                 to="#"
-                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200 dark:hover:bg-muted-700 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
+                class="font-heading text-muted-600 dark:text-muted-400 hover:bg-muted-200/60 dark:hover:bg-muted-800 flex items-center gap-2 p-4 text-sm transition-colors duration-300"
               >
                 <BaseText size="sm">
                   Bank contract
