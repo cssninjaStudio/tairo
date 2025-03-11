@@ -300,7 +300,7 @@ const selectedEventFeatures = computed({
                   }"
                 >
                   <span
-                    class="dark:bg-muted-900 text-muted-900 dark:text-muted-300 absolute -top-2 left-1 bg-white px-2 text-xs"
+                    class="dark:bg-muted-900 text-muted-900 dark:text-muted-300 absolute -top-2 start-1 bg-white px-2 text-xs"
                   >
                     {{ i + (settings.hourOpen - 1) }}h
                   </span>
@@ -329,7 +329,7 @@ const selectedEventFeatures = computed({
               :attributes="(calendarEvents as VCalendarAttribute[])"
               @update:pages="onPageChange"
             >
-              <template #header-left-button="{ movePrev }">
+              <template #header-start-button="{ movePrev }">
                 <BaseButton
                   rounded="full"
                   size="icon-sm"

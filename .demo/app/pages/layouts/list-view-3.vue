@@ -101,7 +101,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                 class="flex flex-col p-4 sm:flex-row sm:items-center"
               >
                 <div
-                  class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
+                  class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-start"
                 >
                   <BaseAvatar
                     :src="item.logo"
@@ -121,7 +121,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                       class="flex items-center justify-between sm:justify-start"
                     >
                       <div
-                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
+                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-start text-sm sm:mt-0"
                       >
                         <Icon name="solar:map-point-linear" class="size-4" />
                         <span>{{ item.location }}</span>
@@ -130,7 +130,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
+                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-start text-sm sm:mt-0"
                       >
                         <Icon name="solar:watch-square-minimalistic-linear" class="size-4" />
                         <span>{{ item.duration }}</span>
@@ -139,7 +139,7 @@ const { data, pending, error, refresh } = await useFetch('/api/jobs', {
                         <span>&middot;</span>
                       </div>
                       <div
-                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-left text-sm sm:mt-0"
+                        class="text-muted-500 dark:text-muted-400 mt-3 flex items-center gap-1 text-start text-sm sm:mt-0"
                       >
                         <Icon name="solar:revote-linear" class="size-4" />
                         <span>{{ item.requirements }}</span>

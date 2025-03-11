@@ -15,7 +15,7 @@ const { to, icon, label } = defineProps<{
     >
       <span class="relative mx-[9.5px] h-full w-px">
         <span
-          class="bg-muted-400 group-hover:bg-muted-700 dark:bg-muted-500 dark:group-hover:bg-muted-200 absolute left-1/2 top-1/2 size-1 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          class="bg-muted-400 group-hover:bg-muted-700 dark:bg-muted-500 dark:group-hover:bg-muted-200 absolute start-1/2 top-1/2 size-1 -translate-x-1/2 -translate-y-1/2 rounded-full"
         />
       </span>
       <span class="relative line-clamp-1 text-sm"> {{ label }}</span>

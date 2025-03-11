@@ -151,7 +151,7 @@ function setAccount(account: any) {
             Transfer to:
           </BaseHeading>
 
-          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
+          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:end-0', menu: 'w-full!' }">
             <template #button="{ open }">
               <BaseButton
                 size="xl"
@@ -273,7 +273,7 @@ function setAccount(account: any) {
             Transfer to:
           </BaseHeading>
 
-          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
+          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:end-0', menu: 'w-full!' }">
             <template #button="{ open }">
               <BaseButton
                 size="xl"
@@ -361,7 +361,7 @@ function setAccount(account: any) {
         </div>
         <!-- Account -->
 
-        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:right-0', menu: 'w-full!' }">
+        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:end-0', menu: 'w-full!' }">
           <template #button="{ open }">
             <BaseButton
               v-focus

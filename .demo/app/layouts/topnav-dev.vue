@@ -330,7 +330,7 @@ const isSwitcherOpen = useState('switcher-open', () => false)
         </TairoTopnavMenuList>
 
         <div
-          class="perspective-[2000px] absolute top-full left-0 flex w-full mt-[10px]"
+          class="perspective-[2000px] absolute top-full start-0 flex w-full mt-[10px]"
         >
           <div class="relative w-full">
             <TairoTopnavMenuViewport />

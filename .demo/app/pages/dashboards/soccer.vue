@@ -252,7 +252,7 @@ const matches = [
               class="bg-primary-800 flex flex-col items-center rounded-2xl sm:flex-row"
             >
               <div class="mt-6 grow pe-6 ps-6 sm:mt-0 sm:pe-0 sm:ps-10">
-                <div class="pb-4 text-center sm:pb-0 sm:text-left">
+                <div class="pb-4 text-center sm:pb-0 sm:text-start">
                   <BaseHeading tag="h2" size="xl" class="text-white mb-2">
                     <span>Win awesome prizes in our contest</span>
                   </BaseHeading>
@@ -311,7 +311,7 @@ const matches = [
               <div class="inline-block min-w-full align-middle">
                 <div class="overflow-hidden">
                   <table
-                    class="min-w-full table-fixed divide-y divide-muted-200 text-left dark:divide-muted-800"
+                    class="min-w-full table-fixed divide-y divide-muted-200 text-start dark:divide-muted-800"
                   >
                     <thead>
                       <tr>

@@ -62,7 +62,7 @@ const props = withDefaults(
           </div>
         </div>
         <div
-          class="dark:bg-muted-900 absolute -right-4 bottom-0 h-full w-24 scale-105 bg-white blur-lg"
+          class="dark:bg-muted-900 absolute -end-4 bottom-0 h-full w-24 scale-105 bg-white blur-lg"
         />
       </div>
       <div>

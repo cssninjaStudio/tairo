@@ -32,7 +32,7 @@ if (data.value) {
           :key="item.id"
           class="ltablet:after:start-[104px] after:border-muted-300 dark:after:border-muted-800 relative flex items-center gap-4 after:absolute after:start-[8px] after:top-3 after:h-full after:w-px after:border-e-2 after:content-[''] lg:after:start-[119px] [&:not(:first-child)]:pt-3"
         >
-          <div class="ltablet:block hidden w-24 text-right lg:block">
+          <div class="ltablet:block hidden w-24 text-end lg:block">
             <BaseText size="xs" class="text-muted-600 dark:text-muted-400">
               {{ item.date }}
             </BaseText>

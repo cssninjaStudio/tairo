@@ -47,7 +47,7 @@ const fake = ref('')
             class="flex flex-col p-5 sm:flex-row sm:items-center"
           >
             <div
-              class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
+              class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-start"
             >
               <BasePlaceload class="size-16 shrink-0 rounded-full" />
               <div class="space-y-2">

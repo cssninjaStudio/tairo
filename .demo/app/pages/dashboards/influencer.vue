@@ -459,7 +459,7 @@ const activeTab = ref('tab-1')
             alt="avatar"
           />
         </div>
-        <div class="ltablet:text-left text-center lg:text-left">
+        <div class="text-center lg:text-start">
           <BaseHeading
             as="h2"
             size="xl"

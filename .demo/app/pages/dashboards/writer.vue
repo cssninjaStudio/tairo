@@ -35,7 +35,7 @@ const activePosts = ref('recent')
                 >
               </div>
               <div class="mt-6 grow sm:mt-0">
-                <div class="pb-4 text-center sm:pb-0 sm:text-left">
+                <div class="pb-4 text-center sm:pb-0 sm:text-start">
                   <BaseHeading tag="h1" size="2xl" class="text-white">
                     <span>Hello, Kendra</span>
                   </BaseHeading>

@@ -766,7 +766,7 @@ const currentRatingText = computed(() => {
                   </Field>
                 </div>
               </TairoFormGroup>
-              <div class="text-right md:col-span-5">
+              <div class="text-end md:col-span-5">
                 <div
                   class="-mt-4 inline-flex w-full items-center justify-end gap-2 sm:w-auto"
                 >

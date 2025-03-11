@@ -135,7 +135,7 @@ const transactions = [
                 tabindex="0"
                 @click="selectedCard = index"
               >
-                <div v-if="selectedCard === index" class="absolute right-4 top-4">
+                <div v-if="selectedCard === index" class="absolute end-4 top-4">
                   <div class="bg-primary-500 flex size-5 items-center justify-center rounded-full">
                     <Icon name="lucide:check" class="size-3 text-white" />
                   </div>
@@ -254,7 +254,7 @@ const transactions = [
                 </BaseText>
               </td>
 
-              <td class="text-muted-900 whitespace-nowrap px-6 py-4 text-end font-bold lg:text-left">
+              <td class="text-muted-900 whitespace-nowrap px-6 py-4 text-end font-bold lg:text-start">
                 <BaseText
                   size="sm"
                   weight="semibold"

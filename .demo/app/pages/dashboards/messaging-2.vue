@@ -1003,7 +1003,7 @@ async function submitMessage() {
                       placeholder="Write a message..."
                     />
                     <button
-                      class="text-muted-400 hover:text-muted-600 absolute right-0 top-0 flex h-full w-12 items-center justify-center"
+                      class="text-muted-400 hover:text-muted-600 absolute end-0 top-0 flex h-full w-12 items-center justify-center"
                     >
                       <Icon name="solar:sticker-smile-square-linear" class="size-5" />
                     </button>

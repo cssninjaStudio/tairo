@@ -175,7 +175,7 @@ function useBarTeamEfficiency() {
                 size="xl"
                 badge-src="/img/icons/flags/united-states-of-america.svg"
               />
-              <div class="text-center md:text-left">
+              <div class="text-center md:text-start">
                 <BaseHeading
                   as="h2"
                   size="xl"
