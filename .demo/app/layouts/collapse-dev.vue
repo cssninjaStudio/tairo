@@ -623,7 +623,5 @@ const menu = [
     <TairoCollapseLayoutContent>
       <slot />
     </TairoCollapseLayoutContent>
-
-    <TairoPanels />
   </TairoCollapseLayout>
 </template>

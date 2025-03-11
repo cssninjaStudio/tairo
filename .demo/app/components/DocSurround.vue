@@ -9,7 +9,7 @@ const { data: page } = await useAsyncData(`page-surround:${route.path}`, () => {
 </script>
 
 <template>
-  <div class="w-full max-w-3xl mx-auto xl:px-6">
+  <div class="">
     <div class="flex flex-col md:flex-row justify-between gap-y-6 gap-x-6">
       <NuxtLink
         v-if="page?.[0]"

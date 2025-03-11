@@ -54,7 +54,7 @@ onBeforeRouteLeave(() => {
   }
 })
 
-const toaster = useToaster()
+const toaster = useNuiToasts()
 
 // This is where you would send the form data to the server
 const onSubmit = handleSubmit(
@@ -74,13 +74,10 @@ const onSubmit = handleSubmit(
         setTimeout(resolve, 4000)
       })
 
-      toaster.clearAll()
-      toaster.show({
-        title: 'Success',
-        message: `Message has been sent!`,
-        color: 'success',
+      toaster.add({
+        title: 'Message has been sent!',
         icon: 'ph:check',
-        closable: true,
+        progress: true,
       })
     }
     catch (error: any) {
@@ -93,13 +90,9 @@ const onSubmit = handleSubmit(
           behavior: 'smooth',
         })
 
-        toaster.clearAll()
-        toaster.show({
-          title: 'Oops!',
-          message: 'Please review the errors in the form',
-          color: 'danger',
+        toaster.add({
+          title: 'Please review the errors in the form',
           icon: 'lucide:alert-triangle',
-          closable: true,
         })
       }
       return
@@ -143,10 +136,19 @@ const onSubmit = handleSubmit(
         @submit.prevent="onSubmit"
       >
         <div class="grid grid-cols-12 gap-4">
-          <div class="col-span-12 sm:col-span-6">
-            <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="firstName">
+          <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="firstName">
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
+              label="First Name"
+              :state="errorMessage ? 'error' : isSubmitting ? 'loading' : 'idle'"
+              :error="errorMessage"
+              :disabled="isSubmitting"
+              class="col-span-12 sm:col-span-6"
+              required
+            >
               <BaseInput
-                label="First Name"
+                :ref="inputRef"
+                v-bind="inputAttrs"
                 placeholder="ex: John"
                 :model-value="field.value"
                 :error="errorMessage"
@@ -155,13 +157,22 @@ const onSubmit = handleSubmit(
                 @update:model-value="handleChange"
                 @blur="handleBlur"
               />
-            </Field>
-          </div>
+            </BaseField>
+          </Field>
 
-          <div class="col-span-12 sm:col-span-6">
-            <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="lastName">
+          <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="lastName">
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
+              label="Last Name"
+              :state="errorMessage ? 'error' : isSubmitting ? 'loading' : 'idle'"
+              :error="errorMessage"
+              :disabled="isSubmitting"
+              class="col-span-12 sm:col-span-6"
+              required
+            >
               <BaseInput
-                label="Last Name"
+                :ref="inputRef"
+                v-bind="inputAttrs"
                 placeholder="ex: Doe"
                 :model-value="field.value"
                 :error="errorMessage"
@@ -170,14 +181,23 @@ const onSubmit = handleSubmit(
                 @update:model-value="handleChange"
                 @blur="handleBlur"
               />
-            </Field>
-          </div>
+            </BaseField>
+          </Field>
 
-          <div class="col-span-12">
-            <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="email">
+          <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="email">
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
+              label="Email Address"
+              :state="errorMessage ? 'error' : isSubmitting ? 'loading' : 'idle'"
+              :error="errorMessage"
+              :disabled="isSubmitting"
+              class="col-span-12"
+              required
+            >
               <BaseInput
+                :ref="inputRef"
+                v-bind="inputAttrs"
                 type="email"
-                label="Email Address"
                 placeholder="ex: johndoe@gmail.com"
                 :model-value="field.value"
                 :error="errorMessage"
@@ -185,13 +205,22 @@ const onSubmit = handleSubmit(
                 @update:model-value="handleChange"
                 @blur="handleBlur"
               />
-            </Field>
-          </div>
+            </BaseField>
+          </Field>
 
-          <div class="col-span-12">
-            <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="message">
+          <Field v-slot="{ field, errorMessage, handleChange, handleBlur }" name="message">
+            <BaseField
+              v-slot="{ inputAttrs, inputRef }"
+              label="Message"
+              :state="errorMessage ? 'error' : isSubmitting ? 'loading' : 'idle'"
+              :error="errorMessage"
+              :disabled="isSubmitting"
+              class="col-span-12"
+              required
+            >
               <BaseTextarea
-                label="Message"
+                :ref="inputRef"
+                v-bind="inputAttrs"
                 placeholder="write your message..."
                 :model-value="field.value"
                 :error="errorMessage"
@@ -199,8 +228,8 @@ const onSubmit = handleSubmit(
                 @update:model-value="handleChange"
                 @blur="handleBlur"
               />
-            </Field>
-          </div>
+            </BaseField>
+          </Field>
 
           <div class="col-span-12">
             <BaseButton

@@ -102,11 +102,7 @@ async function loadDemo() {
         weight="medium"
         class="text-muted-800 dark:text-white"
       >
-        <TairoTocAnchor :label="props.title">
-          <template #prefix>
-            <Icon name="lucide:hash" class="size-4" />
-          </template>
-        </TairoTocAnchor>
+        {{ props.title }}
       </BaseHeading>
 
       <div
@@ -117,11 +113,11 @@ async function loadDemo() {
       </div>
     </div>
 
-    <div v-if="'grid' in $slots" class="mb-4 grid gap-4 md:grid-cols-3">
+    <div v-if="'grid' in $slots" class="mb-4 grid gap-4 md:grid-cols-2">
       <slot name="grid" />
     </div>
 
-    <div :class="[forceDark ? 'dark' : '']">
+    <div v-if="'default' in $slots || hasDemoContent" :class="[forceDark ? 'dark' : '']">
       <div
         class="border-muted-200 dark:border-muted-800 dark:bg-muted-900 relative w-full rounded-md border bg-white p-6 transition-all duration-300"
       >
@@ -145,7 +141,7 @@ async function loadDemo() {
 
     <details v-if="'source' in $slots && props.code" class="group mt-2">
       <summary
-        class="focus-visible:nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-lg px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
+        class="focus-visible:nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-md px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
       >
         <span class="inline group-open:hidden">Show code</span>
         <span class="hidden group-open:inline">Hide code</span>

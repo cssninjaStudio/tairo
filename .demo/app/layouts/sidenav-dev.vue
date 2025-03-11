@@ -222,6 +222,5 @@ const companies = [
     <TairoSidenavLayoutContent>
       <slot />
     </TairoSidenavLayoutContent>
-    <TairoPanels />
   </TairoSidenavLayout>
 </template>

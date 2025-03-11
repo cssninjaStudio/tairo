@@ -7,7 +7,5 @@ const { y } = useNuiWindowScroll()
     <LandingNavbar />
 
     <slot />
-
-    <TairoPanels />
   </div>
 </template>

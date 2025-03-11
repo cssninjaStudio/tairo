@@ -91,5 +91,7 @@ useHead({
       <NuxtLoadingIndicator color="var(--color-primary-500)" />
       <NuxtPage />
     </NuxtLayout>
+
+    <TairoPanels />
   </BaseProviders>
 </template>

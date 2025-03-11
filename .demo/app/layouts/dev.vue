@@ -1012,7 +1012,5 @@ function getRouteSidebarId() {
       </div>
       <slot />
     </TairoSidebarLayoutContent>
-
-    <TairoPanels />
   </TairoSidebarLayout>
 </template>

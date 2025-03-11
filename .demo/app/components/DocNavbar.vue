@@ -45,18 +45,10 @@ const { y } = useNuiWindowScroll()
             class="block"
           >
             <TairoLogoText
-              id="logo-text-navbar"
-              class="h-7 w-auto hidden md:block transition-colors duration-300"
-              :class="[
-                y > 60 ? 'text-muted-950 dark:text-white' : 'text-muted-950/80 dark:text-muted-200',
-                isMobileOpen ? 'text-muted-950! dark:text-white!' : '']"
+              class="h-7 w-auto hidden md:block text-primary-500 px-3"
             />
             <TairoLogo
-              id="logo-navbar"
-              class="size-7 block md:hidden w-auto transition-colors duration-300"
-              :class="[
-                y > 60 ? 'text-muted-950 dark:text-white' : 'text-muted-950/80 dark:text-muted-200',
-                isMobileOpen ? 'text-muted-950! dark:text-white!' : '']"
+              class="size-7 block md:hidden w-auto text-primary-500"
             />
           </NuxtLink>
         </div>

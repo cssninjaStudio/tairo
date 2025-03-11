@@ -35,7 +35,7 @@ const inputFile = ref<FileList | null>(null)
             <BaseButton
               size="icon-sm"
               rounded="full"
-              data-nui-tooltip="Remove image"
+             
               class="scale-90"
               @click="remove(files.item(0)!)"
             >
@@ -44,7 +44,7 @@ const inputFile = ref<FileList | null>(null)
           </div>
 
           <div v-else class="absolute bottom-0 end-0 z-20">
-            <div class="relative" data-nui-tooltip="Upload image">
+            <div class="relative">
               <BaseButton
                 size="icon-sm"
                 rounded="full"
