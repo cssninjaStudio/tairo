@@ -264,6 +264,32 @@ const menu = [
         icon: 'solar:pie-chart-2-linear',
         to: '/dashboards/charts',
       },
+      {
+        label: 'Starters',
+        icon: 'solar:widget-linear',
+        children: [
+          {
+            label: 'Sidebar layout',
+            to: '/starter-sidebar',
+          },
+          {
+            label: 'Collapse layout',
+            to: '/starter-collapse',
+          },
+          {
+            label: 'Sidenav layout',
+            to: '/starter-sidenav',
+          },
+          {
+            label: 'Topnav layout',
+            to: '/starter-topnav',
+          },
+          {
+            label: 'Toptabs layout',
+            to: '/starter-toptabs',
+          },
+        ],
+      },
     ],
   },
   {

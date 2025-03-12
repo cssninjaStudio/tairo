@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Sidebar Layout',
-  layout: 'dev',
+  title: 'Sidenav Layout',
+  layout: 'sidenav-dev',
 })
 </script>
 

@@ -620,7 +620,10 @@ const menu = [
       </TairoCollapseSidebarLinks>
     </TairoCollapseSidebar>
 
-    <TairoCollapseLayoutContent>
+    <TairoCollapseLayoutContent class="min-h-screen">
+      <div class="px-4 md:px-6 xl:px-8">
+        <TairoCollapseToolbar />
+      </div>
       <slot />
     </TairoCollapseLayoutContent>
   </TairoCollapseLayout>

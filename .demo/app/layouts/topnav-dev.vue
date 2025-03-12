@@ -194,7 +194,7 @@ const isSwitcherOpen = useState('switcher-open', () => false)
             </TairoTopnavMenuTrigger>
             <TairoTopnavMenuContent>
               <TairoTopnavMenuListItems
-                class="m-0 list-none p-4 sm:w-[300px] flex flex-col"
+                class="m-0 list-none p-4 sm:w-[300px] sm:max-w-[300px] flex flex-col"
               >
                 <TairoTopnavMenuLink
                   to="/"
@@ -338,7 +338,7 @@ const isSwitcherOpen = useState('switcher-open', () => false)
         </div>
       </TairoTopnavMenu>
     </TairoTopnavNavbar>
-    <TairoTopnavLayoutContent class="pt-32">
+    <TairoTopnavLayoutContent class="pt-32 min-h-screen">
       <slot />
     </TairoTopnavLayoutContent>
   </TairoTopnavLayout>
