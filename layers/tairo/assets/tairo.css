@@ -1,15 +1,15 @@
 @source '../';
 
 @theme {
-  --topnav-width: 100%;
+  --tairo-topnav-width: 100%;
 
-  --collapse-width-open: 17rem;
-  --collapse-width-collapsed: 5rem;
+  --tairo-collapse-width-open: 17rem;
+  --tairo-collapse-width-collapsed: 5rem;
 
-  --sidebar-icon-width: 3.5rem;
-  --sidebar-subsidebar-width: 15rem;
+  --tairo-sidebar-icon-width: 3.5rem;
+  --tairo-sidebar-subsidebar-width: 15rem;
 
-  --sidenav-sidebar-width: 16.25rem;
+  --tairo-sidenav-sidebar-width: 16.25rem;
 }
 
 .nui-check-animated {
