@@ -740,10 +740,10 @@ function getRouteSidebarId() {
 <template>
   <TairoSidebarLayout
     v-model="sidebarId" :class="[
-      sidebarId === 'Messaging' ? '[--sidebar-subsidebar-width:4.5rem]' : '',
-      sidebarId === 'Inbox' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
-      sidebarId === 'Calendar' ? '[--sidebar-subsidebar-width:3.5rem]' : '',
-      sidebarId === 'Map' ? '[--sidebar-subsidebar-width:0rem]' : '',
+      sidebarId === 'Messaging' ? '[--tairo-sidebar-subsidebar-width:4.5rem]' : '',
+      sidebarId === 'Inbox' ? '[--tairo-sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'Calendar' ? '[--tairo-sidebar-subsidebar-width:3.5rem]' : '',
+      sidebarId === 'Map' ? '[--tairo-sidebar-subsidebar-width:0rem]' : '',
     ]"
   >
     <TairoSidebarLayoutNav>
