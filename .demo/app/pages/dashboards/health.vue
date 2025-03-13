@@ -392,7 +392,7 @@ function useGaugePersonal() {
             >
           </div>
           <div class="mt-6 grow sm:mt-0">
-            <div class="text-center sm:text-left">
+            <div class="text-center sm:text-start">
               <BaseHeading tag="h1" class="text-white opacity-90">
                 <span>Today's Summary</span>
               </BaseHeading>
@@ -402,7 +402,7 @@ function useGaugePersonal() {
                 </span>
               </BaseParagraph>
               <div
-                class="mt-6 flex flex-wrap gap-y-6 pb-4 text-center sm:mt-4 sm:gap-x-8 sm:pb-0 sm:text-left"
+                class="mt-6 flex flex-wrap gap-y-6 pb-4 text-center sm:mt-4 sm:gap-x-8 sm:pb-0 sm:text-start"
               >
                 <div class="min-w-[33.3%] sm:min-w-0">
                   <BaseHeading

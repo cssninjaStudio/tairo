@@ -466,7 +466,7 @@ const panelActive = ref(false)
                   v-for="(file, index) in selectedMessage?.attachments"
                   :key="index"
                   type="button"
-                  class="cursor-pointer hover:bg-muted-200/50 dark:hover:bg-muted-800/60 group flex items-center gap-3 rounded-xl p-2 text-left transition-colors duration-300"
+                  class="cursor-pointer hover:bg-muted-200/50 dark:hover:bg-muted-800/60 group flex items-center gap-3 rounded-xl p-2 text-start transition-colors duration-300"
                 >
                   <img
                     v-if="file.type === 'pdf'"

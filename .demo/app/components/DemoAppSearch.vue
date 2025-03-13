@@ -95,7 +95,7 @@ function handleSelect(ev: CustomEvent) {
       <DialogOverlay class="bg-muted-800/70 dark:bg-muted-900/80 fixed inset-0 z-50" />
 
       <DialogContent
-        class="p-2 fixed starting:opacity-0 starting:top-[8%] top-[10%] left-[50%] max-h-[85vh] w-[90vw] max-w-[32rem] translate-x-[-50%] text-sm rounded-lg overflow-hidden border border-white dark:border-muted-700 bg-white dark:bg-muted-800 focus:outline-none z-[100] transition-discrete transition-all duration-200 ease-out"
+        class="p-2 fixed starting:opacity-0 starting:top-[8%] top-[10%] start-[50%] max-h-[85vh] w-[90vw] max-w-[32rem] translate-x-[-50%] text-sm rounded-lg overflow-hidden border border-white dark:border-muted-700 bg-white dark:bg-muted-800 focus:outline-none z-[100] transition-discrete transition-all duration-200 ease-out"
       >
         <VisuallyHidden>
           <DialogTitle>Tairo search</DialogTitle>

@@ -52,7 +52,7 @@ const codeTailwind = [
 
 <template>
   <div class="mx-auto max-w-4xl pb-16">
-    <div class="absolute right-6 top-3">
+    <div class="absolute end-6 top-3">
       <BaseThemeToggle />
     </div>
     <div class="flex flex-col gap-3 pb-16 pt-8 text-center">
@@ -275,7 +275,7 @@ const codeTailwind = [
               </div>
             </div>
             <div
-              class="dark:bg-muted-900 absolute -right-4 bottom-0 h-full w-24 scale-105 bg-white blur-lg"
+              class="dark:bg-muted-900 absolute -end-4 bottom-0 h-full w-24 scale-105 bg-white blur-lg"
             />
           </div>
           <div>

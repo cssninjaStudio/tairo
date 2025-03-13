@@ -113,7 +113,7 @@ function useGaugePersonal() {
         >
           Tairo is the ultimate solution for developers looking to build
           beautiful Nuxt dashboards in no time, with the power of Shuriken UI
-          and Tailwind CSS.
+          and Tailwind v4.
         </BaseParagraph>
         <div class="flex items-center justify-center">
           <BaseButton
@@ -137,7 +137,7 @@ function useGaugePersonal() {
         >
           <!-- Fake sidebar -->
           <div
-            class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute left-0 top-0 hidden h-full w-20 flex-col bg-white group-[&.scrolled]/landing:translate-x-0 group-[&:not(.scrolled)]/landing:-translate-x-full group-[&.scrolled]/landing:opacity-100 group-[&:not(.scrolled)]/landing:opacity-0 motion-safe:transition-all motion-safe:duration-200 lg:flex"
+            class="ltablet:w-16 ltablet:flex dark:bg-muted-800 absolute start-0 top-0 hidden h-full w-20 flex-col bg-white group-[&.scrolled]/landing:translate-x-0 group-[&:not(.scrolled)]/landing:-translate-x-full group-[&.scrolled]/landing:opacity-100 group-[&:not(.scrolled)]/landing:opacity-0 motion-safe:transition-all motion-safe:duration-200 lg:flex"
           >
             <div class="flex h-20 w-full items-center justify-center">
               <TairoLogo class="text-primary-500 size-8" />
@@ -204,7 +204,7 @@ function useGaugePersonal() {
           </div>
           <!-- Fake navbar -->
           <div
-            class="ltablet:ps-24 absolute left-0 top-0 flex h-20 w-full items-center justify-between pe-6 ps-6 group-[&.scrolled]/landing:translate-y-0 group-[&:not(.scrolled)]/landing:-translate-y-full group-[&.scrolled]/landing:opacity-100 group-[&:not(.scrolled)]/landing:opacity-0 motion-safe:transition-all motion-safe:duration-200 lg:ps-28"
+            class="ltablet:ps-24 absolute start-0 top-0 flex h-20 w-full items-center justify-between pe-6 ps-6 group-[&.scrolled]/landing:translate-y-0 group-[&:not(.scrolled)]/landing:-translate-y-full group-[&.scrolled]/landing:opacity-100 group-[&:not(.scrolled)]/landing:opacity-0 motion-safe:transition-all motion-safe:duration-200 lg:ps-28"
           >
             <div class="flex h-full items-center gap-4">
               <div

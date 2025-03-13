@@ -73,7 +73,7 @@ const forward = useForwardPropsEmits(reactiveOmit(props, ['id', 'variant', 'roun
 
       <RadioGroupIndicator
         force-mount
-        class="data-[state=checked]:text-primary-500 text-muted-300 absolute right-2 top-2 ms-auto"
+        class="data-[state=checked]:text-primary-500 text-muted-300 absolute end-2 top-2 ms-auto"
       >
         <slot name="indicator">
           <div

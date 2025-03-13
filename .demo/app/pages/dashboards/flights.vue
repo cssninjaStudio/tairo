@@ -312,7 +312,7 @@ function selectRange(duration: Duration) {
                   class="flex w-full flex-col items-center justify-between gap-2 sm:flex-row"
                 >
                   <div
-                    class="flex shrink-0 flex-col items-center gap-3 text-center sm:flex-row sm:text-left"
+                    class="flex shrink-0 flex-col items-center gap-3 text-center sm:flex-row sm:text-start"
                   >
                     <BaseTooltip :content="result.company">
                       <BaseAvatar
@@ -434,7 +434,7 @@ function selectRange(duration: Duration) {
                     </div>
                   </BaseTooltip>
                   <div
-                    class="flex shrink-0 flex-col items-center justify-end gap-6 text-center sm:flex-row sm:text-left"
+                    class="flex shrink-0 flex-col items-center justify-end gap-6 text-center sm:flex-row sm:text-start"
                   >
                     <div>
                       <span

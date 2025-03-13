@@ -1,12 +1,10 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Collapse Layout',
-  layout: 'empty',
+  layout: 'collapse-dev',
 })
 </script>
 
 <template>
-  <TairoCollapseLayout>
-    <div />
-  </TairoCollapseLayout>
+  <div />
 </template>

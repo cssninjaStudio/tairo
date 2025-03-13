@@ -72,7 +72,7 @@ const { forwardRef } = useForwardExpose()
       class="relative size-8 block group"
     >
       <div
-        class="absolute top-0 left-0 h-full w-full rounded-full border border-muted-300 dark:border-muted-800 transition-all duration-200 z-0 group-data-[state=checked]:opacity-0"
+        class="absolute top-0 start-0 h-full w-full rounded-full border border-muted-300 dark:border-muted-800 transition-all duration-200 z-0 group-data-[state=checked]:opacity-0"
       />
       <svg aria-hidden="true" viewBox="0 0 52 52" class="size-8 rounded-full block">
         <circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-dasharray="166" stroke-dashoffset="166" stroke-width="2" stroke-miterlimit="10" />

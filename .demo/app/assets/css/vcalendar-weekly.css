@@ -13,7 +13,7 @@
 }
 
 .custom-calendar.vc-container .vc-header {
-  @apply py-2 pl-1 bg-transparent mb-6;
+  @apply py-2 ps-1 bg-transparent mb-6;
 }
 .custom-calendar.vc-container .vc-header .vc-title {
   @apply relative top-0;
@@ -40,7 +40,7 @@
 
 .custom-calendar.vc-container .vc-day {
   --day-height: 25rem;
-  @apply p-0 text-left min-h-[var(--day-height)] min-w-[var(--day-width)];
+  @apply p-0 text-start min-h-[var(--day-height)] min-w-[var(--day-width)];
 }
 
 .custom-calendar.vc-container .vc-weekdays {

@@ -123,7 +123,7 @@ const { data, pending, error, refresh } = await useFetch(
                       size="md"
                       class="bg-muted-500/20 text-muted-500"
                     />
-                    <div class="text-center leading-none sm:text-left">
+                    <div class="text-center leading-none sm:text-start">
                       <h4
                         class="text-muted-800 dark:text-muted-100 font-sans text-base font-medium"
                       >

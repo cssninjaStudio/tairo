@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="group inline-flex items-center justify-center text-right">
+  <div class="group inline-flex items-center justify-center text-end">
     <DropdownMenuRoot>
       <DropdownMenuTrigger class="group-hover:ring-primary-500 dark:ring-offset-muted-800 inline-flex size-10 items-center justify-center rounded-full ring-1 ring-transparent transition-all duration-300 group-hover:ring-offset-4">
         <div
@@ -24,7 +24,7 @@ const props = defineProps<{
           :side="props.horizontal ? 'bottom' : 'right'"
           :side-offset="5"
           align="end"
-          class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 mt-2 w-60 origin-bottom-right rounded-md border bg-white text-left shadow-lg focus:outline-none"
+          class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 mt-2 w-60 origin-bottom-right rounded-md border bg-white text-start shadow-lg focus:outline-none"
         >
           <div class="bg-muted-50 dark:bg-muted-700/40 p-6">
             <div class="flex items-center">

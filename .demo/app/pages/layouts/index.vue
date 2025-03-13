@@ -104,7 +104,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
               class="flex flex-col p-4 sm:flex-row sm:items-center"
             >
               <div
-                class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-left"
+                class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-start"
               >
                 <BaseAvatar
                   size="sm"

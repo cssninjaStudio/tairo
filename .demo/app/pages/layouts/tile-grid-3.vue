@@ -133,7 +133,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                     class="flex items-center justify-center gap-6 sm:justify-start sm:gap-0"
                   >
                     <div
-                      class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
+                      class="text-muted-400 mt-3 flex items-center gap-1 text-start text-xs sm:mt-0"
                     >
                       <Icon name="solar:box-linear" class="size-4" />
                       <span>{{ item.category }}</span>
@@ -142,7 +142,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <span>&middot;</span>
                     </div>
                     <div
-                      class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
+                      class="text-muted-400 mt-3 flex items-center gap-1 text-start text-xs sm:mt-0"
                     >
                       <Icon name="solar:clock-square-linear" class="size-4" />
                       <span>{{ item.duration }}</span>
@@ -151,7 +151,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                       <span>&middot;</span>
                     </div>
                     <div
-                      class="text-muted-400 mt-3 flex items-center gap-1 text-left text-xs sm:mt-0"
+                      class="text-muted-400 mt-3 flex items-center gap-1 text-start text-xs sm:mt-0"
                     >
                       <Icon name="solar:paperclip-2-linear" class="size-4" />
                       <span>{{ item.attachments }}</span>

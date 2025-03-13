@@ -214,7 +214,7 @@ const total = computed(() => {
                 >
               </div>
               <div class="mt-6 grow sm:mt-0">
-                <div class="pb-4 text-center sm:pb-0 sm:text-left">
+                <div class="pb-4 text-center sm:pb-0 sm:text-start">
                   <BaseHeading tag="h2" size="2xl" class="mb-2 text-white opacity-90">
                     <span>
                       Free delivery for 30 days!

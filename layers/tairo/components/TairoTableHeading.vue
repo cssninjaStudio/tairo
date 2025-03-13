@@ -13,7 +13,7 @@ const props = withDefaults(
 
 <template>
   <th
-    class="text-muted-700 dark:text-muted-400 text-left font-sans font-semibold tracking-wider"
+    class="text-muted-700 dark:text-muted-400 text-start font-sans font-semibold tracking-wider"
     :class="[
       props.uppercase ? 'text-xs uppercase' : 'text-sm',
       props.spaced

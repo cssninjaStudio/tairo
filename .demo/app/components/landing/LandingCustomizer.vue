@@ -64,7 +64,7 @@ watch(selectedStyle, (value) => {
           >
             <div
               v-if="toggled"
-              class="absolute left-0 top-1/4 z-10 size-full overflow-hidden motion-reduce:hidden"
+              class="absolute start-0 top-1/4 z-10 size-full overflow-hidden motion-reduce:hidden"
             >
               <div class="shuriken-1 absolute block">
                 <img
@@ -91,7 +91,7 @@ watch(selectedStyle, (value) => {
             <BaseCard
               v-if="selectedStyle === 'smart'"
               rounded="lg"
-              class="border-primary-600! relative z-20 mx-auto max-w-[340px] p-6"
+              class="border-primary-600! relative z-20 mx-auto w-full max-w-[340px] p-6"
             >
               <div class="mb-6 flex items-center justify-between">
                 <BaseTag
@@ -100,7 +100,7 @@ watch(selectedStyle, (value) => {
                 >
                   Member
                 </BaseTag>
-                <BaseButton class="icon-md" rounded="full" variant="muted">
+                <BaseButton size="icon-sm" rounded="full" variant="muted">
                   <Icon name="lucide:x" class="size-4" />
                 </BaseButton>
               </div>
@@ -163,10 +163,10 @@ watch(selectedStyle, (value) => {
             <BaseCard
               v-if="selectedStyle === 'creative'"
               rounded="lg"
-              class="border-primary-600! relative z-20 mx-auto max-w-[340px] overflow-hidden p-6"
+              class="border-primary-600! relative z-20 mx-auto w-full max-w-[340px] overflow-hidden p-6"
             >
               <div
-                class="bg-primary-500 dark:bg-primary-500/20 absolute -right-16 -top-32 size-72 rounded-full transition-transform delay-150 duration-500"
+                class="bg-primary-500 dark:bg-primary-500/20 absolute -end-16 -top-32 size-72 rounded-full transition-transform delay-150 duration-500"
                 :class="selectedStyle === 'creative' ? 'scale-100' : 'scale-0'"
               />
               <div class="mb-6 flex items-center justify-between">
@@ -259,7 +259,7 @@ watch(selectedStyle, (value) => {
                 >
                   Member
                 </BaseTag>
-                <BaseButton class="icon-md" rounded="lg" variant="primary">
+                <BaseButton size="icon-sm" rounded="lg" variant="primary">
                   <Icon name="lucide:x" class="size-4" />
                 </BaseButton>
               </div>
@@ -329,7 +329,7 @@ watch(selectedStyle, (value) => {
                 >
                   Member
                 </BaseTag>
-                <BaseButton class="icon-md" rounded="none">
+                <BaseButton size="icon-sm" rounded="none">
                   <Icon name="lucide:x" class="size-4" />
                 </BaseButton>
               </div>
@@ -369,7 +369,7 @@ watch(selectedStyle, (value) => {
                   to="#"
                   class="text-muted-400 hover:text-primary-500 flex size-6 items-center justify-center transition-colors duration-200"
                 >
-                  <Icon name="fa6-brands:twitter" class="size-4" />
+                  <Icon name="fa6-brands:x-twitter" class="size-4" />
                 </NuxtLink>
                 <NuxtLink
                   to="#"
@@ -398,7 +398,7 @@ watch(selectedStyle, (value) => {
               class="relative mx-auto mt-48 flex w-full max-w-xs flex-wrap sm:mt-0"
             >
               <img
-                class="absolute -top-48 right-8 w-64"
+                class="absolute -top-48 end-8 w-64"
                 src="/img/illustrations/text-hand.svg"
                 alt=""
                 loading="lazy"
@@ -415,8 +415,8 @@ watch(selectedStyle, (value) => {
                 @click="selectedStyle = 'classic'"
               >
                 <Icon
-                  name="system-uicons:document-words"
-                  class="mb-2 size-10"
+                  name="solar:file-linear"
+                  class="mb-2 size-8"
                 />
                 <span class="font-sans text-sm">Classic</span>
               </button>
@@ -430,7 +430,7 @@ watch(selectedStyle, (value) => {
                 "
                 @click="selectedStyle = 'corporate'"
               >
-                <Icon name="system-uicons:diamond" class="mb-2 size-10" />
+                <Icon name="solar:buildings-linear" class="mb-2 size-8" />
                 <span class="font-sans text-sm">Corporate</span>
               </button>
               <button
@@ -443,7 +443,7 @@ watch(selectedStyle, (value) => {
                 "
                 @click="selectedStyle = 'smart'"
               >
-                <Icon name="system-uicons:maximise" class="mb-2 size-10" />
+                <Icon name="solar:graph-linear" class="mb-2 size-8" />
                 <span class="font-sans text-sm">Smart</span>
               </button>
               <button
@@ -457,8 +457,8 @@ watch(selectedStyle, (value) => {
                 @click="selectedStyle = 'creative'"
               >
                 <Icon
-                  name="system-uicons:lightbulb-on"
-                  class="mb-2 size-10"
+                  name="solar:lightbulb-bolt-linear"
+                  class="mb-2 size-8"
                 />
                 <span class="font-sans text-sm">Creative</span>
               </button>

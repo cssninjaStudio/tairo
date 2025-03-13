@@ -79,7 +79,7 @@ const wallets = [
               tabindex="0"
               @click="selectedBlockchain = index"
             >
-              <div v-if="selectedBlockchain === index" class="absolute right-0 top-0 p-2">
+              <div v-if="selectedBlockchain === index" class="absolute end-0 top-0 p-2">
                 <div class="bg-primary-500 flex size-5 items-center justify-center rounded-full">
                   <Icon name="lucide:check" class="size-3 text-white" />
                 </div>

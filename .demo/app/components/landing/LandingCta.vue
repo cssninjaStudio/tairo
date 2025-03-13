@@ -6,7 +6,7 @@
           class="bg-primary-900 dark:bg-primary-900/40 ltablet:grid ltablet:grid-cols-2 ltablet:gap-4 overflow-hidden rounded-3xl shadow-xl lg:grid lg:grid-cols-2 lg:gap-4"
         >
           <div
-            class="ltablet:py-28 ltablet:pr-0 flex items-center px-6 pb-12 pt-10 sm:px-16 sm:pt-16 lg:py-28 lg:pr-0 xl:px-20"
+            class="ltablet:py-28 ltablet:pe-0 flex items-center px-6 pb-12 pt-10 sm:px-16 sm:pt-16 lg:py-28 lg:pe-0 xl:px-20"
           >
             <div class="ltablet:self-center font-sans lg:self-center">
               <h2 class="text-3xl font-medium text-white sm:text-4xl">

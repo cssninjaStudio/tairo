@@ -9,7 +9,11 @@ export function getLocaleFlag(code: string) {
     case 'de':
       return '/img/icons/flags/germany.svg'
     case 'ar':
+      return '/img/icons/flags/saudi-arabia.svg'
+    case 'ch':
+      return '/img/icons/flags/china.svg'
     case 'js':
+      return '/img/icons/flags/china.svg'
     default:
       return '/img/icons/flags/united-states-of-america.svg'
   }

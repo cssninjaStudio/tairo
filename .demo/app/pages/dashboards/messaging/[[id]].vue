@@ -228,7 +228,7 @@ async function submitMessage() {
                   </div>
                   <div
                     class="text-muted-400 mt-1 font-sans text-xs"
-                    :class="item.type === 'received' ? 'text-right' : ''"
+                    :class="item.type === 'received' ? 'text-end' : ''"
                   >
                     {{ item.time }}
                   </div>

@@ -143,7 +143,7 @@ function closeUpgrade() {
       ]"
     >
       <div
-        class="border-muted-200 dark:border-muted-800 fixed inset-y-0 left-0 z-auto flex h-svh flex-col overflow-hidden border-r transition-all duration-300"
+        class="border-muted-200 dark:border-muted-800 fixed inset-y-0 start-0 z-auto flex h-svh flex-col overflow-hidden border-r transition-all duration-300"
         :class="isCollapsed ? 'lg:w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)'"
       >
         <div
@@ -338,7 +338,7 @@ function closeUpgrade() {
     <!-- Main -->
     <main class="relative z-auto min-h-screen grow">
       <div
-        class="pointer-events-none absolute inset-0 left-1/2 z-auto flex size-full max-w-screen-2xl -translate-x-1/2 items-center justify-center"
+        class="pointer-events-none absolute inset-0 start-1/2 z-auto flex size-full max-w-screen-2xl -translate-x-1/2 items-center justify-center"
         :class="conversation.length > 0 ? 'opacity-0' : ''"
       >
         <TairoLogoText class="h-16 -translate-y-40 p-2 text-black/5 transition-opacity duration-200 md:-translate-y-36 dark:text-white/5" />
@@ -474,10 +474,10 @@ function closeUpgrade() {
                         </div>
                         <div class="min-w-0 flex-1 translate-y-[0.5px]">
                           <div class="flex flex-1 -translate-x-1 flex-col items-stretch gap-2">
-                            <div class="prose prose-sm prose-muted dark:prose-invert w-full min-w-0 break-words pl-1">
+                            <div class="prose prose-sm prose-muted dark:prose-invert w-full min-w-0 break-words ps-1">
                               <p>{{ item.text }}</p>
                             </div>
-                            <div class="absolute inset-y-0 right-0 z-10">
+                            <div class="absolute inset-y-0 end-0 z-10">
                               <div class="dark:bg-muted-950 border-muted-200 dark:border-muted-700 sticky top-3 flex w-fit -translate-y-1.5 items-center gap-1 rounded-[10px] border bg-white p-1 opacity-0 shadow-xs group-hover:opacity-100">
                                 <button
                                   class="hover:bg-muted-100 focus:bg-muted-100 focus-visible:bg-muted-100 dark:hover:bg-muted-900 dark:focus:bg-muted-900 dark:focus-visible:bg-muted-900 text-muted-500 hover:text-muted-900 focus:text-muted-900 focus-visible:text-muted-900 dark:hover:text-muted-100 dark:focus:text-muted-100 dark:focus-visible:text-muted-100 inline-flex h-6 min-w-6 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap text-nowrap rounded-[6px] border border-transparent bg-transparent px-1 text-sm font-medium outline-none"
@@ -572,7 +572,7 @@ function closeUpgrade() {
           <div class="flex items-center">
             <div class="mx-auto flex w-full max-w-[49rem] flex-col px-6">
               <div v-if="upgrade" class="bg-muted-100 dark:bg-muted-800 text-muted-600 rounded-t-xl">
-                <div class="text-muted-900 flex items-center justify-between gap-2 py-1.5 pl-3 pr-2 text-xs md:text-sm">
+                <div class="text-muted-900 flex items-center justify-between gap-2 py-1.5 ps-3 pe-2 text-xs md:text-sm">
                   <span class="block sm:hidden">Get more messages with Premium.</span>
                   <span class="hidden sm:block">Need more messages? Get higher limits with Premium.</span>
                   <div class="flex items-center gap-1">

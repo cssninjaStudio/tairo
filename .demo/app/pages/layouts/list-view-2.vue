@@ -168,7 +168,7 @@ const { data, pending, error, refresh } = await useFetch('/api/rentals', {
                     <BaseParagraph
                       size="xs"
                       lead="none"
-                      class="text-muted-400 flex gap-1 text-left text-sm sm:mt-0 sm:items-end"
+                      class="text-muted-400 flex gap-1 text-start text-sm sm:mt-0 sm:items-end"
                     >
                       <span>{{ item.location }}</span>
                     </BaseParagraph>

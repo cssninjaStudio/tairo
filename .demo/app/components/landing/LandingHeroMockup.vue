@@ -75,7 +75,7 @@
                 size="sm"
                 class="text-muted-500 dark:text-muted-300"
               >
-                Tailwind CSS
+                Tailwind v4
               </BaseText>
             </div>
             <!-- Col -->
