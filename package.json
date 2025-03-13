@@ -6,7 +6,7 @@
   "packageManager": "pnpm@10.5.2",
   "main": "./nuxt.config.ts",
   "engines": {
-    "node": ">=18",
+    "node": ">=22",
     "pnpm": ">=8"
   },
   "workspaces": [

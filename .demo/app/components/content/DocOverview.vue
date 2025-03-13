@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-2 xl:gap-8"
+    class="dark:border-muted-800 mb-10 grid gap-4 border-b border-gray-200 pb-10 md:grid-cols-1 xl:gap-8"
   >
     <div>
       <BaseCard rounded="sm" class="p-8">

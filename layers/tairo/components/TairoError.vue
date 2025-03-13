@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import type { NuxtError } from '#app'
+
 const props = defineProps<{
-  error: any
+  title?: string
+  description?: string
+  error: NuxtError
 }>()
 
 const title = computed(() => {
+  if (props.title !== undefined) {
+    return props.title
+  }
+
   if (props.error?.statusCode === 401) {
     return 'Not authorized'
   }
@@ -16,6 +24,10 @@ const title = computed(() => {
 })
 
 const description = computed(() => {
+  if (props.description !== undefined) {
+    return props.description
+  }
+
   if (props.error?.statusCode === 401) {
     return 'You are not authorized to access this page.'
   }
@@ -107,13 +119,6 @@ const showStackTrace = ref(true)
               size="sm"
             >
               {{ props.error.statusCode }}
-            </BaseTag>
-            <BaseTag
-              v-if="props.error.url"
-              variant="muted"
-              size="sm"
-            >
-              {{ props.error.url }}
             </BaseTag>
           </div>
           <div class="mb-4 flex items-center gap-2">

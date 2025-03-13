@@ -51,10 +51,10 @@ const { copy, copied, isSupported } = useClipboard({
     <ClientOnly>
       <div
         v-if="isSupported"
-        class="pointer-events-none absolute z-[2] mt-12 opacity-0 transition-opacity duration-300 group-hover/code:pointer-events-auto group-hover/code:opacity-100"
+        class="pointer-events-none absolute z-1 mt-12 opacity-0 transition-opacity duration-300 group-hover/code:pointer-events-auto group-hover/code:opacity-100"
         :class="hasPreview ? 'end-4' : 'end-2'"
       >
-        <BaseTooltip disable-closing-trigger :content="copied ? 'Copied!' : 'Copy'">
+        <BaseTooltip disable-closing-trigger :content="copied ? 'Copied!' : 'Copy'" :bindings="{ portal: { disabled: true } }">
           <BaseButton
             size="icon-sm"
             rounded="md"
@@ -77,7 +77,7 @@ const { copy, copied, isSupported } = useClipboard({
       </div>
     </ClientOnly>
     <div
-      class="absolute z-[2] mt-1.5"
+      class="absolute z-auto mt-1.5"
       :class="hasPreview ? 'end-5' : 'end-3'"
     >
       <span

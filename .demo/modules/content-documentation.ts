@@ -1,8 +1,9 @@
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
-import { defineNuxtModule, installModule, useLogger, createResolver, addComponentsDir } from '@nuxt/kit'
+import { addComponentsDir, defineNuxtModule, installModule, useLogger } from '@nuxt/kit'
 import { join } from 'pathe'
+import { version } from '../../package.json'
 
 // This is a regular expression used to extract the example source code from the markdown content.
 const docExampleRe = /demo: '#examples\/([\w-]+)\/([\w-]+).vue'\r?\n---\r?\n?([\s\S]*?)\r?\n?::\r?\n/g
@@ -24,6 +25,18 @@ export default defineNuxtModule({
       prefix: 'examples',
       pathPrefix: true,
       isAsync: true,
+    })
+
+    /**
+     * This hook is used to inject the example source code
+     * into the markdown documentation content.
+     */
+    nuxt.hook('content:file:beforeParse', async ({ file }) => {
+      if (file.extension !== '.md') {
+        return
+      }
+
+      file.body = file.body.replace(/__TAIRO_VERSION__/g, version)
     })
 
     /**

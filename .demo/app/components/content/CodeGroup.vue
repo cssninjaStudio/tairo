@@ -27,7 +27,7 @@ const selectedTab = computed(() => tabs.value.find((_: any, index: any) => index
 </script>
 
 <template>
-  <div class="py-6 not-prose">
+  <div class="pb-6 not-prose">
     <div class="relative group/code w-full bg-white dark:bg-muted-950 rounded-md overflow-hidden border !border-muted-300 dark:!border-muted-800">
       <div
         class="flex flex-col"
@@ -50,22 +50,6 @@ const selectedTab = computed(() => tabs.value.find((_: any, index: any) => index
           ]"
         >
           <div
-            class="absolute -bottom-4 start-0 end-0 z-[2] w-full h-20 flex items-center justify-center"
-            :class="[
-              props.expandable ? '' : 'hidden',
-            ]"
-          >
-            <div class="relative z-[2] h-full w-full bg-muted-50 dark:bg-muted-950 blur-xl" />
-            <button
-              type="button"
-              class="cursor-pointer absolute bottom-8 start-0 end-0 mx-auto w-32 z-[3] py-1 px-4 flex items-center justify-center text-sm text-muted-500 hover:text-muted-800 dark:text-muted-400 dark:hover:text-muted-100 rounded-full border border-muted-300 dark:border-muted-700 hover:border-muted-200 dark:hover:border-muted-600 bg-white dark:bg-muted-800 transition-colors duration-300"
-              @click="expanded = !expanded"
-            >
-              <span>{{ expanded ? 'Collapse code' : 'Expand code' }}</span>
-            </button>
-          </div>
-
-          <div
             class="text-sm"
             :class="[
               slots.preview ? 'px-4' : 'px-3',
@@ -76,6 +60,21 @@ const selectedTab = computed(() => tabs.value.find((_: any, index: any) => index
               :is="selectedTab?.component"
               :key="activeTabIndex"
             />
+          </div>
+          <div
+            class="absolute -bottom-4 start-0 end-0 z-auto w-full h-20 flex items-center justify-center"
+            :class="[
+              props.expandable ? '' : 'hidden',
+            ]"
+          >
+            <div class="relative z-auto h-full w-full bg-muted-50 dark:bg-muted-950 blur-xl" />
+            <button
+              type="button"
+              class="cursor-pointer absolute bottom-8 start-0 end-0 mx-auto w-32 z-auto py-1 px-4 flex items-center justify-center text-sm text-muted-500 hover:text-muted-800 dark:text-muted-400 dark:hover:text-muted-100 rounded-full border border-muted-300 dark:border-muted-700 hover:border-muted-200 dark:hover:border-muted-600 bg-white dark:bg-muted-800 transition-colors duration-300 whitespace-nowrap"
+              @click="expanded = !expanded"
+            >
+              <span>{{ expanded ? 'Collapse code' : 'Expand code' }}</span>
+            </button>
           </div>
         </div>
       </div>

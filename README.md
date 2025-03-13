@@ -31,7 +31,6 @@ If node is not installed on your machine, you can go to the official nodejs.org 
 
 ```bash
 corepack enable
-corepack prepare pnpm@latest --activate
 ```
 
 > _corepack is installed with node from **v16.13.x**, if your version is below, install it with: `npm install -g corepack`_

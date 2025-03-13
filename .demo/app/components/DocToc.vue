@@ -27,7 +27,6 @@ const links = computed(() => page.value?.body?.toc?.links || [])
             <li
               v-for="link in links"
               :key="link.id"
-              class="relative"
             >
               <NuxtLink
                 :to="`#${link.id}`"
@@ -35,6 +34,20 @@ const links = computed(() => page.value?.body?.toc?.links || [])
               >
                 {{ link.text }}
               </NuxtLink>
+
+              <ul v-if="link.children" class="space-y-2 ms-3 mt-2">
+                <li
+                  v-for="child in link.children"
+                  :key="child.id"
+                >
+                  <NuxtLink
+                    :to="`#${child.id}`"
+                    class="block text-sm leading-snug hover:underline underline-offset-4 hover:text-muted-700 dark:hover:text-muted-300 font-sans text-muted-400 dark:text-muted-500"
+                  >
+                    {{ child.text }}
+                  </NuxtLink>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

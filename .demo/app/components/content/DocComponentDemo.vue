@@ -117,25 +117,17 @@ async function loadDemo() {
       <slot name="grid" />
     </div>
 
-    <div v-if="'default' in $slots || hasDemoContent" :class="[forceDark ? 'dark' : '']">
+    <div v-if="hasDemoContent" :class="[forceDark ? 'dark' : '']">
       <div
         class="border-muted-200 dark:border-muted-800 dark:bg-muted-900 relative w-full rounded-md border bg-white p-6 transition-all duration-300"
       >
-        <div v-if="'default' in $slots" :class="[hasDemoContent && 'mb-10']">
-          <div
-            class="prose prose-primary prose-muted dark:prose-invert prose-th:p-4 prose-td:p-4 prose-table:bg-white dark:prose-table:bg-muted-800 prose-table:border prose-table:border-muted-200 prose-tr:border-muted-200 prose-thead:border-muted-200 dark:prose-tr:border-muted-700 dark:prose-thead:border-muted-700 dark:prose-table:border-muted-700 prose-sm prose-p:text-muted-500 dark:prose-p:text-muted-400 prose-a:decoration-from-font prose-a:underline-offset-1"
-          >
-            <slot />
-          </div>
-        </div>
-
-        <div v-if="hasDemoContent" class="flex flex-col gap-4">
-          <slot name="demo">
+        <slot name="demo">
+          <div class="flex flex-col gap-4">
             <div>
               <component :is="exampleComponent" v-if="exampleComponent" />
             </div>
-          </slot>
-        </div>
+          </div>
+        </slot>
       </div>
     </div>
 
