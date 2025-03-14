@@ -521,7 +521,7 @@ const amount = ref<number>(0)
         <div class="grid gap-4 md:grid-cols-12">
           <!-- Sub column -->
           <div
-            class="ltablet:col-span-6 col-span-12 flex flex-col gap-4 lg:col-span-6"
+            class="col-span-12 flex flex-col gap-4 lg:col-span-6"
           >
             <!-- Widget -->
             <form
@@ -618,7 +618,7 @@ const amount = ref<number>(0)
           <form
             method="POST"
             action=""
-            class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+            class="col-span-12 lg:col-span-6"
             @submit.prevent
           >
             <!-- Widget -->

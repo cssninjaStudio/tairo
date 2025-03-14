@@ -21,19 +21,19 @@ const year = new Date().getFullYear()
       >
     </NuxtLink>
     <div
-      class="ltablet:flex-row mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-8 lg:flex-row"
+      class="mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-8 lg:flex-row"
     >
       <NuxtLink
         to="/"
         aria-label="Go to Tairo homepage"
-        class="ltablet:w-1/5 block w-full lg:w-1/5"
+        class="block w-full lg:w-1/5"
       >
         <TairoLogoText
-          class="text-muted-300 ltablet:mx-0 mx-auto h-6 transition-all duration-200 lg:mx-0"
+          class="text-muted-300 mx-auto h-6 transition-all duration-200 lg:mx-0"
         />
       </NuxtLink>
       <div
-        class="ltablet:mt-0 ltablet:gap-6 mt-6 flex flex-wrap items-center justify-center gap-4 lg:mt-0 lg:gap-6"
+        class="mt-6 flex flex-wrap items-center justify-center gap-4 lg:mt-0 lg:gap-6"
       >
         <NuxtLink
           to="/demos"
@@ -66,7 +66,7 @@ const year = new Date().getFullYear()
         </NuxtLink>
       </div>
       <div
-        class="text-muted-500 dark:text-muted-400 ltablet:w-1/5 ltablet:justify-end ltablet:mt-0 mt-6 flex w-full items-center justify-center text-sm lg:mt-0 lg:w-1/5 lg:justify-end"
+        class="text-muted-500 dark:text-muted-400 mt-6 flex w-full items-center justify-center text-sm lg:mt-0 lg:w-1/5 lg:justify-end"
       >
         <span>
           ©

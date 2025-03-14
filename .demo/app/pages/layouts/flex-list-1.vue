@@ -170,7 +170,6 @@ function statusColor(itemStatus: string) {
                 <DemoFlexTableCell
                   label="relations"
                   :hide-label="index > 0"
-                  tablet-hidden
                   class="w-full sm:w-[160px]"
                 >
                   <BaseAvatarGroup

@@ -26,7 +26,7 @@
           codebase.
         </BaseParagraph>
       </div>
-      <div class="ptablet:grid-cols-2 grid gap-6 sm:grid-cols-3">
+      <div class="grid gap-6 sm:grid-cols-3">
         <LandingLayersBox
           title="Starter App"
           icon="ph:rocket-duotone"

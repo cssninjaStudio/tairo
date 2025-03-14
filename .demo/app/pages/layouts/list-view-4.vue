@@ -150,7 +150,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
                   class="flex flex-col items-center justify-end gap-2 sm:ms-auto sm:flex-row"
                 >
                   <div
-                    class="ptablet:hidden flex w-full items-center justify-center gap-1 py-5 sm:w-[160px] sm:justify-end sm:py-0"
+                    class="flex w-full items-center justify-center gap-1 py-5 sm:w-[160px] sm:justify-end sm:py-0"
                   >
                     <BaseAvatarGroup
                       size="xs"

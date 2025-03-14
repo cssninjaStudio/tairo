@@ -30,7 +30,7 @@
         >
           <img
             src="/img/illustrations/ui/invest.svg"
-            class="xs:-bottom-48 xs:start-5 ptablet:top-4 ltablet:w-72 ltablet:object-cover absolute h-full w-auto object-contain object-top sm:end-0 sm:top-0 sm:w-64 lg:w-72 lg:object-cover"
+            class="xs:-bottom-48 xs:start-5 absolute h-full w-auto object-contain object-top sm:end-0 sm:top-0 sm:w-64 lg:w-72 lg:object-cover"
             alt="Investment illustration"
           >
         </div>

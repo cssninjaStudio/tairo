@@ -307,7 +307,7 @@ function useBarTeamEfficiency() {
       <!-- Grid column -->
       <div class="lg:landscape:col-span-4 col-span-12 xl:landscape:col-span-4">
         <!-- Inner grid -->
-        <div class="ptablet:grid-cols-2 grid gap-4 lg:flex lg:flex-col">
+        <div class="grid gap-4 lg:flex lg:flex-col">
           <!-- Widget -->
           <DemoActionText
             title="Upgrade to Pro"

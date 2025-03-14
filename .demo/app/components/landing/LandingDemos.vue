@@ -190,7 +190,7 @@ const filteredDemos = computed(() => {
         <!-- Col -->
         <BaseRadioGroup
           v-model="selectedCategory"
-          class="ltablet:col-span-2 ltablet:block relative col-span-12 hidden lg:col-span-2 lg:block"
+          class="relative col-span-12 hidden lg:col-span-2 lg:block"
         >
           <ul class="space-y-3 lg:sticky lg:top-28">
             <li class="pb-4">
@@ -219,7 +219,7 @@ const filteredDemos = computed(() => {
           </ul>
         </BaseRadioGroup>
         <!-- Col -->
-        <div class="ltablet:col-span-10 col-span-12 lg:col-span-10">
+        <div class="col-span-12 lg:col-span-10">
           <div class="grid gap-8 sm:grid-cols-2">
             <template
               v-for="page in filteredDemos.slice(0, props.limit)"

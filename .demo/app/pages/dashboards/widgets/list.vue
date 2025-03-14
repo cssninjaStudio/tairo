@@ -14,7 +14,7 @@ definePageMeta({
 
 <template>
   <div class="px-4 md:px-6 lg:px-8 pb-20">
-    <div class="ptablet:grid-cols-2 grid gap-4 sm:grid-cols-3">
+    <div class="grid gap-4 sm:grid-cols-3">
       <!-- Column -->
       <div class="relative">
         <!-- Widget -->

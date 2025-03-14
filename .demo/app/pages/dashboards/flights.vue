@@ -144,7 +144,7 @@ function selectRange(duration: Duration) {
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-9">
+      <div class="col-span-12 lg:col-span-9">
         <!-- Inner column -->
         <div class="flex flex-col gap-4">
           <!-- Header -->
@@ -469,7 +469,7 @@ function selectRange(duration: Duration) {
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-3">
+      <div class="col-span-12 lg:col-span-3">
         <div class="flex flex-col gap-4">
           <!-- Widget -->
           <BaseCard rounded="md" class="p-4 md:p-6">

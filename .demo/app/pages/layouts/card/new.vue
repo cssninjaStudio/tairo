@@ -223,7 +223,7 @@ const onSubmit = handleSubmit(
           <form
             action=""
             method="POST"
-            class="ltablet:gap-16 grid w-full gap-8 md:grid-cols-12 lg:gap-16"
+            class="grid w-full gap-8 md:grid-cols-12 lg:gap-16"
             @submit.prevent="onSubmit"
           >
             <!-- Content column -->

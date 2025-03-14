@@ -690,7 +690,7 @@ function useBarOrders() {
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
+        class="flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
       >
         <BaseAvatar src="/img/avatars/10.svg" size="lg" />
         <div>

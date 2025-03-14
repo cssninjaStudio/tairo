@@ -37,7 +37,7 @@ function onSelectType(type: ProjectType) {
   <div>
     <DemoWizardStepTitle />
     <div class="mx-auto w-full max-w-6xl px-4 text-center">
-      <div class="ltablet:grid-cols-3 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Choice -->
         <div
           class="border border-transparent hover:border-muted-200 dark:hover:border-muted-800 dark:hover:bg-muted-950 hover:shadow-muted-300/30 dark:hover:shadow-muted-800/30 group rounded-2xl p-5 transition-all duration-300 hover:bg-white hover:shadow-xl"

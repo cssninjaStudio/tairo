@@ -224,13 +224,13 @@ function setAccount(account: any) {
       </div>
     </div>
     <div class="grid grid-cols-12 gap-4">
-      <div class="ltablet:col-span-8 col-span-12 space-y-4 lg:col-span-8">
+      <div class="col-span-12 space-y-4 lg:col-span-8">
         <!-- Account balance widget -->
         <DemoWidgetAccountBalance />
         <!-- Transactions widget -->
         <DemoWidgetTransactionCompact />
       </div>
-      <form action="" class="ltablet:col-span-4 col-span-12 space-y-4 lg:col-span-4">
+      <form action="" class="col-span-12 space-y-4 lg:col-span-4">
         <BaseCard
           rounded="md"
           class="p-4 md:p-6"

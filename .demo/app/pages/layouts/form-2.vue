@@ -327,7 +327,7 @@ const currentRatingText = computed(() => {
       novalidate
       @submit.prevent="onSubmit"
     >
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 lg:col-span-8">
         <BaseCard rounded="sm" class="p-4 md:p-8">
           <div class="grid grid-cols-1 gap-4 gap-y-2 text-sm lg:grid-cols-12">
             <div class="col-span-12 mb-10 text-gray-600 sm:col-span-3 sm:mb-0">
@@ -346,7 +346,7 @@ const currentRatingText = computed(() => {
                 Fill in the required fields
               </BaseText>
             </div>
-            <div class="ltablet:col-span-9 col-span-12 space-y-10 lg:col-span-9">
+            <div class="col-span-12 space-y-10 lg:col-span-9">
               <TairoFormGroup
                 label="General info"
                 sublabel="Some general information"
@@ -787,8 +787,8 @@ const currentRatingText = computed(() => {
           </div>
         </BaseCard>
       </div>
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
-        <BaseCard class="ptablet:p-8 p-6 lg:p-8">
+      <div class="col-span-12 lg:col-span-4">
+        <BaseCard class="p-6 lg:p-8">
           <BaseText
             size="xs"
             weight="medium"

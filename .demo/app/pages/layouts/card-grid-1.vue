@@ -102,7 +102,7 @@ const { data, pending, error, refresh } = await useFetch(
           </BasePlaceholderPage>
         </div>
         <div v-else>
-          <div class="ltablet:grid-cols-2 grid w-full gap-4 lg:grid-cols-2">
+          <div class="grid w-full gap-4 lg:grid-cols-2">
             <TransitionGroup
               enter-active-class="transform-gpu"
               enter-from-class="opacity-0 -translate-x-full"

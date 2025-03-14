@@ -61,9 +61,9 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
         </div>
       </div>
       <div v-else class="grid grid-cols-12 gap-6">
-        <div class="ltablet:col-span-5 col-span-12 mb-6 lg:col-span-5">
+        <div class="col-span-12 mb-6 lg:col-span-5">
           <div
-            class="ltablet:max-w-sm bg-muted-200 dark:bg-muted-800/60 rounded-xl p-8 lg:max-w-sm"
+            class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-8 lg:max-w-sm"
           >
             <div class="mb-8 max-w-sm">
               <Icon
@@ -133,7 +133,7 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
           </div>
         </div>
         <div
-          class="ltablet:col-span-7 col-span-12 grid gap-4 sm:grid-cols-2 lg:col-span-7"
+          class="col-span-12 grid gap-4 sm:grid-cols-2 lg:col-span-7"
         >
           <TransitionGroup
             enter-active-class="transform-gpu"

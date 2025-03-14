@@ -589,13 +589,13 @@ async function submitMessage() {
   <div class="text-muted-800 h-screen antialiased">
     <!-- Header -->
     <div
-      class="ltablet:z-30 border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex h-16 w-full items-center justify-between border-b bg-white px-4 lg:z-30"
+      class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex h-16 w-full items-center justify-between border-b bg-white px-4 lg:z-30"
       :class="mobileOpen ? 'z-20' : 'z-30'"
     >
       <div class="flex w-1/2 items-center gap-2 sm:w-1/5">
         <!-- Hamburger -->
         <button
-          class="ltablet:hidden relative flex size-10 items-center justify-center lg:hidden"
+          class="relative flex size-10 items-center justify-center lg:hidden"
           @click="mobileOpen = !mobileOpen"
         >
           <div
@@ -617,14 +617,14 @@ async function submitMessage() {
         </button>
         <NuxtLink
           to="/"
-          class="ltablet:flex hidden items-center gap-2 lg:flex"
+          class="hidden items-center gap-2 lg:flex"
           aria-label="Go to Tairo homepage"
         >
           <TairoLogoText class="text-primary-500 h-6 dark:text-white" />
         </NuxtLink>
       </div>
       <div
-        class="ltablet:max-w-sm mx-auto hidden max-w-xs grow sm:block lg:max-w-xl"
+        class="mx-auto hidden max-w-xs grow sm:block lg:max-w-xl"
       >
         <TairoInput
           v-model="searchMessages"
@@ -644,16 +644,16 @@ async function submitMessage() {
     >
       <!-- Conversations sidebar -->
       <div
-        class="ltablet:static ltablet:py-4 dark:bg-muted-900 ltablet:dark:bg-muted-950 lg:dark:bg-muted-950 fixed start-0 top-0 z-30 flex h-full w-72 shrink-0 flex-col bg-white ps-4 transition-transform duration-300 lg:static lg:py-4"
+        class="dark:bg-muted-900 lg:dark:bg-muted-950 fixed start-0 top-0 z-30 flex h-full w-72 shrink-0 flex-col bg-white ps-4 transition-transform duration-300 lg:static lg:py-4"
         :class="
           mobileOpen
             ? 'translate-x-0'
-            : '-translate-x-full ltablet:translate-x-0 lg:translate-x-0'
+            : '-translate-x-full lg:translate-x-0'
         "
       >
         <!-- Mobile header -->
         <div
-          class="ltablet:hidden flex h-16 items-center justify-between pe-4 lg:hidden"
+          class="flex h-16 items-center justify-between pe-4 lg:hidden"
         >
           <NuxtLink
             to="/"
@@ -672,7 +672,7 @@ async function submitMessage() {
             <Icon name="lucide:x" class="size-4" />
           </BaseButton>
         </div>
-        <div class="ltablet:pe-0 flex h-full flex-col pe-2 lg:pe-0">
+        <div class="flex h-full flex-col pe-2 lg:pe-0">
           <!-- New conversation -->
           <div class="flex h-20 items-center justify-center pe-2">
             <BaseButton

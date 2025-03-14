@@ -120,42 +120,42 @@ const onSubmit = handleSubmit(async (values) => {
       <div class="relative mx-auto w-full max-w-2xl">
         <!-- Avatars -->
         <img
-          class="ltablet:block absolute start-0 top-[30%] hidden size-12 rounded-full object-cover duration-[cubic-bezier(0.86,0,0.07,1)] lg:block"
+          class="absolute start-0 top-[30%] hidden size-12 rounded-full object-cover duration-[cubic-bezier(0.86,0,0.07,1)] lg:block"
           src="/img/avatars/1.svg"
           alt="Avatar"
           width="48"
           height="48"
         >
         <img
-          class="ltablet:block absolute -start-[25%] top-[40%] hidden size-16 rounded-full object-cover lg:block"
+          class="absolute -start-[25%] top-[40%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/9.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -start-[5%] top-[52%] hidden size-16 rounded-full object-cover lg:block"
+          class="absolute -start-[5%] top-[52%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/4.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -start-[35%] top-[65%] hidden size-24 rounded-full object-cover lg:block"
+          class="absolute -start-[35%] top-[65%] hidden size-24 rounded-full object-cover lg:block"
           src="/img/avatars/8.svg"
           alt="Avatar"
           width="96"
           height="96"
         >
         <img
-          class="ltablet:block absolute -start-[35%] top-[20%] hidden size-10 rounded-full object-cover lg:block"
+          class="absolute -start-[35%] top-[20%] hidden size-10 rounded-full object-cover lg:block"
           src="/img/avatars/12.svg"
           alt="Avatar"
           width="40"
           height="40"
         >
         <img
-          class="ltablet:block absolute -start-[55%] top-[40%] hidden size-20 rounded-full object-cover lg:block"
+          class="absolute -start-[55%] top-[40%] hidden size-20 rounded-full object-cover lg:block"
           src="/img/avatars/20.svg"
           alt="Avatar"
           width="80"
@@ -163,42 +163,42 @@ const onSubmit = handleSubmit(async (values) => {
         >
 
         <img
-          class="ltablet:block absolute end-0 top-[30%] hidden size-12 rounded-full object-cover lg:block"
+          class="absolute end-0 top-[30%] hidden size-12 rounded-full object-cover lg:block"
           src="/img/avatars/16.svg"
           alt="Avatar"
           width="48"
           height="48"
         >
         <img
-          class="ltablet:block absolute -end-[25%] top-[40%] hidden size-16 rounded-full object-cover lg:block"
+          class="absolute -end-[25%] top-[40%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/10.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -end-[5%] top-[52%] hidden size-16 rounded-full object-cover lg:block"
+          class="absolute -end-[5%] top-[52%] hidden size-16 rounded-full object-cover lg:block"
           src="/img/avatars/19.svg"
           alt="Avatar"
           width="64"
           height="64"
         >
         <img
-          class="ltablet:block absolute -end-[35%] top-[65%] hidden size-24 rounded-full object-cover lg:block"
+          class="absolute -end-[35%] top-[65%] hidden size-24 rounded-full object-cover lg:block"
           src="/img/avatars/24.svg"
           alt="Avatar"
           width="96"
           height="96"
         >
         <img
-          class="ltablet:block absolute -end-[35%] top-[20%] hidden size-10 rounded-full object-cover lg:block"
+          class="absolute -end-[35%] top-[20%] hidden size-10 rounded-full object-cover lg:block"
           src="/img/avatars/3.svg"
           alt="Avatar"
           width="40"
           height="40"
         >
         <img
-          class="ltablet:block absolute -end-[55%] top-[40%] hidden size-20 rounded-full object-cover lg:block"
+          class="absolute -end-[55%] top-[40%] hidden size-20 rounded-full object-cover lg:block"
           src="/img/avatars/5.svg"
           alt="Avatar"
           width="80"

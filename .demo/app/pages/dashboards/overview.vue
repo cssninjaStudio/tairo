@@ -18,7 +18,7 @@ definePageMeta({
     <div class="grid grid-cols-12 gap-4">
       <!-- Cards -->
       <div
-        class="ptablet:col-span-5 ltablet:col-span-4 col-span-12 lg:col-span-4"
+        class="col-span-12 lg:col-span-4"
       >
         <BaseCard rounded="none" class="lg:landscape:p-6 rounded-2xl! border p-4 md:p-6 2xl:landscape:p-12">
           <!-- Header -->
@@ -190,7 +190,7 @@ definePageMeta({
       </div>
       <!-- Quick transactions -->
       <div
-        class="ptablet:col-span-7 ltablet:col-span-8 col-span-12 lg:col-span-8"
+        class="col-span-12 lg:col-span-8"
       >
         <BaseCard
           variant="none"
@@ -214,7 +214,7 @@ definePageMeta({
             </BaseButton>
           </div>
           <div
-            class="nui-slimscroll ltablet:overflow-x-hidden flex gap-4 overflow-x-auto lg:overflow-x-hidden"
+            class="nui-slimscroll flex gap-4 overflow-x-auto lg:overflow-x-hidden"
           >
             <NuxtLink
               to="/layouts/send"

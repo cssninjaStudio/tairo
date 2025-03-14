@@ -113,7 +113,7 @@ async function openTaskPanel(id: number, tasks: any) {
         <!-- Overview -->
         <BaseTabsContent value="overview">
           <div class="grid grid-cols-12 gap-4">
-            <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+            <div class="col-span-12 lg:col-span-8">
               <BaseCard rounded="md" class="space-y-12 p-10">
                 <div
                   class="border-muted-200 dark:border-muted-800/80 flex flex-col items-center justify-between gap-8 border-b pb-12 sm:flex-row"
@@ -320,7 +320,7 @@ async function openTaskPanel(id: number, tasks: any) {
                 </div>
               </BaseCard>
             </div>
-            <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+            <div class="col-span-12 lg:col-span-4">
               <div class="space-y-4">
                 <!-- Actions -->
                 <div class="flex items-center justify-end gap-3">

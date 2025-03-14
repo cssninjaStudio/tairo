@@ -360,7 +360,7 @@ const onSubmit = handleSubmit(
                     <div class="grid grid-cols-12 gap-4">
                       <div
                         v-if="values.contact?.type === 'person'"
-                        class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                        class="col-span-12 lg:col-span-6"
                       >
                         <Field
                           v-slot="{
@@ -394,7 +394,7 @@ const onSubmit = handleSubmit(
                       </div>
                       <div
                         v-if="values.contact?.type === 'person'"
-                        class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                        class="col-span-12 lg:col-span-6"
                       >
                         <Field
                           v-slot="{
@@ -460,7 +460,7 @@ const onSubmit = handleSubmit(
                           </BaseField>
                         </Field>
                       </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                      <div class="col-span-12 lg:col-span-6">
                         <Field
                           v-slot="{
                             field,
@@ -491,7 +491,7 @@ const onSubmit = handleSubmit(
                           </BaseField>
                         </Field>
                       </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                      <div class="col-span-12 lg:col-span-6">
                         <Field
                           v-slot="{
                             field,
@@ -522,7 +522,7 @@ const onSubmit = handleSubmit(
                           </BaseField>
                         </Field>
                       </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                      <div class="col-span-12 lg:col-span-6">
                         <Field
                           v-slot="{
                             field,
@@ -553,7 +553,7 @@ const onSubmit = handleSubmit(
                           </BaseField>
                         </Field>
                       </div>
-                      <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                      <div class="col-span-12 lg:col-span-6">
                         <Field
                           v-slot="{
                             field,
@@ -855,7 +855,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <TairoInput
@@ -885,7 +885,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <TairoInput
@@ -915,7 +915,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <BaseInput
@@ -945,7 +945,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <TairoInput

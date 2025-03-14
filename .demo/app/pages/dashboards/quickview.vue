@@ -16,7 +16,7 @@ definePageMeta({
 <template>
   <div class="px-4 md:px-6 lg:px-8 pb-20">
     <div class="grid grid-cols-12 gap-4">
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 lg:col-span-8">
         <div class="grid grid-cols-12 gap-4">
           <!-- Card column -->
           <div class="col-span-12 sm:col-span-6">
@@ -379,7 +379,7 @@ definePageMeta({
           </div>
         </div>
       </div>
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4">
         <div class="bg-muted-200/60 dark:bg-muted-950/60 rounded-xl p-6">
           <div>
             <BaseParagraph

@@ -400,7 +400,7 @@ const onSubmit = handleSubmit(
             <!-- Input column -->
             <div class="col-span-12 md:col-span-8">
               <div class="grid grid-cols-12 gap-4">
-                <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                <div class="col-span-12 lg:col-span-6">
                   <Field
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="company.name"
@@ -425,7 +425,7 @@ const onSubmit = handleSubmit(
                     </BaseField>
                   </Field>
                 </div>
-                <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+                <div class="col-span-12 lg:col-span-6">
                   <Field
                     v-slot="{ field, errorMessage, handleChange, handleBlur }"
                     name="company.email"
@@ -536,7 +536,7 @@ const onSubmit = handleSubmit(
                   >
                     <BaseRadioGroup
                       :model-value="field.value"
-                      class="ptablet:grid-cols-2 ltablet:grid-cols-3 grid gap-4 lg:grid-cols-3"
+                      class="grid gap-4 lg:grid-cols-3"
                       @update:model-value="handleChange"
                     >
                       <TairoRadioCard
@@ -575,7 +575,7 @@ const onSubmit = handleSubmit(
                     :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                    class="col-span-12 lg:col-span-6"
                     required
                   >
                     <BaseSelect
@@ -606,7 +606,7 @@ const onSubmit = handleSubmit(
                     :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                    class="col-span-12 lg:col-span-6"
                     required
                   >
                     <BaseSelect
@@ -637,7 +637,7 @@ const onSubmit = handleSubmit(
                     :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    class="ltablet:col-span-8 col-span-12 lg:col-span-8"
+                    class="col-span-12 lg:col-span-8"
                     required
                   >
                     <BaseSelect
@@ -673,7 +673,7 @@ const onSubmit = handleSubmit(
                     :state="errorMessage ? 'error' : 'idle'"
                     :error="errorMessage"
                     :disabled="isSubmitting"
-                    class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                    class="col-span-12 lg:col-span-4"
                     required
                   >
                     <BaseSelect

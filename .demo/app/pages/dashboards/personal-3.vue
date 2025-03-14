@@ -121,7 +121,7 @@ const date = ref(new Date())
 <template>
   <div class="px-4 md:px-6 lg:px-8 pb-20">
     <div
-      class="ltablet:grid-cols-3 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+      class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
     >
       <!-- Grid item -->
       <div>

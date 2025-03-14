@@ -193,7 +193,7 @@ const videos = [
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
+        class="flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
       >
         <div>
           <BaseHeading

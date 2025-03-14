@@ -410,7 +410,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <TairoInput
@@ -440,7 +440,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <TairoInput
@@ -470,7 +470,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                         >
                           <TairoInput
                             :ref="inputRef"
@@ -499,7 +499,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <TairoInput
@@ -529,7 +529,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <TairoInput
@@ -559,7 +559,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-6 col-span-12 lg:col-span-6"
+                          class="col-span-12 lg:col-span-6"
                           required
                         >
                           <BaseSelect
@@ -600,7 +600,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                          class="col-span-12 lg:col-span-4"
                           required
                         >
                           <BaseSelect
@@ -636,7 +636,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                          class="col-span-12 lg:col-span-4"
                           required
                         >
                           <BaseSelect
@@ -672,7 +672,7 @@ const onSubmit = handleSubmit(
                           :state="errorMessage ? 'error' : 'idle'"
                           :error="errorMessage"
                           :disabled="isSubmitting"
-                          class="ltablet:col-span-4 col-span-12 lg:col-span-4"
+                          class="col-span-12 lg:col-span-4"
                           required
                         >
                           <BaseInput
