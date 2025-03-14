@@ -111,7 +111,7 @@ const totalData = computed(() => {
           <div class="overflow-hidden font-sans">
             <div>
               <div
-                class="border-muted-200 dark:border-muted-700 flex flex-col justify-between gap-y-8 border-b p-8 sm:flex-row sm:items-center"
+                class="border-muted-200 dark:border-muted-800/80 flex flex-col justify-between gap-y-8 border-b p-8 sm:flex-row sm:items-center"
               >
                 <div class="flex items-center gap-3">
                   <BaseAvatar
@@ -211,7 +211,7 @@ const totalData = computed(() => {
               <div class="px-6 py-8 sm:p-8">
                 <div class="flex flex-col">
                   <table
-                    class="divide-muted-200 dark:divide-muted-700 min-w-full divide-y"
+                    class="divide-muted-200 dark:divide-muted-800/80 min-w-full divide-y"
                   >
                     <thead class="font-sans">
                       <tr>
@@ -251,7 +251,7 @@ const totalData = computed(() => {
                       <tr
                         v-for="item in data"
                         :key="item.name"
-                        class="border-muted-200 dark:border-muted-700 border-b"
+                        class="border-muted-200 dark:border-muted-800/80 border-b"
                       >
                         <td class="py-4 pe-3 ps-4 text-sm sm:ps-6 md:ps-0">
                           <div
@@ -321,7 +321,7 @@ const totalData = computed(() => {
                 </div>
               </div>
               <div class="mt-8 p-8">
-                <div class="border-muted-200 dark:border-muted-700 border-t pt-8">
+                <div class="border-muted-200 dark:border-muted-800/80 border-t pt-8">
                   <div class="text-muted-400">
                     <BaseParagraph size="xs">
                       Payment terms are 14 days. Please be aware that according to

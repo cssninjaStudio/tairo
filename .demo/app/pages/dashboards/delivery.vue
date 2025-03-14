@@ -257,7 +257,7 @@ const total = computed(() => {
               <button
                 class="bg-primary-500/10 hover:bg-primary-500/20 text-primary-600 inline-flex cursor-pointer items-center justify-center gap-x-1 rounded-full py-2 pe-4 ps-2 font-sans text-sm transition-all duration-300"
               >
-                <Icon name="ph:timer-duotone" class="size-5" />
+                <Icon name="solar:clock-square-linear" class="size-5" />
                 <span class="text-sm">Delivery:</span>
                 <span>~ 25min</span>
               </button>
@@ -273,7 +273,7 @@ const total = computed(() => {
                 :class="
                   activeGenre === genre.id
                     ? 'bg-yellow-400 border-yellow-400'
-                    : 'border-muted-200 dark:border-muted-700 hover:bg-muted-200/80 dark:hover:bg-muted-800/40'
+                    : 'border-muted-200 dark:border-muted-800 hover:bg-muted-200/80 dark:hover:bg-muted-950/40'
                 "
                 @click="activeGenre = genre.id"
               >

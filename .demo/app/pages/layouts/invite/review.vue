@@ -30,7 +30,7 @@ onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div v-if="!complete">
       <div class="mb-8 space-y-2">
         <BaseHeading
@@ -62,6 +62,7 @@ onBeforeMount(checkPreviousSteps)
                 rounded="none"
                 mask="blob"
                 :text="request?.firstName[0]"
+                class="bg-primary-500/10 text-primary-500"
               />
               <div>
                 <BaseHeading
@@ -93,7 +94,7 @@ onBeforeMount(checkPreviousSteps)
                 <BaseParagraph
                   v-if="request?.email"
                   size="xs"
-                  class="text-muted-400 line-clamp-1"
+                  class="text-muted-600 dark:text-muted-400 line-clamp-1"
                 >
                   {{ request.email }}
                 </BaseParagraph>

@@ -113,7 +113,7 @@ watchEffect(() => {
   <div>
     <DemoWizardStepTitle />
 
-    <div class="px-4">
+    <div class="px-4 dark:[--color-input-default-bg:var(--color-muted-950)]">
       <BasePlaceholderPage
         v-if="!toggled"
         title="Invite People"
@@ -206,7 +206,7 @@ watchEffect(() => {
                 <div
                   v-for="(member, idx) in project.team"
                   :key="member.name"
-                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex cursor-pointer items-center gap-3 rounded-lg border bg-white p-4"
+                  class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 flex cursor-pointer items-center gap-3 rounded-lg border bg-white p-4"
                 >
                   <BaseAvatar size="sm" :src="member.picture" />
                   <div class="flex flex-col">

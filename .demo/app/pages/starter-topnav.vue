@@ -2,6 +2,14 @@
 definePageMeta({
   title: 'Topnav Layout',
   layout: 'topnav-dev',
+  preview: {
+    title: 'Topnav starter layout',
+    description: 'For a quick start usage.',
+    categories: ['layouts'],
+    src: '/img/screens/starter-topnav.png',
+    srcDark: '/img/screens/starter-topnav-dark.png',
+    order: 253,
+  },
 })
 </script>
 

@@ -60,7 +60,7 @@ const toggled = ref(Boolean(project.value.files?.length))
           <div class="mb-4 flex items-center gap-2">
             <button
               type="button"
-              class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+              class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-800 dark:bg-muted-950 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
               tooltip="Select files"
               @click="open"
             >
@@ -69,7 +69,7 @@ const toggled = ref(Boolean(project.value.files?.length))
             </button>
             <button
               type="button"
-              class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+              class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-800 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-950 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
               tooltip="Start Upload"
             >
               <Icon name="lucide:arrow-up" class="size-4" />
@@ -120,7 +120,7 @@ const toggled = ref(Boolean(project.value.files?.length))
             <ul v-else class="mt-6 space-y-2">
               <li v-for="file in files" :key="file.name">
                 <div
-                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative flex items-center justify-end gap-2 rounded-xl border bg-white p-3"
+                  class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex items-center justify-end gap-2 rounded-xl border bg-white p-3"
                 >
                   <div class="flex items-center gap-2">
                     <div class="shrink-0">

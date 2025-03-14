@@ -44,7 +44,7 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
 </script>
 
 <template>
-  <div class="px-4 md:px-6 lg:px-8 pb-20">
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div class="mx-auto max-w-2xl">
       <div v-if="!pending && data?.recent.length === 0">
         <div class="bg-muted-200 dark:bg-muted-800/60 rounded-xl p-6">

@@ -4,7 +4,7 @@
       <BaseAvatar size="xl" src="/img/icons/logos/slicer.svg" />
       <div class="absolute bottom-0 end-0">
         <BaseButton size="icon-sm" rounded="full">
-          <Icon name="ph:camera-duotone" />
+          <Icon name="lucide:plus" />
         </BaseButton>
       </div>
     </div>

@@ -244,9 +244,9 @@ const colorCode = ref('color_code_1')
       novalidate
       @submit.prevent="onSubmit"
     >
-      <BaseCard>
+      <BaseCard rounded="md">
         <div
-          class="border-muted-200 dark:border-muted-700 flex items-center justify-between gap-4 border-b px-10 py-5"
+          class="border-muted-200 dark:border-muted-800/80 flex items-center justify-between gap-4 border-b px-10 py-5"
         >
           <div>
             <BaseHeading
@@ -476,7 +476,7 @@ const colorCode = ref('color_code_1')
           </div>
         </div>
         <div
-          class="bg-muted-50 dark:bg-muted-800/70 border-muted-200 dark:border-muted-700 border-t p-10"
+          class="bg-muted-50 dark:bg-muted-950/70 border-muted-200 dark:border-muted-800/80 border-t p-10"
         >
           <div class="flex items-center justify-between">
             <div>
@@ -675,7 +675,7 @@ const colorCode = ref('color_code_1')
                   <div class="mb-4 flex items-center gap-2">
                     <button
                       type="button"
-                      class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                      class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-800/80 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                       tooltip="Select files"
                       @click="open"
                     >
@@ -687,7 +687,7 @@ const colorCode = ref('color_code_1')
                     </button>
                     <button
                       type="button"
-                      class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                      class="focus-visible:nui-focus border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-800/80 dark:bg-muted-800 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                       tooltip="Start Upload"
                     >
                       <Icon name="lucide:arrow-up" class="size-4" />
@@ -704,7 +704,7 @@ const colorCode = ref('color_code_1')
                   >
                     <div
                       v-if="!files?.length"
-                      class="focus-visible:nui-focus border-muted-300 dark:border-muted-700 hover:border-muted-400 focus:border-muted-400 dark:hover:border-muted-600 dark:focus:border-muted-700 group cursor-pointer rounded-lg border-[3px] border-dashed p-8 transition-colors duration-300"
+                      class="focus-visible:nui-focus border-muted-300 dark:border-muted-800/80 hover:border-muted-400 focus:border-muted-400 dark:hover:border-muted-600 dark:focus:border-muted-700 group cursor-pointer rounded-lg border-[3px] border-dashed p-8 transition-colors duration-300"
                       tabindex="0"
                       role="button"
                       @click="open"
@@ -736,7 +736,7 @@ const colorCode = ref('color_code_1')
                     <ul v-else class="mt-6 space-y-2">
                       <li v-for="file in files" :key="file.name">
                         <div
-                          class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative flex items-center justify-end gap-2 rounded-xl border bg-white p-3"
+                          class="border-muted-200 dark:border-muted-800/80 dark:bg-muted-800 relative flex items-center justify-end gap-2 rounded-xl border bg-white p-3"
                         >
                           <div class="flex items-center gap-2">
                             <div class="shrink-0">
@@ -775,7 +775,7 @@ const colorCode = ref('color_code_1')
                           </div>
                           <div class="flex gap-2">
                             <button
-                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
+                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-800/80 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60"
                               disabled
                               type="button"
                               tooltip="Cancel"
@@ -784,7 +784,7 @@ const colorCode = ref('color_code_1')
                               <span class="sr-only">Cancel</span>
                             </button>
                             <button
-                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-800/80 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                               type="button"
                               tooltip="Upload"
                             >
@@ -792,7 +792,7 @@ const colorCode = ref('color_code_1')
                               <span class="sr-only">Upload</span>
                             </button>
                             <button
-                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-700 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                              class="border-muted-200 hover:border-primary-500 text-muted-700 dark:text-muted-200 hover:text-primary-600 dark:border-muted-800/80 dark:bg-muted-900 dark:hover:border-primary-500 dark:hover:text-primary-600 relative flex size-8 cursor-pointer items-center justify-center rounded-full border bg-white transition-colors duration-300"
                               type="button"
                               tooltip="Remove"
                               @click.prevent="remove(file)"
@@ -811,7 +811,7 @@ const colorCode = ref('color_code_1')
           </div>
         </div>
         <div
-          class="bg-muted-50 dark:bg-muted-800/70 border-muted-200 dark:border-muted-700 border-t p-10"
+          class="bg-muted-50 dark:bg-muted-800/70 border-muted-200 dark:border-muted-800/80 border-t p-10"
         >
           <div class="grid grid-cols-12 gap-8 pb-6">
             <div class="col-span-12 grid grid-cols-12">

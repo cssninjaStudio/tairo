@@ -122,7 +122,7 @@ function closeUpgrade() {
 </script>
 
 <template>
-  <div class="dark:bg-muted-900 flex min-h-screen w-full flex-col bg-white sm:flex-row">
+  <div class="dark:bg-muted-900 flex min-h-screen w-full flex-col bg-white sm:flex-row dark:[--color-input-default-bg:var(--color-muted-950)]">
     <!-- Mobile menu -->
     <aside class="absolute z-10 flex h-16 items-center ps-3 lg:hidden">
       <button

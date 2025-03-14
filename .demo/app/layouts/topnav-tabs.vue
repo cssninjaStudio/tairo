@@ -120,5 +120,8 @@ const isSwitcherOpen = useState('switcher-open', () => false)
         <TairoTopnavTab to="/" label="Settings" />
       </TairoTopnavTabs>
     </TairoTopnavNavbar>
+    <TairoTopnavLayoutContent class="pt-32 min-h-screen">
+      <slot />
+    </TairoTopnavLayoutContent>
   </TairoTopnavLayout>
 </template>

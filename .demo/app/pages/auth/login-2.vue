@@ -91,7 +91,7 @@ const onSubmit = handleSubmit(async (values) => {
 
 <template>
   <div
-    class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-hidden px-4"
+    class="bg-muted-100 dark:bg-muted-900 relative min-h-screen w-full overflow-hidden px-4 dark:[--color-input-default-bg:var(--color-muted-950)]"
   >
     <div
       class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4"

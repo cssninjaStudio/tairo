@@ -20,8 +20,8 @@ definePageMeta({
       title: 'Project board',
       description: 'For a banking project kanban board',
       categories: ['layouts', 'projects', 'kanban'],
-      src: '/img/screens/layouts-projects-board.png',
-      srcDark: '/img/screens/layouts-projects-board-dark.png',
+      src: '/img/screens/layouts-projects-board-2.png',
+      srcDark: '/img/screens/layouts-projects-board-2-dark.png',
       order: 74,
       params: {
         slug: 'banking-and-finance-dashboard',
@@ -228,7 +228,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
             drop-class="opacity-40"
             :drop-placeholder="{
               className:
-                'mt-4 border-muted-200 border-dashed dark:border-muted-700 dark:bg-muted-800 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white opacity-60 mb-4',
+                'mt-4 border-muted-200 border-dashed dark:border-muted-700 dark:bg-muted-800/60 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white opacity-60 mb-4',
             }"
             @drop="(dropResult: any) => onDrop(column, dropResult)"
           >
@@ -238,7 +238,7 @@ function onDrop(column: ColumnContent, dropResult: any) {
                 <div
                   role="button"
                   tabindex="0"
-                  class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white"
+                  class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 group relative flex cursor-pointer flex-col items-start rounded-lg border bg-white/90 p-4 hover:bg-white dark:hover:bg-muted-950/80"
                   draggable="true"
                   @click="() => openTaskPanel(task.id, data?.project?.tasks)"
                 >

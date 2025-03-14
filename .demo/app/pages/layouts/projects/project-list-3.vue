@@ -43,7 +43,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div class="px-4 md:px-6 lg:px-8 pb-20">
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -216,7 +216,7 @@ const { data, pending, error, refresh } = await useFetch(
                       </div>
                     </div>
                     <div
-                      class="border-muted-200 dark:border-muted-700 bg-muted-50 dark:bg-muted-700/50 flex items-center justify-between rounded-b-xl border-t px-5 py-3"
+                      class="border-muted-200 dark:border-muted-800 bg-muted-50 dark:bg-muted-900/50 flex items-center justify-between rounded-b-lg border-t px-5 py-3"
                     >
                       <div>
                         <p class="text-muted-400 font-sans text-sm">

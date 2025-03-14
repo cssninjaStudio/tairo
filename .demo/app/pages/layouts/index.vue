@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
 </script>
 
 <template>
-  <div class="px-4 md:px-6 lg:px-8 pb-20">
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -144,7 +144,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   </BaseTag>
                 </div>
                 <div
-                  class="divide-muted-200 dark:divide-muted-700 flex items-center justify-center divide-x"
+                  class="divide-muted-200 dark:divide-muted-800 flex items-center justify-center divide-x"
                 >
                   <div class="flex flex-col gap-1 px-4 text-center">
                     <BaseHeading

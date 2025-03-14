@@ -89,7 +89,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="flex w-full items-center gap-2"
             >
               <div
-                class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
               >
                 <img
                   :src="item.icon"
@@ -162,10 +162,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </div>
           </div>
           <div
-            class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
+            class="border-muted-200 dark:border-muted-800 mt-8 flex w-full items-center gap-2 border-t pt-8"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
+              class="bg-muted-100 dark:bg-muted-800/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
             >
               <Icon name="solar:book-2-linear" class="size-6" />
             </div>
@@ -219,7 +219,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="flex w-full items-center gap-2"
             >
               <div
-                class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
               >
                 <img
                   v-if="'logo' in item"
@@ -298,10 +298,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </div>
           </div>
           <div
-            class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
+            class="border-muted-200 dark:border-muted-800 mt-8 flex w-full items-center gap-2 border-t pt-8"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
+              class="bg-muted-100 dark:bg-muted-800/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
             >
               <Icon name="solar:add-folder-linear" class="size-6" />
             </div>
@@ -355,7 +355,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               class="flex w-full items-center gap-2"
             >
               <div
-                class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
+                class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative flex size-[50px] shrink-0 items-center justify-center rounded-full border bg-white"
               >
                 <img
                   :src="item.logo"
@@ -428,10 +428,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </div>
           </div>
           <div
-            class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
+            class="border-muted-200 dark:border-muted-800 mt-8 flex w-full items-center gap-2 border-t pt-8"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
+              class="bg-muted-100 dark:bg-muted-800/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
             >
               <Icon name="solar:settings-linear" class="size-6" />
             </div>

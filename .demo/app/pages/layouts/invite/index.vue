@@ -30,7 +30,7 @@ onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div class="mb-8 space-y-2">
       <BaseHeading
         as="h2"

@@ -91,7 +91,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-800/60 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in popular"
@@ -122,7 +122,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-800/60 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in recent"
@@ -153,7 +153,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-800/60 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in communication"
@@ -184,7 +184,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-800/60 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in design"
@@ -215,7 +215,7 @@ const development = computed(() => {
         </div>
         <!-- Grid -->
         <div
-          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-700 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
+          class="md:portrait:grid-cols-2 bg-muted-200 dark:bg-muted-800/60 grid gap-3 rounded-xl p-3 lg:landscape:grid-cols-3"
         >
           <DemoOfferCollapse
             v-for="item in development"

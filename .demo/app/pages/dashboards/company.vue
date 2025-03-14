@@ -117,6 +117,17 @@ function useBarSalesProfit() {
         width: 2,
         colors: ['transparent'],
       },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)', 'var(--color-chart-gradient)', 'var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.75,
+        },
+      },
       xaxis: {
         categories: [
           'Feb',

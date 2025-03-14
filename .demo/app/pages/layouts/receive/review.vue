@@ -30,7 +30,7 @@ onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <!-- Review section -->
     <div v-if="!complete">
       <div class="mb-8 space-y-2">
@@ -91,7 +91,7 @@ onBeforeMount(checkPreviousSteps)
           <BaseCard rounded="md" class="p-4">
             <div class="flex w-full items-center gap-3 text-start">
               <Icon
-                name="clarity:bank-outline-badged"
+                name="solar:buildings-2-linear"
                 class="text-muted-500 dark:text-muted-400 size-8"
               />
               <div>
@@ -120,7 +120,7 @@ onBeforeMount(checkPreviousSteps)
 
           <TairoInput
             v-model="request.email"
-            icon="lucide:mail"
+            icon="solar:letter-linear"
             placeholder="Ex: johndoe@gmail.com"
             readonly
           />

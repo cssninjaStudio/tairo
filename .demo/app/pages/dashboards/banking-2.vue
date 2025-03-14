@@ -2,7 +2,7 @@
 import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 definePageMeta({
-  title: 'Credit Cards',
+  title: 'Account expenses',
   preview: {
     title: 'Banking dashboard v2',
     description: 'For banking and accounts',
@@ -225,7 +225,7 @@ function useAreaExpenses() {
         </div>
         <div class="lg:landscape:w-2/5 w-full xl:landscape:w-2/5">
           <div
-            class="lg:landscape:ps-12 lg:landscape:border-l border-muted-200 dark:border-muted-700 flex h-full flex-col xl:landscape:border-s xl:landscape:ps-12"
+            class="lg:landscape:ps-12 lg:landscape:border-l border-muted-200 dark:border-muted-800/80 flex h-full flex-col xl:landscape:border-s xl:landscape:ps-12"
           >
             <div class="mb-4 flex items-center justify-between">
               <BaseHeading
@@ -321,7 +321,7 @@ function useAreaExpenses() {
         class="lg:landscape:flex-row flex flex-col gap-y-10 p-4 sm:p-6 md:p-10 xl:landscape:flex-row"
       >
         <div
-          class="lg:landscape:w-3/5 lg:landscape:border-r border-muted-200 dark:border-muted-800 w-full xl:landscape:w-3/5 xl:landscape:border-e"
+          class="lg:landscape:w-3/5 lg:landscape:border-r border-muted-200 dark:border-muted-800/80 w-full xl:landscape:w-3/5 xl:landscape:border-e"
         >
           <div class="flex size-full flex-col gap-16 sm:flex-row">
             <!-- Monthly Summary -->
@@ -336,7 +336,7 @@ function useAreaExpenses() {
                 <span>Monthly Summary</span>
               </BaseHeading>
               <div
-                class="border-muted-300 divide-muted-300 dark:border-muted-800 dark:divide-muted-800 flex flex-col divide-y rounded-lg border"
+                class="border-muted-300 divide-muted-300 dark:border-muted-800/80 dark:divide-muted-800/80 flex flex-col divide-y rounded-lg border"
               >
                 <div class="p-4">
                   <div

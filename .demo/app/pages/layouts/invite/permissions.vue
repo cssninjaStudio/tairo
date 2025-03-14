@@ -30,7 +30,7 @@ onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div class="mb-8 space-y-2">
       <BaseHeading
         as="h2"
@@ -63,7 +63,7 @@ onBeforeMount(checkPreviousSteps)
             />
           </div>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
+            class="dark:bg-muted-950 border-muted-200 dark:border-muted-800 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
           >
             <div
               class="border-muted-200 flex size-5 items-center justify-center rounded-full border shrink-0"
@@ -97,7 +97,7 @@ onBeforeMount(checkPreviousSteps)
             />
           </div>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
+            class="dark:bg-muted-950 border-muted-200 dark:border-muted-800 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
           >
             <div
               class="border-muted-200 flex size-5 items-center justify-center rounded-full border shrink-0"
@@ -131,7 +131,7 @@ onBeforeMount(checkPreviousSteps)
             />
           </div>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
+            class="dark:bg-muted-950 border-muted-200 dark:border-muted-800 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
           >
             <div
               class="border-muted-200 flex size-5 items-center justify-center rounded-full border"
@@ -165,7 +165,7 @@ onBeforeMount(checkPreviousSteps)
             />
           </div>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 group flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
+            class="dark:bg-muted-950 border-muted-200 dark:border-muted-800 group-data-[state=checked]:shadow-muted-400/10 dark:group-data-[state=checked]:shadow-muted-800/10 group flex cursor-pointer items-center rounded-lg border bg-white px-6 py-4 transition-shadow duration-300 group-data-[state=checked]:shadow-xl"
           >
             <div
               class="border-muted-200 flex size-5 items-center justify-center rounded-full border"

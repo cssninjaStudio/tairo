@@ -26,7 +26,7 @@ const form = reactive({
 </script>
 
 <template>
-  <div>
+  <div class="dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div class="mt-6 space-y-1">
       <BaseParagraph
         size="md"

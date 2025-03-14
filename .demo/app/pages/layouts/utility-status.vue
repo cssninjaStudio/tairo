@@ -14,7 +14,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen overflow-hidden px-4 md:px-6 lg:px-8 pb-20">
+  <div class="bg-muted-50 dark:bg-muted-900 min-h-screen overflow-hidden px-4 md:px-6 lg:px-8 pb-20">
     <div class="mx-auto max-w-3xl">
       <div
         class="mx-auto flex h-16 w-full max-w-4xl items-center justify-between"

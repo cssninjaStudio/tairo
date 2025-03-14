@@ -66,7 +66,7 @@ function statusColor(itemStatus: string) {
 </script>
 
 <template>
-  <div class="w-full px-4 md:px-6 lg:px-8 pb-20">
+  <div class="w-full px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <!-- Header -->
     <div class="flex items-center justify-between pb-6">
       <TairoInput

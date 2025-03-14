@@ -64,7 +64,7 @@ function setAccount(account: any) {
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <!-- Transfer -->
     <div v-if="request.method === 'bank_transfer'" class="w-full">
       <div class="mb-8 space-y-2">
