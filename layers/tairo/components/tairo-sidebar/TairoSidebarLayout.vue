@@ -14,7 +14,7 @@ const modelValue = useVModel(props, 'modelValue', emits, {
   passive: (props.modelValue === undefined) as false,
 })
 
-createLayoutSidebarContext({
+const { isMobileOpen, toggleMobileNav } = createLayoutSidebarContext({
   modelValue,
   defaultSubsidebarId: props.defaultValue,
 })
@@ -23,7 +23,7 @@ createLayoutSidebarContext({
 <template>
   <div class="min-h-screen w-full bg-white dark:bg-muted-900">
     <div>
-      <slot />
+      <slot v-bind="{ isMobileOpen, toggleMobileNav, modelValue }" />
     </div>
     <TairoSidebarBackdrop />
   </div>

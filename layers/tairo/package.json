@@ -13,7 +13,7 @@
     "tailwindcss": "^4.0.8"
   },
   "dependencies": {
-    "@vueuse/core": "^12.8.2",
+    "@vueuse/core": "^13.0.0",
     "colorjs.io": "^0.5.2"
   },
   "devDependencies": {

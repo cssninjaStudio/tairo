@@ -55,9 +55,9 @@ items:
       </TairoSidebarSubsidebar>
     </TairoSidebarLayoutNav>
 
-    <TairoSidebarLayoutContent>
+    <TairoSidebarContent>
       <slot />
-    </TairoSidebarLayoutContent>
+    </TairoSidebarContent>
   </TairoSidebarLayout>
 </template>
 ```
@@ -74,8 +74,8 @@ items:
 ### TairoSidebarLayout
 :doc-component-meta{name="TairoSidebarLayout"}
 
-### TairoSidebarLayoutContent
-:doc-component-meta{name="TairoSidebarLayoutContent"}
+### TairoSidebarContent
+:doc-component-meta{name="TairoSidebarContent"}
 
 ### TairoSidebarLayoutNav
 :doc-component-meta{name="TairoSidebarLayoutNav"}

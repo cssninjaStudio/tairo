@@ -80,7 +80,7 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
             <BaseAutocomplete
               v-model="selectedProject"
               :items="data?.data"
-              :display-value="(item) => item.name"
+              :display-value="(item) => item?.name"
               rounded="lg"
               icon="lucide:search"
               placeholder="Search..."
@@ -109,8 +109,8 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
                 >
                   <BaseAutocompleteItem
                     :value="{
-                      name: item.name,
-                      text: `${item.customer.name} | ${item.customer.text}`,
+                      name: item?.name,
+                      text: `${item.customer?.name} | ${item.customer.text}`,
                       media: item.customer.logo,
                     }"
                     :properties="{
@@ -151,7 +151,7 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
                       :src="item.customer.logo"
                       size="sm"
                       rounded="full"
-                      :content="item.name"
+                      :content="item?.name"
                       class="bg-muted-100 dark:bg-muted-700"
                     />
                   </BaseTooltip>
@@ -162,10 +162,10 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
                       weight="medium"
                       class="line-clamp-1"
                     >
-                      {{ item.name }}
+                      {{ item?.name }}
                     </BaseHeading>
                     <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
-                      {{ item.customer.name }} | {{ item.customer.text }}
+                      {{ item.customer?.name }} | {{ item.customer.text }}
                     </BaseParagraph>
                   </div>
                 </div>

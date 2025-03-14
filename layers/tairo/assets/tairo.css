@@ -1,7 +1,7 @@
 @source '../';
 
 @theme {
-  --tairo-topnav-width: 100%;
+  --tairo-topnav-content-width: 100%;
 
   --tairo-collapse-width-open: 17rem;
   --tairo-collapse-width-collapsed: 5rem;

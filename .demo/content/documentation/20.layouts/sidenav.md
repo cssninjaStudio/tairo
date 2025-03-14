@@ -33,14 +33,14 @@ items:
     <TairoSidenavSidebar>
       <TairoSidenavSidebarHeader />
       <TairoSidenavSidebarDivider />
-      <TairoSidenavLinks>
-        <TairoSidenavLink />
-      </TairoSidenavLinks>
+      <TairoSidenavSidebarLinks>
+        <TairoSidenavSidebarLink />
+      </TairoSidenavSidebarLinks>
     </TairoSidenavSidebar>
 
-    <TairoSidenavLayoutContent>
+    <TairoSidenavContent>
       <slot />
-    </TairoSidenavLayoutContent>
+    </TairoSidenavContent>
   </TairoSidenavLayout>
 </template>
 ```
@@ -51,8 +51,14 @@ items:
 ### TairoSidenavLayout
 :doc-component-meta{name="TairoSidenavLayout"}
 
-### TairoSidenavSidebar
-:doc-component-meta{name="TairoSidenavSidebar"}
+### TairoSidenavCollapsible
+:doc-component-meta{name="TairoSidenavCollapsible"}
+
+### TairoSidenavCollapsibleLink
+:doc-component-meta{name="TairoSidenavCollapsibleLink"}
+
+### TairoSidenavCollapsibleTrigger
+:doc-component-meta{name="TairoSidenavCollapsibleTrigger"}
 
 ### TairoSidenavSidebar
 :doc-component-meta{name="TairoSidenavSidebar"}
@@ -63,11 +69,11 @@ items:
 ### TairoSidenavSidebarDivider
 :doc-component-meta{name="TairoSidenavSidebarDivider"}
 
-### TairoSidenavLinks
-:doc-component-meta{name="TairoSidenavLinks"}
+### TairoSidenavSidebarLinks
+:doc-component-meta{name="TairoSidenavSidebarLinks"}
 
-### TairoSidenavLink
-:doc-component-meta{name="TairoSidenavLink"}
+### TairoSidenavSidebarLink
+:doc-component-meta{name="TairoSidenavSidebarLink"}
 
-### TairoSidenavLayoutContent
-:doc-component-meta{name="TairoSidenavLayoutContent"}
+### TairoSidenavContent
+:doc-component-meta{name="TairoSidenavContent"}

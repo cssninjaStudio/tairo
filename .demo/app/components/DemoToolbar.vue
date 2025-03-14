@@ -1,8 +1,11 @@
 <script setup lang="ts">
+const emits = defineEmits<{
+  toggleMobileNav: []
+}>()
+
 const route = useRoute()
-const isSearchOpen = useState('search-open', () => false)
+const isSearchOpen = useSearchOpen()
 const { open } = usePanels()
-const { isMobileOpen } = useLayoutSidebarContext()
 
 const { t, locale } = useI18n()
 </script>
@@ -13,7 +16,7 @@ const { t, locale } = useI18n()
       <button
         type="button"
         class="flex xl:hidden items-center"
-        @click="isMobileOpen = true"
+        @click="emits('toggleMobileNav')"
       >
         <span class="flex flex-col gap-1.5">
           <span class="block w-4 h-0.5 bg-muted-500" />

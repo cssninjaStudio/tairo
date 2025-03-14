@@ -9,6 +9,7 @@ export interface GeoJsonLocationProperties {
   phone: string
   website: string
   description: string
+  rating?: number
   bearing?: number
   pitch?: number
   zoom?: number

@@ -5,7 +5,7 @@ import MiniSearch from 'minisearch'
 
 const router = useRouter()
 const isMacLike = useIsMacLike()
-const isOpen = useState('search-open', () => false)
+const isOpen = useSearchOpen()
 const search = ref('')
 
 onKeyStroke('k', (event) => {

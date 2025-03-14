@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { mutedPresets, primaryPresets, switchColorShades } from '~/utils/bundles/colors-switcher'
 
-const isSwitcherOpen = useState('switcher-open', () => false)
+const isSwitcherOpen = useColorSwitcherOpen()
 const currentPrimary = ref('violet')
 const currentMuted = ref('slate')
 

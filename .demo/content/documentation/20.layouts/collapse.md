@@ -30,14 +30,25 @@ items:
 ```vue [<app>/app/layouts/collapse.vue]
 <template>
   <TairoCollapseLayout>
-    <TairoCollapseSidebarHeader />
-    <TairoCollapseSidebarLinks>
-      <TairoCollapseLink />
-    </TairoCollapseSidebarLinks>
+    <TairoCollapseSidebar>
+      <TairoCollapseSidebarHeader />
+      <TairoCollapseSidebarClose />
+      <TairoCollapseSidebarLinks>
+        <TairoCollapseSidebarLink />
 
-    <TairoCollapseLayoutContent>
+        <TairoCollapseCollapsible>
+          <template #trigger>
+            <TairoCollapseCollapsibleTrigger />
+          </template>
+
+          <TairoCollapseCollapsibleLink />
+        </TairoCollapseCollapsible>
+      </TairoCollapseSidebarLinks>
+    </TairoCollapseSidebar>
+
+    <TairoCollapseContent>
       <slot />
-    </TairoCollapseLayoutContent>
+    </TairoCollapseContent>
   </TairoCollapseLayout>
 </template>
 ```
@@ -48,14 +59,29 @@ items:
 ### TairoCollapseLayout
 :doc-component-meta{name="TairoCollapseLayout"}
 
+### TairoCollapseSidebar
+:doc-component-meta{name="TairoCollapseSidebar"}
+
 ### TairoCollapseSidebarHeader
 :doc-component-meta{name="TairoCollapseSidebarHeader"}
+
+### TairoCollapseSidebarClose
+:doc-component-meta{name="TairoCollapseSidebarClose"}
 
 ### TairoCollapseSidebarLinks
 :doc-component-meta{name="TairoCollapseSidebarLinks"}
 
-### TairoCollapseLink
-:doc-component-meta{name="TairoCollapseLink"}
+### TairoCollapseSidebarLink
+:doc-component-meta{name="TairoCollapseSidebarLink"}
 
-### TairoCollapseLayoutContent
-:doc-component-meta{name="TairoCollapseLayoutContent"}
+### TairoCollapseCollapsible
+:doc-component-meta{name="TairoCollapseCollapsible"}
+
+### TairoCollapseCollapsibleTrigger
+:doc-component-meta{name="TairoCollapseCollapsibleTrigger"}
+
+### TairoCollapseCollapsibleLink
+:doc-component-meta{name="TairoCollapseCollapsibleLink"}
+
+### TairoCollapseContent
+:doc-component-meta{name="TairoCollapseContent"}

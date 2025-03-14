@@ -6,7 +6,7 @@ const { isCollapsed } = useLayoutCollapseContext()
   <div>
     <button
       type="button"
-      class="cursor-pointer z-10 flex w-full items-center rounded-lg text-muted-500 dark:text-muted-400 hover:bg-muted-100 hover:text-muted-900 dark:hover:text-white dark:hover:bg-muted-900/50 gap-2 text-sm outline-none focus-visible:nui-focus focus-visible:ring-inset"
+      class="hidden xl:landscape:flex cursor-pointer z-10 w-full items-center rounded-lg text-muted-500 dark:text-muted-400 hover:bg-muted-100 hover:text-muted-900 dark:hover:text-white dark:hover:bg-muted-900/50 gap-2 text-sm outline-none focus-visible:nui-focus focus-visible:ring-inset"
       @click="isCollapsed = !isCollapsed"
     >
       <div

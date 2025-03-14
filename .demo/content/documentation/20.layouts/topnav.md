@@ -32,25 +32,13 @@ items:
   <TairoTopnavLayout>
     <TairoTopnavNavbar>
       <TairoTopnavHeader>
-        <TairoTopnavWorkspace />
+        <TairoTopnavContent />
       </TairoTopnavHeader>
-      <TairoTopnavMenu>
-        <TairoTopnavMenuList>
-          <TairoTopnavMenuItem>
-            <TairoTopnavMenuTrigger />
-            <TairoTopnavMenuContent>
-              <TairoTopnavMenuListItems>
-                ...
-              </TairoTopnavMenuListItems>
-            </TairoTopnavMenuContent>
-          </TairoTopnavMenuItem>
-        </TairoTopnavMenuList>
-      </TairoTopnavMenu>
     </TairoTopnavNavbar>
 
-    <TairoTopnavLayoutContent>
+    <TairoTopnavContent>
       <slot />
-    </TairoTopnavLayoutContent>
+    </TairoTopnavContent>
   </TairoTopnavLayout>
 </template>
 ```
@@ -61,6 +49,11 @@ items:
 ### TairoTopnavLayout
 :doc-component-meta{name="TairoTopnavLayout"}
 
-### TairoTopnavLayout
-:doc-component-meta{name="TairoTopnavLayout"}
+### TairoTopnavNavbar
+:doc-component-meta{name="TairoTopnavNavbar"}
 
+### TairoTopnavHeader
+:doc-component-meta{name="TairoTopnavHeader"}
+
+### TairoTopnavContent
+:doc-component-meta{name="TairoTopnavContent"}

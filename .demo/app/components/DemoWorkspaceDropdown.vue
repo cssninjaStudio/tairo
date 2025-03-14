@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onClickOutside } from '@vueuse/core'
+
 const workspaces = ref([
   {
     id: 1,
@@ -21,11 +23,16 @@ const selectedWorkspace = ref(workspaces.value[0])
 const target = ref(null)
 const open = ref(false)
 
-function openDropdown() {
-  open.value = true
+function toggleDropdown() {
+  open.value = !open.value
 }
 
-// onClickOutside(target, () => (open.value = false))
+onClickOutside(
+  target,
+  () => {
+    open.value = false
+  },
+)
 
 function setWorkspace(workspace: any) {
   selectedWorkspace.value = workspace
@@ -36,13 +43,13 @@ function setWorkspace(workspace: any) {
 <template>
   <div
     ref="target"
-    class="group/workspace relative z-10 ms-auto w-full max-w-[170px] md:ms-0 me-4 md:me-0 md:max-w-[240px]"
+    class="group/workspace relative z-10 w-full"
   >
     <button
       type="button"
       class="w-full max-w-[170px] rounded-lg py-1.5 pe-3 ps-2 border border-muted-200 dark:border-muted-800 transition-colors duration-300 group-hover/workspace:bg-muted-100 dark:group-hover/workspace:bg-muted-900/60 md:max-w-[240px]"
       :class="open && 'bg-muted-100 dark:bg-muted-900/60'"
-      @click="openDropdown()"
+      @click="toggleDropdown()"
     >
       <span class="flex w-full items-center gap-3 text-start">
         <BaseAvatar

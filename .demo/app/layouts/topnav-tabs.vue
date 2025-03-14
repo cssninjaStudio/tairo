@@ -1,124 +1,90 @@
 <script setup lang="ts">
-const isSearchOpen = useState('search-open', () => false)
-const isSwitcherOpen = useState('switcher-open', () => false)
+const isMobileOpen = ref(false)
+
+const menu = [
+  {
+    title: 'Home',
+    link: '/starter-toptabs',
+  },
+  {
+    title: 'Projects',
+    link: '/dashboards/widgets',
+  },
+  {
+    title: 'Team',
+    link: '/',
+  },
+  {
+    title: 'Reports',
+    link: '/',
+  },
+  {
+    title: 'Settings',
+    link: '/',
+  },
+]
 </script>
 
 <template>
-  <TairoTopnavLayout>
-    <TairoTopnavNavbar class="px-4 md:px-6 lg:px-8 xl:px-10">
-      <TairoTopnavHeader>
-        <div class="flex items-center gap-3">
-          <NuxtLink to="/" class="flex items-center gap-3">
-            <TairoLogo class="size-8 text-primary-heavy dark:text-primary-light" />
-          </NuxtLink>
-          <TairoTopnavWorkspace />
-        </div>
-        <div class="flex items-center gap-3">
-          <button
-            type="button"
-            class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
-            @click="
-              () => {
-                const isOpen = useState('switcher-open', () => false)
-                isOpen.value = true
-              }
-            "
-          >
-            <Icon
-              name="solar:palette-round-linear"
-              class="text-muted-400 size-5"
-            />
-          </button>
-          <div
-            role="button"
-            class="cursor-pointer h-8 w-36 hidden md:flex items-center justify-between bg-white dark:bg-muted-900 text-muted-400 hover:text-muted-600 dark:hover:text-muted-200 hover:ring-muted-300 dark:hover:ring-muted-700 gap-2 ps-3 pe-1 py-1 rounded-md ring-1 ring-muted-200 dark:ring-muted-800 transition-colors duration-300"
-            @click="isSearchOpen = true"
-          >
-            <div class="pointer-events-none">
-              <span class="font-sans text-sm">
-                Search...
-              </span>
-            </div>
-            <div class="flex gap-1">
-              <BaseKbd
-                size="sm"
-                variant="default"
-                class="!font-semibold h-6!"
-              >
-                Ctrl
-              </BaseKbd>
-              <BaseKbd
-                size="sm"
-                variant="default"
-                class="!px-2 !font-semibold h-6!"
-              >
-                K
-              </BaseKbd>
-            </div>
-          </div>
-          <BaseButton
-            size="icon-sm"
-            variant="ghost"
-            rounded="md"
-            class="md:hidden"
-            @click="isSearchOpen = true"
-          >
-            <Icon
-              name="lucide:search"
-              class="size-5 text-muted-400 dark:text-muted-300"
-            />
-          </BaseButton>
-          <div class="ms-auto scale-[0.8]">
-            <BaseThemeSwitch />
-          </div>
-          <div class="relative z-10">
-            <BaseDropdown
-              variant="default"
-              :bindings="{
-                content: {
-                  align: 'end',
-                  sideOffset: 10,
-                },
-              }"
+  <TairoTopnavLayout class="[--tairo-topnav-content-width:72rem]">
+    <TairoTopnavNavbar>
+      <TairoTopnavHeader hide="scroll-down" class="justify-center">
+        <TairoTopnavContent class="flex items-center justify-bettween px-4 md:px-6 lg:px-8 xl:px-10">
+          <TairoMenu class="flex-1 hidden md:flex shrink-0">
+            <TairoMenuList>
+              <TairoMenuItem v-for="item in menu" :key="item.title">
+                <TairoMenuLink as-child>
+                  <NuxtLink :to="item.link" exact-active-class="text-primary-500">
+                    {{ item.title }}
+                  </NuxtLink>
+                </TairoMenuLink>
+              </TairoMenuItem>
+            </TairoMenuList>
+          </TairoMenu>
+          <div class="flex-1 flex md:hidden">
+            <button
+              type="button"
+              class="flex items-center"
+              @click="isMobileOpen = !isMobileOpen"
             >
-              <template #button>
-                <button
-                  type="button"
-                >
-                  <BaseChip size="sm" color="custom" :offset="3" class="text-success-500">
-                    <img
-                      src="/img/avatars/10.svg"
-                      class="size-8 rounded-full object-cover"
-                    >
-                  </BaseChip>
-                </button>
-              </template>
-              <BaseDropdownItem>Leads</BaseDropdownItem>
-              <BaseDropdownItem>Projects</BaseDropdownItem>
-              <BaseDropdownItem>Team</BaseDropdownItem>
-              <BaseDropdownItem>Reports</BaseDropdownItem>
-              <BaseDropdownItem>
-                Settings
-                <template #end>
-                  <BaseKbd size="sm">
-                    <span class="text-xs font-mono">⌘</span>
-                  </BaseKbd>
-                  <BaseKbd size="sm">
-                    <span class="text-xs font-mono px-0.5">P</span>
-                  </BaseKbd>
-                </template>
-              </BaseDropdownItem>
-            </BaseDropdown>
+              <span class="flex flex-col gap-1.5">
+                <span class="block w-4 h-0.5 bg-muted-500" />
+                <span class="block w-5 h-0.5 bg-muted-500" />
+              </span>
+            </button>
           </div>
-        </div>
+          <div class="flex items-center gap-3">
+            <NuxtLink to="/" class="flex items-center gap-3">
+              <TairoLogo class="size-8 text-primary-heavy dark:text-primary-light" />
+            </NuxtLink>
+          </div>
+          <DemoToolbarTopnav class="flex-1" />
+        </TairoTopnavContent>
       </TairoTopnavHeader>
-      <TairoTopnavTabs>
-        <TairoTopnavTab to="/starter-toptabs" label="Home" />
-        <TairoTopnavTab to="/" label="Projects" />
-        <TairoTopnavTab to="/" label="Team" />
-        <TairoTopnavTab to="/" label="Reports" />
-        <TairoTopnavTab to="/" label="Settings" />
-      </TairoTopnavTabs>
     </TairoTopnavNavbar>
+    <TairoTopnavContent class="pt-20 min-h-screen">
+      <slot />
+    </TairoTopnavContent>
+
+    <TairoMobileDrawer v-model="isMobileOpen">
+      <div class="space-y-3">
+        <div>
+          <ul class="font-sans text-lg space-y-2">
+            <li
+              v-for="item in menu"
+              :key="item.link"
+            >
+              <NuxtLink
+                :to="item.link"
+                class="text-muted-600 dark:text-muted-400 underline-offset-8"
+                exact-active-class="underline font-medium text-muted-900! dark:text-white!"
+              >
+                {{ item.title }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </TairoMobileDrawer>
   </TairoTopnavLayout>
 </template>

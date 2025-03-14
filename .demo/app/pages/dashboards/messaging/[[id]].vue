@@ -81,21 +81,6 @@ async function submitMessage() {
       class="relative flex w-full transition-all duration-300 h-[calc(100dvh_-_56px)] -mt-6"
     >
       <div class="flex w-full h-full flex-col grow">
-        <!-- Header -->
-        <!-- <div
-          class="flex h-16 w-full items-center justify-between px-4 sm:px-8"
-        >
-          <TairoInput
-            v-model="search"
-            rounded="lg"
-            placeholder="Search"
-            icon="lucide:search"
-          />
-
-          <TairoSidebarTools
-            class="relative -end-4 z-20 flex h-16 w-full scale-90 items-center justify-end gap-2 sm:end-0 sm:scale-100"
-          />
-        </div> -->
         <!-- Body -->
         <div
           ref="chatEl"

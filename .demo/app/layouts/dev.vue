@@ -729,7 +729,7 @@ const menu = [
   },
 ]
 
-const isSwitcherOpen = useState('switcher-open', () => false)
+const isSwitcherOpen = useColorSwitcherOpen()
 
 const route = useRoute()
 const sidebarId = ref(getRouteSidebarId())
@@ -765,7 +765,9 @@ function getRouteSidebarId() {
 
 <template>
   <TairoSidebarLayout
-    v-model="sidebarId" :class="[
+    v-slot="{ toggleMobileNav }"
+    v-model="sidebarId"
+    :class="[
       sidebarId === 'Messaging' ? '[--tairo-sidebar-subsidebar-width:4.5rem]' : '',
       sidebarId === 'Inbox' ? '[--tairo-sidebar-subsidebar-width:3.5rem]' : '',
       sidebarId === 'Calendar' ? '[--tairo-sidebar-subsidebar-width:3.5rem]' : '',
@@ -1032,11 +1034,13 @@ function getRouteSidebarId() {
       </TairoSidebarSubsidebar>
     </TairoSidebarLayoutNav>
 
-    <TairoSidebarLayoutContent class="min-h-screen">
+    <TairoSidebarContent class="min-h-screen">
       <div class="px-4 md:px-6 xl:px-8">
-        <DemoToolbar />
+        <DemoToolbar
+          @toggle-mobile-nav="toggleMobileNav"
+        />
       </div>
       <slot />
-    </TairoSidebarLayoutContent>
+    </TairoSidebarContent>
   </TairoSidebarLayout>
 </template>

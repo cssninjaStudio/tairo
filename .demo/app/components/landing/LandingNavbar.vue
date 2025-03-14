@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const isSearchOpen = useState('search-open', () => false)
-const isMobileOpen = ref(false)
+const isSearchOpen = useSearchOpen()
+const isMobileOpen = useMobileNavOpen()
+const isSwitcherOpen = useColorSwitcherOpen()
 
 const metaKey = useMetaKey()
 </script>
@@ -24,25 +25,26 @@ const metaKey = useMetaKey()
         </NuxtLink>
       </div>
       <div
-        class="ltablet:static ltablet:w-auto ltablet:flex ltablet:flex-row dark:bg-muted-950 ltablet:bg-transparent! ltablet:mx-0 fixed inset-x-0 top-20 mx-auto w-[calc(100%_-_2rem)] items-center justify-center bg-white lg:static lg:mx-0 lg:flex lg:w-auto lg:flex-row lg:bg-transparent!"
-        :class="[
-          isMobileOpen
-            ? 'shadow-muted-300/30 dark:shadow-muted-900/20 group-[&.scrolled]/landing:ltablet:mt-0 group-[&:not(.scrolled)]/landing:ltablet:mt-0 flex flex-col space-y-4 rounded-xl p-6 shadow-xl group-[&.scrolled]/landing:mt-2 group-[&:not(.scrolled)]/landing:mt-4 motion-safe:transition-all motion-safe:duration-200 group-[&.scrolled]/landing:lg:mt-0 group-[&:not(.scrolled)]/landing:lg:mt-0'
-            : 'hidden',
-        ]"
+        class="hidden ltablet:static ltablet:w-auto ltablet:flex ltablet:flex-row dark:bg-muted-950 ltablet:bg-transparent! ltablet:mx-0 fixed inset-x-0 top-20 mx-auto w-[calc(100%_-_2rem)] items-center justify-center bg-white lg:static lg:mx-0 lg:flex lg:w-auto lg:flex-row lg:bg-transparent!"
       >
-        <NuxtLink
-          to="/demos"
-          class="inline-flex items-center justify-center px-6"
-        >
-          Prebuilt pages
-        </NuxtLink>
-        <NuxtLink
-          to="/documentation"
-          class="inline-flex items-center justify-center px-6"
-        >
-          Documentation
-        </NuxtLink>
+        <TairoMenu>
+          <TairoMenuList class="flex-col lg:flex-row">
+            <TairoMenuItem>
+              <TairoMenuLink as-child>
+                <NuxtLink to="/demos" active-class="text-primary-500">
+                  Prebuilt pages
+                </NuxtLink>
+              </TairoMenuLink>
+            </TairoMenuItem>
+            <TairoMenuItem>
+              <TairoMenuLink as-child>
+                <NuxtLink to="/documentation" active-class="text-primary-500">
+                  Documentation
+                </NuxtLink>
+              </TairoMenuLink>
+            </TairoMenuItem>
+          </TairoMenuList>
+        </TairoMenu>
         <div class="px-6">
           <button
             type="button"
@@ -70,8 +72,7 @@ const metaKey = useMetaKey()
           class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-9 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
           @click="
             () => {
-              const isOpen = useState('switcher-open', () => false)
-              isOpen.value = true
+              isSwitcherOpen = true
             }
           "
         >

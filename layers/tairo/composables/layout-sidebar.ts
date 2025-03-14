@@ -3,6 +3,7 @@ import type { InjectionKey } from 'vue'
 interface LayoutSidebarContext {
   isMobileOpen: Ref<boolean>
   currentSubsidebarId: Ref<string | undefined>
+  toggleMobileNav: () => void
 }
 
 const LayoutSidebarContextSymbol = Symbol('LayoutSidebarContext') as InjectionKey<LayoutSidebarContext>
@@ -19,6 +20,9 @@ export function createLayoutSidebarContext({
   const context = {
     isMobileOpen,
     currentSubsidebarId,
+    toggleMobileNav() {
+      isMobileOpen.value = !isMobileOpen.value
+    },
   }
   provide(LayoutSidebarContextSymbol, context)
   return context

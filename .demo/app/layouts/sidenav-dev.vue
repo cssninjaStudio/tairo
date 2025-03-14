@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const isSwitcherOpen = useState('switcher-open', () => false)
+const isSwitcherOpen = useColorSwitcherOpen()
 
 const menu = [
   {
@@ -153,7 +153,7 @@ const companies = [
 </script>
 
 <template>
-  <TairoSidenavLayout>
+  <TairoSidenavLayout v-slot="{ toggleMobileNav }">
     <TairoSidenavSidebar>
       <TairoSidenavSidebarHeader>
         <NuxtLink to="/">
@@ -163,9 +163,9 @@ const companies = [
           <BaseThemeSwitch />
         </div>
       </TairoSidenavSidebarHeader>
-      <TairoSidenavLinks class="p-4 grow">
+      <TairoSidenavSidebarLinks class="p-4 grow">
         <template v-for="item in menu" :key="item.label">
-          <TairoSidenavLink
+          <TairoSidenavSidebarLink
             v-if="!item.children"
             :to="item.to"
             :icon="item.icon"
@@ -173,7 +173,7 @@ const companies = [
           />
           <TairoSidenavCollapsible
             v-else
-            :open="item.children.some((child) => child.to === $route.path) || undefined"
+            :default-open="item.children.some((child) => child.to === $route.path) || undefined"
           >
             <template #trigger>
               <TairoSidenavCollapsibleTrigger :icon="item.icon" :label="item.label" />
@@ -187,43 +187,43 @@ const companies = [
           </TairoSidenavCollapsible>
         </template>
         <TairoSidenavSidebarDivider />
-        <TairoSidenavLink to="/" icon="solar:bolt-linear" label="Daily perks" count="3" />
-        <TairoSidenavLink icon="solar:palette-round-linear" label="Customize" @click="isSwitcherOpen = true" />
+        <TairoSidenavSidebarLink to="/" icon="solar:bolt-linear" label="Daily perks" count="3" />
+        <TairoSidenavSidebarLink icon="solar:palette-round-linear" label="Customize" @click="isSwitcherOpen = true" />
         <TairoSidenavSidebarDivider />
         <BaseHeading size="xs" weight="medium" class="uppercase mt-2 mb-3">
           Recently viewed
         </BaseHeading>
-        <TairoSidenavLink v-for="person in people" :key="person.name" to="/">
+        <TairoSidenavSidebarLink v-for="person in people" :key="person.name" to="/">
           <BaseAvatar size="xxs" :src="person.avatar" />
           <span class="relative">{{ person.name }}</span>
           <span v-if="person.count" class="ms-auto bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset">
             {{ person.count }}
           </span>
-        </TairoSidenavLink>
+        </TairoSidenavSidebarLink>
         <TairoSidenavSidebarDivider />
         <BaseHeading size="xs" weight="medium" class="uppercase mt-2 mb-3">
           Companies
         </BaseHeading>
-        <TairoSidenavLink v-for="company in companies" :key="company.name" to="/">
+        <TairoSidenavSidebarLink v-for="company in companies" :key="company.name" to="/">
           <BaseAvatar size="xxs" :src="company.logo" />
           <span class="relative">{{ company.name }}</span>
           <span v-if="company.count" class="ms-auto bg-muted-50 text-muted-700 ring-muted-300 dark:bg-muted-800 dark:text-muted-200 dark:ring-muted-700 relative ms-auto inline-flex shrink-0 items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset">
             {{ company.count }}
           </span>
-        </TairoSidenavLink>
-      </TairoSidenavLinks>
-      <TairoSidenavLinks class="p-4 shrink-0">
-        <TairoSidenavLink to="/">
+        </TairoSidenavSidebarLink>
+      </TairoSidenavSidebarLinks>
+      <TairoSidenavSidebarLinks class="p-4 shrink-0">
+        <TairoSidenavSidebarLink to="/">
           <BaseAvatar size="xxs" src="/img/avatars/10.svg" />
           <span class="relative">My Account</span>
-        </TairoSidenavLink>
-      </TairoSidenavLinks>
+        </TairoSidenavSidebarLink>
+      </TairoSidenavSidebarLinks>
     </TairoSidenavSidebar>
-    <TairoSidenavLayoutContent class="min-h-screen">
+    <TairoSidenavContent class="min-h-screen">
       <div class="px-4 md:px-6 xl:px-8">
-        <TairoSidenavToolbar />
+        <DemoToolbar @toggle-mobile-nav="toggleMobileNav" />
       </div>
       <slot />
-    </TairoSidenavLayoutContent>
+    </TairoSidenavContent>
   </TairoSidenavLayout>
 </template>

@@ -87,7 +87,7 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
               v-if="data?.data"
               v-model="selectedProject"
               :items="data.data"
-              :display-value="(item) => item.name"
+              :display-value="(item) => item?.name"
               rounded="lg"
               icon="lucide:search"
               placeholder="Search..."

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const isSwitcherOpen = useState('switcher-open', () => false)
+const isSwitcherOpen = useColorSwitcherOpen()
 
 const menu = [
   {
@@ -567,64 +567,80 @@ const menu = [
 </script>
 
 <template>
-  <TairoCollapseLayout>
+  <TairoCollapseLayout v-slot="{ isCollapsed, toggleMobileNav }">
     <TairoCollapseSidebar>
-      <TairoCollapseSidebarHeader v-slot="{ isCollapsed }">
+      <TairoCollapseSidebarHeader>
         <NuxtLink to="/" class="flex items-center" :class="isCollapsed ? 'w-full justify-center!' : ''">
           <TairoLogo v-if="isCollapsed" class="size-8 text-primary-heavy dark:text-primary-light mx-auto" />
           <TairoLogoText v-else class="h-7 text-primary-heavy dark:text-primary-light mx-3" />
         </NuxtLink>
       </TairoCollapseSidebarHeader>
+      <TairoCollapseSidebarClose class="mx-4 my-3" />
       <TairoCollapseSidebarLinks class="px-4 space-y-1 grow">
-        <TairoCollapseSidebarClose class="my-3" />
         <template v-for="item in menu" :key="item.label">
-          <TairoCollapseLink
+          <BaseTooltip
             v-if="!item.children"
-            :to="item.to"
-            :icon="item.icon"
-            :label="item.label"
-          />
+            :content="item.label"
+            :disabled="!isCollapsed"
+            :bindings="{ content: { side: 'right' } }"
+          >
+            <TairoCollapseSidebarLink
+              :to="item.to"
+              :icon="item.icon"
+              :label="item.label"
+            />
+          </BaseTooltip>
           <TairoCollapseCollapsible
             v-else
-            :open="item.children.some((child) => child.to === $route.path) || undefined"
+            :default-open="item.children.some((child) => child.to === $route.path) || undefined"
           >
             <template #trigger>
-              <TairoCollapseCollapsibleTrigger
-                :icon="item.icon"
-                :label="item.label"
-              />
+              <BaseTooltip
+                :content="item.label"
+                :disabled="!isCollapsed"
+                :bindings="{ content: { side: 'right' } }"
+              >
+                <TairoCollapseCollapsibleTrigger
+                  :icon="item.icon"
+                  :label="item.label"
+                />
+              </BaseTooltip>
             </template>
             <TairoCollapseCollapsibleLink
               v-for="child in item.children"
               :key="child.label"
               :to="child.to"
               :label="child.label"
+              data-state="active"
             />
           </TairoCollapseCollapsible>
         </template>
       </TairoCollapseSidebarLinks>
       <TairoCollapseSidebarLinks class="px-4 py-2 space-y-1 shrink-0">
-        <TairoCollapseLink
-          tabindex="0"
-          icon="solar:palette-round-linear"
-          label="Customize"
-          @click="isSwitcherOpen = true"
-        />
-        <TairoCollapseLink
-          v-slot="{ isCollapsed }"
-          to="/"
+        <BaseTooltip
+          content="Customize"
+          :disabled="!isCollapsed"
+          :bindings="{ content: { side: 'right' } }"
         >
+          <TairoCollapseSidebarLink
+            tabindex="0"
+            icon="solar:palette-round-linear"
+            label="Customize"
+            @click="isSwitcherOpen = true"
+          />
+        </BaseTooltip>
+        <TairoCollapseSidebarLink to="/">
           <BaseAvatar size="xxs" src="/img/avatars/10.svg" />
           <span v-if="!isCollapsed" class="-ms-1">Account</span>
-        </TairoCollapseLink>
+        </TairoCollapseSidebarLink>
       </TairoCollapseSidebarLinks>
     </TairoCollapseSidebar>
 
-    <TairoCollapseLayoutContent class="min-h-screen">
+    <TairoCollapseContent class="min-h-screen">
       <div class="px-4 md:px-6 xl:px-8">
-        <TairoCollapseToolbar />
+        <DemoToolbar @toggle-mobile-nav="toggleMobileNav" />
       </div>
       <slot />
-    </TairoCollapseLayoutContent>
+    </TairoCollapseContent>
   </TairoCollapseLayout>
 </template>

@@ -10,7 +10,7 @@ const { isCollapsed } = useLayoutCollapseContext()
 <template>
   <CollapsibleTrigger
     class="cursor-pointer flex w-full items-center justify-between rounded-lg group-data-[state=open]:bg-muted-100 dark:group-data-[state=open]:bg-muted-900 group-data-[state=open]:text-muted-900 dark:group-data-[state=open]:text-white group-data-[state=closed]:text-muted-500 dark:group-data-[state=closed]:text-muted-400 group-data-[state=closed]:hover:bg-muted-100 dark:group-data-[state=closed]:hover:bg-muted-900 group-data-[state=closed]:hover:text-muted-900 dark:group-data-[state=closed]:hover:text-muted-100 outline-none focus-visible:nui-focus focus-visible:ring-inset"
-    @click.stop.prevent="isCollapsed = false"
+    @click="isCollapsed = false"
   >
     <div
       class="z-10 flex h-10 w-full items-center text-sm"
