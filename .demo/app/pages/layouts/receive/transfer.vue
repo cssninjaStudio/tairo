@@ -151,8 +151,8 @@ function setAccount(account: any) {
             Transfer to:
           </BaseHeading>
 
-          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:end-0', menu: 'w-full!' }">
-            <template #button="{ open }">
+          <BaseDropdown rounded="lg">
+            <template #button>
               <BaseButton
                 size="xl"
                 rounded="lg"
@@ -173,7 +173,7 @@ function setAccount(account: any) {
                       size="xs"
                       class="text-muted-500 dark:text-muted-400 block"
                     >
-                      ${{ request.account?.balance.toFixed(2) }}
+                      {{ formatPrice(request.account?.balance) }}
                     </BaseText>
                   </div>
                   <span v-else>
@@ -181,8 +181,7 @@ function setAccount(account: any) {
                   </span>
                   <Icon
                     name="lucide:chevron-down"
-                    class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                    :class="open && 'rotate-180'"
+                    class="text-muted-400 ms-auto size-4 transition-transform duration-300 in-data-[state=open]:rotate-180"
                   />
                 </span>
               </BaseButton>
@@ -191,7 +190,7 @@ function setAccount(account: any) {
               v-for="account in accounts.filter((account) => account.id !== request.account?.id)"
               :key="account.id"
               :title="`${account.type} ${account.label}`"
-              :text="`$${account.balance.toFixed(2)}`"
+              :text="formatPrice(account.balance)"
               @click="setAccount(account)"
             >
               <template #start>
@@ -273,8 +272,8 @@ function setAccount(account: any) {
             Transfer to:
           </BaseHeading>
 
-          <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:end-0', menu: 'w-full!' }">
-            <template #button="{ open }">
+          <BaseDropdown rounded="lg">
+            <template #button>
               <BaseButton
                 size="xl"
                 rounded="lg"
@@ -295,7 +294,7 @@ function setAccount(account: any) {
                       size="xs"
                       class="text-muted-500 dark:text-muted-400 block"
                     >
-                      ${{ request.account?.balance.toFixed(2) }}
+                      {{ formatPrice(request.account?.balance) }}
                     </BaseText>
                   </div>
                   <span v-else>
@@ -303,8 +302,7 @@ function setAccount(account: any) {
                   </span>
                   <Icon
                     name="lucide:chevron-down"
-                    class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                    :class="open && 'rotate-180'"
+                    class="text-muted-400 ms-auto size-4 transition-transform duration-300 in-data-[state=open]:rotate-180"
                   />
                 </span>
               </BaseButton>
@@ -313,7 +311,7 @@ function setAccount(account: any) {
               v-for="account in accounts.filter((account) => account.id !== request.account?.id)"
               :key="account.id"
               :title="`${account.type} ${account.label}`"
-              :text="`$${account.balance.toFixed(2)}`"
+              :text="formatPrice(account.balance)"
               @click="setAccount(account)"
             >
               <template #start>
@@ -361,8 +359,8 @@ function setAccount(account: any) {
         </div>
         <!-- Account -->
 
-        <BaseDropdown rounded="lg" :classes="{ menuWrapper: 'w-full [&>div]:end-0', menu: 'w-full!' }">
-          <template #button="{ open }">
+        <BaseDropdown rounded="lg">
+          <template #button>
             <BaseButton
               v-focus
               size="xl"
@@ -384,7 +382,7 @@ function setAccount(account: any) {
                     size="xs"
                     class="text-muted-500 dark:text-muted-400 block"
                   >
-                    ${{ request.account.balance.toFixed(2) }}
+                    {{ formatPrice(request.account.balance) }}
                   </BaseText>
                 </div>
                 <span v-else>
@@ -392,8 +390,7 @@ function setAccount(account: any) {
                 </span>
                 <Icon
                   name="lucide:chevron-down"
-                  class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                  :class="open && 'rotate-180'"
+                  class="text-muted-400 ms-auto size-4 transition-transform duration-300 in-data-[state=open]:rotate-180"
                 />
               </span>
             </BaseButton>
@@ -402,7 +399,7 @@ function setAccount(account: any) {
             v-for="account in accounts.filter((account) => account.id !== request.account?.id)"
             :key="account.id"
             :title="`${account.type} ${account.label}`"
-            :text="`$${account.balance.toFixed(2)}`"
+            :text="formatPrice(account.balance)"
             @click="setAccount(account)"
           >
             <template #start>

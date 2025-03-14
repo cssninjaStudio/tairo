@@ -64,7 +64,7 @@ onBeforeMount(checkPreviousSteps)
               weight="medium"
               class="text-muted-800 dark:text-muted-100"
             >
-              ${{ request.amount?.toFixed(2) }}
+              {{ formatPrice(request.amount) }}
             </BaseHeading>
           </div>
           <!-- Payment method -->
@@ -132,7 +132,7 @@ onBeforeMount(checkPreviousSteps)
             Transfer from
           </BaseParagraph>
           <div
-            class="dark:bg-muted-800 border-muted-200 dark:border-muted-700 w-full rounded-xl border bg-white p-4"
+            class="dark:bg-muted-950 border-muted-200 dark:border-muted-800 w-full rounded-lg border bg-white p-4"
           >
             <div class="flex w-full items-center gap-3 text-start">
               <TairoLogo class="text-primary-500 size-8" />
@@ -147,7 +147,7 @@ onBeforeMount(checkPreviousSteps)
                   size="xs"
                   class="text-muted-500 dark:text-muted-400 block"
                 >
-                  ${{ request.account?.balance.toFixed(2) }}
+                  {{ formatPrice(request.account?.balance) }}
                 </BaseText>
               </div>
               <div class="ms-auto pe-4">
