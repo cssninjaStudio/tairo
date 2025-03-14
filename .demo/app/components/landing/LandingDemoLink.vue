@@ -81,7 +81,8 @@ const props = defineProps<{
       <BaseTag
         v-if="props.preview?.new"
         rounded="full"
-        class="absolute end-3 top-3"
+        variant="none"
+        class="absolute end-3 top-3 bg-destructive-600 text-white"
       >
         New
       </BaseTag>
