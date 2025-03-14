@@ -61,7 +61,7 @@ definePageMeta({
           class="divide-muted-200 dark:divide-muted-800 space-y-8 divide-y pt-6"
         >
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+          <div class="flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar
               size="sm"
               src="/img/logos/companies/quickbooks-full.svg"
@@ -85,7 +85,7 @@ definePageMeta({
                 financial information for you, eliminating manual data entry.
               </BaseParagraph>
             </div>
-            <div class="ltablet:ms-auto lg:ms-auto">
+            <div class="lg:ms-auto">
               <BaseButton
                 rounded="md"
                 size="sm"
@@ -96,7 +96,7 @@ definePageMeta({
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+          <div class="flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar size="sm" src="/img/logos/companies/xero-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
@@ -117,7 +117,7 @@ definePageMeta({
                 information for you, eliminating manual data entry.
               </BaseParagraph>
             </div>
-            <div class="ltablet:ms-auto lg:ms-auto">
+            <div class="lg:ms-auto">
               <BaseButton
                 rounded="md"
                 size="sm"
@@ -128,7 +128,7 @@ definePageMeta({
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+          <div class="flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar
               size="sm"
               src="/img/logos/companies/freshbooks-full.svg"
@@ -152,7 +152,7 @@ definePageMeta({
                 financial information for you, eliminating manual data entry.
               </BaseParagraph>
             </div>
-            <div class="ltablet:ms-auto lg:ms-auto">
+            <div class="lg:ms-auto">
               <BaseButton
                 rounded="md"
                 size="sm"
@@ -185,7 +185,7 @@ definePageMeta({
           class="divide-muted-200 dark:divide-muted-800 divide-y pt-6"
         >
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+          <div class="flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar size="sm" src="/img/logos/companies/zapier-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
@@ -206,7 +206,7 @@ definePageMeta({
                 financial information for you, eliminating manual data entry.
               </BaseParagraph>
             </div>
-            <div class="ltablet:ms-auto lg:ms-auto">
+            <div class="lg:ms-auto">
               <BaseButton
                 rounded="md"
                 size="sm"
@@ -217,7 +217,7 @@ definePageMeta({
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+          <div class="flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar size="sm" src="/img/logos/companies/google-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
@@ -238,7 +238,7 @@ definePageMeta({
                 financial information for you, eliminating manual data entry.
               </BaseParagraph>
             </div>
-            <div class="ltablet:ms-auto lg:ms-auto">
+            <div class="lg:ms-auto">
               <BaseButton
                 rounded="md"
                 size="sm"
@@ -249,7 +249,7 @@ definePageMeta({
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+          <div class="flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar size="sm" src="/img/logos/companies/stripe-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
@@ -270,7 +270,7 @@ definePageMeta({
                 financial information for you, eliminating manual data entry.
               </BaseParagraph>
             </div>
-            <div class="ltablet:ms-auto lg:ms-auto">
+            <div class="lg:ms-auto">
               <BaseButton
                 rounded="md"
                 size="sm"
@@ -281,7 +281,7 @@ definePageMeta({
             </div>
           </div>
           <!-- Item -->
-          <div class="ltablet:flex-row flex flex-col gap-3 py-6 lg:flex-row">
+          <div class="flex flex-col gap-3 py-6 lg:flex-row">
             <BaseAvatar size="sm" src="/img/logos/companies/paypal-full.svg" />
             <div class="max-w-lg">
               <BaseHeading
@@ -302,7 +302,7 @@ definePageMeta({
                 financial information for you, eliminating manual data entry.
               </BaseParagraph>
             </div>
-            <div class="ltablet:ms-auto lg:ms-auto">
+            <div class="lg:ms-auto">
               <BaseButton
                 rounded="md"
                 size="sm"

@@ -95,7 +95,7 @@ const { data, pending, error, refresh } = await useFetch('/api/posts/', {
         </div>
         <div v-else>
           <div
-            class="ltablet:grid-cols-4 grid w-full gap-4 sm:grid-cols-3 lg:grid-cols-4"
+            class="grid w-full gap-4 sm:grid-cols-3 lg:grid-cols-4"
           >
             <TransitionGroup
               enter-active-class="transform-gpu"

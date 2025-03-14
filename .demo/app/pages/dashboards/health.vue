@@ -456,7 +456,7 @@ function useGaugePersonal() {
                     <span>Steps walked</span>
                   </BaseParagraph>
                 </div>
-                <div class="ptablet:hidden min-w-[33.3%] sm:min-w-0">
+                <div class="min-w-[33.3%] sm:min-w-0">
                   <BaseHeading
                     tag="h4"
                     weight="medium"

@@ -2,14 +2,12 @@
 const props = defineProps<{
   label?: string
   hideLabel?: boolean
-  tabletHidden?: boolean
 }>()
 </script>
 
 <template>
   <div
     class="relative flex h-8 items-center justify-end px-6 sm:h-10 sm:justify-center sm:px-2"
-    :class="props.tabletHidden && 'ptablet:hidden'"
   >
     <span
       v-if="props.label"

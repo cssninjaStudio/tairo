@@ -25,7 +25,7 @@ const metaKey = useMetaKey()
         </NuxtLink>
       </div>
       <div
-        class="hidden ltablet:static ltablet:w-auto ltablet:flex ltablet:flex-row dark:bg-muted-950 ltablet:bg-transparent! ltablet:mx-0 fixed inset-x-0 top-20 mx-auto w-[calc(100%_-_2rem)] items-center justify-center bg-white lg:static lg:mx-0 lg:flex lg:w-auto lg:flex-row lg:bg-transparent!"
+        class="hidden dark:bg-muted-950 fixed inset-x-0 top-20 mx-auto w-[calc(100%_-_2rem)] items-center justify-center bg-white lg:static lg:mx-0 lg:flex lg:w-auto lg:flex-row lg:bg-transparent!"
       >
         <TairoMenu>
           <TairoMenuList class="flex-col lg:flex-row">
@@ -86,13 +86,13 @@ const metaKey = useMetaKey()
           rounded="lg"
           variant="primary"
           to="https://go.cssninja.io/buy-tairo"
-          class="ltablet:flex! hidden! lg:flex!"
+          class="hidden! lg:flex!"
         >
           Buy Tairo
         </BaseButton>
         <button
           type="button"
-          class="ltablet:hidden flex items-center justify-center lg:hidden"
+          class="flex items-center justify-center lg:hidden"
           :aria-label="isMobileOpen ? 'Close menu' : 'Open menu'"
           @click="isMobileOpen = !isMobileOpen"
         >

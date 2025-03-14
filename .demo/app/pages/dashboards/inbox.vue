@@ -185,7 +185,7 @@ const panelActive = ref(false)
       >
         <!-- Messages list -->
         <div
-          class="ltablet:w-full bg-muted-50 dark:bg-muted-900 flex size-full flex-col pt-3 lg:w-full"
+          class="bg-muted-50 dark:bg-muted-900 flex size-full flex-col pt-3 lg:w-full"
         >
           <!-- Head (search) -->
           <div class="h-16 w-full px-4 sm:px-8">
@@ -262,15 +262,15 @@ const panelActive = ref(false)
       <SplitterPanel :default-size="80">
         <!-- Message details -->
         <div
-          class="ltablet:static ltablet:grow bg-muted-50 dark:bg-muted-900 border-muted-200 dark:border-muted-800/60 fixed end-0 top-0 z-10 flex h-full flex-col border-s transition-transform duration-300 lg:static lg:grow"
+          class="bg-muted-50 dark:bg-muted-900 border-muted-200 dark:border-muted-800/60 fixed end-0 top-0 z-10 flex h-full flex-col border-s transition-transform duration-300 lg:static lg:grow"
           :class="
             panelActive
               ? 'translate-x-0'
-              : 'translate-x-full ltablet:translate-x-0 lg:translate-x-0'
+              : 'translate-x-full lg:translate-x-0'
           "
         >
           <!-- Toolbar -->
-          <div class="ltablet:max-w-3xl mx-auto w-full lg:px-10">
+          <div class="mx-auto w-full lg:px-10">
             <div
               class="relative z-10 flex lg:hidden h-16 w-full items-center px-8"
             >
@@ -289,17 +289,17 @@ const panelActive = ref(false)
 
             <!-- Message header -->
             <div
-              class="ltablet:flex-row ltablet:items-center border-muted-200 dark:border-muted-800 flex h-20 flex-col justify-between border-b px-8 lg:flex-row lg:items-center"
+              class="border-muted-200 dark:border-muted-800 flex h-20 flex-col justify-between border-b px-8 lg:flex-row lg:items-center"
             >
               <div class="flex items-center gap-x-4">
-                <div class="ltablet:block hidden lg:block">
+                <div class="hidden lg:block">
                   <BaseAvatar
                     size="sm"
                     :src="selectedMessage?.sender.photo"
                     :alt="selectedMessage?.sender.name"
                   />
                 </div>
-                <div class="ltablet:hidden block lg:hidden">
+                <div class="block lg:hidden">
                   <BaseAvatar
                     size="sm"
                     :src="selectedMessage?.sender.photo"
@@ -316,7 +316,7 @@ const panelActive = ref(false)
                 </div>
               </div>
               <div>
-                <div class="ltablet:mb-0 mb-2 flex gap-x-2 lg:mb-0">
+                <div class="mb-2 flex gap-x-2 lg:mb-0">
                   <BaseButton size="icon-sm" rounded="md">
                     <Icon name="solar:reply-2-linear" class="size-4" />
                   </BaseButton>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Layout from './dev.vue'
+import Layout from './topnav-dev.vue'
 </script>
 
 <template>

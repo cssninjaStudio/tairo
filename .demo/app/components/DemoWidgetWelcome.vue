@@ -17,7 +17,7 @@
       </BaseHeading>
 
       <h2
-        class="font-heading ptablet:text-2xl text-muted-900 text-4xl font-medium dark:text-white"
+        class="font-heading text-muted-900 text-4xl font-medium dark:text-white"
       >
         Welcome back, Kendra! 👋
       </h2>

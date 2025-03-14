@@ -103,7 +103,7 @@ const date = ref(new Date())
   <div class="px-4 md:px-6 lg:px-8 pb-20">
     <!-- Investments -->
     <div
-      class="ltablet:overflow-visible flex justify-around gap-6 overflow-x-auto pb-6 lg:overflow-visible"
+      class="flex justify-around gap-6 overflow-x-auto pb-6 lg:overflow-visible"
     >
       <!-- Item -->
       <NuxtLink to="#" class="group flex flex-1 flex-col text-center">
@@ -279,7 +279,7 @@ const date = ref(new Date())
     </div>
     <!-- Tile grid -->
     <div
-      class="ltablet:grid-cols-3 mb-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+      class="mb-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
     >
       <!-- Tile -->
       <div class="relative">
@@ -599,7 +599,7 @@ const date = ref(new Date())
     <!-- Card grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Grid item -->
-      <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
+      <div class="col-span-12 md:col-span-6 lg:col-span-4">
         <BaseCard rounded="lg" class="p-4 md:p-6">
           <div class="mb-8 flex items-center justify-between">
             <BaseHeading
@@ -815,7 +815,7 @@ const date = ref(new Date())
         </BaseCard>
       </div>
       <!-- Grid item -->
-      <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
+      <div class="col-span-12 md:col-span-6 lg:col-span-4">
         <BaseCard class="relative p-4 md:p-6 h-full flex flex-col" rounded="lg">
           <div class="mb-6 flex items-center justify-between">
             <BaseHeading
@@ -840,7 +840,7 @@ const date = ref(new Date())
         </BaseCard>
       </div>
       <!-- Grid item -->
-      <div class="ltablet:col-span-4 col-span-12 md:col-span-6 lg:col-span-4">
+      <div class="col-span-12 md:col-span-6 lg:col-span-4">
         <BaseCard class="p-4" rounded="lg">
           <AddonDatepicker v-model="date" locale="en" label="Start date" />
         </BaseCard>

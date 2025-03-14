@@ -265,7 +265,7 @@ function useStockPrice() {
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 gap-4 lg:col-span-8">
+      <div class="col-span-12 gap-4 lg:col-span-8">
         <div class="flex flex-col gap-4">
           <!-- Tile grid -->
           <div class="grid gap-4 sm:grid-cols-3">
@@ -652,7 +652,7 @@ function useStockPrice() {
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-4">
           <!-- Insights -->
           <div class="relative">

@@ -480,7 +480,7 @@ const activeTab = ref('tab-1')
                 1512
               </span>
               <span
-                class="text-muted-400 ltablet:text-base text-xs sm:text-sm lg:text-base"
+                class="text-muted-400 text-xs sm:text-sm lg:text-base"
               >
                 Posts
               </span>
@@ -492,7 +492,7 @@ const activeTab = ref('tab-1')
                 38.3K
               </span>
               <span
-                class="text-muted-400 ltablet:text-base text-xs sm:text-sm lg:text-base"
+                class="text-muted-400 text-xs sm:text-sm lg:text-base"
               >
                 Followers
               </span>
@@ -504,7 +504,7 @@ const activeTab = ref('tab-1')
                 329
               </span>
               <span
-                class="text-muted-400 ltablet:text-base text-xs sm:text-sm lg:text-base"
+                class="text-muted-400 text-xs sm:text-sm lg:text-base"
               >
                 Following
               </span>
@@ -557,10 +557,10 @@ const activeTab = ref('tab-1')
       </div>
       <!-- Action -->
       <div
-        class="ltablet:justify-start ltablet:ms-auto ltablet:mt-0 mt-4 flex shrink-0 justify-center lg:ms-auto lg:mt-0 lg:justify-start"
+        class="mt-4 flex shrink-0 justify-center lg:ms-auto lg:mt-0 lg:justify-start"
       >
         <BaseButton
-          class="ltablet:w-auto ltablet:mx-0 mx-auto w-52 lg:mx-0 lg:w-auto"
+          class="mx-auto w-52 lg:mx-0 lg:w-auto"
         >
           <Icon name="lucide:plus" class="size-4" />
           <span>Add Account</span>
@@ -901,7 +901,7 @@ const activeTab = ref('tab-1')
         </div>
         <!-- Inner company grid -->
         <div
-          class="ltablet:grid-cols-3 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           <div
             v-for="(company, index) in companies"

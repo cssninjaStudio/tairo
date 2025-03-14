@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ltablet:gap-y-0 relative z-30 mt-32 grid grid-cols-12 gap-y-8 overflow-hidden sm:w-full sm:gap-x-16 lg:gap-y-0"
+    class="relative z-30 mt-32 grid grid-cols-12 gap-y-8 overflow-hidden sm:w-full sm:gap-x-16 lg:gap-y-0"
   >
     <div class="col-span-12">
       <div class="mx-auto flex size-full max-w-xl flex-col justify-center">
@@ -21,14 +21,14 @@
           </BaseHeading>
           <BaseParagraph
             size="lg"
-            class="text-muted-500 dark:text-muted-100 ptablet:max-w-lg ptablet:mx-auto mb-4 max-w-2xl"
+            class="text-muted-500 dark:text-muted-100 mb-4 max-w-2xl"
           >
             Tairo is a powerful Nuxt app starter with a robust and extensible
             codebase. It brings everything you need to build a professional and
             beautiful frontend for your app.
           </BaseParagraph>
           <div
-            class="ptablet:max-w-md ptablet:mx-auto mt-6 grid scale-90 grid-cols-3"
+            class="mt-6 grid scale-90 grid-cols-3"
           >
             <!-- Col -->
             <div class="flex flex-col items-center text-center">

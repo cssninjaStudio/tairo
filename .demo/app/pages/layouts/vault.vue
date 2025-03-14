@@ -78,7 +78,7 @@ function useGaugePersonal() {
   <div class="px-4 md:px-6 lg:px-8 pb-20">
     <div class="grid grid-cols-12 gap-6">
       <!-- Content -->
-      <div class="ltablet:col-span-9 col-span-12 lg:col-span-9">
+      <div class="col-span-12 lg:col-span-9">
         <div class="w-full">
           <!-- Header -->
           <div class="border-muted-200 dark:border-muted-800 border-b py-6">
@@ -150,7 +150,7 @@ function useGaugePersonal() {
               <div
                 class="flex w-full flex-col justify-between sm:flex-row sm:items-center"
               >
-                <div class="ptablet:max-w-sm flex max-w-md flex-col gap-3">
+                <div class="flex max-w-md flex-col gap-3">
                   <BaseParagraph
                     size="sm"
                     class="text-muted-400"
@@ -174,7 +174,7 @@ function useGaugePersonal() {
                   </BaseParagraph>
                 </div>
                 <div
-                  class="ptablet:me-5 ltablet:me-20 mt-10 flex flex-col gap-3 sm:mt-0 lg:me-20"
+                  class="mt-10 flex flex-col gap-3 sm:mt-0 lg:me-20"
                 >
                   <BaseParagraph
                     size="sm"
@@ -254,7 +254,7 @@ function useGaugePersonal() {
         </div>
       </div>
       <!-- Side widgets -->
-      <div class="ltablet:col-span-3 col-span-12 lg:col-span-3">
+      <div class="col-span-12 lg:col-span-3">
         <!-- Column -->
         <div class="relative flex flex-col gap-6">
           <!-- Widget -->

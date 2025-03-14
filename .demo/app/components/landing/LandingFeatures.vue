@@ -26,7 +26,7 @@
           application.
         </BaseParagraph>
       </div>
-      <div class="ltablet:grid-cols-3 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <LandingFeaturesTile title="Nuxt" icon="simple-icons:nuxtdotjs">
           Nuxt is the latest version of the Nuxt.js framework, a powerful SSR
           vue framework.

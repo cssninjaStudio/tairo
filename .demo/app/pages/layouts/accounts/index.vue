@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { DemoPanelAccount } from '#components'
+
 definePageMeta({
   title: 'Accounts',
   preview: {
@@ -44,7 +46,9 @@ const currentAccount = ref()
 
 function openAccountPanel(id: number, accounts: any) {
   currentAccount.value = accounts.find((account: any) => account.id === id)
-  open('account', { account: currentAccount })
+  open(DemoPanelAccount, { account: currentAccount }, {
+    position: 'left',
+  })
 }
 </script>
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { DemoPanelCard } from '#components'
+
 definePageMeta({
   title: 'Credit Cards',
   preview: {
@@ -44,7 +46,7 @@ const currentCard = ref()
 
 function openCardPanel(id: number, cards: any) {
   currentCard.value = cards.find((card: any) => card.id === id)
-  open('card', { card: currentCard })
+  open(DemoPanelCard, { card: currentCard })
 }
 </script>
 

@@ -74,7 +74,7 @@ const date = ref(new Date())
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
+        class="flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
       >
         <div>
           <BaseHeading
@@ -104,7 +104,7 @@ const date = ref(new Date())
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 lg:col-span-8">
         <div class="grid grid-cols-12 gap-4">
           <!-- Grid item -->
           <div class="col-span-6 sm:col-span-3">
@@ -401,7 +401,7 @@ const date = ref(new Date())
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-4">
           <!-- Widget -->
           <BaseCard class="p-6" rounded="lg">

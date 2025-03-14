@@ -199,7 +199,7 @@ const { data, pending, error, refresh } = await useFetch('/api/freelancers', {
                   </div>
                 </div>
                 <div
-                  class="ptablet:hidden flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
+                  class="flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
                 >
                   <BaseAvatarGroup
                     size="xs"

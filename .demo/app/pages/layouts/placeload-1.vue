@@ -68,7 +68,7 @@ const fake = ref('')
                 <BasePlaceload class="h-6 w-24 rounded-full" />
               </div>
               <div
-                class="ptablet:hidden divide-muted-200 dark:divide-muted-700 flex items-center justify-center divide-x"
+                class="divide-muted-200 dark:divide-muted-700 flex items-center justify-center divide-x"
               >
                 <div class="flex flex-col gap-1 px-4 text-center">
                   <BasePlaceload class="h-3 w-16 rounded-lg" />
@@ -81,7 +81,7 @@ const fake = ref('')
                 </div>
               </div>
               <div
-                class="ptablet:hidden flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
+                class="flex w-full items-center justify-center gap-1 py-3 sm:w-[160px] sm:justify-end sm:py-0"
               >
                 <BasePlaceload class="size-8 shrink-0 rounded-full" />
                 <BasePlaceload class="size-8 shrink-0 rounded-full" />

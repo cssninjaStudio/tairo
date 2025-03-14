@@ -171,7 +171,7 @@ const students = [
     <!-- Header -->
     <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
       <div
-        class="ltablet:max-w-full flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
+        class="flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
       >
         <BaseAvatar src="/img/avatars/10.svg" size="lg" />
         <div>
@@ -201,12 +201,12 @@ const students = [
       </div>
     </div>
     <!-- Grid -->
-    <div class="ltablet:gap-4 grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-6">
       <!-- Course Card -->
       <div
         v-for="(course, index) in courses"
         :key="index"
-        class="ltablet:col-span-4 relative col-span-12 sm:col-span-6 lg:col-span-4"
+        class="relative col-span-12 sm:col-span-6 lg:col-span-4"
       >
         <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
           <div class="mb-6">
@@ -297,9 +297,9 @@ const students = [
       </div>
     </div>
     <!-- Grid -->
-    <div class="ltablet:gap-x-4 mt-10 grid grid-cols-12 gap-x-6 gap-y-12">
+    <div class="mt-10 grid grid-cols-12 gap-x-6 gap-y-12">
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4">
         <div class="mb-4">
           <BaseHeading
             as="h2"
@@ -357,7 +357,7 @@ const students = [
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 lg:col-span-8">
         <div class="mb-4">
           <BaseHeading
             as="h2"

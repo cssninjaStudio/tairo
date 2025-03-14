@@ -29,7 +29,7 @@ const itemSubtotal = computed(() =>
 <template>
   <div class="px-4 md:px-6 lg:px-8 pb-20">
     <div class="grid grid-cols-12 gap-4">
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 lg:col-span-8">
         <div class="flex flex-col gap-4">
           <BaseCard
             rounded="md"
@@ -445,7 +445,7 @@ const itemSubtotal = computed(() =>
           </BaseCard>
         </div>
       </div>
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-4">
           <!-- Customer -->
           <BaseCard

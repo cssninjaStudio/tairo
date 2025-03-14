@@ -29,7 +29,6 @@ definePageMeta({
   ],
 })
 
-const { open } = usePanels()
 const route = useRoute()
 const slug = computed(() => route.params.slug)
 

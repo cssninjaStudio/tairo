@@ -18,7 +18,6 @@ const page = computed(() => Number.parseInt((route.query.page as string) ?? '1',
 
 const filter = ref('')
 const perPage = ref(45)
-const { open } = usePanels()
 
 watch([filter, perPage], () => {
   router.push({

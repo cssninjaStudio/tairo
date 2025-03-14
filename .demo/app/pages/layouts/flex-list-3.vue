@@ -128,7 +128,6 @@ function difficultyLabel(itemDifficulty: number) {
                 <DemoFlexTableCell
                   label="category"
                   :hide-label="index > 0"
-                  tablet-hidden
                   class="w-full sm:w-36"
                 >
                   <span

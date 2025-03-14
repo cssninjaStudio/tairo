@@ -18,7 +18,7 @@ definePageMeta({
     <div class="space-y-6">
       <div class="grid grid-cols-12 gap-4">
         <!-- Balance -->
-        <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+        <div class="col-span-12 lg:col-span-6">
           <BaseCard
             rounded="md"
             class="h-full p-4 md:p-6 xl:p-8"
@@ -86,7 +86,7 @@ definePageMeta({
           </BaseCard>
         </div>
         <!-- Orders -->
-        <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+        <div class="col-span-12 lg:col-span-6">
           <BaseCard
             rounded="md"
             variant="none"
@@ -256,7 +256,7 @@ definePageMeta({
           <DemoWidgetTransactionSummary />
         </div>
         <!-- Chart -->
-        <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+        <div class="col-span-12 lg:col-span-6">
           <BaseCard
             rounded="md"
             class="flex h-full flex-col p-4 md:p-6 xl:p-8"
@@ -306,7 +306,7 @@ definePageMeta({
           </BaseCard>
         </div>
         <!-- Chart -->
-        <div class="ltablet:col-span-6 col-span-12 lg:col-span-6">
+        <div class="col-span-12 lg:col-span-6">
           <BaseCard
             rounded="md"
             class="h-full flex-col p-4 md:p-6 xl:p-8"

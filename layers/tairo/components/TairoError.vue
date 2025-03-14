@@ -39,7 +39,6 @@ const description = computed(() => {
   return 'An error has occured. If the problem persists, please contact a system administrator or try again later.'
 })
 
-const app = useAppConfig()
 const handleError = () => clearError({ redirect: '/' })
 const retry = () => clearError()
 
@@ -56,11 +55,7 @@ const showStackTrace = ref(true)
       class="relative items-end!"
     >
       <template #image>
-        <component
-          :is="resolveComponentOrNative(app.tairo?.error.logo.component)"
-          v-if="app.tairo?.error?.logo?.component"
-          v-bind="app.tairo?.error.logo.props"
-        />
+        <slot />
       </template>
 
       <div class="mt-4">

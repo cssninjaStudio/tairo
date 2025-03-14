@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { DemoPanelTask } from '#components'
+
 const { open } = usePanels()
 
 const task = {
@@ -97,7 +99,7 @@ const task = {
 
 <template>
   <div>
-    <BaseButton @click="open('task', { task })">
+    <BaseButton @click="open(DemoPanelTask, { task })">
       Open Panel
     </BaseButton>
   </div>

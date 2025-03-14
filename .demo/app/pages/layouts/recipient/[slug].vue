@@ -116,7 +116,7 @@ function statusColor(itemStatus: string) {
     </div>
     <div class="grid grid-cols-12 gap-4">
       <!-- Info -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-4">
           <!-- Recipient -->
           <BaseCard
@@ -306,7 +306,7 @@ function statusColor(itemStatus: string) {
         </div>
       </div>
       <!-- Content -->
-      <div class="ltablet:col-span-8 col-span-12 lg:col-span-8">
+      <div class="col-span-12 lg:col-span-8">
         <!-- Grid -->
         <div class="grid grid-cols-12 gap-4">
           <!-- tile -->

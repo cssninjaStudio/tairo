@@ -232,22 +232,22 @@ const isMobileOpen = ref(false)
               </TairoMenuContent>
             </TairoMenuItem>
             <TairoMenuItem>
-              <TairoMenuLink as-child>
-                <NuxtLink to="/layouts/form-4" exact-active-class="text-primary-500">
+              <TairoMenuLink as-child :active="$route.path === '/layouts/form-4'">
+                <NuxtLink to="/layouts/form-4">
                   Finance
                 </NuxtLink>
               </TairoMenuLink>
             </TairoMenuItem>
             <TairoMenuItem>
-              <TairoMenuLink as-child>
-                <NuxtLink to="#" exact-active-class="text-primary-500">
+              <TairoMenuLink as-child :active="$route.path === '/layouts'">
+                <NuxtLink to="/layouts">
                   Reports
                 </NuxtLink>
               </TairoMenuLink>
             </TairoMenuItem>
             <TairoMenuItem>
-              <TairoMenuLink as-child>
-                <NuxtLink to="#" exact-active-class="text-primary-500">
+              <TairoMenuLink as-child :active="$route.path === '/dashboards'">
+                <NuxtLink to="/dashboards">
                   Preferences
                 </NuxtLink>
               </TairoMenuLink>

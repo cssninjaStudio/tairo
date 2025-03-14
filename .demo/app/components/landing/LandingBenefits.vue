@@ -25,7 +25,7 @@
           Discover our automated Github access from your cssninja account.
         </BaseParagraph>
       </div>
-      <div class="ptablet:grid-cols-2 grid gap-6 sm:grid-cols-3">
+      <div class="grid gap-6 sm:grid-cols-3">
         <LandingLayersBox
           title="Support portal"
           icon="ph:lifebuoy-duotone"

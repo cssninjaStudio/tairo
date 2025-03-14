@@ -39,7 +39,7 @@ const input = ref('')
       </template>
       <div>
         <div
-          class="ltablet:grid-cols-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           <BaseCard
             v-for="index in 12"

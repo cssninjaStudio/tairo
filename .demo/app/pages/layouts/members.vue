@@ -5,7 +5,6 @@ const page = computed(() => Number.parseInt((route.query.page as string) ?? '1',
 
 const filter = ref('')
 const perPage = ref(45)
-const { open } = usePanels()
 
 watch([filter, perPage], () => {
   router.push({
@@ -55,9 +54,9 @@ const currentMember = ref()
     </div>
     <div class="grid grid-cols-12 gap-6">
       <!-- Navigation -->
-      <div class="ltablet:col-span-5 col-span-12 lg:col-span-5">
+      <div class="col-span-12 lg:col-span-5">
         <ul
-          class="ltablet:flex-col ptablet:overflow-x-auto ltablet:overflow-x-hidden flex gap-1 overflow-x-auto lg:flex-col lg:overflow-x-hidden"
+          class="flex gap-1 overflow-x-auto lg:flex-col lg:overflow-x-hidden"
         >
           <li
             v-for="member in data?.data"
@@ -99,7 +98,7 @@ const currentMember = ref()
         </ul>
       </div>
       <!-- Slug content -->
-      <div class="ltablet:col-span-7 col-span-12 lg:col-span-7">
+      <div class="col-span-12 lg:col-span-7">
         <NuxtPage v-if="currentMember !== undefined" />
         <BaseCard
           v-else

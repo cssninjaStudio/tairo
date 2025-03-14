@@ -446,11 +446,11 @@ function selectFeature(feature?: any) {
 
 <template>
   <div
-    class="map-container ltablet:flex-row flex -mt-6 h-[calc(100dvh_-_56px)] flex-col lg:flex-row"
+    class="map-container flex -mt-6 h-[calc(100dvh_-_56px)] flex-col lg:flex-row"
   >
     <!-- Sidebar -->
     <div
-      class="ltablet:w-96 dark:bg-muted-900 w-full shrink-0 bg-muted-50 h-[calc(100dvh_-_56px)] lg:w-96"
+      class="dark:bg-muted-900 w-full shrink-0 bg-muted-50 h-[calc(100dvh_-_56px)] lg:w-96"
     >
       <div
         class="nui-slimscroll overflow-y-auto p-6 h-[calc(100dvh_-_56px)]!"
@@ -467,7 +467,7 @@ function selectFeature(feature?: any) {
 
         <!-- Cards list -->
         <div
-          class="ptablet:flex-none ptablet:grid ptablet:grid-cols-2 ptablet:pb-10 flex flex-col gap-4"
+          class="flex flex-col gap-4"
         >
           <template v-if="status === 'pending' && !places?.features">
             <BaseCard v-for="index in 5" :key="index" rounded="md" class="p-4 md:p-5">
