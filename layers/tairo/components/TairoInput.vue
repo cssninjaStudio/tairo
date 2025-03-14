@@ -21,10 +21,7 @@ const attrs = useAttrs()
 const forward = useForwardProps(reactiveOmit(props, ['icon']))
 const { forwardRef } = useForwardExpose()
 
-const ctx = useNuiField({
-  defaultValue: undefined,
-  optional: true,
-})
+const ctx = tryUseNuiField()
 const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invalid' in attrs && attrs['aria-invalid'] === 'true'))
 </script>
 
