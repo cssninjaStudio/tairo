@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/image',
     '@nuxt/content',
+    '@nuxt/fonts',
   ],
   content: {
     build: {
@@ -71,17 +72,15 @@ export default defineNuxtConfig({
 
   css: [
     /**
-     * Load local font with @fontsource packages
-     * @see https://fontsource.org/
-     */
-    '@fontsource-variable/fira-code/index.css',
-    '@fontsource-variable/inter/index.css',
-    '@fontsource-variable/karla/index.css',
-    /**
      * Load Tailwind CSS
      */
     '~/assets/css/main.css',
   ],
+  fonts: {
+    experimental: {
+      processCSSVariables: true,
+    },
+  },
 
   typescript: {
     tsConfig: {

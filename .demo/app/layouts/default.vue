@@ -270,23 +270,23 @@ const menu = [
         children: [
           {
             label: 'Sidebar layout',
-            to: '/starter/sidebar',
+            to: '/starters/sidebar',
           },
           {
             label: 'Collapse layout',
-            to: '/starter/collapse',
+            to: '/starters/collapse',
           },
           {
             label: 'Sidenav layout',
-            to: '/starter/sidenav',
+            to: '/starters/sidenav',
           },
           {
             label: 'Topnav layout',
-            to: '/starter/topnav',
+            to: '/starters/topnav',
           },
           {
             label: 'Toptabs layout',
-            to: '/starter/topnav-tabs',
+            to: '/starters/topnav-slim',
           },
         ],
       },
