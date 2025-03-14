@@ -4,7 +4,7 @@
       size="md"
       rounded="lg"
       color="none"
-      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 border bg-white text-gray-500"
+      class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 border bg-white text-muted-500"
     >
       <Icon name="ph:nut-duotone" class="size-5" />
     </BaseIconBox>
@@ -13,7 +13,7 @@
       size="md"
       rounded="lg"
       color="none"
-      class="bg-gray-200 text-gray-500 dark:bg-gray-800"
+      class="bg-muted-200 text-muted-500 dark:bg-muted-800"
     >
       <Icon name="ph:cat-duotone" class="size-5" />
     </BaseIconBox>

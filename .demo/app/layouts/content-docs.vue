@@ -42,7 +42,7 @@ const { data: navigation } = await useAsyncData('docs-navigation', () => queryCo
               class="block"
             >
               <TairoLogoText
-                class="h-7 w-auto hidden md:block text-primary-500 px-3"
+                class="h-6 w-auto hidden md:block text-primary-500 px-3"
               />
               <TairoLogo
                 class="size-7 block md:hidden w-auto text-primary-500"

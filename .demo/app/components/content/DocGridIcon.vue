@@ -56,34 +56,33 @@ const iconColor = computed(() => {
 </script>
 
 <template>
-  <BaseCard rounded="lg" class="group/grid-icon flex items-center p-3">
+  <BaseCard rounded="md" class="group/grid-icon flex items-center p-3">
     <BaseIconBox
       v-if="props.name"
-      size="md"
+      size="sm"
       rounded="none"
       mask="blob"
-      variant="none"
-      :class="iconColor"
+      variant="muted"
     >
-      <Icon :name="props.name" class="size-6" />
+      <Icon :name="props.name" class="size-5" />
     </BaseIconBox>
     <div class="ms-3">
       <BaseHeading
         v-if="'default' in $slots"
         as="span"
         size="sm"
-        weight="semibold"
-        class="text-muted-800 dark:text-white"
+        weight="medium"
+        class="text-muted-900 dark:text-white"
       >
         <slot mdc-unwrap="p" />
       </BaseHeading>
-      <BaseText
+      <BaseParagraph
         v-if="'description' in $slots"
         size="xs"
-        class="text-muted-400"
+        class="text-muted-600 dark:text-muted-400"
       >
-        <slot name="description" />
-      </BaseText>
+        <slot name="description" mdc-unwrap="p" />
+      </BaseParagraph>
     </div>
     <div
       v-if="props.to"
