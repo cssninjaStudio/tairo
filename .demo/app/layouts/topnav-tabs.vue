@@ -12,15 +12,15 @@ const menu = [
   },
   {
     title: 'Team',
-    link: '/',
+    link: '/dashboards',
   },
   {
     title: 'Reports',
-    link: '/',
+    link: '/layouts',
   },
   {
     title: 'Settings',
-    link: '/',
+    link: '/layouts/preferences',
   },
 ]
 </script>
@@ -33,8 +33,8 @@ const menu = [
           <TairoMenu class="flex-1 hidden md:flex shrink-0">
             <TairoMenuList>
               <TairoMenuItem v-for="item in menu" :key="item.title">
-                <TairoMenuLink as-child>
-                  <NuxtLink :to="item.link" exact-active-class="text-primary-500">
+                <TairoMenuLink variant="tab" :active="$route.path === item.link" as-child>
+                  <NuxtLink :to="item.link">
                     {{ item.title }}
                   </NuxtLink>
                 </TairoMenuLink>
