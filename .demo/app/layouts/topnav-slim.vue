@@ -4,7 +4,7 @@ const isMobileOpen = ref(false)
 const menu = [
   {
     title: 'Home',
-    link: '/starter-toptabs',
+    link: '/starters/topnav-slim',
   },
   {
     title: 'Projects',

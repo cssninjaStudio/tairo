@@ -125,6 +125,9 @@ export default defineNuxtConfig({
     '/demos': {
       swr: 3600,
     },
+    '/starters/**': {
+      swr: 3600,
+    },
     '/auth/**': {
       swr: 3600,
     },

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Sidenav Layout',
-  layout: 'sidenav-dev',
+  layout: 'sidenav',
   preview: {
     title: 'Sidenav starter layout',
     description: 'For a quick start usage.',

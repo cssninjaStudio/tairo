@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Topnav Layout',
-  layout: 'topnav-dev',
+  layout: 'topnav-slim',
   preview: {
     title: 'Topnav starter layout',
     description: 'For a quick start usage.',
