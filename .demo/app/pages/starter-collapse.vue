@@ -14,5 +14,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div />
+  <DemoStarterSwitcher />
 </template>
