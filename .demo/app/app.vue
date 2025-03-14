@@ -75,7 +75,10 @@ useHead({
 </script>
 
 <template>
-  <BaseProviders :config="{ dir: head.htmlAttrs!.dir, locale }">
+  <BaseProviders
+    :config="{ dir: head.htmlAttrs!.dir, locale }"
+    :toast="{ position: 'top-center' }"
+  >
     <!--
       Global app search modal
       @see .demo/components/DemoAppSearch.vue
