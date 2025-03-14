@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { DemoPanelInvest } from '#components'
 import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 definePageMeta({
@@ -46,7 +47,7 @@ const currentOption = ref()
 
 function openOptionPanel(id: number, options: any) {
   currentOption.value = options.find((option: any) => option.id === id)
-  open('invest', { option: currentOption })
+  open(DemoPanelInvest, { option: currentOption })
 }
 
 const gaugePersonal = reactive(useGaugePersonal())

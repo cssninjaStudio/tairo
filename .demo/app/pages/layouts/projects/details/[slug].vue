@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { DemoPanelTask } from '#components'
+
 definePageMeta({
   title: 'Project Details',
   preview: [
@@ -28,6 +30,7 @@ definePageMeta({
 })
 
 const { open } = usePanels()
+const toasts = useNuiToasts()
 
 const route = useRoute()
 const slug = computed(() => route.params.slug)
@@ -51,9 +54,19 @@ if (!data.value?.project) {
 
 const currentTask = ref()
 
-function openTaskPanel(id: number, tasks: any) {
+async function openTaskPanel(id: number, tasks: any) {
   currentTask.value = tasks.find((task: any) => task.id === id)
-  open('task', { task: currentTask })
+
+  const [message] = await open(DemoPanelTask, {
+    task: currentTask,
+  })
+
+  if (message) {
+    toasts.add({
+      title: 'Comment added',
+      description: message.comment,
+    })
+  }
 }
 </script>
 

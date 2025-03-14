@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { DemoPanelTask } from '#components'
 import { Container, Draggable } from 'vue3-smooth-dnd'
 
 definePageMeta({
@@ -66,7 +67,8 @@ const columns = reactive<Column>({
   },
 })
 
-const { open, close } = usePanels()
+const { open } = usePanels()
+const toasts = useNuiToasts()
 
 const route = useRoute()
 const slug = computed(() => route.params.slug)
@@ -119,17 +121,19 @@ const board = computed(() => Object.values(columns || {}))
 
 const currentTask = ref()
 
-function openTaskPanel(id: number, tasks: any) {
+async function openTaskPanel(id: number, tasks: any) {
   currentTask.value = tasks.find((task: any) => task.id === id)
-  open('task', {
-    task: currentTask,
 
-    // listen to "message" event emited from panel component
-    onMessage: async (message: any) => {
-      // console.log('onMessage', message)
-      close()
-    },
+  const [message] = await open(DemoPanelTask, {
+    task: currentTask,
   })
+
+  if (message) {
+    toasts.add({
+      title: 'Comment added',
+      description: message.comment,
+    })
+  }
 }
 
 function onDrop(column: ColumnContent, dropResult: any) {

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { DemoPanelActivity, DemoPanelLanguage } from '#components'
+
 const emits = defineEmits<{
   toggleMobileNav: []
 }>()
@@ -31,7 +33,7 @@ const { t, locale } = useI18n()
       <button
         type="button"
         class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-800 dark:ring-offset-muted-900 flex size-8 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
-        @click="open('language')"
+        @click="open(DemoPanelLanguage)"
       >
         <img
           class="size-6 rounded-full"
@@ -42,7 +44,7 @@ const { t, locale } = useI18n()
       <button
         type="button"
         class="border-muted-200 hover:ring-muted-200 dark:hover:ring-muted-700 dark:border-muted-700 dark:bg-muted-950 dark:ring-offset-muted-900 flex size-8 items-center justify-center rounded-full border bg-white ring-1 ring-transparent transition-all duration-300 hover:ring-offset-4"
-        @click="open('activity')"
+        @click="open(DemoPanelActivity)"
       >
         <Icon name="solar:widget-2-outline" class="text-muted-400 size-4" />
       </button>

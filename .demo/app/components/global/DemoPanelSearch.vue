@@ -38,42 +38,73 @@ const selectedPerson = ref('')
 </script>
 
 <template>
-  <div
-    class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border bg-white"
-  >
-    <FocusScope trapped loop>
-      <div class="flex h-16 w-full items-center justify-between px-10">
-        <h2
-          class="font-heading text-muted-700 text-lg font-semibold dark:text-white"
-        >
-          Search
-        </h2>
-        <button
-          type="button"
-          class="text-muted-400 focus-visible:nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
-          @click="close"
-        >
-          <Icon name="feather:chevron-left" class="size-6" />
-        </button>
-      </div>
+  <FocusScope class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border bg-white" trapped loop>
+    <div class="flex h-16 w-full items-center justify-between px-10">
+      <h2
+        class="font-heading text-muted-700 text-lg font-semibold dark:text-white"
+      >
+        Search
+      </h2>
+      <button
+        type="button"
+        class="text-muted-400 focus-visible:nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
+        @click="close"
+      >
+        <Icon name="feather:chevron-left" class="size-6" />
+      </button>
+    </div>
 
-      <div class="h-[calc(100dvh_-_64px)] w-full px-10 z-10">
-        <BaseAutocomplete
-          v-model="selectedPerson"
-          size="lg"
-          placeholder="Search people..."
-          by="name"
-          :bindings="{ portal: { disabled: true } }"
-        >
-          <BaseAutocompleteItem v-for="person in people" :key="person.id" :value="person.name">
+    <div class="h-[calc(100dvh_-_64px)] w-full px-10 z-10">
+      <BaseAutocomplete
+        v-model="selectedPerson"
+        size="lg"
+        placeholder="Search people..."
+        by="name"
+        :bindings="{ portal: { disabled: true } }"
+      >
+        <BaseAutocompleteItem v-for="person in people" :key="person.id" :value="person.name">
+          <div
+            class="flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300"
+          >
             <div
-              class="flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300"
+              class="inline-flex size-9 items-center justify-center rounded-full"
             >
+              <img
+                :src="person.avatar"
+                class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
+                alt=""
+              >
+            </div>
+            <div class="ms-3">
+              <h6
+                class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+              >
+                {{ person.name }}
+              </h6>
+              <p class="text-muted-400 font-sans text-xs">
+                {{ person.role }}
+              </p>
+            </div>
+          </div>
+        </BaseAutocompleteItem>
+      </BaseAutocomplete>
+
+      <!-- Suggestions -->
+      <div class="py-6">
+        <h4
+          class="font-alt text-muted-400 mb-4 text-sm font-semibold uppercase"
+        >
+          People
+        </h4>
+        <ul class="space-y-4">
+          <!-- Item -->
+          <li>
+            <NuxtLink to="#" class="flex items-center">
               <div
                 class="inline-flex size-9 items-center justify-center rounded-full"
               >
                 <img
-                  :src="person.avatar"
+                  src="/img/avatars/3.svg"
                   class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
                   alt=""
                 >
@@ -82,170 +113,135 @@ const selectedPerson = ref('')
                 <h6
                   class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
-                  {{ person.name }}
+                  Mike Miller
                 </h6>
                 <p class="text-muted-400 font-sans text-xs">
-                  {{ person.role }}
+                  Frontend Developer
                 </p>
               </div>
-            </div>
-          </BaseAutocompleteItem>
-        </BaseAutocomplete>
-
-        <!-- Suggestions -->
-        <div class="py-6">
-          <h4
-            class="font-alt text-muted-400 mb-4 text-sm font-semibold uppercase"
-          >
-            People
-          </h4>
-          <ul class="space-y-4">
-            <!-- Item -->
-            <li>
-              <NuxtLink to="#" class="flex items-center">
-                <div
-                  class="inline-flex size-9 items-center justify-center rounded-full"
+            </NuxtLink>
+          </li>
+          <!-- Item -->
+          <li>
+            <NuxtLink to="#" class="flex items-center">
+              <div
+                class="inline-flex size-9 items-center justify-center rounded-full"
+              >
+                <img
+                  src="/img/avatars/18.svg"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
+                  alt=""
                 >
-                  <img
-                    src="/img/avatars/3.svg"
-                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
-                    alt=""
-                  >
-                </div>
-                <div class="ms-3">
-                  <h6
-                    class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
-                  >
-                    Mike Miller
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    Frontend Developer
-                  </p>
-                </div>
-              </NuxtLink>
-            </li>
-            <!-- Item -->
-            <li>
-              <NuxtLink to="#" class="flex items-center">
-                <div
-                  class="inline-flex size-9 items-center justify-center rounded-full"
+              </div>
+              <div class="ms-3">
+                <h6
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
-                  <img
-                    src="/img/avatars/18.svg"
-                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
-                    alt=""
-                  >
-                </div>
-                <div class="ms-3">
-                  <h6
-                    class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
-                  >
-                    John Sabierski
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    Backend Developer
-                  </p>
-                </div>
-              </NuxtLink>
-            </li>
-            <!-- Item -->
-            <li>
-              <NuxtLink to="#" class="flex items-center">
-                <div
-                  class="inline-flex size-9 items-center justify-center rounded-full"
+                  John Sabierski
+                </h6>
+                <p class="text-muted-400 font-sans text-xs">
+                  Backend Developer
+                </p>
+              </div>
+            </NuxtLink>
+          </li>
+          <!-- Item -->
+          <li>
+            <NuxtLink to="#" class="flex items-center">
+              <div
+                class="inline-flex size-9 items-center justify-center rounded-full"
+              >
+                <img
+                  src="/img/avatars/11.svg"
+                  class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
+                  alt=""
                 >
-                  <img
-                    src="/img/avatars/11.svg"
-                    class="max-w-full rounded-full object-cover shadow-xs dark:border-transparent"
-                    alt=""
-                  >
-                </div>
-                <div class="ms-3">
-                  <h6
-                    class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
-                  >
-                    Ronald Cardine
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    Frontend Developer
-                  </p>
-                </div>
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Suggestions -->
-        <div class="py-6">
-          <h4
-            class="font-alt text-muted-400 mb-4 text-sm font-semibold uppercase"
-          >
-            Recent
-          </h4>
-          <ul class="space-y-4">
-            <!-- Item -->
-            <li>
-              <NuxtLink to="#" class="flex items-center">
-                <div
-                  class="dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
+              </div>
+              <div class="ms-3">
+                <h6
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
                 >
-                  <Icon name="feather:chrome" class="" />
-                </div>
-                <div class="ms-3">
-                  <h6
-                    class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
-                  >
-                    Browser Support
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    Blog article
-                  </p>
-                </div>
-              </NuxtLink>
-            </li>
-            <!-- Item -->
-            <li>
-              <NuxtLink to="#" class="flex items-center">
-                <div
-                  class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full"
-                >
-                  <Icon name="feather:tv" class="" />
-                </div>
-                <div class="ms-3">
-                  <h6
-                    class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
-                  >
-                    Twitch new API
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    Blog article
-                  </p>
-                </div>
-              </NuxtLink>
-            </li>
-            <!-- Item -->
-            <li>
-              <NuxtLink to="#" class="flex items-center">
-                <div
-                  class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full"
-                >
-                  <Icon name="feather:twitter" class="" />
-                </div>
-                <div class="ms-3">
-                  <h6
-                    class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
-                  >
-                    Social integrations
-                  </h6>
-                  <p class="text-muted-400 font-sans text-xs">
-                    Blog article
-                  </p>
-                </div>
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
+                  Ronald Cardine
+                </h6>
+                <p class="text-muted-400 font-sans text-xs">
+                  Frontend Developer
+                </p>
+              </div>
+            </NuxtLink>
+          </li>
+        </ul>
       </div>
-    </FocusScope>
-  </div>
+
+      <!-- Suggestions -->
+      <div class="py-6">
+        <h4
+          class="font-alt text-muted-400 mb-4 text-sm font-semibold uppercase"
+        >
+          Recent
+        </h4>
+        <ul class="space-y-4">
+          <!-- Item -->
+          <li>
+            <NuxtLink to="#" class="flex items-center">
+              <div
+                class="dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-500"
+              >
+                <Icon name="feather:chrome" class="" />
+              </div>
+              <div class="ms-3">
+                <h6
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                >
+                  Browser Support
+                </h6>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
+              </div>
+            </NuxtLink>
+          </li>
+          <!-- Item -->
+          <li>
+            <NuxtLink to="#" class="flex items-center">
+              <div
+                class="bg-warning-100 text-warning-600 dark:bg-warning-500 dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full"
+              >
+                <Icon name="feather:tv" class="" />
+              </div>
+              <div class="ms-3">
+                <h6
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                >
+                  Twitch new API
+                </h6>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
+              </div>
+            </NuxtLink>
+          </li>
+          <!-- Item -->
+          <li>
+            <NuxtLink to="#" class="flex items-center">
+              <div
+                class="bg-primary-100 text-primary-600 dark:bg-primary-500 dark:text-muted-50 inline-flex size-10 items-center justify-center rounded-full"
+              >
+                <Icon name="feather:twitter" class="" />
+              </div>
+              <div class="ms-3">
+                <h6
+                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                >
+                  Social integrations
+                </h6>
+                <p class="text-muted-400 font-sans text-xs">
+                  Blog article
+                </p>
+              </div>
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </FocusScope>
 </template>
