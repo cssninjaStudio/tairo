@@ -13,7 +13,7 @@ const generate = computed(() => props.id && ((typeof headings?.anchorLinks === '
     as="h3"
     size="lg"
     weight="medium"
-    class="group/heading mb-1 mt-8 scroll-mt-20"
+    class="group/heading mb-1 mt-8 scroll-mt-20 text-muted-900 dark:text-white"
   >
     <a
       v-if="generate"

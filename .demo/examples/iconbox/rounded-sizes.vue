@@ -3,7 +3,7 @@
     <BaseIconBox
       size="xs"
       rounded="sm"
-      class="bg-gray-200 text-gray-500 dark:bg-gray-800"
+      class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
       <Icon name="ph:nut-duotone" class="size-3" />
@@ -12,7 +12,7 @@
     <BaseIconBox
       size="sm"
       rounded="sm"
-      class="bg-gray-200 text-gray-500 dark:bg-gray-800"
+      class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
       <Icon name="ph:nut-duotone" class="size-4" />
@@ -21,7 +21,7 @@
     <BaseIconBox
       size="md"
       rounded="sm"
-      class="bg-gray-200 text-gray-500 dark:bg-gray-800"
+      class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
       <Icon name="ph:nut-duotone" class="size-5" />
@@ -30,7 +30,7 @@
     <BaseIconBox
       size="lg"
       rounded="sm"
-      class="bg-gray-200 text-gray-500 dark:bg-gray-800"
+      class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
       <Icon name="ph:nut-duotone" class="size-6" />
@@ -39,7 +39,7 @@
     <BaseIconBox
       size="xl"
       rounded="sm"
-      class="bg-gray-200 text-gray-500 dark:bg-gray-800"
+      class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
       <Icon name="ph:nut-duotone" class="size-7" />
@@ -48,7 +48,7 @@
     <BaseIconBox
       size="2xl"
       rounded="sm"
-      class="bg-gray-200 text-gray-500 dark:bg-gray-800"
+      class="bg-muted-200 text-muted-500 dark:bg-muted-800"
       color="none"
     >
       <Icon name="ph:nut-duotone" class="size-8" />
