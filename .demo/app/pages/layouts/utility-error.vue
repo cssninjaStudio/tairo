@@ -187,7 +187,7 @@ const showStackTrace = ref(false)
 </template>
 
 <style>
-@reference '~/assets/tailwind.css';
+@reference '~/assets/css/main.css';
 
 .stack {
   @apply text-sm;

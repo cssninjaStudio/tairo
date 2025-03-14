@@ -80,7 +80,7 @@ export default defineNuxtConfig({
     /**
      * Load Tailwind CSS
      */
-    '~/assets/tailwind.css',
+    '~/assets/css/main.css',
   ],
 
   typescript: {

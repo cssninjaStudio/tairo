@@ -617,7 +617,7 @@ function selectFeature(feature?: any) {
 </template>
 
 <style>
-@reference '~/assets/tailwind.css';
+@reference '~/assets/css/main.css';
 
 .map-container {
   .mapboxgl-popup-content {
