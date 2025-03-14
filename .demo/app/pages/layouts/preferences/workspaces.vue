@@ -85,7 +85,7 @@ const workspaces = [
         </div>
 
         <div class="mt-8 flow-root">
-          <div class="divide-muted-100 dark:divide-muted-700 -my-5 divide-y">
+          <div class="divide-muted-100 dark:divide-muted-800/80 -my-5 divide-y">
             <div
               v-for="(workspace, index) in workspaces"
               :key="workspace.name"
@@ -193,7 +193,7 @@ const workspaces = [
               </div>
             </BasePlaceholderPage>
           </div>
-          <div v-else class="divide-muted-100 dark:divide-muted-700 -my-5 divide-y">
+          <div v-else class="divide-muted-100 dark:divide-muted-800/80 -my-5 divide-y">
             <div
               v-for="(member, index) in workspaces[selectedWorkspace]?.members"
               :key="member.name"

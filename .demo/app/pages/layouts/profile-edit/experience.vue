@@ -72,7 +72,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
               <img
                 :src="item.logo"
                 :alt="item.company"
-                class="border-muted-200 dark:border-muted-600 dark:bg-muted-700 size-10 rounded-full border bg-white"
+                class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 size-10 rounded-full border bg-white"
               >
               <div>
                 <BaseHeading
@@ -136,10 +136,10 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             </div>
           </div>
           <div
-            class="border-muted-200 dark:border-muted-700 mt-8 flex w-full items-center gap-2 border-t pt-8"
+            class="border-muted-200 dark:border-muted-800 mt-8 flex w-full items-center gap-2 border-t pt-8"
           >
             <div
-              class="bg-muted-100 dark:bg-muted-700/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
+              class="bg-muted-100 dark:bg-muted-800/60 text-muted-400 flex size-[50px] items-center justify-center rounded-full"
             >
               <Icon name="solar:suitcase-lines-linear" class="size-5" />
             </div>

@@ -14,14 +14,13 @@ const input = ref('')
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
           v-model="input"
           icon="lucide:search"
           placeholder="Filter users..."
-          disabled
         />
       </template>
       <template #right>

@@ -42,7 +42,7 @@ const integrations = [
 </script>
 
 <template>
-  <div class="mt-8">
+  <div class="mt-8 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div class="border-primary-500 bg-primary-500/10 rounded-2xl border-2">
       <div class="p-4">
         <div class="gap-6 md:flex md:items-center md:justify-between">

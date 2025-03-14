@@ -17,8 +17,8 @@ definePageMeta({
       title: 'Project details',
       description: 'For displaying banking project details',
       categories: ['layouts', 'projects'],
-      src: '/img/screens/layouts-projects-details.png',
-      srcDark: '/img/screens/layouts-projects-details-dark.png',
+      src: '/img/screens/layouts-projects-details-2.png',
+      srcDark: '/img/screens/layouts-projects-details-2-dark.png',
       order: 72,
       params: {
         slug: 'banking-and-finance-dashboard',

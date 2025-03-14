@@ -50,7 +50,7 @@ const { data, pending, error, refresh } = await useFetch('/api/recipes', {
 </script>
 
 <template>
-  <div class="px-4 md:px-6 lg:px-8 pb-20">
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <TairoContentWrapperTabbed :labels="['All', 'Saved']" rounded="lg">
       <template #left>
         <TairoInput

@@ -53,7 +53,7 @@ const { data, pending, error, refresh } = await useFetch(
 </script>
 
 <template>
-  <div class="px-4 md:px-6 lg:px-8 pb-20">
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
@@ -113,7 +113,7 @@ const { data, pending, error, refresh } = await useFetch(
             >
               <BaseCard v-for="item in data?.data" :key="item.id" rounded="md">
                 <div
-                  class="border-muted-200 dark:border-muted-700 flex flex-col items-center border-b p-6 sm:flex-row"
+                  class="border-muted-200 dark:border-muted-800 flex flex-col items-center border-b p-6 sm:flex-row"
                 >
                   <div class="flex flex-col items-center gap-3 sm:flex-row">
                     <BaseAvatar

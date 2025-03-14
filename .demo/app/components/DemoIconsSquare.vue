@@ -38,7 +38,7 @@ const links = [
       v-for="link in links"
       :key="link.title"
       :to="link.url"
-      class="dark:bg-muted-800 border-muted-200 hover:border-primary-500 dark:hover:border-primary-500 dark:border-muted-700 hover:shadow-muted-300/30 dark:hover:shadow-muted-900/30 group flex flex-col border bg-white py-5 transition-all duration-300 hover:shadow-xl"
+      class="dark:bg-muted-950 border-muted-200 hover:border-primary-500 dark:hover:border-primary-500 dark:border-muted-800 hover:shadow-muted-300/30 dark:hover:shadow-muted-900/30 group flex flex-col border bg-white py-5 transition-all duration-300 hover:shadow-xl"
       :class="[
         props.shape === 'rounded' ? 'rounded-md' : '',
         props.shape === 'curved' ? 'rounded-xl' : '',

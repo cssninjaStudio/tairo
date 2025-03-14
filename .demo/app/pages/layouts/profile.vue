@@ -121,7 +121,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   :to="link.url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="border-muted-200 hover:border-primary-500 dark:border-muted-700 dark:hover:border-primary-500 dark:bg-muted-800 text-muted-400 hover:text-primary-500 flex size-8 items-center justify-center rounded-full border bg-white transition-colors duration-300"
+                  class="border-muted-200 hover:border-primary-500 dark:border-muted-800/80 dark:hover:border-primary-500 dark:bg-muted-800 text-muted-400 hover:text-primary-500 flex size-8 items-center justify-center rounded-full border bg-white transition-colors duration-300"
                 >
                   <Icon :name="link.icon" class="size-3" />
                   <span class="sr-only">{{ link.name }}</span>
@@ -135,7 +135,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
             <div class="flex flex-col gap-4">
               <BaseCard rounded="md" class="p-4 md:p-8">
                 <!-- Bio -->
-                <div class="border-muted-200 dark:border-muted-700 border-b pb-8">
+                <div class="border-muted-200 dark:border-muted-800/80 border-b pb-8">
                   <div class="mb-4 flex items-center gap-2">
                     <h4
                       class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
@@ -153,7 +153,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   </div>
                 </div>
                 <!-- Experience -->
-                <div class="border-muted-200 dark:border-muted-700 border-b py-8">
+                <div class="border-muted-200 dark:border-muted-800/80 border-b py-8">
                   <div class="mb-8 flex items-center gap-2">
                     <h4
                       class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"
@@ -191,7 +191,7 @@ const { data, pending, error, refresh } = await useFetch('/api/profile')
                   </div>
                 </div>
                 <!-- Languages -->
-                <div class="border-muted-200 dark:border-muted-700 border-b py-8">
+                <div class="border-muted-200 dark:border-muted-800/80 border-b py-8">
                   <div class="mb-8 flex items-center gap-2">
                     <h4
                       class="text-muted-600 dark:text-muted-400 font-sans text-xs font-medium uppercase"

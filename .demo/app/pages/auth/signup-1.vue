@@ -112,7 +112,7 @@ const onSubmit = handleSubmit(async (_values) => {
 </script>
 
 <template>
-  <div class="h-screen md:flex">
+  <div class="h-screen md:flex dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div
       class="from-primary-900 to-primary-500 i group relative hidden w-1/2 items-center justify-around overflow-hidden bg-gradient-to-tr md:flex"
     >

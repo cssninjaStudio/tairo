@@ -2,6 +2,14 @@
 definePageMeta({
   title: 'Sidenav Layout',
   layout: 'sidenav-dev',
+  preview: {
+    title: 'Sidenav starter layout',
+    description: 'For a quick start usage.',
+    categories: ['layouts'],
+    src: '/img/screens/starter-sidenav.png',
+    srcDark: '/img/screens/starter-sidenav-dark.png',
+    order: 252,
+  },
 })
 </script>
 

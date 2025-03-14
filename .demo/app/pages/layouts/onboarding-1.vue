@@ -48,7 +48,7 @@ function goToStep(n: number) {
 </script>
 
 <template>
-  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen">
+  <div class="bg-muted-100 dark:bg-muted-900 min-h-screen dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div
       class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4"
     >

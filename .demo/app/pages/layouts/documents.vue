@@ -71,7 +71,7 @@ definePageMeta({
                 <BaseText size="sm">
                   Q1 Statement
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -109,7 +109,7 @@ definePageMeta({
                 <BaseText size="sm">
                   Q3 Statement
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -162,7 +162,7 @@ definePageMeta({
                 <BaseText size="sm">
                   Wire details
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"
@@ -181,7 +181,7 @@ definePageMeta({
                 <BaseText size="sm">
                   Bank contract
                 </BaseText>
-                <Icon name="lucide:download" class="size-4" />
+                <Icon name="solar:download-linear" class="size-4" />
                 <BaseText
                   size="xs"
                   weight="semibold"

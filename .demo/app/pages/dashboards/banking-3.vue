@@ -20,8 +20,6 @@ const radialEvolution = reactive(useRadialEvolution())
 const radialPopularity = reactive(useRadialPopularity())
 
 function useAreaBtcPrice() {
-  const { primary, info, success } = useTailwindColors()
-
   const series = shallowRef([
     {
       name: 'Expected',
@@ -107,10 +105,21 @@ function useAreaBtcPrice() {
           opacity: 0.06,
         },
       },
-      colors: [success.value, primary.value, info.value],
+      colors: ['var(--color-chart-base)', 'var(--color-amber-400)'],
       stroke: {
         curve: 'smooth',
         width: 3,
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          gradientToColors: ['var(--color-chart-gradient)', 'var(--color-chart-gradient)'],
+          shadeIntensity: 0,
+          opacityFrom: 0.6,
+          opacityTo: 0.75,
+        },
       },
       title: {
         text: '',
@@ -166,17 +175,11 @@ function useAreaBtcPrice() {
         position: 'top',
         horizontalAlign: 'center',
       },
-      fill: {
-        type: 'solid',
-        opacity: 0.7,
-      },
     },
   })
 }
 
 function useRadialEvolution() {
-  const { primary, info, success } = useTailwindColors()
-
   const series = shallowRef([54])
 
   return defineApexchartsProps({
@@ -184,7 +187,7 @@ function useRadialEvolution() {
     height: 220,
     series,
     options: {
-      colors: [primary.value, success.value, info.value],
+      colors: ['var(--color-chart-base)'],
       title: {
         text: '',
         align: 'left',
@@ -202,7 +205,7 @@ function useRadialEvolution() {
               color: 'var(--color-muted-400)',
               offsetY: -20,
               fontSize: '16px',
-              fontFamily: 'var(--font-alt)',
+              fontFamily: 'var(--font-sans)',
               fontWeight: '500',
             },
             total: {
@@ -217,8 +220,6 @@ function useRadialEvolution() {
 }
 
 function useRadialPopularity() {
-  const { primary, success } = useTailwindColors()
-
   const series = shallowRef([67])
 
   return defineApexchartsProps({
@@ -234,7 +235,7 @@ function useRadialPopularity() {
           show: false,
         },
       },
-      colors: [primary.value, success.value],
+      colors: ['var(--color-chart-base)'],
       plotOptions: {
         radialBar: {
           startAngle: -135,
@@ -249,23 +250,12 @@ function useRadialPopularity() {
             value: {
               offsetY: 40,
               fontSize: '18px',
-              fontFamily: 'var(--font-alt)',
+              fontFamily: 'var(--font-sans)',
               fontWeight: '500',
               color: undefined,
               formatter: value => `${value} %`,
             },
           },
-        },
-      },
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shade: 'dark',
-          shadeIntensity: 0.15,
-          inverseColors: false,
-          opacityFrom: 1,
-          opacityTo: 1,
-          stops: [0, 50, 65, 91],
         },
       },
       stroke: {
@@ -278,19 +268,19 @@ function useRadialPopularity() {
 </script>
 
 <template>
-  <div>
+  <div class="relative px-4 md:px-6 lg:px-8 pb-20">
     <!-- Header -->
     <div
       class="mb-6 flex flex-col justify-between gap-y-4 sm:flex-row sm:items-center"
     >
       <div>
-        <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
+        <BaseParagraph size="sm" class="text-muted-600 dark:text-muted-400">
           Latest Bitcoin (BTC) Price Chart
         </BaseParagraph>
         <BaseHeading
           size="3xl"
           weight="bold"
-          class="text-muted-800 dark:text-white"
+          class="text-muted-900 dark:text-white"
         >
           <span
             class="after:text-success-500 after:relative after:-end-2 after:-top-3 after:text-sm after:content-['+3.4%']"
@@ -301,30 +291,40 @@ function useRadialPopularity() {
       </div>
       <div class="flex gap-2 sm:justify-end">
         <BaseButton
+          size="sm"
+          rounded="md"
           :variant="activePeriod === 'hour' ? 'primary' : 'default'"
           @click="activePeriod = 'hour'"
         >
           Hour
         </BaseButton>
         <BaseButton
+          size="sm"
+          rounded="md"
           :variant="activePeriod === 'day' ? 'primary' : 'default'"
           @click="activePeriod = 'day'"
         >
           Day
         </BaseButton>
         <BaseButton
+          size="sm"
+          rounded="md"
           :variant="activePeriod === 'week' ? 'primary' : 'default'"
           @click="activePeriod = 'week'"
         >
           Week
         </BaseButton>
         <BaseButton
+          size="sm"
+          rounded="md"
           :variant="activePeriod === 'month' ? 'primary' : 'default'"
           @click="activePeriod = 'month'"
         >
           Month
         </BaseButton>
         <BaseButton
+          size="sm"
+          rounded="md"
           :variant="activePeriod === 'year' ? 'primary' : 'default'"
           @click="activePeriod = 'year'"
         >
@@ -335,23 +335,23 @@ function useRadialPopularity() {
     <!-- Grid -->
     <div class="grid grid-cols-12 gap-4">
       <!-- Column -->
-      <div class="ltablet:col-span-8 col-span-12 gap-4 lg:col-span-8">
+      <div class="col-span-12 gap-4 lg:col-span-8">
         <div class="flex flex-col gap-4">
           <!-- Tile grid -->
           <div class="grid gap-4 sm:grid-cols-3">
             <!-- Tile -->
             <div class="relative">
-              <BaseCard class="space-y-1 p-5">
+              <BaseCard class="space-y-1 p-4">
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-500 dark:text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Market Cap
                 </BaseParagraph>
                 <BaseHeading
                   size="lg"
                   weight="semibold"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>{{ formatPrice(129992260090) }}</span>
                 </BaseHeading>
@@ -359,17 +359,17 @@ function useRadialPopularity() {
             </div>
             <!-- Tile -->
             <div class="relative">
-              <BaseCard class="space-y-1 p-5">
+              <BaseCard class="space-y-1 p-4">
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-500 dark:text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Volume 24h
                 </BaseParagraph>
                 <BaseHeading
                   size="lg"
                   weight="semibold"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>{{ formatPrice(453178) }}K</span>
                 </BaseHeading>
@@ -377,17 +377,17 @@ function useRadialPopularity() {
             </div>
             <!-- Tile -->
             <div class="relative">
-              <BaseCard class="space-y-1 p-5">
+              <BaseCard class="space-y-1 p-4">
                 <BaseParagraph
                   size="xs"
-                  class="text-muted-500 dark:text-muted-400"
+                  class="text-muted-600 dark:text-muted-400"
                 >
                   Low/high 24h
                 </BaseParagraph>
                 <BaseHeading
                   size="lg"
                   weight="semibold"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>
                     {{ formatPrice(10212) }} - {{ formatPrice(10584) }}
@@ -404,7 +404,7 @@ function useRadialPopularity() {
                 size="md"
                 weight="semibold"
                 lead="tight"
-                class="text-muted-800 dark:text-white"
+                class="text-muted-900 dark:text-white"
               >
                 <span>BTC Price Chart</span>
               </BaseHeading>
@@ -416,19 +416,18 @@ function useRadialPopularity() {
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <!-- Chart -->
             <div class="relative">
-              <BaseCard class="p-6">
+              <BaseCard class="p-4 md:p-6">
                 <div class="mb-6 flex items-center justify-between">
                   <BaseHeading
                     as="h3"
                     size="md"
-                    weight="semibold"
+                    weight="medium"
                     lead="tight"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>BTC Evolution</span>
                   </BaseHeading>
                   <BaseButton
-                    variant="primary"
                     size="sm"
                     rounded="md"
                   >
@@ -445,18 +444,17 @@ function useRadialPopularity() {
                   <BaseHeading
                     as="h3"
                     size="md"
-                    weight="semibold"
+                    weight="medium"
                     lead="tight"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>BTC Popularity</span>
                   </BaseHeading>
                   <BaseButton
-                    variant="primary"
                     size="sm"
                     rounded="md"
                   >
-                    Buy BT
+                    Buy BTC
                   </BaseButton>
                 </div>
                 <AddonApexcharts v-bind="radialPopularity" />
@@ -466,11 +464,11 @@ function useRadialPopularity() {
         </div>
       </div>
       <!-- Column -->
-      <div class="ltablet:col-span-4 col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4">
         <div class="flex flex-col gap-4">
           <!-- Currency -->
           <div class="relative">
-            <BaseCard class="p-8">
+            <BaseCard class="p-4 md:p-6">
               <div class="mb-6 flex items-center gap-2">
                 <Icon
                   name="cryptocurrency:btc"
@@ -480,9 +478,9 @@ function useRadialPopularity() {
                   <BaseHeading
                     as="h3"
                     size="md"
-                    weight="semibold"
+                    weight="medium"
                     lead="snug"
-                    class="text-muted-800 dark:text-white"
+                    class="text-muted-900 dark:text-white"
                   >
                     <span>Bitcoin</span>
                   </BaseHeading>
@@ -527,20 +525,19 @@ function useRadialPopularity() {
           </div>
           <!-- Widget -->
           <div class="relative">
-            <BaseCard class="p-6">
+            <BaseCard class="p-4 md:p-6">
               <!-- Title -->
               <div class="mb-8 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="semibold"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>My Team</span>
                 </BaseHeading>
                 <BaseButton
-                  variant="primary"
                   size="sm"
                   rounded="md"
                 >
@@ -552,20 +549,19 @@ function useRadialPopularity() {
           </div>
           <!-- Grid item -->
           <div class="relative">
-            <BaseCard class="p-6">
+            <BaseCard class="p-4 md:p-6">
               <!-- Title -->
               <div class="mb-8 flex items-center justify-between">
                 <BaseHeading
                   as="h3"
                   size="md"
-                  weight="semibold"
+                  weight="medium"
                   lead="tight"
-                  class="text-muted-800 dark:text-white"
+                  class="text-muted-900 dark:text-white"
                 >
                   <span>Popular Coins</span>
                 </BaseHeading>
                 <BaseButton
-                  variant="primary"
                   size="sm"
                   rounded="md"
                 >

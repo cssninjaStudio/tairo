@@ -62,6 +62,7 @@ const menu = [
         </TairoTopnavContent>
       </TairoTopnavHeader>
     </TairoTopnavNavbar>
+
     <TairoTopnavContent class="pt-20 min-h-screen">
       <slot />
     </TairoTopnavContent>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { type Duration, format, isSameDay, sub } from 'date-fns'
+import type { Duration } from 'date-fns'
+import { format, isSameDay, sub } from 'date-fns'
 
 definePageMeta({
   title: 'Flights',
@@ -7,8 +8,8 @@ definePageMeta({
     title: 'Flights dashboard',
     description: 'For travel and booking',
     categories: ['dashboards'],
-    src: '/img/screens/dashboards-banking-3.png',
-    srcDark: '/img/screens/dashboards-banking-3-dark.png',
+    src: '/img/screens/dashboards-flights.png',
+    srcDark: '/img/screens/dashboards-flights-dark.png',
     order: 10,
   },
 })

@@ -31,7 +31,7 @@ onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <!-- Review section -->
     <div v-if="!complete">
       <div class="mb-8 space-y-2">
@@ -101,9 +101,9 @@ onBeforeMount(checkPreviousSteps)
 
           <div class="flex w-full gap-6 py-4">
             <div
-              class="bg-muted-200 flex size-12 items-center justify-center rounded-full"
+              class="bg-muted-200 dark:bg-muted-950 flex size-12 items-center justify-center rounded-full"
             >
-              <Icon name="ph:user-duotone" class="text-muted-400 size-6" />
+              <Icon name="solar:user-rounded-linear" class="text-muted-400 size-6" />
             </div>
             <div>
               <BaseHeading

@@ -30,7 +30,7 @@ onBeforeMount(checkPreviousSteps)
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div class="mb-8 space-y-2">
       <BaseHeading
         as="h2"
@@ -53,7 +53,7 @@ onBeforeMount(checkPreviousSteps)
         <TairoInput
           v-model="request.recipient.name"
           v-focus
-          icon="ph:user-duotone"
+          icon="solar:user-rounded-linear"
           placeholder="Ex: John Doe"
         />
       </BaseField>

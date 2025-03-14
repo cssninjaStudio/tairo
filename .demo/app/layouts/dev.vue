@@ -416,6 +416,28 @@ const menu = [
           },
         ],
       },
+      {
+        label: 'Placeloads',
+        icon: 'solar:refresh-circle-linear',
+        children: [
+          {
+            label: 'Placeloads v1',
+            to: '/layouts/placeload-1',
+          },
+          {
+            label: 'Placeloads v2',
+            to: '/layouts/placeload-2',
+          },
+          {
+            label: 'Placeloads v3',
+            to: '/layouts/placeload-3',
+          },
+          {
+            label: 'Placeloads v4',
+            to: '/layouts/placeload-4',
+          },
+        ],
+      },
     ],
   },
   {

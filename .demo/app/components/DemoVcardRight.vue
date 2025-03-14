@@ -54,7 +54,7 @@ const props = defineProps<{
       </div>
     </div>
     <div
-      class="border-muted-200 dark:border-muted-700 mt-auto flex items-end justify-between border-t pt-3"
+      class="border-muted-200 dark:border-muted-800/80 mt-auto flex items-end justify-between border-t pt-3"
     >
       <a
         href="mailto:kendra@tairo.io"

@@ -52,7 +52,7 @@ const companies = computed(() => {
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full dark:[--color-input-default-bg:var(--color-muted-950)]">
     <div class="space-y-10">
       <!-- Recipients -->
       <div class="w-full">

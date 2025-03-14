@@ -15,14 +15,14 @@ const fake = ref('')
 </script>
 
 <template>
-  <div>
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
     <TairoContentWrapper>
       <template #left>
         <TairoInput
           v-model="fake"
           icon="lucide:search"
           placeholder="Filter users..."
-          disabled
+          variant="default"
         />
       </template>
       <template #right>
@@ -39,17 +39,17 @@ const fake = ref('')
         </BaseButton>
       </template>
       <div>
-        <div class="space-y-4">
+        <div class="space-y-3">
           <BaseCard
             v-for="index in 10"
             :key="index"
             rounded="lg"
-            class="flex flex-col p-5 sm:flex-row sm:items-center"
+            class="flex flex-col p-4 sm:flex-row sm:items-center"
           >
             <div
               class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-start sm:text-start"
             >
-              <BasePlaceload class="size-16 shrink-0 rounded-full" />
+              <BasePlaceload class="size-10 shrink-0 rounded-full" />
               <div class="space-y-2">
                 <BasePlaceload
                   class="mx-auto h-3 w-[100px] rounded-lg sm:mx-0"
