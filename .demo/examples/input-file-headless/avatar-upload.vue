@@ -35,7 +35,7 @@ const inputFile = ref<FileList | null>(null)
             <BaseButton
               size="icon-sm"
               rounded="full"
-             
+
               class="scale-90"
               @click="remove(files.item(0)!)"
             >

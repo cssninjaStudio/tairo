@@ -321,7 +321,8 @@ async function submitMessage() {
     </div>
     <!-- Current user -->
     <div
-      class="flex flex-col dark:bg-muted-800 h-full w-[390px] border-s border-muted-200 dark:border-muted-800/80 shrink-0 -mt-6">
+      class="flex flex-col dark:bg-muted-800 h-full w-[390px] border-s border-muted-200 dark:border-muted-800/80 shrink-0 -mt-6"
+    >
       <div class="flex h-16 w-full items-center justify-between px-8 shrink-0">
         <BaseHeading
           tag="h3"

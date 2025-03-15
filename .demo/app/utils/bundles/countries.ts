@@ -1,4 +1,5 @@
-import { type CountryProperty, customList } from 'country-codes-list'
+import type { CountryProperty } from 'country-codes-list'
+import { customList } from 'country-codes-list'
 
 export interface CountryInfo {
   code: string

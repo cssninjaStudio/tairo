@@ -7,7 +7,9 @@
 @theme {
   --font-sans: 'Inter', sans-serif;
   --default-mono-font-family: 'Fira Code';
-  --font-mono: var(--default-mono-font-family), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-mono:
+    var(--default-mono-font-family), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   --font-alt: 'Karla', sans-serif;
   --font-heading: var(--font-sans);
 
@@ -33,10 +35,10 @@
 }
 
 @layer base {
-  [lang^="ar"] {
-    --font-sans: "Noto Naskh Arabic", sans-serif;
-    --font-serif: "Noto Naskh Arabic", serif;
-    
+  [lang^='ar'] {
+    --font-sans: 'Noto Naskh Arabic', sans-serif;
+    --font-serif: 'Noto Naskh Arabic', serif;
+
     /* Uncomment to improve Arabic font rendering */
     /*
     --text-xs: 1.25rem;
@@ -51,13 +53,13 @@
     --text-6xl: 4.25rem;
     --text-7xl: 5rem;
     --text-8xl: 6.5rem;
-    --text-9xl: 8.5rem; 
+    --text-9xl: 8.5rem;
     */
   }
-  [lang^="ja"] {
-    --font-sans: "Noto Sans JP", sans-serif;
-    --font-serif: "Noto Sans JP", serif;
-    
+  [lang^='ja'] {
+    --font-sans: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Sans JP', serif;
+
     /* Uncomment to improve Japanese font rendering */
     /*
     --text-xs: 1.25rem;

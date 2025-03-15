@@ -27,7 +27,7 @@ export function topToDate(
 ) {
   const hour
     = Math.floor((top - settings.dayOffsetY) / settings.hourHeight)
-    + (settings.hourOpen || 0)
+      + (settings.hourOpen || 0)
   const minutes = Math.floor(
     ((top - settings.dayOffsetY) % settings.hourHeight)
     / (settings.hourHeight / 60),

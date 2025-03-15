@@ -114,7 +114,11 @@ function handleSelect(ev: CustomEvent) {
                 size="xs"
                 class="opacity-60 ms-auto"
               >
-                navigate with <BaseKbd size="sm" variant="muted">↑</BaseKbd> and <BaseKbd size="sm" variant="muted">↓</BaseKbd>
+                navigate with <BaseKbd size="sm" variant="muted">
+                  ↑
+                </BaseKbd> and <BaseKbd size="sm" variant="muted">
+                  ↓
+                </BaseKbd>
               </BaseText>
             </template>
 
