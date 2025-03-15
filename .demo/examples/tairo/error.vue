@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import type { NuxtError } from '#app'
+
+const error = new Error('An error has occured') as NuxtError
+</script>
+
 <template>
   <div>
-    <TairoError error="An error has occured" />
+    <TairoError :error />
   </div>
 </template>

@@ -168,7 +168,6 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="relative">
-    <!-- eslint-disable vuejs-accessibility/alt-text -->
     <a
       ref="buttonRef"
       role="button"

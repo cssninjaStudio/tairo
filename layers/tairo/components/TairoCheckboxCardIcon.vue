@@ -22,7 +22,7 @@ const id = useNuiId(() => props.id)
 
 const attrs = useAttrs()
 
-const forward = useForwardPropsEmits(reactiveOmit(props, ['icon']), emits)
+const forward = useForwardPropsEmits(reactiveOmit(props, ['id', 'icon']), emits)
 const { forwardRef } = useForwardExpose()
 </script>
 

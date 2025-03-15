@@ -30,7 +30,6 @@ const userInputs = computed(() => useUserInputs.value ? [username.value, email.v
       <AddonInputPassword
         ref="passwordRef"
         v-model="password"
-        :error="hasError"
         icon="lucide:lock"
         label="Password"
         :user-inputs="userInputs"
