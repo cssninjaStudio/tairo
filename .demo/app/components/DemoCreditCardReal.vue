@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    name?: string
+    name?: string | null
     number?: number | string
     expiryYear?: number | string
     expiryMonth?: number | string

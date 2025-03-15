@@ -12,7 +12,6 @@ const props = defineProps<{
     :class="[props.vertical ? '' : 'pb-8']"
   >
     <div :class="[props.vertical ? 'col-span-6' : 'col-span-6 mb-6 md:col-span-2 xl:mb-0']">
-      <!-- eslint-disable-next-line vuejs-accessibility/heading-has-content -->
       <h3 class="text-muted-900 dark:text-muted-200 mb-2 mt-0 text-sm font-semibold leading-6">
         <slot name="title" mdc-unwrap="p" />
       </h3>

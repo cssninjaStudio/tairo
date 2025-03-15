@@ -1,19 +1,20 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    color?:
+    variant?:
       | 'primary'
       | 'info'
       | 'success'
       | 'warning'
-      | 'danger'
+      | 'destructive'
       | 'muted'
       | 'light'
       | 'dark'
       | 'black'
+      | 'custom'
   }>(),
   {
-    color: 'success',
+    variant: 'success',
   },
 )
 
@@ -61,7 +62,7 @@ const tasks = ref<string[]>(['Option 0', 'Option 1', 'Option 2'])
       class="text-muted-300 flex cursor-pointer items-center gap-3"
     >
       <TairoCheckboxAnimated
-        :variant="props.color"
+        :variant="props.variant"
         :value="`Option ${task.id}`"
       />
       <div>

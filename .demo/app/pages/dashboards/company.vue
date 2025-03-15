@@ -141,9 +141,9 @@ function useBarSalesProfit() {
           'Oct',
         ],
       },
-      fill: {
-        opacity: 1,
-      },
+      // fill: {
+      //   opacity: 1,
+      // },
     },
   })
 }

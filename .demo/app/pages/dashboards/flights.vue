@@ -170,32 +170,30 @@ function selectRange(duration: Duration) {
                   </div>
                 </div>
                 <BaseDropdown>
-                  <template #button="{ open }">
+                  <template #button>
                     <BaseButton rounded="md" class="w-68">
                       <Icon name="solar:calendar-linear" class="size-5 scale-95 me-1" />
                       <span>{{ format(selected.start, 'd MMM, yyy') }} - {{ format(selected.end, 'd MMM, yyy') }}</span>
-                      <Icon name="lucide:chevron-down" class="size-4 transition-transform duration-300" :class="open ? 'rotate-180' : ''" />
+                      <Icon name="lucide:chevron-down" class="size-4 transition-transform duration-300 in-data-[state=open]:rotate-180" />
                     </BaseButton>
                   </template>
-                  <template #default="{ close }">
-                    <div class="flex items-center">
-                      <div class="hidden sm:flex flex-col gap-1 py-4 px-2 shrink-0 sm:border-e border-muted-200 dark:border-muted-800">
-                        <button
-                          v-for="(range, index) in ranges"
-                          :key="index"
-                          type="button"
-                          class="text-start font-sans text-sm whitespace-nowrap rounded-md py-1 px-4"
-                          :class="[isRangeSelected(range.duration) ? 'bg-muted-100 text-muted-900' : 'hover:bg-muted-50 text-muted-600']"
-                          truncate
-                          @click="selectRange(range.duration)"
-                        >
-                          {{ range.label }}
-                        </button>
-                      </div>
-
-                      <AddonDatepicker v-model="selected" locale="en" @close="close" />
+                  <div class="flex items-center">
+                    <div class="hidden sm:flex flex-col gap-1 py-4 px-2 shrink-0 sm:border-e border-muted-200 dark:border-muted-800">
+                      <button
+                        v-for="(range, index) in ranges"
+                        :key="index"
+                        type="button"
+                        class="text-start font-sans text-sm whitespace-nowrap rounded-md py-1 px-4"
+                        :class="[isRangeSelected(range.duration) ? 'bg-muted-100 text-muted-900' : 'hover:bg-muted-50 text-muted-600']"
+                        truncate
+                        @click="selectRange(range.duration)"
+                      >
+                        {{ range.label }}
+                      </button>
                     </div>
-                  </template>
+
+                    <AddonDatepicker v-model="selected" locale="en" />
+                  </div>
                 </BaseDropdown>
               </div>
             </div>

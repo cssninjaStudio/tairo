@@ -226,7 +226,7 @@ const onSubmit = handleSubmit(
 
       toaster.add({
         title: 'Success',
-        message: `Record has been created!`,
+        description: `Record has been created!`,
         icon: 'ph:check',
         progress: true,
       })

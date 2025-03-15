@@ -102,7 +102,7 @@ const team = [
         <BaseTag
           v-if="member.status === 'Available'"
           color="success"
-          variant="pastel"
+          variant="muted"
           rounded="full"
           class="font-medium"
         >
@@ -112,7 +112,7 @@ const team = [
         <BaseTag
           v-else-if="member.status === 'New'"
           color="info"
-          variant="pastel"
+          variant="primary"
           rounded="full"
           class="font-medium"
         >
@@ -122,7 +122,7 @@ const team = [
         <BaseTag
           v-else-if="member.status === 'Hired'"
           color="warning"
-          variant="pastel"
+          variant="default"
           rounded="full"
           class="font-medium"
         >

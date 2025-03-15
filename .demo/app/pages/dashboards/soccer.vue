@@ -163,7 +163,7 @@ const matches = [
               <div>
                 <BaseTag
                   rounded="full"
-                  variant="danger"
+                  variant="primary"
                   class="inline-flex items-center justify-center gap-1"
                   size="sm"
                 >

@@ -255,7 +255,6 @@ const onSubmit = handleSubmit(
       toaster.add({
         title: 'Success',
         description: `Changes have been saved!`,
-        color: 'success',
         icon: 'ph:check',
         progress: true,
       })

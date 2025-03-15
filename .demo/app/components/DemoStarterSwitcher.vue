@@ -42,7 +42,7 @@ const starters = [
   <div class="px-4 md:px-6 lg:px-8 py-20">
     <div class="max-w-3xl mx-auto">
       <div class="bg-muted-200/60 dark:bg-muted-800 rounded-xl p-4 grid grid-cols-2 md:grid-cols-3 gap-3">
-        <NuxtLink v-for="starter in starters" :key="starter.name" :to="starter.to" class="relative block bg-white dark:bg-muted-950 border border-muted-300 dark:border-muted-800 p-4 rounded-xl cursor-pointer" exact-active-class="border-primary-500! [&>svg]:block! [&>div>img]:opacity:100!">
+        <NuxtLink v-for="starter in starters" :key="starter.to" :to="starter.to" class="relative block bg-white dark:bg-muted-950 border border-muted-300 dark:border-muted-800 p-4 rounded-xl cursor-pointer" exact-active-class="border-primary-500! [&>svg]:block! [&>div>img]:opacity:100!">
           <Icon name="solar:check-circle-bold-duotone" class="absolute top-3 end-3 size-6 text-primary-500 dark:text-primary-400 hidden" />
           <div class="flex flex-col items-center justify-center">
             <img

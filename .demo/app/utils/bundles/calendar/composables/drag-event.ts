@@ -137,7 +137,7 @@ export function useDragEvent(
         calendarEventsValue[idx] = {
           ...calendarEventsValue[idx],
           customData: {
-            ...calendarEventsValue[idx].customData,
+            ...(calendarEventsValue[idx]?.customData || {}) as CalendarEvent,
             startDate: start,
             endDate: end,
           },

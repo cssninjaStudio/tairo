@@ -346,14 +346,9 @@ const panelActive = ref(false)
               <article
                 class="text-muted-500 dark:text-muted-400 mt-8 leading-7 tracking-wider"
               >
-                <!-- eslint-disable vue/no-v-html -->
-                <p
-                  class="font-sans"
-                  v-html="
-                    selectedMessage?.content.replaceAll('/n ', '<br /><br />')
-                  "
-                />
-                <!-- eslint-enable vue/no-v-html -->
+                <p class="font-sans whitespace-pre-line">
+                  {{ selectedMessage?.content }}
+                </p>
               </article>
               <div class="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-4">
                 <button

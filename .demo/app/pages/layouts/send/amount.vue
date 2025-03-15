@@ -100,7 +100,7 @@ function setAccount(account: any) {
           required
         >
           <BaseDropdown rounded="lg">
-            <template #button="{ open }">
+            <template #button>
               <BaseButton
                 size="xl"
                 rounded="lg"
@@ -129,8 +129,7 @@ function setAccount(account: any) {
                   </span>
                   <Icon
                     name="lucide:chevron-down"
-                    class="text-muted-400 ms-auto size-4 transition-transform duration-300"
-                    :class="open && 'rotate-180'"
+                    class="text-muted-400 ms-auto size-4 transition-transform duration-300 in-data-[state=open]:rotate-180"
                   />
                 </span>
               </BaseButton>
