@@ -80,7 +80,6 @@ const team = [
       <TairoTableCell class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
-            v-model="selected"
             :value="`table-4-${member.id}`"
             rounded="sm"
             color="primary"
@@ -112,29 +111,6 @@ const team = [
 
       <TairoTableCell>
         <BaseTag
-          v-if="member.status === 'Available'"
-          color="success"
-          variant="pastel"
-          rounded="full"
-          class="font-medium"
-        >
-          {{ member.status }}
-        </BaseTag>
-
-        <BaseTag
-          v-else-if="member.status === 'New'"
-          color="info"
-          variant="pastel"
-          rounded="full"
-          class="font-medium"
-        >
-          {{ member.status }}
-        </BaseTag>
-
-        <BaseTag
-          v-else-if="member.status === 'Hired'"
-          color="warning"
-          variant="pastel"
           rounded="full"
           class="font-medium"
         >

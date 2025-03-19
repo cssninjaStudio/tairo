@@ -93,7 +93,6 @@ const tools: Tool[] = [
       <CheckboxRoot
         v-for="tool in tools"
         :key="tool.name"
-        v-model="project.tools"
         :value="tool"
       >
         <CheckboxIndicator

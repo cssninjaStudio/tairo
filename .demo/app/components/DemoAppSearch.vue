@@ -158,7 +158,7 @@ function handleSelect(ev: CustomEvent) {
               <ComboboxItem
                 v-for="page in contentResults"
                 :key="page?.id"
-                :value="page?.id"
+                :value="page"
                 class="scroll-mt-2"
                 @select="handleSelect"
               >

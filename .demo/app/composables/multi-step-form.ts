@@ -34,7 +34,7 @@ export interface MultiStepFormContext<
   steps: ComputedRef<WithId<StepForm<DATA, META>>[]>
   totalSteps: ComputedRef<number>
   currentStepId: ComputedRef<number>
-  currentStep: ComputedRef<WithId<StepForm<DATA, META>>>
+  currentStep: ComputedRef<WithId<StepForm<DATA, META>> | undefined>
   progress: ComputedRef<number>
   isLastStep: ComputedRef<boolean>
   data: Ref<UnwrapRef<DATA>>
@@ -46,8 +46,8 @@ export interface MultiStepFormContext<
   complete: Readonly<Ref<boolean>>
 
   getStep: (id?: number) => WithId<StepForm<DATA, META>> | undefined
-  getNextStep: (id?: number) => WithId<StepForm<DATA, META>> | null
-  getPrevStep: (id?: number) => WithId<StepForm<DATA, META>> | null
+  getNextStep: (id?: number) => WithId<StepForm<DATA, META>> | undefined
+  getPrevStep: (id?: number) => WithId<StepForm<DATA, META>> | undefined
   goToStep: (step?: WithId<StepForm<DATA, META>>) => Promise<void>
   reset: (initialState?: MaybeRefOrGetter<DATA>) => void
   setErrorMessage: (message?: string) => void
@@ -159,7 +159,7 @@ export function provideMultiStepForm<
   }
 
   async function validateStep(step = currentStep.value) {
-    if (step.validate) {
+    if (step?.validate) {
       try {
         const success = await step.validate(context)
         const hasErrors = Object.values(errors.value.fields).filter(Boolean).length > 0 || errors.value.message

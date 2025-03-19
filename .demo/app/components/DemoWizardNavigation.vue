@@ -30,7 +30,7 @@ onClickOutside(target, () => (open.value = false))
         >
           <TairoLogo class="text-primary-600 h-8 shrink-0" />
         </NuxtLink>
-        <div class="hidden items-center gap-2 ps-6 font-sans sm:flex">
+        <div v-if="currentStep" class="hidden items-center gap-2 ps-6 font-sans sm:flex">
           <p class="text-muted-500 dark:text-muted-400">
             Step {{ currentStep.id + 1 }}:
           </p>

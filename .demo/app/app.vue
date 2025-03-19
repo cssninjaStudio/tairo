@@ -12,8 +12,8 @@ useHead({
   title: () => route?.meta?.title ?? '',
   titleTemplate: (titleChunk) => {
     return titleChunk
-      ? `${titleChunk} - ${app.tairo?.title}`
-      : `${app.tairo?.title}`
+      ? `${titleChunk} - Tairo`
+      : `Tairo`
   },
   htmlAttrs: {
     lang: () => head.value.htmlAttrs!.lang,

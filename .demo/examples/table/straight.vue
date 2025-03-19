@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const selected = ref([])
-const selectAll = ref(false)
-
 const team = [
   {
     id: 0,
@@ -48,7 +45,6 @@ const team = [
       <TairoTableHeading uppercase class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
-            v-model="selectAll"
             rounded="none"
             color="primary"
           />
@@ -80,7 +76,6 @@ const team = [
       <TairoTableCell class="p-4">
         <div class="flex items-center">
           <BaseCheckbox
-            v-model="selected"
             :value="`table-1-${member.id}`"
             rounded="none"
             color="primary"
@@ -100,29 +95,6 @@ const team = [
 
       <TairoTableCell>
         <BaseTag
-          v-if="member.status === 'Available'"
-          color="success"
-          variant="muted"
-          rounded="full"
-          class="font-medium"
-        >
-          {{ member.status }}
-        </BaseTag>
-
-        <BaseTag
-          v-else-if="member.status === 'New'"
-          color="info"
-          variant="primary"
-          rounded="full"
-          class="font-medium"
-        >
-          {{ member.status }}
-        </BaseTag>
-
-        <BaseTag
-          v-else-if="member.status === 'Hired'"
-          color="warning"
-          variant="default"
           rounded="full"
           class="font-medium"
         >

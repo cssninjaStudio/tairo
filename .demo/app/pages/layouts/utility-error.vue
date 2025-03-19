@@ -95,11 +95,7 @@ const showStackTrace = ref(false)
         class="relative items-end!"
       >
         <template #image>
-          <component
-            :is="resolveComponentOrNative(app.tairo?.error.logo.component)"
-            v-if="app.tairo?.error?.logo?.component"
-            v-bind="app.tairo?.error.logo.props"
-          />
+          <TairoLogo class="text-primary-500 mx-auto h-40 p-6" />
         </template>
         <div class="mt-4">
           <div

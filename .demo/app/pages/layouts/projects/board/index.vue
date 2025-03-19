@@ -40,7 +40,6 @@ const { data, pending, error, refresh } = await useFetch(
     query,
   },
 )
-const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
 </script>
 
 <template>
@@ -83,53 +82,31 @@ const selectedProject = ref<NonNullable<typeof data.value>['data'][0]>()
                 team. Search for more by entering the project name below.
               </BaseParagraph>
             </div>
-            <BaseAutocomplete
+            <BaseField
               v-if="data?.data"
-              v-model="selectedProject"
-              :items="data.data"
-              :display-value="(item) => item?.name"
-              rounded="lg"
-              icon="lucide:search"
-              placeholder="Search..."
               label="Search projects"
-              label-float
-              clearable
             >
-              <template
-                #empty="{
-                  pending: pendingAutocomplete,
-                  query: queryAutocomplete,
-                }"
+              <BaseAutocomplete
+                :display-value="(v: any) => v?.name"
+                by="name"
+                rounded="lg"
+                icon="lucide:search"
+                placeholder="Search..."
+                @update:model-value="(v: any) => $router.push(`/layouts/projects/board/${v?.slug}`)"
               >
-                <BasePlaceload v-if="pendingAutocomplete" />
-                <span
-                  v-else-if="!queryAutocomplete"
-                  class="text-muted-700 dark:text-muted-400 cursor-default select-none"
-                >
-                  Ex: Delivery app project...
-                </span>
-              </template>
-              <template #item="{ item, selected }">
-                <NuxtLink
-                  :to="`/layouts/projects/board/${item.slug}`"
-                  class="block"
-                >
-                  <BaseAutocompleteItem
-                    :item="{
-                      name: item.name,
-                      text: `${item.customer.name} | ${item.customer.text}`,
-                      media: item.customer.logo,
-                    }"
-                    :properties="{
-                      label: 'name',
-                      sublabel: 'text',
-                      media: 'media',
-                    }"
-                    :selected="selected"
-                  />
-                </NuxtLink>
-              </template>
-            </BaseAutocomplete>
+                <BaseAutocompleteItem v-for="item in data.data" :key="item.id" :value="item">
+                  <span class="flex items-start gap-2 py-2">
+                    <BaseAvatar :src="item.customer.logo" size="xs" class="bg-muted-100 dark:bg-muted-800" />
+                    <span class="flex flex-col items-start gap-1">
+                      <span class="text-xs font-semibold leading-none">{{ item.name }}</span>
+                      <span class="font-sans text-xs text-muted-500 dark:text-muted-400">
+                        {{ `${item.customer?.name} | ${item.customer.text}` }}
+                      </span>
+                    </span>
+                  </span>
+                </BaseAutocompleteItem>
+              </BaseAutocomplete>
+            </BaseField>
           </div>
         </div>
         <div

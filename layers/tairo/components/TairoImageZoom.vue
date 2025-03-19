@@ -61,14 +61,20 @@ function keydownListener(event: KeyboardEvent) {
 
 let touchstartScreenY = 0
 function touchstartListener(event: TouchEvent) {
+  if (!event.changedTouches[0]) {
+    return
+  }
   event.stopPropagation()
-  touchstartScreenY = event.changedTouches[0].screenY
+  touchstartScreenY = event.changedTouches[0]?.screenY
 }
 
 function touchmoveListener(event: TouchEvent) {
+  if (!event.changedTouches[0]) {
+    return
+  }
   event.stopPropagation()
 
-  y = touchstartScreenY - event.changedTouches[0].screenY
+  y = touchstartScreenY - event.changedTouches[0]?.screenY
 
   if (modalRef.value) {
     modalRef.value.style.transform = `translateY(${-y}px)`

@@ -358,7 +358,7 @@ const codeTailwind = [
                 <small>(logo, name, sidebars, panels, ...)</small>
               </p>
             </div>
-            <pre><code>export default defineAppConfig({{ app.tairo }})</code></pre>
+            <pre><code>export default defineAppConfig()</code></pre>
           </div>
         </BaseProse>
       </BaseCard>
