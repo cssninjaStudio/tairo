@@ -9,7 +9,7 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "peerDependencies": {
-    "@shuriken-ui/nuxt": "4.0.0-alpha.41",
+    "@shuriken-ui/nuxt": "4.0.0-alpha.42",
     "tailwindcss": "^4.0.8"
   },
   "dependencies": {

@@ -38,15 +38,6 @@
     "pre-commit": "lint-staged"
   },
   "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "postcss",
-        "vue",
-        "vite",
-        "@unhead/vue",
-        "webpack"
-      ]
-    },
     "patchedDependencies": {
       "smooth-dnd@0.12.1": "patches/smooth-dnd@0.12.1.patch"
     }

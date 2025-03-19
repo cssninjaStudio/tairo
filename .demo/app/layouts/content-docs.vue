@@ -8,7 +8,7 @@ const { data: navigation } = await useAsyncData('docs-navigation', () => queryCo
 </script>
 
 <template>
-  <TairoTopnavLayout class="bg-white dark:bg-black">
+  <TairoTopnavLayout class="bg-white! dark:bg-black!">
     <TairoTopnavNavbar>
       <TairoTopnavHeader>
         <TairoTopnavContent class="[--tairo-topnav-content-width:1536px] flex items-center">
