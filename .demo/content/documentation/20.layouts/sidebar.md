@@ -6,8 +6,8 @@ title: Sidebar
 
 :::doc-image
 ---
-src: /img/apps/tairo-subsidebar.png
-srcDark: /img/apps/tairo-subsidebar-dark.png
+src: /img/screens/starter-sidebar.png
+srcDark: /img/screens/starter-sidebar-dark.png
 ---
 :::
 
