@@ -84,15 +84,15 @@ const team = [
       </TairoTableCell>
 
       <TairoTableCell>
-        <div class="flex items-center">
-          <BaseAvatar :src="member.src" size="sm" />
+        <div class="flex gap-2 items-center">
+          <BaseAvatar :src="member.src" size="xs" />
 
-          <div class="ms-3 leading-none">
-            <h4 class="font-sans text-sm font-medium">
+          <div class="leading-none">
+            <h4 class="font-sans text-sm font-medium leading-tight">
               {{ member.name }}
             </h4>
 
-            <p class="text-muted-400 font-sans text-xs font-normal">
+            <p class="text-muted-600 dark:text-muted-400 font-sans text-xs font-normal">
               {{ member.role }}
             </p>
           </div>
@@ -112,15 +112,6 @@ const team = [
         >
           {{ member.status }}
         </BaseTag>
-      </TairoTableCell>
-
-      <TairoTableCell>
-        <a
-          href="#"
-          class="text-primary-500 dark:text-primary-400 underline-offset-4 transition-opacity duration-300 hover:underline hover:opacity-75"
-        >
-          View
-        </a>
       </TairoTableCell>
     </TairoTableRow>
   </TairoTable>

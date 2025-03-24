@@ -5,8 +5,6 @@ const areaBtcPrice = reactive(useAreaBtcPrice())
 
 // You can create your own composable function to handle the logic of your chart
 function useAreaBtcPrice() {
-  const { primary, info, success } = useTailwindColors()
-
   const series = shallowRef([
     {
       name: 'Expected',
@@ -54,7 +52,7 @@ function useAreaBtcPrice() {
           opacity: 0.06,
         },
       },
-      colors: [success.value, primary.value, info.value],
+      colors: ['var(--color-chart-base)', 'var(--color-primary-400)'],
       stroke: {
         curve: 'smooth',
         width: 3,

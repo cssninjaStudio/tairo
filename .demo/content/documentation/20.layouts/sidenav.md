@@ -6,28 +6,30 @@ title: Sidenav
 
 :::doc-image
 ---
-src: /img/apps/tairo-layout-sidenav.png
-srcDark: /img/apps/tairo-layout-sidenav-dark.png
+src: /img/screens/starter-sidenav.png
+srcDark: /img/screens/starter-sidenav-dark.png
 ---
 :::
 
 ## Overview
+
+The sidenav layout is a single sided navigation layout. It has a sidebar with a list of items that can either be links or buttons, that can be arranged in a collapsible manner.
 
 ### Features
 
 ::doc-checklist
 ---
 items:
-  - Feature 1
-  - Feature 2
-  - Feature 3
+  - Medium sized navigation
+  - Collapsible links
+  - Responsive support
 ---
 ::
 
 ## Anatomy
 
 ::code-group
-```vue [<app>/app/layouts/collapse.vue]
+```vue [<app>/app/layouts/sidenav.vue]
 <template>
   <TairoSidenavLayout>
     <TairoSidenavSidebar>

@@ -6,28 +6,38 @@ title: Topnav
 
 :::doc-image
 ---
-src: /img/apps/tairo-layout-topnav.png
-srcDark: /img/apps/tairo-layout-topnav-dark.png
+src: /img/screens/starter-topnav.png
+srcDark: /img/screens/starter-topnav-dark.png
 ---
 :::
 
 ## Overview
+
+The topnav layout provides a top navigation bar with a header and content area. It is useful for applications that need to display full width content. You can either use button style navigation links wuth dropdowns or a simple list of tabbed links.
 
 ### Features
 
 ::doc-checklist
 ---
 items:
-  - Feature 1
-  - Feature 2
-  - Feature 3
+  - Full width navigation
+  - Customizable header
+  - Includes customizable dropdowns
+  - Responsive support
 ---
 ::
+
+:::doc-image
+---
+src: /img/screens/starter-topnav-slim.png
+srcDark: /img/screens/starter-topnav-slim-dark.png
+---
+:::
 
 ## Anatomy
 
 ::code-group
-```vue [<app>/app/layouts/collapse.vue]
+```vue [<app>/app/layouts/topnav.vue]
 <template>
   <TairoTopnavLayout>
     <TairoTopnavNavbar>

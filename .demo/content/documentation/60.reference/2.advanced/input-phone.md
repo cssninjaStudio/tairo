@@ -13,9 +13,9 @@ icon:
 Ready to use phone input component with country code dropdown, with validation and formatting.
 The component extend the :doc-linker{to="BaseInput"} component, so you can use all the props and events of the base component.
 
-:::doc-message{variant="muted" icon="ri:markdown-fill"}
-This component uses [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) and [country-codes-list](https://www.npmjs.com/package/country-codes-list)
-to detect and validate the phone input value.
+:::doc-info{title="Optional dependencies" icon="solar:shield-warning-bold-duotone"}
+This component uses the [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) and the [country-codes-list](https://www.npmjs.com/package/country-codes-list)
+packages to detect and validate the phone input value.
 :::
 
 ::doc-component-demo

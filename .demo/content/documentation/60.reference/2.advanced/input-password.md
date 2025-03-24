@@ -13,8 +13,8 @@ icon:
 Ready to use password input component with validation and formatting.
 The component extend the :doc-linker{to="BaseInput"} component, so you can use all the props and events of the base component.
 
-:::doc-message{variant="muted" icon="ri:markdown-fill"}
-This component uses [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) to detect and validate the password input strength.
+:::doc-info{title="Optional dependency" icon="solar:shield-warning-bold-duotone"}
+This component uses the [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) package to detect and validate the password input strength.
 :::
 
 ::doc-component-demo

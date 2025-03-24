@@ -4,7 +4,7 @@
       <slot name="header" />
     </div>
 
-    <div class="flex flex-col gap-y-4">
+    <div class="flex flex-col gap-y-2">
       <slot />
     </div>
   </div>

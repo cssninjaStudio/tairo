@@ -66,10 +66,6 @@ const team = [
       <TairoTableHeading uppercase>
         Status
       </TairoTableHeading>
-
-      <TairoTableHeading uppercase class="p-4">
-        <span class="sr-only">View</span>
-      </TairoTableHeading>
     </template>
 
     <TairoTableRow v-for="member in team" :key="member.id">
@@ -100,15 +96,6 @@ const team = [
         >
           {{ member.status }}
         </BaseTag>
-      </TairoTableCell>
-
-      <TairoTableCell>
-        <a
-          href="#"
-          class="text-primary-500 dark:text-primary-400 underline-offset-4 transition-opacity duration-300 hover:underline hover:opacity-75"
-        >
-          View
-        </a>
       </TairoTableCell>
     </TairoTableRow>
   </TairoTable>

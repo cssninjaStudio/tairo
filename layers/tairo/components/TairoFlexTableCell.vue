@@ -24,7 +24,7 @@ const clampMap = {
 
 <template>
   <div
-    class="font-alt before:text-muted-400 flex items-center justify-between p-5 text-sm before:font-sans before:text-xs before:font-medium before:uppercase before:content-[attr(data-content)] md:justify-start md:p-4 md:before:hidden"
+    class="font-sans before:text-muted-400 flex items-center justify-between p-5 text-sm before:font-sans before:text-xs before:font-medium before:uppercase before:content-[attr(data-content)] md:justify-start md:p-4 md:before:hidden"
     :class="[
       props.type === 'grow' && 'md:grow',
       props.type === 'shrink' && 'md:shrink',

@@ -13,16 +13,17 @@ srcDark: /img/screens/starter-sidebar-dark.png
 
 ## Overview
 
-The sidebar layout is a double sided navigation layout. It has a sidebar with a list of menu links and a subsidebar with a list of submenu links.
+The sidebar layout is a double sided navigation layout. It has a sidebar with a list of items that can either be links or buttons, and customizable subsidebars that can be toggled based on the active item.
 
 ### Features
 
 ::doc-checklist
 ---
 items:
-  - Feature 1
-  - Feature 2
-  - Feature 3
+  - Solid app navigation
+  - Customizable subsidebars
+  - Single or nested links
+  - Responsive support
 ---
 ::
 
@@ -106,17 +107,3 @@ items:
 
 ### TairoSidebarSubsidebarHeader
 :doc-component-meta{name="TairoSidebarSubsidebarHeader"}
-
-## Examples
-
-### Example 1
-### Example 2
-### Example 3
-### Example 4
-### Example 5
-### Example 6
-### Example 7
-### Example 8
-### Example 9
-### Example 10
-### Example 11

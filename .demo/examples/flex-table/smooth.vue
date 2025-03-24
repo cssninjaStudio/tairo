@@ -66,10 +66,6 @@ const team = [
       <TairoFlexTableHeading type="stable">
         Status
       </TairoFlexTableHeading>
-
-      <TairoFlexTableHeading type="stable">
-        Actions
-      </TairoFlexTableHeading>
     </template>
 
     <TairoFlexTableRow
@@ -88,15 +84,15 @@ const team = [
       </TairoFlexTableCell>
 
       <TairoFlexTableCell type="grow" data-content="Member">
-        <div class="flex items-center">
-          <BaseAvatar :src="member.src" size="sm" />
+        <div class="flex items-center gap-2">
+          <BaseAvatar :src="member.src" size="xs" />
 
-          <div class="ms-3 leading-none">
-            <h4 class="font-sans text-sm font-medium">
+          <div class="leading-none">
+            <h4 class="font-sans text-sm font-medium leading-tight">
               {{ member.name }}
             </h4>
 
-            <p class="text-muted-400 font-sans text-xs font-normal">
+            <p class="text-muted-600 dark:text-muted-400 font-sans text-xs font-normal">
               {{ member.role }}
             </p>
           </div>
@@ -122,15 +118,6 @@ const team = [
         >
           {{ member.status }}
         </BaseTag>
-      </TairoFlexTableCell>
-
-      <TairoFlexTableCell type="stable" data-content="Actions">
-        <BaseButton
-          rounded="md"
-          class="scale-90"
-        >
-          View
-        </BaseButton>
       </TairoFlexTableCell>
     </TairoFlexTableRow>
   </TairoFlexTable>

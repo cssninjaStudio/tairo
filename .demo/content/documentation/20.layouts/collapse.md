@@ -6,21 +6,24 @@ title: Collapse
 
 :::doc-image
 ---
-src: /img/apps/tairo-layout-collapse.png
-srcDark: /img/apps/tairo-layout-collapse-dark.png
+src: /img/screens/starter-collapse.png
+srcDark: /img/screens/starter-collapse-dark.png
 ---
 :::
 
 ## Overview
+
+The collapse layout is a sidebar layout that can be collapsed or expanded. It is useful for applications that need to display a lot of information in a small space.
 
 ### Features
 
 ::doc-checklist
 ---
 items:
-  - Feature 1
-  - Feature 2
-  - Feature 3
+  - Collapsible sidebar
+  - Single or nested links
+  - Scrollable middle area
+  - Responsive support
 ---
 ::
 

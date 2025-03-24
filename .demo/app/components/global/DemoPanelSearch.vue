@@ -38,23 +38,27 @@ const selectedPerson = ref('')
 </script>
 
 <template>
-  <FocusScope class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border bg-white" trapped loop>
-    <div class="flex h-16 w-full items-center justify-between px-10">
-      <h2
-        class="font-heading text-muted-700 text-lg font-semibold dark:text-white"
-      >
-        Search
-      </h2>
+  <FocusScope class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 border bg-white" trapped loop>
+    <div
+      class="border-muted-200 dark:border-muted-800/80 flex h-20 w-full items-center justify-between border-b px-6"
+    >
+      <div>
+        <BaseHeading weight="medium">
+          Search
+        </BaseHeading>
+      </div>
+
+      <!-- Close button -->
       <button
         type="button"
-        class="text-muted-400 focus-visible:nui-focus hover:bg-muted-100 focus:bg-muted-100 hover:text-muted-600 focus:text-muted-600 dark:hover:bg-muted-700 dark:focus:bg-muted-700 flex size-10 items-center justify-center rounded-full transition-colors duration-300 dark:hover:text-white dark:focus:text-white"
+        class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-8 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
         @click="close"
       >
-        <Icon name="feather:chevron-left" class="size-6" />
+        <Icon name="lucide:arrow-right" class="size-4" />
       </button>
     </div>
 
-    <div class="h-[calc(100dvh_-_64px)] w-full px-10 z-10">
+    <div class="h-[calc(100dvh_-_80px)] w-full px-6 py-6 z-10">
       <BaseAutocomplete
         v-model="selectedPerson"
         size="lg"
@@ -62,12 +66,12 @@ const selectedPerson = ref('')
         by="name"
         :bindings="{ portal: { disabled: true } }"
       >
-        <BaseAutocompleteItem v-for="person in people" :key="person.id" :value="person.name">
+        <BaseAutocompleteItem v-for="person in people" :key="person.id" :value="person.name" class="border-0 rounded-lg hover:bg-muted-100 dark:hover:bg-muted-800 transition-colors duration-300">
           <div
-            class="flex cursor-pointer items-center rounded-lg p-2 transition-colors duration-300"
+            class="flex gap-2 cursor-pointer items-center p-2"
           >
             <div
-              class="inline-flex size-9 items-center justify-center rounded-full"
+              class="inline-flex size-8 items-center justify-center rounded-full"
             >
               <img
                 :src="person.avatar"
@@ -75,13 +79,13 @@ const selectedPerson = ref('')
                 alt=""
               >
             </div>
-            <div class="ms-3">
+            <div>
               <h6
-                class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                class="font-heading text-muted-900 leading-tight text-sm font-medium dark:text-white"
               >
                 {{ person.name }}
               </h6>
-              <p class="text-muted-400 font-sans text-xs">
+              <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                 {{ person.role }}
               </p>
             </div>
@@ -111,11 +115,11 @@ const selectedPerson = ref('')
               </div>
               <div class="ms-3">
                 <h6
-                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                  class="font-heading text-muted-900 text-sm font-medium dark:text-white"
                 >
                   Mike Miller
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">
+                <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                   Frontend Developer
                 </p>
               </div>
@@ -135,11 +139,11 @@ const selectedPerson = ref('')
               </div>
               <div class="ms-3">
                 <h6
-                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                  class="font-heading text-muted-900 text-sm font-medium dark:text-white"
                 >
                   John Sabierski
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">
+                <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                   Backend Developer
                 </p>
               </div>
@@ -159,11 +163,11 @@ const selectedPerson = ref('')
               </div>
               <div class="ms-3">
                 <h6
-                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                  class="font-heading text-muted-900 text-sm font-medium dark:text-white"
                 >
                   Ronald Cardine
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">
+                <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                   Frontend Developer
                 </p>
               </div>
@@ -190,11 +194,11 @@ const selectedPerson = ref('')
               </div>
               <div class="ms-3">
                 <h6
-                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                  class="font-heading text-muted-900 text-sm font-medium dark:text-white"
                 >
                   Browser Support
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">
+                <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                   Blog article
                 </p>
               </div>
@@ -210,11 +214,11 @@ const selectedPerson = ref('')
               </div>
               <div class="ms-3">
                 <h6
-                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                  class="font-heading text-muted-900 text-sm font-medium dark:text-white"
                 >
                   Twitch new API
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">
+                <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                   Blog article
                 </p>
               </div>
@@ -230,11 +234,11 @@ const selectedPerson = ref('')
               </div>
               <div class="ms-3">
                 <h6
-                  class="font-heading text-muted-800 text-sm font-semibold dark:text-white"
+                  class="font-heading text-muted-900 text-sm font-medium dark:text-white"
                 >
                   Social integrations
                 </h6>
-                <p class="text-muted-400 font-sans text-xs">
+                <p class="text-muted-600 dark:text-muted-400 font-sans text-xs">
                   Blog article
                 </p>
               </div>

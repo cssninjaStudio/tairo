@@ -57,7 +57,7 @@ const componentsWithoutPages = computed(() => {
   <div>
     <div>
       <DocLayoutSection>
-        <div class="grid gap-4 md:grid-cols-4">
+        <div class="grid gap-4 md:grid-cols-3">
           <NuxtLink
             v-for="component of componentsWithPages"
             :key="component.name"

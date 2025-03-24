@@ -15,8 +15,8 @@ The content wrapper wraps the page content. It provides slots and allows you to 
 
 :::doc-image
 ---
-src: /img/apps/tairo-layout.png
-srcDark: /img/apps/tairo-layout-dark.png
+src: /img/screens/content-wrapper.png
+srcDark: /img/screens/content-wrapper-dark.png
 ---
 :::
 
@@ -28,8 +28,8 @@ The tabbed wrapper wraps the page content. It provides slots and allows you to n
 
 :::doc-image
 ---
-src: /img/apps/tairo-layout-tabbed.png
-srcDark: /img/apps/tairo-layout-tabbed-dark.png
+src: /img/screens/content-wrapper-tabbed.png
+srcDark: /img/screens/content-wrapper-tabbed-dark.png
 ---
 :::
 

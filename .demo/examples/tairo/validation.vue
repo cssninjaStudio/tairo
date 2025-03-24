@@ -127,7 +127,7 @@ const onSubmit = handleSubmit(
 </script>
 
 <template>
-  <div class="max-w-lg">
+  <div class="max-w-full">
     <BaseCard class="p-6">
       <form
         action=""
