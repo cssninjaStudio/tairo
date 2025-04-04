@@ -1,12 +1,13 @@
 import { existsSync } from 'node:fs'
-import { readFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { addComponentsDir, defineNuxtModule, installModule, useLogger } from '@nuxt/kit'
 import { join } from 'pathe'
+import MagicString from 'magic-string'
 import { version } from '../../package.json'
 
 // This is a regular expression used to extract the example source code from the markdown content.
-const docExampleRe = /demo: '#examples\/([\w-]+)\/([\w-]+).vue'\r?\n---\r?\n?([\s\S]*?)\r?\n?::\r?\n/g
+const docExampleRe = /^<!-- demo: #examples\/([\w-]+)\/([\w-]+)(:?.vue)? -->$/gm
 
 // Custom nuxt module to make the examples available in the markdown content.
 // It also enable the nuxt-component-meta module to inject the component metadata.
@@ -36,7 +37,11 @@ export default defineNuxtModule({
         return
       }
 
-      file.body = file.body.replace(/__TAIRO_VERSION__/g, version)
+      const s = new MagicString(file.body)
+
+      s.replace(/__TAIRO_VERSION__/g, version)
+
+      file.body = s.toString()
     })
 
     /**
@@ -62,12 +67,8 @@ export default defineNuxtModule({
       docExampleRe.lastIndex = 0
       const matches = [...file.body.matchAll(docExampleRe)]
 
-      for (const [search, folder, name, slot] of matches) {
+      for (const [search, folder, name] of matches) {
         const path = join(examplesFolder, `/${folder}/${name}.vue`)
-
-        if (slot?.includes('#source')) {
-          continue
-        }
 
         if (!existsSync(path)) {
           console.error(`Example file not found in "${file.id}": ${path}`)
@@ -83,8 +84,7 @@ export default defineNuxtModule({
               }
 
               const replace = [
-                '---',
-                slot,
+                '::doc-component-demo',
                 '',
                 '#demo',
                 `:examples-${folder}-${name}`,
@@ -92,7 +92,7 @@ export default defineNuxtModule({
                 '#source',
                 ':::code-group',
                 `\`\`\`vue [#examples/${folder}/${name}.vue]`,
-                source,
+                source.trim(),
                 '```',
                 ':::',
                 '::',
@@ -109,9 +109,12 @@ export default defineNuxtModule({
 
       await Promise.all(reads)
 
+      const s = new MagicString(file.body)
       for (const { search, replace } of replacements) {
-        file.body = file.body.replace(search, replace)
+        s.replace(search, replace)
       }
+
+      file.body = s.toString()
     })
 
     if (nuxt.options.dev && !import.meta.env.ENABLE_DOCUMENTATION) {

@@ -16,10 +16,6 @@ Tairo ships with the Apexcharts data visualization library customized for Vue an
 This component uses the [vue3-apexcharts](https://github.com/apexcharts/vue3-apexcharts) library, which is a wrapper for the [ApexCharts](https://apexcharts.com/) library. We also provide chart styles for dark mode support.
 :::
 
-::doc-component-demo
----
-demo: '#examples/apexcharts/base.vue'
----
-::
+<!-- demo: #examples/apexcharts/base -->
 
 :doc-component-meta{name="AddonApexcharts"}

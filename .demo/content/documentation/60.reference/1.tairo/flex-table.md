@@ -15,41 +15,25 @@ icon:
 
 Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `none` radius.
 
-::doc-component-demo
----
-demo: '#examples/flex-table/straight.vue'
----
-::
+<!-- demo: #examples/flex-table/straight -->
 
 ## Rounded:sm
 
 Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `sm` radius.
 
-::doc-component-demo
----
-demo: '#examples/flex-table/rounded.vue'
----
-::
+<!-- demo: #examples/flex-table/rounded -->
 
 ## Rounded:md
 
 Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `md` radius.
 
-::doc-component-demo
----
-demo: '#examples/flex-table/smooth.vue'
----
-::
+<!-- demo: #examples/flex-table/smooth -->
 
 ## Rounded:lg
 
 Flex tables can have different radius factors. Use the `rounded` prop to change the radius of the table. This example uses the `lg` radius.
 
-::doc-component-demo
----
-demo: '#examples/flex-table/curved.vue'
----
-::
+<!-- demo: #examples/flex-table/curved -->
 
 :doc-component-meta{name="TairoFlexTable"}
 :doc-component-meta{name="TairoFlexTableHeading"}

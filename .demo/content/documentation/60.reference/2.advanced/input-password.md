@@ -17,11 +17,7 @@ The component extend the :doc-linker{to="BaseInput"} component, so you can use a
 This component uses the [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) package to detect and validate the password input strength.
 :::
 
-::doc-component-demo
----
-demo: '#examples/input-password/base.vue'
----
-::
+<!-- demo: #examples/input-password/base -->
 
 ## Change the locale
 
@@ -29,33 +25,17 @@ Changing the locale allows to change the language of the password strength feedb
 
 You can install and load dictionaries from the [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn/tree/master/packages/languages) package or create your own dictionary.
 
-::doc-component-demo
----
-demo: '#examples/input-password/locale.vue'
----
-::
+<!-- demo: #examples/input-password/locale -->
 
 ## Validation
 
-::doc-component-demo
----
-demo: '#examples/input-password/validation.vue'
----
-::
+<!-- demo: #examples/input-password/validation -->
 ## Disabled State
 
-::doc-component-demo
----
-demo: '#examples/input-password/disabled.vue'
----
-::
+<!-- demo: #examples/input-password/disabled -->
 
 ## Reacting to other inputs
 
-::doc-component-demo
----
-demo: '#examples/input-password/user-input.vue'
----
-::
+<!-- demo: #examples/input-password/user-input -->
 
 :doc-component-meta{name="AddonInputPassword"}

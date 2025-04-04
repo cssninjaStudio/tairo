@@ -18,65 +18,37 @@ This component uses the [libphonenumber-js](https://www.npmjs.com/package/libpho
 packages to detect and validate the phone input value.
 :::
 
-::doc-component-demo
----
-demo: '#examples/input-phone/base.vue'
----
-::
+<!-- demo: #examples/input-phone/base -->
 
 ## Country Input
 
 The component provides a country dropdown to select the country code, you can use the `country` prop to set the default country, otherwise it will be detected from the user's input.
 You can use the `v-model:country` notation to get the selected/detected country code.
 
-::doc-component-demo
----
-demo: '#examples/input-phone/country.vue'
----
-::
+<!-- demo: #examples/input-phone/country -->
 
 ## International and National Formats
 
 By default, the input value will be formatted in the international format, you can change this behavior with the `format` prop to change it to `national`.
 
-::doc-component-demo
----
-demo: '#examples/input-phone/format.vue'
----
-::
+<!-- demo: #examples/input-phone/format -->
 
 ## Validation
 
 The component provides a `@validation` event to indicate if the input value is valid or not
 
-::doc-component-demo
----
-demo: '#examples/input-phone/validation.vue'
----
-::
+<!-- demo: #examples/input-phone/validation -->
 
 ## Disabled State
 
-::doc-component-demo
----
-demo: '#examples/input-phone/disabled.vue'
----
-::
+<!-- demo: #examples/input-phone/disabled -->
 
 ## Input Size
 
-::doc-component-demo
----
-demo: '#examples/input-phone/size.vue'
----
-::
+<!-- demo: #examples/input-phone/size -->
 
 ## Input Shapes
 
-::doc-component-demo
----
-demo: '#examples/input-phone/shape.vue'
----
-::
+<!-- demo: #examples/input-phone/shape -->
 
 :doc-component-meta{name="AddonInputPhone"}

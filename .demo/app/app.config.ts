@@ -10,6 +10,6 @@
 
 export default defineAppConfig({
   icon: {
-    mode: 'svg',
+    // mode: 'svg',
   },
 })

@@ -15,81 +15,49 @@ icon:
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/straight.vue'
----
-::
+<!-- demo: #examples/table/straight -->
 
 ## Rounded:sm
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/rounded.vue'
----
-::
+<!-- demo: #examples/table/rounded -->
 
 ## Rounded:md
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/smooth.vue'
----
-::
+<!-- demo: #examples/table/smooth -->
 
 ## Rounded:lg
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/curved.vue'
----
-::
+<!-- demo: #examples/table/curved -->
 
 ## Media:none
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/media-straight.vue'
----
-::
+<!-- demo: #examples/table/media-straight -->
 
 ## Media:sm
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/media-rounded.vue'
----
-::
+<!-- demo: #examples/table/media-rounded -->
 
 ## Media:md
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/media-smooth.vue'
----
-::
+<!-- demo: #examples/table/media-smooth -->
 
 ## Media:lg
 
 Tables can have different radius factors. Use the `rounded` prop to change the table's radius.
 
-::doc-component-demo
----
-demo: '#examples/table/media-curved.vue'
----
-::
+<!-- demo: #examples/table/media-curved -->
 
 :doc-component-meta{name="TairoTable"}
 :doc-component-meta{name="TairoTableHeading"}

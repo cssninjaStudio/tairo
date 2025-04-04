@@ -12,10 +12,6 @@ icon:
 
 Display floating submit and reset button when users scroll. Wrap this component in a `<form>` element or use the `#default` slot to insert your own :doc-linker{to="BaseButton"} so you can use custom `@click` events
 
-::doc-component-demo
----
-demo: '#examples/tairo/form-save.vue'
----
-::
+<!-- demo: #examples/tairo/form-save -->
 
 :doc-component-meta{name="TairoFormSave"}

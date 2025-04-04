@@ -14,8 +14,4 @@ Tairo has built-in `TairoError` component to display helpful error page during d
 
 This component is meant to be used in special [`error.vue`](https://nuxt.com/docs/getting-started/error-handling#rendering-an-error-page) nuxt page.
 
-::doc-component-demo
----
-demo: '#examples/tairo/error.vue'
----
-::
+<!-- demo: #examples/tairo/error -->
