@@ -27,7 +27,7 @@ const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invali
 
 <template>
   <div
-    class="focus-within:nui-focus flex *:rounded-none *:not-last:border-e-0 *:last:border-s-0"
+    class="focus-within:nui-focus flex *:rounded-none *:not-last:border-e-0 *:last:border-s-0 group"
     :class="[
       hasError ? 'ring-destructive-base!' : '',
       props.rounded === 'sm' ? 'rounded-sm *:first:rounded-s-sm *:last:rounded-e-sm' : '',
@@ -37,7 +37,7 @@ const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invali
     ]"
   >
     <div
-      class="ps-3 border flex items-center justify-center"
+      class="ps-3 border flex items-center justify-center group-has-disabled:opacity-50"
       :class="[
         props.variant === 'default'
           ? 'bg-input-default-bg text-input-default-text/60'

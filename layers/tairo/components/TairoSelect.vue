@@ -30,7 +30,7 @@ const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invali
 
 <template>
   <div
-    class="focus-within:nui-focus rounded-lg flex *:rounded-none *:not-nth-last-2:border-e-0 *:nth-last-2:border-s-0"
+    class="focus-within:nui-focus rounded-lg flex *:rounded-none *:not-nth-last-2:border-e-0 *:nth-last-2:border-s-0 group"
     :class="[
       hasError ? 'ring-destructive-base!' : '',
       props.rounded === 'sm' ? 'rounded-sm *:first:rounded-s-sm *:nth-last-2:rounded-e-sm' : '',
@@ -40,7 +40,7 @@ const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invali
     ]"
   >
     <div
-      class="ps-3 border flex items-center justify-center"
+      class="ps-3 border flex items-center justify-center group-has-disabled:opacity-50"
       :class="[
         props.variant === 'default'
           ? 'bg-input-default-bg text-input-default-text/60'
