@@ -4,8 +4,6 @@ import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 const demoAreasMultiple = reactive(useDemoAreasMultiple())
 
 function useDemoAreasMultiple() {
-  const { primary, info, success } = useTailwindColors()
-
   const dataSeries = [
     [
       {
@@ -1548,7 +1546,7 @@ function useDemoAreasMultiple() {
           formatter: (val, timestamp) => timestamp?.toString() ?? '',
         },
       },
-      colors: [primary.value, info.value, success.value],
+      colors: ['var(--color-chart-base)', 'var(--color-info-500)', 'var(--color-success-500)'],
       title: {
         text: '',
         align: 'left',

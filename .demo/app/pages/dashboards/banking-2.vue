@@ -58,8 +58,6 @@ const activeCard = ref(0)
 const areaExpenses = reactive(useAreaExpenses())
 
 function useAreaExpenses() {
-  const { primary, info, success } = useTailwindColors()
-
   const series = shallowRef([
     {
       name: 'Cash Expenses',
@@ -110,7 +108,7 @@ function useAreaExpenses() {
           opacity: 0.06,
         },
       },
-      colors: [success.value, primary.value, info.value],
+      colors: ['var(--color-chart-base)', 'var(--color-info-500)', 'var(--color-success-500)'],
       stroke: {
         curve: 'smooth',
         width: 3,

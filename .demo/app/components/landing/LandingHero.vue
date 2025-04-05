@@ -6,8 +6,6 @@ const { y } = useNuiWindowScroll()
 const gaugePersonal = reactive(useGaugePersonal())
 
 function useGaugePersonal() {
-  const { primary } = useTailwindColors()
-
   const series = shallowRef([76])
 
   return defineApexchartsProps({
@@ -26,7 +24,7 @@ function useGaugePersonal() {
           show: false,
         },
       },
-      colors: [primary.value],
+      colors: ['var(--color-chart-base)'],
       plotOptions: {
         radialBar: {
           startAngle: -90,

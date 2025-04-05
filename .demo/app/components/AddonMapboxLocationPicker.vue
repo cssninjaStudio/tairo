@@ -60,7 +60,6 @@ const isLoading = ref(true)
 const hasError = ref(true)
 const config = useRuntimeConfig()
 const colorMode = useColorMode()
-const { primary } = useTailwindColors()
 
 const mapElement = useTemplateRef<HTMLElement>('mapElement')
 const map = shallowRef<Map>()
@@ -208,7 +207,8 @@ function updatePositionMarker() {
   }
 
   marker.value = new mapboxgl.Marker({
-    color: primary.value,
+    // Can't be a CSS variable because it doesn't work with the mapbox-gl-geocoder
+    color: '#5d0ec0',
     draggable: true,
     ...(typeof props.marker === 'object' && props.marker ? props.marker : {}),
   })

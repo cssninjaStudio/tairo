@@ -4,8 +4,6 @@ import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 const demoRadar = reactive(useDemoRadar())
 
 function useDemoRadar() {
-  const { primary, success, info, danger } = useTailwindColors()
-
   const series = shallowRef([
     {
       name: 'Series 1',
@@ -23,7 +21,7 @@ function useDemoRadar() {
           show: false,
         },
       },
-      colors: [primary.value, success.value, info.value, danger.value],
+      colors: ['var(--color-chart-base)', 'var(--color-success-500)', 'var(--color-info-500)', 'var(--color-destructive-500)'],
       title: {
         text: '',
       },

@@ -117,6 +117,13 @@ export default defineNuxtConfig({
       { code: 'ar', dir: 'rtl', language: 'ar-SA', file: 'ar-SA.yaml', name: 'العربية' },
       { code: 'ja', dir: 'ltr', language: 'ja-JP', file: 'ja-JP.yaml', name: '日本語' },
     ],
+    // Use i18n v10 features
+    experimental: {
+      generatedLocaleFilePathFormat: 'off',
+    },
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
   routeRules: {
@@ -195,8 +202,6 @@ export default defineNuxtConfig({
         'ohash',
         'mapbox-gl',
         '@mapbox/mapbox-gl-geocoder',
-        // useTailwindColors
-        'colorjs.io',
         // form validation
         '@vee-validate/zod',
         'vee-validate',

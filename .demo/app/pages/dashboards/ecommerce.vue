@@ -490,7 +490,6 @@ function useRadialSmallThree() {
 }
 
 function useGaugePersonal() {
-  const { primary } = useTailwindColors()
   const series = shallowRef([76])
 
   return defineApexchartsProps({
@@ -512,7 +511,7 @@ function useGaugePersonal() {
           enabled: false,
         },
       },
-      colors: [primary.value],
+      colors: ['var(--color-chart-base)'],
       plotOptions: {
         radialBar: {
           startAngle: -90,
