@@ -2,7 +2,6 @@
 import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Ecommerce',
@@ -289,6 +288,12 @@ function useAreaCustomers() {
         toolbar: {
           show: false,
         },
+        zoom: {
+          enabled: false,
+        },
+        animations: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-chart-base)', 'var(--color-indigo-500)', 'var(--color-primary-400)'],
       title: {
@@ -351,6 +356,9 @@ function useRadialSalesRevenue() {
         toolbar: {
           show: false,
         },
+        animations: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-chart-base)'],
       plotOptions: {
@@ -395,6 +403,9 @@ function useRadialSmallOne() {
         toolbar: {
           show: false,
         },
+        animations: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-chart-base)'],
       plotOptions: {
@@ -425,6 +436,9 @@ function useRadialSmallTwo() {
         toolbar: {
           show: false,
         },
+        animations: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-success-500)'],
       plotOptions: {
@@ -454,6 +468,9 @@ function useRadialSmallThree() {
         offsetY: -10,
         toolbar: {
           show: false,
+        },
+        animations: {
+          enabled: false,
         },
       },
       colors: ['var(--color-destructive-500)'],
@@ -490,6 +507,9 @@ function useGaugePersonal() {
         },
         toolbar: {
           show: false,
+        },
+        animations: {
+          enabled: false,
         },
       },
       colors: [primary.value],
@@ -531,7 +551,7 @@ function useGaugePersonal() {
 }
 
 function useBarOrders() {
-  const series = shallowRef<any[]>([])
+  const series = ref<any[]>([])
 
   // delay the data loading
   let timeout: any
@@ -664,8 +684,11 @@ function useBarOrders() {
         toolbar: {
           show: false,
         },
+        zoom: {
+          enabled: false,
+        },
       },
-      colors: ['var(--color-chart-base)', 'var(--color-indigo-500)'],
+      colors: ['var(--color-success-500)', 'var(--color-warning-500)'],
       dataLabels: {
         enabled: false,
       },
@@ -1007,61 +1030,48 @@ function useBarOrders() {
         </div>
       </div>
       <!-- Column -->
-      <div
-        class="lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
-      >
-        <BaseCard rounded="md" class="flex flex-col p-4 md:p-6">
-          <div class="mb-6 flex items-center justify-between">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="medium"
-              lead="tight"
-              class="text-muted-900 dark:text-white"
-            >
-              <span>Personal Score</span>
-            </BaseHeading>
-          </div>
-          <div class="py-16">
-            <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
-          </div>
-          <div class="mt-auto text-center">
-            <BaseParagraph size="sm">
-              <span class="text-muted-500 dark:text-muted-400">
-                Your score has been calculated based on the latest metrics
-              </span>
-            </BaseParagraph>
-          </div>
-        </BaseCard>
-      </div>
+      <BaseCard rounded="md" class="lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3 flex flex-col p-4 md:p-6">
+        <div class="mb-6 flex items-center justify-between">
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="medium"
+            lead="tight"
+            class="text-muted-900 dark:text-white"
+          >
+            <span>Personal Score</span>
+          </BaseHeading>
+        </div>
+        <div class="py-16">
+          <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+        </div>
+        <div class="mt-auto text-center">
+          <BaseParagraph size="sm">
+            <span class="text-muted-500 dark:text-muted-400">
+              Your score has been calculated based on the latest metrics
+            </span>
+          </BaseParagraph>
+        </div>
+      </BaseCard>
       <!-- Column -->
-      <div
-        class="lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-6"
-      >
-        <BaseCard rounded="md" class="relative p-4 md:p-6">
-          <div class="mb-6">
-            <BaseHeading
-              as="h3"
-              size="md"
-              weight="medium"
-              lead="tight"
-              class="text-muted-900 dark:text-white"
-            >
-              <span>Orders Summary</span>
-            </BaseHeading>
-          </div>
-          <AddonApexcharts v-bind="barOrders" />
-        </BaseCard>
-      </div>
+      <BaseCard rounded="md" class="relative p-4 md:p-6 lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-6">
+        <div class="mb-6">
+          <BaseHeading
+            as="h3"
+            size="md"
+            weight="medium"
+            lead="tight"
+            class="text-muted-900 dark:text-white"
+          >
+            <span>Orders Summary</span>
+          </BaseHeading>
+        </div>
+        <AddonApexcharts v-bind="barOrders" />
+      </BaseCard>
       <!-- Column -->
-      <div
-        class="lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
-      >
-        <!-- Calendar -->
-        <BaseCard rounded="md" class="p-2">
-          <AddonDatepicker v-model="date" locale="en" label="Start date" />
-        </BaseCard>
-      </div>
+      <BaseCard rounded="md" class="p-2 lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3">
+        <AddonDatepicker v-model="date" locale="en" label="Start date" />
+      </BaseCard>
     </div>
   </div>
 </template>

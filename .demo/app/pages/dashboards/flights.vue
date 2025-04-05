@@ -405,9 +405,14 @@ function selectRange(duration: Duration) {
                           ry="2.274"
                         />
                       </svg>
-                      <div
-                        class="border-muted-200 dark:border-muted-700 mx-8 grow border-t-2 border-dashed"
-                      />
+                      <div class="mx-8 grow relative">
+                        <div class="absolute inset-0 flex items-center justify-evenly">
+                          <div v-for="i in result.stops" :key="i" class="size-4 border-3 border-white dark:border-muted-700 rounded-full bg-muted-200 dark:bg-muted-700" />
+                        </div>
+                        <div
+                          class="border-muted-200 dark:border-muted-700 grow border-t-2 border-dashed"
+                        />
+                      </div>
                       <svg
                         width="32"
                         height="32"

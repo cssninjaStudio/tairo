@@ -24,6 +24,9 @@ function useDemoAreaMulti() {
         toolbar: {
           show: false,
         },
+        zoom: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-chart-base)', 'var(--color-amber-300)'],
       title: {

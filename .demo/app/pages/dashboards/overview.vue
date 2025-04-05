@@ -195,10 +195,10 @@ definePageMeta({
         <BaseCard
           variant="none"
           rounded="none"
-          class="lg:landscape:p-6 rounded-2xl! bg-muted-200/60 dark:bg-muted-950/80 p-4 md:p-6 2xl:landscape:p-12"
+          class="lg:landscape:p-6 rounded-2xl! bg-muted-200/60 dark:bg-muted-950/80 py-4 md:py-6 2xl:landscape:py-12"
         >
           <!-- Header ---->
-          <div class="mb-6 flex items-center justify-between">
+          <div class="mb-6 px-4 md:px-6 flex items-center justify-between">
             <BaseHeading
               weight="medium"
               class="text-muted-800 dark:text-muted-100"
@@ -214,7 +214,7 @@ definePageMeta({
             </BaseButton>
           </div>
           <div
-            class="nui-slimscroll flex gap-4 overflow-x-auto lg:overflow-x-hidden"
+            class="nui-slimscroll px-4 md:px-6 flex gap-4 overflow-x-auto lg:overflow-x-hidden"
           >
             <NuxtLink
               to="/layouts/send"
@@ -308,200 +308,11 @@ definePageMeta({
               </BaseText>
             </div>
           </div>
-          <div class="py-10">
-            <DemoChartAreaBalance />
+          <div class="px-4 md:px-6 py-10">
+            <DemoChartAreaBalance class="[--color-chart-gradient:var(--color-muted-100)] dark:[--color-chart-gradient:var(--color-muted-950)]" />
           </div>
-          <div class="mb-6 flex items-center justify-between">
-            <BaseHeading
-              weight="medium"
-              class="text-muted-800 dark:text-muted-100"
-            >
-              Recent Activity
-            </BaseHeading>
-            <DemoLinkArrow to="/layouts" label="View all" />
-          </div>
-          <div class="space-y-6">
-            <!-- Item -->
-            <div class="flex items-center gap-3">
-              <div
-                class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
-              >
-                <Icon
-                  name="solar:card-transfer-bold-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-6"
-                />
-              </div>
-              <div>
-                <BaseHeading
-                  weight="medium"
-                  size="sm"
-                  class="text-mute-800 dark:text-muted-100"
-                >
-                  Victoria's Corner
-                </BaseHeading>
-                <BaseParagraph
-                  size="xs"
-                  class="text-muted-600 dark:text-muted-400"
-                >
-                  Outgoing payment
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto">
-                <BaseText
-                  size="sm"
-                  weight="semibold"
-                  lead="none"
-                  class="text-muted-800 dark:text-muted-100"
-                >
-                  - {{ formatPrice(938.39) }}
-                </BaseText>
-              </div>
-            </div>
-            <!-- Item -->
-            <div class="flex items-center gap-3">
-              <div
-                class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
-              >
-                <Icon
-                  name="solar:buildings-bold-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-6"
-                />
-              </div>
-              <div>
-                <BaseHeading
-                  weight="medium"
-                  size="sm"
-                  class="text-mute-800 dark:text-muted-100"
-                >
-                  John Rowland
-                </BaseHeading>
-                <BaseParagraph
-                  size="xs"
-                  class="text-muted-600 dark:text-muted-400"
-                >
-                  Outgoing payment
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto">
-                <BaseText
-                  size="sm"
-                  weight="semibold"
-                  lead="none"
-                  class="text-muted-800 dark:text-muted-100"
-                >
-                  - {{ formatPrice(1234.15) }}
-                </BaseText>
-              </div>
-            </div>
-            <!-- Item -->
-            <div class="flex items-center gap-3">
-              <div
-                class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
-              >
-                <Icon
-                  name="solar:card-transfer-bold-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-6"
-                />
-              </div>
-              <div>
-                <BaseHeading
-                  weight="medium"
-                  size="sm"
-                  class="text-mute-800 dark:text-muted-100"
-                >
-                  Kali Burger
-                </BaseHeading>
-                <BaseParagraph
-                  size="xs"
-                  class="text-muted-600 dark:text-muted-400"
-                >
-                  Outgoing payment
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto">
-                <BaseText
-                  size="sm"
-                  weight="semibold"
-                  lead="none"
-                  class="text-muted-800 dark:text-muted-100"
-                >
-                  - {{ formatPrice(23.69) }}
-                </BaseText>
-              </div>
-            </div>
-            <!-- Item -->
-            <div class="flex items-center gap-3">
-              <div
-                class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
-              >
-                <Icon
-                  name="solar:buildings-bold-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-6"
-                />
-              </div>
-              <div>
-                <BaseHeading
-                  weight="medium"
-                  size="sm"
-                  class="text-mute-800 dark:text-muted-100"
-                >
-                  Railway Inc
-                </BaseHeading>
-                <BaseParagraph
-                  size="xs"
-                  class="text-muted-600 dark:text-muted-400"
-                >
-                  Ingoing payment
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto">
-                <BaseText
-                  size="sm"
-                  weight="semibold"
-                  lead="none"
-                  class="text-muted-800 dark:text-muted-100"
-                >
-                  + {{ formatPrice(2399.99) }}
-                </BaseText>
-              </div>
-            </div>
-            <!-- Item -->
-            <div class="flex items-center gap-3">
-              <div
-                class="dark:bg-muted-900 border-muted-200 dark:border-muted-800 flex size-12 items-center justify-center rounded-xl border bg-white"
-              >
-                <Icon
-                  name="solar:card-transfer-bold-duotone"
-                  class="text-muted-800 dark:text-muted-100 size-6"
-                />
-              </div>
-              <div>
-                <BaseHeading
-                  weight="medium"
-                  size="sm"
-                  class="text-mute-800 dark:text-muted-100"
-                >
-                  Mobihouse
-                </BaseHeading>
-                <BaseParagraph
-                  size="xs"
-                  class="text-muted-600 dark:text-muted-400"
-                >
-                  Outgoing payment
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto">
-                <BaseText
-                  size="sm"
-                  weight="semibold"
-                  lead="none"
-                  class="text-muted-800 dark:text-muted-100"
-                >
-                  - {{ formatPrice(49.99) }}
-                </BaseText>
-              </div>
-            </div>
-          </div>
+          
+          <DemoActivityTable />
         </BaseCard>
       </div>
     </div>

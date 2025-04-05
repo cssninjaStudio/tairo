@@ -24,6 +24,9 @@ function useBarSocialChannels() {
         toolbar: {
           show: false,
         },
+        animations: {
+          enabled: false,
+        },
         sparkline: {
           enabled: true,
         },

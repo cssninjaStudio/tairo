@@ -263,13 +263,13 @@ const total = computed(() => {
               </button>
             </div>
             <!-- Food types -->
-            <div class="mb-14 grid grid-cols-4 gap-4 sm:grid-cols-9">
+            <div class="mb-14 grid grid-cols-4 gap-4 md:grid-cols-9">
               <div
                 v-for="genre in genres"
                 :key="genre.id"
                 role="button"
                 tabindex="0"
-                class="flex cursor-pointer flex-col items-center rounded-full border p-2 shadow-xl transition-colors duration-500 ease-in-out"
+                class="flex cursor-pointer flex-col items-center rounded-3xl md:rounded-full pt-14 md:pt-2 md:w-18 border px-2 pb-2 shadow-md md:shadow-xl transition-colors duration-500 ease-in-out"
                 :class="
                   activeGenre === genre.id
                     ? 'bg-yellow-400 border-yellow-400'
@@ -278,7 +278,7 @@ const total = computed(() => {
                 @click="activeGenre = genre.id"
               >
                 <div
-                  class="rounded-full border p-2 transition-colors duration-500 ease-in-out"
+                  class="rounded-full border p-2 transition-colors duration-500 ease-in-out size-14 shrink-0 flex items-center justify-center"
                   :class="
                     activeGenre === genre.id
                       ? 'bg-white border-yellow-400'

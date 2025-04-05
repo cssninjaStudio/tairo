@@ -83,9 +83,9 @@ function statusColor(itemStatus: string) {
             v-for="item in data?.data.slice(0, 8)"
             :key="item.id"
             tabindex="0"
-            class="hover:bg-muted-50 dark:hover:bg-muted-700"
+            class="hover:bg-muted-50 dark:hover:bg-muted-700/50 transition-colors duration-100"
           >
-            <td class="xs:pe-6 ps-2 py-2">
+            <td class="xs:pe-6 ps-2 py-2 rounded-s-md">
               <BaseText
                 size="sm"
                 weight="medium"
@@ -105,16 +105,14 @@ function statusColor(itemStatus: string) {
                 {{ item.issuer }}
               </BaseText>
             </td>
-            <td class="px-4 py-2">
+            <td class="px-4 py-2 text-end">
               <BaseText
                 size="sm"
                 weight="semibold"
                 lead="none"
                 class="text-muted-800 dark:text-muted-100"
               >
-                {{ item.type === 'in' ? '+' : '-' }} ${{
-                  item.amount.toFixed(2)
-                }}
+                {{ formatPrice(item.amount) }}
               </BaseText>
             </td>
             <td class="px-4 py-2">
@@ -136,8 +134,8 @@ function statusColor(itemStatus: string) {
                 {{ item.status }}
               </BaseTag>
             </td>
-            <td class="px-4 py-2">
-              <div class="text-muted-400 flex items-center gap-2">
+            <td class="ps-4 pe-2 py-2 rounded-e-md">
+              <div class="text-muted-400 flex items-center justify-end gap-2">
                 <BaseTag
                   size="sm"
                   weight="medium"

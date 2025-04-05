@@ -38,6 +38,9 @@ function useAreaCustomers() {
         animations: {
           enabled: false,
         },
+        zoom: {
+          enabled: false,
+        },
         toolbar: {
           show: false,
         },
@@ -541,10 +544,7 @@ function useBarProfit() {
             <BaseAvatar src="/img/avatars/4.svg" />
             <BaseAvatar
               text="H"
-              :classes="{
-                root: 'bg-yellow-400/10 dark:bg-yellow-400/20',
-                fallback: 'text-yellow-600',
-              }"
+              class="bg-yellow-400/10 dark:bg-yellow-400/20 text-yellow-600"
             />
             <BaseAvatar src="/img/avatars/3.svg" />
           </div>

@@ -15,6 +15,7 @@ definePageMeta({
 
 const isOpen = ref(true)
 const isMobileOpen = ref(false)
+const isEphemeral = ref(false)
 
 const archive = [
   {
@@ -178,6 +179,11 @@ const archive = [
                       rounded="lg"
                       label="Dropdown"
                       orientation="start"
+                      :bindings="{
+                        portal: {
+                          disabled: true,
+                        },
+                      }"
                     >
                       <template #button>
                         <button type="button" class="pointer-events-none flex size-8 items-center justify-center rounded-lg p-1 opacity-0 transition-all duration-300 group-hover/item:pointer-events-auto group-hover/item:opacity-100">
@@ -246,110 +252,112 @@ const archive = [
       </div>
     </div>
     <!-- Main content -->
-    <div class=" h-screen transition-all duration-300" :class="isOpen ? 'w-full lg:w-[calc(100%_-_260px)] lg:ms-[260px]' : 'w-full ms-0'">
-      <div class="h-screen px-4">
+    <div class="h-screen transition-[width,margin] duration-300 overflow-y-auto nui-slimscroll" :class="isOpen ? 'w-full lg:w-[calc(100%_-_260px)] lg:ms-[260px]' : 'w-full ms-0'">
+      <div class="min-h-screen px-4">
         <!-- Chat content -->
-        <div class="mx-auto h-screen w-full max-w-3xl">
-          <div class="flex h-screen flex-col justify-end">
-            <div>
-              <!-- Navigation -->
-              <div class="fixed start-0 top-0 px-4 transition-all duration-300" :class="isOpen ? 'w-full lg:ms-[260px] lg:w-[calc(100%_-_260px)]' : 'w-full ms-0'">
-                <div class="flex h-16 w-full items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <button
-                      type="button"
-                      class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300 lg:hidden"
-                      @click="isMobileOpen = true"
-                    >
-                      <Icon name="lucide:menu" class="size-5" />
-                    </button>
-                    <BaseDropdown
-                      label="Dropdown"
-                      orientation="start"
-                      rounded="lg"
-                    >
-                      <template #button>
-                        <button type="button" class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex h-10 w-40 items-center gap-2 whitespace-nowrap rounded-lg border bg-white pe-12 ps-3 md:w-48">
-                          <span class="shrink-0 whitespace-nowrap pe-4 font-sans text-[0.85rem] font-medium leading-none">Tairo GPT Mode</span>
-                          <span class="absolute end-0 top-0 flex size-10 items-center justify-center">
-                            <Icon
-                              name="lucide:chevron-down"
-                              class="text-muted-900 dark:text-muted-300 size-5 shrink-0 transition-all duration-300 in-data-[state=open]:-rotate-180"
-                            />
-                          </span>
-                        </button>
-                      </template>
-                      <BaseDropdownItem
-                        to="#"
-                        title="Tairo GPT Plus"
-                        text="Our most performant model, with advanced features."
-                        rounded="sm"
-                      >
-                        <template #start>
-                          <span class="dark:bg-muted-950 border-muted-300 dark:border-muted-800 relative -top-2 flex size-8 shrink-0 items-center justify-center rounded-lg border bg-white">
-                            <span class="bg-muted-100 dark:bg-muted-800 flex size-6 items-center justify-center rounded-md">
-                              <TairoLogo class="size-4 text-yellow-400" />
-                            </span>
-                          </span>
-                        </template>
-                      </BaseDropdownItem>
-                      <BaseDropdownItem
-                        to="#"
-                        title="Tairo GPT"
-                        text="Our most performant model, with advanced features."
-                        rounded="sm"
-                      >
-                        <template #start>
-                          <span class="dark:bg-muted-950 border-muted-300 dark:border-muted-800 relative -top-2 flex size-8 shrink-0 items-center justify-center rounded-lg border bg-white">
-                            <span class="bg-muted-100 dark:bg-muted-800 flex size-6 items-center justify-center rounded-md">
-                              <TairoLogo class="text-primary-500 size-4" />
-                            </span>
-                          </span>
-                        </template>
-                      </BaseDropdownItem>
-                      <BaseDropdownSeparator />
-                      <BaseDropdownItem
-                        to="#"
-                        title="Ephemeral chat"
-                        rounded="sm"
-                      >
-                        <template #start>
-                          <div class="flex size-8 shrink-0 items-center justify-center">
-                            <Icon name="solar:chat-round-broken" class="text-primary-500 size-5" />
-                          </div>
-                        </template>
-                        <template #end>
-                          <div class="scale-90">
-                            <BaseSwitchBall />
-                          </div>
-                        </template>
-                      </BaseDropdownItem>
-                    </BaseDropdown>
-                    <BaseTooltip content="Open Sidebar">
-                      <button
-                        v-if="!isOpen"
-                        type="button"
-                        class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300"
-                        @click="isOpen = true"
-                      >
-                        <Icon name="solar:siderbar-linear" class="size-5" />
+        <div class="mx-auto min-h-screen w-full max-w-3xl">
+          <div class="flex min-h-screen flex-col justify-end">
+            <!-- Navigation -->
+            <div class="fixed start-0 top-0 px-4 transition-all duration-300" :class="isOpen ? 'w-full lg:ms-[260px] lg:w-[calc(100%_-_260px)]' : 'w-full ms-0'">
+              <div class="flex h-16 w-full items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300 lg:hidden"
+                    @click="isMobileOpen = true"
+                  >
+                    <Icon name="lucide:menu" class="size-5" />
+                  </button>
+                  <BaseDropdown
+                    label="Dropdown"
+                    orientation="start"
+                    rounded="lg"
+                  >
+                    <template #button>
+                      <button type="button" class="border-muted-200 dark:border-muted-800 dark:bg-muted-950 relative flex h-10 w-40 items-center gap-2 whitespace-nowrap rounded-lg border bg-white pe-12 ps-3 md:w-48">
+                        <span class="shrink-0 whitespace-nowrap pe-4 font-sans text-[0.85rem] font-medium leading-none">Tairo GPT Mode</span>
+                        <span class="absolute end-0 top-0 flex size-10 items-center justify-center">
+                          <Icon
+                            name="lucide:chevron-down"
+                            class="text-muted-900 dark:text-muted-300 size-5 shrink-0 transition-all duration-300 in-data-[state=open]:-rotate-180"
+                          />
+                        </span>
                       </button>
-                    </BaseTooltip>
+                    </template>
+                    <BaseDropdownItem
+                      to="#"
+                      title="Tairo GPT Plus"
+                      text="Our most performant model, with advanced features."
+                      rounded="sm"
+                    >
+                      <template #start>
+                        <span class="dark:bg-muted-950 border-muted-300 dark:border-muted-800 relative flex size-8 shrink-0 items-center justify-center rounded-lg border bg-white">
+                          <span class="bg-muted-100 dark:bg-muted-800 flex size-6 items-center justify-center rounded-md">
+                            <TairoLogo class="size-4 text-yellow-400" />
+                          </span>
+                        </span>
+                      </template>
+                    </BaseDropdownItem>
+                    <BaseDropdownItem
+                      to="#"
+                      title="Tairo GPT"
+                      text="Our most performant model, with advanced features."
+                      rounded="sm"
+                    >
+                      <template #start>
+                        <span class="dark:bg-muted-950 border-muted-300 dark:border-muted-800 relative flex size-8 shrink-0 items-center justify-center rounded-lg border bg-white">
+                          <span class="bg-muted-100 dark:bg-muted-800 flex size-6 items-center justify-center rounded-md">
+                            <TairoLogo class="text-primary-500 size-4" />
+                          </span>
+                        </span>
+                      </template>
+                    </BaseDropdownItem>
+                    <BaseDropdownSeparator />
+                    <BaseDropdownItem
+                      to="#"
+                      title="Ephemeral chat"
+                      rounded="sm"
+                      as="label"
+                      @select.prevent
+                    >
+                      <template #start>
+                        <div class="flex size-8 shrink-0 items-center justify-center">
+                          <Icon name="solar:chat-round-broken" class="text-primary-500 size-5" />
+                        </div>
+                      </template>
+                      <template #end>
+                        <div class="scale-90">
+                          <BaseSwitchBall v-model="isEphemeral" />
+                        </div>
+                      </template>
+                    </BaseDropdownItem>
+                  </BaseDropdown>
+                  <BaseTooltip content="Open Sidebar">
+                    <button
+                      v-if="!isOpen"
+                      type="button"
+                      class="nui-mask nui-mask-blob hover:bg-muted-100 dark:hover:bg-muted-800 flex size-10 items-center justify-center transition-colors duration-300"
+                      @click="isOpen = true"
+                    >
+                      <Icon name="solar:siderbar-linear" class="size-5" />
+                    </button>
+                  </BaseTooltip>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="scale-90">
+                    <BaseThemeSwitch />
                   </div>
-                  <div class="flex items-center gap-2">
-                    <div class="scale-90">
-                      <BaseThemeSwitch />
-                    </div>
-                    <div>
-                      <BaseButton size="sm" rounded="full">
-                        <Icon name="lucide:share-2" class="size-4" />
-                        <span>Share</span>
-                      </BaseButton>
-                    </div>
-                    <DemoAccountMenu horizontal />
+                  <div>
+                    <BaseButton size="sm" rounded="full">
+                      <Icon name="lucide:share-2" class="size-4" />
+                      <span>Share</span>
+                    </BaseButton>
                   </div>
+                  <DemoAccountMenu horizontal />
                 </div>
               </div>
+            </div>
+            <div class="grow py-16">
               <!-- Logo section -->
               <div class="dark:bg-muted-950 border-muted-300 dark:border-muted-800 mx-auto mb-10 flex size-16 items-center justify-center rounded-xl border bg-white">
                 <div class="bg-muted-100 dark:bg-muted-800 flex size-14 items-center justify-center rounded-lg">
@@ -357,7 +365,7 @@ const archive = [
                 </div>
               </div>
               <!-- Grid section -->
-              <div class="grid grid-cols-2 gap-4 pb-72 md:grid-cols-4">
+              <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
                 <div>
                   <BaseCard
                     rounded="lg"
@@ -419,35 +427,35 @@ const archive = [
                   </BaseCard>
                 </div>
               </div>
-              <!-- Input section -->
-              <div class="relative pb-6">
-                <div class="relative h-14 min-h-14">
-                  <textarea
-                    placeholder="Message Tairo GPT..."
-                    class="placeholder:text-muted-300 dark:placeholder:text-muted-700 focus-visible:nui-focus bg-muted-100 dark:bg-muted-950 relative h-14 min-h-14 w-full rounded-full px-16 leading-[3.5rem]"
-                  />
-                  <BaseTooltip content="Attach a file">
-                    <button
-                      type="button"
-                      class="absolute bottom-0 start-0 flex size-14 items-center justify-center"
-                    >
-                      <Icon name="solar:paperclip-linear" class="text-muted-500 size-6" />
-                    </button>
-                  </BaseTooltip>
+            </div>
+            <!-- Input section -->
+            <div class="relative pb-6">
+              <div class="relative min-h-14">
+                <textarea
+                  placeholder="Message Tairo GPT..."
+                  class="field-sizing-content placeholder:text-muted-300 dark:placeholder:text-muted-700 focus-visible:nui-focus bg-muted-100 dark:bg-muted-950 relative min-h-14 w-full rounded-4xl py-4.5 px-16 leading-tight"
+                />
+                <BaseTooltip content="Attach a file">
                   <button
                     type="button"
-                    class="absolute bottom-0 end-0 flex size-14 items-center justify-center"
+                    class="absolute bottom-1.5 start-0 flex size-14 items-center justify-center"
                   >
-                    <span class="bg-muted-900 flex size-10 items-center justify-center rounded-full">
-                      <Icon name="mdi:arrow-up" class="size-5 text-white" />
-                    </span>
+                    <Icon name="solar:paperclip-linear" class="text-muted-500 size-6" />
                   </button>
-                </div>
-                <div class="mt-1 text-center">
-                  <BaseText size="xs" class="text-muted-400 dark:text-muted-500">
-                    Tairo GPT may produce errors. Make sure to verify important info.
-                  </BaseText>
-                </div>
+                </BaseTooltip>
+                <button
+                  type="button"
+                  class="absolute bottom-1.5 end-0 flex size-14 items-center justify-center"
+                >
+                  <span class="bg-muted-900 flex size-10 items-center justify-center rounded-full">
+                    <Icon name="mdi:arrow-up" class="size-5 text-white" />
+                  </span>
+                </button>
+              </div>
+              <div class="mt-1 text-center">
+                <BaseText size="xs" class="text-muted-400 dark:text-muted-500">
+                  Tairo GPT may produce errors. Make sure to verify important info.
+                </BaseText>
               </div>
             </div>
           </div>

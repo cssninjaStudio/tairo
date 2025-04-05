@@ -315,7 +315,7 @@ const matches = [
                   >
                     <thead>
                       <tr>
-                        <th class="py-3 font-sans text-xs uppercase">
+                        <th class="py-3 text-start font-sans text-xs uppercase">
                           Time
                         </th>
                         <th
@@ -323,7 +323,7 @@ const matches = [
                         >
                           Match
                         </th>
-                        <th class="xs:px-4 py-3 font-sans text-xs uppercase">
+                        <th class="xs:px-4 py-3 text-start font-sans text-xs uppercase">
                           Stadium
                         </th>
                         <th class="xs:px-4 py-3 font-sans text-xs uppercase">
@@ -414,15 +414,13 @@ const matches = [
                             </span>
                           </div>
                         </td>
-                        <td class="xs:px-4 py-4">
-                          <div>
-                            <BaseButton size="icon-sm" variant="muted">
-                              <Icon
-                                name="lucide:more-horizontal"
-                                class="size-4"
-                              />
-                            </BaseButton>
-                          </div>
+                        <td class="xs:px-4 py-4 text-end">
+                          <BaseButton size="icon-sm" variant="muted">
+                            <Icon
+                              name="lucide:more-horizontal"
+                              class="size-4"
+                            />
+                          </BaseButton>
                         </td>
                       </tr>
                     </tbody>

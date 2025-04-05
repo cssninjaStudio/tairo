@@ -2,6 +2,7 @@
 import type { DatePickerDate, DatePickerRangeObject } from 'v-calendar/dist/types/src/use/datePicker.js'
 import { DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
+import '~/assets/css/vcalendar.css'
 
 defineOptions({
   inheritAttrs: false,

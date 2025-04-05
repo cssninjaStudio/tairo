@@ -28,6 +28,12 @@ function useAreaSubscriptions() {
         toolbar: {
           show: false,
         },
+        zoom: {
+          enabled: false,
+        },
+        animations: {
+          enabled: false,
+        },
         sparkline: {
           enabled: true,
         },
@@ -150,8 +156,6 @@ function useAreaSubscriptions() {
         </div>
       </div>
     </div>
-    <div class="mt-auto w-full">
-      <AddonApexcharts v-bind="areaSubscriptions" />
-    </div>
+    <AddonApexcharts v-bind="areaSubscriptions" class="mt-auto w-full" />
   </div>
 </template>

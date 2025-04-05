@@ -2,7 +2,6 @@
 import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
 
 definePageMeta({
   title: 'Health',

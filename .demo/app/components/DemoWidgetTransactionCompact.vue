@@ -45,9 +45,9 @@ function statusColor(itemStatus: string) {
 <template>
   <BaseCard
     rounded="md"
-    class="p-4 md:p-6"
+    class="py-4 px-2 md:py-6 md:px-4"
   >
-    <div class="items-center justify-between sm:flex">
+    <div class="px-2 items-center justify-between sm:flex">
       <BaseHeading
         as="h4"
         size="xs"
@@ -59,7 +59,7 @@ function statusColor(itemStatus: string) {
       </BaseHeading>
       <DemoLinkArrow to="#" label="View all" />
     </div>
-    <div v-if="status !== 'pending' && data?.data.length === 0">
+    <div v-if="status !== 'pending' && data?.data.length === 0" class="px-2">
       <BasePlaceholderPage
         title="No matching results"
         subtitle="Looks like we couldn't find any matching results for your search terms. Try other search terms."
@@ -80,11 +80,12 @@ function statusColor(itemStatus: string) {
         <tbody>
           <!-- Row -->
           <tr
-            v-for="item in data?.data.slice(0, 8)"
+            v-for="item in data?.data"
             :key="item.id"
             tabindex="0"
+            class="hover:bg-muted-200/50 dark:hover:bg-muted-900/50 transition-colors duration-100"
           >
-            <td class="py-2">
+            <td class="py-2 ps-2 rounded-s-md">
               <BaseText
                 size="sm"
                 weight="medium"
@@ -104,19 +105,17 @@ function statusColor(itemStatus: string) {
                 {{ item.issuer }}
               </BaseText>
             </td>
-            <td class="px-4 py-2">
+            <td class="px-4 py-2 text-end">
               <BaseText
                 size="sm"
                 weight="semibold"
                 lead="none"
                 class="text-muted-800 dark:text-muted-100"
               >
-                {{ item.type === 'in' ? '+' : '-' }} ${{
-                  item.amount.toFixed(2)
-                }}
+                {{ formatPrice(item.amount) }}
               </BaseText>
             </td>
-            <td class="px-4 py-2 text-end">
+            <td class="ps-4 pe-2 py-2 rounded-e-md text-end">
               <BaseTag
                 :variant="statusColor(item.status)"
                 rounded="full"

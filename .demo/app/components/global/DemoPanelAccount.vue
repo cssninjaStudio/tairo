@@ -150,7 +150,7 @@ function useDemoAreaBalance() {
             weight="medium"
             class="text-muted-900 dark:text-muted-100 mb-1"
           >
-            ${{ account.balance.toFixed(2) }}
+            {{ formatPrice(account.balance) }}
           </BaseParagraph>
         </div>
       </div>

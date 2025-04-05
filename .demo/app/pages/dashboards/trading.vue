@@ -438,7 +438,7 @@ function useStockPrice() {
                 </Transition>
               </div>
             </div>
-            <AddonApexcharts v-bind="areaBtcPrice" />
+            <AddonApexcharts v-bind="areaBtcPrice" class="[--color-chart-gradient:var(--color-muted-50)] dark:[--color-chart-gradient:var(--color-muted-900)]" />
           </div>
           <!-- Table -->
           <div>

@@ -35,6 +35,9 @@ function useLineRevenue() {
         zoom: {
           enabled: false,
         },
+        animations: {
+          enabled: false,
+        },
         toolbar: {
           show: false,
         },
@@ -87,6 +90,9 @@ function useRadialGoal() {
       chart: {
         offsetY: -10,
         fontFamily: 'var(--font-sans)',
+        animations: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-chart-base)', 'var(--color-indigo-500)'],
       plotOptions: {

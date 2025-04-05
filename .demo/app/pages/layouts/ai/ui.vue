@@ -143,11 +143,11 @@ function closeUpgrade() {
       ]"
     >
       <div
-        class="border-muted-200 dark:border-muted-800 fixed inset-y-0 start-0 z-auto flex h-svh flex-col overflow-hidden border-r transition-all duration-300"
+        class="border-muted-200 dark:border-muted-800 fixed inset-y-0 start-0 z-auto flex h-svh flex-col border-r transition-all duration-300"
         :class="isCollapsed ? 'lg:w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)'"
       >
         <div
-          class="flex h-svh flex-1 translate-x-[-0.5px] flex-col overflow-hidden transition-all duration-300"
+          class="flex h-svh flex-1 translate-x-[-0.5px] flex-col transition-all duration-300"
           :class="isCollapsed ? 'w-(--sidebar-width-collapsed)' : 'w-(--sidebar-width)'"
         >
           <div class="relative flex items-center p-2 pb-1">
@@ -248,6 +248,11 @@ function closeUpgrade() {
                       rounded="lg"
                       label="Dropdown"
                       orientation="start"
+                      :bindings="{
+                        portal: {
+                          disabled: true,
+                        }
+                      }"
                     >
                       <template #button>
                         <button type="button" class="flex size-8 items-center justify-center rounded-lg p-1 opacity-0 transition-all duration-300 group-hover/item:opacity-100">

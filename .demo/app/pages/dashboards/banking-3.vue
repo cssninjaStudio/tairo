@@ -96,6 +96,9 @@ function useAreaBtcPrice() {
         toolbar: {
           show: false,
         },
+        zoom: {
+          enabled: false,
+        },
         dropShadow: {
           enabled: true,
           enabledOnSeries: [0],

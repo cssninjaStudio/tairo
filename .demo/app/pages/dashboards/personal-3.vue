@@ -32,6 +32,9 @@ function useAreaInterviews() {
         animations: {
           enabled: false,
         },
+        zoom: {
+          enabled: false,
+        },
         toolbar: {
           show: false,
         },

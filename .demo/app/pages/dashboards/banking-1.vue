@@ -36,6 +36,12 @@ function useIncomeHistory() {
         toolbar: {
           show: false,
         },
+        animations: {
+          enabled: false,
+        },
+        zoom: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-chart-base)', 'var(--color-indigo-600)', 'var(--color-amber-600)'],
       title: {
@@ -109,6 +115,37 @@ const banks = [
     name: 'Bankus',
     text: 'checking **** **** 8448',
     media: '/img/icons/banking/bank-3.svg',
+  },
+]
+
+const transactions = [
+  {
+    icon: 'solar:chef-hat-bold-duotone',
+    iconColor: 'bg-success-500/10 text-success-500',
+    title: 'Food delivery',
+    subtitle: 'Oct 23, 2022 - 8:46pm',
+    amount: -41.49,
+  },
+  {
+    icon: 'solar:shop-bold-duotone',
+    iconColor: 'bg-orange-500/10 text-orange-500',
+    title: 'Market Earnings',
+    subtitle: 'Oct 18, 2022 - 9:11am',
+    amount: 263.39,
+  },
+  {
+    icon: 'solar:bag-smile-bold-duotone',
+    iconColor: 'bg-indigo-500/10 text-indigo-500',
+    title: 'Online order',
+    subtitle: 'Oct 16, 2022 - 2:13pm',
+    amount: -92.00,
+  },
+  {
+    icon: 'solar:screencast-2-bold-duotone',
+    iconColor: 'bg-yellow-400/10 text-yellow-500',
+    title: 'Netflix subscription',
+    subtitle: 'Oct 5, 2022 - 8:22pm',
+    amount: -18.00,
   },
 ]
 
@@ -362,8 +399,8 @@ const amount = ref<number>(0)
             </div>
           </BaseCard>
           <!-- Widget -->
-          <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
-            <div class="mb-8 flex items-center justify-between">
+          <BaseCard rounded="md" class="flex h-full flex-col py-4 px-2 md:py-6 md:px-4">
+            <div class="mb-8 px-2 flex items-center justify-between">
               <BaseHeading
                 as="h3"
                 size="md"
@@ -382,16 +419,20 @@ const amount = ref<number>(0)
                 </NuxtLink>
               </div>
             </div>
-            <div class="space-y-6">
+            <div class="space-y-2">
               <!-- Item -->
-              <div class="flex items-center gap-2">
+              <div
+                v-for="item in transactions"
+                :key="item.title"
+                class="py-2 px-2 flex items-center gap-2 hover:bg-muted-200/50 dark:hover:bg-muted-900/50 transition-colors duration-100 rounded-lg"
+              >
                 <BaseIconBox
-                  class="bg-success-500/10 text-success-500"
+                  :class="item.iconColor"
                   size="sm"
                   rounded="full"
                   variant="none"
                 >
-                  <Icon name="solar:chef-hat-bold-duotone" class="size-5" />
+                  <Icon :name="item.icon" class="size-5" />
                 </BaseIconBox>
                 <div>
                   <BaseHeading
@@ -401,113 +442,17 @@ const amount = ref<number>(0)
                     lead="tight"
                     class="text-muted-900 dark:text-white"
                   >
-                    <span>Food delivery</span>
+                    <span>{{ item.title }}</span>
                   </BaseHeading>
                   <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
-                    <span>Oct 23, 2022 - 8:46pm</span>
+                    <span>{{ item.subtitle }}</span>
                   </BaseParagraph>
                 </div>
                 <div class="ms-auto">
                   <span
                     class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
                   >
-                    - $41.49
-                  </span>
-                </div>
-              </div>
-              <!-- Item -->
-              <div class="flex items-center gap-2">
-                <BaseIconBox
-                  class="bg-orange-500/10 text-orange-500"
-                  size="sm"
-                  rounded="full"
-                  variant="none"
-                >
-                  <Icon name="solar:shop-bold-duotone" class="size-5" />
-                </BaseIconBox>
-                <div>
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="medium"
-                    lead="tight"
-                    class="text-muted-900 dark:text-white"
-                  >
-                    <span>Market Earnings</span>
-                  </BaseHeading>
-                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
-                    <span>Oct 18, 2022 - 9:11am</span>
-                  </BaseParagraph>
-                </div>
-                <div class="ms-auto">
-                  <span
-                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
-                  >
-                    + $263.39
-                  </span>
-                </div>
-              </div>
-              <!-- Item -->
-              <div class="flex items-center gap-2">
-                <BaseIconBox
-                  class="bg-indigo-500/10 text-indigo-500"
-                  size="sm"
-                  rounded="full"
-                  variant="none"
-                >
-                  <Icon name="solar:bag-smile-bold-duotone" class="size-5" />
-                </BaseIconBox>
-                <div>
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="medium"
-                    lead="tight"
-                    class="text-muted-900 dark:text-white"
-                  >
-                    <span>Online order</span>
-                  </BaseHeading>
-                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
-                    <span>Oct 16, 2022 - 2:13pm</span>
-                  </BaseParagraph>
-                </div>
-                <div class="ms-auto">
-                  <span
-                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
-                  >
-                    - $92.00
-                  </span>
-                </div>
-              </div>
-              <!-- Item -->
-              <div class="flex items-center gap-2">
-                <BaseIconBox
-                  class="bg-yellow-400/10 text-yellow-500"
-                  size="sm"
-                  rounded="full"
-                  variant="none"
-                >
-                  <Icon name="solar:screencast-2-bold-duotone" class="size-5" />
-                </BaseIconBox>
-                <div>
-                  <BaseHeading
-                    as="h4"
-                    size="sm"
-                    weight="medium"
-                    lead="tight"
-                    class="text-muted-900 dark:text-white"
-                  >
-                    <span>Netflix subscription</span>
-                  </BaseHeading>
-                  <BaseParagraph size="xs" class="text-muted-600 dark:text-muted-400">
-                    <span>Oct 5, 2022 - 8:22pm</span>
-                  </BaseParagraph>
-                </div>
-                <div class="ms-auto">
-                  <span
-                    class="text-muted-900 dark:text-muted-100 font-sans text-sm font-semibold"
-                  >
-                    - $18.00
+                    {{ formatPrice(item.amount) }}
                   </span>
                 </div>
               </div>
@@ -668,7 +613,7 @@ const amount = ref<number>(0)
                 <div class="mt-auto">
                   <div class="space-y-3">
                     <div>
-                      <BaseSelect v-model="selectedBankSendTo">
+                      <BaseSelect rounded="sm" v-model="selectedBankSendTo">
                         <TairoSelectItem
                           v-for="item in banks"
                           :key="item.id"
@@ -679,12 +624,12 @@ const amount = ref<number>(0)
                         />
                       </BaseSelect>
                     </div>
-                    <div class="flex flex-col 2xl:flex-row w-full gap-2">
+                    <div class="grid grid-cols-12 w-full gap-2">
                       <BaseSelect
                         v-model="selectedCurrency"
                         rounded="sm"
                         label="Currency"
-                        class="w-16"
+                        class="col-span-3"
                       >
                         <BaseSelectItem value="usd">
                           $
@@ -696,13 +641,15 @@ const amount = ref<number>(0)
                           €
                         </BaseSelectItem>
                       </BaseSelect>
-                      <BaseInputNumber
-                        v-model="amount"
-                        placeholder="0.00"
-                        rounded="sm"
-                        label="Amount"
-                        :min="0"
-                      />
+                      <div class="col-span-9">
+                        <BaseInputNumber
+                          v-model="amount"
+                          placeholder="0.00"
+                          rounded="sm"
+                          label="Amount"
+                          :min="0"
+                        />
+                      </div>
                     </div>
                   </div>
                   <p

@@ -52,7 +52,7 @@ const routesIndex = computed(() => {
       else {
         match.push({
           ...(route.meta?.preview || {}),
-          id: route.name,
+          id: router.resolve({ name: route.name }).href,
         })
       }
     }
@@ -158,7 +158,7 @@ function handleSelect(ev: CustomEvent) {
               <ComboboxItem
                 v-for="page in contentResults"
                 :key="page?.id"
-                :value="page"
+                :value="page?.id"
                 class="scroll-mt-2"
                 @select="handleSelect"
               >

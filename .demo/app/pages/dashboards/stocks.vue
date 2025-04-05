@@ -15,6 +15,51 @@ definePageMeta({
 
 const barProfit = reactive(useBarProfit())
 
+const stocks = ref([
+  {
+    id: 'LKN',
+    icon: 'fa6-brands:linkedin-in',
+    iconColors: 'bg-blue-800 text-white shadow-blue-500/20 dark:shadow-blue-800/20',
+    name: 'Linkedin Corp.',
+    price: 1478.32,
+  },
+  {
+    id: 'GTB',
+    icon: 'fa6-brands:github',
+    iconColors: 'bg-muted-900 dark:bg-muted-100 dark:text-muted-900 text-white',
+    name: 'Github Inc.',
+    price: 978.21,
+  },
+  {
+    id: 'INV',
+    icon: 'fa6-brands:invision',
+    iconColors: 'bg-rose-500 text-white shadow-rose-500/20 dark:shadow-rose-800/20',
+    name: 'Invision Corp.',
+    price: 1671.89,
+  },
+  {
+    id: 'TLG',
+    icon: 'fa-brands:telegram-plane',
+    iconColors: 'bg-sky-700 text-white shadow-sky-500/20 dark:shadow-sky-800/20',
+    name: 'Telegram Inc.',
+    price: 491.54,
+  },
+  {
+    id: 'KCK',
+    icon: 'fa-brands:kickstarter-k',
+    iconColors: 'bg-emerald-500 text-white shadow-emerald-500/20 dark:shadow-emerald-800/20',
+    name: 'Kickstarter Inc.',
+    price: 1115.68,
+  },
+  {
+    id: 'GGL',
+    icon: 'fa-brands:google',
+    iconColors: 'bg-yellow-500 text-white shadow-yellow-500/20 dark:shadow-yellow-800/20',
+    name: 'Google Corp.',
+    price: 2514.51,
+  },
+])
+
 function useBarProfit() {
   const series = shallowRef([
     {
@@ -600,8 +645,8 @@ const date = ref(new Date())
     <div class="grid grid-cols-12 gap-4">
       <!-- Grid item -->
       <div class="col-span-12 md:col-span-6 lg:col-span-4">
-        <BaseCard rounded="lg" class="p-4 md:p-6">
-          <div class="mb-8 flex items-center justify-between">
+        <BaseCard rounded="lg" class="py-4 px-2 md:py-6 md:px-4">
+          <div class="mb-8 px-2 flex items-center justify-between">
             <BaseHeading
               as="h3"
               size="md"
@@ -618,16 +663,20 @@ const date = ref(new Date())
               View all
             </BaseButton>
           </div>
-          <div class="mb-2 space-y-5">
+          <div class="space-y-2">
             <!-- List item -->
-            <div class="flex items-center gap-2">
+            <div
+              v-for="item in stocks"
+              :key="item.id"
+              class="py-2 px-2 flex items-center gap-2 hover:bg-muted-200/50 dark:hover:bg-muted-900/50 transition-colors duration-100 rounded-lg"
+            >
               <BaseIconBox
                 rounded="full"
                 size="xs"
-                class="bg-blue-800 text-white shadow-xl shadow-blue-500/20 dark:shadow-blue-800/20"
+                :class="item.iconColors"
                 variant="none"
               >
-                <Icon name="fa6-brands:linkedin-in" class="size-3" />
+                <Icon :name="item.icon" class="size-3" />
               </BaseIconBox>
               <div>
                 <BaseHeading
@@ -637,177 +686,17 @@ const date = ref(new Date())
                   lead="snug"
                   class="text-muted-900 dark:text-white"
                 >
-                  <span>LKN</span>
+                  <span>{{ item.name }}</span>
                 </BaseHeading>
                 <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-600 dark:text-muted-400">Linkedin Corp.</span>
+                  <span class="text-muted-600 dark:text-muted-400">{{ item.name }}</span>
                 </BaseParagraph>
               </div>
               <div class="ms-auto flex items-center gap-1">
                 <span
                   class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
                 >
-                  $1,478.32
-                </span>
-              </div>
-            </div>
-            <!-- List item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                rounded="full"
-                size="xs"
-                class="bg-muted-900 dark:bg-muted-100 dark:text-muted-900 text-white"
-                variant="none"
-              >
-                <Icon name="fa6-brands:github" class="size-3" />
-              </BaseIconBox>
-              <div>
-                <BaseHeading
-                  as="h4"
-                  size="sm"
-                  weight="medium"
-                  lead="snug"
-                  class="text-muted-900 dark:text-white"
-                >
-                  <span>GTB</span>
-                </BaseHeading>
-                <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-600 dark:text-muted-400">Github Inc.</span>
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto flex items-center gap-1">
-                <span
-                  class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
-                >
-                  $978.21
-                </span>
-              </div>
-            </div>
-            <!-- List item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                rounded="full"
-                size="xs"
-                class="bg-rose-500 text-white shadow-xl shadow-rose-500/20 dark:shadow-rose-800/20"
-                variant="none"
-              >
-                <Icon name="fa6-brands:invision" class="size-4" />
-              </BaseIconBox>
-              <div>
-                <BaseHeading
-                  as="h4"
-                  size="sm"
-                  weight="medium"
-                  lead="snug"
-                  class="text-muted-900 dark:text-white"
-                >
-                  <span>INV</span>
-                </BaseHeading>
-                <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-600 dark:text-muted-400">Invision Corp.</span>
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto flex items-center gap-1">
-                <span
-                  class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
-                >
-                  $1,671.89
-                </span>
-              </div>
-            </div>
-            <!-- List item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                rounded="full"
-                size="xs"
-                class="bg-sky-700 text-white shadow-xl shadow-sky-500/20 dark:shadow-sky-800/20"
-                variant="none"
-              >
-                <Icon name="fa-brands:telegram-plane" class="size-4" />
-              </BaseIconBox>
-              <div>
-                <BaseHeading
-                  as="h4"
-                  size="sm"
-                  weight="medium"
-                  lead="snug"
-                  class="text-muted-900 dark:text-white"
-                >
-                  <span>TLG</span>
-                </BaseHeading>
-                <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-600 dark:text-muted-400">Telegram Inc.</span>
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto flex items-center gap-1">
-                <span
-                  class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
-                >
-                  $491.54
-                </span>
-              </div>
-            </div>
-            <!-- List item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                rounded="full"
-                size="xs"
-                class="bg-emerald-500 text-white shadow-xl shadow-emerald-500/20 dark:shadow-emerald-800/20"
-                variant="none"
-              >
-                <Icon name="fa-brands:kickstarter-k" class="size-4" />
-              </BaseIconBox>
-              <div>
-                <BaseHeading
-                  as="h4"
-                  size="sm"
-                  weight="medium"
-                  lead="snug"
-                  class="text-muted-900 dark:text-white"
-                >
-                  <span>KCK</span>
-                </BaseHeading>
-                <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-600 dark:text-muted-400">Kickstarter Inc.</span>
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto flex items-center gap-1">
-                <span
-                  class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
-                >
-                  $1115.68
-                </span>
-              </div>
-            </div>
-            <!-- List item -->
-            <div class="flex items-center gap-2">
-              <BaseIconBox
-                rounded="full"
-                size="xs"
-                class="bg-yellow-500 text-white shadow-xl shadow-yellow-500/20 dark:shadow-yellow-800/20"
-                variant="none"
-              >
-                <Icon name="fa-brands:google" class="size-4" />
-              </BaseIconBox>
-              <div>
-                <BaseHeading
-                  as="h4"
-                  size="sm"
-                  weight="medium"
-                  lead="snug"
-                  class="text-muted-900 dark:text-white"
-                >
-                  <span>GGL</span>
-                </BaseHeading>
-                <BaseParagraph lead="none" size="xs">
-                  <span class="text-muted-600 dark:text-muted-400">Google Corp.</span>
-                </BaseParagraph>
-              </div>
-              <div class="ms-auto flex items-center gap-1">
-                <span
-                  class="text-muted-600 dark:text-muted-400 font-sans text-sm font-medium"
-                >
-                  $2514.51
+                  {{ formatPrice(item.price) }}
                 </span>
               </div>
             </div>

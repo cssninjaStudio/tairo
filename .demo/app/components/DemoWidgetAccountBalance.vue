@@ -16,9 +16,9 @@
       </BaseHeading>
       <p>
         <span
-          class="text-muted-900 font-sans text-4xl font-medium before:text-xl before:content-['$'] dark:text-white"
+          class="text-muted-900 font-sans text-4xl font-medium dark:text-white"
         >
-          9,543.12
+          {{ formatPrice(9543.12) }}
         </span>
       </p>
       <div class="flex items-center justify-center gap-x-2">
@@ -27,7 +27,7 @@
           class="iconify text-success-500 size-4"
         />
         <span class="text-muted-600 dark:text-muted-400 font-sans text-sm">
-          $149.32 Today, Sep 25
+          {{ formatPrice(149.32) }} Today, Sep 25
         </span>
       </div>
     </div>

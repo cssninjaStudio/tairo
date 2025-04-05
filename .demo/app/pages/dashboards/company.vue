@@ -117,17 +117,6 @@ function useBarSalesProfit() {
         width: 2,
         colors: ['transparent'],
       },
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shade: 'light',
-          type: 'vertical',
-          gradientToColors: ['var(--color-chart-gradient)', 'var(--color-chart-gradient)', 'var(--color-chart-gradient)'],
-          shadeIntensity: 0,
-          opacityFrom: 0.6,
-          opacityTo: 0.75,
-        },
-      },
       xaxis: {
         categories: [
           'Feb',
@@ -322,7 +311,7 @@ const date = ref(new Date())
         <!-- Widget -->
         <div class="lg:portrait:col-span-6 col-span-12 sm:landscape:col-span-4">
           <BaseCard rounded="md" class="relative h-full">
-            <DemoChartAreaStats />
+            <DemoChartAreaStats class="**:[.apexcharts-svg]:rounded-b-md" />
           </BaseCard>
         </div>
         <!-- Widget -->

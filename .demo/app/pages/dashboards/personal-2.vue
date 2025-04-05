@@ -41,6 +41,9 @@ function useAreaTaskCompletion() {
         toolbar: {
           show: false,
         },
+        zoom: {
+          enabled: false,
+        },
       },
       colors: ['var(--color-chart-base)', 'var(--color-indigo-600)', 'var(--color-amber-600)'],
       legend: {
