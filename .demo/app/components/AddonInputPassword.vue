@@ -38,11 +38,25 @@ const props = withDefaults(defineProps<{
   touched?: boolean
   disabled?: boolean
   error?: string
+
+  /**
+   * Customize icons used in the component.
+   */
+  icons?: {
+    hint?: string
+    reveal?: string
+    hide?: string
+  }
 }>(), {
   modelValue: '',
   userInputs: () => [],
   locale: undefined,
   rounded: 'sm',
+  icons: () => ({
+    hint: 'solar:question-square-outline',
+    reveal: 'solar:eye-linear',
+    hide: 'solar:eye-closed-linear',
+  }),
 })
 
 const emits = defineEmits<{
@@ -61,14 +75,16 @@ const showPassword = ref(props.show ?? false)
 let zxcvbn: typeof import('@zxcvbn-ts/core').zxcvbnAsync
 let zxcvbnOptions: Options
 let options: OptionsType
-let parsePending = false
+let parsePending = Boolean(props.modelValue)
 
 const inputRef = ref<any>()
+const loading = ref(false)
 const isTouched = ref(props.touched ?? false)
 const validation = shallowRef<ZxcvbnResult | null>(null)
 
 defineExpose({
   touched: isTouched,
+  loading,
   validation,
   showPassword,
   toggleVisibility,
@@ -86,6 +102,8 @@ function toggleVisibility() {
 watch(showPassword, value => emits('visibility', value))
 
 async function checkPassword(value: string) {
+  loading.value = true
+
   if (!zxcvbn) {
     parsePending = true
     return
@@ -99,6 +117,7 @@ async function checkPassword(value: string) {
   validation.value.score += (fastHashingCenturies ? 1 : 0)
 
   emits('validation', { validation: validation.value, touched: isTouched.value })
+  loading.value = false
 }
 
 watchDebounced(
@@ -164,7 +183,7 @@ onNuxtReady(async () => {
             class="flex items-center justify-between gap-2"
           >
             <Icon
-              name="lucide:help-circle"
+              :name="props.icons.hint"
               class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
             <span
@@ -179,7 +198,7 @@ onNuxtReady(async () => {
             class="flex items-center justify-between gap-2"
           >
             <Icon
-              name="lucide:help-circle"
+              :name="props.icons.hint"
               class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
             <span
@@ -192,14 +211,14 @@ onNuxtReady(async () => {
       </slot>
     </div>
     <div
-      class="focus-within:nui-focus rounded-md flex *:rounded-none *:border-e-0 *:first:rounded-s-md *:last:border-e *:last:rounded-e-md"
+      class="group has-aria-invalid:ring-destructive-base focus-within:nui-focus rounded-md flex *:rounded-none *:border-e-0 *:first:rounded-s-md *:last:border-e *:last:rounded-e-md"
       :class="[
         props.error ? 'ring-destructive-base!' : '',
       ]"
     >
       <div
         v-if="props.icon"
-        class="ps-3 border text-input-default-text/60 bg-input-default-bg flex items-center justify-center"
+        class="ps-3 border text-input-default-text/60 group-has-disabled:opacity-50 bg-input-default-bg flex items-center justify-center group-has-aria-invalid:border-destructive-base"
         :class="[
           props.error ? 'border-destructive-base' : 'border-input-default-border',
         ]"
@@ -211,9 +230,11 @@ onNuxtReady(async () => {
         :model-value="vmodel"
         :type="showPassword ? 'text' : 'password'"
         :disabled="props.disabled"
+        :aria-invalid="props.error ? 'true' : undefined"
         :rounded="props.rounded"
         v-bind="$attrs"
         class="ring-0!"
+        :class="props.icon ? 'border-s-0' : ''"
         @update:model-value="
           (value) => {
             handleInput(String(value))
@@ -231,7 +252,7 @@ onNuxtReady(async () => {
       >
         <BaseTooltip disable-closing-trigger :content="props.disabled ? '' : `${showPassword ? 'Hide' : 'Show'} password`">
           <button
-            class="leading-0 peer-focus-within:text-primary-500 focus-visible:nui-focus text-input-default-text/60 bg-input-default-bg border border-s-0 flex size-10 items-center justify-center text-center text-xl disabled:cursor-not-allowed outline-none"
+            class="leading-0 peer-focus-within:text-primary-500 focus-visible:nui-focus text-input-default-text/60 bg-input-default-bg border border-s-0 flex size-10 items-center justify-center text-center text-xl group-has-disabled:opacity-50 group-has-disabled:cursor-not-allowed outline-none group-has-aria-invalid:border-destructive-base"
             :class="[
               props.error ? 'border-destructive-base' : 'border-input-default-border',
             ]"
@@ -246,8 +267,8 @@ onNuxtReady(async () => {
               <Icon
                 :name="
                   showPassword
-                    ? 'solar:eye-linear'
-                    : 'solar:eye-closed-linear'
+                    ? props.icons.reveal
+                    : props.icons.hide
                 "
                 class="size-4"
               />
