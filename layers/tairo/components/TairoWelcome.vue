@@ -1,58 +1,97 @@
 <script setup lang="ts">
-const app = useAppConfig()
-
 const command = 'pnpm dev'
 
-const nuxtConfig = [
-  `export default defineNuxtConfig({`,
-  `  extends: [`,
-  `    '../layers/tairo-layout-sidebar',`,
-  `    '../layers/tairo',`,
-  `  ]`,
-  `})`,
+const codeApp = [
+  `<template>`,
+  `  <BaseProviders>`,
+  `    <NuxtLayout>`,
+  `      <NuxtPage />`,
+  `    </NuxtLayout>`,
+  `  </BaseProviders>`,
+  `</template>`,
 ].join('\n')
 
 const codeLayout = [
   `<template>`,
-  `  <TairoSidebarLayout>`,
-  `    <slot />`,
-  `  </TairoSidebarLayout>`,
+  `  <TairoCollapseLayout>`,
+  `    <TairoCollapseSidebar>`,
+  `      <TairoCollapseSidebarHeader>My App</TairoCollapseSidebarHeader>`,
+  `      <TairoCollapseSidebarLinks class="px-4 space-y-1 grow">`,
+  `        <TairoCollapseSidebarLink`,
+  `          to="/"`,
+  `          label="Home"`,
+  `          icon="solar:home-smile-angle-outline"`,
+  `        />`,
+  `      </TairoCollapseSidebarLinks>`,
+  `    </TairoCollapseSidebar>`,
+  ``,
+  `    <TairoCollapseContent>`,
+  `      <slot />`,
+  `    </TairoCollapseContent>`,
+  `  </TairoCollapseLayout>`,
   `</template>`,
 ].join('\n')
 
 const codePage = [
   `<script setup lang="ts">`,
-  `definePageMeta({`,
+  `useHead({`,
   `  title: 'My page',`,
   `})`,
+  ``,
+  `const count = ref(0)`,
   `<` + `/script>`,
   ``,
   `<template>`,
-  `  <div>Hello Tairo!</div>`,
+  `  <div class="flex flex-col items-center justify-center h-screen">`,
+  `    <BaseCard class="p-6 w-full max-w-md">`,
+  `      <BaseHeading size="2xl">Hello Tairo!</BaseHeading>`,
+  `      <BaseParagraph class="mb-4">{{ count }}</BaseParagraph>`,
+  `      <BaseButton variant="primary" @click="count++">Click me</BaseButton>`,
+  `    </BaseCard>`,
+  `  </div>`,
   `</template>`,
 ].join('\n')
 
 const codeTailwind = [
-  `import { withShurikenUI } from '@shuriken-ui/tailwind'`,
-  `import colors from 'tailwindcss/colors'`,
+  `@import 'tailwindcss';`,
+  `@import '@shuriken-ui/nuxt';`,
+  `@import '#layers/@cssninja/tairo/theme.css';`,
   ``,
-  `export default withShurikenUI({`,
-  `  content: [],`,
-  `  theme: {`,
-  `    extend: {`,
-  `      colors: {`,
-  `        primary: colors.red,`,
-  `        muted: colors.stone,`,
-  `      }`,
-  `    }`,
-  `  }`,
-  `})`,
+  `@theme {`,
+  `  --font-sans: 'Inter', sans-serif;`,
+  `  --font-alt: 'Karla', sans-serif;`,
+  ``,
+  `  --color-primary-50: var(--color-yellow-50);`,
+  `  --color-primary-100: var(--color-yellow-100);`,
+  `  --color-primary-200: var(--color-yellow-200);`,
+  `  --color-primary-300: var(--color-yellow-300);`,
+  `  --color-primary-400: var(--color-yellow-400);`,
+  `  --color-primary-500: var(--color-yellow-500);`,
+  `  --color-primary-600: var(--color-yellow-600);`,
+  `  --color-primary-700: var(--color-yellow-700);`,
+  `  --color-primary-800: var(--color-yellow-800);`,
+  `  --color-primary-900: var(--color-yellow-900);`,
+  ``,
+  `  --color-muted-50: var(--color-stone-50);`,
+  `  --color-muted-100: var(--color-stone-100);`,
+  `  --color-muted-200: var(--color-stone-200);`,
+  `  --color-muted-300: var(--color-stone-300);`,
+  `  --color-muted-400: var(--color-stone-400);`,
+  `  --color-muted-500: var(--color-stone-500);`,
+  `  --color-muted-600: var(--color-stone-600);`,
+  `  --color-muted-700: var(--color-stone-700);`,
+  `  --color-muted-800: var(--color-stone-800);`,
+  `  --color-muted-900: var(--color-stone-900);`,
+  ``,
+  `  --tairo-collapse-width-open: 16rem;`,
+  `  --tairo-collapse-width-collapsed: 4rem;`,
+  `}`,
 ].join('\n')
 </script>
 
 <template>
   <div class="mx-auto max-w-4xl pb-16">
-    <div class="absolute end-6 top-3">
+    <div class="fixed end-6 top-3">
       <BaseThemeToggle />
     </div>
     <div class="flex flex-col gap-3 pb-16 pt-8 text-center">
@@ -63,9 +102,59 @@ const codeTailwind = [
       >
         <span>Welcome to</span>
       </BaseHeading>
-      <TairoLogoText class="text-primary-500 mx-auto h-8" />
+
+      <svg class="text-primary-500 mx-auto h-8" viewBox="0 0 1524.6 500">
+        <defs>
+          <path id="logo_a" d="M180.5 391.1c-53-2.4-77.4-18-77.4-74.2V191.3h79.5V88.2h-79.5V1.7H0V321c0 119.2 69.5 168.6 180.5 168.8h2.1v-98.7h-2.1z" />
+        </defs>
+        <use href="#logo_a" fill="currentColor" fill-rule="evenodd" style="overflow: vi;" clip-rule="evenodd" />
+        <clipPath id="logo_b">
+          <use href="#logo_a" style="overflow: vi;" />
+        </clipPath>
+        <path fill="currentColor" d="M0 1.7h182.6v488.1H0z" clip-path="url(#logo_b)" />
+        <defs>
+          <path id="logo_c" d="M409.2 181.2c59.6 0 107.8 48.3 107.8 107.8 0 59.6-48.3 107.8-107.8 107.8-59.6 0-107.8-48.3-107.8-107.8s48.3-107.8 107.8-107.8m206.7-93h-98.5v43C486.2 98.3 443.2 79.6 394 79.6c-104.7 0-197.2 90.6-197.2 210.2 0 118.8 92.5 209.4 197.2 209.4 49.2 0 92.2-18.8 123.5-51.6v43H616V88.2z" />
+        </defs>
+        <use href="#logo_c" fill="currentColor" fill-rule="evenodd" style="overflow: vi;" clip-rule="evenodd" />
+        <clipPath id="logo_d">
+          <use href="#logo_c" style="overflow: vi;" />
+        </clipPath>
+        <path fill="currentColor" d="M196.8 79.6H616v419.7H196.8z" clip-path="url(#logo_d)" />
+        <defs>
+          <path id="logo_e" d="M674.2 88.2h103.2v402.5H674.2z" />
+        </defs>
+        <use href="#logo_e" fill="currentColor" fill-rule="evenodd" style="overflow: vi;" clip-rule="evenodd" />
+        <clipPath id="logo_f">
+          <use href="#logo_e" style="overflow: vi;" />
+        </clipPath>
+        <path fill="currentColor" d="M674.2 88.2h103.2v402.5H674.2z" clip-path="url(#logo_f)" />
+        <defs>
+          <path id="logo_g" d="M1047.4 80.4C913.8 64 834.8 143.7 834.8 257.8v232.9H938V257.8c0-57 43.8-92.2 109.4-80.5V80.4z" />
+        </defs>
+        <use href="#logo_g" fill="currentColor" fill-rule="evenodd" style="overflow: vi;" clip-rule="evenodd" />
+        <clipPath id="logo_h">
+          <use href="#logo_g" style="overflow: vi;" />
+        </clipPath>
+        <path fill="currentColor" d="M834.8 63.9h212.6v426.7H834.8z" clip-path="url(#logo_h)" />
+        <defs>
+          <path id="logo_i" d="M1270.4 181.2c59.6 0 107.8 48.3 107.8 107.8 0 59.6-48.3 107.8-107.8 107.8-59.6 0-107.8-48.3-107.8-107.8-.1-59.5 48.2-107.8 107.8-107.8m0-103.2c-116.5 0-211 94.5-211 211s94.5 211 211 211 211-94.5 211-211c0-25.2-4.4-49.5-12.6-71.9-5.2-14.4-16.9-24.2-32-26.9-45.1-7.9-82-39.7-97.1-81.9-5.2-14.5-16.8-24.3-31.9-27-12.1-2.1-24.6-3.3-37.4-3.3z" />
+        </defs>
+        <use href="#logo_i" fill="currentColor" fill-rule="evenodd" style="overflow: vi;" clip-rule="evenodd" />
+        <clipPath id="logo_j">
+          <use href="#logo_i" style="overflow: vi;" />
+        </clipPath>
+        <path fill="currentColor" d="M1059.4 78h422v422h-422z" clip-path="url(#logo_j)" />
+        <defs>
+          <path id="logo_k" d="M1458.8 0c36.3 0 65.8 29.5 65.8 65.8s-29.5 65.8-65.8 65.8-65.8-29.5-65.8-65.8S1422.4 0 1458.8 0" />
+        </defs>
+        <use href="#logo_k" fill="currentColor" fill-rule="evenodd" style="overflow: vi;" clip-rule="evenodd" />
+        <clipPath id="logo_l">
+          <use href="#logo_k" style="overflow: vi;" />
+        </clipPath>
+        <path fill="currentColor" d="M1393 0h131.6v131.6H1393z" clip-path="url(#logo_l)" />
+      </svg>
     </div>
-    <BaseCard rounded="lg" class="dark:bg-muted-900! mb-4 p-8 sm:mb-6">
+    <BaseCard rounded="lg" class="dark:bg-muted-900! mb-4 p-8 sm:mb-6 relative">
       <div
         class="nui-mask nui-mask-hexed absolute inset-x-0 -top-10 mx-auto mb-2 flex size-[84px] shrink-0 items-center justify-center"
       >
@@ -311,110 +400,72 @@ const codeTailwind = [
 
     <div class="flex flex-col gap-6">
       <BaseCard class="dark:bg-muted-900! p-6" rounded="sm">
-        <BaseProse class="prose-p:my-0 max-w-full">
-          <div>
-            <div class="flex gap-2 sm:items-center">
-              <Icon
-                name="ph:number-circle-one-duotone"
-                class="text-primary-500 size-8 shrink-0"
-              />
-              <p>
-                Enable a layout in
-                <code>.app/nuxt.config.ts</code>
-              </p>
-            </div>
-            <pre><code>{{ nuxtConfig }}</code></pre>
-          </div>
-        </BaseProse>
+        <div class="flex gap-2 mb-4 sm:items-center">
+          <Icon
+            name="ph:number-circle-one-duotone"
+            class="text-primary-500 size-8 shrink-0"
+          />
+          <BaseParagraph>
+            Customize tailwind settings in
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/assets/main.css</code>
+            <small class="ps-1">(colors, fonts, ...)</small>
+          </BaseParagraph>
+        </div>
+        <pre class="bg-muted-100 dark:bg-muted-950 text-muted-800 dark:text-muted-100 rounded-md py-2 px-4"><code>{{ codeTailwind }}</code></pre>
       </BaseCard>
       <BaseCard class="dark:bg-muted-900! p-6" rounded="sm">
-        <BaseProse class="prose-p:my-0 max-w-full">
-          <div>
-            <div class="flex gap-2 sm:items-center">
-              <Icon
-                name="ph:number-circle-two-duotone"
-                class="text-primary-500 size-8 shrink-0"
-              />
-              <p>
-                Set default layout in
-                <code>.app/app/layouts/default.vue</code>
-              </p>
-            </div>
-            <pre><code>{{ codeLayout }}</code></pre>
-          </div>
-        </BaseProse>
+        <div class="flex gap-2 mb-4 sm:items-center">
+          <Icon
+            name="ph:number-circle-two-duotone"
+            class="text-primary-500 size-8 shrink-0"
+          />
+          <BaseParagraph>
+            Create your default layout in
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/layouts/default.vue</code>
+          </BaseParagraph>
+        </div>
+        <pre class="bg-muted-100 dark:bg-muted-950 text-muted-800 dark:text-muted-100 rounded-md py-2 px-4"><code>{{ codeLayout }}</code></pre>
       </BaseCard>
       <BaseCard class="dark:bg-muted-900! p-6" rounded="sm">
-        <BaseProse class="prose-p:my-0 max-w-full">
-          <div>
-            <div class="flex gap-2 sm:items-center">
-              <Icon
-                name="ph:number-circle-three-duotone"
-                class="text-primary-500 size-8 shrink-0"
-              />
-              <p>
-                Define your app settings in
-                <code>.app/app/app.config.ts</code>
-                <small>(logo, name, sidebars, panels, ...)</small>
-              </p>
-            </div>
-            <pre><code>export default defineAppConfig()</code></pre>
-          </div>
-        </BaseProse>
+        <div class="flex gap-2 mb-4 sm:items-center">
+          <Icon
+            name="ph:number-circle-three-duotone"
+            class="text-primary-500 size-8 shrink-0"
+          />
+          <BaseParagraph>
+            Create your first page
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/pages/index.vue</code>
+          </BaseParagraph>
+        </div>
+        <pre class="bg-muted-100 dark:bg-muted-950 text-muted-800 dark:text-muted-100 rounded-md py-2 px-4"><code>{{ codePage }}</code></pre>
       </BaseCard>
       <BaseCard class="dark:bg-muted-900! p-6" rounded="sm">
-        <BaseProse class="prose-p:my-0 max-w-full">
-          <div>
-            <div class="flex gap-2 sm:items-center">
-              <Icon
-                name="ph:number-circle-four-duotone"
-                class="text-primary-500 size-8 shrink-0"
-              />
-              <p>
-                Create your first page
-                <code>.app/app/pages/index.vue</code>
-              </p>
-            </div>
-            <pre><code>{{ codePage }}</code></pre>
-          </div>
-        </BaseProse>
+        <div class="flex gap-2 mb-4 sm:items-center">
+          <Icon
+            name="ph:number-circle-four-duotone"
+            class="text-primary-500 size-8 shrink-0"
+          />
+          <BaseParagraph>
+            Update your main nuxt app to use layouts and pages in
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/app.vue</code>
+          </BaseParagraph>
+        </div>
+        <pre class="bg-muted-100 dark:bg-muted-950 text-muted-800 dark:text-muted-100 rounded-md py-2 px-4"><code>{{ codeApp }}</code></pre>
       </BaseCard>
       <BaseCard class="dark:bg-muted-900! p-6" rounded="sm">
-        <BaseProse class="prose-p:my-0 max-w-full">
-          <div>
-            <div class="flex gap-2 sm:items-center">
-              <Icon
-                name="ph:number-circle-five-duotone"
-                class="text-primary-500 size-8 shrink-0"
-              />
-              <p>
-                Customize tailwind settings in
-                <code>.app/tailwind.config.ts</code>
-                <small>(colors, fonts, ...)</small>
-              </p>
-            </div>
-            <pre><code>{{ codeTailwind }}</code></pre>
-          </div>
-        </BaseProse>
-      </BaseCard>
-      <BaseCard class="dark:bg-muted-900! p-6" rounded="sm">
-        <BaseProse class="prose-p:my-0 max-w-full">
-          <div>
-            <div class="flex gap-2 sm:items-center">
-              <Icon
-                name="ph:number-circle-six-duotone"
-                class="text-primary-500 size-8 shrink-0"
-              />
-              <p>
-                Continue learning with the
-                <a
-                  href="https://tairo.cssninja.io/documentation"
-                  target="_blank"
-                >Online documentation</a>
-              </p>
-            </div>
-          </div>
-        </BaseProse>
+        <div class="flex gap-2 mb-4 sm:items-center">
+          <Icon
+            name="ph:number-circle-five-duotone"
+            class="text-primary-500 size-8 shrink-0"
+          />
+          <BaseParagraph>
+            Continue learning with the
+            <BaseLink
+              to="https://tairo.cssninja.io/documentation"
+              target="_blank"
+            >Online documentation</BaseLink>
+          </BaseParagraph>
+        </div>
       </BaseCard>
     </div>
   </div>
