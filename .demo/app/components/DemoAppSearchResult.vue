@@ -16,13 +16,15 @@ const props = defineProps<{
       <span class="flex gap-1 items-center">
         <span
           v-if="props.prefix"
-          class="text-muted-500 dark:text-muted-600 text-sm"
+          :title="props.prefix"
+          class="text-muted-500 dark:text-muted-600 text-sm line-clamp-1 max-w-[40%]"
         >
           {{ props.prefix }} >
         </span>
         <span
           v-if="props.title"
-          class="text-muted-700 dark:text-muted-500 font-heading group-hover:text-primary-500 group-focus:text-primary-500 dark:group-hover:text-primary-400 dark:group-focus:text-primary-400 text-sm"
+          :title="props.title"
+          class="text-muted-700 line-clamp-1 dark:text-muted-500 font-heading group-hover:text-primary-500 group-focus:text-primary-500 dark:group-hover:text-primary-400 dark:group-focus:text-primary-400 text-sm"
         >
           {{ props.title }}
         </span>
@@ -35,11 +37,10 @@ const props = defineProps<{
       </span>
     </div>
     <div v-if="props.icon" class="shrink-0">
-      <img
-        :src="props.icon"
-        class="size-8"
-        alt=""
-      >
+      <Icon
+        :name="props.icon"
+        class="size-5 text-primary-500"
+      />
     </div>
   </div>
 </template>

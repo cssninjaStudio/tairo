@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { BaseSelectEmits, BaseSelectProps } from '@shuriken-ui/nuxt'
+import type { BaseSelectEmits, BaseSelectProps } from '@shuriken-ui/nuxt/components/Select.vue.d.ts'
 import type { AcceptableValue } from 'reka-ui'
 import { reactiveOmit } from '@vueuse/core'
 import { useForwardExpose, useForwardPropsEmits } from 'reka-ui'
@@ -30,13 +30,13 @@ const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invali
 
 <template>
   <div
-    class="focus-within:nui-focus rounded-lg flex *:rounded-none *:not-nth-last-2:border-e-0 *:nth-last-2:border-s-0 group"
+    class="focus-within:nui-focus rounded-lg flex *:rounded-none *:not-[.nui-select]:border-e-0 *:[.nui-select]:border-s-0 group"
     :class="[
       hasError ? 'ring-destructive-base!' : '',
-      props.rounded === 'sm' ? 'rounded-sm *:first:rounded-s-sm *:nth-last-2:rounded-e-sm' : '',
-      props.rounded === 'md' ? 'rounded-md *:first:rounded-s-md *:nth-last-2:rounded-e-md' : '',
-      props.rounded === 'lg' ? 'rounded-lg *:first:rounded-s-lg *:nth-last-2:rounded-e-lg' : '',
-      props.rounded === 'full' ? 'rounded-full *:first:rounded-s-full *:nth-last-2:rounded-e-full' : '',
+      props.rounded === 'sm' ? 'rounded-sm *:first:rounded-s-sm *:[.nui-select]:rounded-e-sm' : '',
+      props.rounded === 'md' ? 'rounded-md *:first:rounded-s-md *:[.nui-select]:rounded-e-md' : '',
+      props.rounded === 'lg' ? 'rounded-lg *:first:rounded-s-lg *:[.nui-select]:rounded-e-lg' : '',
+      props.rounded === 'full' ? 'rounded-full *:first:rounded-s-full *:[.nui-select]:rounded-e-full' : '',
     ]"
   >
     <div
@@ -57,7 +57,7 @@ const hasError = computed(() => toValue(ctx?.state) === 'error' || ('aria-invali
     </div>
     <BaseSelect
       :ref="forwardRef"
-      class="ring-0!"
+      class="ring-0! nui-select"
       v-bind="{
         ...forward,
         ...attrs,

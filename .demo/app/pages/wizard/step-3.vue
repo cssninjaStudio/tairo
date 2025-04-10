@@ -4,7 +4,7 @@ import type { Customer, Project, ProjectStepData } from '../../types'
 import { DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
 
-import '~/assets/css/vcalendar.css'
+import '~/assets/vcalendar.css'
 
 definePageMeta({
   title: 'Wizard — Step 3',

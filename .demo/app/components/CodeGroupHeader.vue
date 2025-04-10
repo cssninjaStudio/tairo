@@ -24,29 +24,34 @@ const { copy, copied, isSupported } = useClipboard({
     class="flex gap-2 border-b border-muted-300 bg-white dark:border-muted-800"
     :class="hasPreview ? 'dark:bg-muted-950' : 'dark:bg-muted-800'"
   >
-    <button
-      v-for="(tab, index) in props.tabs"
-      :key="index"
-      type="button"
-      tabindex="0"
+    <div class="flex gap-2 max-w-[90%] overflow-x-auto nui-slimscroll">
+      <button
+        v-for="(tab, index) in props.tabs"
+        :key="index"
+        type="button"
+        tabindex="0"
 
-      class="group/button text-sm"
-      :class="[
-        tabs.length > 1 ? 'border-b-2' : 'cursor-default',
-        tabs.length > 1 && index === activeTabIndex ? 'border-muted-800 dark:border-muted-100' : 'border-transparent',
-        index === activeTabIndex ? 'font-medium text-muted-800 dark:text-muted-100' : 'text-muted-400 hover:text-muted-500 dark:hover:text-muted-300',
-      ]"
-      @click="() => (activeTabIndex = index)"
-      @keydown.enter.prevent="() => (activeTabIndex = index)"
-    >
-      <span
-        v-if="tab.filename"
-        class="m-1 block rounded-md px-3 py-1"
-        :class="[tabs.length > 1 ? 'group-hover/button:bg-muted-100 dark:group-hover/button:bg-muted-900' : '']"
+        class="group/button text-sm"
+        :class="[
+          tabs.length > 1 ? 'border-b-2' : 'cursor-default',
+          tabs.length > 1 && index === activeTabIndex ? 'border-muted-800 dark:border-muted-100' : 'border-transparent',
+          index === activeTabIndex ? 'font-medium text-muted-800 dark:text-muted-100' : 'text-muted-400 hover:text-muted-500 dark:hover:text-muted-300',
+        ]"
+        @click="(event) => {
+          activeTabIndex = index
+          ;(event.target as HTMLElement)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        }"
+        @keydown.enter.prevent="() => (activeTabIndex = index)"
       >
-        {{ tab.filename }}
-      </span>
-    </button>
+        <span
+          v-if="tab.filename"
+          class="m-1 block rounded-md px-3 py-1"
+          :class="[tabs.length > 1 ? 'group-hover/button:bg-muted-100 dark:group-hover/button:bg-muted-900' : '']"
+        >
+          {{ tab.filename }}
+        </span>
+      </button>
+    </div>
 
     <ClientOnly>
       <div

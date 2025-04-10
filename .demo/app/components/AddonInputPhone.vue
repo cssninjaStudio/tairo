@@ -308,6 +308,11 @@ const iconSize = computed(() => {
       :class="[
         sizes[props.size],
       ]"
+      :bindings="{
+        portal: {
+          disabled: true,
+        },
+      }"
     >
       <template #label>
         <slot name="country-label" v-bind="{ modelValue: vmodel, country: vcountry, validation, filter, currentCountry }">

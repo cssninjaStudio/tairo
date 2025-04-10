@@ -1,6 +1,6 @@
 @import 'tailwindcss' theme(static);
 @import '@shuriken-ui/nuxt';
-@import '#cssninja/tairo';
+@import '#layers/@cssninja/tairo/theme.css';
 @plugin "@tailwindcss/typography";
 
 @source '../../examples';

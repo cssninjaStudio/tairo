@@ -15,6 +15,9 @@ const { data } = await useAsyncData('doc-nav', () => {
 // filter unwanted components
 watchEffect(() => {
   meta.value = Object.keys(componentsMeta ?? {})?.filter((name) => {
+    if (name.startsWith('Base'))
+      return false
+
     if (!props.prefix)
       return true
 

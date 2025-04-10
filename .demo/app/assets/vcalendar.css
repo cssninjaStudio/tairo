@@ -1,4 +1,4 @@
-@reference '~/assets/css/main.css';
+@reference '~/assets/main.css';
 
 .vc-pane-container .vc-pane-layout {
   @apply font-sans;

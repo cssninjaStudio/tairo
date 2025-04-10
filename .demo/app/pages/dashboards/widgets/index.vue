@@ -3,7 +3,7 @@ import { Calendar } from 'v-calendar'
 import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
+import '~/assets/vcalendar.css'
 
 definePageMeta({
   title: 'UI Widgets',

@@ -14,7 +14,6 @@ const links = computed(() => page.value?.body?.toc?.links || [])
     <div class="h-full max-h-[calc(100vh-calc(var(--spacing)*26))] overflow-y-auto nui-slimscroll-opaque">
       <div class="py-3 pe-4 rounded-md min-w-[200px]">
         <BaseHeading
-          as="h2"
           size="xs"
           weight="medium"
           leading="tight"

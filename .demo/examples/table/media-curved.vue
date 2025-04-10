@@ -84,9 +84,9 @@ const team = [
           <BaseAvatar :src="member.src" size="xs" />
 
           <div class="leading-none">
-            <h4 class="font-sans text-sm font-medium leading-tight">
+            <p class="font-sans text-sm font-medium leading-tight">
               {{ member.name }}
-            </h4>
+            </p>
 
             <p class="text-muted-600 dark:text-muted-400 font-sans text-xs font-normal">
               {{ member.role }}

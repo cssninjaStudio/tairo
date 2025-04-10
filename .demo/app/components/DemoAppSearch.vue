@@ -79,13 +79,16 @@ watchEffect(() => {
 })
 const routesResults = computed(() => routesMS.search(toValue(search)).slice(0, 6))
 
+const isShurikenSearch = computed(() => search.value.toLowerCase().includes('demo') || search.value.toLowerCase().includes('shur'))
 const hasResult = computed(() =>
   Boolean(contentResults.value?.length || routesResults.value?.length),
 )
 function handleSelect(ev: CustomEvent) {
-  ev.preventDefault()
   isOpen.value = false
-  router.push(ev.detail.value)
+  if (ev.detail.value?.startsWith('/')) {
+    ev.preventDefault()
+    router.push(ev.detail.value)
+  }
 }
 </script>
 
@@ -137,15 +140,52 @@ function handleSelect(ev: CustomEvent) {
           </BaseField>
 
           <ComboboxContent
-            v-if="hasResult"
+            v-if="hasResult || search"
             class="p-2 max-h-[50vh] nui-slimscroll overflow-y-auto space-y-6 py-4"
             @escape-key-down="isOpen = false"
           >
-            <ComboboxEmpty v-if="search" class="text-center text-muted-foreground p-4">
-              No results
-            </ComboboxEmpty>
-            <ComboboxEmpty v-else class="text-center text-muted-foreground p-4">
-              Start typing to search
+            <ComboboxGroup v-if="isShurikenSearch">
+              <ComboboxLabel class="px-2 mb-2">
+                <BaseTag variant="muted">
+                  Looking for Shuriken UI components?
+                </BaseTag>
+              </ComboboxLabel>
+              <ComboboxItem
+                value="https://v4.shurikenui.com/docs/components"
+                class="scroll-mt-2"
+                as-child
+              >
+                <a href="https://v4.shurikenui.com/docs/components" target="_blank">
+                  <DemoAppSearchResult
+                    title="Shuriken UI"
+                    icon="nui-icon:shurikenui-icon"
+                    subtitle="View all Base components documentation"
+                  />
+                </a>
+              </ComboboxItem>
+            </ComboboxGroup>
+            <ComboboxEmpty v-else-if="search" class="text-center text-muted-400 p-4">
+              <BaseParagraph size="sm" class="text-muted-400">
+                Ops, no results found for
+                "<BaseText weight="medium" size="sm">
+                  {{ search }}
+                </BaseText>"
+              </BaseParagraph>
+
+              <BaseParagraph size="xs" class="text-muted-400 dark:text-muted-500">
+                Try to search for something else, like
+                <BaseLink class="cursor-pointer" @click="search = 'form'">
+                  <BaseText weight="medium" class="text-muted-600 dark:text-muted-400" size="xs">
+                    form
+                  </BaseText>
+                </BaseLink>
+                or
+                <BaseLink class="cursor-pointer" @click="search = 'analytics'">
+                  <BaseText weight="medium" class="text-muted-600 dark:text-muted-400" size="xs">
+                    analytics
+                  </BaseText>
+                </BaseLink>
+              </BaseParagraph>
             </ComboboxEmpty>
 
             <ComboboxGroup v-if="contentResults?.length">

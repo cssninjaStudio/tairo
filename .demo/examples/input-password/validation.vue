@@ -33,12 +33,19 @@ function onValidate(state: { validation: ZxcvbnResult | null, touched: boolean }
     autocomplete="off"
     @submit.prevent="onSubmit"
   >
-    <AddonInputPassword
-      ref="inputRef"
-      v-model="password"
-      placeholder="Type to try validation"
+    <BaseField
+      label="Password"
+      :state="error ? 'error' : 'idle'"
       :error="error"
-      @validation="onValidate"
-    />
+      v-slot="{ inputAttrs }"
+    >
+      <AddonInputPassword
+        ref="inputRef"
+        v-model="password"
+        placeholder="Type to try validation"
+        v-bind="inputAttrs"
+        @validation="onValidate"
+      />
+    </BaseField>
   </form>
 </template>

@@ -6,7 +6,7 @@ import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
 
 import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar.css'
+import '~/assets/vcalendar.css'
 
 definePageMeta({
   title: 'Create event',

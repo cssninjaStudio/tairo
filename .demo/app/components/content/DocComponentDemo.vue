@@ -62,29 +62,32 @@ const forceDark = ref(false)
       </div>
     </div>
 
-    <details v-if="'source' in $slots && props.code" class="group mt-2">
-      <summary
-        class="focus-visible:nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-md px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100"
-      >
-        <span class="inline group-open:hidden">Show code</span>
-        <span class="hidden group-open:inline">Hide code</span>
-        <Icon
-          name="lucide:chevron-down"
-          class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
-        />
+    <div class="relative">
+      <ClientOnly>
+        <div
+          v-if="hasDemoContent && props.dark"
+          class="absolute right-0 top-1.5 flex items-center gap-2"
+        >
+          <BaseSwitchThin v-model="forceDark">
+            <span class="text-muted-500 dark:text-muted-400 text-[0.8rem]">dark preview</span>
+          </BaseSwitchThin>
+        </div>
+      </ClientOnly>
 
-        <ClientOnly>
-          <div
-            v-if="hasDemoContent && props.dark"
-            class="ms-auto flex items-center gap-2"
-          >
-            <BaseCheckbox v-model="forceDark">
-              dark preview
-            </BaseCheckbox>
-          </div>
-        </ClientOnly>
-      </summary>
-      <slot name="source" />
-    </details>
+      <details v-if="'source' in $slots && props.code" class="group mt-2">
+        <summary
+          class="focus-visible:nui-focus hover:bg-muted-100 dark:hover:bg-muted-700/70 text-muted-500 dark:text-muted-400 inline-flex cursor-pointer list-none items-center justify-center gap-2 rounded-md px-2 py-1.5 font-sans text-[0.8rem] transition-all duration-100 group-open:mb-1.5"
+        >
+          <span class="inline group-open:hidden">Show code</span>
+          <span class="hidden group-open:inline">Hide code</span>
+          <Icon
+            name="lucide:chevron-down"
+            class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
+          />
+
+        </summary>
+        <slot name="source" />
+      </details>
+    </div>
   </div>
 </template>

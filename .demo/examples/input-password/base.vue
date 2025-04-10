@@ -4,9 +4,8 @@ const password = ref('')
 
 <template>
   <div class="max-w-md">
-    <AddonInputPassword
-      v-model="password"
-      label="Password"
-    />
+    <BaseField label="Password">
+      <AddonInputPassword v-model="password" />
+    </BaseField>
   </div>
 </template>

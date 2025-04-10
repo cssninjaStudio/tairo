@@ -43,12 +43,19 @@ function onValidate(state: { valid: boolean, touched: boolean, error: string }) 
 
 <template>
   <form class="max-w-md" @submit.prevent="onSubmit">
-    <AddonInputPhone
-      ref="inputRef"
-      v-model="phone"
-      placeholder="Type to try validation"
+    <BaseField
+      label="Phone number"
+      :state="error ? 'error' : 'idle'"
       :error="error"
-      @validation="onValidate"
-    />
+      v-slot="{ inputAttrs }"
+    >
+      <AddonInputPhone
+        ref="inputRef"
+        v-model="phone"
+        placeholder="Type to try validation"
+        v-bind="inputAttrs"
+        @validation="onValidate"
+      />
+    </BaseField>
   </form>
 </template>

@@ -796,7 +796,7 @@ function getRouteSidebarId() {
       sidebarId === 'Map' ? '[--tairo-sidebar-subsidebar-width:0rem]' : '',
     ]"
   >
-    <TairoSidebarLayoutNav>
+    <TairoSidebarNav>
       <TairoSidebar>
         <NuxtLink to="/" class="flex items-center justify-center size-14 shrink-0">
           <TairoLogo class="size-8 text-primary-heavy dark:text-primary-light" />
@@ -935,32 +935,6 @@ function getRouteSidebarId() {
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
 
-      <!-- <TairoSidebarSubsidebar value="subsidebar-2">
-        <TairoSidebarSubsidebarHeader>
-          <span>Subsidebar 2</span>
-
-          <BaseDropdown
-            :bindings="{
-              content: { side: 'bottom' },
-              portal: { disabled: true },
-            }"
-          >
-            <template #button>
-              <BaseChip pusle size="xs" class="ms-auto">
-                <Icon name="solar:bell-line-duotone" class="size-4 " />
-              </BaseChip>
-            </template>
-
-            <BaseDropdownItem>
-              test
-            </BaseDropdownItem>
-          </BaseDropdown>
-        </TairoSidebarSubsidebarHeader>
-        <BaseMessage variant="info" class="mx-4 my-2">
-          Hello, World!
-        </BaseMessage>
-      </TairoSidebarSubsidebar> -->
-
       <TairoSidebarSubsidebar value="Messaging">
         <DemoSubsidebarMessaging />
       </TairoSidebarSubsidebar>
@@ -1054,7 +1028,7 @@ function getRouteSidebarId() {
           </div>
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
-    </TairoSidebarLayoutNav>
+    </TairoSidebarNav>
 
     <TairoSidebarContent class="min-h-screen">
       <div class="px-4 md:px-6 xl:px-8">

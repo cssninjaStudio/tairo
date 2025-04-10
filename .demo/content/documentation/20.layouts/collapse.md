@@ -1,5 +1,17 @@
 ---
 title: Collapse
+components:
+  - TairoCollapseLayout
+  - TairoCollapseSidebar
+  - TairoCollapseSidebarHeader
+  - TairoCollapseSidebarClose
+  - TairoCollapseSidebarLinks
+  - TairoCollapseSidebarLink
+  - TairoCollapseCollapsible
+  - TairoCollapseCollapsibleTrigger
+  - TairoCollapseCollapsibleLink
+  - TairoCollapseContent
+  - TairoCollapseBackdrop
 ---
 
 # Collapse layout
@@ -10,6 +22,10 @@ src: /img/screens/starter-collapse.png
 srcDark: /img/screens/starter-collapse-dark.png
 ---
 :::
+
+::doc-button{to="/starters/collapse" variant="primary"}
+Preview
+::
 
 ## Overview
 
@@ -54,6 +70,15 @@ items:
     </TairoCollapseContent>
   </TairoCollapseLayout>
 </template>
+```
+::
+
+::code-group
+```css [<app>/app/assets/main.css]
+@theme {
+  --tairo-collapse-width-open: 17rem;
+  --tairo-collapse-width-collapsed: 5rem;
+}
 ```
 ::
 

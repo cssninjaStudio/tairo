@@ -1,4 +1,4 @@
-@reference '~/assets/css/main.css';
+@reference '~/assets/main.css';
 
 .custom-calendar.vc-container {
   @apply rounded-none bg-transparent mt-0 border-0;

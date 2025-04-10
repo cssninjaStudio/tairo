@@ -617,7 +617,7 @@ function selectFeature(feature?: any) {
 </template>
 
 <style>
-@reference '~/assets/css/main.css';
+@reference '~/assets/main.css';
 
 .map-container {
   .mapboxgl-popup-content {

@@ -5,9 +5,11 @@ const country = ref('US')
 
 <template>
   <div class="max-w-md">
-    <AddonInputPhone
-      v-model="phone"
-      v-model:country="country"
-    />
+    <BaseField label="Phone number">
+      <AddonInputPhone
+        v-model="phone"
+        v-model:country="country"
+      />
+    </BaseField>
   </div>
 </template>

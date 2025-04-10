@@ -76,7 +76,7 @@ export default defineNuxtConfig({
     /**
      * Load Tailwind CSS
      */
-    '~/assets/css/main.css',
+    '~/assets/main.css',
   ],
   fonts: {
     experimental: {
@@ -187,6 +187,7 @@ export default defineNuxtConfig({
       include: [
         'scule',
         'klona',
+        // AddonDatepicker
         'v-calendar',
         // AddonApexcharts
         'vue3-apexcharts',

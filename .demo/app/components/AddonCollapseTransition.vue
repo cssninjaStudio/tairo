@@ -1,28 +1,14 @@
 <script setup lang="ts">
-const props = defineProps({
-  name: {
-    type: String,
-    required: false,
-    default: 'collapse',
-  },
-  dimension: {
-    type: String as PropType<'height' | 'width'>,
-    required: false,
-    default: 'height',
-    validator: (value: string) => {
-      return ['height', 'width'].includes(value)
-    },
-  },
-  duration: {
-    type: Number,
-    required: false,
-    default: 300,
-  },
-  easing: {
-    type: String,
-    required: false,
-    default: 'ease-in-out',
-  },
+const props = withDefaults(defineProps<{
+  name?: string
+  dimension?: 'height' | 'width'
+  duration?: number
+  easing?: string
+}>(), {
+  name: 'collapse',
+  dimension: 'height',
+  duration: 300,
+  easing: 'ease-in-out',
 })
 const emits = defineEmits<{
   beforeAppear: [el: HTMLElement]

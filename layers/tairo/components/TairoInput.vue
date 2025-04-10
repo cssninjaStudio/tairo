@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { BaseInputProps } from '@shuriken-ui/nuxt'
+import type { BaseInputProps } from '@shuriken-ui/nuxt/components/Input.vue.d.ts'
 import { reactiveOmit } from '@vueuse/core'
 import { useForwardExpose, useForwardProps } from 'reka-ui'
 

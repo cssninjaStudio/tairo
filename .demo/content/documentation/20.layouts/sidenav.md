@@ -1,5 +1,17 @@
 ---
 title: Sidenav
+components:
+  - TairoSidenavLayout
+  - TairoSidenavCollapsible
+  - TairoSidenavCollapsibleLink
+  - TairoSidenavCollapsibleTrigger
+  - TairoSidenavSidebar
+  - TairoSidenavSidebarHeader
+  - TairoSidenavSidebarDivider
+  - TairoSidenavSidebarLinks
+  - TairoSidenavBackdrop
+  - TairoSidenavSidebarLink
+  - TairoSidenavContent
 ---
 
 # Sidenav layout
@@ -10,6 +22,10 @@ src: /img/screens/starter-sidenav.png
 srcDark: /img/screens/starter-sidenav-dark.png
 ---
 :::
+
+::doc-button{to="/starters/sidenav" variant="primary"}
+Preview
+::
 
 ## Overview
 
@@ -45,6 +61,13 @@ items:
     </TairoSidenavContent>
   </TairoSidenavLayout>
 </template>
+```
+::
+::code-group
+```css [<app>/app/assets/main.css]
+@theme {
+  --tairo-sidenav-sidebar-width: 16.25rem;
+}
 ```
 ::
 

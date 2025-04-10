@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   title: 'Collapse Layout',
-  layout: 'collapse-dev',
+  layout: 'collapse',
   preview: {
     title: 'Collapse starter layout',
     description: 'For a quick start usage.',

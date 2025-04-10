@@ -289,7 +289,7 @@ function getUsersLocation() {
 </template>
 
 <style>
-@reference '~/assets/css/main.css';
+@reference '~/assets/main.css';
 
 .location-picker {
   .mapboxgl-ctrl-geocoder {

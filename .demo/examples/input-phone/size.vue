@@ -9,21 +9,18 @@ const country = ref('FR')
       v-model="phone"
       v-model:country="country"
       size="sm"
-      label="Small"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
       size="md"
-      label="Medium"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
       size="lg"
-      label="Large"
     />
   </div>
 </template>

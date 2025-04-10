@@ -1,5 +1,21 @@
 ---
 title: Sidebar
+components:
+  - TairoSidebarLayout
+  - TairoSidebarNav
+  - TairoSidebar
+  - TairoSidebarLinks
+  - TairoSidebarLink
+  - TairoSidebarTrigger
+  - TairoSidebarSubsidebar
+  - TairoSidebarSubsidebarHeader
+  - TairoSidebarSubsidebarLink
+  - TairoSidebarSubsidebarContent
+  - TairoSidebarSubsidebarCollapsible
+  - TairoSidebarSubsidebarCollapsibleTrigger
+  - TairoSidebarSubsidebarCollapsibleLink
+  - TairoSidebarBackdrop
+  - TairoSidebarContent
 ---
 
 # Sidebar layout
@@ -10,6 +26,10 @@ src: /img/screens/starter-sidebar.png
 srcDark: /img/screens/starter-sidebar-dark.png
 ---
 :::
+
+::doc-button{to="/starters/sidebar" variant="primary"}
+Preview
+::
 
 ## Overview
 
@@ -33,7 +53,7 @@ items:
 ```vue [<app>/app/layouts/sidebar.vue]
 <template>
   <TairoSidebarLayout>
-    <TairoSidebarLayoutNav>
+    <TairoSidebarNav>
       <TairoSidebar>
         <TairoSidebarLinks>
           <TairoSidebarTrigger />
@@ -54,13 +74,21 @@ items:
           </TairoSidebarSubsidebarCollapsible>
         </TairoSidebarSubsidebarContent>
       </TairoSidebarSubsidebar>
-    </TairoSidebarLayoutNav>
+    </TairoSidebarNav>
 
     <TairoSidebarContent>
       <slot />
     </TairoSidebarContent>
   </TairoSidebarLayout>
 </template>
+```
+::
+::code-group
+```css [<app>/app/assets/main.css]
+@theme {
+  --tairo-sidebar-icon-width: 3.5rem;
+  --tairo-sidebar-subsidebar-width: 15rem;
+}
 ```
 ::
 
@@ -78,8 +106,8 @@ items:
 ### TairoSidebarContent
 :doc-component-meta{name="TairoSidebarContent"}
 
-### TairoSidebarLayoutNav
-:doc-component-meta{name="TairoSidebarLayoutNav"}
+### TairoSidebarNav
+:doc-component-meta{name="TairoSidebarNav"}
 
 ### TairoSidebarLinks
 :doc-component-meta{name="TairoSidebarLinks"}
@@ -92,6 +120,12 @@ items:
 
 ### TairoSidebarSubsidebar
 :doc-component-meta{name="TairoSidebarSubsidebar"}
+
+### TairoSidebarSubsidebarHeader
+:doc-component-meta{name="TairoSidebarSubsidebarHeader"}
+
+### TairoSidebarSubsidebarLink
+:doc-component-meta{name="TairoSidebarSubsidebarLink"}
 
 ### TairoSidebarSubsidebarCollapsible
 :doc-component-meta{name="TairoSidebarSubsidebarCollapsible"}

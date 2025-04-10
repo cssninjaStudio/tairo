@@ -4,10 +4,11 @@ const password = ref('F4k3P4ssw0rd')
 
 <template>
   <div class="max-w-md">
-    <AddonInputPassword
-      v-model="password"
-      label="Password"
-      disabled
-    />
+    <BaseField label="Password">
+      <AddonInputPassword
+        v-model="password"
+        disabled
+      />
+    </BaseField>
   </div>
 </template>

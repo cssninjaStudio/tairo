@@ -2,7 +2,7 @@
 import type { ApexOptions } from 'apexcharts'
 import { useIntersectionObserver } from '@vueuse/core'
 import { hydrateOnVisible } from 'vue'
-import '~/assets/css/apexcharts.css'
+import '~/assets/apexcharts.css'
 
 export interface AddonApexchartsProps {
   type: NonNullable<ApexOptions['chart']>['type']

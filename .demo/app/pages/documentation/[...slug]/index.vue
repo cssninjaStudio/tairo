@@ -24,7 +24,7 @@ if (!data.value && import.meta.server) {
 }
 
 useSeoMeta({
-  title: data.value?.title,
+  title: () => [data.value?.title, 'Documentation'].join(' - '),
   description: data.value?.description,
 })
 </script>

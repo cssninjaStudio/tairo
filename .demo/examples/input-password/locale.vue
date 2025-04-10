@@ -6,10 +6,11 @@ const fr = () => import('@zxcvbn-ts/language-fr')
 
 <template>
   <div class="max-w-md">
-    <AddonInputPassword
-      v-model="password"
-      label="Mot de passe"
-      :locale="fr"
-    />
+    <BaseField label="Mot de passe">
+      <AddonInputPassword
+        v-model="password"
+        :locale="fr"
+      />
+    </BaseField>
   </div>
 </template>

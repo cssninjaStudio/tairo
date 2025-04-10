@@ -2,7 +2,6 @@
 const { locale } = useI18n()
 const head = useLocaleHead()
 const route = useRoute()
-const app = useAppConfig()
 
 /**
  * Global head configuration
@@ -17,7 +16,7 @@ useHead({
   },
   htmlAttrs: {
     lang: () => head.value.htmlAttrs!.lang,
-    dir: () => head.value.htmlAttrs!.dir,
+    dir: () => head.value.htmlAttrs!.dir as any,
   },
   link: () => [
     ...(head.value.link || []),
@@ -76,7 +75,7 @@ useHead({
 
 <template>
   <BaseProviders
-    :config="{ dir: head.htmlAttrs!.dir, locale }"
+    :config="{ dir: head.htmlAttrs!.dir as any, locale }"
     :toast="{ position: 'top-center' }"
   >
     <!--

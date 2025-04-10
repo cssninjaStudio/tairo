@@ -1,5 +1,7 @@
 ---
-title: AddonInputPassword
+title: Password Input
+navigation:
+  title: zxcvbn (password input)
 components:
   - AddonInputPassword
 description: Secure password input field with password visibility toggle.
@@ -8,18 +10,19 @@ icon:
   srcDark: /img/illustrations/components/markdown-icon.svg
 ---
 
-## Password Input
+# Password Input
 
-Ready to use password input component with validation and formatting.
-The component extend the :doc-linker{to="BaseInput"} component, so you can use all the props and events of the base component.
-
-:::doc-info{title="Optional dependency" icon="solar:shield-warning-bold-duotone"}
+:::doc-info{title="Optional dependencies" icon="solar:shield-warning-bold-duotone"}
 This component uses the [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) package to detect and validate the password input strength.
 :::
 
+Ready to use password input component with validation and formatting.
+
+## Example
+
 <!-- demo: #examples/input-password/base -->
 
-## Change the locale
+### Change the locale
 
 Changing the locale allows to change the language of the password strength feedback and the dictionaries used to validate the password.
 
@@ -27,15 +30,19 @@ You can install and load dictionaries from the [zxcvbn-ts](https://github.com/zx
 
 <!-- demo: #examples/input-password/locale -->
 
-## Validation
+### Validation
 
 <!-- demo: #examples/input-password/validation -->
-## Disabled State
+### Disabled State
 
 <!-- demo: #examples/input-password/disabled -->
 
-## Reacting to other inputs
+### Reacting to other inputs
 
 <!-- demo: #examples/input-password/user-input -->
+
+## Components
+
+### AddonInputPassword
 
 :doc-component-meta{name="AddonInputPassword"}

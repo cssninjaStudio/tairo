@@ -9,35 +9,30 @@ const country = ref('FR')
       v-model="phone"
       v-model:country="country"
       rounded="none"
-      label="Straight"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="sm"
-      label="Rounded"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="md"
-      label="Smooth"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="lg"
-      label="Curved"
     />
 
     <AddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="full"
-      label="Full"
     />
   </div>
 </template>

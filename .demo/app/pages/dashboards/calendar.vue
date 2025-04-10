@@ -26,9 +26,9 @@ import {
 
 } from '~/utils/bundles/calendar'
 import 'v-calendar/dist/style.css'
-import '~/assets/css/vcalendar-weekly.css'
+import '~/assets/vcalendar-weekly.css'
 
-import '~/assets/css/vcalendar.css'
+import '~/assets/vcalendar.css'
 
 definePageMeta({
   title: 'Calendar',
@@ -738,7 +738,7 @@ const selectedEventFeatures = computed({
                 </template>
               </BaseField>
 
-              <CheckboxGroupRoot v-model="selectedEventFeatures" as="div" class="flex justify-end gap-3 pt-4">
+              <BaseCheckboxGroup v-model="selectedEventFeatures" as="div" class="flex justify-end gap-3 pt-4">
                 <BaseTooltip disable-closing-trigger content="Record">
                   <TairoCheckboxCardIcon value="record" icon="solar:playback-speed-linear" />
                 </BaseTooltip>
@@ -751,7 +751,7 @@ const selectedEventFeatures = computed({
                 <BaseTooltip disable-closing-trigger content="Comment allowed">
                   <TairoCheckboxCardIcon value="conversation" icon="solar:chat-round-line-linear" />
                 </BaseTooltip>
-              </CheckboxGroupRoot>
+              </BaseCheckboxGroup>
             </div>
           </div>
           <div

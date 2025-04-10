@@ -31,6 +31,7 @@ const { forwardRef } = useForwardExpose()
     :id
     :ref="forwardRef"
     v-bind="{ ...attrs, ...forward }"
+    class="outline-none focus-visible:nui-focus rounded-md"
   >
     <CheckboxIndicator
       force-mount

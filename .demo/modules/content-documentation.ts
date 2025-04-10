@@ -131,12 +131,12 @@ export default defineNuxtModule({
 
     logger.info('Documentation component meta enabled, make sure to set NODE_OPTIONS=--max-old-space-size=8192')
     installModule('nuxt-component-meta', {
-      metaSources: ['@shuriken-ui/nuxt-component-meta'],
       exclude: [
         (component: any) => {
+          const hasBasePrefix = component?.pascalName?.startsWith('Base')
           const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
           const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-          const isBlacklisted = ['TairoWelcome'].includes(component?.pascalName)
+          const isBlacklisted = hasBasePrefix || ['TairoWelcome', 'TairoLogo', 'TairoLogoText'].includes(component?.pascalName)
 
           const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
 

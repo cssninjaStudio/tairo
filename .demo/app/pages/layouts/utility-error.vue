@@ -64,9 +64,7 @@ const description = computed(() => {
   return 'An error has occured. If the problem persists, please contact a system administrator or try again later.'
 })
 
-const app = useAppConfig()
 const handleError = () => clearError({ redirect: '/' })
-const retry = () => clearError()
 
 // Show/hide demo stack trace
 const showStackTrace = ref(false)
@@ -183,7 +181,7 @@ const showStackTrace = ref(false)
 </template>
 
 <style>
-@reference '~/assets/css/main.css';
+@reference '~/assets/main.css';
 
 .stack {
   @apply text-sm;

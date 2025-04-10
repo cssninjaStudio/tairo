@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { usePointerSwipe } from '@vueuse/core'
-import { useBodyScrollLock } from 'reka-ui'
+import { onKeyStroke, usePointerSwipe, useVModel } from '@vueuse/core'
+import { FocusScope, useBodyScrollLock } from 'reka-ui'
 
 const props = defineProps<{
   defaultValue?: boolean
@@ -24,7 +24,7 @@ const opacity = ref(0)
 const container = useTemplateRef('container')
 const handler = useTemplateRef('handler')
 
-const containerHeight = computed(() => container.value?.clientHeight)
+const containerHeight = computed(() => container.value?.$el?.clientHeight)
 
 const { isSwiping, distanceY } = usePointerSwipe(handler, {
   threshold: 10,
@@ -52,6 +52,12 @@ const { isSwiping, distanceY } = usePointerSwipe(handler, {
   },
 })
 
+onKeyStroke('Escape', () => {
+  if (modelValue.value) {
+    modelValue.value = false
+  }
+})
+
 watch(modelValue, (value) => {
   locked.value = value
   if (value) {
@@ -77,8 +83,10 @@ watch(modelValue, (value) => {
       :style="{ opacity }"
       @click="modelValue = false"
     />
-    <div
+    <FocusScope
       ref="container"
+      :loop="modelValue"
+      :trapped="modelValue"
       class="fixed bottom-0 inset-x-0 max-h-[calc(100dvh_-_calc(var(--spacing)*20))] w-full z-[99] bg-white dark:bg-black rounded-t-2xl   px-8 pb-12 overflow-y-auto nui-slimscroll starting:translate-y-full translate-y-0"
       :class="[
         modelValue ? 'pointer-events-auto' : 'pointer-events-none opacity-0',
@@ -91,6 +99,6 @@ watch(modelValue, (value) => {
       </div>
 
       <slot />
-    </div>
+    </FocusScope>
   </Teleport>
 </template>

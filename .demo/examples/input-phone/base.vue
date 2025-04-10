@@ -4,10 +4,11 @@ const phone = ref('')
 
 <template>
   <div class="max-w-md">
-    <AddonInputPhone
-      v-model="phone"
-      label="Phone number"
-      placeholder="Ex: +1 555 555 5555"
-    />
+    <BaseField label="Phone number">
+      <AddonInputPhone
+        v-model="phone"
+        placeholder="Ex: +1 555 555 5555"
+      />
+    </BaseField>
   </div>
 </template>

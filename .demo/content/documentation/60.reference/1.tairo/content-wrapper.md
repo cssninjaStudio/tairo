@@ -1,5 +1,5 @@
 ---
-title: TairoContentWrapper
+title: Content wrapper
 components:
   - TairoContentWrapper
   - TairoContentWrapperTabbed
@@ -9,9 +9,13 @@ icon:
   srcDark: /img/illustrations/components/logo-icon.svg
 ---
 
-## Content wrapper
+# Content wrapper
 
 The content wrapper wraps the page content. It provides slots and allows you to control the horizontal flow of the page.
+
+## Example
+
+### Default wrapper
 
 :::doc-image
 ---
@@ -20,9 +24,7 @@ srcDark: /img/screens/content-wrapper-dark.png
 ---
 :::
 
-:doc-component-meta{name="TairoContentWrapper"}
-
-## Tabbed wrapper
+### Tabbed wrapper
 
 The tabbed wrapper wraps the page content. It provides slots and allows you to nest a second view inside your page.
 
@@ -32,5 +34,14 @@ src: /img/screens/content-wrapper-tabbed.png
 srcDark: /img/screens/content-wrapper-tabbed-dark.png
 ---
 :::
+
+## Components
+
+### TairoContentWrapper
+
+:doc-component-meta{name="TairoContentWrapper"}
+
+
+### TairoContentWrapperTabbed
 
 :doc-component-meta{name="TairoContentWrapperTabbed"}

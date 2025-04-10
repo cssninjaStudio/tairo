@@ -1,5 +1,10 @@
 ---
 title: Topnav
+components:
+  - TairoTopnavLayout
+  - TairoTopnavNavbar
+  - TairoTopnavHeader
+  - TairoTopnavContent
 ---
 
 # Topnav layout
@@ -10,6 +15,14 @@ src: /img/screens/starter-topnav.png
 srcDark: /img/screens/starter-topnav-dark.png
 ---
 :::
+
+::doc-button{to="/starters/topnav" variant="primary"}
+Preview
+::
+
+::doc-button{to="/starters/topnav-slim" class="ms-2"}
+Preview (slim)
+::
 
 ## Overview
 
@@ -51,6 +64,13 @@ srcDark: /img/screens/starter-topnav-slim-dark.png
     </TairoTopnavContent>
   </TairoTopnavLayout>
 </template>
+```
+::
+::code-group
+```css [<app>/app/assets/main.css]
+@theme {
+  --tairo-topnav-content-width: 100%;
+}
 ```
 ::
 
