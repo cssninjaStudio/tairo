@@ -407,7 +407,7 @@ const codeTailwind = [
           />
           <BaseParagraph>
             Customize tailwind settings in
-            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/assets/main.css</code>
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">app/assets/main.css</code>
             <small class="ps-1">(colors, fonts, ...)</small>
           </BaseParagraph>
         </div>
@@ -421,7 +421,7 @@ const codeTailwind = [
           />
           <BaseParagraph>
             Create your default layout in
-            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/layouts/default.vue</code>
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">app/layouts/default.vue</code>
           </BaseParagraph>
         </div>
         <pre class="bg-muted-100 dark:bg-muted-950 text-muted-800 dark:text-muted-100 rounded-md py-2 px-4"><code>{{ codeLayout }}</code></pre>
@@ -434,7 +434,7 @@ const codeTailwind = [
           />
           <BaseParagraph>
             Create your first page
-            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/pages/index.vue</code>
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">app/pages/index.vue</code>
           </BaseParagraph>
         </div>
         <pre class="bg-muted-100 dark:bg-muted-950 text-muted-800 dark:text-muted-100 rounded-md py-2 px-4"><code>{{ codePage }}</code></pre>
@@ -447,7 +447,7 @@ const codeTailwind = [
           />
           <BaseParagraph>
             Update your main nuxt app to use layouts and pages in
-            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">.app/app/app.vue</code>
+            <code class="bg-muted-100 dark:bg-muted-950 rounded-md py-1 px-1.5 text-sm">app/app.vue</code>
           </BaseParagraph>
         </div>
         <pre class="bg-muted-100 dark:bg-muted-950 text-muted-800 dark:text-muted-100 rounded-md py-2 px-4"><code>{{ codeApp }}</code></pre>
