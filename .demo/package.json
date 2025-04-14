@@ -73,6 +73,7 @@
     "klona": "^2.0.6",
     "libphonenumber-js": "^1.12.6",
     "lightningcss": "^1.29.2",
+    "lightweight-charts": "^5.0.5",
     "magic-string": "0.30.17",
     "mapbox-gl": "3.11.0",
     "minisearch": "^7.1.2",
