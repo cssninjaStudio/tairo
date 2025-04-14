@@ -54,7 +54,7 @@ jobs:
       # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
       - run: |
           NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} \
-          NODE_OPTIONS=--max-old-space-size=6144 \
+          NODE_OPTIONS=--max-old-space-size=8192 \
           pnpm demo:build
       - run: cp .github/env/Dockerfile .demo/Dockerfile
       - name: Set up QEMU
