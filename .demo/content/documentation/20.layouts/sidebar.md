@@ -122,7 +122,7 @@ items:
 :doc-component-meta{name="TairoSidebarSubsidebar"}
 
 ### TairoSidebarSubsidebarHeader
-:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseHeading" to="https://v4.shurikenui.com/docs/components/heading"}
+:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseHeading" to="https://shurikenui.com/docs/components/heading"}
 :doc-component-meta{name="TairoSidebarSubsidebarHeader"}
 
 ### TairoSidebarSubsidebarLink

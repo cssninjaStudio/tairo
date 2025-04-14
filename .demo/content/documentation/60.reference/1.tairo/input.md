@@ -20,5 +20,5 @@ icon:
 
 ### TairoInput
 
-:doc-tag{type="nui-icon:shurikenui-icon" label="BaseInput" to="https://v4.shurikenui.com/docs/components/input"}
+:doc-tag{type="nui-icon:shurikenui-icon" label="BaseInput" to="https://shurikenui.com/docs/components/input"}
 :doc-component-meta{name="TairoInput"}

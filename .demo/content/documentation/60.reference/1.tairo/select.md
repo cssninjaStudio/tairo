@@ -21,10 +21,10 @@ icon:
 
 ### TairoSelect
 
-:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseSelect" to="https://v4.shurikenui.com/docs/components/select"}
+:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseSelect" to="https://shurikenui.com/docs/components/select"}
 :doc-component-meta{name="TairoSelect"}
 
 ### TairoSelectItem
 
-:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseSelectItem" to="https://v4.shurikenui.com/docs/components/select"}
+:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseSelectItem" to="https://shurikenui.com/docs/components/select"}
 :doc-component-meta{name="TairoSelectItem"}

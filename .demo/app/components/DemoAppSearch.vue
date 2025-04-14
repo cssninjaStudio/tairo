@@ -151,11 +151,11 @@ function handleSelect(ev: CustomEvent) {
                 </BaseTag>
               </ComboboxLabel>
               <ComboboxItem
-                value="https://v4.shurikenui.com/docs/components"
+                value="https://shurikenui.com/docs/components"
                 class="scroll-mt-2"
                 as-child
               >
-                <a href="https://v4.shurikenui.com/docs/components" target="_blank">
+                <a href="https://shurikenui.com/docs/components" target="_blank">
                   <DemoAppSearchResult
                     title="Shuriken UI"
                     icon="nui-icon:shurikenui-icon"
