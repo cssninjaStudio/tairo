@@ -1,0 +1,72 @@
+<script setup lang="ts">
+definePageMeta({
+  title: 'Placeload',
+  preview: {
+    title: 'Placeload 3',
+    description: 'For loading states',
+    categories: ['layouts'],
+    src: '/img/screens/layouts-placeload-3.png',
+    srcDark: '/img/screens/layouts-placeload-3-dark.png',
+    order: 55,
+  },
+})
+
+const input = ref('')
+</script>
+
+<template>
+  <div class="px-4 md:px-6 lg:px-8 pb-20 dark:[--color-input-default-bg:var(--color-muted-950)]">
+    <TairoContentWrapper>
+      <template #left>
+        <TairoInput
+          v-model="input"
+          icon="lucide:search"
+          placeholder="Filter users..."
+        />
+      </template>
+      <template #right>
+        <BaseButton class="w-full sm:w-32" disabled>
+          Manage
+        </BaseButton>
+        <BaseButton
+          variant="primary"
+          class="w-full sm:w-32"
+          disabled
+        >
+          <Icon name="lucide:plus" class="size-4" />
+          <span>Add User</span>
+        </BaseButton>
+      </template>
+      <div>
+        <div
+          class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <BaseCard
+            v-for="index in 12"
+            :key="index"
+            class="flex flex-col p-6"
+          >
+            <BasePlaceload class="mx-auto size-20 shrink-0 rounded-full" />
+            <div class="mb-6 mt-4 space-y-2">
+              <BasePlaceload class="mx-auto h-3 w-40 rounded-lg" />
+              <BasePlaceload class="mx-auto h-3 w-32 rounded-lg" />
+            </div>
+            <div class="mb-6 flex items-center justify-center gap-3">
+              <BasePlaceload class="size-8 shrink-0 rounded-full" />
+              <BasePlaceload class="size-8 shrink-0 rounded-full" />
+              <BasePlaceload class="size-8 shrink-0 rounded-full" />
+            </div>
+            <div class="flex items-center justify-center gap-2">
+              <BaseButton loading class="w-full">
+                View
+              </BaseButton>
+              <BaseButton loading class="w-full">
+                Edit
+              </BaseButton>
+            </div>
+          </BaseCard>
+        </div>
+      </div>
+    </TairoContentWrapper>
+  </div>
+</template>

@@ -5,9 +5,9 @@ export default defineEventHandler(async () => {
 async function getDemoData() {
   return Promise.resolve({
     personalInfo: {
-      firstName: 'Maya',
-      lastName: 'Rosselini',
-      picture: '/img/avatars/2.svg',
+      firstName: 'Kendra',
+      lastName: 'Wilson',
+      picture: '/img/avatars/10.svg',
       badge: '/img/icons/flags/united-states-of-america.svg',
       role: 'Product Manager',
       shortBio:
@@ -25,7 +25,7 @@ async function getDemoData() {
         {
           name: 'twitter',
           url: 'https://twitter.com',
-          icon: 'fa6-brands:twitter',
+          icon: 'fa6-brands:x-twitter',
         },
         {
           name: 'linkedin',
@@ -183,7 +183,7 @@ async function getDemoData() {
           name: 'Product management',
           experience: 4,
           level: 95,
-          icon: 'ph:archive-duotone',
+          icon: 'solar:box-linear',
           related: {
             total: '2K',
             people: [
@@ -262,16 +262,16 @@ async function getDemoData() {
           role: 'Product Manager',
           src: '/img/avatars/3.svg',
           badge: '/img/icons/flags/united-states-of-america.svg',
-          text: 'Maya is a great product manager. He is very passionate about his work and always delivers on time. I would recommend him to any company.',
-          date: 'January 8, 2023',
+          text: 'Clarke is a great product manager. He is very passionate about his work and always delivers on time. I would recommend him to any company.',
+          date: 'January 8, 2025',
         },
         {
           name: 'Betty C.',
           role: 'Product Manager',
           src: '/img/avatars/24.svg',
           badge: '/img/icons/flags/united-states-of-america.svg',
-          text: 'Maya is a great product manager. He is very passionate about his work and always delivers on time. I would recommend him to any company.',
-          date: 'March 3, 2023',
+          text: 'Betty is a great product manager. He is very passionate about his work and always delivers on time. I would recommend him to any company.',
+          date: 'March 3, 2025',
         },
       ],
     },

@@ -1,21 +1,11 @@
-import {
-  demoRules,
-  documentationRules,
-  landingRules,
-} from './config/routes-rules'
-
 export default defineNuxtConfig({
+  compatibilityDate: '2025-03-05',
+  future: {
+    compatibilityVersion: 4,
+  },
   devtools: { enabled: true },
 
   extends: [
-    /**
-     * App layers: these are the layers that contains specific features
-     * - landing: contains landing pages
-     * - documentation: contains all /documentation pages
-     */
-    '../layers/landing',
-    import.meta.env.ENABLE_DOCUMENTATION && '../layers/documentation',
-
     /**
      * This extends the base Tairo layer.
      *
@@ -30,82 +20,79 @@ export default defineNuxtConfig({
      * This would allows you to create an empty git repository
      * with only your source code and no demo.
      */
-    '../layers/tairo-layout-sidebar',
-    '../layers/tairo-layout-collapse',
-    '../layers/tairo-layout-topnav',
-    '../layers/tairo-layout-iconnav',
     '../layers/tairo',
   ],
 
   modules: [
-    /**
-     * Swiper is a nuxt module that allows us to use swiper in nuxt
-     * wich is a carousel component used in the demo
-     * @see https://github.com/cpreston321/nuxt-swiper
-     */
-    'nuxt-swiper',
+    'reka-ui/nuxt',
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n',
+    '@nuxt/image',
+    '@nuxt/content',
+    '@nuxt/fonts',
   ],
-
-  css: [
-    '~/assets/css/colors.css',
-    '@fontsource-variable/fira-code/index.css',
-    '@fontsource-variable/inter/index.css',
-    '@fontsource-variable/karla/index.css',
-  ],
-
-  app: {
-    // pageTransition: {
-    //   mode: 'out-in',
-    //   enterActiveClass: 'transition-opacity duration-200 ease-out',
-    //   enterFromClass: 'opacity-0',
-    //   enterToClass: 'opacity-100',
-    //   leaveActiveClass: 'transition-opacity duration-75 ease-in',
-    //   leaveFromClass: 'opacity-100',
-    //   leaveToClass: 'opacity-0',
-    // },
-    // layoutTransition: {
-    //   mode: 'out-in',
-    //   enterActiveClass: 'transition-opacity duration-200 ease-out',
-    //   enterFromClass: 'opacity-0',
-    //   enterToClass: 'opacity-100',
-    //   leaveActiveClass: 'transition-opacity duration-200 ease-in',
-    //   leaveFromClass: 'opacity-100',
-    //   leaveToClass: 'opacity-0',
-    // },
-  },
-
-  features: {
-    inlineStyles: false,
+  content: {
+    build: {
+      markdown: {
+        toc: { depth: 3, searchDepth: 2 },
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+          },
+        },
+      },
+    },
+    renderer: {
+      anchorLinks: true,
+    },
   },
 
   experimental: {
-    // Write early hints when using node server.
-    writeEarlyHints: true,
-    // Render JSON payloads with support for revivifying complex types.
-    renderJsonPayloads: true,
-    // Render tags in of the head in a more performant way
-    headNext: true,
-    // Use the new View Transitions API
     viewTransition: true,
-
     defaults: {
-      useAsyncData: {
-        // Use shallowRef in asyncData/fetch data
-        deep: false,
+      nuxtLink: {
+        // Here we disable the prefetch for visibility and enable it for interaction.
+        // This is a good balance between performance and user experience when having a lot of links.
+        prefetchOn: {
+          visibility: false,
+          interaction: true,
+        },
       },
+    },
+  },
+  $development: {
+    experimental: {
+      // Disable prefetch for development, this will make the development faster.
+      defaults: {
+        nuxtLink: {
+          prefetch: false,
+        },
+      },
+    },
+  },
+
+  css: [
+    /**
+     * Load Tailwind CSS
+     */
+    '~/assets/main.css',
+  ],
+  fonts: {
+    experimental: {
+      processCSSVariables: true,
     },
   },
 
   typescript: {
     tsConfig: {
       // Here you can customize the generated tsconfig.json file
-      vueCompilerOptions: {
-        target: 3.4,
-      },
+      // vueCompilerOptions: {
+      //   target: 3.4,
+      // },
     },
   },
 
-  // nuxt behavior configuration
   runtimeConfig: {
     public: {
       // mapbox config
@@ -114,13 +101,61 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    ...demoRules,
-    ...landingRules,
-    ...(import.meta.env.ENABLE_DOCUMENTATION ? documentationRules : {}),
+  i18n: {
+    baseUrl: '/',
+    // We use no_prefix strategy to avoid having the locale prefix in the URL,
+    // This may not be the best strategy for SEO, but it's the best for the demo.
+    // We recommend using the default prefix_except_default strategy for SEO.
+    strategy: 'no_prefix',
+    defaultLocale: 'en',
+    lazy: true,
+    locales: [
+      { code: 'en', dir: 'ltr', language: 'en-US', file: 'en-US.yaml', name: 'English', isCatchallLocale: true },
+      { code: 'fr', dir: 'ltr', language: 'fr-FR', file: 'fr-FR.yaml', name: 'Français' },
+      { code: 'es', dir: 'ltr', language: 'es-ES', file: 'es-ES.yaml', name: 'Español' },
+      { code: 'de', dir: 'ltr', language: 'de-DE', file: 'de-DE.yaml', name: 'Deutsch' },
+      { code: 'ar', dir: 'rtl', language: 'ar-SA', file: 'ar-SA.yaml', name: 'العربية' },
+      { code: 'ja', dir: 'ltr', language: 'ja-JP', file: 'ja-JP.yaml', name: '日本語' },
+    ],
+    // Use i18n v10 features
+    experimental: {
+      generatedLocaleFilePathFormat: 'off',
+    },
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
-  // nuxt build configuration
+  routeRules: {
+    '/': {
+      swr: 3600,
+    },
+    '/demos': {
+      swr: 3600,
+    },
+    '/starters/**': {
+      swr: 3600,
+    },
+    '/auth/**': {
+      swr: 3600,
+    },
+    '/documentation': {
+      swr: 3600,
+    },
+    '/documentation/**': {
+      swr: 3600,
+    },
+    '/dashboards/**': {
+      swr: 3600,
+    },
+    '/layouts/**': {
+      swr: 3600,
+    },
+    '/wizard/**': {
+      swr: 3600,
+    },
+  },
+
   nitro: {
     esbuild: {
       options: {
@@ -131,30 +166,29 @@ export default defineNuxtConfig({
 
   vite: {
     define: {
-      // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
-      'import.meta.env.ENABLE_A11Y_AXE': import.meta.env.ENABLE_A11Y_AXE,
-
       // Enable / disable Options API support. Disabling this will result in smaller bundles,
       // but may affect compatibility with 3rd party libraries if they rely on Options API.
-      // Splitplane uses Options API, so we need to enable it.
-      '__VUE_OPTIONS_API__': true,
+      __VUE_OPTIONS_API__: false,
+    },
+    css: {
+      // LightningCSS is a rust based CSS minifier that is faster than the default CSS minifier.
+      // @see https://vite.dev/guide/features.html#lightning-css
+      // @see https://lightningcss.dev/
+      transformer: 'lightningcss',
     },
     build: {
       target: 'esnext',
+      cssMinify: 'lightningcss',
     },
     // Defining the optimizeDeps.include option prebuilds the dependencies, this avoid
     // some reloads when navigating between pages during development.
     // It's also useful to track them usage.
     optimizeDeps: {
       include: [
-        '@headlessui-float/vue',
         'scule',
         'klona',
-        '@vueform/slider',
+        // AddonDatepicker
         'v-calendar',
-        // AddonCarouselIcon
-        // AddonCarouselTeam
-        'vue3-carousel',
         // AddonApexcharts
         'vue3-apexcharts',
         // AddonInputPhone
@@ -165,29 +199,16 @@ export default defineNuxtConfig({
         '@zxcvbn-ts/language-common',
         '@zxcvbn-ts/language-en',
         '@zxcvbn-ts/language-fr',
-        // AddonMarkdownRemark
-        'rehype-external-links',
-        'rehype-raw',
-        'rehype-sanitize',
-        'rehype-stringify',
-        '@shikijs/rehype',
-        'remark-gfm',
-        'remark-parse',
-        'remark-rehype',
-        'unified',
-        // useMultiStepForm
-        'vue3-smooth-dnd',
-        'splitpanes',
+        // AddonMapboxLocationPicker
+        'ohash',
         'mapbox-gl',
-        '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js',
-        // DocComponentMeta
-        // useDocumentationMeta
-        // 'scule',
+        '@mapbox/mapbox-gl-geocoder',
         // form validation
         '@vee-validate/zod',
         'vee-validate',
         'zod',
         // calendar app
+        'vue3-smooth-dnd',
         'date-fns',
         'date-fns/locale',
         // profile edit page

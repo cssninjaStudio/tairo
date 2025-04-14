@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import type { NuxtError } from '#app'
+
 const props = defineProps<{
-  error: any
+  title?: string
+  description?: string
+  error: NuxtError
 }>()
 
 const title = computed(() => {
+  if (props.title !== undefined) {
+    return props.title
+  }
+
   if (props.error?.statusCode === 401) {
     return 'Not authorized'
   }
@@ -16,6 +24,10 @@ const title = computed(() => {
 })
 
 const description = computed(() => {
+  if (props.description !== undefined) {
+    return props.description
+  }
+
   if (props.error?.statusCode === 401) {
     return 'You are not authorized to access this page.'
   }
@@ -27,7 +39,6 @@ const description = computed(() => {
   return 'An error has occured. If the problem persists, please contact a system administrator or try again later.'
 })
 
-const app = useAppConfig()
 const handleError = () => clearError({ redirect: '/' })
 const retry = () => clearError()
 
@@ -41,19 +52,15 @@ const showStackTrace = ref(true)
       :title="title"
       :subtitle="description"
       image-size="md"
-      class="relative !items-end"
+      class="relative items-end!"
     >
       <template #image>
-        <component
-          :is="resolveComponentOrNative(app.tairo?.error.logo.component)"
-          v-if="app.tairo?.error?.logo?.component"
-          v-bind="app.tairo?.error.logo.props"
-        />
+        <slot />
       </template>
 
       <div class="mt-4">
         <div
-          class="text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
+          class="flex items-center justify-center text-muted-400/20 dark:text-muted-400/10 absolute inset-x-0 top-1/3 -translate-y-1/2 text-[13rem] font-bold sm:text-[20rem]"
         >
           <span>{{ props.error?.statusCode }}</span>
         </div>
@@ -62,7 +69,7 @@ const showStackTrace = ref(true)
         >
           <BaseButton
             rounded="lg"
-            class="mx-auto !h-12 w-full max-w-[160px] items-center gap-2"
+            class="mx-auto h-12! w-full max-w-[160px] items-center gap-2"
             @click="handleError"
           >
             <Icon name="feather:arrow-left" />
@@ -70,9 +77,9 @@ const showStackTrace = ref(true)
           </BaseButton>
           <DevOnly>
             <BaseButton
-              color="muted"
+              variant="muted"
               rounded="lg"
-              class="mx-auto !h-12 w-full max-w-[160px]"
+              class="mx-auto h-12! w-full max-w-[160px]"
               @click="retry"
             >
               <Icon name="feather:refresh-cw" class="size-3" />
@@ -84,7 +91,6 @@ const showStackTrace = ref(true)
           <div class="mt-6 flex items-center justify-center">
             <BaseSwitchBall
               v-model="showStackTrace"
-              color="danger"
               :label="`${showStackTrace ? 'Hide' : 'Show'} Stacktrace (dev)`"
             />
           </div>
@@ -97,7 +103,7 @@ const showStackTrace = ref(true)
         <BaseCard
           v-focus
           rounded="lg"
-          class="nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
+          class="focus-visible:nui-focus nui-text-700 group relative mx-auto mt-6 max-w-3xl border-2 border-dashed p-8 hover:border-solid"
           tabindex="0"
         >
           <div
@@ -105,23 +111,13 @@ const showStackTrace = ref(true)
           >
             <BaseTag
               v-if="props.error.statusCode"
-              color="danger"
               size="sm"
             >
               {{ props.error.statusCode }}
             </BaseTag>
-            <BaseTag
-              v-if="props.error.url"
-              color="danger"
-              variant="outline"
-              size="sm"
-            >
-              {{ props.error.url }}
-            </BaseTag>
           </div>
           <div class="mb-4 flex items-center gap-2">
             <BaseIconBox
-              color="danger"
               rounded="full"
               size="md"
             >
@@ -129,7 +125,7 @@ const showStackTrace = ref(true)
             </BaseIconBox>
             <div>
               <h4
-                class="text-danger-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
+                class="text-destructive-500 font-mono text-lg font-medium [overflow-wrap:anywhere]"
               >
                 {{ props.error.message }}
               </h4>
@@ -142,7 +138,7 @@ const showStackTrace = ref(true)
           <!-- eslint-disable vue/no-v-html -->
           <div
             v-if="props.error.stack"
-            class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+            class="mt-6 overflow-auto whitespace-pre p-2 font-mono text-sm opacity-60 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100 **:[.stack]:text-sm **:[.stack.internal]:opacity-100 **:[.stack.internal]:ps-4 **:[.stack.internal]:text-xs"
             v-html="props.error.stack"
           />
           <!-- eslint-enable vue/no-v-html -->
@@ -151,12 +147,3 @@ const showStackTrace = ref(true)
     </DevOnly>
   </div>
 </template>
-
-<style>
-.stack {
-  @apply text-sm;
-}
-.stack.internal {
-  @apply opacity-100 ps-4 text-xs;
-}
-</style>

@@ -1,7 +1,7 @@
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
-  const perPage = parseInt((query.perPage as string) || '5', 10)
-  const page = parseInt((query.page as string) || '1', 10)
+  const perPage = Number.parseInt((query.perPage as string) || '5', 10)
+  const page = Number.parseInt((query.page as string) || '1', 10)
   const filter = (query.filter as string) || ''
 
   if (perPage >= 50) {
@@ -43,9 +43,9 @@ async function getDemoData() {
       number: '**** 4897',
       balance: 9543.12,
       owner: {
-        name: 'Maya Rosselini',
+        name: 'Kendra Wilson',
         avatar: '/img/avatars/10.svg',
-        slug: 'maya-rosselini',
+        slug: 'kendra-wilson',
       },
       details: {
         routingNumber: '856854851',
@@ -57,7 +57,13 @@ async function getDemoData() {
         {
           name: 'Balance',
           data: [
-            3143.16, 4298.49, 2876.54, 5183.76, 4232.87, 10876.56, 9543.12,
+            3143.16,
+            4298.49,
+            2876.54,
+            5183.76,
+            4232.87,
+            10876.56,
+            9543.12,
           ],
         },
       ],
@@ -91,9 +97,9 @@ async function getDemoData() {
       number: '**** 6279',
       balance: 4653.97,
       owner: {
-        name: 'Maya Rosselini',
-        avatar: '/img/avatars/7.svg',
-        slug: 'maya-rosselini',
+        name: 'Kendra Wilson',
+        avatar: '/img/avatars/10.svg',
+        slug: 'kendra-wilson',
       },
       details: {
         routingNumber: '856854851',

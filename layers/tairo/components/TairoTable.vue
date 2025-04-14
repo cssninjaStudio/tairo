@@ -14,7 +14,7 @@ const props = withDefaults(
 <template>
   <div class="flex flex-col">
     <div
-      class="border-muted-200 dark:border-muted-700 border"
+      class="border-muted-300 dark:border-muted-800 border overflow-hidden"
       :class="[
         props.scrollable && 'nui-slimscroll overflow-x-auto',
         props.rounded === 'sm' && 'rounded-md',
@@ -25,7 +25,7 @@ const props = withDefaults(
       <div class="inline-block min-w-full align-middle">
         <div :class="props.scrollable && 'overflow-hidden'">
           <table
-            class="divide-muted-200 dark:divide-muted-700 min-w-full table-fixed divide-y"
+            class="divide-muted-200 dark:divide-muted-800 min-w-full table-fixed divide-y"
           >
             <thead>
               <tr>
@@ -33,7 +33,7 @@ const props = withDefaults(
               </tr>
             </thead>
             <tbody
-              class="divide-muted-200 dark:divide-muted-700 dark:bg-muted-800 divide-y bg-white"
+              class="divide-muted-200 dark:divide-muted-800 dark:bg-muted-950 divide-y bg-white"
             >
               <slot />
             </tbody>

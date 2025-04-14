@@ -1,4 +1,8 @@
 export default defineNuxtConfig({
+  compatibilityDate: '2024-11-26',
+  future: {
+    compatibilityVersion: 4,
+  },
   extends: [
     /**
      * This extends the base Tairo layer.
@@ -15,20 +19,13 @@ export default defineNuxtConfig({
      * with only your source code and no demo.
      */
 
-    /**
-     * Uncomment the following line to add the Tairo Layout Sidebar layer
-     */
-    // '../layers/tairo-layout-sidebar',
-
     '../layers/tairo',
   ],
 
-  /**
-   * Load local font with @fontsource packages
-   * @see https://fontsource.org/
-   */
   css: [
-    '@fontsource-variable/inter/index.css',
-    '@fontsource-variable/karla/index.css',
+    /**
+     * Load Tailwind CSS
+     */
+    '~/assets/main.css',
   ],
 })

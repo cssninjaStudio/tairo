@@ -1,0 +1,12 @@
+panels:
+  language:
+    title: اختر اللغة
+components:
+  toolbar:
+    search: بحث...
+    actions:
+      leads: العملاء المحتملين
+      projects: المشاريع
+      team: الفريق
+      reports: التقارير
+      settings: الإعدادات

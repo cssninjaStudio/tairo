@@ -1,0 +1,124 @@
+<script setup lang="ts">
+const props = defineProps<{
+  prefix?: string
+}>()
+
+const meta = ref<string[]>([])
+
+const componentsMeta = await $fetch(`/api/component-meta`)
+const { data } = await useAsyncData('doc-nav', () => {
+  return queryCollection('docs')
+    .select('path', 'title', 'description', 'components', 'icon')
+    .all()
+})
+
+// filter unwanted components
+watchEffect(() => {
+  meta.value = Object.keys(componentsMeta ?? {})?.filter((name) => {
+    if (name.startsWith('Base'))
+      return false
+
+    if (!props.prefix)
+      return true
+
+    return new RegExp(props.prefix).test(name)
+  })
+})
+
+// map component meta to documentation routes
+const componentsPagesMap = computed(() => {
+  return meta.value.map((name) => {
+    const route = data.value?.find(
+      (route: any) => route.components?.includes(name),
+    )
+    return {
+      name,
+      route,
+    }
+  })
+})
+
+// filter components without documentation routes
+const componentsWithPages = computed(() => {
+  return componentsPagesMap.value.filter((c) => {
+    return data.value?.find(
+      (route: any) => route.components?.includes(c.name),
+    )
+  })
+})
+const componentsWithoutPages = computed(() => {
+  return componentsPagesMap.value.filter((c) => {
+    const route = data.value?.find(
+      (route: any) => route.components?.includes(c.name),
+    )
+    return !route
+  })
+})
+</script>
+
+<template>
+  <div>
+    <div>
+      <DocLayoutSection>
+        <div class="grid gap-4 md:grid-cols-3">
+          <NuxtLink
+            v-for="component of componentsWithPages"
+            :key="component.name"
+            class="focus-visible:nui-focus group rounded-md"
+            :to="component.route?.path"
+          >
+            <BaseCard class="flex h-full flex-col px-4 py-8" rounded="lg">
+              <template v-if="component.route?.icon">
+                <img
+                  v-if="component.route?.icon?.src"
+                  class="h-16 shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:hidden"
+                  :src="component.route?.icon?.src"
+                  :alt="`${component.name} Tairo Documentation`"
+                >
+                <img
+                  v-if="component.route?.icon?.src"
+                  class="hidden h-16 shrink-0 opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-focus:opacity-100 group-focus:grayscale-0 dark:block"
+                  :src="
+                    component.route?.icon?.srcDark || component.route?.icon?.src
+                  "
+                  :alt="`${component.name} Tairo Documentation`"
+                >
+              </template>
+              <div class="mt-2 text-center font-sans">
+                <div class="flex h-full grow flex-col justify-between">
+                  <span
+                    v-if="component?.name"
+                    class="text-muted-800 line-clamp-1 block w-full max-w-[240px] text-sm dark:text-white"
+                  >{{ component?.name }}</span>
+                  <span
+                    class="text-primary-500 font-sans text-xs font-medium opacity-60 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100"
+                  >
+                    Read documentation
+                  </span>
+                </div>
+              </div>
+            </BaseCard>
+          </NuxtLink>
+        </div>
+      </DocLayoutSection>
+    </div>
+
+    <div
+      v-if="componentsWithoutPages.length"
+      class="mb-24 flex w-full flex-wrap justify-start gap-2"
+    >
+      <BaseTooltip
+        v-for="component of componentsWithoutPages"
+        :key="component.name"
+        content="This component is not documented yet."
+      >
+        <BaseTag
+          size="sm"
+          class="cursor-help opacity-60 transition-opacity duration-100 hover:opacity-100"
+        >
+          <span class="font-mono text-xs">&lt;{{ component.name }}&gt;</span>
+        </BaseTag>
+      </BaseTooltip>
+    </div>
+  </div>
+</template>

@@ -35,7 +35,7 @@ const strokeWidth = computed(() => {
       props.color === 'success' && 'text-success-500',
       props.color === 'primary' && 'text-primary-500',
       props.color === 'warning' && 'text-warning-500',
-      props.color === 'danger' && 'text-danger-500',
+      props.color === 'danger' && 'text-destructive-500',
       props.size === 'xs' && 'size-8',
       props.size === 'sm' && 'size-10',
       props.size === 'md' && 'size-12',
@@ -74,44 +74,3 @@ const strokeWidth = computed(() => {
     />
   </svg>
 </template>
-
-<style scoped>
-.nui-check-animated {
-  @apply block rounded-full stroke-current overflow-hidden;
-  animation:
-    fill 0.4s ease-in-out 0.4s forwards,
-    scale 0.3s ease-in-out 0.9s both;
-}
-
-.nui-check-animated-circle {
-  @apply stroke-current fill-none;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-}
-
-.nui-check-animated-check {
-  @apply stroke-current fill-none text-white origin-[50%_50%] scale-[0.7];
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-}
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes scale {
-  0%,
-  100% {
-    transform: none;
-  }
-  50% {
-    transform: scale3d(1.1, 1.1, 1);
-  }
-}
-
-@keyframes fill {
-  100% {
-    box-shadow: inset 0px 0px 0px 30px currentColor;
-  }
-}
-</style>

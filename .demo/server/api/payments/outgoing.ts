@@ -1,7 +1,7 @@
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
-  const perPage = parseInt((query.perPage as string) || '5', 10)
-  const page = parseInt((query.page as string) || '1', 10)
+  const perPage = Number.parseInt((query.perPage as string) || '5', 10)
+  const page = Number.parseInt((query.page as string) || '1', 10)
   const filter = (query.filter as string) || ''
 
   if (perPage >= 50) {
@@ -29,11 +29,7 @@ function filterDemoData(
   }
   const filterRe = new RegExp(filter, 'i')
   return data
-    .filter((item) => {
-      return [item.recipient.name, item.DemoToolbarLanguage].some(item =>
-        item.match(filterRe),
-      )
-    })
+    .filter(item => item.recipient.name.match(filterRe))
     .slice(offset, offset + perPage)
 }
 

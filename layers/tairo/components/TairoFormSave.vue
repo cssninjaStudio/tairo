@@ -12,7 +12,7 @@ const props = withDefaults(
 const emits = defineEmits<{
   reset: []
 }>()
-const { x, y } = useNinjaWindowScroll()
+const { y } = useNuiWindowScroll()
 </script>
 
 <template>
@@ -30,7 +30,7 @@ const { x, y } = useNinjaWindowScroll()
         class="fixed inset-x-0 bottom-6 z-40 mx-auto w-full max-w-[304px]"
       >
         <BaseCard
-          class="shadow-muted-300/30 dark:shadow-muted-800/30 flex items-center justify-between gap-2 rounded-2xl p-4 shadow-xl"
+          class="shadow-muted-300/30 dark:shadow-muted-800/30 flex items-center justify-between gap-3 rounded-2xl p-3 shadow-xl"
           :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
         >
           <slot>
@@ -48,7 +48,7 @@ const { x, y } = useNinjaWindowScroll()
               :disabled="props.disabled"
               :loading="props.loading"
               :rounded="props.rounded"
-              color="primary"
+              variant="primary"
               class="w-full"
             >
               <span>Save</span>

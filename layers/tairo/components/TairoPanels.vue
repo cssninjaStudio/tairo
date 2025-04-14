@@ -3,16 +3,15 @@ const {
   panels,
   current,
   transitionFrom,
-  currentProps,
-  showOverlay,
   open,
   close,
+  resolve,
 } = usePanels()
 
 watch(
-  [current, showOverlay],
-  ([panel, value]) => {
-    if (panel?.component && value) {
+  [() => current.value?.component, () => current.value?.overlay],
+  ([component, overlay]) => {
+    if (component && overlay) {
       document.documentElement.style.overflow = 'hidden'
     }
     else {
@@ -20,7 +19,6 @@ watch(
     }
   },
 )
-
 </script>
 
 <template>
@@ -44,17 +42,15 @@ watch(
           panels,
           current,
           transitionFrom,
-          currentProps,
-          showOverlay,
           open,
           close,
         }"
       >
         <Suspense>
           <component
-            :is="resolveComponentOrNative(current.component)"
-            v-bind="currentProps"
+            :is="current.component"
             v-if="current?.component"
+            v-bind="(current.props as any) || {}"
             class="xs:max-w-full fixed top-0 z-[100] h-full"
             :class="[
               current.position === 'left' ? 'start-0' : 'end-0',
@@ -62,6 +58,7 @@ watch(
               current.size === 'sm' && 'w-96',
               current.size === 'md' && 'w-[460px]',
             ]"
+            @close="resolve"
           />
         </Suspense>
       </slot>
@@ -72,7 +69,7 @@ watch(
       tabindex="0"
       class="bg-muted-800/60 fixed start-0 top-0 z-[99] size-full cursor-pointer transition-opacity duration-300"
       :class="
-        current && showOverlay
+        current && current.overlay
           ? 'opacity-100 pointer-events-auto'
           : 'opacity-0 pointer-events-none'
       "

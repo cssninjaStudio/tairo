@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { FocusTrap } from '@headlessui/vue'
+defineOptions({
+  inheritAttrs: false,
+})
 
 const props = defineProps<{
   src?: string
@@ -7,10 +9,6 @@ const props = defineProps<{
   zoomSrc?: string
   zoomSrcDark?: string
 }>()
-
-defineOptions({
-  inheritAttrs: false,
-})
 
 const initialSize = ref<{
   top: number
@@ -24,15 +22,16 @@ const initialSize = ref<{
   height: 0,
 })
 
-const modalRef = ref<HTMLElement | null>(null)
-const buttonRef = ref<HTMLElement | null>(null)
+const modalRef = useTemplateRef<HTMLElement>('modalRef')
+const buttonRef = useTemplateRef<HTMLElement>('buttonRef')
 const isZoomed = ref(false)
 const isUnzooming = ref(false)
 
 let y = 0
 
-const wheelListener = (event: WheelEvent) => {
-  if (event.ctrlKey) return
+function wheelListener(event: WheelEvent) {
+  if (event.ctrlKey)
+    return
   event.stopPropagation()
 
   y += event.deltaY
@@ -43,15 +42,17 @@ const wheelListener = (event: WheelEvent) => {
   unzoom()
 }
 
-const resizeListener = () => {
-  if (!isZoomed.value) return
-  if (!buttonRef.value) return
+function resizeListener() {
+  if (!isZoomed.value)
+    return
+  if (!buttonRef.value)
+    return
 
   const { top, left, width, height } = buttonRef.value.getBoundingClientRect()
   initialSize.value = { top, left, width, height }
 }
 
-const keydownListener = (event: KeyboardEvent) => {
+function keydownListener(event: KeyboardEvent) {
   if (event.key === 'Escape') {
     event.stopPropagation()
     unzoom()
@@ -59,15 +60,21 @@ const keydownListener = (event: KeyboardEvent) => {
 }
 
 let touchstartScreenY = 0
-const touchstartListener = (event: TouchEvent) => {
+function touchstartListener(event: TouchEvent) {
+  if (!event.changedTouches[0]) {
+    return
+  }
   event.stopPropagation()
-  touchstartScreenY = event.changedTouches[0].screenY
+  touchstartScreenY = event.changedTouches[0]?.screenY
 }
 
-const touchmoveListener = (event: TouchEvent) => {
+function touchmoveListener(event: TouchEvent) {
+  if (!event.changedTouches[0]) {
+    return
+  }
   event.stopPropagation()
 
-  y = touchstartScreenY - event.changedTouches[0].screenY
+  y = touchstartScreenY - event.changedTouches[0]?.screenY
 
   if (modalRef.value) {
     modalRef.value.style.transform = `translateY(${-y}px)`
@@ -77,7 +84,8 @@ const touchmoveListener = (event: TouchEvent) => {
 }
 
 function zoom() {
-  if (isZoomed.value) return
+  if (isZoomed.value)
+    return
 
   isZoomed.value = true
   isUnzooming.value = false
@@ -85,7 +93,8 @@ function zoom() {
   attachZoomEvents()
 }
 function unzoom() {
-  if (!isZoomed.value) return
+  if (!isZoomed.value)
+    return
 
   isZoomed.value = false
   isUnzooming.value = true
@@ -165,13 +174,12 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="relative">
-    <!-- eslint-disable vuejs-accessibility/alt-text -->
     <a
       ref="buttonRef"
       role="button"
       class="block cursor-zoom-in"
       tabindex="0"
-      :class="[isZoomed ? 'outline-none' : 'nui-focus']"
+      :class="[isZoomed ? 'outline-none' : 'focus-visible:nui-focus']"
       @click="() => handleClick()"
       @keydown.enter="() => handleClick()"
     >
@@ -220,21 +228,21 @@ onBeforeUnmount(() => {
           @click="unzoom"
           @keydown.enter="() => unzoom()"
         >
-          <FocusTrap class="flex size-full items-center justify-center">
+          <FocusScope trapped class="flex size-full items-center justify-center">
             <img
-              class="nui-focus block max-h-full max-w-full object-contain dark:hidden"
+              class="focus-visible:nui-focus block max-h-full max-w-full object-contain dark:hidden"
               :src="props.zoomSrc || props.src"
               v-bind="$attrs"
               tabindex="0"
             >
 
             <img
-              class="nui-focus hidden max-h-full max-w-full object-contain dark:block"
+              class="focus-visible:nui-focus hidden max-h-full max-w-full object-contain dark:block"
               :src="props.zoomSrcDark || props.srcDark || props.zoomSrc || props.src"
               v-bind="$attrs"
               tabindex="0"
             >
-          </FocusTrap>
+          </FocusScope>
         </a>
       </Transition>
     </Teleport>

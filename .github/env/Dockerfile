@@ -1,4 +1,4 @@
-FROM bitnami/node:20
+FROM bitnami/node:22.14.0
 WORKDIR /app
 
 RUN groupadd -g 10101 nuxt && \

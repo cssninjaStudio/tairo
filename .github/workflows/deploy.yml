@@ -21,7 +21,7 @@ jobs:
       shared: ${{ steps.filter.outputs.shared }}
     steps:
       - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v2
+      - uses: dorny/paths-filter@v3
         id: filter
         with:
           # Use context to get the branch where commits were pushed.
@@ -33,9 +33,6 @@ jobs:
               - '.github/env/**'
               - '.github/workflows/deploy.yml'
               - 'layers/**'
-              - 'types/**'
-              - '.npmrc'
-              - '.nuxtrc'
               - 'package.json'
               - 'pnpm-lock.yaml'
               - 'tsconfig.json'
@@ -57,9 +54,6 @@ jobs:
       # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
       - run: |
           NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} \
-          NUXT_INDEXABLE=true \
-          ENABLE_DOCUMENTATION=true \
-          ENABLE_DOCUMENTATION_STUDIO=true \
           NODE_OPTIONS=--max-old-space-size=6144 \
           pnpm demo:build
       - run: cp .github/env/Dockerfile .demo/Dockerfile

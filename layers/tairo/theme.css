@@ -1,0 +1,52 @@
+@source './components';
+
+@theme {
+  --tairo-topnav-content-width: 100%;
+
+  --tairo-collapse-width-open: 17rem;
+  --tairo-collapse-width-collapsed: 5rem;
+
+  --tairo-sidebar-icon-width: 3.5rem;
+  --tairo-sidebar-subsidebar-width: 15rem;
+
+  --tairo-sidenav-sidebar-width: 16.25rem;
+
+  @keyframes nui-check-animated-stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes nui-check-animated-scale {
+    0%,
+    100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+
+  @keyframes nui-check-animated-fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px currentColor;
+    }
+  }
+}
+
+@utility nui-check-animated {
+  @apply block rounded-full stroke-current overflow-hidden;
+  animation:
+    nui-check-animated-fill 0.4s ease-in-out 0.4s forwards,
+    nui-check-animated-scale 0.3s ease-in-out 0.9s both;
+}
+
+@utility nui-check-animated-circle {
+  @apply stroke-current fill-none;
+  animation: nui-check-animated-stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+@utility nui-check-animated-check {
+  @apply stroke-current fill-none text-white origin-[50%_50%] scale-[0.7];
+  animation: nui-check-animated-stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}

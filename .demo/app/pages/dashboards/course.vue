@@ -1,0 +1,438 @@
+<script setup lang="ts">
+definePageMeta({
+  title: 'E-Learning',
+  preview: {
+    title: 'Course dashboard',
+    description: 'For School and Education',
+    categories: ['dashboards'],
+    src: '/img/screens/dashboards-course.png',
+    srcDark: '/img/screens/dashboards-course-dark.png',
+    order: 13,
+  },
+})
+
+const courses = [
+  {
+    title: 'ANA118 - Anatomy and physiology of young subjects',
+    description:
+      'This week features a deeper approach of young subject anatomy and basic physiological properties. It also focuses on the latest released articles.',
+    category: 'Anatomy',
+    week: 6,
+    duration: 120,
+    comments: 25,
+    time: '10:00 - 12:00',
+    date: 'Feb 3, 2023',
+    students: [
+      {
+        tooltip: 'Clark Smith',
+        src: '/img/avatars/3.svg',
+      },
+      {
+        tooltip: 'Maya Rosselini',
+        src: '/img/avatars/2.svg',
+      },
+      {
+        tooltip: 'Clarissa Miller',
+        src: '/img/avatars/5.svg',
+      },
+      {
+        tooltip: 'Jane Doe',
+        src: '/img/avatars/4.svg',
+      },
+    ],
+  },
+  {
+    title: 'IMM107 - Immunology and treatment of human disease',
+    description:
+      'This unit has a strong focus on significal clinical problems in immunology and the scientific background to these problems.',
+    category: 'Immunology',
+    week: 6,
+    duration: 90,
+    comments: 12,
+    time: '9:00 - 10:30',
+    date: 'Feb 7, 2023',
+    students: [
+      {
+        tooltip: 'Anna Vorsky',
+        src: '/img/avatars/12.svg',
+      },
+      {
+        tooltip: 'Hermann Mayer',
+        src: '/img/avatars/16.svg',
+      },
+      {
+        tooltip: 'Eddie Johnson',
+        src: '/img/avatars/8.svg',
+      },
+      {
+        tooltip: 'Jane Doe',
+        src: '/img/avatars/14.svg',
+      },
+    ],
+  },
+  {
+    title: 'CAR112 - Cardiovascular Metabolic Management',
+    description:
+      'This unit has a strong focus on significal clinical problems in immunology and the scientific background to these problems.',
+    category: 'Cardiology',
+    week: 6,
+    duration: 120,
+    comments: 7,
+    time: '2:00 - 4:00',
+    date: 'Feb 7, 2023',
+    students: [
+      {
+        tooltip: 'Troy Baker',
+        src: '/img/avatars/15.svg',
+      },
+      {
+        tooltip: 'Alan Baxter',
+        src: '/img/avatars/11.svg',
+      },
+      {
+        tooltip: 'Eric Klaus',
+        src: '/img/avatars/7.svg',
+      },
+      {
+        tooltip: 'Jane Doe',
+        src: '/img/avatars/17.svg',
+      },
+    ],
+  },
+]
+
+const files = [
+  {
+    name: 'Holtz - Complete Anatomy',
+    size: '94.7 MB',
+    uploaded: '2 days ago',
+    icon: '/img/icons/files/pdf.svg',
+  },
+  {
+    name: 'Assessing doses Pt. 2',
+    size: '79 KB',
+    uploaded: '1 week ago',
+    icon: '/img/icons/files/sheet.svg',
+  },
+  {
+    name: 'Written exam template',
+    size: '42 KB',
+    uploaded: '2 weeks ago',
+    icon: '/img/icons/files/doc-2.svg',
+  },
+]
+
+const students = [
+  {
+    name: 'Maya Rosselini',
+    avatar: '/img/avatars/2.svg',
+    completion: '78% completed',
+    location: 'Los Angeles, CA',
+    status: 'Online',
+    presence: 'On time',
+  },
+  {
+    name: 'Clark Smith',
+    avatar: '/img/avatars/3.svg',
+    completion: '64% completed',
+    location: 'San Diego, CA',
+    status: 'Offline',
+    presence: 'Late (10 min)',
+  },
+  {
+    name: 'Hermann Mayer',
+    avatar: '/img/avatars/16.svg',
+    completion: '37% completed',
+    location: 'New York, NY',
+    status: 'Online',
+    presence: 'Late (5 min)',
+  },
+  {
+    name: 'Andrew Brickman',
+    avatar: '/img/avatars/8.svg',
+    completion: '89% completed',
+    location: 'San Diego, CA',
+    status: 'Online',
+    presence: 'On time',
+  },
+  {
+    name: 'Jen Connelli',
+    avatar: '/img/avatars/10.svg',
+    completion: '54% completed',
+    location: 'San Francisco, CA',
+    status: 'Offline',
+    presence: 'On time',
+  },
+]
+</script>
+
+<template>
+  <div class="px-4 md:px-6 lg:px-8 pb-20">
+    <!-- Header -->
+    <div class="mb-8 flex flex-col justify-between md:flex-row md:items-center">
+      <div
+        class="flex max-w-[425px] flex-col items-center gap-4 text-center md:flex-row md:text-start lg:max-w-full"
+      >
+        <BaseAvatar src="/img/avatars/10.svg" size="lg" />
+        <div>
+          <BaseHeading
+            as="h2"
+            size="xl"
+            weight="medium"
+            lead="tight"
+            class="text-muted-900 dark:text-white"
+          >
+            <span>Week 6 classes</span>
+          </BaseHeading>
+          <BaseParagraph size="sm">
+            <span class="text-muted-500">Classes from January 6 to 10</span>
+          </BaseParagraph>
+        </div>
+      </div>
+      <div
+        class="mt-4 flex items-center justify-center gap-2 md:mt-0 md:justify-start"
+      >
+        <BaseButton rounded="md">
+          <span>Settings</span>
+        </BaseButton>
+        <BaseButton rounded="md" variant="primary">
+          <span>Schedule</span>
+        </BaseButton>
+      </div>
+    </div>
+    <!-- Grid -->
+    <div class="grid grid-cols-12 gap-6">
+      <!-- Course Card -->
+      <div
+        v-for="(course, index) in courses"
+        :key="index"
+        class="relative col-span-12 sm:col-span-6 lg:col-span-4"
+      >
+        <BaseCard rounded="md" class="flex h-full flex-col p-4 md:p-6">
+          <div class="mb-6">
+            <BaseTag variant="primary">
+              <span>{{ course.category }}</span>
+            </BaseTag>
+          </div>
+          <div class="mb-6">
+            <BaseHeading
+              as="h3"
+              size="lg"
+              weight="medium"
+              lead="tight"
+              class="mb-2"
+            >
+              <span class="text-muted-800 dark:text-muted-100">
+                {{ course.title }}
+              </span>
+            </BaseHeading>
+            <BaseParagraph size="sm" class="text-muted-500 dark:text-muted-400">
+              <span>{{ course.description }}</span>
+            </BaseParagraph>
+          </div>
+          <div class="mb-8 mt-auto flex items-center justify-between">
+            <BaseAvatarGroup
+              :avatars="course.students"
+              :limit="3"
+              size="sm"
+            />
+            <div>
+              <BaseButton size="sm" rounded="md">
+                <span>Discussion</span>
+              </BaseButton>
+            </div>
+          </div>
+          <div class="mb-8">
+            <BaseHeading
+              as="h4"
+              size="md"
+              weight="medium"
+              lead="tight"
+              class="text-muted-800 dark:text-muted-100 mb-2"
+            >
+              <span>Week {{ course.week }} lecture recording</span>
+            </BaseHeading>
+            <div class="flex gap-6">
+              <div class="text-muted-500 dark:text-muted-400 flex items-center gap-1">
+                <Icon name="solar:watch-square-minimalistic-linear" class="size-5" />
+                <span class="font-sans text-sm">{{ course.duration }} min</span>
+              </div>
+              <div class="text-muted-500 dark:text-muted-400 flex items-center gap-1">
+                <Icon name="solar:chat-square-call-linear" class="size-5" />
+                <span class="font-sans text-sm">
+                  {{ course.comments }} comments
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="mb-8">
+            <BaseHeading
+              as="h4"
+              size="md"
+              weight="medium"
+              lead="tight"
+              class="text-muted-800 dark:text-muted-100 mb-2"
+            >
+              <span>Week {{ course.week }} examination</span>
+            </BaseHeading>
+            <div class="flex gap-6">
+              <div class="text-muted-500 dark:text-muted-400 flex items-center gap-1">
+                <Icon name="solar:calendar-linear" class="size-5" />
+                <span class="font-sans text-sm">
+                  {{ course.date }} — {{ course.time }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <BaseButton
+              variant="primary"
+              rounded="md"
+              class="w-full"
+            >
+              <span>Class Details</span>
+            </BaseButton>
+          </div>
+        </BaseCard>
+      </div>
+    </div>
+    <!-- Grid -->
+    <div class="mt-10 grid grid-cols-12 gap-x-6 gap-y-12">
+      <!-- Column -->
+      <div class="col-span-12 lg:col-span-4">
+        <div class="mb-4">
+          <BaseHeading
+            as="h2"
+            size="lg"
+            weight="medium"
+            lead="tight"
+            class="text-muted-900 dark:text-white"
+          >
+            <span>Week 6 files</span>
+          </BaseHeading>
+          <BaseParagraph size="sm">
+            <span class="text-muted-500">
+              Files you will need for this week
+            </span>
+          </BaseParagraph>
+        </div>
+        <div class="space-y-4">
+          <BaseCard
+            v-for="(file, fileIndex) in files"
+            :key="fileIndex"
+            rounded="md"
+            class="p-4"
+          >
+            <div class="flex w-full items-center gap-3">
+              <img
+                :src="file.icon"
+                :alt="file.name"
+                class="size-10 shrink-0"
+              >
+              <div>
+                <BaseHeading
+                  as="h4"
+                  size="md"
+                  weight="medium"
+                  lead="tight"
+                  class="text-muted-800 dark:text-white"
+                >
+                  <span>{{ file.name }}</span>
+                </BaseHeading>
+                <BaseParagraph size="xs">
+                  <span class="text-muted-500 dark:text-muted-400">
+                    {{ file.size }} · uploaded {{ file.uploaded }}
+                  </span>
+                </BaseParagraph>
+              </div>
+              <div class="ms-auto">
+                <BaseTooltip content="Download file">
+                  <BaseButton size="icon-sm">
+                    <Icon name="lucide:arrow-down" class="size-4" />
+                  </BaseButton>
+                </BaseTooltip>
+              </div>
+            </div>
+          </BaseCard>
+        </div>
+      </div>
+      <!-- Column -->
+      <div class="col-span-12 lg:col-span-8">
+        <div class="mb-4">
+          <BaseHeading
+            as="h2"
+            size="lg"
+            weight="medium"
+            lead="tight"
+            class="text-muted-900 dark:text-white"
+          >
+            <span>Students</span>
+          </BaseHeading>
+          <BaseParagraph size="sm">
+            <span class="text-muted-500">Summary of attending students</span>
+          </BaseParagraph>
+        </div>
+        <div class="space-y-2">
+          <DemoFlexTableRow
+            v-for="(student, studentIndex) in students"
+            :key="studentIndex"
+            rounded="md"
+            spaced
+          >
+            <template #start>
+              <DemoFlexTableStart
+                label="Student"
+                hide-label
+                :title="student.name"
+                :subtitle="student.completion"
+                :avatar="student.avatar"
+              />
+            </template>
+            <template #end>
+              <DemoFlexTableCell
+                label="location"
+                hide-label
+                class="w-full sm:w-32"
+              >
+                <span
+                  class="text-muted-500 dark:text-muted-400 line-clamp-1 font-sans text-sm"
+                >
+                  {{ student.location }}
+                </span>
+              </DemoFlexTableCell>
+              <DemoFlexTableCell
+                label="status"
+                hide-label
+                class="w-full sm:w-16"
+              >
+                <BaseTag
+                  :variant="student.status === 'Online' ? 'primary' : 'muted'"
+                  rounded="full"
+                  size="sm"
+                >
+                  {{ student.status }}
+                </BaseTag>
+              </DemoFlexTableCell>
+              <DemoFlexTableCell
+                label="location"
+                hide-label
+                class="w-full sm:w-28"
+              >
+                <span
+                  class="text-muted-500 dark:text-muted-400 font-sans text-sm"
+                >
+                  {{ student.presence }}
+                </span>
+              </DemoFlexTableCell>
+              <DemoFlexTableCell label="action" hide-label>
+                <BaseButton size="sm" rounded="md">
+                  Chat
+                </BaseButton>
+              </DemoFlexTableCell>
+            </template>
+          </DemoFlexTableRow>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
