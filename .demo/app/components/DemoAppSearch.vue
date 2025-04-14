@@ -79,7 +79,7 @@ watchEffect(() => {
 })
 const routesResults = computed(() => routesMS.search(toValue(search)).slice(0, 6))
 
-const isShurikenSearch = computed(() => search.value.toLowerCase().includes('demo') || search.value.toLowerCase().includes('shur'))
+const isShurikenSearch = computed(() => search.value.toLowerCase().includes('base') || search.value.toLowerCase().includes('shur'))
 const hasResult = computed(() =>
   Boolean(contentResults.value?.length || routesResults.value?.length),
 )
