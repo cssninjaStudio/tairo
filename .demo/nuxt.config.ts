@@ -179,6 +179,7 @@ export default defineNuxtConfig({
     build: {
       target: 'esnext',
       cssMinify: 'lightningcss',
+      reportCompressedSize: false,
     },
     // Defining the optimizeDeps.include option prebuilds the dependencies, this avoid
     // some reloads when navigating between pages during development.
