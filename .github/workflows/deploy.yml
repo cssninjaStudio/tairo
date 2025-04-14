@@ -50,16 +50,8 @@ jobs:
         run: |
           echo "dockertags=digisquad/cssninja.tairo-demo:latest" >> $GITHUB_ENV
 
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile
       - name: Set Swap Space
         uses: pierotofy/set-swap-space@master
-        with:
-          swap-size-gb: 10
-      - run: pnpm --filter demo build
-        env:
-          NODE_OPTIONS: --max-old-space-size=13312
-          NUXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
