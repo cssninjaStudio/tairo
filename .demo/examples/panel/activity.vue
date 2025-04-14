@@ -6,7 +6,7 @@ const { open } = usePanels()
 
 <template>
   <div>
-    <BaseButton @click="open(DemoPanelActivity)">
+    <BaseButton @click="open(DemoPanelActivity, {}, { position: 'left', size: 'sm' })">
       Open Panel
     </BaseButton>
   </div>
