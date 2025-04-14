@@ -34,10 +34,10 @@ function onValidate(state: { validation: ZxcvbnResult | null, touched: boolean }
     @submit.prevent="onSubmit"
   >
     <BaseField
+      v-slot="{ inputAttrs }"
       label="Password"
       :state="error ? 'error' : 'idle'"
       :error="error"
-      v-slot="{ inputAttrs }"
     >
       <AddonInputPassword
         ref="inputRef"

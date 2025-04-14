@@ -12,5 +12,4 @@ export default antfu({
     'unused-imports/no-unused-vars': 'off',
     'ts/ban-ts-comment': 'off',
   },
-  ignores: ['layers/documentation/content/documentation/**'],
 })

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import type { ZxcvbnResult } from '@zxcvbn-ts/core'
 import { AddonInputPassword } from '#components'
 
 const passwordRef = ref<InstanceType<typeof AddonInputPassword>>()
@@ -31,11 +30,11 @@ const userInputs = computed(() => useUserInputs.value ? [username.value, email.v
     </BaseField>
 
     <BaseField
+      v-slot="{ inputAttrs }"
       label="Password"
       :state="loading ? 'loading' : hasError ? 'error' : 'idle'"
       :error="passwordRef?.validation?.feedback?.warning ?? ''"
       class="col-span-2"
-      v-slot="{ inputAttrs }"
     >
       <AddonInputPassword
         ref="passwordRef"

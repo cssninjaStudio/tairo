@@ -8,7 +8,6 @@ icon:
   srcDark: /img/illustrations/components/select-icon.svg
 ---
 
-
 # Radio Card
 
 The `TairoRadioCard` component is a versatile radio input that combines the functionality of a radio button with the visual appeal of a card. It's built on top of Reka UI's `RadioGroupItem` and provides additional styling options through Shuriken UI's design system.

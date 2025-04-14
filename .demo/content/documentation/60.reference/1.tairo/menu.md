@@ -17,7 +17,7 @@ icon:
   srcDark: /img/illustrations/components/input-icon.svg
 ---
 
-# Navigation Menu 
+# Navigation Menu
 
 The `TairoMenu` component is a versatile navigation menu that provides a range of features and styling options. It's built on top of Reka UI's `NavigationMenu` component and extends its functionality with additional components and styling.
 

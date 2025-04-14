@@ -1,10 +1,8 @@
 <script setup lang="ts">
-
-
 const activities = ref([
   {
     icon: 'solar:card-transfer-bold-duotone',
-    title: "Victoria's Corner",
+    title: 'Victoria\'s Corner',
     description: 'Outgoing payment',
     amount: -938.39,
     date: 'Jun 12, 2024',

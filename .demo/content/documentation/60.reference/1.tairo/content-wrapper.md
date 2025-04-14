@@ -41,7 +41,6 @@ srcDark: /img/screens/content-wrapper-tabbed-dark.png
 
 :doc-component-meta{name="TairoContentWrapper"}
 
-
 ### TairoContentWrapperTabbed
 
 :doc-component-meta{name="TairoContentWrapperTabbed"}

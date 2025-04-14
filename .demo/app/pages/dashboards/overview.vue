@@ -311,7 +311,7 @@ definePageMeta({
           <div class="px-4 md:px-6 py-10">
             <DemoChartAreaBalance class="[--color-chart-gradient:var(--color-muted-100)] dark:[--color-chart-gradient:var(--color-muted-950)]" />
           </div>
-          
+
           <DemoActivityTable />
         </BaseCard>
       </div>

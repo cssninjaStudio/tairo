@@ -613,7 +613,7 @@ const amount = ref<number>(0)
                 <div class="mt-auto">
                   <div class="space-y-3">
                     <div>
-                      <BaseSelect rounded="sm" v-model="selectedBankSendTo">
+                      <BaseSelect v-model="selectedBankSendTo" rounded="sm">
                         <TairoSelectItem
                           v-for="item in banks"
                           :key="item.id"

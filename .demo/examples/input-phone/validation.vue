@@ -44,10 +44,10 @@ function onValidate(state: { valid: boolean, touched: boolean, error: string }) 
 <template>
   <form class="max-w-md" @submit.prevent="onSubmit">
     <BaseField
+      v-slot="{ inputAttrs }"
       label="Phone number"
       :state="error ? 'error' : 'idle'"
       :error="error"
-      v-slot="{ inputAttrs }"
     >
       <AddonInputPhone
         ref="inputRef"

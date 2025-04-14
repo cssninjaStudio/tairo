@@ -463,7 +463,9 @@ const codeTailwind = [
             <BaseLink
               to="https://tairo.cssninja.io/documentation"
               target="_blank"
-            >Online documentation</BaseLink>
+            >
+              Online documentation
+            </BaseLink>
           </BaseParagraph>
         </div>
       </BaseCard>

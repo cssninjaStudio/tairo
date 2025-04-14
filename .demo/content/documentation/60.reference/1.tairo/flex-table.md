@@ -15,7 +15,6 @@ icon:
 
 Flex tables are an alternative way to display tabular data. They behave responsively on smaller screens.
 
-
 ## Rounded examples
 
 ### Rounded:none

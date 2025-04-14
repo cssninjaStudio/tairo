@@ -251,7 +251,7 @@ function closeUpgrade() {
                       :bindings="{
                         portal: {
                           disabled: true,
-                        }
+                        },
                       }"
                     >
                       <template #button>

@@ -41,7 +41,6 @@ Tables can have different radius factors. Use the `rounded` prop to change the t
 
 <!-- demo: #examples/table/curved -->
 
-
 ## Media examples
 
 ### Media:none

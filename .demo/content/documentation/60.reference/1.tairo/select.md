@@ -11,7 +11,7 @@ icon:
 
 # Select
 
-`TairoSelect` and `TairoSelectItem` are enhanced versions of Shuriken UI's select components, offering additional features and improved styling. 
+`TairoSelect` and `TairoSelectItem` are enhanced versions of Shuriken UI's select components, offering additional features and improved styling.
 
 ## Example
 

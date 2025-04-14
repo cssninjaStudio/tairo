@@ -84,7 +84,6 @@ const forceDark = ref(false)
             name="lucide:chevron-down"
             class="text-muted-400 size-4 transition-transform duration-200 group-open:rotate-180"
           />
-
         </summary>
         <slot name="source" />
       </details>

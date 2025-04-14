@@ -1,9 +1,9 @@
 import { existsSync } from 'node:fs'
-import { readFile, writeFile } from 'node:fs/promises'
+import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { addComponentsDir, defineNuxtModule, installModule, useLogger } from '@nuxt/kit'
-import { join } from 'pathe'
 import MagicString from 'magic-string'
+import { join } from 'pathe'
 import { version } from '../../package.json'
 
 // This is a regular expression used to extract the example source code from the markdown content.
