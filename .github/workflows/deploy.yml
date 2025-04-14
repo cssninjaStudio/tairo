@@ -51,11 +51,10 @@ jobs:
 
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
-      # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
-      - run: |
-          NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} \
-          NODE_OPTIONS=--max-old-space-size=8192 \
-          pnpm demo:build
+      - run: pnpm --filter demo build
+        env:
+          NODE_OPTIONS: --max-old-space-size=13312
+          NUXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
       - run: cp .github/env/Dockerfile .demo/Dockerfile
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
