@@ -77,12 +77,14 @@ items:
 :doc-component-meta{name="TairoSidenavLayout"}
 
 ### TairoSidenavCollapsible
+:doc-tag{icon="nui-icon:rekaui-icon" label="CollapsibleRoot" to="https://reka-ui.com/docs/components/collapsible"}
 :doc-component-meta{name="TairoSidenavCollapsible"}
 
 ### TairoSidenavCollapsibleLink
 :doc-component-meta{name="TairoSidenavCollapsibleLink"}
 
 ### TairoSidenavCollapsibleTrigger
+:doc-tag{icon="nui-icon:rekaui-icon" label="CollapsibleTrigger" to="https://reka-ui.com/docs/components/collapsible"}
 :doc-component-meta{name="TairoSidenavCollapsibleTrigger"}
 
 ### TairoSidenavSidebar

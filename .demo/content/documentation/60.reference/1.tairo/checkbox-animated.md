@@ -1,6 +1,6 @@
 ---
 title: Checkbox animated
-description: Custom checkbox component
+description: Enhanced checkbox component with smooth circular animation and multiple color variants
 components:
   - TairoCheckboxAnimated
 icon:
@@ -10,7 +10,7 @@ icon:
 
 # Checkbox Animated
 
-Animated checkbox component.
+`TairoCheckboxAnimated` is an enhanced checkbox component featuring a smooth circular animation with checkmark and customizable color variants for different states.
 
 ## Example
 
@@ -20,4 +20,5 @@ Animated checkbox component.
 
 ## TairoCheckboxAnimated
 
+:doc-tag{icon="nui-icon:rekaui-icon" label="CheckboxRoot" to="https://reka-ui.com/docs/components/checkbox"}
 :doc-component-meta{name="TairoCheckboxAnimated"}

@@ -10,7 +10,7 @@ icon:
 
 # Mobile Drawer
 
-Mobile navigation drawer component.
+The `TairoMobileDrawer` component is a drawer component that is designed to be used on mobile devices.
 
 ## Example
 

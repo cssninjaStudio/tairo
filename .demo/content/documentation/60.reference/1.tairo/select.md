@@ -1,6 +1,6 @@
 ---
 title: Select
-description: Custom select component with Icon support
+description: Enhanced select components with icon support, media preview, and improved styling for better user experience
 components:
   - TairoSelect
   - TairoSelectItem
@@ -11,7 +11,7 @@ icon:
 
 # Select
 
-Select component with icon support.
+`TairoSelect` and `TairoSelectItem` are enhanced versions of Shuriken UI's select components, offering additional features and improved styling. 
 
 ## Example
 
@@ -21,8 +21,10 @@ Select component with icon support.
 
 ### TairoSelect
 
+:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseSelect" to="https://v4.shurikenui.com/docs/components/select"}
 :doc-component-meta{name="TairoSelect"}
 
 ### TairoSelectItem
 
+:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseSelectItem" to="https://v4.shurikenui.com/docs/components/select"}
 :doc-component-meta{name="TairoSelectItem"}

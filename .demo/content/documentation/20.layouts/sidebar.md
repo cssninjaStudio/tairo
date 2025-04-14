@@ -122,18 +122,21 @@ items:
 :doc-component-meta{name="TairoSidebarSubsidebar"}
 
 ### TairoSidebarSubsidebarHeader
+:doc-tag{icon="nui-icon:shurikenui-icon" label="BaseHeading" to="https://v4.shurikenui.com/docs/components/heading"}
 :doc-component-meta{name="TairoSidebarSubsidebarHeader"}
 
 ### TairoSidebarSubsidebarLink
 :doc-component-meta{name="TairoSidebarSubsidebarLink"}
 
 ### TairoSidebarSubsidebarCollapsible
+:doc-tag{icon="nui-icon:rekaui-icon" label="CollapsibleRoot" to="https://reka-ui.com/docs/components/collapsible"}
 :doc-component-meta{name="TairoSidebarSubsidebarCollapsible"}
 
 ### TairoSidebarSubsidebarCollapsibleLink
 :doc-component-meta{name="TairoSidebarSubsidebarCollapsibleLink"}
 
 ### TairoSidebarSubsidebarCollapsibleTrigger
+:doc-tag{icon="nui-icon:rekaui-icon" label="CollapsibleTrigger" to="https://reka-ui.com/docs/components/collapsible"}
 :doc-component-meta{name="TairoSidebarSubsidebarCollapsibleTrigger"}
 
 ### TairoSidebarSubsidebarContent

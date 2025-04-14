@@ -103,9 +103,11 @@ items:
 :doc-component-meta{name="TairoCollapseSidebarLink"}
 
 ### TairoCollapseCollapsible
+:doc-tag{icon="nui-icon:rekaui-icon" label="CollapsibleRoot" to="https://reka-ui.com/docs/components/collapsible"}
 :doc-component-meta{name="TairoCollapseCollapsible"}
 
 ### TairoCollapseCollapsibleTrigger
+:doc-tag{icon="nui-icon:rekaui-icon" label="CollapsibleTrigger" to="https://reka-ui.com/docs/components/collapsible"}
 :doc-component-meta{name="TairoCollapseCollapsibleTrigger"}
 
 ### TairoCollapseCollapsibleLink

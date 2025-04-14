@@ -1,6 +1,6 @@
 ---
 title: Checkbox card icon
-description: Custom checkbox component
+description: Enhanced checkbox component with icon support and card-based styling for visual selection
 components:
   - TairoCheckboxCardIcon
 icon:
@@ -10,7 +10,7 @@ icon:
 
 # Checkbox Card Icon
 
-Checkbox card icon component.
+`TairoCheckboxCardIcon` is an enhanced checkbox component that combines icon support with card-based styling for visual selection states.
 
 ## Example
 
@@ -20,4 +20,5 @@ Checkbox card icon component.
 
 ### TairoCheckboxCardIcon
 
+:doc-tag{ion="nui-icon:rekaui-icon" label="CheckboxRoot" to="https://reka-ui.com/docs/components/checkbox"}
 :doc-component-meta{name="TairoCheckboxCardIcon"}

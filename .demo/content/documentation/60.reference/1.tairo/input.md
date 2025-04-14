@@ -1,6 +1,6 @@
 ---
 title: Input
-description: Custom input component with Icon support
+description: Enhanced input component with icon support, improved styling, and seamless integration with form validation
 components:
   - TairoInput
 icon:
@@ -10,7 +10,7 @@ icon:
 
 # Input
 
-Input component with icon support.
+`TairoInput` is an enhanced version of the Shuriken UI input component that provides built-in icon support.
 
 ## Example
 
@@ -20,4 +20,5 @@ Input component with icon support.
 
 ### TairoInput
 
+:doc-tag{type="nui-icon:shurikenui-icon" label="BaseInput" to="https://v4.shurikenui.com/docs/components/input"}
 :doc-component-meta{name="TairoInput"}
