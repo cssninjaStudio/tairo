@@ -67,7 +67,7 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v5
-        timeout-minutes: 60
+        timeout-minutes: 120
         with:
           push: true
           context: .
@@ -89,7 +89,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
           script: mkdir -p ${{ secrets.HOST_DIRECTORY }}
 
       - name: Prepare .env file
@@ -115,7 +114,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
           script: |
             cd ${{ secrets.HOST_DIRECTORY }}
             docker compose pull
