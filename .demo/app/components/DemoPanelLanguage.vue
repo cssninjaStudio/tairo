@@ -1,7 +1,10 @@
 <script setup lang="ts">
-const { t, locale, locales, setLocale, onLanguageSwitched } = useI18n()
-const { close } = usePanels()
-onKeyStroke('Escape', close)
+const emits = defineEmits<{
+  close: []
+}>()
+
+const { t, locale, locales, setLocale } = useI18n()
+onKeyStroke('Escape', () => emits('close'))
 
 const localeValue = computed({
   get: () => locale.value,
@@ -29,7 +32,7 @@ const localeValue = computed({
       <button
         type="button"
         class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-800 dark:focus:bg-muted-800 text-muted-700 dark:text-muted-400 flex size-10 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
-        @click="close"
+        @click="() => emits('close')"
       >
         <Icon name="lucide:arrow-right" class="size-4" />
       </button>

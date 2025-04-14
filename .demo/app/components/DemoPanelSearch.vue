@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const { close } = usePanels()
-onKeyStroke('Escape', close)
+const emits = defineEmits<{
+  close: []
+}>()
+
+onKeyStroke('Escape', () => emits('close'))
 
 const people = [
   {
@@ -52,7 +55,7 @@ const selectedPerson = ref('')
       <button
         type="button"
         class="nui-mask nui-mask-blob hover:bg-muted-100 focus:bg-muted-100 dark:hover:bg-muted-700 dark:focus:bg-muted-700 text-muted-700 dark:text-muted-400 flex size-8 cursor-pointer items-center justify-center outline-transparent transition-colors duration-300"
-        @click="close"
+        @click="() => emits('close')"
       >
         <Icon name="lucide:arrow-right" class="size-4" />
       </button>

@@ -12,8 +12,7 @@ const emits = defineEmits<{
   close: [foo?: string]
 }>()
 
-const { close } = usePanels()
-onKeyStroke('Escape', close)
+onKeyStroke('Escape', () => emits('close'))
 </script>
 
 <template>
