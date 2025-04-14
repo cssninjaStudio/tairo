@@ -51,7 +51,7 @@ const toggled = ref(Boolean(project.value.files?.length))
         </div>
       </BasePlaceholderPage>
       <div v-else class="relative mx-auto max-w-3xl">
-        <BaseInputFileHeadless
+        <TairoInputFileHeadless
           v-slot="{ open, remove, preview, drop, files }"
           v-model="project.files"
           multiple
@@ -191,7 +191,7 @@ const toggled = ref(Boolean(project.value.files?.length))
               </li>
             </ul>
           </div>
-        </BaseInputFileHeadless>
+        </TairoInputFileHeadless>
       </div>
     </div>
   </div>

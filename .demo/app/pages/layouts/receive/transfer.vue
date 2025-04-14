@@ -201,9 +201,9 @@ function setAccount(account: any) {
             </BaseDropdownItem>
           </BaseDropdown>
 
-          <BaseInputHelpText v-if="errors.fields.account">
+          <div v-if="errors.fields.account" class="mt-2 text-sm text-destructive-500">
             {{ errors.fields.account }}
-          </BaseInputHelpText>
+          </div>
         </div>
       </div>
     </div>
@@ -321,9 +321,9 @@ function setAccount(account: any) {
               </template>
             </BaseDropdownItem>
           </BaseDropdown>
-          <BaseInputHelpText v-if="errors.fields.account">
+          <div v-if="errors.fields.account" class="mt-2 text-sm text-destructive-500">
             {{ errors.fields.account }}
-          </BaseInputHelpText>
+          </div>
         </div>
       </div>
     </div>
@@ -409,9 +409,9 @@ function setAccount(account: any) {
             </template>
           </BaseDropdownItem>
         </BaseDropdown>
-        <BaseInputHelpText v-if="errors.fields.account">
+        <div v-if="errors.fields.account" class="mt-2 text-sm text-destructive-500">
           {{ errors.fields.account }}
-        </BaseInputHelpText>
+        </div>
 
         <!-- Transfer details -->
         <div class="py-6">

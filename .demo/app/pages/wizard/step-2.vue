@@ -22,7 +22,7 @@ onBeforeMount(checkPreviousSteps)
 
 const avatarPreview = useNuiFilePreview(() => project.value.avatar)
 
-// BaseInputFileHeadless gives us a listfile input, but we need to
+// TairoInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form
 const inputFile = ref<FileList | null>(null)
 watch(inputFile, (value) => {
@@ -37,7 +37,7 @@ watch(inputFile, (value) => {
 
     <div class="mx-auto flex w-full max-w-5xl flex-col px-4">
       <div class="flex items-center justify-center">
-        <BaseFullscreenDropfile
+        <TairoFullscreenDropfile
           icon="solar:gallery-linear"
           :filter-file-dropped="(file) => file.type.startsWith('image')"
           @drop="
@@ -46,7 +46,7 @@ watch(inputFile, (value) => {
             }
           "
         />
-        <BaseInputFileHeadless
+        <TairoInputFileHeadless
           v-slot="{ open, remove, files }"
           v-model="inputFile"
           accept="image/*"
@@ -90,10 +90,10 @@ watch(inputFile, (value) => {
               </div>
             </div>
           </div>
-        </BaseInputFileHeadless>
-        <BaseInputHelpText v-if="errors.fields.avatar">
+        </TairoInputFileHeadless>
+        <div v-if="errors.fields.avatar" class="mt-2 text-sm text-destructive-500">
           {{ errors.fields.avatar }}
-        </BaseInputHelpText>
+        </div>
       </div>
 
       <div class="my-4 text-center font-sans">

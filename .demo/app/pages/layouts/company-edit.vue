@@ -158,7 +158,7 @@ const currentAvatar = computed(() => `/img/avatars/company.svg`)
 const success = ref(false)
 const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 
-// BaseInputFileHeadless gives us a listfile input, but we need to
+// TairoInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form
 const inputFile = ref<FileList | null>(null)
 const fileError = useFieldError('avatar')
@@ -270,7 +270,7 @@ const onSubmit = handleSubmit(
                 <div
                   class="relative mb-5 flex flex-col items-center justify-center gap-4"
                 >
-                  <BaseFullscreenDropfile
+                  <TairoFullscreenDropfile
                     icon="solar:gallery-linear"
                     :filter-file-dropped="
                       (file) => file.type.startsWith('image')
@@ -281,7 +281,7 @@ const onSubmit = handleSubmit(
                       }
                     "
                   />
-                  <BaseInputFileHeadless
+                  <TairoInputFileHeadless
                     v-slot="{ open, remove, preview, files }"
                     v-model="inputFile"
                     accept="image/*"
@@ -325,7 +325,7 @@ const onSubmit = handleSubmit(
                         </div>
                       </div>
                     </div>
-                  </BaseInputFileHeadless>
+                  </TairoInputFileHeadless>
                   <div
                     v-if="fileError"
                     class="text-destructive-600 inline-block font-sans text-[.8rem]"

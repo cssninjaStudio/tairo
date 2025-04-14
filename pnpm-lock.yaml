@@ -313,6 +313,9 @@ importers:
 
   layers/tairo:
     dependencies:
+      '@nuxt/kit':
+        specifier: ^3.16.2
+        version: 3.16.2(magicast@0.3.5)
       '@shuriken-ui/nuxt':
         specifier: 4.0.0-beta.4
         version: 4.0.0-beta.4(magicast@0.3.5)(typescript@5.8.3)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))

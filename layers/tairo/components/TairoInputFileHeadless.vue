@@ -125,7 +125,7 @@ function handleFileChange(event: Event) {
 }
 
 provide(
-  'BaseInputFileHeadlessContext',
+  'TairoInputFileHeadlessContext',
   reactive({
     el: inputRef,
     id,

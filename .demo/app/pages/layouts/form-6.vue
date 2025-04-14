@@ -666,7 +666,7 @@ const colorCode = ref('color_code_1')
                 <label class="nui-label text-[0.825rem]">Attachments</label>
               </div>
               <div class="col-span-12 sm:col-span-9">
-                <BaseInputFileHeadless
+                <TairoInputFileHeadless
                   v-slot="{ open, remove, preview, drop, files }"
                   v-model="uploadedFiles"
                   multiple
@@ -805,7 +805,7 @@ const colorCode = ref('color_code_1')
                       </li>
                     </ul>
                   </div>
-                </BaseInputFileHeadless>
+                </TairoInputFileHeadless>
               </div>
             </div>
           </div>

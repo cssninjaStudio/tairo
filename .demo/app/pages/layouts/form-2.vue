@@ -200,7 +200,7 @@ const success = ref(false)
 const interactiveMap = ref(false)
 const fieldsWithErrors = computed(() => Object.keys(errors.value).length)
 
-// BaseInputFileHeadless gives us a listfile input, but we need to
+// TairoInputFileHeadless gives us a listfile input, but we need to
 // extract the file from the list and set it to the form
 const inputFile = ref<FileList | null>()
 const fileError = useFieldError('avatar')
