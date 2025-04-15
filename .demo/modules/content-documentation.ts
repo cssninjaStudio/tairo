@@ -8,6 +8,7 @@ import { version } from '../../package.json'
 
 // This is a regular expression used to extract the example source code from the markdown content.
 const docExampleRe = /^<!-- demo: #examples\/([\w-]+)\/([\w-]+)(:?.vue)? -->$/gm
+const tairoVersionRe = /__TAIRO_VERSION__/g
 
 // Custom nuxt module to make the examples available in the markdown content.
 // It also enable the nuxt-component-meta module to inject the component metadata.
@@ -22,14 +23,13 @@ export default defineNuxtModule({
 
     addComponentsDir({
       path: examplesFolder,
-      global: true,
       prefix: 'examples',
       pathPrefix: true,
       isAsync: true,
     })
 
     /**
-     * This hook is used to inject the example source code
+     * This hook is used to inject the tairo version
      * into the markdown documentation content.
      */
     nuxt.hook('content:file:beforeParse', async ({ file }) => {
@@ -39,7 +39,7 @@ export default defineNuxtModule({
 
       const s = new MagicString(file.body)
 
-      s.replace(/__TAIRO_VERSION__/g, version)
+      s.replace(tairoVersionRe, version)
 
       file.body = s.toString()
     })
@@ -71,7 +71,7 @@ export default defineNuxtModule({
         const path = join(examplesFolder, `/${folder}/${name}.vue`)
 
         if (!existsSync(path)) {
-          console.error(`Example file not found in "${file.id}": ${path}`)
+          logger.warn(`Example file not found in "${file.id}": ${path}`)
           continue
         }
 
@@ -79,7 +79,7 @@ export default defineNuxtModule({
           readFile(path, 'utf-8')
             .then((source) => {
               if (!source) {
-                console.error(`Example file is empty in "${file.id}": ${path}`)
+                logger.warn(`Example file is empty in "${file.id}": ${path}`)
                 return
               }
 
@@ -101,8 +101,8 @@ export default defineNuxtModule({
               replacements.push({ search, replace })
             })
             .catch((error) => {
-              console.error(`Error reading example file in "${file.id}": ${path}`)
-              console.error(error)
+              logger.warn(`Error reading example file in "${file.id}": ${path}`)
+              logger.error(error)
             }),
         )
       }
@@ -117,32 +117,33 @@ export default defineNuxtModule({
       file.body = s.toString()
     })
 
-    if (nuxt.options.dev && !import.meta.env.ENABLE_DOCUMENTATION) {
-      logger.info('Documentation component meta disabled during dev, set ENABLE_DOCUMENTATION=true to enable it')
+    // if (nuxt.options.dev && !import.meta.env.ENABLE_DOCUMENTATION) {
+    //   logger.info('Documentation component meta disabled during dev, set ENABLE_DOCUMENTATION=true to enable it')
 
-      installModule('nuxt-component-meta', {
-        exclude: [
-          () => true,
-        ],
-      })
-
-      return
-    }
-
-    logger.info('Documentation component meta enabled, make sure to set NODE_OPTIONS=--max-old-space-size=8192')
     installModule('nuxt-component-meta', {
+      metaSources: ['@cssninja/tairo-component-meta'],
       exclude: [
-        (component: any) => {
-          const hasBasePrefix = component?.pascalName?.startsWith('Base')
-          const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
-          const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
-          const isBlacklisted = hasBasePrefix || ['TairoWelcome', 'TairoLogo', 'TairoLogoText'].includes(component?.pascalName)
-
-          const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
-
-          return isBlacklisted || isExcluded
-        },
+        () => true,
       ],
     })
+
+    //   return
+    // }
+
+    // logger.info('Documentation component meta enabled, make sure to set NODE_OPTIONS=--max-old-space-size=8192')
+    // installModule('nuxt-component-meta', {
+    //   exclude: [
+    //     (component: any) => {
+    //       const hasBasePrefix = component?.pascalName?.startsWith('Base')
+    //       const hasTairoPrefix = component?.pascalName?.startsWith('Tairo')
+    //       const hasAddonPrefix = component?.pascalName?.startsWith('Addon')
+    //       const isBlacklisted = hasBasePrefix || ['TairoWelcome', 'TairoLogo', 'TairoLogoText'].includes(component?.pascalName)
+
+    //       const isExcluded = !(hasTairoPrefix || hasAddonPrefix)
+
+    //       return isBlacklisted || isExcluded
+    //     },
+    //   ],
+    // })
   },
 })

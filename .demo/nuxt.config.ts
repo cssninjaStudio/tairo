@@ -50,6 +50,8 @@ export default defineNuxtConfig({
 
   experimental: {
     viewTransition: true,
+    // buildCache: true,
+    sharedPrerenderData: true,
     defaults: {
       nuxtLink: {
         // Here we disable the prefetch for visibility and enable it for interaction.
@@ -156,7 +158,15 @@ export default defineNuxtConfig({
     },
   },
 
+  sourcemap: {
+    server: false,
+    client: false,
+  },
+
   nitro: {
+    logging: {
+      compressedSizes: false,
+    },
     esbuild: {
       options: {
         target: 'esnext',

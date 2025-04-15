@@ -10,8 +10,8 @@ WORKDIR /build
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 FROM install AS build-demo
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store NODE_OPTIONS=--max-old-space-size=13312 pnpm run --filter demo build
-
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store NODE_OPTIONS=--max-old-space-size=6144 pnpm run --filter @cssninja/tairo-component-meta prepack
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store NODE_OPTIONS=--max-old-space-size=6144 pnpm run --filter demo build
 
 FROM base AS demo
 ENV NODE_ENV=production

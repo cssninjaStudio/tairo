@@ -2,6 +2,8 @@ packages:
   - .demo
   - .app
   - layers/*
+  - tairo-component-meta
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - better-sqlite3
