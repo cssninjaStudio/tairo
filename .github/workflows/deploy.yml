@@ -50,9 +50,6 @@ jobs:
         run: |
           echo "dockertags=digisquad/cssninja.tairo-demo:latest" >> $GITHUB_ENV
 
-      - name: Set Swap Space
-        uses: pierotofy/set-swap-space@master
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -67,7 +64,7 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v5
-        timeout-minutes: 120
+        timeout-minutes: 30
         with:
           push: true
           context: .
