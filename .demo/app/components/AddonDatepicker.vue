@@ -56,7 +56,14 @@ function onDayClick(_: any, event: MouseEvent): void {
     v-bind="{ ...attrs, ...$attrs }"
     :locale="props.locale"
     @dayclick="onDayClick"
-  />
+  >
+    <template #default="ctx">
+      <slot v-bind="ctx" />
+    </template>
+    <template #time-header="ctx">
+      <slot name="time-header" v-bind="ctx" />
+    </template>
+  </DatePicker>
   <DatePicker
     v-else
     v-model="date"
@@ -64,7 +71,14 @@ function onDayClick(_: any, event: MouseEvent): void {
     :locale="props.locale"
     class="w-full!"
     @dayclick="onDayClick"
-  />
+  >
+    <template #default="ctx">
+      <slot v-bind="ctx" />
+    </template>
+    <template #time-header="ctx">
+      <slot name="time-header" v-bind="ctx" />
+    </template>
+  </DatePicker>
 </template>
 
 <style>
