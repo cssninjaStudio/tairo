@@ -33,6 +33,7 @@ jobs:
               - '.github/env/**'
               - '.github/workflows/deploy.yml'
               - 'layers/**'
+              - 'tairo-component-meta/**'
               - 'Dockerfile'
               - 'package.json'
               - 'pnpm-lock.yaml'
