@@ -54,7 +54,7 @@ function useDemoRadial() {
           <span>Radial Bar</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoRadial" />
+      <LazyAddonApexcharts v-bind="demoRadial" />
     </BaseCard>
   </div>
 </template>

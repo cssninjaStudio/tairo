@@ -106,7 +106,7 @@ function useDemoBubble() {
           <span>Bubble Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoBubble" />
+      <LazyAddonApexcharts v-bind="demoBubble" />
     </BaseCard>
   </div>
 </template>

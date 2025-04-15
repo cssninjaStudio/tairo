@@ -127,7 +127,7 @@ function useDemoArea(): AddonApexchartsProps {
           <span>Area Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoArea" />
+      <LazyAddonApexcharts v-bind="demoArea" />
     </BaseCard>
   </div>
 </template>

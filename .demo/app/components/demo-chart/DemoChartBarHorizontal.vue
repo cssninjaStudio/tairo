@@ -68,7 +68,7 @@ function useDemoBarHorizontal() {
           <span>Horizontal Bar</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoBarHorizontal" />
+      <LazyAddonApexcharts v-bind="demoBarHorizontal" />
     </BaseCard>
   </div>
 </template>

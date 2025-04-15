@@ -117,7 +117,7 @@ function useBarSocialChannels() {
       </div>
     </div>
     <div class="mt-auto w-full">
-      <AddonApexcharts v-bind="barSocialChannels" />
+      <LazyAddonApexcharts v-bind="barSocialChannels" />
     </div>
   </div>
 </template>

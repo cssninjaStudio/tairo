@@ -59,7 +59,7 @@ function useDemoPie() {
           <span>Pie Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoPie" />
+      <LazyAddonApexcharts v-bind="demoPie" />
     </BaseCard>
   </div>
 </template>

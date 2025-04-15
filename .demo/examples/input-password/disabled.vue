@@ -5,7 +5,7 @@ const password = ref('F4k3P4ssw0rd')
 <template>
   <div class="max-w-md">
     <BaseField label="Password">
-      <AddonInputPassword
+      <LazyAddonInputPassword
         v-model="password"
         disabled
       />

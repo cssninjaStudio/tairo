@@ -75,7 +75,7 @@ function useDemoLine() {
           <span>Line Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoLine" />
+      <LazyAddonApexcharts v-bind="demoLine" />
     </BaseCard>
   </div>
 </template>

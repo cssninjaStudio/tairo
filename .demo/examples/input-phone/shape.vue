@@ -5,31 +5,31 @@ const country = ref('FR')
 
 <template>
   <div class="grid gap-4 sm:grid-cols-2">
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="none"
     />
 
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="sm"
     />
 
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="md"
     />
 
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="lg"
     />
 
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       rounded="full"

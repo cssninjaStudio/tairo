@@ -48,6 +48,6 @@ function useDemoDonut() {
 
 <template>
   <div class="relative">
-    <AddonApexcharts v-bind="demoDonut" />
+    <LazyAddonApexcharts v-bind="demoDonut" />
   </div>
 </template>

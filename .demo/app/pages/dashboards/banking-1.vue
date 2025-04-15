@@ -694,7 +694,7 @@ const amount = ref<number>(0)
                     </NuxtLink>
                   </div>
                 </div>
-                <AddonApexcharts v-bind="incomeHistory" />
+                <LazyAddonApexcharts v-bind="incomeHistory" />
               </BaseCard>
             </div>
           </div>

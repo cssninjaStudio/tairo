@@ -192,7 +192,7 @@ function selectRange(duration: Duration) {
                       </button>
                     </div>
 
-                    <AddonDatepicker v-model="selected" locale="en" />
+                    <LazyAddonDatepicker v-model="selected" locale="en" />
                   </div>
                 </BaseDropdown>
               </div>

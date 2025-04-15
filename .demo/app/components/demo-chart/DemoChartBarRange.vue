@@ -96,7 +96,7 @@ function useDemoBarRange() {
           <span>Range Column</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoBarRange" />
+      <LazyAddonApexcharts v-bind="demoBarRange" />
     </BaseCard>
   </div>
 </template>

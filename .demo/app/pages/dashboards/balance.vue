@@ -165,7 +165,7 @@ const date = ref(new Date())
               </BaseHeading>
             </div>
             <div class="py-16">
-              <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+              <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
             </div>
             <div class="mt-auto text-center">
               <BaseParagraph size="sm">
@@ -177,7 +177,7 @@ const date = ref(new Date())
           </BaseCard>
           <!-- Widget -->
           <BaseCard rounded="md" class="p-2">
-            <AddonDatepicker v-model="date" locale="en" label="Start date" />
+            <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
           </BaseCard>
           <!-- Widget -->
           <BaseCard class="p-4 md:p-6" rounded="md">

@@ -364,7 +364,7 @@ function useAreaExpenses() {
             <!-- Chart -->
             <div class="lg:landscape:pe-12 flex h-full grow flex-col xl:landscape:pe-12">
               <div class="mt-auto">
-                <AddonApexcharts v-bind="areaExpenses" />
+                <LazyAddonApexcharts v-bind="areaExpenses" />
               </div>
             </div>
           </div>

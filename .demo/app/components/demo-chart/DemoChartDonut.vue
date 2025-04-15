@@ -56,7 +56,7 @@ function useDemoDonut() {
           <span>Donut Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoDonut" />
+      <LazyAddonApexcharts v-bind="demoDonut" />
     </BaseCard>
   </div>
 </template>

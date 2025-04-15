@@ -86,6 +86,6 @@ function useDemoBarMulti() {
 
 <template>
   <div class="relative">
-    <AddonApexcharts v-bind="demoBarMulti" />
+    <LazyAddonApexcharts v-bind="demoBarMulti" />
   </div>
 </template>

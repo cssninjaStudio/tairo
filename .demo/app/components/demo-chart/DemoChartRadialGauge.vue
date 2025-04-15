@@ -63,7 +63,7 @@ function useDemoRadialGauge() {
           <span>Radial Gauge</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoRadialGauge" />
+      <LazyAddonApexcharts v-bind="demoRadialGauge" />
     </BaseCard>
   </div>
 </template>

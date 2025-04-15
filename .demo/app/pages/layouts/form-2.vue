@@ -476,7 +476,7 @@ const currentRatingText = computed(() => {
                       class="col-span-12"
                       required
                     >
-                      <AddonInputPhone
+                      <LazyAddonInputPhone
                         v-bind="inputAttrs"
                         ref="inputPhoneRef"
                         placeholder="Ex: +1 555 555 5555"

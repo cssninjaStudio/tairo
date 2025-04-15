@@ -149,7 +149,7 @@ function handleClipboard() {
                 <label
                   class="text-muted-500 dark:text-muted-400 mb-2 block text-xs font-semibold"
                 >Password strength</label>
-                <AddonInputPassword
+                <LazyAddonInputPassword
                   v-model="password"
                   placeholder="Password"
                   rounded="lg"

@@ -91,7 +91,7 @@ function useDemoAreaMulti() {
           <span>Multiple Area</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoAreaMulti" />
+      <LazyAddonApexcharts v-bind="demoAreaMulti" />
     </BaseCard>
   </div>
 </template>

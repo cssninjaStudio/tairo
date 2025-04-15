@@ -112,7 +112,7 @@ function useDemoBar() {
           <span>Bar Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoBar" />
+      <LazyAddonApexcharts v-bind="demoBar" />
     </BaseCard>
   </div>
 </template>

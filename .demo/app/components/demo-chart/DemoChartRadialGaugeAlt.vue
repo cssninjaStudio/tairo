@@ -72,7 +72,7 @@ function useDemoRadialGaugeAlt() {
           <span>Gauge Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoRadialGaugeAlt" />
+      <LazyAddonApexcharts v-bind="demoRadialGaugeAlt" />
     </BaseCard>
   </div>
 </template>

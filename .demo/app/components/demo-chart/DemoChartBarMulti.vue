@@ -99,7 +99,7 @@ function useDemoBarMulti() {
           <span>Multiple Bars</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoBarMulti" />
+      <LazyAddonApexcharts v-bind="demoBarMulti" />
     </BaseCard>
   </div>
 </template>

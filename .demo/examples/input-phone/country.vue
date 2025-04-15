@@ -6,7 +6,7 @@ const country = ref('US')
 <template>
   <div class="max-w-md">
     <BaseField label="Phone number">
-      <AddonInputPhone
+      <LazyAddonInputPhone
         v-model="phone"
         v-model:country="country"
       />

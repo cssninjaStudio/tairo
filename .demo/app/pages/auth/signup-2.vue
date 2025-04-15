@@ -185,7 +185,7 @@ const onSubmit = handleSubmit(async (_values) => {
                     :disabled="isSubmitting"
                     required
                   >
-                    <AddonInputPassword
+                    <LazyAddonInputPassword
                       ref="passwordRef"
                       v-bind="inputAttrs"
                       :model-value="field.value"

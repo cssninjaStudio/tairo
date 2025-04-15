@@ -101,7 +101,7 @@ function useDemoBarStacked() {
           <span>Stacked Bars</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoBarStacked" />
+      <LazyAddonApexcharts v-bind="demoBarStacked" />
     </BaseCard>
   </div>
 </template>

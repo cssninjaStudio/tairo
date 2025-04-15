@@ -724,14 +724,14 @@ const date = ref(new Date())
             </BaseButton>
           </div>
           <div class="mt-auto">
-            <AddonApexcharts v-bind="barProfit" />
+            <LazyAddonApexcharts v-bind="barProfit" />
           </div>
         </BaseCard>
       </div>
       <!-- Grid item -->
       <div class="col-span-12 md:col-span-6 lg:col-span-4">
         <BaseCard class="p-4" rounded="lg">
-          <AddonDatepicker v-model="date" locale="en" label="Start date" />
+          <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
         </BaseCard>
       </div>
     </div>

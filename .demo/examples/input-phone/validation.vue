@@ -49,7 +49,7 @@ function onValidate(state: { valid: boolean, touched: boolean, error: string }) 
       :state="error ? 'error' : 'idle'"
       :error="error"
     >
-      <AddonInputPhone
+      <LazyAddonInputPhone
         ref="inputRef"
         v-model="phone"
         placeholder="Type to try validation"

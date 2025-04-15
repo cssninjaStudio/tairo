@@ -1,16 +1,5 @@
 <script setup lang="ts">
-import type {
-  IChartApi,
-} from 'lightweight-charts'
-import {
-  AreaSeries,
-  BarSeries,
-  BaselineSeries,
-  CandlestickSeries,
-  createChart,
-  HistogramSeries,
-  LineSeries,
-} from 'lightweight-charts'
+import type { IChartApi } from 'lightweight-charts'
 
 type ChartType = 'line' | 'area' | 'bar' | 'candlestick' | 'histogram' | 'baseline'
 
@@ -27,22 +16,22 @@ const props = withDefaults(defineProps<{
   autosize: true,
 })
 
-function getChartSeriesDefinition(type: string) {
+async function getChartSeriesDefinition(type: string) {
   switch (type.toLowerCase()) {
     case 'line':
-      return LineSeries
+      return await import('lightweight-charts').then(m => m.LineSeries)
     case 'area':
-      return AreaSeries
+      return await import('lightweight-charts').then(m => m.AreaSeries)
     case 'bar':
-      return BarSeries
+      return await import('lightweight-charts').then(m => m.BarSeries)
     case 'candlestick':
-      return CandlestickSeries
+      return await import('lightweight-charts').then(m => m.CandlestickSeries)
     case 'histogram':
-      return HistogramSeries
+      return await import('lightweight-charts').then(m => m.HistogramSeries)
     case 'baseline':
-      return BaselineSeries
+      return await import('lightweight-charts').then(m => m.BaselineSeries)
   }
-  return LineSeries
+  return await import('lightweight-charts').then(m => m.LineSeries)
 }
 
 // Lightweight Charts™ instances are stored as normal JS variables
@@ -73,21 +62,22 @@ function resizeHandler() {
 }
 
 // Creates the chart series and sets the data.
-function addSeriesAndData(props: any) {
+async function addSeriesAndData(props: any) {
   if (!chart)
     return
-  const seriesDefinition = getChartSeriesDefinition(props.type)
+  const seriesDefinition = await getChartSeriesDefinition(props.type)
   series = chart.addSeries(seriesDefinition, props.seriesOptions)
   series.setData(props.data)
 }
 
-onMounted(() => {
+onMounted(async () => {
   if (!chartContainer.value)
     return
 
+  const createChart = await import('lightweight-charts').then(m => m.createChart)
   // Create the Lightweight Charts Instance using the container ref.
   chart = createChart(chartContainer.value, props.chartOptions)
-  addSeriesAndData(props)
+  await addSeriesAndData(props)
 
   if (props.priceScaleOptions) {
     (chart as any).priceScale().applyOptions(props.priceScaleOptions)

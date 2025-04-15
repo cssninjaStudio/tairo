@@ -78,7 +78,7 @@ function useDemoBarHorizontalMulti() {
           <span>Horizontal Multiple</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoBarHorizontalMulti" />
+      <LazyAddonApexcharts v-bind="demoBarHorizontalMulti" />
     </BaseCard>
   </div>
 </template>

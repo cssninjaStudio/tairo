@@ -131,7 +131,7 @@ function useDemoScatter() {
           <span>Scatter Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoScatter" />
+      <LazyAddonApexcharts v-bind="demoScatter" />
     </BaseCard>
   </div>
 </template>

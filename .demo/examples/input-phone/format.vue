@@ -5,7 +5,7 @@ const phone = ref('+1 555 555 5555')
 <template>
   <div class="max-w-md">
     <BaseField label="Phone number">
-      <AddonInputPhone
+      <LazyAddonInputPhone
         v-model="phone"
         format="national"
         country="US"

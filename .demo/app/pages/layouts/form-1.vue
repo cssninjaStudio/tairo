@@ -487,7 +487,7 @@ const onSubmit = handleSubmit(
                       :error="errorMessage"
                       :disabled="isSubmitting"
                     >
-                      <AddonInputPhone
+                      <LazyAddonInputPhone
                         :ref="inputRef"
                         v-bind="inputAttrs"
                         label="Company Phone"

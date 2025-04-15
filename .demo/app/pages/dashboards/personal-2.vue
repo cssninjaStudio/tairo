@@ -288,7 +288,7 @@ function useBarTeamEfficiency() {
                 <span>Task completion</span>
               </BaseHeading>
             </div>
-            <AddonApexcharts v-bind="areaTaskCompletion" />
+            <LazyAddonApexcharts v-bind="areaTaskCompletion" />
           </BaseCard>
           <!-- Chart -->
           <BaseCard rounded="md" class="p-4 md:p-6">
@@ -303,7 +303,7 @@ function useBarTeamEfficiency() {
                 <span>Team Efficiency</span>
               </BaseHeading>
             </div>
-            <AddonApexcharts v-bind="barTeamEfficiency" />
+            <LazyAddonApexcharts v-bind="barTeamEfficiency" />
           </BaseCard>
         </div>
       </div>

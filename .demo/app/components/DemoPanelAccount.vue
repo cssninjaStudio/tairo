@@ -235,7 +235,7 @@ function useDemoAreaBalance() {
       </div>
 
       <div class="-mt-6 p-4">
-        <AddonApexcharts v-bind="demoAreaBalance" />
+        <LazyAddonApexcharts v-bind="demoAreaBalance" />
       </div>
     </div>
   </FocusScope>

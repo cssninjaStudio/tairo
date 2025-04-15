@@ -48,7 +48,7 @@ function useDemoRadar() {
           <span>Radar Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoRadar" />
+      <LazyAddonApexcharts v-bind="demoRadar" />
     </BaseCard>
   </div>
 </template>

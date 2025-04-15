@@ -418,7 +418,7 @@ const date = ref(new Date())
                   </p>
                 </div>
               </div>
-              <AddonApexcharts v-bind="lineRevenue" />
+              <LazyAddonApexcharts v-bind="lineRevenue" />
             </BaseCard>
           </div>
           <!-- Chart -->
@@ -436,7 +436,7 @@ const date = ref(new Date())
                 </BaseHeading>
               </div>
               <div class="mb-6">
-                <AddonApexcharts v-bind="radialGoal" />
+                <LazyAddonApexcharts v-bind="radialGoal" />
               </div>
               <div class="mt-auto">
                 <div
@@ -483,7 +483,7 @@ const date = ref(new Date())
                 </BaseHeading>
               </div>
               <div class="mb-6">
-                <AddonApexcharts v-bind="radialGrowth" />
+                <LazyAddonApexcharts v-bind="radialGrowth" />
               </div>
               <div class="mt-auto">
                 <div class="flex justify-center gap-2">
@@ -520,7 +520,7 @@ const date = ref(new Date())
                   <span>Profit</span>
                 </BaseHeading>
               </div>
-              <AddonApexcharts v-bind="barSalesProfit" />
+              <LazyAddonApexcharts v-bind="barSalesProfit" />
             </BaseCard>
           </div>
         </div>
@@ -537,7 +537,7 @@ const date = ref(new Date())
           </BaseCard>
           <!-- Calendar -->
           <BaseCard rounded="md" class="p-4">
-            <AddonDatepicker v-model="date" locale="en" label="Start date" />
+            <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
           </BaseCard>
           <!-- Followers -->
           <BaseCard rounded="md" class="p-4 md:p-6">

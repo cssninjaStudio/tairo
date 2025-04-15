@@ -36,7 +36,7 @@ const userInputs = computed(() => useUserInputs.value ? [username.value, email.v
       :error="passwordRef?.validation?.feedback?.warning ?? ''"
       class="col-span-2"
     >
-      <AddonInputPassword
+      <LazyAddonInputPassword
         ref="passwordRef"
         v-model="password"
         icon="lucide:lock"

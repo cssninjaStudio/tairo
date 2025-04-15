@@ -363,7 +363,7 @@ const date = ref(new Date())
           </BaseCard>
           <!-- Widget -->
           <BaseCard rounded="lg" class="p-4">
-            <AddonDatepicker v-model="date" locale="en" label="Start date" />
+            <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
           </BaseCard>
         </div>
       </div>

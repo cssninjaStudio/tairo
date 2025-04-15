@@ -96,5 +96,5 @@ function useDemoAreaBalance() {
 </script>
 
 <template>
-  <AddonApexcharts v-bind="demoAreaBalance" />
+  <LazyAddonApexcharts v-bind="demoAreaBalance" />
 </template>

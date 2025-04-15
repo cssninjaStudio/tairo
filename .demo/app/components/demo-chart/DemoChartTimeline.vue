@@ -127,7 +127,7 @@ function useDemoTimeline() {
           <span>Timeline Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoTimeline" />
+      <LazyAddonApexcharts v-bind="demoTimeline" />
     </BaseCard>
   </div>
 </template>

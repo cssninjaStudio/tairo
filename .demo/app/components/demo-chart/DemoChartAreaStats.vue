@@ -156,6 +156,6 @@ function useAreaSubscriptions() {
         </div>
       </div>
     </div>
-    <AddonApexcharts v-bind="areaSubscriptions" class="mt-auto w-full" />
+    <LazyAddonApexcharts v-bind="areaSubscriptions" class="mt-auto w-full" />
   </div>
 </template>

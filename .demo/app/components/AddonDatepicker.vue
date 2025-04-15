@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DatePickerDate, DatePickerRangeObject } from 'v-calendar/dist/types/src/use/datePicker.js'
-import { DatePicker } from 'v-calendar'
+import { hydrateOnVisible } from 'vue'
 import 'v-calendar/dist/style.css'
 import '~/assets/vcalendar.css'
 
@@ -20,6 +20,11 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['update:model-value', 'close'])
+
+const DatePicker = defineAsyncComponent({
+  loader: () => import('v-calendar').then(m => m.DatePicker),
+  hydrate: hydrateOnVisible(),
+})
 
 const date = computed({
   get: () => props.modelValue,

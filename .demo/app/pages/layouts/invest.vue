@@ -235,7 +235,7 @@ function useGaugePersonal() {
               </BaseHeading>
             </div>
             <div class="py-16">
-              <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+              <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
             </div>
             <div class="mt-auto text-center">
               <BaseParagraph size="sm">

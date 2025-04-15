@@ -21,7 +21,7 @@ function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
 
 <template>
   <div>
-    <AddonMapboxLocationPicker
+    <LazyAddonMapboxLocationPicker
       v-model="center"
       class="col-span-12 aspect-16/9"
       rounded="lg"

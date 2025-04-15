@@ -315,7 +315,7 @@ const date = ref(new Date())
       <!-- Grid item -->
       <div>
         <BaseCard class="p-4" rounded="lg">
-          <AddonDatepicker v-model="date" locale="en" label="Start date" />
+          <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
         </BaseCard>
       </div>
       <!-- Grid item -->
@@ -366,7 +366,7 @@ const date = ref(new Date())
             </BaseText>
           </div>
           <div class="mt-auto">
-            <AddonApexcharts v-bind="areaInterviews" />
+            <LazyAddonApexcharts v-bind="areaInterviews" />
           </div>
         </BaseCard>
       </div>

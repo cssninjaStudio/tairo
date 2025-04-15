@@ -4,6 +4,6 @@ const date = ref(new Date())
 
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2">
-    <AddonDatepicker v-model="date" />
+    <LazyAddonDatepicker v-model="date" />
   </div>
 </template>

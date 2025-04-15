@@ -1030,7 +1030,7 @@ function randomizeArray(arg: number[]) {
         class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
       >
         <BaseCard rounded="md" class="pt-4">
-          <AddonApexcharts v-bind="sparkSalesOne" />
+          <LazyAddonApexcharts v-bind="sparkSalesOne" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -1038,7 +1038,7 @@ function randomizeArray(arg: number[]) {
         class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
       >
         <BaseCard rounded="md" class="pt-4">
-          <AddonApexcharts v-bind="sparkSalesTwo" />
+          <LazyAddonApexcharts v-bind="sparkSalesTwo" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -1046,7 +1046,7 @@ function randomizeArray(arg: number[]) {
         class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
       >
         <BaseCard rounded="md" class="pt-4">
-          <AddonApexcharts v-bind="sparkSalesThree" />
+          <LazyAddonApexcharts v-bind="sparkSalesThree" />
         </BaseCard>
       </div>
       <!-- Sparkline -->
@@ -1054,7 +1054,7 @@ function randomizeArray(arg: number[]) {
         class="lg:landscape:col-span-3 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
       >
         <BaseCard rounded="md" class="pt-4">
-          <AddonApexcharts v-bind="sparkSalesFour" />
+          <LazyAddonApexcharts v-bind="sparkSalesFour" />
         </BaseCard>
       </div>
       <!-- Chart -->
@@ -1102,7 +1102,7 @@ function randomizeArray(arg: number[]) {
             </div>
           </div>
           <div class="mt-auto">
-            <AddonApexcharts v-bind="areaCustomers" />
+            <LazyAddonApexcharts v-bind="areaCustomers" />
           </div>
         </BaseCard>
       </div>
@@ -1139,7 +1139,7 @@ function randomizeArray(arg: number[]) {
                 </BaseParagraph>
               </div>
               <div class="flex-1">
-                <AddonApexcharts v-bind="radialSalesRevenue" />
+                <LazyAddonApexcharts v-bind="radialSalesRevenue" />
               </div>
             </div>
           </BaseCard>
@@ -1158,7 +1158,7 @@ function randomizeArray(arg: number[]) {
             </div>
             <div class="flex justify-between">
               <div class="flex flex-col gap-2 text-center w-1/3">
-                <AddonApexcharts v-bind="radialSmallOne" />
+                <LazyAddonApexcharts v-bind="radialSmallOne" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1175,7 +1175,7 @@ function randomizeArray(arg: number[]) {
                 </div>
               </div>
               <div class="flex flex-col gap-2 text-center w-1/3">
-                <AddonApexcharts v-bind="radialSmallTwo" />
+                <LazyAddonApexcharts v-bind="radialSmallTwo" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1192,7 +1192,7 @@ function randomizeArray(arg: number[]) {
                 </div>
               </div>
               <div class="flex flex-col gap-2 text-center w-1/3">
-                <AddonApexcharts v-bind="radialSmallThree" />
+                <LazyAddonApexcharts v-bind="radialSmallThree" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1229,7 +1229,7 @@ function randomizeArray(arg: number[]) {
           </BaseHeading>
         </div>
         <div class="py-16">
-          <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+          <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
         </div>
         <div class="mt-auto text-center">
           <BaseParagraph size="sm">
@@ -1255,14 +1255,14 @@ function randomizeArray(arg: number[]) {
             <span>Orders Summary</span>
           </BaseHeading>
         </div>
-        <AddonApexcharts v-bind="barOrders" />
+        <LazyAddonApexcharts v-bind="barOrders" />
       </BaseCard>
       <!-- Column -->
       <BaseCard
         class="p-2 lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3"
         rounded="md"
       >
-        <AddonDatepicker v-model="date" locale="en" label="Start date" />
+        <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
       </BaseCard>
     </div>
   </div>

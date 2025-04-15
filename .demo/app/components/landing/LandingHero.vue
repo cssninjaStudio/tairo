@@ -262,7 +262,7 @@ function useGaugePersonal() {
                   </BaseHeading>
                 </div>
                 <div class="flex justify-center py-16">
-                  <AddonApexcharts
+                  <LazyAddonApexcharts
                     v-bind="gaugePersonal"
                     class="-mt-14 motion-safe:transition-all motion-safe:duration-200"
                   />

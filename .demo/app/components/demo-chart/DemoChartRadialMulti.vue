@@ -62,7 +62,7 @@ function useDemoRadialMulti() {
           <span>Radial Multiple</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoRadialMulti" />
+      <LazyAddonApexcharts v-bind="demoRadialMulti" />
     </BaseCard>
   </div>
 </template>

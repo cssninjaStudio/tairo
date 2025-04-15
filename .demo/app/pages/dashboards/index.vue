@@ -305,7 +305,7 @@ function useBarProfit() {
               <span>New / returning customers</span>
             </BaseHeading>
           </div>
-          <AddonApexcharts v-bind="areaCustomers" class="-ms-4" />
+          <LazyAddonApexcharts v-bind="areaCustomers" class="-ms-4" />
         </BaseCard>
       </div>
       <!-- Quick stats -->
@@ -549,7 +549,7 @@ function useBarProfit() {
             <BaseAvatar src="/img/avatars/3.svg" />
           </div>
           <div class="mt-auto">
-            <AddonApexcharts v-bind="radialBarTeam" />
+            <LazyAddonApexcharts v-bind="radialBarTeam" />
           </div>
         </BaseCard>
       </div>
@@ -568,7 +568,7 @@ function useBarProfit() {
             </BaseHeading>
           </div>
           <div class="mt-auto">
-            <AddonApexcharts v-bind="barProfit" />
+            <LazyAddonApexcharts v-bind="barProfit" />
           </div>
         </BaseCard>
       </div>

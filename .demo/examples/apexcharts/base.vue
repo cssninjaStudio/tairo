@@ -137,6 +137,6 @@ function useAreaBtcPrice() {
       </BaseHeading>
     </div>
 
-    <AddonApexcharts v-bind="areaBtcPrice" />
+    <LazyAddonApexcharts v-bind="areaBtcPrice" />
   </div>
 </template>

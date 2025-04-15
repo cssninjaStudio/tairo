@@ -773,7 +773,7 @@ function useBarOrders() {
             />
           </div>
           <div class="pt-4">
-            <AddonApexcharts v-bind="sparkLineOne" />
+            <LazyAddonApexcharts v-bind="sparkLineOne" />
           </div>
         </BaseCard>
       </div>
@@ -805,7 +805,7 @@ function useBarOrders() {
             />
           </div>
           <div class="pt-4">
-            <AddonApexcharts v-bind="sparkLineTwo" />
+            <LazyAddonApexcharts v-bind="sparkLineTwo" />
           </div>
         </BaseCard>
       </div>
@@ -837,7 +837,7 @@ function useBarOrders() {
             />
           </div>
           <div class="pt-4">
-            <AddonApexcharts v-bind="sparkLineThree" />
+            <LazyAddonApexcharts v-bind="sparkLineThree" />
           </div>
         </BaseCard>
       </div>
@@ -869,7 +869,7 @@ function useBarOrders() {
             />
           </div>
           <div class="pt-4">
-            <AddonApexcharts v-bind="sparkLineFour" />
+            <LazyAddonApexcharts v-bind="sparkLineFour" />
           </div>
         </BaseCard>
       </div>
@@ -918,7 +918,7 @@ function useBarOrders() {
             </div>
           </div>
           <div class="mt-auto">
-            <AddonApexcharts v-bind="areaCustomers" />
+            <LazyAddonApexcharts v-bind="areaCustomers" />
           </div>
         </BaseCard>
       </div>
@@ -955,7 +955,7 @@ function useBarOrders() {
                 </BaseParagraph>
               </div>
               <div class="flex-1">
-                <AddonApexcharts v-bind="radialSalesRevenue" />
+                <LazyAddonApexcharts v-bind="radialSalesRevenue" />
               </div>
             </div>
           </BaseCard>
@@ -974,7 +974,7 @@ function useBarOrders() {
             </div>
             <div class="flex justify-between">
               <div class="flex flex-col gap-2 text-center w-1/3">
-                <AddonApexcharts v-bind="radialSmallOne" />
+                <LazyAddonApexcharts v-bind="radialSmallOne" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -991,7 +991,7 @@ function useBarOrders() {
                 </div>
               </div>
               <div class="flex flex-col gap-2 text-center w-1/3">
-                <AddonApexcharts v-bind="radialSmallTwo" />
+                <LazyAddonApexcharts v-bind="radialSmallTwo" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1008,7 +1008,7 @@ function useBarOrders() {
                 </div>
               </div>
               <div class="flex flex-col gap-2 text-center w-1/3">
-                <AddonApexcharts v-bind="radialSmallThree" />
+                <LazyAddonApexcharts v-bind="radialSmallThree" />
                 <div class="-mt-6">
                   <BaseHeading
                     as="h5"
@@ -1042,7 +1042,7 @@ function useBarOrders() {
           </BaseHeading>
         </div>
         <div class="py-16">
-          <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+          <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
         </div>
         <div class="mt-auto text-center">
           <BaseParagraph size="sm">
@@ -1065,11 +1065,11 @@ function useBarOrders() {
             <span>Orders Summary</span>
           </BaseHeading>
         </div>
-        <AddonApexcharts v-bind="barOrders" />
+        <LazyAddonApexcharts v-bind="barOrders" />
       </BaseCard>
       <!-- Column -->
       <BaseCard rounded="md" class="p-2 lg:landscape:col-span-4 relative col-span-12 md:col-span-6 2xl:landscape:col-span-3">
-        <AddonDatepicker v-model="date" locale="en" label="Start date" />
+        <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
       </BaseCard>
     </div>
   </div>

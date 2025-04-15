@@ -39,7 +39,7 @@ function onValidate(state: { validation: ZxcvbnResult | null, touched: boolean }
       :state="error ? 'error' : 'idle'"
       :error="error"
     >
-      <AddonInputPassword
+      <LazyAddonInputPassword
         ref="inputRef"
         v-model="password"
         placeholder="Type to try validation"

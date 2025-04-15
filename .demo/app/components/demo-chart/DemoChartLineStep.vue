@@ -74,7 +74,7 @@ function useDemoLineStep() {
           <span>Stepline Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoLineStep" />
+      <LazyAddonApexcharts v-bind="demoLineStep" />
     </BaseCard>
   </div>
 </template>

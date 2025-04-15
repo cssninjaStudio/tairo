@@ -118,7 +118,7 @@ function useDemoLineMulti() {
           <span>Line Chart</span>
         </BaseHeading>
       </div>
-      <AddonApexcharts v-bind="demoLineMulti" />
+      <LazyAddonApexcharts v-bind="demoLineMulti" />
     </BaseCard>
   </div>
 </template>

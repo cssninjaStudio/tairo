@@ -413,7 +413,7 @@ function useRadialPopularity() {
               </BaseHeading>
             </div>
 
-            <AddonApexcharts v-bind="areaBtcPrice" />
+            <LazyAddonApexcharts v-bind="areaBtcPrice" />
           </BaseCard>
           <!-- Subgrid -->
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -437,7 +437,7 @@ function useRadialPopularity() {
                     Buy BTC
                   </BaseButton>
                 </div>
-                <AddonApexcharts v-bind="radialEvolution" />
+                <LazyAddonApexcharts v-bind="radialEvolution" />
               </BaseCard>
             </div>
             <!-- Chart -->
@@ -460,7 +460,7 @@ function useRadialPopularity() {
                     Buy BTC
                   </BaseButton>
                 </div>
-                <AddonApexcharts v-bind="radialPopularity" />
+                <LazyAddonApexcharts v-bind="radialPopularity" />
               </BaseCard>
             </div>
           </div>

@@ -669,7 +669,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <AddonApexcharts
+                  <LazyAddonApexcharts
                     v-bind="areaCondition"
                     class="relative -start-5"
                   />
@@ -710,7 +710,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <AddonApexcharts v-bind="scatterEnergy" />
+                  <LazyAddonApexcharts v-bind="scatterEnergy" />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -748,7 +748,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <AddonApexcharts
+                  <LazyAddonApexcharts
                     v-bind="barOxygen"
                     class="relative -start-5"
                   />
@@ -789,7 +789,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <AddonApexcharts
+                  <LazyAddonApexcharts
                     v-bind="areaProgress"
                     class="relative -start-5"
                   />
@@ -808,7 +808,7 @@ function useGaugePersonal() {
               </BaseCard>
               <!-- Widget -->
               <BaseCard rounded="lg" class="p-2">
-                <AddonDatepicker v-model="date" locale="en" label="Start date" />
+                <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
               </BaseCard>
               <!-- Widget -->
               <BaseCard rounded="lg" class="flex h-full flex-col p-4 md:p-6">
@@ -824,7 +824,7 @@ function useGaugePersonal() {
                   </BaseHeading>
                 </div>
                 <div class="py-16">
-                  <AddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+                  <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
                 </div>
                 <div class="mt-auto text-center">
                   <BaseParagraph size="sm">

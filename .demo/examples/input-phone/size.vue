@@ -5,19 +5,19 @@ const country = ref('FR')
 
 <template>
   <div class="flex flex-wrap gap-4 sm:flex-nowrap">
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       size="sm"
     />
 
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       size="md"
     />
 
-    <AddonInputPhone
+    <LazyAddonInputPhone
       v-model="phone"
       v-model:country="country"
       size="lg"
