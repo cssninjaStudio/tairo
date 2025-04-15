@@ -1,7 +1,8 @@
 <script lang="ts">
 import type { CollapsibleRootEmits, CollapsibleRootProps } from 'reka-ui'
-import { reactiveOmit } from '@vueuse/core'
-import { useForwardPropsEmits } from 'reka-ui'
+import { CollapsibleContent, CollapsibleRoot } from 'reka-ui'
+import { useForwardPropsEmits } from '~/utils/bundle/reka-ui'
+import { reactiveOmit } from '~/utils/bundle/vueuse'
 
 export interface TairoSidebarSubsidebarCollapsibleProps extends CollapsibleRootProps {
   icon?: string

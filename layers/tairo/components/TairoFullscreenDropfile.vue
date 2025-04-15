@@ -1,6 +1,4 @@
 <script lang="ts">
-import { onBeforeUnmount, onMounted, ref, useAttrs } from 'vue'
-
 export interface TairoFullscreenDropfileProps {
   /**
    * Label to display when file is being dropped.

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CollapsibleTrigger } from 'reka-ui'
+
 const { icon, label } = defineProps<{
   icon?: string
   label?: string

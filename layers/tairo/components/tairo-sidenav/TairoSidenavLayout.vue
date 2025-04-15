@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useBodyScrollLock } from 'reka-ui'
+import { useBodyScrollLock } from '~/utils/bundle/reka-ui'
 
 const { isCollapsed, isMobileOpen, toggleMobileNav } = createLayoutSidenavContext()
 

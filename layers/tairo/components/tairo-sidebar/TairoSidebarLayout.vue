@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useVModel } from '@vueuse/core'
+import { useVModel } from '~/utils/bundle/vueuse'
 
 const props = defineProps<{
   defaultValue?: string

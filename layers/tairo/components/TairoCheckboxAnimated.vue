@@ -3,8 +3,10 @@ import type {
   CheckboxRootEmits,
   CheckboxRootProps,
 } from 'reka-ui'
-import { reactiveOmit } from '@vueuse/core'
-import { useForwardExpose, useForwardPropsEmits } from 'reka-ui'
+import { CheckboxIndicator, CheckboxRoot } from 'reka-ui'
+
+import { useForwardExpose, useForwardPropsEmits } from '~/utils/bundle/reka-ui'
+import { reactiveOmit } from '~/utils/bundle/vueuse'
 
 export interface TairoCheckboxAnimatedProps extends CheckboxRootProps {
   /**

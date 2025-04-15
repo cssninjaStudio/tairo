@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { NavigationMenuListProps } from 'reka-ui'
-import { useForwardProps } from 'reka-ui'
+import { NavigationMenuList } from 'reka-ui'
+import { useForwardProps } from '~/utils/bundle/reka-ui'
 
 export interface TairoMenuLinkTabProps extends NavigationMenuListProps {}
 </script>

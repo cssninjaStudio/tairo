@@ -1,4 +1,4 @@
-import { tryOnBeforeMount } from '@vueuse/core'
+import { tryOnBeforeMount } from '~/utils/bundle/vueuse'
 
 const macLikeRE = /Mac|iP/
 

@@ -1,7 +1,8 @@
 <script lang="ts">
 import type { BaseInputProps } from '@shuriken-ui/nuxt/components/Input.vue.d.ts'
-import { reactiveOmit } from '@vueuse/core'
-import { useForwardExpose, useForwardProps } from 'reka-ui'
+
+import { useForwardExpose, useForwardProps } from '~/utils/bundle/reka-ui'
+import { reactiveOmit } from '~/utils/bundle/vueuse'
 
 export interface TairoInputProps extends BaseInputProps {
   icon?: string

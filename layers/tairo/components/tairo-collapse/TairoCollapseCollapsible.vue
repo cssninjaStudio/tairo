@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { CollapsibleRootEmits, CollapsibleRootProps } from 'reka-ui'
-import { useForwardPropsEmits } from 'reka-ui'
+import { CollapsibleContent, CollapsibleRoot } from 'reka-ui'
+import { useForwardPropsEmits } from '~/utils/bundle/reka-ui'
 
 export interface TairoCollapseCollapsibleProps extends CollapsibleRootProps {}
 export interface TairoCollapseCollapsibleEmits extends CollapsibleRootEmits {}

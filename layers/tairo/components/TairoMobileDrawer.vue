@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { onKeyStroke, usePointerSwipe, useVModel } from '@vueuse/core'
-import { FocusScope, useBodyScrollLock } from 'reka-ui'
+import { FocusScope } from 'reka-ui'
+
+import { useBodyScrollLock } from '~/utils/bundle/reka-ui'
+import { onKeyStroke, usePointerSwipe, useVModel } from '~/utils/bundle/vueuse'
 
 const props = defineProps<{
   defaultValue?: boolean

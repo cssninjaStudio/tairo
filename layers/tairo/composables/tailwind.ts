@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@vueuse/core'
+import { useMediaQuery } from '~/utils/bundle/vueuse'
 
 /**
  * This function is used to expose Tailwind breakpoints as reactive variables.
