@@ -11,238 +11,6 @@ definePageMeta({
   },
 })
 
-const lineRevenue = reactive(useLineRevenue())
-const radialGoal = reactive(useRadialGoal())
-const radialGrowth = reactive(useRadialGrowth())
-const barSalesProfit = reactive(useBarSalesProfit())
-
-function useLineRevenue() {
-  const series = shallowRef([
-    {
-      name: 'Revenue',
-      data: [10835, 40214, 36257, 51411, 45697, 61221, 65295, 91512, 75648],
-    },
-  ])
-
-  return defineApexchartsProps({
-    type: 'line',
-    height: 250,
-    series,
-    options: {
-      chart: {
-        zoom: {
-          enabled: false,
-        },
-        animations: {
-          enabled: false,
-        },
-        toolbar: {
-          show: false,
-        },
-        fontFamily: 'var(--font-sans)',
-      },
-      colors: ['var(--color-chart-base)'],
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        width: [2, 2, 2],
-        curve: 'smooth',
-      },
-      grid: {
-        row: {
-          colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-          opacity: 0.5,
-        },
-      },
-      xaxis: {
-        categories: [
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
-          'Oct',
-        ],
-      },
-      tooltip: {
-        y: {
-          formatter: value => formatPrice(value),
-        },
-      },
-    },
-  })
-}
-
-function useRadialGoal() {
-  const series = shallowRef([57, 86])
-
-  return defineApexchartsProps({
-    type: 'radialBar',
-    height: 220,
-    series,
-    options: {
-      chart: {
-        offsetY: -10,
-        fontFamily: 'var(--font-sans)',
-        animations: {
-          enabled: false,
-        },
-      },
-      colors: ['var(--color-chart-base)', 'var(--color-indigo-500)'],
-      plotOptions: {
-        radialBar: {
-          startAngle: -135,
-          endAngle: 135,
-          inverseOrder: true,
-          dataLabels: {
-            show: true,
-            name: {
-              show: true,
-              fontSize: '14px',
-              fontWeight: 500,
-              offsetY: -10,
-            },
-            value: {
-              show: true,
-              fontWeight: 600,
-              fontSize: '16px',
-              offsetY: -5,
-            },
-            total: {
-              show: true,
-              fontSize: '14px',
-              fontWeight: 500,
-            },
-          },
-          hollow: {
-            margin: 15,
-            size: '75%',
-          },
-          track: {
-            strokeWidth: '100%',
-          },
-        },
-      },
-
-      stroke: {
-        lineCap: 'round',
-      },
-      labels: ['Efficiency', 'Productivity'],
-    },
-  })
-}
-
-function useRadialGrowth() {
-  const series = shallowRef([65])
-
-  return defineApexchartsProps({
-    type: 'radialBar',
-    height: 180,
-    series,
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        fontFamily: 'var(--font-sans)',
-      },
-      colors: ['var(--color-chart-base)'],
-      plotOptions: {
-        radialBar: {
-          hollow: {
-            size: '75%',
-          },
-          dataLabels: {
-            show: true,
-            name: {
-              show: true,
-              fontSize: '0.7rem',
-              fontWeight: 400,
-              offsetY: -10,
-            },
-            value: {
-              show: true,
-              fontWeight: 600,
-              fontSize: '16px',
-              offsetY: -5,
-            },
-          },
-        },
-      },
-      labels: ['Growth'],
-    },
-  })
-}
-
-function useBarSalesProfit() {
-  const series = shallowRef([
-    {
-      name: 'Net Profit',
-      data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
-    },
-    {
-      name: 'Revenue',
-      data: [6, 15, 31, 28, 17, 35, 21, 44, 24],
-    },
-    {
-      name: 'Free Cash Flow',
-      data: [-35, -29, -34, -44, -25, -22, -18, -17, -29],
-    },
-  ])
-
-  return defineApexchartsProps({
-    type: 'bar',
-    height: 250,
-    series,
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-      },
-      colors: ['var(--color-chart-base)', 'var(--color-primary-200)', 'var(--color-primary-800)'],
-      legend: {
-        position: 'top',
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          // endingShape: 'rounded',
-          columnWidth: '55%',
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ['transparent'],
-      },
-      xaxis: {
-        categories: [
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
-          'Oct',
-        ],
-      },
-      fill: {
-        opacity: 1,
-      },
-    },
-  })
-}
-
 // Datepicker
 const date = ref(new Date())
 </script>
@@ -416,7 +184,7 @@ const date = ref(new Date())
                   </p>
                 </div>
               </div>
-              <LazyAddonApexcharts v-bind="lineRevenue" />
+              <DemoChartLineRevenue />
             </BaseCard>
           </div>
           <!-- Chart -->
@@ -434,7 +202,7 @@ const date = ref(new Date())
                 </BaseHeading>
               </div>
               <div class="mb-6">
-                <LazyAddonApexcharts v-bind="radialGoal" />
+                <DemoChartRadialGoal />
               </div>
               <div class="mt-auto">
                 <div
@@ -481,7 +249,7 @@ const date = ref(new Date())
                 </BaseHeading>
               </div>
               <div class="mb-6">
-                <LazyAddonApexcharts v-bind="radialGrowth" />
+                <DemoChartRadialGrowth />
               </div>
               <div class="mt-auto">
                 <div class="flex justify-center gap-2">
@@ -518,7 +286,7 @@ const date = ref(new Date())
                   <span>Profit</span>
                 </BaseHeading>
               </div>
-              <LazyAddonApexcharts v-bind="barSalesProfit" />
+              <DemoChartBarMulti />
             </BaseCard>
           </div>
         </div>
@@ -535,7 +303,7 @@ const date = ref(new Date())
           </BaseCard>
           <!-- Calendar -->
           <BaseCard rounded="md" class="p-4">
-            <LazyAddonDatepicker v-model="date" locale="en" label="Start date" />
+            <AddonDatepicker v-model="date" locale="en" label="Start date" />
           </BaseCard>
           <!-- Followers -->
           <BaseCard rounded="md" class="p-4 md:p-6">

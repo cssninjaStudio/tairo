@@ -11,65 +11,6 @@ definePageMeta({
     new: true,
   },
 })
-
-const gaugePersonal = reactive(useGaugePersonal())
-
-function useGaugePersonal() {
-  const series = shallowRef([76])
-
-  return defineApexchartsProps({
-    type: 'radialBar',
-    height: 220,
-    series,
-    options: {
-      title: {
-        text: undefined,
-      },
-      chart: {
-        sparkline: {
-          enabled: true,
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      colors: ['var(--color-chart-base)'],
-      plotOptions: {
-        radialBar: {
-          startAngle: -90,
-          endAngle: 90,
-          track: {
-            background: '#e7e7e7',
-            strokeWidth: '97%',
-            margin: 5, // margin is in pixels
-            dropShadow: {
-              enabled: false,
-              top: 2,
-              left: 0,
-              color: '#999',
-              opacity: 1,
-              blur: 2,
-            },
-          },
-          hollow: {
-            margin: 0,
-            size: '35%',
-          },
-          dataLabels: {
-            name: {
-              show: false,
-            },
-            value: {
-              offsetY: -2,
-              fontSize: '22px',
-            },
-          },
-        },
-      },
-      labels: ['Average Results'],
-    },
-  })
-}
 </script>
 
 <template>
@@ -277,7 +218,7 @@ function useGaugePersonal() {
               </BaseHeading>
             </div>
             <div class="py-16">
-              <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+              <DemoChartRadialGaugeAlt class="-mt-14" />
             </div>
             <div class="mt-auto text-center">
               <BaseParagraph size="sm">

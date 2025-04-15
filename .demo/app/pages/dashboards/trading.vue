@@ -104,9 +104,9 @@ function setAccount(account: any) {
   open.value = false
 }
 
-const areaBtcPrice = reactive(useStockPrice())
+const areaBtcPrice = reactive(useAreaStockPrice())
 
-function useStockPrice() {
+function useAreaStockPrice() {
   const series = shallowRef(selectedBank.value!.series)
 
   return defineApexchartsProps({
@@ -436,7 +436,10 @@ function useStockPrice() {
                 </Transition>
               </div>
             </div>
-            <LazyAddonApexcharts v-bind="areaBtcPrice" class="[--color-chart-gradient:var(--color-muted-50)] dark:[--color-chart-gradient:var(--color-muted-900)]" />
+            <DemoChartAreaStockPrice
+              :series="selectedBank?.series"
+              class="[--color-chart-gradient:var(--color-muted-50)] dark:[--color-chart-gradient:var(--color-muted-900)]"
+            />
           </div>
           <!-- Table -->
           <div>

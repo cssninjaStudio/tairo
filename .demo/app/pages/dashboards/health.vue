@@ -15,361 +15,6 @@ definePageMeta({
 
 // Datepicker
 const date = ref(new Date())
-
-const areaCondition = reactive(useAreaCondition())
-const scatterEnergy = reactive(useScatterEnergy())
-const barOxygen = reactive(useBarOxygen())
-const areaProgress = reactive(useAreaProgress())
-const gaugePersonal = reactive(useGaugePersonal())
-
-function useAreaCondition() {
-  const series = shallowRef([
-    {
-      name: 'Condition (pt)',
-      data: [31, 40, 28, 51, 42, 109, 100],
-    },
-  ])
-
-  return defineApexchartsProps({
-    type: 'area',
-    height: 280,
-    series,
-    options: {
-      chart: {
-        offsetX: 20,
-        zoom: {
-          enabled: false,
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      grid: {
-        show: false,
-      },
-      stroke: {
-        width: [2, 2, 2],
-        curve: 'straight',
-      },
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shade: 'light',
-          type: 'vertical',
-          gradientToColors: ['var(--color-chart-gradient)'],
-          shadeIntensity: 0,
-          opacityFrom: 0.6,
-          opacityTo: 0.1,
-        },
-      },
-      colors: ['var(--color-chart-base)'],
-      labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      yaxis: {
-        opposite: true,
-      },
-      legend: {
-        horizontalAlign: 'left',
-      },
-    },
-  })
-}
-
-function useScatterEnergy() {
-  const series = shallowRef([
-    {
-      name: 'Tonic',
-      data: generateDayWiseTimeSeries(
-        new Date('Oct 11 2020 GMT').getTime(),
-        20,
-        {
-          min: 10,
-          max: 60,
-        },
-      ),
-    },
-    {
-      name: 'Tantra',
-      data: generateDayWiseTimeSeries(
-        new Date('Oct 11 2020 GMT').getTime(),
-        20,
-        {
-          min: 10,
-          max: 60,
-        },
-      ),
-    },
-    {
-      name: 'Vital',
-      data: generateDayWiseTimeSeries(
-        new Date('Oct 11 2020 GMT').getTime(),
-        30,
-        {
-          min: 10,
-          max: 60,
-        },
-      ),
-    },
-  ])
-
-  function generateDayWiseTimeSeries(
-    baseval: number,
-    count: number,
-    yrange: { min: number, max: number },
-  ) {
-    let i = 0
-    const series = []
-    while (i < count) {
-      const y
-        = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
-
-      series.push([baseval, y])
-      baseval += 86400000
-      i++
-    }
-    return series
-  }
-
-  return defineApexchartsProps({
-    type: 'scatter',
-    height: 280,
-    series,
-    options: {
-      chart: {
-        zoom: {
-          type: 'xy',
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      colors: ['var(--color-chart-base)', 'var(--color-primary-200)', 'var(--color-primary-400)'],
-      dataLabels: {
-        enabled: false,
-        // show: false,
-      },
-      grid: {
-        show: false,
-        xaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-      },
-      xaxis: {
-        // show: false,
-        type: 'datetime',
-      },
-      yaxis: {
-        show: false,
-        max: 70,
-      },
-      legend: {
-        show: false,
-        position: 'top',
-        horizontalAlign: 'center',
-      },
-    },
-  })
-}
-
-function useBarOxygen() {
-  const series = shallowRef([
-    {
-      name: 'Variation (pt)',
-      data: [23, 26, 10, 7, 11, 18, 16],
-    },
-  ])
-
-  return defineApexchartsProps({
-    type: 'bar',
-    height: 280,
-    series,
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-      },
-      plotOptions: {
-        bar: {
-          dataLabels: {
-            position: 'top', // top, center, bottom
-          },
-        },
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: value => `${value} %`,
-        offsetY: -20,
-        style: {
-          fontSize: '12px',
-          colors: ['#304758'],
-        },
-      },
-      grid: {
-        show: false,
-      },
-      xaxis: {
-        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        position: 'top',
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        crosshairs: {
-          fill: {
-            type: 'gradient',
-            gradient: {
-              colorFrom: '#D8E3F0',
-              colorTo: '#BED1E6',
-              stops: [0, 100],
-              opacityFrom: 0.4,
-              opacityTo: 0.5,
-            },
-          },
-        },
-        tooltip: {
-          enabled: true,
-        },
-      },
-      yaxis: {
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        labels: {
-          show: false,
-          formatter: value => `${value} %`,
-        },
-      },
-      colors: ['var(--color-chart-base)'],
-    },
-  })
-}
-
-function useAreaProgress() {
-  const series = shallowRef([
-    {
-      name: 'Progress (pt)',
-      data: [31, 40, 28, 51, 42, 109, 100],
-    },
-  ])
-
-  return defineApexchartsProps({
-    type: 'area',
-    height: 280,
-    series,
-    options: {
-      chart: {
-        offsetX: 20,
-        zoom: {
-          enabled: false,
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      grid: {
-        show: false,
-      },
-      stroke: {
-        width: [2, 2, 2],
-        curve: 'smooth',
-      },
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shade: 'light',
-          type: 'vertical',
-          gradientToColors: ['var(--color-chart-gradient)'],
-          shadeIntensity: 0,
-          opacityFrom: 0.6,
-          opacityTo: 0.1,
-        },
-      },
-      colors: ['var(--color-chart-base)'],
-      labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      yaxis: {
-        opposite: true,
-      },
-      legend: {
-        horizontalAlign: 'left',
-      },
-    },
-  })
-}
-
-function useGaugePersonal() {
-  const series = shallowRef([76])
-
-  return defineApexchartsProps({
-    type: 'radialBar',
-    height: 220,
-    series,
-    options: {
-      title: {
-        text: undefined,
-      },
-      chart: {
-        sparkline: {
-          enabled: true,
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      colors: ['var(--color-chart-base)'],
-      plotOptions: {
-        radialBar: {
-          startAngle: -90,
-          endAngle: 90,
-          track: {
-            background: '#e7e7e7',
-            strokeWidth: '97%',
-            margin: 5, // margin is in pixels
-            dropShadow: {
-              enabled: false,
-              top: 2,
-              left: 0,
-              color: '#999',
-              opacity: 1,
-              blur: 2,
-            },
-          },
-          hollow: {
-            margin: 0,
-            size: '35%',
-          },
-          dataLabels: {
-            name: {
-              show: false,
-            },
-            value: {
-              offsetY: -2,
-              fontSize: '22px',
-            },
-          },
-        },
-      },
-      labels: ['Average Results'],
-    },
-  })
-}
 </script>
 
 <template>
@@ -667,10 +312,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <LazyAddonApexcharts
-                    v-bind="areaCondition"
-                    class="relative -start-5"
-                  />
+                  <DemoChartAreaCondition class="relative -start-5" />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -708,7 +350,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <LazyAddonApexcharts v-bind="scatterEnergy" />
+                  <DemoChartScatterEnergy />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -746,10 +388,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <LazyAddonApexcharts
-                    v-bind="barOxygen"
-                    class="relative -start-5"
-                  />
+                  <DemoChartBarOxygen class="relative -start-5" />
                 </BaseCard>
               </div>
               <!-- Chart -->
@@ -787,10 +426,7 @@ function useGaugePersonal() {
                       </NuxtLink>
                     </BaseParagraph>
                   </div>
-                  <LazyAddonApexcharts
-                    v-bind="areaProgress"
-                    class="relative -start-5"
-                  />
+                  <DemoChartAreaProgress class="relative -start-5" />
                 </BaseCard>
               </div>
             </div>
@@ -822,7 +458,7 @@ function useGaugePersonal() {
                   </BaseHeading>
                 </div>
                 <div class="py-16">
-                  <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+                  <DemoChartRadialGaugeAlt class="-mt-14" />
                 </div>
                 <div class="mt-auto text-center">
                   <BaseParagraph size="sm">

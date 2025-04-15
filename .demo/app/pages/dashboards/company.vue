@@ -11,130 +11,6 @@ definePageMeta({
   },
 })
 
-const gaugePersonal = reactive(useGaugePersonal())
-const barSalesProfit = reactive(useBarSalesProfit())
-
-function useGaugePersonal() {
-  const series = shallowRef([76])
-
-  return defineApexchartsProps({
-    type: 'radialBar',
-    height: 220,
-    series,
-    options: {
-      title: {
-        text: undefined,
-      },
-      chart: {
-        sparkline: {
-          enabled: true,
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      colors: ['var(--color-chart-base)'],
-      plotOptions: {
-        radialBar: {
-          startAngle: -90,
-          endAngle: 90,
-          track: {
-            strokeWidth: '97%',
-            margin: 0, // margin is in pixels
-            dropShadow: {
-              enabled: false,
-              top: 2,
-              left: 0,
-              color: '#999',
-              opacity: 1,
-              blur: 2,
-            },
-          },
-          hollow: {
-            margin: 0,
-            size: '35%',
-          },
-          dataLabels: {
-            name: {
-              show: false,
-            },
-            value: {
-              offsetY: -2,
-              fontSize: '22px',
-            },
-          },
-        },
-      },
-      labels: ['Average Results'],
-    },
-  })
-}
-
-function useBarSalesProfit() {
-  const series = shallowRef([
-    {
-      name: 'Net Profit',
-      data: [-26, -15, -13, -14, -9, -12, -7, -10, -4],
-    },
-    {
-      name: 'Revenue',
-      data: [6, 15, 31, 28, 17, 35, 21, 44, 24],
-    },
-    {
-      name: 'Free Cash Flow',
-      data: [-35, -29, -34, -44, -25, -22, -18, -17, -29],
-    },
-  ])
-
-  return defineApexchartsProps({
-    type: 'bar',
-    height: 250,
-    series,
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-      },
-      colors: ['var(--color-chart-base)', 'var(--color-primary-400)', 'var(--color-indigo-500)'],
-      legend: {
-        position: 'top',
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          // endingShape: 'rounded',
-          columnWidth: '55%',
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ['transparent'],
-      },
-      xaxis: {
-        categories: [
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
-          'Oct',
-        ],
-      },
-      // fill: {
-      //   opacity: 1,
-      // },
-    },
-  })
-}
-
 const team = shallowRef([
   {
     id: '0',
@@ -422,7 +298,7 @@ const date = ref(new Date())
               </BaseHeading>
             </div>
             <div class="py-16">
-              <LazyAddonApexcharts v-bind="gaugePersonal" class="-mt-14" />
+              <DemoChartRadialGaugeAlt class="-mt-14" />
             </div>
             <div class="mt-auto text-center">
               <BaseParagraph size="sm">
@@ -447,7 +323,7 @@ const date = ref(new Date())
                 <span>Profit</span>
               </BaseHeading>
             </div>
-            <LazyAddonApexcharts v-bind="barSalesProfit" />
+            <DemoChartBarSalesProfit />
           </BaseCard>
         </div>
         <!-- Widget -->

@@ -38,21 +38,5 @@ function useDemoRadial() {
 </script>
 
 <template>
-  <div class="relative">
-    <BaseCard class="p-6">
-      <!-- Title -->
-      <div class="mb-6">
-        <BaseHeading
-          as="h3"
-          size="md"
-          weight="semibold"
-          lead="tight"
-          class="text-muted-800 dark:text-white"
-        >
-          <span>Radial Bar</span>
-        </BaseHeading>
-      </div>
-      <LazyAddonApexcharts v-bind="demoRadial" />
-    </BaseCard>
-  </div>
+  <LazyAddonApexcharts v-bind="demoRadial" />
 </template>

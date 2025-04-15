@@ -57,10 +57,10 @@ function onDayClick(_: any, event: MouseEvent): void {
     :locale="props.locale"
     @dayclick="onDayClick"
   >
-    <template #default="ctx">
+    <template v-if="'default' in $slots" #default="ctx">
       <slot v-bind="ctx" />
     </template>
-    <template #time-header="ctx">
+    <template v-if="'time-header' in $slots" #time-header="ctx">
       <slot name="time-header" v-bind="ctx" />
     </template>
   </DatePicker>
@@ -72,10 +72,10 @@ function onDayClick(_: any, event: MouseEvent): void {
     class="w-full!"
     @dayclick="onDayClick"
   >
-    <template #default="ctx">
+    <template v-if="'default' in $slots" #default="ctx">
       <slot v-bind="ctx" />
     </template>
-    <template #time-header="ctx">
+    <template v-if="'time-header' in $slots" #time-header="ctx">
       <slot name="time-header" v-bind="ctx" />
     </template>
   </DatePicker>

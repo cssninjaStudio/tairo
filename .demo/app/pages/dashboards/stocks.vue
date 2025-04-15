@@ -11,8 +11,6 @@ definePageMeta({
   },
 })
 
-const barProfit = reactive(useBarProfit())
-
 const stocks = ref([
   {
     id: 'LKN',
@@ -57,86 +55,6 @@ const stocks = ref([
     price: 2514.51,
   },
 ])
-
-function useBarProfit() {
-  const series = shallowRef([
-    {
-      name: 'Ratio',
-      data: [2.3, 3.1, 4.0, 10.1, 4.0],
-    },
-  ])
-
-  return defineApexchartsProps({
-    type: 'bar',
-    height: 255,
-    series,
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-      },
-      plotOptions: {
-        bar: {
-          dataLabels: {
-            position: 'top', // top, center, bottom
-          },
-        },
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: value => `${value} %`,
-        offsetY: -20,
-        style: {
-          fontSize: '12px',
-          colors: ['#304758'],
-        },
-      },
-      xaxis: {
-        categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
-        position: 'top',
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        crosshairs: {
-          fill: {
-            type: 'gradient',
-            gradient: {
-              colorFrom: '#D8E3F0',
-              colorTo: '#BED1E6',
-              stops: [0, 100],
-              opacityFrom: 0.4,
-              opacityTo: 0.5,
-            },
-          },
-        },
-        tooltip: {
-          enabled: true,
-        },
-      },
-      yaxis: {
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        labels: {
-          show: false,
-          formatter: value => `${value} %`,
-        },
-      },
-      colors: ['var(--color-chart-base)'],
-      title: {
-        text: undefined,
-        align: 'left',
-      },
-    },
-  })
-}
 
 // Datepicker
 const date = ref(new Date())
@@ -722,7 +640,7 @@ const date = ref(new Date())
             </BaseButton>
           </div>
           <div class="mt-auto">
-            <LazyAddonApexcharts v-bind="barProfit" />
+            <DemoChartBarProfit />
           </div>
         </BaseCard>
       </div>
