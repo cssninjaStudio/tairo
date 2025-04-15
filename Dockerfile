@@ -6,10 +6,9 @@ RUN corepack enable
 FROM base AS install
 COPY . /build
 WORKDIR /build
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 FROM install AS build-demo
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm run --filter @cssninja/tairo prepare
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm run --filter @cssninja/tairo-component-meta prepack
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store NODE_OPTIONS=--max-old-space-size=6144 pnpm run --filter demo build
 
