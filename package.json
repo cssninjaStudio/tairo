@@ -23,8 +23,8 @@
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
     "test:tsc-demo": "pnpm --filter=demo typecheck",
-    "test:lint": "eslint .",
-    "lint": "eslint --fix ."
+    "test:lint": "eslint --cache .",
+    "lint": "eslint --cache --fix ."
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",

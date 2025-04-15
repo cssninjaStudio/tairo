@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AddonInputPassword } from '#components'
+import type { AddonInputPassword } from '#components'
 import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
 

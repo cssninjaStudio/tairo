@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AddonInputPhone } from '#components'
+import type { AddonInputPhone } from '#components'
 
 const phone = ref('012345')
 const error = ref('')

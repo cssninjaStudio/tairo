@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AddonInputPassword } from '#components'
+import type { AddonInputPassword } from '#components'
 
 const passwordRef = ref<InstanceType<typeof AddonInputPassword>>()
 const hasError = computed(() => !!passwordRef.value?.validation?.feedback?.warning || !!passwordRef.value?.validation?.feedback?.suggestions?.length)

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AddonInputPhone } from '#components'
+import type { AddonInputPhone } from '#components'
 import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
 

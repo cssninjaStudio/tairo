@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import type { AddonInputPassword } from '#components'
 import type { ZxcvbnResult } from '@zxcvbn-ts/core'
-import { AddonInputPassword } from '#components'
 
 const password = ref('qwerty')
 const error = ref('')
