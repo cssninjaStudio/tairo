@@ -58,8 +58,8 @@ jobs:
           push: true
           context: .
           target: demo
-          cache-from: digisquad/cssninja.tairo-demo:cache
-          cache-to: digisquad/cssninja.tairo-demo:cache,mode=max
+          cache-from: type=registry,ref=digisquad/cssninja.tairo-demo:cache
+          cache-to: type=registry,ref=digisquad/cssninja.tairo-demo:cache,mode=max
           tags: digisquad/cssninja.tairo-demo:latest
 
   deploy-demo:
