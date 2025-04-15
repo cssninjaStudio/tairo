@@ -1,4 +1,4 @@
-import { format, isDate, parseISO } from 'date-fns'
+import { format, isDate, parseISO } from '~/utils/bundles/date-fns'
 
 const DateFormats = {
   Short: 'MMM do, yyyy',

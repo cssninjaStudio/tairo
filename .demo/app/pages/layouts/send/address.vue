@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PaymentSend, StepData } from '../../../types'
+import type { PaymentSend, StepData } from '~/types'
 
 definePageMeta({
   preview: {

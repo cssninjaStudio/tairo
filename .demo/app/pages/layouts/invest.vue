@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { DemoPanelInvest } from '#components'
-import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
 
 definePageMeta({
   title: 'Investments',

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
-
 import 'v-calendar/dist/style.css'
 
 definePageMeta({

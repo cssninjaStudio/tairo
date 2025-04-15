@@ -6,7 +6,7 @@ import type {
 } from '../types'
 import { onKeyStroke } from '@vueuse/core'
 
-import { addMinutes, roundToNearestMinutes } from 'date-fns'
+import { addMinutes, roundToNearestMinutes } from '~/utils/bundles/date-fns'
 
 import { topToDate } from '../view'
 

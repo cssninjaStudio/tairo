@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import type { MapInitEvent } from '~/components/AddonMapboxLocationPicker.vue'
 import { toTypedSchema } from '@vee-validate/zod'
-import { DatePicker } from 'v-calendar'
 import { Field, useForm } from 'vee-validate'
 import { z } from 'zod'
-
-import 'v-calendar/dist/style.css'
-import '~/assets/vcalendar.css'
 
 definePageMeta({
   title: 'Create event',
@@ -315,7 +311,7 @@ function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
                   }"
                   name="event.dates"
                 >
-                  <DatePicker
+                  <LazyAddonDatepicker
                     :model-value="field.value"
                     :model-modifiers="{ range: true }"
                     :masks="masks"
@@ -367,7 +363,7 @@ function onMapInit({ geocoder, map, mapboxgl }: MapInitEvent) {
                         </BaseField>
                       </div>
                     </template>
-                  </DatePicker>
+                  </LazyAddonDatepicker>
                 </Field>
               </div>
               <Field

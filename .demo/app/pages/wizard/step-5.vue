@@ -4,7 +4,7 @@ import type {
   ProjectStepData,
   TeamMember,
   TeamMemberRole,
-} from '../../types'
+} from '~/types'
 
 definePageMeta({
   title: 'Wizard — Step 5',

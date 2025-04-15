@@ -1,17 +1,7 @@
 <script setup lang="ts">
 import type { CalendarCustomAttribute, CalendarEvent, CalendarSettings, VCalendarAttribute } from '~/utils/bundles/calendar'
+import { hydrateOnVisible } from 'vue'
 import {
-  addMinutes,
-  endOfDay,
-  format,
-  isPast,
-  isToday,
-} from 'date-fns'
-import { Calendar } from 'v-calendar'
-
-import { Container, Draggable } from 'vue3-smooth-dnd'
-import {
-
   categoryTheme,
   datesToHeight,
   dateToTop,
@@ -23,11 +13,17 @@ import {
   useDragEventPending,
   useNowMarker,
   useViewPan,
-
 } from '~/utils/bundles/calendar'
+import {
+  addMinutes,
+  endOfDay,
+  format,
+  isPast,
+  isToday,
+} from '~/utils/bundles/date-fns'
+
 import 'v-calendar/dist/style.css'
 import '~/assets/vcalendar-weekly.css'
-
 import '~/assets/vcalendar.css'
 
 definePageMeta({
@@ -85,6 +81,19 @@ const users = [
     photo: '/img/avatars/2.svg',
   },
 ]
+
+const Container = defineAsyncComponent({
+  loader: () => import('vue3-smooth-dnd').then(mod => mod.Container),
+  hydrate: hydrateOnVisible(),
+})
+const Draggable = defineAsyncComponent({
+  loader: () => import('vue3-smooth-dnd').then(mod => mod.Draggable),
+  hydrate: hydrateOnVisible(),
+})
+const Calendar = defineAsyncComponent({
+  loader: () => import('v-calendar').then(mod => mod.Calendar),
+  hydrate: hydrateOnVisible(),
+})
 
 const scrollCalendarRef = useTemplateRef<HTMLElement>('scrollCalendarRef')
 const showSettings = ref(false)

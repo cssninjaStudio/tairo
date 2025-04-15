@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import type { Customer, Project, ProjectStepData } from '../../types'
-
-import { DatePicker } from 'v-calendar'
-import 'v-calendar/dist/style.css'
-
-import '~/assets/vcalendar.css'
+import type { Customer, Project, ProjectStepData } from '~/types'
 
 definePageMeta({
   title: 'Wizard — Step 3',
@@ -230,7 +225,7 @@ const budget = ref('< 5K')
           class="divide-muted-200 dark:divide-muted-700 flex w-full justify-between divide-x"
         >
           <div class="relative pe-4">
-            <DatePicker
+            <LazyAddonDatepicker
               v-model="project.startDate"
               :masks="masks"
               :minute-increment="15"
@@ -252,10 +247,10 @@ const budget = ref('< 5K')
                   </div>
                 </div>
               </template>
-            </DatePicker>
+            </LazyAddonDatepicker>
           </div>
           <div class="relative ps-4">
-            <DatePicker
+            <LazyAddonDatepicker
               id="endDate"
               v-model="project.endDate"
               :masks="masks"
@@ -278,7 +273,7 @@ const budget = ref('< 5K')
                   </div>
                 </div>
               </template>
-            </DatePicker>
+            </LazyAddonDatepicker>
           </div>
         </div>
       </BaseCard>

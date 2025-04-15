@@ -3,7 +3,7 @@ import type { Page } from 'v-calendar/dist/types/src/utils/page'
 
 import type { CalendarSettings } from '../types'
 
-import { addDays, endOfDay, endOfWeek, startOfDay, startOfWeek } from 'date-fns'
+import { addDays, endOfDay, endOfWeek, startOfDay, startOfWeek } from '~/utils/bundles/date-fns'
 
 export function useDateRange(settings: CalendarSettings) {
   const fromDate = ref(

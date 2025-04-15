@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
-
 const demoRadar = reactive(useDemoRadar())
 
 function useDemoRadar() {

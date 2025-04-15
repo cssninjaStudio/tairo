@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Invite, StepData } from '../../../types'
+import type { Invite, StepData } from '~/types'
 
 definePageMeta({
   preview: {

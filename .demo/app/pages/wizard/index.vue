@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project, ProjectStepData, ProjectType } from '../../types'
+import type { Project, ProjectStepData, ProjectType } from '~/types'
 
 definePageMeta({
   title: 'Wizard — Step 1',

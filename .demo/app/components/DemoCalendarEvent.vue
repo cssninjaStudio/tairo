@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { CalendarCustomAttribute, CalendarEvent } from '~/utils/bundles/calendar'
 
-import { format } from 'date-fns'
 import { categoryTheme } from '~/utils/bundles/calendar'
+import { format } from '~/utils/bundles/date-fns'
 
 const props = defineProps<{
   event: CalendarCustomAttribute<CalendarEvent>

@@ -13,7 +13,7 @@ import {
   setDay,
   setMonth,
   setYear,
-} from 'date-fns'
+} from '~/utils/bundles/date-fns'
 
 import { minutesToHeight, topToDate } from '../view'
 

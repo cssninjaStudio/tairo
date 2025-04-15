@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { Calendar } from 'v-calendar'
-import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
-
+import { hydrateOnVisible } from 'vue'
 import 'v-calendar/dist/style.css'
 import '~/assets/vcalendar.css'
 
@@ -15,6 +13,11 @@ definePageMeta({
     srcDark: '/img/screens/dashboards-widgets-ui-dark.png',
     order: 27,
   },
+})
+
+const Calendar = defineAsyncComponent({
+  loader: () => import('v-calendar').then(mod => mod.Calendar),
+  hydrate: hydrateOnVisible(),
 })
 
 const gaugePersonal = reactive(useGaugePersonal())
@@ -69,17 +72,6 @@ function useGaugePersonal() {
               fontSize: '22px',
             },
           },
-        },
-      },
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shade: 'light',
-          shadeIntensity: 0.1,
-          inverseColors: false,
-          opacityFrom: 1,
-          opacityTo: 1,
-          stops: [0, 50, 53, 91],
         },
       },
       labels: ['Average Results'],

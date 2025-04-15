@@ -184,8 +184,8 @@
   @apply grow;
 }
 
-.vc-time-select > span {
-  @apply !mx-4;
+.vc-time-picker {
+  @apply px-5 w-1/2 inline-flex;
 }
 
 .vc-time-select-group {
@@ -193,7 +193,7 @@
 }
 
 .vc-time-select-group .vc-base-select select {
-  @apply text-muted-500 dark:text-muted-200 bg-muted-100 dark:bg-muted-700 nui-focus;
+  @apply text-muted-500 dark:text-muted-200 bg-muted-100 dark:bg-muted-700 focus-visible:nui-focus;
 }
 
 .vc-time-select-group .vc-base-icon {

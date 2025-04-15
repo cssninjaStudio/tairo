@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
-
 const areaBtcPrice = reactive(useAreaBtcPrice())
 
 // You can create your own composable function to handle the logic of your chart

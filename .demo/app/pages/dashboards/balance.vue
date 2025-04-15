@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
-
 import 'v-calendar/dist/style.css'
 
 definePageMeta({
@@ -71,17 +69,6 @@ function useGaugePersonal() {
           },
         },
       },
-      // fill: {
-      //   type: 'gradient',
-      //   gradient: {
-      //     shade: 'light',
-      //     shadeIntensity: 0.1,
-      //     inverseColors: false,
-      //     opacityFrom: 1,
-      //     opacityTo: 1,
-      //     stops: [0, 50, 53, 91],
-      //   },
-      // },
       labels: ['Average Results'],
     },
   })

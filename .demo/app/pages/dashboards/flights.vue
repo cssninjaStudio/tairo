@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Duration } from 'date-fns'
-import { format, isSameDay, sub } from 'date-fns'
+import type { Duration } from '~/utils/bundles/date-fns'
+import { format, isSameDay, sub } from '~/utils/bundles/date-fns'
 
 definePageMeta({
   title: 'Flights',

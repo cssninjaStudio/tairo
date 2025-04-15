@@ -1,6 +1,6 @@
 import type { CalendarSettings } from './types'
 
-import { differenceInMinutes, isSameDay, setHours, setMinutes } from 'date-fns'
+import { differenceInMinutes, isSameDay, setHours, setMinutes } from '~/utils/bundles/date-fns'
 
 export function dateToTop(
   settings: CalendarSettings,

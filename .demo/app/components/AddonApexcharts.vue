@@ -16,10 +16,6 @@ export interface AddonApexchartsProps {
   options?: Omit<ApexOptions, 'series' | 'chart'> & { chart?: Omit<NonNullable<ApexOptions['chart']>, 'type' | 'height' | 'width'> }
 }
 
-export function defineApexchartsProps(props: AddonApexchartsProps): AddonApexchartsProps {
-  return props
-}
-
 const useIsLoaded = () => useState('apex-loaded', () => false)
 
 /**

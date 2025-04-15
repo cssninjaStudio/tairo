@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineApexchartsProps } from '~/components/AddonApexcharts.vue'
-
 const demoBarMulti = reactive(useDemoBarMulti())
 
 function useDemoBarMulti() {

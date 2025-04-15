@@ -5,7 +5,7 @@ import type {
   CalendarSettings,
 } from '../types'
 
-import { addMinutes, roundToNearestMinutes } from 'date-fns'
+import { addMinutes, roundToNearestMinutes } from '~/utils/bundles/date-fns'
 
 import { minutesToHeight, topToDate } from '../view'
 
