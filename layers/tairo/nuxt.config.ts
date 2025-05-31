@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     name: '@cssninja/tairo',
   },
   modules: [
-    '@shuriken-ui/nuxt',
+    // '@shuriken-ui/nuxt',
     (_, nuxt) => {
       const resolver = createResolver(import.meta.url)
 
