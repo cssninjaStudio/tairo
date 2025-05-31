@@ -20,7 +20,8 @@ const props = withDefaults(
 const strokeWidth = computed(() => {
   if (props.size === 'xs' || props.size === 'sm') {
     return '4'
-  } else {
+  }
+  else {
     return '2'
   }
 })
@@ -34,11 +35,11 @@ const strokeWidth = computed(() => {
       props.color === 'success' && 'text-success-500',
       props.color === 'primary' && 'text-primary-500',
       props.color === 'warning' && 'text-warning-500',
-      props.color === 'danger' && 'text-danger-500',
-      props.size === 'xs' && 'h-8 w-8',
-      props.size === 'sm' && 'h-10 w-10',
-      props.size === 'md' && 'h-12 w-12',
-      props.size === 'lg' && 'h-14 w-14',
+      props.color === 'danger' && 'text-destructive-500',
+      props.size === 'xs' && 'size-8',
+      props.size === 'sm' && 'size-10',
+      props.size === 'md' && 'size-12',
+      props.size === 'lg' && 'size-14',
     ]"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 52 52"
@@ -73,43 +74,3 @@ const strokeWidth = computed(() => {
     />
   </svg>
 </template>
-
-<style scoped>
-.nui-check-animated {
-  @apply block rounded-full stroke-current overflow-hidden;
-  animation: fill 0.4s ease-in-out 0.4s forwards,
-    scale 0.3s ease-in-out 0.9s both;
-}
-
-.nui-check-animated-circle {
-  @apply stroke-current fill-none;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-}
-
-.nui-check-animated-check {
-  @apply stroke-current fill-none text-white origin-[50%_50%] scale-[0.7];
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-}
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes scale {
-  0%,
-  100% {
-    transform: none;
-  }
-  50% {
-    transform: scale3d(1.1, 1.1, 1);
-  }
-}
-
-@keyframes fill {
-  100% {
-    box-shadow: inset 0px 0px 0px 30px currentColor;
-  }
-}
-</style>

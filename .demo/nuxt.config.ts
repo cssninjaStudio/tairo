@@ -1,102 +1,171 @@
-import { isProduction } from 'std-env'
-
-import {
-  demoRules,
-  documentationRules,
-  landingRules,
-} from './config/routes-rules'
-
 export default defineNuxtConfig({
-  extends: [
-    /**
-     * App layers: these are the layers that contains specific features
-     * - landing: contains landing pages
-     * - documentation: contains all /documentation pages
-     */
-    '../layers/landing',
-    process.env.ENABLE_DOCUMENTATION && '../layers/documentation',
+  compatibilityDate: '2025-03-05',
+  future: {
+    compatibilityVersion: 4,
+  },
+  devtools: { enabled: true },
 
+  extends: [
     /**
      * This extends the base Tairo layer.
      *
      * Alternatively you can use the following:
-     * 'github:cssninjaStudio/tairo/layers/xxx#v1.0.0'
+     * ["gh:cssninjaStudio/tairo/layers/tairo#v1.4.0", {
+     *    install: true,
+     *    giget: { auth: import.meta.env.GITHUB_TOKEN },
+     * }]
      *
-     * And set GIGET_AUTH=<github_token> in your .env file
+     * @see https://github.com/unjs/c12#extending-config-layer-from-remote-sources
      *
      * This would allows you to create an empty git repository
      * with only your source code and no demo.
      */
-    '../layers/tairo-layout-sidebar',
-    '../layers/tairo-layout-collapse',
     '../layers/tairo',
-
-    /**
-     * This is an additional layer that adds SEO features.
-     *
-     * Can be used either to prevent indexing,
-     * or to add custom meta tags to improve referencing.
-     * @see https://github.com/harlan-zw/nuxt-seo-kit
-     */
-    'nuxt-seo-kit',
   ],
+
   modules: [
-    /**
-     * Swiper is a nuxt module that allows us to use swiper in nuxt
-     * wich is a carousel component used in the demo
-     * @see https://github.com/cpreston321/nuxt-swiper
-     */
-    'nuxt-swiper',
+    'reka-ui/nuxt',
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n',
+    '@nuxt/image',
+    '@nuxt/content',
+    '@nuxt/fonts',
   ],
-  css: ['~/assets/css/colors.css'],
-
-  experimental: {
-    // using parcel as as watcher run faster
-    // when using layers and/or in large projects
-    watcher: 'parcel',
-    // Write early hints when using node server.
-    writeEarlyHints: true,
-    // Render JSON payloads with support for revivifying complex types.
-    renderJsonPayloads: true,
+  content: {
+    build: {
+      markdown: {
+        toc: { depth: 3, searchDepth: 2 },
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+          },
+        },
+      },
+    },
+    renderer: {
+      anchorLinks: true,
+    },
   },
 
-  // nuxt behavior configuration
+  experimental: {
+    viewTransition: true,
+    // buildCache: true,
+    sharedPrerenderData: true,
+    defaults: {
+      nuxtLink: {
+        // Here we disable the prefetch for visibility and enable it for interaction.
+        // This is a good balance between performance and user experience when having a lot of links.
+        prefetchOn: {
+          visibility: false,
+          interaction: true,
+        },
+      },
+    },
+  },
+  $development: {
+    experimental: {
+      // Disable prefetch for development, this will make the development faster.
+      defaults: {
+        nuxtLink: {
+          prefetch: false,
+        },
+      },
+    },
+  },
+
+  css: [
+    /**
+     * Load Tailwind CSS
+     */
+    '~/assets/main.css',
+  ],
+  fonts: {
+    experimental: {
+      processCSSVariables: true,
+    },
+  },
+
+  typescript: {
+    tsConfig: {
+      // Here you can customize the generated tsconfig.json file
+      // vueCompilerOptions: {
+      //   target: 3.4,
+      // },
+    },
+  },
+
   runtimeConfig: {
     public: {
       // mapbox config
-      mapboxToken: process.env.NUXT_PUBLIC_MAPBOX_TOKEN,
-      // nuxt-seo-kit config
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
-      siteName: 'Tairo by CSS Ninja',
-      siteDescription:
-        'The most advanced Nuxt and Tailwind CSS dashboard template',
-      language: 'en',
+      mapboxToken: '', // set it via NUXT_PUBLIC_MAPBOX_TOKEN env
+      siteUrl: '', // set it via NUXT_PUBLIC_SITE_URL
     },
-  },
-  routeRules: {
-    ...demoRules,
-    ...landingRules,
-    ...(process.env.ENABLE_DOCUMENTATION ? documentationRules : {}),
   },
 
-  // build configuration
-  hooks: {
-    'vite:extendConfig'(config, { isClient }) {
-      if (isProduction && isClient) {
-        // @ts-ignore
-        config.build.rollupOptions.output.entryFileNames = '_nuxt/e/[hash].js'
-        // @ts-ignore
-        config.build.rollupOptions.output.chunkFileNames = '_nuxt/c/[hash].js'
-        // @ts-ignore
-        config.build.rollupOptions.output.assetFileNames =
-          '_nuxt/a/[hash][extname]'
-      }
+  i18n: {
+    baseUrl: '/',
+    // We use no_prefix strategy to avoid having the locale prefix in the URL,
+    // This may not be the best strategy for SEO, but it's the best for the demo.
+    // We recommend using the default prefix_except_default strategy for SEO.
+    strategy: 'no_prefix',
+    defaultLocale: 'en',
+    lazy: true,
+    locales: [
+      { code: 'en', dir: 'ltr', language: 'en-US', file: 'en-US.yaml', name: 'English', isCatchallLocale: true },
+      { code: 'fr', dir: 'ltr', language: 'fr-FR', file: 'fr-FR.yaml', name: 'Français' },
+      { code: 'es', dir: 'ltr', language: 'es-ES', file: 'es-ES.yaml', name: 'Español' },
+      { code: 'de', dir: 'ltr', language: 'de-DE', file: 'de-DE.yaml', name: 'Deutsch' },
+      { code: 'ar', dir: 'rtl', language: 'ar-SA', file: 'ar-SA.yaml', name: 'العربية' },
+      { code: 'ja', dir: 'ltr', language: 'ja-JP', file: 'ja-JP.yaml', name: '日本語' },
+    ],
+    // Use i18n v10 features
+    experimental: {
+      generatedLocaleFilePathFormat: 'off',
+    },
+    bundle: {
+      optimizeTranslationDirective: false,
     },
   },
+
+  routeRules: {
+    '/': {
+      swr: 3600,
+    },
+    '/demos': {
+      swr: 3600,
+    },
+    '/starters/**': {
+      swr: 3600,
+    },
+    '/auth/**': {
+      swr: 3600,
+    },
+    '/documentation': {
+      swr: 3600,
+    },
+    '/documentation/**': {
+      swr: 3600,
+    },
+    '/dashboards/**': {
+      swr: 3600,
+    },
+    '/layouts/**': {
+      swr: 3600,
+    },
+    '/wizard/**': {
+      swr: 3600,
+    },
+  },
+
+  sourcemap: {
+    server: false,
+    client: false,
+  },
+
   nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ['/', '/dashboards', '/layouts'],
+    logging: {
+      compressedSizes: false,
     },
     esbuild: {
       options: {
@@ -104,29 +173,58 @@ export default defineNuxtConfig({
       },
     },
   },
+
   vite: {
     define: {
-      'process.test': false,
-      // This is required for shiki to work (used to render markdown code blocks)
-      'process.env.VSCODE_TEXTMATE_DEBUG': false,
-      // This enables vue-axe to work (used to check a11y - see .demo/plugins/vue-axe.ts)
-      'process.env.ENABLE_A11Y_AXE': process.env.ENABLE_A11Y_AXE,
+      // Enable / disable Options API support. Disabling this will result in smaller bundles,
+      // but may affect compatibility with 3rd party libraries if they rely on Options API.
+      __VUE_OPTIONS_API__: false,
+    },
+    css: {
+      // LightningCSS is a rust based CSS minifier that is faster than the default CSS minifier.
+      // @see https://vite.dev/guide/features.html#lightning-css
+      // @see https://lightningcss.dev/
+      transformer: 'lightningcss',
     },
     build: {
       target: 'esnext',
+      cssMinify: 'lightningcss',
+      reportCompressedSize: false,
     },
-  },
-
-  // nuxt modules configuration
-  unfonts: {
-    google: {
-      families: ['Roboto Flex', 'Inter', 'Karla', 'Fira Code'],
+    // Defining the optimizeDeps.include option prebuilds the dependencies, this avoid
+    // some reloads when navigating between pages during development.
+    // It's also useful to track them usage.
+    optimizeDeps: {
+      include: [
+        'scule',
+        'klona',
+        // AddonDatepicker
+        'v-calendar',
+        // AddonApexcharts
+        'vue3-apexcharts',
+        // AddonInputPhone
+        'libphonenumber-js/max',
+        'country-codes-list',
+        // AddonInputPassword
+        '@zxcvbn-ts/core',
+        '@zxcvbn-ts/language-common',
+        '@zxcvbn-ts/language-en',
+        '@zxcvbn-ts/language-fr',
+        // AddonMapboxLocationPicker
+        'ohash',
+        'mapbox-gl',
+        '@mapbox/mapbox-gl-geocoder',
+        // form validation
+        '@vee-validate/zod',
+        'vee-validate',
+        'zod',
+        // calendar app
+        'vue3-smooth-dnd',
+        'date-fns',
+        'date-fns/locale',
+        // profile edit page
+        'imask',
+      ],
     },
-  },
-  linkChecker: {
-    failOn404: true,
-  },
-  unhead: {
-    seoOptimise: true,
   },
 })

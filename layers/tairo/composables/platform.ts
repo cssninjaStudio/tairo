@@ -1,3 +1,5 @@
+import { tryOnBeforeMount } from '~/utils/bundle/vueuse'
+
 const macLikeRE = /Mac|iP/
 
 /**

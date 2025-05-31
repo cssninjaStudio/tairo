@@ -1,0 +1,31 @@
+{
+  "name": "@cssninja/tairo-component-meta",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./component-meta/component-meta.d.ts",
+      "import": "./component-meta/component-meta.mjs",
+      "require": "./component-meta/component-meta.cjs"
+    }
+  },
+  "files": [
+    "component-meta"
+  ],
+  "scripts": {
+    "prepack": "nuxt prepare && nuxt-component-meta --no-schema --outputDir='./component-meta' .",
+    "prepare": "nuxt prepare",
+    "nuxt": "nuxt"
+  },
+  "devDependencies": {
+    "@nuxt/kit": "^3.16.2",
+    "@shuriken-ui/nuxt": "4.0.0-beta.4",
+    "nuxt": "^3.16.2",
+    "nuxt-component-meta": "^0.10.1",
+    "pathe": "^2.0.3",
+    "reka-ui": "^2.2.0",
+    "tailwindcss": "^4.0.8",
+    "vite": "^6.2.6"
+  }
+}

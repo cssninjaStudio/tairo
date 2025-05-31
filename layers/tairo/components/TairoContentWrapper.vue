@@ -12,16 +12,17 @@ const props = withDefaults(
 <template>
   <div>
     <div
+      v-if="'left' in $slots || 'right' in $slots"
       class="mb-6 flex w-full flex-col items-center justify-between gap-4 sm:flex-row"
       :class="props.reverse && 'sm:flex-row-reverse'"
     >
       <div class="flex w-full items-center gap-4 sm:w-auto">
-        <slot name="left"></slot>
+        <slot name="left" />
       </div>
       <div class="flex w-full items-center justify-end gap-4 sm:w-auto">
-        <slot name="right"></slot>
+        <slot name="right" />
       </div>
     </div>
-    <slot></slot>
+    <slot />
   </div>
 </template>

@@ -13,20 +13,25 @@ const props = withDefaults(
 
 <template>
   <fieldset class="relative">
-    <div v-if="props.label || props.sublabel" class="mb-6">
+    <legend v-if="props.label || props.sublabel" class="mb-6">
       <BaseHeading
         v-if="props.label"
         tag="h3"
         size="md"
         weight="medium"
         lead="none"
+        class="text-muted-900 dark:text-white"
       >
         {{ props.label }}
       </BaseHeading>
-      <BaseText v-if="props.sublabel" size="xs" class="text-muted-400">
+      <BaseText
+        v-if="props.sublabel"
+        size="xs"
+        class="text-muted-600 dark:text-muted-400"
+      >
         {{ props.sublabel }}
       </BaseText>
-    </div>
-    <slot></slot>
+    </legend>
+    <slot />
   </fieldset>
 </template>

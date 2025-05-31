@@ -1,18 +1,18 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    shape?: 'straight' | 'rounded' | 'curved' | 'full'
+    rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full'
     disabled?: boolean
     loading?: boolean
   }>(),
   {
-    shape: 'rounded',
+    rounded: 'sm',
   },
 )
 const emits = defineEmits<{
-  (event: 'reset'): void
+  reset: []
 }>()
-const { x, y } = useWindowScroll()
+const { y } = useNuiWindowScroll()
 </script>
 
 <template>
@@ -30,13 +30,13 @@ const { x, y } = useWindowScroll()
         class="fixed inset-x-0 bottom-6 z-40 mx-auto w-full max-w-[304px]"
       >
         <BaseCard
-          class="shadow-muted-300/30 dark:shadow-muted-800/30 flex items-center justify-between gap-2 rounded-2xl p-4 shadow-xl"
-          :shape="props.shape === 'full' ? 'curved' : props.shape"
+          class="shadow-muted-300/30 dark:shadow-muted-800/30 flex items-center justify-between gap-3 rounded-2xl p-3 shadow-xl"
+          :rounded="props.rounded === 'full' ? 'lg' : props.rounded"
         >
           <slot>
             <BaseButton
               type="reset"
-              :shape="props.shape"
+              :rounded="props.rounded"
               class="w-full"
               :disabled="props.disabled"
               @click.prevent="() => emits('reset')"
@@ -47,8 +47,8 @@ const { x, y } = useWindowScroll()
               type="submit"
               :disabled="props.disabled"
               :loading="props.loading"
-              :shape="props.shape"
-              color="primary"
+              :rounded="props.rounded"
+              variant="primary"
               class="w-full"
             >
               <span>Save</span>

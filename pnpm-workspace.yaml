@@ -2,3 +2,12 @@ packages:
   - .demo
   - .app
   - layers/*
+  - tairo-component-meta
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - better-sqlite3
+  - core-js-pure
+  - esbuild
+  - sharp
+  - vue-demi

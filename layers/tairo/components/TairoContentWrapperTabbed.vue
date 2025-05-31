@@ -21,7 +21,7 @@ const activeTab = ref('tab-1')
       class="mb-6 flex w-full flex-col items-center justify-between gap-4 sm:flex-row"
       :class="props.reverse && 'sm:flex-row-reverse'"
     >
-      <slot name="left"></slot>
+      <slot name="left" />
       <slot name="right">
         <div class="w-full sm:w-auto">
           <div
@@ -34,7 +34,7 @@ const activeTab = ref('tab-1')
           >
             <button
               type="button"
-              class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
+              class="focus-visible:nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
               :class="[
                 activeTab === 'tab-1' ? 'text-white' : 'text-muted-400',
                 props.shape === 'rounded' ? 'rounded-md' : '',
@@ -47,7 +47,7 @@ const activeTab = ref('tab-1')
             </button>
             <button
               type="button"
-              class="nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
+              class="focus-visible:nui-focus relative z-10 flex flex-1 cursor-pointer items-center justify-center font-sans text-sm transition-colors duration-300"
               :class="[
                 activeTab === 'tab-2' ? 'text-white' : 'text-muted-400',
                 props.shape === 'rounded' ? 'rounded-md' : '',
@@ -66,19 +66,19 @@ const activeTab = ref('tab-1')
                 props.shape === 'curved' ? 'rounded-xl' : '',
                 props.shape === 'full' ? 'rounded-full' : '',
               ]"
-            ></div>
+            />
           </div>
         </div>
       </slot>
     </div>
     <div>
       <div v-if="activeTab === 'tab-1'">
-        <slot name="tab-1"></slot>
+        <slot name="tab-1" />
       </div>
       <div v-else-if="activeTab === 'tab-2'">
-        <slot name="tab-2"></slot>
+        <slot name="tab-2" />
       </div>
     </div>
-    <slot></slot>
+    <slot />
   </div>
 </template>

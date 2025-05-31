@@ -1,6 +1,7 @@
 name: Deploy tairo
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -19,8 +20,8 @@ jobs:
       demo: ${{ steps.filter.outputs.demo }}
       shared: ${{ steps.filter.outputs.shared }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: dorny/paths-filter@v2
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
         id: filter
         with:
           # Use context to get the branch where commits were pushed.
@@ -32,70 +33,50 @@ jobs:
               - '.github/env/**'
               - '.github/workflows/deploy.yml'
               - 'layers/**'
-              - 'types/**'
-              - '.npmrc'
-              - '.nuxtrc'
+              - 'tairo-component-meta/**'
+              - 'Dockerfile'
               - 'package.json'
               - 'pnpm-lock.yaml'
               - 'tsconfig.json'
 
   build-demo:
-    name: Build tairo demo
+    name: Build Tairo demo
     needs: changes
     if: ${{ needs.changes.outputs.shared == 'true' || needs.changes.outputs.demo == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up dockertags
-        run: |
-          echo "dockertags=digisquad/cssninja.tairo-demo:latest" >> $GITHUB_ENV
-
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile
-      # - run: echo '{"extends":"./.demo/.nuxt/tsconfig.json"}' > tsconfig.json
-      - run: |
-          NUXT_PUBLIC_MAPBOX_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} \
-          NUXT_INDEXABLE=true \
-          ENABLE_DOCUMENTATION=true \
-          ENABLE_DOCUMENTATION_STUDIO=true \
-          NODE_OPTIONS=--max-old-space-size=6144 \
-          pnpm demo:build
-      - run: cp .github/env/Dockerfile .demo/Dockerfile
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
+      - uses: actions/checkout@v4
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v4
-        timeout-minutes: 60
+      - uses: docker/build-push-action@v5
+        timeout-minutes: 30
         with:
+          pull: true
           push: true
-          context: .demo
-          tags: ${{ env.dockertags }}
+          context: .
+          target: demo
+          cache-from: type=registry,ref=digisquad/cssninja.tairo-demo:cache
+          cache-to: type=registry,ref=digisquad/cssninja.tairo-demo:cache,mode=max
+          tags: digisquad/cssninja.tairo-demo:latest
 
   deploy-demo:
-    name: Deploy tairo demo
+    name: Deploy Tairo demo
     needs: build-demo
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
           script: mkdir -p ${{ secrets.HOST_DIRECTORY }}
 
       - name: Prepare .env file
@@ -121,7 +102,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
           script: |
             cd ${{ secrets.HOST_DIRECTORY }}
             docker compose pull

@@ -1,44 +1,35 @@
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
-  const perPage = parseInt((query.perPage as string) || '5', 10)
-  const page = parseInt((query.page as string) || '1', 10)
+  const perPage = Number.parseInt((query.perPage as string) || '5', 10)
+  const page = Number.parseInt((query.page as string) || '1', 10)
   const filter = (query.filter as string) || ''
   const slug = (query.slug as string) || ''
 
   if (perPage >= 50) {
     // Create an artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise(resolve => setTimeout(resolve, 1000))
   }
 
   const data = await getDemoData()
 
+  const offset = (page - 1) * perPage
+  const filterRe = new RegExp(filter, 'i')
+
   return {
     total: data.length,
-    data: filterDemoData(data, filter, page, perPage),
-    recent: data.filter((item) => item.recent === true),
-    project: slug ? data.find((item) => item.slug === slug) : undefined,
+    data: !filter
+      ? data.slice(offset, offset + perPage)
+      : data
+          .filter((item) => {
+            return [item.name, item.owner.name, item.category].some(item =>
+              item.match(filterRe),
+            )
+          })
+          .slice(offset, offset + perPage),
+    recent: data.filter(item => item.recent === true),
+    project: slug ? data.find(item => item.slug === slug) : undefined,
   }
 })
-
-function filterDemoData(
-  data: any[],
-  filter: string,
-  page: number,
-  perPage: number,
-) {
-  const offset = (page - 1) * perPage
-  if (!filter) {
-    return data.slice(offset, offset + perPage)
-  }
-  const filterRe = new RegExp(filter, 'i')
-  return data
-    .filter((item) => {
-      return [item.name, item.owner.name, item.category].some((item) =>
-        item.match(filterRe),
-      )
-    })
-    .slice(offset, offset + perPage)
-}
 
 async function getDemoData() {
   return Promise.resolve([
@@ -46,7 +37,7 @@ async function getDemoData() {
       id: '1',
       slug: 'delivery-app-project',
       name: 'Delivery App Project',
-      dueDate: 'August 2020',
+      dueDate: 'August 2024',
       updated: '3m ago',
       image: '/img/apps/1.jpg',
       completed: 75,
@@ -76,7 +67,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
-          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -86,7 +76,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -96,7 +85,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -382,7 +370,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -609,7 +597,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -976,7 +964,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -1232,7 +1220,7 @@ async function getDemoData() {
       id: '2',
       slug: 'health-and-fitness-dashboard',
       name: 'Health and Fitness Dashboard',
-      dueDate: 'October 2020',
+      dueDate: 'October 2024',
       updated: '5h ago',
       image: '/img/apps/2.png',
       completed: 75,
@@ -1262,7 +1250,6 @@ async function getDemoData() {
           role: 'Software Engineer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
-          'data-tooltip': 'Kendra W.',
           text: 'KW',
         },
         {
@@ -1272,7 +1259,6 @@ async function getDemoData() {
           role: 'UI Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Elizabet F.',
-          'data-tooltip': 'Elizabet F.',
           text: 'EF',
         },
         {
@@ -1282,7 +1268,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
-          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -1292,17 +1277,15 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
           id: 12,
           src: '/img/avatars/16.svg',
-          badge: '/img/stacks/react.svg',
+          badge: '/img/stacks/reactjs.svg',
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
-          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
       ],
@@ -1588,7 +1571,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -1815,7 +1798,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -2182,7 +2165,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -2438,7 +2421,7 @@ async function getDemoData() {
       id: '3',
       slug: 'learning-tracker-dashboard',
       name: 'Learning Tracker Dashboard',
-      dueDate: 'September 2020',
+      dueDate: 'September 2024',
       updated: '5h ago',
       image: '/img/apps/3.jpg',
       completed: 75,
@@ -2468,7 +2451,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ryan B.',
-          'data-tooltip': 'Ryan B.',
           text: 'RB',
         },
         {
@@ -2478,7 +2460,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
-          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -2488,7 +2469,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -2498,7 +2478,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -2784,7 +2763,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -3011,7 +2990,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -3378,7 +3357,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -3634,7 +3613,7 @@ async function getDemoData() {
       id: '4',
       slug: 'banking-and-finance-dashboard',
       name: 'Banking and Finance Dashboard',
-      dueDate: 'October 2020',
+      dueDate: 'October 2024',
       updated: '5h ago',
       image: '/img/apps/4.jpg',
       completed: 75,
@@ -3664,7 +3643,6 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Rob H.',
-          'data-tooltip': 'Rob H.',
           text: 'RH',
         },
         {
@@ -3674,7 +3652,6 @@ async function getDemoData() {
           role: 'Fronted Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Anthony D.',
-          'data-tooltip': 'Anthony D.',
           text: 'AD',
         },
         {
@@ -3684,7 +3661,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
-          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -3694,7 +3670,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -3704,7 +3679,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -3990,7 +3964,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -4217,7 +4191,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -4584,7 +4558,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -4840,7 +4814,7 @@ async function getDemoData() {
       id: '5',
       slug: 'resume-management-mobile-app',
       name: 'Resume Management App',
-      dueDate: 'October 2020',
+      dueDate: 'October 2024',
       updated: '2h ago',
       image: '/img/apps/5.jpg',
       completed: 75,
@@ -4870,7 +4844,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
-          'data-tooltip': 'Kendra W.',
           text: 'KW',
         },
         {
@@ -4880,7 +4853,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Melany L.',
-          'data-tooltip': 'Melany L.',
           text: 'ML',
         },
         {
@@ -4890,7 +4862,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
-          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -4900,7 +4871,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -5186,7 +5156,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -5413,7 +5383,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -5780,7 +5750,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -6036,7 +6006,7 @@ async function getDemoData() {
       id: '6',
       slug: 'banking-landing-page',
       name: 'Banking Landing Page',
-      dueDate: 'December 2020',
+      dueDate: 'December 2024',
       updated: '3d ago',
       image: '/img/apps/6.png',
       completed: 75,
@@ -6066,7 +6036,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JS',
         },
         {
@@ -6076,7 +6045,6 @@ async function getDemoData() {
           role: 'Graphic Artist',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Maya R.',
-          'data-tooltip': 'Maya R.',
           text: 'MR',
         },
         {
@@ -6086,7 +6054,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Harold S',
-          'data-tooltip': 'Harold S',
           text: 'HS',
         },
         {
@@ -6096,7 +6063,6 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
-          'data-tooltip': 'Mike B.',
           text: 'MB',
         },
       ],
@@ -6382,7 +6348,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -6609,7 +6575,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -6976,7 +6942,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -7232,7 +7198,7 @@ async function getDemoData() {
       id: '7',
       slug: 'learning-app-design',
       name: 'Learning App Design',
-      dueDate: 'November 2020',
+      dueDate: 'November 2024',
       updated: '1h ago',
       image: '/img/apps/7.png',
       completed: 75,
@@ -7262,7 +7228,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mike B.',
-          'data-tooltip': 'Mike B.',
           text: 'MB',
         },
         {
@@ -7272,7 +7237,6 @@ async function getDemoData() {
           role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Arthur B.',
-          'data-tooltip': 'Arthur B.',
           text: 'AB',
         },
       ],
@@ -7558,7 +7522,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -7785,7 +7749,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -8152,7 +8116,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -8408,7 +8372,7 @@ async function getDemoData() {
       id: '8',
       slug: 'educational-app-design',
       name: 'Educational App Design',
-      dueDate: 'November 2020',
+      dueDate: 'November 2024',
       updated: '4d ago',
       image: '/img/apps/8.png',
       completed: 75,
@@ -8438,7 +8402,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
-          'data-tooltip': 'Ana B.',
           text: 'AB',
         },
         {
@@ -8448,7 +8411,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Henry C.',
-          'data-tooltip': 'Henry C.',
           text: 'HC',
         },
         {
@@ -8458,7 +8420,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Greta K.',
-          'data-tooltip': 'Greta K.',
           text: 'GK',
         },
       ],
@@ -8744,7 +8705,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -8971,7 +8932,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -9338,7 +9299,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -9594,7 +9555,7 @@ async function getDemoData() {
       id: '9',
       slug: 'banking-solution-website',
       name: 'Banking Solution Website',
-      dueDate: 'October 2020',
+      dueDate: 'October 2024',
       updated: '2h ago',
       image: '/img/apps/9.png',
       completed: 75,
@@ -9624,7 +9585,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
-          'data-tooltip': 'Clarke G.',
           text: 'CG',
         },
         {
@@ -9634,7 +9594,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Greta K.',
-          'data-tooltip': 'Greta K.',
           text: 'GK',
         },
         {
@@ -9644,7 +9603,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -9654,7 +9612,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -9940,7 +9897,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -10167,7 +10124,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -10534,7 +10491,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -10790,7 +10747,7 @@ async function getDemoData() {
       id: '10',
       slug: 'hr-webapp-design',
       name: 'HR Webapp Design',
-      dueDate: 'August 2020',
+      dueDate: 'August 2024',
       updated: '2h ago',
       image: '/img/apps/10.png',
       completed: 75,
@@ -10820,7 +10777,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
         {
@@ -10830,7 +10786,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -10840,7 +10795,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Sandrine C.',
-          'data-tooltip': 'Sandrine C.',
           text: 'SC',
         },
         {
@@ -10850,7 +10804,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Kendra W.',
-          'data-tooltip': 'Kendra W.',
           text: 'KW',
         },
       ],
@@ -11136,7 +11089,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -11363,7 +11316,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -11730,7 +11683,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -12016,7 +11969,6 @@ async function getDemoData() {
           role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
-          'data-tooltip': 'Ana B.',
           text: 'AB',
         },
         {
@@ -12026,7 +11978,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
-          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -12036,7 +11987,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -12046,7 +11996,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -12332,7 +12281,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -12559,7 +12508,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -12926,7 +12875,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -13182,7 +13131,7 @@ async function getDemoData() {
       id: '12',
       slug: 'mobile-app-landing-page',
       name: 'Mobile App Landing Page',
-      dueDate: 'November 2020',
+      dueDate: 'November 2024',
       updated: '4d ago',
       image: '/img/apps/12.jpg',
       completed: 75,
@@ -13212,7 +13161,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Sarah C.',
-          'data-tooltip': 'Sarah C.',
           text: 'SC',
         },
         {
@@ -13222,7 +13170,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Carmen E.',
-          'data-tooltip': 'Carmen E.',
           text: 'CE',
         },
         {
@@ -13232,7 +13179,6 @@ async function getDemoData() {
           role: 'Fullstack Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Josh C.',
-          'data-tooltip': 'Josh C.',
           text: 'JC',
         },
         {
@@ -13242,7 +13188,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Marjory L.',
-          'data-tooltip': 'Marjory L.',
           text: 'ML',
         },
       ],
@@ -13528,7 +13473,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -13755,7 +13700,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -14122,7 +14067,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -14378,7 +14323,7 @@ async function getDemoData() {
       id: '13',
       slug: 'web-marketing-landing-page',
       name: 'Web Marketing Landing Page',
-      dueDate: 'November 2020',
+      dueDate: 'November 2024',
       updated: '3m ago',
       image: '/img/apps/13.png',
       completed: 75,
@@ -14408,7 +14353,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarke G.',
-          'data-tooltip': 'Clarke G.',
           text: 'CG',
         },
         {
@@ -14418,7 +14362,6 @@ async function getDemoData() {
           role: 'Mobile Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
-          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
         {
@@ -14428,7 +14371,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
-          'data-tooltip': 'Mario T.',
           text: 'MT',
         },
       ],
@@ -14714,7 +14656,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -14941,7 +14883,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -15308,7 +15250,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -15564,7 +15506,7 @@ async function getDemoData() {
       id: '14',
       slug: 'startup-landing-page',
       name: 'Startup Landing Page',
-      dueDate: 'November 2020',
+      dueDate: 'November 2024',
       updated: '3m ago',
       image: '/img/apps/14.jpg',
       completed: 75,
@@ -15594,7 +15536,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Howard D.',
-          'data-tooltip': 'Howard D.',
           text: 'HD',
         },
         {
@@ -15604,7 +15545,6 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
-          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
         {
@@ -15614,7 +15554,6 @@ async function getDemoData() {
           role: 'Backend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
-          'data-tooltip': 'Mario T.',
           text: 'MT',
         },
       ],
@@ -15900,7 +15839,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -16127,7 +16066,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -16494,7 +16433,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',
@@ -16780,7 +16719,6 @@ async function getDemoData() {
           role: 'UI/UX Designer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Clarissa M.',
-          'data-tooltip': 'Clarissa M.',
           text: 'CM',
         },
         {
@@ -16790,7 +16728,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Hermann M.',
-          'data-tooltip': 'Hermann M.',
           text: 'HM',
         },
         {
@@ -16800,7 +16737,6 @@ async function getDemoData() {
           role: 'Frontend Developer',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Mario T.',
-          'data-tooltip': 'Mario T.',
           text: 'MT',
         },
         {
@@ -16810,7 +16746,6 @@ async function getDemoData() {
           role: 'Solution Architect',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
           tooltip: 'Ana B.',
-          'data-tooltip': 'Ana B.',
           text: 'AB',
         },
       ],
@@ -17096,7 +17031,7 @@ async function getDemoData() {
           id: 2,
           name: 'Build a custom javascript video player with streaming support',
           description:
-            "Since we couldn't find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.",
+            'Since we couldn\'t find an out of the box solution, we are forced to build a custom player that we can reuse in othe projects.',
           completion: 45,
           status: 1,
           created: '18 days ago',
@@ -17323,7 +17258,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "Yup, it looks clunky to me as well. Let's try something different. I will add it to the list of features. Anything else you can think of?",
+              text: 'Yup, it looks clunky to me as well. Let\'s try something different. I will add it to the list of features. Anything else you can think of?',
               author: {
                 name: 'John B.',
                 picture: '/img/avatars/8.svg',
@@ -17690,7 +17625,7 @@ async function getDemoData() {
               },
             },
             {
-              text: "That's the cherry on top of the cake. I think it's ready to be implemented.",
+              text: 'That\'s the cherry on top of the cake. I think it\'s ready to be implemented.',
               author: {
                 name: 'Kendra W.',
                 picture: '/img/avatars/10.svg',

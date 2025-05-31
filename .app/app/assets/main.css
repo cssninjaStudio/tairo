@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import '@shuriken-ui/nuxt';
+@import '#layers/@cssninja/tairo/theme.css';
+
+@theme {
+  /* Your theme variables */
+}

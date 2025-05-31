@@ -1,5 +1,5 @@
 export default defineEventHandler(async () => {
-  const data = [
+  return [
     {
       id: 0,
       name: 'Website Redesign',
@@ -363,6 +363,4 @@ export default defineEventHandler(async () => {
       ],
     },
   ]
-
-  return data
 })

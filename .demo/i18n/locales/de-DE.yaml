@@ -1,0 +1,12 @@
+panels:
+  language:
+    title: Sprache auswählen
+components:
+  toolbar:
+    search: Suche...
+    actions:
+      leads: Leads
+      projects: Projekte
+      team: Team
+      reports: Berichte
+      settings: Einstellungen

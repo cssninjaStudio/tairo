@@ -1,0 +1,87 @@
+@import 'tailwindcss' theme(static);
+@import '@shuriken-ui/nuxt';
+@import '#layers/@cssninja/tairo/theme.css';
+@plugin "@tailwindcss/typography";
+
+@source '../../examples';
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --default-mono-font-family: 'Fira Code';
+  --font-mono:
+    var(--default-mono-font-family), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --font-alt: 'Karla', sans-serif;
+  --font-heading: var(--font-sans);
+
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-spin-fast: spin 0.65s linear infinite;
+
+  --color-chart-base: var(--color-primary-600);
+  --color-chart-gradient: var(--color-white);
+  --color-chart-title: var(--color-muted-600);
+  --color-chart-subtitle: var(--color-muted-900);
+
+  --color-primary-50: var(--color-violet-50);
+  --color-primary-100: var(--color-violet-100);
+  --color-primary-200: var(--color-violet-200);
+  --color-primary-300: var(--color-violet-300);
+  --color-primary-400: var(--color-violet-400);
+  --color-primary-500: var(--color-violet-500);
+  --color-primary-600: var(--color-violet-600);
+  --color-primary-700: var(--color-violet-700);
+  --color-primary-800: var(--color-violet-800);
+  --color-primary-900: var(--color-violet-900);
+  --color-primary-950: var(--color-violet-950);
+}
+
+@layer base {
+  [lang^='ar'] {
+    --font-sans: 'Noto Naskh Arabic', sans-serif;
+    --font-serif: 'Noto Naskh Arabic', serif;
+
+    /* Uncomment to improve Arabic font rendering */
+    /*
+    --text-xs: 1.25rem;
+    --text-sm: 1.375rem;
+    --text-base: 1.5rem;
+    --text-lg: 1.625rem;
+    --text-xl: 1.75rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.375rem;
+    --text-4xl: 2.75rem;
+    --text-5xl: 3.5rem;
+    --text-6xl: 4.25rem;
+    --text-7xl: 5rem;
+    --text-8xl: 6.5rem;
+    --text-9xl: 8.5rem;
+    */
+  }
+  [lang^='ja'] {
+    --font-sans: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Sans JP', serif;
+
+    /* Uncomment to improve Japanese font rendering */
+    /*
+    --text-xs: 1.25rem;
+    --text-sm: 1.375rem;
+    --text-base: 1.5rem;
+    --text-lg: 1.625rem;
+    --text-xl: 1.75rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.375rem;
+    --text-4xl: 2.75rem;
+    --text-5xl: 3.5rem;
+    --text-6xl: 4.25rem;
+    --text-7xl: 5rem;
+    --text-8xl: 6.5rem;
+    --text-9xl: 8.5rem;
+    */
+  }
+
+  .dark {
+    --color-chart-gradient: var(--color-muted-950);
+    --color-chart-title: var(--color-muted-400);
+    --color-chart-subtitle: var(--color-white);
+  }
+}

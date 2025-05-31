@@ -1,0 +1,12 @@
+panels:
+  language:
+    title: 言語を選択
+components:
+  toolbar:
+    search: 検索...
+    actions:
+      leads: リード
+      projects: プロジェクト
+      team: チーム
+      reports: レポート
+      settings: 設定

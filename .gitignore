@@ -4,10 +4,8 @@ node_modules
 .nuxt
 nuxt.d.ts
 .output
+dist
 .env
+.data
 *Zone.Identifier
-.demo/public/shiki/themes/*.json
-.demo/public/shiki/languages/*.json
-.demo/public/shiki/dist/*.wasm
-!.demo/public/shiki/themes/cssninja-dark-theme.json
-!.demo/public/shiki/themes/cssninja-light-theme.json
+.eslintcache

@@ -9,7 +9,7 @@ First of all, Thank you so much for purchasing this template and for being our l
 ### Prerequisites
 
 1. A recent web browser (Chrome, Edge, Firefox, ...)
-2. [Node.js LTS](https://nodejs.org/en/) _(> 16.x with pnpm > 7)_ installed
+2. [Node.js LTS](https://nodejs.org/en/) _(LTS or Current version)_ installed
 3. Knowledge with [Typescript](https://github.com/microsoft/typescript) _(should not be installed globally)_
 4. Knowledge with [Tailwind CSS](https://tailwindcss.com/)
 5. (recommended) [VSCode](https://code.visualstudio.com/) with [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar)
@@ -31,10 +31,9 @@ If node is not installed on your machine, you can go to the official nodejs.org 
 
 ```bash
 corepack enable
-corepack prepare pnpm@latest --activate
 ```
 
-> _corepack is installed with node from **v16.13.x**, if your version is below, install it with: `npm install -g corepack`_
+> _corepack is installed by default with node from **v16.13.x**, if your version is below, install it with: `npm install -g corepack`_
 
 To setup the template and start installing project dependencies, run:
 
@@ -62,5 +61,6 @@ Our online documentation is a great place to learn how to use Tairo.
 We try to keep it mostly up to date, so you can always find the latest information.
 
 - [Access Online Documentation](https://tairo.cssninja.io/documentation)
+- [Access Shuriken UI Documentation](https://shurikenui.com)
 
 > We also have a great [discord community](https://go.cssninja.io/discord) where you can ask questions and show your work.

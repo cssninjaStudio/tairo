@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
   /**
-   * The shape of the row.
+   * The radius of the row.
    */
-  shape?: 'straight' | 'rounded' | 'curved'
+  rounded?: 'none' | 'sm' | 'md' | 'lg'
 }>()
 </script>
 
@@ -11,10 +11,11 @@ const props = defineProps<{
   <div
     class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 flex flex-col border bg-white md:flex-row md:items-center md:justify-between"
     :class="[
-      props.shape === 'rounded' && 'rounded-md',
-      props.shape === 'curved' && 'rounded-xl',
+      props.rounded === 'sm' && 'rounded-md',
+      props.rounded === 'md' && 'rounded-lg',
+      props.rounded === 'lg' && 'rounded-xl',
     ]"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>

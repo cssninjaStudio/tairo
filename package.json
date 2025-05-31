@@ -1,75 +1,50 @@
 {
-  "private": true,
   "name": "tairo",
-  "version": "1.1.1",
   "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.5.2",
   "main": "./nuxt.config.ts",
   "engines": {
-    "node": ">=16.15",
-    "pnpm": ">=7"
+    "node": ">=22",
+    "pnpm": ">=8"
   },
+  "workspaces": [
+    ".demo",
+    ".app",
+    "layers/*"
+  ],
   "scripts": {
-    "dev": "nuxi dev .app --open",
-    "build": "nuxi build .app",
-    "demo:dev": "nuxi dev .demo --open",
-    "demo:build": "nuxi build .demo",
+    "dev": "pnpm --filter=app dev",
+    "build": "pnpm --filter=app build",
+    "generate": "pnpm --filter=app generate",
+    "demo:dev": "pnpm --filter=demo dev",
+    "demo:build": "pnpm --filter=demo build",
     "clean:all": "pnpm -r clean && rimraf .nuxt .output node_modules",
     "test": "run-p test:*",
-    "test:tsc-demo": "vue-tsc --noEmit -p .demo/tsconfig.json",
-    "test:lint": "run-s lint:eslint lint:prettier",
-    "lint": "run-s lint:eslint:fix lint:eslint:fix-demo lint:prettier:fix",
-    "lint:prettier": "prettier --check \"./**/*.(ts|vue|css|md)\"",
-    "lint:prettier:fix": "prettier --write \"./**/*.(ts|vue|css|md)\"",
-    "lint:eslint": "eslint -c .eslintrc.cjs --ext .vue,.ts .",
-    "lint:eslint:fix": "eslint -c .eslintrc.cjs --fix --ext .vue,.ts .",
-    "lint:eslint:fix-demo": "eslint -c layers/documentation/examples/.eslintrc.cjs --fix --ext .vue layers/documentation/examples"
+    "test:tsc-demo": "pnpm --filter=demo typecheck",
+    "test:lint": "eslint --cache .",
+    "lint": "eslint --cache --fix ."
   },
   "devDependencies": {
-    "@iconify/json": "2.2.67",
-    "@parcel/watcher": "2.1.0",
-    "@types/fs-extra": "11.0.1",
-    "@typescript-eslint/eslint-plugin": "5.59.6",
-    "eslint": "8.41.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-prettier-vue": "4.2.0",
-    "eslint-plugin-tailwindcss": "3.12.0",
-    "eslint-plugin-vue": "9.13.0",
-    "eslint-plugin-vuejs-accessibility": "2.1.0",
-    "esno": "0.16.3",
-    "fs-extra": "11.1.1",
-    "lint-staged": "13.2.2",
+    "@antfu/eslint-config": "^4.11.0",
+    "eslint": "9.24.0",
+    "eslint-plugin-format": "^1.0.1",
+    "lint-staged": "15.5.0",
     "npm-run-all": "4.1.5",
-    "prettier": "2.8.8",
-    "rimraf": "5.0.1",
-    "std-env": "3.3.3",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.0.4",
-    "vue-tsc": "1.6.5"
+    "rimraf": "6.0.1"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
+  "pnpm": {
+    "patchedDependencies": {
+      "smooth-dnd@0.12.1": "patches/smooth-dnd@0.12.1.patch"
+    }
+  },
   "lint-staged": {
     "*.(ts|vue)": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.md": [
-      "prettier --write"
+      "eslint --fix"
     ]
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "postcss",
-        "vue",
-        "vite",
-        "@unhead/vue",
-        "webpack"
-      ]
-    },
-    "overrides": {
-      "consola": "3.1.0"
-    }
   }
 }

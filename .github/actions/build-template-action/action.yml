@@ -1,20 +1,20 @@
-name: 'build template'
-description: 'build template archive'
+name: build template
+description: build template archive
 # We declare that the action takes two arguments in input
 inputs:
   project:
-    description: 'Project'
+    description: Project
     required: true
   tag:
-    description: 'Tag'
+    description: Tag
     required: true
 # And ouput one variable that will be available by the workflow
 outputs:
   filepath:
-    description: 'template archive path'
+    description: template archive path
     value: ${{ steps.build.outputs.filepath }}
 runs:
-  using: 'composite'
+  using: composite
   steps:
     # Ensure that zip is installed
     - run: sudo apt-get install zip

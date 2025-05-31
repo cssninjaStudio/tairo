@@ -3,15 +3,26 @@ const {
   panels,
   current,
   transitionFrom,
-  currentProps,
-  showOverlay,
   open,
   close,
+  resolve,
 } = usePanels()
+
+watch(
+  [() => current.value?.component, () => current.value?.overlay],
+  ([component, overlay]) => {
+    if (component && overlay) {
+      document.documentElement.style.overflow = 'hidden'
+    }
+    else {
+      document.documentElement.style.overflow = ''
+    }
+  },
+)
 </script>
 
 <template>
-  <div>
+  <Teleport to="body">
     <Transition
       enter-active-class="transition-transform duration-300 ease-out"
       :enter-from-class="
@@ -31,32 +42,38 @@ const {
           panels,
           current,
           transitionFrom,
-          currentProps,
-          showOverlay,
           open,
           close,
         }"
       >
         <Suspense>
           <component
-            :is="resolveComponentOrNative(current.component)"
-            v-bind="currentProps"
+            :is="current.component"
             v-if="current?.component"
-            class="fixed top-0 z-[100] h-full w-96"
-            :class="[current.position === 'left' ? 'start-0' : 'end-0']"
+            v-bind="(current.props as any) || {}"
+            class="xs:max-w-full fixed top-0 z-[100] h-full"
+            :class="[
+              current.position === 'left' ? 'start-0' : 'end-0',
+
+              current.size === 'sm' && 'w-96',
+              current.size === 'md' && 'w-[460px]',
+            ]"
+            @close="resolve"
           />
         </Suspense>
       </slot>
     </Transition>
 
     <div
-      class="bg-muted-800/60 fixed start-0 top-0 z-[99] h-full w-full cursor-pointer transition-opacity duration-300"
+      role="button"
+      tabindex="0"
+      class="bg-muted-800/60 fixed start-0 top-0 z-[99] size-full cursor-pointer transition-opacity duration-300"
       :class="
-        current && showOverlay
+        current && current.overlay
           ? 'opacity-100 pointer-events-auto'
           : 'opacity-0 pointer-events-none'
       "
       @click="close"
     />
-  </div>
+  </Teleport>
 </template>
