@@ -16,7 +16,7 @@
     "@nuxt/kit": "^3.16.2",
     "@vueuse/core": "^13.0.0",
     "reka-ui": "^2.2.0",
-    "vue-component-type-helpers": "^2.2.8"
+    "vue-component-type-helpers": "^3.0.0"
   },
   "devDependencies": {
     "nuxt": "^3.16.2",
