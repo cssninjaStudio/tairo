@@ -92,7 +92,7 @@
     "v-calendar": "3.1.2",
     "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
-    "vue-component-meta": "2.2.8",
+    "vue-component-meta": "3.0.5",
     "vue-router": "^4.5.0",
     "vue3-apexcharts": "1.8.0",
     "vue3-smooth-dnd": "0.0.6",
