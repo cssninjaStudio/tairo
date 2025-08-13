@@ -13,13 +13,13 @@
     "tailwindcss": "^4.0.8"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.16.2",
+    "@nuxt/kit": "^4.0.0",
     "@vueuse/core": "^13.0.0",
     "reka-ui": "^2.2.0",
     "vue-component-type-helpers": "^2.2.8"
   },
   "devDependencies": {
-    "nuxt": "^3.16.2",
+    "nuxt": "^4.0.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   }
