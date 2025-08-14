@@ -1,7 +1,7 @@
-FROM bitnami/node:22.14.0 AS base
+FROM node:24.5.0-alpine3.22 AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+RUN corepack enable && corepack prepare pnpm@10.14.0 --activate
 
 FROM base AS install
 COPY . /build
@@ -14,11 +14,8 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store NODE_OPTIONS=--max-old-space-s
 
 FROM base AS demo
 ENV NODE_ENV=production
-RUN groupadd -g 10101 nuxt \
-   && useradd -u 11001 -g nuxt nuxt \
-   && chown -R nuxt:nuxt /app
-USER nuxt:nuxt
-COPY --chown=nuxt:nuxt --from=build-demo /build/.demo/.output /prod/demo/.output
+USER node:node
+COPY --chown=node:node --from=build-demo /build/.demo/.output /prod/demo/.output
 WORKDIR /prod/demo
 EXPOSE 3000
 CMD ["node",  ".output/server/index.mjs"]

@@ -15,7 +15,7 @@ jobs:
 
     steps:
       # Checkout action retreive the source (git clone)
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # needed to retreive all git history
           token: ${{ secrets.APP_GITHUB_TOKEN }}
@@ -26,7 +26,7 @@ jobs:
       # Setup pnpm with cache
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
 
       # Run "standard-version", which may create a new tag

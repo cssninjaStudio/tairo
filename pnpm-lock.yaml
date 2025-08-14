@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  vite: npm:rolldown-vite@latest
+
 patchedDependencies:
   nuxt-component-meta@0.13.1:
     hash: 7861b791a2cfe805d40972599b9bbf84131f2d965564558bc3d0819179dd4e5d
@@ -364,10 +367,10 @@ importers:
         version: 4.0.3(magicast@0.3.5)
       '@shuriken-ui/nuxt':
         specifier: 4.0.0
-        version: 4.0.0(magicast@0.3.5)(typescript@5.9.2)(vite@7.1.2(@types/node@24.2.1)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.1))(vue@3.5.18(typescript@5.9.2))
+        version: 4.0.0(magicast@0.3.5)(rolldown-vite@7.1.2(@types/node@24.2.1)(esbuild@0.25.9)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1))(typescript@5.9.2)(vue@3.5.18(typescript@5.9.2))
       nuxt:
         specifier: ^4.0.3
-        version: 4.0.3(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@24.2.1)(@vue/compiler-sfc@3.5.18)(better-sqlite3@12.2.0)(db0@0.3.2(better-sqlite3@12.2.0))(eslint@9.33.0(jiti@2.5.1))(ioredis@5.7.0)(magicast@0.3.5)(optionator@0.9.4)(rolldown@1.0.0-beta.32)(rollup@4.46.2)(terser@5.43.1)(typescript@5.9.2)(vite@7.1.2(@types/node@24.2.1)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.1))(vue-tsc@3.0.5(typescript@5.9.2))(yaml@2.8.1)
+        version: 4.0.3(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@24.2.1)(@vue/compiler-sfc@3.5.18)(better-sqlite3@12.2.0)(db0@0.3.2(better-sqlite3@12.2.0))(eslint@9.33.0(jiti@2.5.1))(ioredis@5.7.0)(magicast@0.3.5)(optionator@0.9.4)(rolldown-vite@7.1.2(@types/node@24.2.1)(esbuild@0.25.9)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1))(rolldown@1.0.0-beta.32)(rollup@4.46.2)(terser@5.43.1)(typescript@5.9.2)(vue-tsc@3.0.5(typescript@5.9.2))(yaml@2.8.1)
       nuxt-component-meta:
         specifier: ^0.13.1
         version: 0.13.1(patch_hash=7861b791a2cfe805d40972599b9bbf84131f2d965564558bc3d0819179dd4e5d)(magicast@0.3.5)(vue-component-type-helpers@3.0.5)
@@ -381,8 +384,8 @@ importers:
         specifier: ^4.1.11
         version: 4.1.12
       vite:
-        specifier: ^7.1.2
-        version: 7.1.2(@types/node@24.2.1)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.1)
+        specifier: npm:rolldown-vite@latest
+        version: rolldown-vite@7.1.2(@types/node@24.2.1)(esbuild@0.25.9)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1)
 
 packages:
 
