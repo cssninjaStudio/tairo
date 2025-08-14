@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2025-03-05',
+  compatibilityDate: '2025-08-14',
   modules: ['nuxt-component-meta'],
   extends: ['../layers/tairo'],
   typescript: {
