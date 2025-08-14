@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 // This is the object that will contain the validation messages
 const VALIDATION_TEXT = {
@@ -13,24 +12,23 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z.object({
+const validationSchema = z.object({
   firstName: z.string().min(1, VALIDATION_TEXT.FIRSTNAME_REQUIRED),
   lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
-  email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
+  email: z.email(VALIDATION_TEXT.EMAIL_REQUIRED),
   message: z.string().min(1, VALIDATION_TEXT.MESSAGE_REQUIRED),
 })
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   firstName: '',
   lastName: '',
   email: '',
   message: '',
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import type { InputMask } from 'imask'
-import { toTypedSchema } from '@vee-validate/zod'
 import IMask from 'imask'
 import { Field, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 const VALIDATION_TEXT = {
   OLD_PASSWORD_REQUIRED: 'Your current password is required',
@@ -33,7 +32,7 @@ definePageMeta({
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
     currentPassword: z.string().min(1, VALIDATION_TEXT.OLD_PASSWORD_REQUIRED),
     newPassword: z.string(),
@@ -56,14 +55,14 @@ const zodSchema = z
     if (data.newPassword) {
       if (data.newPassword.length < 8) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: 'custom',
           message: VALIDATION_TEXT.NEW_PASSWORD_LENGTH,
           path: ['newPassword'],
         })
       }
       if (data.newPassword !== data.confirmPassword) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: 'custom',
           message: VALIDATION_TEXT.NEW_PASSWORD_MATCH,
           path: ['confirmPassword'],
         })
@@ -72,7 +71,7 @@ const zodSchema = z
 
     if (data.twoFactor.enabled && !data.twoFactor.phoneNumber) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: 'A phone number is required',
         path: ['twoFactor.phoneNumber'],
       })
@@ -81,10 +80,9 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   currentPassword: 'password',
   newPassword: '',
   confirmPassword: '',
@@ -98,7 +96,7 @@ const initialValues = {
     marketing: false,
     partners: false,
   },
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   title: 'New card',
@@ -55,7 +54,7 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
     owner: z.string().min(1, VALIDATION_TEXT.OWNER_SELECTION).nullable(),
     account: z
@@ -77,21 +76,21 @@ const zodSchema = z
     // before the form is submitted
     if (data.account === null) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.ACCOUNT_SELECTION,
         path: ['account'],
       })
     }
     if (data.dailySpend === null || data.dailySpend <= 50) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.DAILY_LIMIT,
         path: ['dailySpend'],
       })
     }
     if (data.dailyWithdraw === null || data.dailyWithdraw <= 50) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.DAILY_LIMIT,
         path: ['dailyWithdraw'],
       })
@@ -100,17 +99,16 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   owner: null,
   account: null,
   brand: null,
   type: null,
   dailySpend: 0,
   dailyWithdraw: 0,
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

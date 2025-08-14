@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   title: 'Edit User',
@@ -42,9 +41,9 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
-    avatar: z.custom<File>(v => v instanceof File).nullable(),
+    avatar: z.instanceof(File).nullable(),
     profile: z.object({
       firstName: z.string().min(1, VALIDATION_TEXT.FIRST_NAME_REQUIRED),
       lastName: z.string().min(1, VALIDATION_TEXT.LAST_NAME_REQUIRED),
@@ -57,15 +56,10 @@ const zodSchema = z
         day: z.string().nullable(),
       }),
       status: z
-        .union([
-          z.literal('single'),
-          z.literal('married'),
-          z.literal('divorced'),
-          z.literal('widower'),
-        ])
+        .literal(['single', 'married', 'divorced', 'widower'])
         .nullable(),
       gender: z
-        .union([z.literal('male'), z.literal('female'), z.literal('other')])
+        .literal(['male', 'female', 'other'])
         .optional(),
       mailingAddress: z.object({
         address: z.string().min(1, VALIDATION_TEXT.ADDRESS_REQUIRED),
@@ -90,21 +84,21 @@ const zodSchema = z
     // before the form is submitted
     if (data.avatar && data.avatar.size > ONE_MB) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.AVATAR_TOO_BIG,
         path: ['avatar'],
       })
     }
     if (data.profile.firstName === '') {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.FIRST_NAME_REQUIRED,
         path: ['profile.firstName'],
       })
     }
     if (data.profile.lastName === '') {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.LAST_NAME_REQUIRED,
         path: ['profile.lastName'],
       })
@@ -115,35 +109,35 @@ const zodSchema = z
       && data.profile.preferredName.length < 3
     ) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.PREFERRED_NAME_REQUIRED,
         path: ['profile.preferredName'],
       })
     }
     if (data.profile.birthday.day === null) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.BIRTHDAY_REQUIRED,
         path: ['profile.birthday.day'],
       })
     }
     if (data.profile.birthday.month === null) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.BIRTHMONTH_REQUIRED,
         path: ['profile.birthday.month'],
       })
     }
     if (data.profile.birthday.year === null) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.BIRTHYEAR_REQUIRED,
         path: ['profile.birthday.year'],
       })
     }
     if (!data.profile.status) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.STATUS_REQUIRED,
         path: ['profile.status'],
       })
@@ -152,10 +146,9 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   avatar: null,
   profile: {
     firstName: '',
@@ -187,7 +180,7 @@ const initialValues = {
       country: 'United States',
     },
   },
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

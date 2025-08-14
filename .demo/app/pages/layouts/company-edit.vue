@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   title: 'Edit Company',
@@ -39,9 +38,9 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
-    avatar: z.custom<File>(v => v instanceof File).nullable(),
+    avatar: z.instanceof(File).nullable(),
     profile: z.object({
       companyName: z.string().min(1, VALIDATION_TEXT.COMPANY_NAME_REQUIRED),
       dba: z.string().min(1, VALIDATION_TEXT.LEGAL_NAME_REQUIRED),
@@ -72,21 +71,21 @@ const zodSchema = z
     // before the form is submitted
     if (data.avatar && data.avatar.size > ONE_MB) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.AVATAR_TOO_BIG,
         path: ['avatar'],
       })
     }
     if (data.profile.companyName === '') {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.COMPANY_NAME_REQUIRED,
         path: ['profile.companyName'],
       })
     }
     if (data.profile.dba === '') {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.LEGAL_NAME_REQUIRED,
         path: ['profile.dba'],
       })
@@ -97,7 +96,7 @@ const zodSchema = z
       && data.profile.commonName.length < 3
     ) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.PREFERRED_NAME_REQUIRED,
         path: ['profile.commonName'],
       })
@@ -106,10 +105,9 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   avatar: null,
   profile: {
     companyName: '',
@@ -135,7 +133,7 @@ const initialValues = {
       country: 'United States',
     },
   },
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

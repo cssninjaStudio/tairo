@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import type { AddonInputPhone } from '#components'
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
 
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   title: 'Create doctor',
@@ -52,9 +51,9 @@ function phoneErrorMessage(code?: string) {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
-    avatar: z.custom<File>(v => v instanceof File).nullable(),
+    avatar: z.instanceof(File).nullable(),
     doctor: z.object({
       firstName: z.string().min(1, VALIDATION_TEXT.FIRSTNAME_REQUIRED),
       lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
@@ -62,37 +61,16 @@ const zodSchema = z
       comments: z.string().optional(),
       phone: z.string().optional(),
       status: z
-        .union([
-          z.literal('intern'),
-          z.literal('resident'),
-          z.literal('titular'),
-        ])
+        .literal(['intern', 'resident', 'titular'])
         .nullable(),
       speciality: z
-        .union([
-          z.literal('Surgery'),
-          z.literal('Cardiology'),
-          z.literal('Pediatry'),
-          z.literal('Dermataulogy'),
-          z.literal('Traumatology'),
-        ])
+        .literal(['Surgery', 'Cardiology', 'Pediatry', 'Dermataulogy', 'Traumatology'])
         .nullable(),
       experience: z
-        .union([
-          z.literal('0-5'),
-          z.literal('5-10'),
-          z.literal('10-15'),
-          z.literal('15+'),
-        ])
+        .literal(['0-5', '5-10', '10-15', '15+'])
         .nullable(),
       rating: z
-        .union([
-          z.literal('1'),
-          z.literal('2'),
-          z.literal('3'),
-          z.literal('4'),
-          z.literal('5'),
-        ])
+        .literal(['1', '2', '3', '4', '5'])
         .nullable(),
       address: z.string().min(1, VALIDATION_TEXT.ADDRESS_REQUIRED),
       city: z.string().min(1, VALIDATION_TEXT.CITY_REQUIRED),
@@ -110,35 +88,35 @@ const zodSchema = z
     // before the form is submitted
     if (data.avatar && data.avatar.size > ONE_MB) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.AVATAR_TOO_BIG,
         path: ['avatar'],
       })
     }
     if (!data.doctor.status) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['doctor.status'],
       })
     }
     if (!data.doctor.speciality) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['doctor.speciality'],
       })
     }
     if (!data.doctor.experience) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['doctor.experience'],
       })
     }
     if (!data.doctor.rating) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['doctor.rating'],
       })
@@ -146,7 +124,7 @@ const zodSchema = z
 
     if (!inputPhoneRef.value?.validation?.valid) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: phoneErrorMessage(inputPhoneRef.value?.validation?.error) || VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['doctor.phone'],
       })
@@ -155,16 +133,16 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   avatar: null,
   doctor: {
     firstName: '',
     lastName: '',
     email: '',
     comments: '',
+    phone: undefined,
     status: null,
     speciality: null,
     experience: null,
@@ -179,7 +157,7 @@ const initialValues = {
       lng: -118.42852935091915,
     },
   },
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import type { AddonInputPassword } from '#components'
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
 
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   layout: 'empty',
@@ -30,9 +29,9 @@ const passwordRef = ref<InstanceType<typeof AddonInputPassword>>()
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
-    email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
+    email: z.email(VALIDATION_TEXT.EMAIL_REQUIRED),
     password: z.string().min(8, VALIDATION_TEXT.PASSWORD_LENGTH),
     confirmPassword: z.string(),
     terms: z.boolean(),
@@ -42,21 +41,21 @@ const zodSchema = z
     // before the form is submitted
     if (passwordRef.value?.validation?.feedback?.warning || passwordRef.value?.validation?.feedback?.suggestions?.length) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: passwordRef.value?.validation?.feedback?.warning || passwordRef.value.validation.feedback?.suggestions?.[0],
         path: ['password'],
       })
     }
     if (data.password !== data.confirmPassword) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.PASSWORD_MATCH,
         path: ['confirmPassword'],
       })
     }
     if (!data.terms) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.TERMS_REQUIRED,
         path: ['terms'],
       })
@@ -65,15 +64,14 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   email: '',
   password: '',
   confirmPassword: '',
   terms: false,
-} satisfies FormInput
+}
 
 const { values, handleSubmit, isSubmitting } = useForm({
   validationSchema,

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   layout: 'empty',
@@ -22,18 +21,17 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z.object({
-  email: z.string().email(VALIDATION_TEXT.EMAIL_REQUIRED),
+const validationSchema = z.object({
+  email: z.email(VALIDATION_TEXT.EMAIL_REQUIRED),
 })
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   email: '',
-} satisfies FormInput
+}
 
 const { handleSubmit, isSubmitting } = useForm({
   validationSchema,

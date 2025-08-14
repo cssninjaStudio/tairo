@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   title: 'Create company',
@@ -62,22 +61,22 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
-    avatar: z.custom<File>(v => v instanceof File).nullable(),
+    avatar: z.instanceof(File).nullable(),
     company: z.object({
       name: z.string().min(1, VALIDATION_TEXT.NAME_REQUIRED),
       email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
       type: z.string().min(1, VALIDATION_TEXT.COMPANY_TYPE_REQUIRED),
       website: z.string().optional(),
       phone: z.string().optional(),
-      status: z.union([z.literal('active'), z.literal('inactive')]).nullable(),
+      status: z.literal(['active', 'inactive']).nullable(),
       employees: z
-        .union([
-          z.literal('1-10 employees'),
-          z.literal('10-50 employees'),
-          z.literal('50-100 employees'),
-          z.literal('100+ employees'),
+        .literal([
+          '1-10 employees',
+          '10-50 employees',
+          '50-100 employees',
+          '100+ employees',
         ])
         .nullable(),
       manager: z
@@ -89,12 +88,12 @@ const zodSchema = z
         })
         .nullable(),
       income: z
-        .union([
-          z.literal('0 - 250K'),
-          z.literal('250K - 500K'),
-          z.literal('500K - 1M'),
-          z.literal('1M - 5M'),
-          z.literal('10M+'),
+        .literal([
+          '0 - 250K',
+          '250K - 500K',
+          '500K - 1M',
+          '1M - 5M',
+          '10M+',
         ])
         .nullable(),
       notes: z.string().optional(),
@@ -106,35 +105,35 @@ const zodSchema = z
     // before the form is submitted
     if (data.avatar && data.avatar.size > ONE_MB) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.AVATAR_TOO_BIG,
         path: ['avatar'],
       })
     }
     if (!data.company.income) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['company.income'],
       })
     }
     if (!data.company.employees) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['company.employees'],
       })
     }
     if (!data.company.status) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.STATUS_REQUIRED,
         path: ['company.status'],
       })
     }
     if (!data.company.manager) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.MANAGER_REQUIRED,
         path: ['company.manager'],
       })
@@ -143,10 +142,9 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   avatar: null,
   company: {
     name: '',
@@ -161,7 +159,7 @@ const initialValues = {
     notes: '',
     privateRecord: false,
   },
-} satisfies FormInput
+}
 
 // This is the computed value that will be used to display the current avatar
 const currentAvatar = computed(() => '/img/avatars/company.svg')

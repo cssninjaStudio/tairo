@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   title: 'New Contact',
@@ -39,9 +38,9 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
-    avatar: z.custom<File>(v => v instanceof File).nullable(),
+    avatar: z.instanceof(File).nullable(),
     contact: z.object({
       firstName: z
         .string()
@@ -58,10 +57,10 @@ const zodSchema = z
       title: z.string().min(1, VALIDATION_TEXT.TITLE_REQUIRED),
       email: z.string().min(1, VALIDATION_TEXT.EMAIL_REQUIRED),
       phone: z.string().min(1, VALIDATION_TEXT.PHONE_REQUIRED),
-      status: z.union([z.literal('active'), z.literal('inactive')]).nullable(),
-      type: z.union([z.literal('person'), z.literal('company')]).nullable(),
+      status: z.literal(['active', 'inactive']).nullable(),
+      type: z.literal(['person', 'company']).nullable(),
       gender: z
-        .union([z.literal('male'), z.literal('female'), z.literal('other')])
+        .literal(['male', 'female', 'other'])
         .optional(),
       address: z.string().min(1, VALIDATION_TEXT.ADDRESS_REQUIRED),
       city: z.string().min(1, VALIDATION_TEXT.CITY_REQUIRED),
@@ -79,7 +78,7 @@ const zodSchema = z
       iban: z.string().min(5, VALIDATION_TEXT.IBAN_REQUIRED).nullable(),
       taxId: z.string().min(5, VALIDATION_TEXT.TAXID_REQUIRED).nullable(),
       paymentMethod: z
-        .union([z.literal('paypal'), z.literal('stripe'), z.literal('custom')])
+        .literal(['paypal', 'stripe', 'custom'])
         .nullable(),
     }),
   })
@@ -88,35 +87,35 @@ const zodSchema = z
     // before the form is submitted
     if (data.avatar && data.avatar.size > ONE_MB) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.AVATAR_TOO_BIG,
         path: ['avatar'],
       })
     }
     if (data.contact.firstName === '' && data.contact.type === 'person') {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.FIRST_NAME_REQUIRED,
         path: ['contact.firstName'],
       })
     }
     if (data.contact.lastName === '' && data.contact.type === 'person') {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.LAST_NAME_REQUIRED,
         path: ['contact.lastName'],
       })
     }
     if (data.contact.companyName === '' && data.contact.type === 'company') {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.COMPANY_NAME_REQUIRED,
         path: ['contact.companyName'],
       })
     }
     if (!data.contact.status) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.STATUS_REQUIRED,
         path: ['contact.status'],
       })
@@ -125,10 +124,9 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   avatar: null,
   contact: {
     firstName: '',
@@ -151,7 +149,7 @@ const initialValues = {
     taxId: null,
     paymentMethod: null,
   },
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

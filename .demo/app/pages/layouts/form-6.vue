@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { DatePicker } from 'v-calendar'
 import { Field, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 import 'v-calendar/dist/style.css'
 
 definePageMeta({
@@ -33,7 +32,7 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z.object({
+const validationSchema = z.object({
   meeting: z.object({
     title: z.string().min(5, VALIDATION_TEXT.FIRSTNAME_REQUIRED),
     startDate: z.date().nullable(),
@@ -64,10 +63,9 @@ const zodSchema = z.object({
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   meeting: {
     title: '',
     startDate: null,
@@ -88,7 +86,7 @@ const initialValues = {
       modifications: false,
     },
   },
-} satisfies FormInput
+}
 
 const {
   handleSubmit,

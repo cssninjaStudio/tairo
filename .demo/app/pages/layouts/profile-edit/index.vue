@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import { Field, useFieldError, useForm } from 'vee-validate'
-import { z } from 'zod'
+import * as z from 'zod'
 
 definePageMeta({
   title: 'Edit Profile',
@@ -34,9 +33,9 @@ const VALIDATION_TEXT = {
 
 // This is the Zod schema for the form input
 // It's used to define the shape that the form data will have
-const zodSchema = z
+const validationSchema = z
   .object({
-    avatar: z.custom<File>(v => v instanceof File).nullable(),
+    avatar: z.instanceof(File).nullable(),
     profile: z.object({
       firstName: z.string().min(1, VALIDATION_TEXT.FIRST_REQUIRED),
       lastName: z.string().min(1, VALIDATION_TEXT.LASTNAME_REQUIRED),
@@ -46,11 +45,11 @@ const zodSchema = z
     }),
     info: z.object({
       experience: z
-        .union([
-          z.literal('0-2 years'),
-          z.literal('2-5 years'),
-          z.literal('5-10 years'),
-          z.literal('10+ years'),
+        .literal([
+          '0-2 years',
+          '2-5 years',
+          '5-10 years',
+          '10+ years',
         ])
         .nullable(),
       firstJob: z.string().nullable(),
@@ -71,35 +70,35 @@ const zodSchema = z
     // before the form is submitted
     if (!data.info.experience) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['info.experience'],
       })
     }
     if (!data.info.firstJob) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['info.firstJob'],
       })
     }
     if (!data.info.flexible) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['info.flexible'],
       })
     }
     if (!data.info.remote) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.OPTION_REQUIRED,
         path: ['info.remote'],
       })
     }
     if (data.avatar && data.avatar.size > ONE_MB) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: 'custom',
         message: VALIDATION_TEXT.AVATAR_TOO_BIG,
         path: ['avatar'],
       })
@@ -108,12 +107,11 @@ const zodSchema = z
 
 // Zod has a great infer method that will
 // infer the shape of the schema into a TypeScript type
-type FormInput = z.infer<typeof zodSchema>
+type FormInput = z.infer<typeof validationSchema>
 
 const { data, pending, error, refresh } = await useFetch('/api/profile')
 
-const validationSchema = toTypedSchema(zodSchema)
-const initialValues = {
+const initialValues: FormInput = {
   avatar: null,
   profile: {
     firstName: data.value?.personalInfo?.firstName || '',
@@ -136,7 +134,7 @@ const initialValues = {
     github: '',
     gitlab: '',
   },
-} satisfies FormInput
+}
 
 // This is the list of options for the select inputs
 const experience = ['0-2 years', '2-5 years', '5-10 years', '10+ years']
