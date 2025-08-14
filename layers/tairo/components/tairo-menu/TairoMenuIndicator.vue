@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { NavigationMenuIndicatorProps } from 'reka-ui'
+import { useForwardProps } from '#layers/@cssninja/tairo/utils/bundle/reka-ui'
 import { NavigationMenuIndicator } from 'reka-ui'
-import { useForwardProps } from '~/utils/bundle/reka-ui'
 
 export interface TairoMenuIndicatorProps extends NavigationMenuIndicatorProps {}
 </script>

@@ -1,4 +1,4 @@
-import { useMediaQuery } from '~/utils/bundle/vueuse'
+import { useMediaQuery } from '#layers/@cssninja/tairo/utils/bundle/vueuse'
 
 /**
  * This function is used to expose Tailwind breakpoints as reactive variables.

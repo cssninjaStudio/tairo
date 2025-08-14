@@ -19,13 +19,13 @@
     "nuxt": "nuxt"
   },
   "devDependencies": {
-    "@nuxt/kit": "^3.16.2",
-    "@shuriken-ui/nuxt": "4.0.0-beta.4",
-    "nuxt": "^3.16.2",
-    "nuxt-component-meta": "^0.10.1",
+    "@nuxt/kit": "^4.0.3",
+    "@shuriken-ui/nuxt": "4.0.0",
+    "nuxt": "^4.0.3",
+    "nuxt-component-meta": "^0.13.1",
     "pathe": "^2.0.3",
-    "reka-ui": "^2.2.0",
-    "tailwindcss": "^4.0.8",
-    "vite": "^6.2.6"
+    "reka-ui": "^2.4.1",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.1.2"
   }
 }

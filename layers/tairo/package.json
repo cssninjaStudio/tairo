@@ -9,18 +9,18 @@
     "clean": "rimraf .nuxt .output node_modules"
   },
   "peerDependencies": {
-    "@shuriken-ui/nuxt": "4.0.0-beta.4",
+    "@shuriken-ui/nuxt": "4.0.0",
     "tailwindcss": "^4.0.8"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.16.2",
-    "@vueuse/core": "^13.0.0",
-    "reka-ui": "^2.2.0",
-    "vue-component-type-helpers": "^2.2.8"
+    "@nuxt/kit": "^4.0.3",
+    "@vueuse/core": "^13.6.0",
+    "reka-ui": "^2.4.1",
+    "vue-component-type-helpers": "^3.0.5"
   },
   "devDependencies": {
-    "nuxt": "^3.16.2",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "nuxt": "^4.0.3",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
   }
 }

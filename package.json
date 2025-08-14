@@ -27,10 +27,10 @@
     "lint": "eslint --cache --fix ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.11.0",
-    "eslint": "9.24.0",
+    "@antfu/eslint-config": "^5.2.1",
+    "eslint": "9.33.0",
     "eslint-plugin-format": "^1.0.1",
-    "lint-staged": "15.5.0",
+    "lint-staged": "16.1.5",
     "npm-run-all": "4.1.5",
     "rimraf": "6.0.1"
   },

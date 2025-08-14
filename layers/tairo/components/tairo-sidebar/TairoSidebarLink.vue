@@ -23,7 +23,7 @@ const isActive = computed(() => {
       ]"
     >
       <slot>
-        <Icon :name="props.icon" class="size-5" />
+        <Icon v-if="props.icon" :name="props.icon" class="size-5" />
       </slot>
     </div>
   </NuxtLink>

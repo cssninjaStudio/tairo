@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useVModel } from '~/utils/bundle/vueuse'
+import { useVModel } from '#layers/@cssninja/tairo/utils/bundle/vueuse'
 
 const props = defineProps<{
   defaultValue?: string

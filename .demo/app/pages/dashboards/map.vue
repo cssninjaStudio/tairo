@@ -404,7 +404,7 @@ function updatePopup() {
 
   const feature = selectedLocation.value
   const coordinates = ((feature.geometry || {}) as any)?.coordinates as LngLatLike
-  const properties = feature.properties as GeoJsonLocationProperties
+  const properties = feature.properties as unknown as GeoJsonLocationProperties
 
   popup.value = new mapboxgl.Popup({
     closeOnClick: false,
@@ -561,7 +561,7 @@ function selectFeature(feature?: any) {
         class="starting:opacity-0 transition-discrete duration-300 transition-all"
       >
         <DemoMapMarker
-          v-bind="(selectedLocation.properties as GeoJsonLocationProperties)"
+          v-bind="(selectedLocation.properties as unknown as GeoJsonLocationProperties)"
           @close="selectFeature()"
         />
       </div>

@@ -1,4 +1,4 @@
-import { tryOnBeforeMount } from '~/utils/bundle/vueuse'
+import { tryOnBeforeMount } from '#layers/@cssninja/tairo/utils/bundle/vueuse'
 
 const macLikeRE = /Mac|iP/
 

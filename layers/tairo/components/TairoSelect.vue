@@ -1,8 +1,8 @@
 <script lang="ts">
 import type { BaseSelectEmits, BaseSelectProps } from '@shuriken-ui/nuxt/components/Select.vue.d.ts'
 import type { AcceptableValue } from 'reka-ui'
-import { useForwardExpose, useForwardPropsEmits } from '~/utils/bundle/reka-ui'
-import { reactiveOmit } from '~/utils/bundle/vueuse'
+import { useForwardExpose, useForwardPropsEmits } from '#layers/@cssninja/tairo/utils/bundle/reka-ui'
+import { reactiveOmit } from '#layers/@cssninja/tairo/utils/bundle/vueuse'
 
 export interface TairoSelectProps<T = AcceptableValue> extends BaseSelectProps<T> {
   icon?: string

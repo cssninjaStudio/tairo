@@ -81,6 +81,23 @@ export default defineNuxtConfig({
     '~/assets/main.css',
   ],
   fonts: {
+    families: [
+      {
+        name: 'Inter',
+        provider: 'google',
+        weights: ['100 900'],
+      },
+      {
+        name: 'Karla',
+        provider: 'google',
+        weights: ['200 800'],
+      },
+      {
+        name: 'Fira Code',
+        provider: 'google',
+        weights: ['300 700'],
+      },
+    ],
     experimental: {
       processCSSVariables: true,
     },
@@ -110,7 +127,6 @@ export default defineNuxtConfig({
     // We recommend using the default prefix_except_default strategy for SEO.
     strategy: 'no_prefix',
     defaultLocale: 'en',
-    lazy: true,
     locales: [
       { code: 'en', dir: 'ltr', language: 'en-US', file: 'en-US.yaml', name: 'English', isCatchallLocale: true },
       { code: 'fr', dir: 'ltr', language: 'fr-FR', file: 'fr-FR.yaml', name: 'Français' },
@@ -119,13 +135,6 @@ export default defineNuxtConfig({
       { code: 'ar', dir: 'rtl', language: 'ar-SA', file: 'ar-SA.yaml', name: 'العربية' },
       { code: 'ja', dir: 'ltr', language: 'ja-JP', file: 'ja-JP.yaml', name: '日本語' },
     ],
-    // Use i18n v10 features
-    experimental: {
-      generatedLocaleFilePathFormat: 'off',
-    },
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
   },
 
   routeRules: {
@@ -198,6 +207,7 @@ export default defineNuxtConfig({
       include: [
         'scule',
         'klona',
+        'minisearch',
         // AddonDatepicker
         'v-calendar',
         // AddonApexcharts
@@ -215,7 +225,6 @@ export default defineNuxtConfig({
         'mapbox-gl',
         '@mapbox/mapbox-gl-geocoder',
         // form validation
-        '@vee-validate/zod',
         'vee-validate',
         'zod',
         // calendar app

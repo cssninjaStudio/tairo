@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { FocusScope } from 'reka-ui'
+import { useBodyScrollLock } from '#layers/@cssninja/tairo/utils/bundle/reka-ui'
 
-import { useBodyScrollLock } from '~/utils/bundle/reka-ui'
-import { onKeyStroke, usePointerSwipe, useVModel } from '~/utils/bundle/vueuse'
+import { onKeyStroke, usePointerSwipe, useVModel } from '#layers/@cssninja/tairo/utils/bundle/vueuse'
+import { FocusScope } from 'reka-ui'
 
 const props = defineProps<{
   defaultValue?: boolean

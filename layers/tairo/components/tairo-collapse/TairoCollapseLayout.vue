@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useBodyScrollLock } from '~/utils/bundle/reka-ui'
+import { useBodyScrollLock } from '#layers/@cssninja/tairo/utils/bundle/reka-ui'
 
 const { isCollapsed, isMobileOpen, toggleMobileNav } = createLayoutCollapseContext()
 

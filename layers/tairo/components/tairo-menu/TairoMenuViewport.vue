@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { NavigationMenuViewportProps } from 'reka-ui'
+import { useForwardProps } from '#layers/@cssninja/tairo/utils/bundle/reka-ui'
 import { NavigationMenuViewport } from 'reka-ui'
-import { useForwardProps } from '~/utils/bundle/reka-ui'
 
 export interface TairoMenuViewportProps extends NavigationMenuViewportProps {}
 </script>

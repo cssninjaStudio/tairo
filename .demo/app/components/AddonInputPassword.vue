@@ -183,6 +183,7 @@ onNuxtReady(async () => {
             class="flex items-center justify-between gap-2"
           >
             <Icon
+              v-if="props.icons.hint"
               :name="props.icons.hint"
               class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
@@ -198,6 +199,7 @@ onNuxtReady(async () => {
             class="flex items-center justify-between gap-2"
           >
             <Icon
+              v-if="props.icons.hint"
               :name="props.icons.hint"
               class="text-muted-400 dark:text-muted-500 size-4 shrink-0"
             />
@@ -265,10 +267,11 @@ onNuxtReady(async () => {
               class="relative flex size-full items-center justify-center"
             >
               <Icon
+                v-if="showPassword ? props.icons.reveal : props.icons.hide"
                 :name="
                   showPassword
-                    ? props.icons.reveal
-                    : props.icons.hide
+                    ? props.icons.reveal!
+                    : props.icons.hide!
                 "
                 class="size-4"
               />

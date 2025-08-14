@@ -1,9 +1,9 @@
 <script lang="ts">
 import type { BaseCardProps } from '@shuriken-ui/nuxt/components/Card.vue.d.ts'
 import type { RadioGroupItemProps } from 'reka-ui'
+import { useForwardPropsEmits } from '#layers/@cssninja/tairo/utils/bundle/reka-ui'
+import { reactiveOmit } from '#layers/@cssninja/tairo/utils/bundle/vueuse'
 import { RadioGroupIndicator, RadioGroupItem } from 'reka-ui'
-import { useForwardPropsEmits } from '~/utils/bundle/reka-ui'
-import { reactiveOmit } from '~/utils/bundle/vueuse'
 
 export interface TairoRadioCardProps extends RadioGroupItemProps {
   icon?: string
