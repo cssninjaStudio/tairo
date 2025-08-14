@@ -97,6 +97,16 @@ export default defineNuxtConfig({
         provider: 'google',
         weights: ['300 700'],
       },
+      {
+        name: 'Noto Sans JP',
+        provider: 'google',
+        weights: ['100 900'],
+      },
+      {
+        name: 'Noto Naskh Arabic',
+        provider: 'google',
+        weights: ['400 700'],
+      },
     ],
     experimental: {
       processCSSVariables: true,
