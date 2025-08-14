@@ -1,0 +1,17 @@
+diff --git a/dist/module.mjs b/dist/module.mjs
+index 5dff40f0cdc8112c2dc218f94692d219853e5713..67f267dcfc327ab4a353bc1b3b3d2db9550bfecb 100644
+--- a/dist/module.mjs
++++ b/dist/module.mjs
+@@ -202,8 +202,10 @@ function useComponentMetaParser({
+       return components;
+     },
+     dispose() {
+-      checker.clearCache();
+-      checker = null;
++      if (checker) {
++        checker.clearCache();
++        checker = null;
++      }
+       components = {};
+     },
+     init,

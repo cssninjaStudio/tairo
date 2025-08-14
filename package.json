@@ -39,7 +39,8 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "smooth-dnd@0.12.1": "patches/smooth-dnd@0.12.1.patch"
+      "smooth-dnd@0.12.1": "patches/smooth-dnd@0.12.1.patch",
+      "nuxt-component-meta@0.13.1": "patches/nuxt-component-meta@0.13.1.patch"
     }
   },
   "lint-staged": {
