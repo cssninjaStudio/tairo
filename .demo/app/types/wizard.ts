@@ -1,9 +1,9 @@
-export type TeamMemberRole =
-  | 'reader'
-  | 'collaborator'
-  | 'manager'
-  | 'owner'
-  | undefined
+export type TeamMemberRole
+  = | 'reader'
+    | 'collaborator'
+    | 'manager'
+    | 'owner'
+    | undefined
 
 export type ProjectType = 'design' | 'development' | 'marketing' | undefined
 

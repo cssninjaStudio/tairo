@@ -23,12 +23,12 @@ export interface CalendarSettings {
   weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
 }
 
-export type EventCategory =
-  | 'customer'
-  | 'internal'
-  | 'team'
-  | 'personal'
-  | 'none'
+export type EventCategory
+  = | 'customer'
+    | 'internal'
+    | 'team'
+    | 'personal'
+    | 'none'
 export interface EventCategoryTheme {
   name: string
   color: string
