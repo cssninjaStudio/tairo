@@ -27,7 +27,7 @@
     "lint": "eslint --cache --fix ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.2.1",
+    "@antfu/eslint-config": "^7.0.0",
     "eslint": "9.33.0",
     "eslint-plugin-format": "^1.0.1",
     "lint-staged": "16.1.5",
