@@ -50,7 +50,7 @@
     "@mapbox/mapbox-gl-geocoder": "5.1.0",
     "@nuxt/content": "3.6.3",
     "@nuxt/fonts": "^0.11.4",
-    "@nuxt/image": "1.11.0",
+    "@nuxt/image": "2.1.0",
     "@nuxt/kit": "^4.0.3",
     "@nuxtjs/i18n": "^10.0.5",
     "@shuriken-ui/nuxt": "4.0.0",
