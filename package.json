@@ -2,6 +2,7 @@
   "name": "tairo",
   "type": "module",
   "version": "2.0.0",
+  "license": "MIT",
   "private": true,
   "packageManager": "pnpm@10.14.0",
   "main": "./nuxt.config.ts",
