@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/cssninjaStudio/tairo/compare/v2.0.0...v2.1.0) (2026-09-30)
+
+
+### ⚖️ License
+
+* relicense under MIT ([99eef8f](https://github.com/cssninjaStudio/tairo/commit/99eef8f1a5d5d07d24a380f43a8ada463917135b))
+
 ## [2.0.0](https://github.com/cssninjaStudio/tairo/compare/v1.5.1...v2.0.0) (2025-04-15)
 
 

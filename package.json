@@ -1,7 +1,7 @@
 {
   "name": "tairo",
   "type": "module",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "private": true,
   "packageManager": "pnpm@10.14.0",
